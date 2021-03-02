@@ -29,7 +29,7 @@
 </td>
 <td>
 <div class="infoBox" id="failures">
-<div class="counter">0</div>
+<div class="counter">1</div>
 <p>failures</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">5m31.04s</div>
+<div class="counter">5m29.10s</div>
 <p>duration</p>
 </div>
 </td>
@@ -50,8 +50,8 @@
 </div>
 </td>
 <td>
-<div class="infoBox success" id="successRate">
-<div class="percent">100%</div>
+<div class="infoBox failures" id="successRate">
+<div class="percent">98%</div>
 <p>successful</p>
 </div>
 </td>
@@ -61,10 +61,105 @@
 <div id="tabs">
 <ul class="tabLinks">
 <li>
-<a href="#tab0">Tests</a>
+<a href="#tab0">Failed tests</a>
+</li>
+<li>
+<a href="#tab1">Tests</a>
 </li>
 </ul>
 <div id="tab0" class="tab">
+<h2>Failed tests</h2>
+<div class="test">
+<a name="testPullRelated[8: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@551df36c]"></a>
+<h3 class="failures">testPullRelated[8: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@551df36c]</h3>
+<span class="code">
+<pre>com.dotmarketing.exception.DotHibernateException: Unable to close Hibernate Session 
+	at com.dotmarketing.db.HibernateUtil.commitTransaction(HibernateUtil.java:1158)
+	at com.dotmarketing.db.LocalTransaction.wrapReturnWithListeners(LocalTransaction.java:62)
+	at com.dotcms.aspects.interceptors.WrapInTransactionMethodInterceptor.invoke(WrapInTransactionMethodInterceptor.java:23)
+	at com.dotcms.aspects.aspectj.WrapInTransactionAspect.invoke(WrapInTransactionAspect.java:41)
+	at com.dotcms.contenttype.business.ContentTypeAPIImpl.delete(ContentTypeAPIImpl.java:81)
+	at com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest.testPullRelated(ContentUtilsTest.java:376)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at com.tngtech.java.junit.dataprovider.DataProviderFrameworkMethod.invokeExplosively(DataProviderFrameworkMethod.java:119)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:55)
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:28)
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:13)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.junit.runners.Suite.runChild(Suite.java:128)
+	at org.junit.runners.Suite.runChild(Suite.java:27)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:106)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38)
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:66)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93)
+	at com.sun.proxy.$Proxy2.processTestClass(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:117)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:155)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:137)
+	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:404)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:63)
+	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:46)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:55)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: com.dotmarketing.business.DotStateException: Based on configured schedule, the given trigger will never fire.
+	at com.dotmarketing.db.DotRunnableThread.run(DotRunnableThread.java:56)
+	at com.dotmarketing.db.HibernateUtil.finalizeCommitListeners(HibernateUtil.java:1068)
+	at com.dotmarketing.db.HibernateUtil.commitTransaction(HibernateUtil.java:1152)
+	... 64 more
+Caused by: org.quartz.SchedulerException: Based on configured schedule, the given trigger will never fire.
+	at org.quartz.core.QuartzScheduler.rescheduleJob(QuartzScheduler.java:1011)
+	at org.quartz.impl.StdScheduler.rescheduleJob(StdScheduler.java:302)
+	at com.dotmarketing.quartz.QuartzUtils.scheduleTask(QuartzUtils.java:490)
+	at com.dotmarketing.quartz.DotStatefulJob.enqueueTrigger(DotStatefulJob.java:171)
+	at com.dotmarketing.quartz.job.CleanUpFieldReferencesJob.lambda$0(CleanUpFieldReferencesJob.java:124)
+	at com.rainerhahnekamp.sneakythrow.Sneaky.lambda$sneaked$7(Sneaky.java:207)
+	at com.dotmarketing.db.DotRunnableThread.internalRunner(DotRunnableThread.java:99)
+	at com.dotmarketing.db.LocalTransaction.wrap(LocalTransaction.java:158)
+	at com.dotmarketing.db.DotRunnableThread.run(DotRunnableThread.java:53)
+	... 66 more
+</pre>
+</span>
+</div>
+</div>
+<div id="tab1" class="tab">
 <h2>Tests</h2>
 <table>
 <thead>
@@ -76,432 +171,432 @@
 </thead>
 <tr>
 <td class="success">testPullLiveRelatedWhenLatestVersionIsWorking</td>
-<td class="success">2.178s</td>
+<td class="success">2.570s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">testPullRelatedForLegacyRelationship[0: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$LegacyTestCase@83fcd96]</td>
-<td class="success">3.648s</td>
+<td class="success">testPullRelatedForLegacyRelationship[0: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$LegacyTestCase@add564a]</td>
+<td class="success">2.762s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">testPullRelatedForLegacyRelationship[1: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$LegacyTestCase@aa7138b]</td>
-<td class="success">3.183s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testPullRelated[0: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@417b9085]</td>
-<td class="success">3.652s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testPullRelated[10: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@13cc562e]</td>
-<td class="success">3.120s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testPullRelated[11: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@5ace759d]</td>
-<td class="success">3.169s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testPullRelated[12: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@1b944055]</td>
-<td class="success">2.872s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testPullRelated[13: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@730f3f9f]</td>
-<td class="success">3.074s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testPullRelated[14: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@2037af6]</td>
-<td class="success">3.409s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testPullRelated[15: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@2b4895b6]</td>
-<td class="success">2.723s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testPullRelated[16: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@1267fe62]</td>
-<td class="success">3.003s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testPullRelated[17: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@181ec876]</td>
-<td class="success">3.136s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testPullRelated[18: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@153c549]</td>
-<td class="success">2.993s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testPullRelated[19: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@6e5905f0]</td>
-<td class="success">3.117s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testPullRelated[1: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@5787a89a]</td>
-<td class="success">3.027s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testPullRelated[20: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@43e062b7]</td>
+<td class="success">testPullRelatedForLegacyRelationship[1: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$LegacyTestCase@3b228c1c]</td>
 <td class="success">3.058s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">testPullRelated[21: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@2dd35fc5]</td>
-<td class="success">3.057s</td>
+<td class="success">testPullRelated[0: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@27f16efd]</td>
+<td class="success">3.300s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">testPullRelated[22: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@3235bebb]</td>
-<td class="success">3.108s</td>
+<td class="success">testPullRelated[10: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@8f83ce7]</td>
+<td class="success">2.964s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">testPullRelated[23: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@14654b88]</td>
-<td class="success">3.183s</td>
+<td class="success">testPullRelated[11: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@43723d06]</td>
+<td class="success">3.326s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">testPullRelated[24: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@54506669]</td>
-<td class="success">3.075s</td>
+<td class="success">testPullRelated[12: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@79ce2097]</td>
+<td class="success">2.706s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">testPullRelated[25: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@634a2651]</td>
-<td class="success">3.063s</td>
+<td class="success">testPullRelated[13: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@5bd0c989]</td>
+<td class="success">3.256s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">testPullRelated[26: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@7c159ce5]</td>
-<td class="success">3.330s</td>
+<td class="success">testPullRelated[14: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@1206c910]</td>
+<td class="success">2.827s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">testPullRelated[27: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@4212a1e4]</td>
-<td class="success">3.734s</td>
+<td class="success">testPullRelated[15: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@404e5c5b]</td>
+<td class="success">3.123s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">testPullRelated[28: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@1526e4e1]</td>
-<td class="success">3.049s</td>
+<td class="success">testPullRelated[16: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@488c165d]</td>
+<td class="success">2.964s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">testPullRelated[29: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@27ec30ba]</td>
-<td class="success">3.251s</td>
+<td class="success">testPullRelated[17: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@154d1244]</td>
+<td class="success">3.138s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">testPullRelated[2: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@4adb7099]</td>
-<td class="success">3.092s</td>
+<td class="success">testPullRelated[18: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@312707b4]</td>
+<td class="success">3.093s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">testPullRelated[30: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@77ce6216]</td>
-<td class="success">2.967s</td>
+<td class="success">testPullRelated[19: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@339394f]</td>
+<td class="success">2.971s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">testPullRelated[31: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@2004f08a]</td>
-<td class="success">3.071s</td>
+<td class="success">testPullRelated[1: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@3798215b]</td>
+<td class="success">2.877s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">testPullRelated[32: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@2270987]</td>
-<td class="success">3.118s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testPullRelated[33: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@44889099]</td>
-<td class="success">3.016s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testPullRelated[34: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@405294cc]</td>
-<td class="success">3.118s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testPullRelated[35: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@4755bcec]</td>
-<td class="success">2.902s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testPullRelated[36: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@7d84feb0]</td>
-<td class="success">5.238s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testPullRelated[37: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@7d88a5c1]</td>
-<td class="success">5.118s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testPullRelated[38: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@29a8aa48]</td>
-<td class="success">5.112s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testPullRelated[39: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@4370d14d]</td>
-<td class="success">5.010s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testPullRelated[3: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@1cfb9b6a]</td>
-<td class="success">2.946s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testPullRelated[40: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@195bc6ed]</td>
-<td class="success">5.144s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testPullRelated[41: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@21c5deaa]</td>
-<td class="success">5.084s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testPullRelated[42: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@4dd3da30]</td>
-<td class="success">5.221s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testPullRelated[43: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@86c907e]</td>
-<td class="success">5.221s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testPullRelated[44: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@4f475330]</td>
-<td class="success">5.005s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testPullRelated[45: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@40f8e4fc]</td>
-<td class="success">5.006s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testPullRelated[46: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@1329a489]</td>
-<td class="success">5.302s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testPullRelated[47: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@7faa29f2]</td>
-<td class="success">4.974s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testPullRelated[48: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@a012be4]</td>
-<td class="success">4.986s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testPullRelated[49: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@dd9f15c]</td>
-<td class="success">5.169s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testPullRelated[4: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@199dfc8]</td>
-<td class="success">3.250s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testPullRelated[50: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@538a1182]</td>
-<td class="success">5.028s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testPullRelated[51: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@7d4147b8]</td>
-<td class="success">5.037s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testPullRelated[52: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@7e1c1dff]</td>
-<td class="success">5.073s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testPullRelated[53: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@3c8d5071]</td>
-<td class="success">5.109s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testPullRelated[54: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@3f884063]</td>
-<td class="success">5.022s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testPullRelated[55: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@4883acad]</td>
-<td class="success">5.180s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testPullRelated[56: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@56eea3a7]</td>
-<td class="success">5.265s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testPullRelated[57: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@367fd3]</td>
-<td class="success">4.901s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testPullRelated[58: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@7d40bcee]</td>
-<td class="success">5.137s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testPullRelated[59: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@2873912f]</td>
-<td class="success">5.125s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testPullRelated[5: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@6b307419]</td>
-<td class="success">2.829s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testPullRelated[60: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@ba3ec1d]</td>
-<td class="success">4.983s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testPullRelated[61: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@3858d25d]</td>
-<td class="success">5.173s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testPullRelated[62: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@4087ae74]</td>
-<td class="success">5.195s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testPullRelated[63: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@7449a5a2]</td>
-<td class="success">4.943s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testPullRelated[64: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@601e7c32]</td>
-<td class="success">5.136s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testPullRelated[65: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@1eaa8056]</td>
-<td class="success">5.038s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testPullRelated[66: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@63a379f9]</td>
-<td class="success">5.006s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testPullRelated[67: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@5a7eb49a]</td>
-<td class="success">5.302s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testPullRelated[68: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@4912ac0b]</td>
-<td class="success">5.064s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testPullRelated[69: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@3f02d4f]</td>
-<td class="success">5.087s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testPullRelated[6: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@7afe8e5e]</td>
-<td class="success">3.151s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testPullRelated[70: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@7b64e079]</td>
-<td class="success">5.118s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testPullRelated[71: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@541151eb]</td>
-<td class="success">5.156s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testPullRelated[7: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@3a1e6aa0]</td>
+<td class="success">testPullRelated[20: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@2baff98b]</td>
 <td class="success">3.084s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">testPullRelated[8: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@753685b4]</td>
-<td class="success">3.028s</td>
+<td class="success">testPullRelated[21: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@568d0188]</td>
+<td class="success">2.941s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">testPullRelated[9: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@1dceb7b7]</td>
-<td class="success">2.915s</td>
+<td class="success">testPullRelated[22: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@5f1eb64a]</td>
+<td class="success">3.357s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">testSortPullRelated[0: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$SortTestCase@569c4d8e]</td>
-<td class="success">1.866s</td>
+<td class="success">testPullRelated[23: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@15271fa7]</td>
+<td class="success">2.914s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">testSortPullRelated[1: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$SortTestCase@85cc0bf]</td>
-<td class="success">1.936s</td>
+<td class="success">testPullRelated[24: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@4190df29]</td>
+<td class="success">3.109s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">testSortPullRelated[2: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$SortTestCase@7e79ff5f]</td>
-<td class="success">1.955s</td>
+<td class="success">testPullRelated[25: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@7f2f07d2]</td>
+<td class="success">3.060s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">testSortPullRelated[3: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$SortTestCase@4cf09050]</td>
-<td class="success">2.165s</td>
+<td class="success">testPullRelated[26: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@55a9529b]</td>
+<td class="success">3.090s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">testSortPullRelated[4: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$SortTestCase@7834547d]</td>
-<td class="success">2.007s</td>
+<td class="success">testPullRelated[27: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@785eb5ae]</td>
+<td class="success">3.109s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">testSortPullRelated[5: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$SortTestCase@16033afc]</td>
-<td class="success">1.979s</td>
+<td class="success">testPullRelated[28: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@3f70541b]</td>
+<td class="success">2.816s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testPullRelated[29: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@38e6c5b0]</td>
+<td class="success">3.149s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testPullRelated[2: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@63beec63]</td>
+<td class="success">3.296s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testPullRelated[30: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@274475bd]</td>
+<td class="success">3.395s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testPullRelated[31: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@2aba573e]</td>
+<td class="success">2.711s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testPullRelated[32: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@17571efe]</td>
+<td class="success">3.144s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testPullRelated[33: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@199282e1]</td>
+<td class="success">3.134s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testPullRelated[34: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@1dffe5f3]</td>
+<td class="success">3.397s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testPullRelated[35: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@658442d5]</td>
+<td class="success">2.656s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testPullRelated[36: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@4a0b0075]</td>
+<td class="success">5.338s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testPullRelated[37: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@4783065f]</td>
+<td class="success">5.039s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testPullRelated[38: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@25b1a321]</td>
+<td class="success">5.134s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testPullRelated[39: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@6264cfa8]</td>
+<td class="success">5.062s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testPullRelated[3: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@67a8859d]</td>
+<td class="success">2.912s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testPullRelated[40: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@707e7339]</td>
+<td class="success">5.125s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testPullRelated[41: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@2f902297]</td>
+<td class="success">5.144s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testPullRelated[42: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@71034ef]</td>
+<td class="success">5.195s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testPullRelated[43: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@43cdb22a]</td>
+<td class="success">4.960s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testPullRelated[44: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@4029e6d1]</td>
+<td class="success">5.127s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testPullRelated[45: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@6e83f0d9]</td>
+<td class="success">5.049s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testPullRelated[46: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@683206aa]</td>
+<td class="success">5.046s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testPullRelated[47: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@4640b564]</td>
+<td class="success">5.331s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testPullRelated[48: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@4950cc13]</td>
+<td class="success">4.949s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testPullRelated[49: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@3824f8d8]</td>
+<td class="success">5.129s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testPullRelated[4: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@4b029913]</td>
+<td class="success">3.115s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testPullRelated[50: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@40dbae20]</td>
+<td class="success">5.205s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testPullRelated[51: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@373c8ca]</td>
+<td class="success">5.178s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testPullRelated[52: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@4c8cbce3]</td>
+<td class="success">4.892s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testPullRelated[53: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@53716f92]</td>
+<td class="success">5.213s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testPullRelated[54: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@4ec66172]</td>
+<td class="success">5.061s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testPullRelated[55: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@53eec5f8]</td>
+<td class="success">4.984s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testPullRelated[56: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@7aac00c2]</td>
+<td class="success">5.096s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testPullRelated[57: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@2279fdfa]</td>
+<td class="success">5.211s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testPullRelated[58: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@5fc9d536]</td>
+<td class="success">5.047s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testPullRelated[59: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@7a2d0a32]</td>
+<td class="success">4.966s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testPullRelated[5: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@3d66ebd1]</td>
+<td class="success">2.875s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testPullRelated[60: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@609dafa5]</td>
+<td class="success">5.262s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testPullRelated[61: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@d660861]</td>
+<td class="success">5.026s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testPullRelated[62: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@1c971c9e]</td>
+<td class="success">5.095s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testPullRelated[63: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@e79f9a4]</td>
+<td class="success">5.185s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testPullRelated[64: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@3948f49]</td>
+<td class="success">5.363s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testPullRelated[65: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@3e0cba5a]</td>
+<td class="success">4.874s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testPullRelated[66: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@1adb22e9]</td>
+<td class="success">5.088s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testPullRelated[67: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@5b2e5ccf]</td>
+<td class="success">5.188s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testPullRelated[68: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@7ce76e24]</td>
+<td class="success">4.937s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testPullRelated[69: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@2762c588]</td>
+<td class="success">5.150s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testPullRelated[6: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@292fc5ea]</td>
+<td class="success">3.201s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testPullRelated[70: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@64ed77e7]</td>
+<td class="success">5.103s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testPullRelated[71: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@4d8c8791]</td>
+<td class="success">5.335s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testPullRelated[7: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@a08393f]</td>
+<td class="success">2.982s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="failures">testPullRelated[8: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@551df36c]</td>
+<td class="failures">2.724s</td>
+<td class="failures">failed</td>
+</tr>
+<tr>
+<td class="success">testPullRelated[9: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$TestCase@5f2fb27d]</td>
+<td class="success">3.604s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testSortPullRelated[0: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$SortTestCase@34ff96d0]</td>
+<td class="success">1.970s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testSortPullRelated[1: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$SortTestCase@1d663fd1]</td>
+<td class="success">2.015s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testSortPullRelated[2: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$SortTestCase@7d694531]</td>
+<td class="success">2.157s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testSortPullRelated[3: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$SortTestCase@520474ec]</td>
+<td class="success">2.162s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testSortPullRelated[4: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$SortTestCase@1a05316a]</td>
+<td class="success">2.022s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testSortPullRelated[5: com.dotcms.rendering.velocity.viewtools.content.util.ContentUtilsTest$SortTestCase@36310d4c]</td>
+<td class="success">2.031s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">whenPublishAndExpireDatesAreInTheFutureAndTimeMachineIsAfterBoth</td>
-<td class="success">2.991s</td>
+<td class="success">2.761s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">whenTheTimeMachineDateAndPublishDateAreTomorrowShouldReturnOneContent</td>
-<td class="success">2.775s</td>
+<td class="success">2.786s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">whenTheTimeMachineDateIsAfterTomorrowAndExpireDateIsInFutureShouldReturnContent</td>
-<td class="success">3.151s</td>
+<td class="success">2.911s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">whenTheTimeMachineDateIsAfterTomorrowAndExpireDateIsTomorrowShouldNotReturnContent</td>
-<td class="success">2.906s</td>
+<td class="success">2.721s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">whenTheTimeMachineDateIsNullAndPublishDateInFutureShouldNotReturnAnything</td>
-<td class="success">2.946s</td>
+<td class="success">2.765s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -514,7 +609,7 @@
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 4.10.2</a> at Mar 2, 2021 6:27:39 PM</p>
+<a href="http://www.gradle.org">Gradle 4.10.2</a> at Mar 2, 2021 7:02:35 PM</p>
 </div>
 </div>
 </body>
