@@ -29,7 +29,7 @@
 </td>
 <td>
 <div class="infoBox" id="failures">
-<div class="counter">1</div>
+<div class="counter">0</div>
 <p>failures</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">7.486s</div>
+<div class="counter">7.605s</div>
 <p>duration</p>
 </div>
 </td>
@@ -50,8 +50,8 @@
 </div>
 </td>
 <td>
-<div class="infoBox failures" id="successRate">
-<div class="percent">85%</div>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
 <p>successful</p>
 </div>
 </td>
@@ -61,108 +61,10 @@
 <div id="tabs">
 <ul class="tabLinks">
 <li>
-<a href="#tab0">Failed tests</a>
-</li>
-<li>
-<a href="#tab1">Tests</a>
+<a href="#tab0">Tests</a>
 </li>
 </ul>
 <div id="tab0" class="tab">
-<h2>Failed tests</h2>
-<div class="test">
-<a name="issue5330"></a>
-<h3 class="failures">issue5330</h3>
-<span class="code">
-<pre>com.dotmarketing.exception.DotDataException: SQL Error doing a batch and couldn't rollback
-	at app//com.dotmarketing.common.db.DotConnect.executeBatch(DotConnect.java:1125)
-	at app//com.dotmarketing.common.db.DotConnect.executeBatch(DotConnect.java:1073)
-	at app//com.dotmarketing.business.PermissionBitFactoryImpl.dbDeletePermissionReferences(PermissionBitFactoryImpl.java:1198)
-	at app//com.dotmarketing.business.PermissionBitFactoryImpl.resetPermissionReferences(PermissionBitFactoryImpl.java:2569)
-	at app//com.dotmarketing.business.PermissionBitFactoryImpl.removePermissions(PermissionBitFactoryImpl.java:868)
-	at app//com.dotmarketing.business.PermissionBitFactoryImpl.removePermissions(PermissionBitFactoryImpl.java:849)
-	at app//com.dotmarketing.business.PermissionBitAPIImpl.removePermissions(PermissionBitAPIImpl.java:403)
-	at app//com.dotcms.content.elasticsearch.business.ESContentFactoryImpl.delete(ESContentFactoryImpl.java:603)
-	at app//com.dotcms.content.elasticsearch.business.ESContentFactoryImpl.delete(ESContentFactoryImpl.java:563)
-	at app//com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.destroyContentlets(ESContentletAPIImpl.java:2494)
-	at app//com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.internalDestroy(ESContentletAPIImpl.java:2372)
-	at app//com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.destroy(ESContentletAPIImpl.java:2338)
-	at app//com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.destroy(ESContentletAPIImpl.java:2301)
-	at app//com.dotmarketing.portlets.contentlet.business.ContentletAPIInterceptor.destroy(ContentletAPIInterceptor.java:471)
-	at app//com.dotmarketing.portlets.contentlet.ajax.ContentletAjaxTest.issue5330(ContentletAjaxTest.java:185)
-	at java.base@11.0.16.1/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base@11.0.16.1/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base@11.0.16.1/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base@11.0.16.1/java.lang.reflect.Method.invoke(Method.java:566)
-	at app//org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
-	at app//org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at app//org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
-	at app//org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-	at app//org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
-	at app//org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61)
-	at app//org.junit.rules.RunRules.evaluate(RunRules.java:20)
-	at app//org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
-	at app//com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:34)
-	at app//com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:19)
-	at app//org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
-	at app//org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
-	at app//org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
-	at app//org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
-	at app//org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
-	at app//org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
-	at app//org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
-	at app//org.junit.runners.ParentRunner.run(ParentRunner.java:413)
-	at app//com.dotcms.junit.MainBaseSuite$DotRunner.run(MainBaseSuite.java:65)
-	at app//org.junit.runners.Suite.runChild(Suite.java:128)
-	at app//org.junit.runners.Suite.runChild(Suite.java:27)
-	at app//org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
-	at app//org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
-	at app//org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
-	at app//org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
-	at app//org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
-	at app//org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
-	at app//org.junit.runners.ParentRunner.run(ParentRunner.java:413)
-	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110)
-	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58)
-	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38)
-	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62)
-	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51)
-	at java.base@11.0.16.1/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base@11.0.16.1/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base@11.0.16.1/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base@11.0.16.1/java.lang.reflect.Method.invoke(Method.java:566)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
-	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
-	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
-	at com.sun.proxy.$Proxy2.processTestClass(Unknown Source)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
-	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
-	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133)
-	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
-	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
-	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
-Caused by: com.microsoft.sqlserver.jdbc.SQLServerException: Snapshot isolation transaction aborted due to update conflict. You cannot use snapshot isolation to access table 'dbo.permission_reference' directly or indirectly in database 'dotcms' to update, delete, or insert the row that has been modified or deleted by another transaction. Retry the transaction or change the isolation level for the update/delete statement.
-	at app//com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:262)
-	at app//com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1624)
-	at app//com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.doExecutePreparedStatementBatch(SQLServerPreparedStatement.java:2800)
-	at app//com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement$PrepStmtBatchExecCmd.doExecute(SQLServerPreparedStatement.java:2675)
-	at app//com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7194)
-	at app//com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:2979)
-	at app//com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:248)
-	at app//com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:223)
-	at app//com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.executeBatch(SQLServerPreparedStatement.java:2076)
-	at app//com.zaxxer.hikari.pool.ProxyStatement.executeBatch(ProxyStatement.java:128)
-	at app//com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeBatch(HikariProxyPreparedStatement.java)
-	at app//com.dotmarketing.common.db.DotConnect.executeBatch(DotConnect.java:1115)
-	... 69 more
-</pre>
-</span>
-</div>
-</div>
-<div id="tab1" class="tab">
 <h2>Tests</h2>
 <table>
 <thead>
@@ -173,38 +75,38 @@ Caused by: com.microsoft.sqlserver.jdbc.SQLServerException: Snapshot isolation t
 </tr>
 </thead>
 <tr>
-<td class="failures">issue5330</td>
-<td class="failures">1.964s</td>
-<td class="failures">failed</td>
+<td class="success">issue5330</td>
+<td class="success">1.942s</td>
+<td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">test_doSearchGlossaryTerm_ReturnsListLanguageVariables</td>
-<td class="success">2.270s</td>
+<td class="success">2.160s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">test_searchContentletsByUser_filteringByDates_returns_validResults</td>
-<td class="success">0.354s</td>
+<td class="success">0.481s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">test_searchContentletsByUser_filteringByRelatedContent_returns_validResults[0: ONE_TO_MANY]</td>
-<td class="success">0.741s</td>
+<td class="success">0.804s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">test_searchContentletsByUser_filteringByRelatedContent_returns_validResults[1: MANY_TO_MANY]</td>
-<td class="success">0.724s</td>
+<td class="success">0.763s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">test_searchContentletsByUser_filteringByRelatedContent_returns_validResults[2: ONE_TO_ONE]</td>
-<td class="success">0.729s</td>
+<td class="success">0.753s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">test_searchContentletsByUser_filteringByRelatedContent_returns_validResults[3: MANY_TO_ONE]</td>
-<td class="success">0.704s</td>
+<td class="success">0.702s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -217,7 +119,7 @@ Caused by: com.microsoft.sqlserver.jdbc.SQLServerException: Snapshot isolation t
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 7.3.3</a> at Nov 8, 2022, 6:04:19 PM</p>
+<a href="http://www.gradle.org">Gradle 7.3.3</a> at Nov 8, 2022, 10:57:34 PM</p>
 </div>
 </div>
 </body>
