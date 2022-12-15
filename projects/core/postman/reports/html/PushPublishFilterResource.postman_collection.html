@@ -472,7 +472,7 @@ body.theme-light code {
                 <a class="nav-link text-white" id="pills-requests-tab" data-toggle="pill" href="#pills-requests" role="tab" aria-controls="pills-requests" aria-selected="false">Total Requests <span class="badge badge-light">9</span></a>
             </li>
             <li class="nav-item bg-danger" data-toggle="tooltip" title="Click to view the Failed Tests">
-                <a class="nav-link text-white" id="pills-failed-tab" data-toggle="pill" href="#pills-failed" role="tab" aria-controls="pills-failed" aria-selected="false">Failed Tests <span class="badge badge-light">0</span></a>
+                <a class="nav-link text-white" id="pills-failed-tab" data-toggle="pill" href="#pills-failed" role="tab" aria-controls="pills-failed" aria-selected="false">Failed Tests <span class="badge badge-light">9</span></a>
             </li>
             <li class="nav-item bg-warning" data-toggle="tooltip" title="Click to view the Skipped Tests">
                 <a class="nav-link text-white" id="pills-skipped-tab" data-toggle="pill" href="#pills-skipped" role="tab" aria-controls="pills-skipped" aria-selected="false">Skipped Tests <span class="badge badge-light">0</span></a>
@@ -483,11 +483,11 @@ body.theme-light code {
 <div class="row">
   <div class="col-md-9 col-lg-12 main">
    <h1 class="display-2 text-center">Newman Run Dashboard</h1>
-   <h5 class="text-center">Friday, 09 December 2022 20:03:08</h5>
+   <h5 class="text-center">Thursday, 15 December 2022 17:08:07</h5>
    <div class="row">
     <div class="col-lg-3 col-md-6">
      <div class="card text-white card-success">
-      <div class="card-body bg-success">
+      <div class="card-body bg-danger">
        <div class="rotate">
         <i class="fa fa-retweet fa-5x"></i>
        </div>
@@ -509,12 +509,12 @@ body.theme-light code {
     </div>
     <div class="col-lg-3 col-md-6">
      <div class="card text-white card-info">
-      <div class="card-body bg-success">
+      <div class="card-body bg-danger">
        <div class="rotate">
         <i class="fa fa-plus-circle fa-5x"></i>
        </div>
        <h6 class="text-uppercase">Total Failed Tests</h6>
-       <h1 class="display-1">0</h1>
+       <h1 class="display-1">9</h1>
       </div>
      </div>
     </div>
@@ -566,8 +566,8 @@ You may create as many filters as you wish. You can specify permissions for the 
             <div class="card border-info">
                 <div class="card-body">
                 <h5 class="card-title text-uppercase text-white text-center bg-info">Timings and Data</h5>
-                <span><i class="fas fa-stopwatch"></i></span><strong> Total run duration:</strong> 30.9s<br>
-                <span><i class="fas fa-database"></i></span><strong> Total data received:</strong> 5.65KB<br>
+                <span><i class="fas fa-stopwatch"></i></span><strong> Total run duration:</strong> 30.6s<br>
+                <span><i class="fas fa-database"></i></span><strong> Total data received:</strong> 10.99KB<br>
                 <span><i class="fas fa-stopwatch"></i></span><strong> Average response time:</strong> 3.3s<br>
                 </div>
             </div>
@@ -600,10 +600,10 @@ You may create as many filters as you wish. You can specify permissions for the 
                         <td class="text-center">9</td>
                         <td class="text-center">0</td>
                     </tr>
-                    <tr class="">
+                    <tr class="table-danger">
                         <td>Assertions</td>
                         <td class="text-center">24</td>
-                        <td class="text-center">0</td>
+                        <td class="text-center">9</td>
                     </tr>
                     <tr class="">
                         <td>Skipped Tests</td>
@@ -624,9 +624,204 @@ You may create as many filters as you wish. You can specify permissions for the 
             <div class="tab-pane fade" id="pills-failed" role="tabcard" aria-labelledby="pills-failed-tab">
                 <button id="topOfFailuresScreen" class="btn btn-outline-success btn-sm backToTop" onclick="topFunction()">Go To Top</button>
 
-                <div class="alert alert-success text-uppercase text-center">
-                     <br><br><h1 class="text-center">There are no failed tests <span><i class="far fa-thumbs-up"></i></span></h1><br><br>
-                </div>
+                    <div class="btn-group float-right" role="group" aria-label="Button Group">
+                        <button id="openAllFailed" class="btn btn-outline-success btn-sm float-right" style="text-align: center; width: 185px;">Expand All Failed Tests</button>
+                    </div>
+                    <br>
+                    <br>
+
+                    <div class="alert alert-danger text-uppercase text-center">
+                        <h4>Showing 9 Failures</h4>
+                    </div>
+                    <div class="col-sm-12 mb-3">
+                    <div class="card-deck">
+                        <div class="card border-danger">
+                            <div class="card-header bg-danger">
+                                <a data-toggle="collapse" href="#" data-target="#fails-collapse-8af01b20-8c8e-4aa4-99eb-9ee5db4f5baa" aria-expanded="false" aria-controls="collapse" id="fails-8af01b20-8c8e-4aa4-99eb-9ee5db4f5baa" class="collapsed text-white z-block">
+                                    Iteration 1 - TypeError - PushPublishFilterResource - Get All Filters <i class="float-lg-right fa fa-chevron-down" style="padding-top:5px;"></i>
+                                </a>
+                            </div>
+                            <div id="fails-collapse-8af01b20-8c8e-4aa4-99eb-9ee5db4f5baa" class="collapse" aria-labelledby="fails-8af01b20-8c8e-4aa4-99eb-9ee5db4f5baa">
+                            <div class="card-body">
+                                <h5 ><strong>Failed Test:</strong> The &#x27;ContentOnly.yml&#x27; Filter must be the first one in the list</h5>
+                            <hr>
+                            <h5 class="card-title text-uppercase text-white text-center bg-danger">Assertion Error Message</h5>
+                            <div>
+                                <pre><code >Cannot read properties of undefined (reading &#x27;key&#x27;)</code></pre>
+                            </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="col-sm-12 mb-3">
+                    <div class="card-deck">
+                        <div class="card border-danger">
+                            <div class="card-header bg-danger">
+                                <a data-toggle="collapse" href="#" data-target="#fails-collapse-06c8d3ef-7e19-4d75-9bd4-0a2ae9536a69" aria-expanded="false" aria-controls="collapse" id="fails-06c8d3ef-7e19-4d75-9bd4-0a2ae9536a69" class="collapsed text-white z-block">
+                                    Iteration 1 - AssertionError - PushPublishFilterResource - Get a Specific Filter <i class="float-lg-right fa fa-chevron-down" style="padding-top:5px;"></i>
+                                </a>
+                            </div>
+                            <div id="fails-collapse-06c8d3ef-7e19-4d75-9bd4-0a2ae9536a69" class="collapse" aria-labelledby="fails-06c8d3ef-7e19-4d75-9bd4-0a2ae9536a69">
+                            <div class="card-body">
+                                <h5 ><strong>Failed Test:</strong> Status code must be 200</h5>
+                            <hr>
+                            <h5 class="card-title text-uppercase text-white text-center bg-danger">Assertion Error Message</h5>
+                            <div>
+                                <pre><code >expected response to have status code 200 but got 404</code></pre>
+                            </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="col-sm-12 mb-3">
+                    <div class="card-deck">
+                        <div class="card border-danger">
+                            <div class="card-header bg-danger">
+                                <a data-toggle="collapse" href="#" data-target="#fails-collapse-605b6244-4567-4327-a8fd-7c9904334711" aria-expanded="false" aria-controls="collapse" id="fails-605b6244-4567-4327-a8fd-7c9904334711" class="collapsed text-white z-block">
+                                    Iteration 1 - TypeError - PushPublishFilterResource - Get a Specific Filter <i class="float-lg-right fa fa-chevron-down" style="padding-top:5px;"></i>
+                                </a>
+                            </div>
+                            <div id="fails-collapse-605b6244-4567-4327-a8fd-7c9904334711" class="collapse" aria-labelledby="fails-605b6244-4567-4327-a8fd-7c9904334711">
+                            <div class="card-body">
+                                <h5 ><strong>Failed Test:</strong> The &#x27;ForcePush.yml&#x27; Filter mut be the only result</h5>
+                            <hr>
+                            <h5 class="card-title text-uppercase text-white text-center bg-danger">Assertion Error Message</h5>
+                            <div>
+                                <pre><code >Cannot read properties of undefined (reading &#x27;key&#x27;)</code></pre>
+                            </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="col-sm-12 mb-3">
+                    <div class="card-deck">
+                        <div class="card border-danger">
+                            <div class="card-header bg-danger">
+                                <a data-toggle="collapse" href="#" data-target="#fails-collapse-ff2048c7-817b-446e-98d7-800955f64ff5" aria-expanded="false" aria-controls="collapse" id="fails-ff2048c7-817b-446e-98d7-800955f64ff5" class="collapsed text-white z-block">
+                                    Iteration 1 - AssertionError - PushPublishFilterResource - Check Filter Order - Sort Value <i class="float-lg-right fa fa-chevron-down" style="padding-top:5px;"></i>
+                                </a>
+                            </div>
+                            <div id="fails-collapse-ff2048c7-817b-446e-98d7-800955f64ff5" class="collapse" aria-labelledby="fails-ff2048c7-817b-446e-98d7-800955f64ff5">
+                            <div class="card-body">
+                                <h5 ><strong>Failed Test:</strong> The &#x27;ContentOnly.yml&#x27; Filter must be #2 in the list.</h5>
+                            <hr>
+                            <h5 class="card-title text-uppercase text-white text-center bg-danger">Assertion Error Message</h5>
+                            <div>
+                                <pre><code >expected &#x27;TestPPFilter.yml&#x27; to deeply equal &#x27;ContentOnly.yml&#x27;</code></pre>
+                            </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="col-sm-12 mb-3">
+                    <div class="card-deck">
+                        <div class="card border-danger">
+                            <div class="card-header bg-danger">
+                                <a data-toggle="collapse" href="#" data-target="#fails-collapse-b413af0b-89fa-4922-b7d7-f471400c4be2" aria-expanded="false" aria-controls="collapse" id="fails-b413af0b-89fa-4922-b7d7-f471400c4be2" class="collapsed text-white z-block">
+                                    Iteration 1 - TypeError - PushPublishFilterResource - Check Filter Order - Sort Value <i class="float-lg-right fa fa-chevron-down" style="padding-top:5px;"></i>
+                                </a>
+                            </div>
+                            <div id="fails-collapse-b413af0b-89fa-4922-b7d7-f471400c4be2" class="collapse" aria-labelledby="fails-b413af0b-89fa-4922-b7d7-f471400c4be2">
+                            <div class="card-body">
+                                <h5 ><strong>Failed Test:</strong> The &#x27;WebContentOnly.yml&#x27; Filter must be #3 in the list.</h5>
+                            <hr>
+                            <h5 class="card-title text-uppercase text-white text-center bg-danger">Assertion Error Message</h5>
+                            <div>
+                                <pre><code >Cannot read properties of undefined (reading &#x27;key&#x27;)</code></pre>
+                            </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="col-sm-12 mb-3">
+                    <div class="card-deck">
+                        <div class="card border-danger">
+                            <div class="card-header bg-danger">
+                                <a data-toggle="collapse" href="#" data-target="#fails-collapse-b783ecd6-791f-49a7-8074-44b81c06d528" aria-expanded="false" aria-controls="collapse" id="fails-b783ecd6-791f-49a7-8074-44b81c06d528" class="collapsed text-white z-block">
+                                    Iteration 1 - TypeError - PushPublishFilterResource - Check Filter Order - Sort Value <i class="float-lg-right fa fa-chevron-down" style="padding-top:5px;"></i>
+                                </a>
+                            </div>
+                            <div id="fails-collapse-b783ecd6-791f-49a7-8074-44b81c06d528" class="collapse" aria-labelledby="fails-b783ecd6-791f-49a7-8074-44b81c06d528">
+                            <div class="card-body">
+                                <h5 ><strong>Failed Test:</strong> The &#x27;Intelligent.yml&#x27; Filter must be #4 in the list.</h5>
+                            <hr>
+                            <h5 class="card-title text-uppercase text-white text-center bg-danger">Assertion Error Message</h5>
+                            <div>
+                                <pre><code >Cannot read properties of undefined (reading &#x27;key&#x27;)</code></pre>
+                            </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="col-sm-12 mb-3">
+                    <div class="card-deck">
+                        <div class="card border-danger">
+                            <div class="card-header bg-danger">
+                                <a data-toggle="collapse" href="#" data-target="#fails-collapse-6a3415eb-f66b-477d-ac0e-6986bb8cafb1" aria-expanded="false" aria-controls="collapse" id="fails-6a3415eb-f66b-477d-ac0e-6986bb8cafb1" class="collapsed text-white z-block">
+                                    Iteration 1 - TypeError - PushPublishFilterResource - Check Filter Order - Sort Value <i class="float-lg-right fa fa-chevron-down" style="padding-top:5px;"></i>
+                                </a>
+                            </div>
+                            <div id="fails-collapse-6a3415eb-f66b-477d-ac0e-6986bb8cafb1" class="collapse" aria-labelledby="fails-6a3415eb-f66b-477d-ac0e-6986bb8cafb1">
+                            <div class="card-body">
+                                <h5 ><strong>Failed Test:</strong> The &#x27;ForcePush.yml&#x27; Filter must be #5 in the list.</h5>
+                            <hr>
+                            <h5 class="card-title text-uppercase text-white text-center bg-danger">Assertion Error Message</h5>
+                            <div>
+                                <pre><code >Cannot read properties of undefined (reading &#x27;key&#x27;)</code></pre>
+                            </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="col-sm-12 mb-3">
+                    <div class="card-deck">
+                        <div class="card border-danger">
+                            <div class="card-header bg-danger">
+                                <a data-toggle="collapse" href="#" data-target="#fails-collapse-8eee907f-d539-4d39-94cc-e5c2dadb7a14" aria-expanded="false" aria-controls="collapse" id="fails-8eee907f-d539-4d39-94cc-e5c2dadb7a14" class="collapsed text-white z-block">
+                                    Iteration 1 - TypeError - PushPublishFilterResource - Check Filter Order - Sort Value <i class="float-lg-right fa fa-chevron-down" style="padding-top:5px;"></i>
+                                </a>
+                            </div>
+                            <div id="fails-collapse-8eee907f-d539-4d39-94cc-e5c2dadb7a14" class="collapse" aria-labelledby="fails-8eee907f-d539-4d39-94cc-e5c2dadb7a14">
+                            <div class="card-body">
+                                <h5 ><strong>Failed Test:</strong> The &#x27;ShallowPush.yml&#x27; Filter must be #6 in the list.</h5>
+                            <hr>
+                            <h5 class="card-title text-uppercase text-white text-center bg-danger">Assertion Error Message</h5>
+                            <div>
+                                <pre><code >Cannot read properties of undefined (reading &#x27;key&#x27;)</code></pre>
+                            </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="col-sm-12 mb-3">
+                    <div class="card-deck">
+                        <div class="card border-danger">
+                            <div class="card-header bg-danger">
+                                <a data-toggle="collapse" href="#" data-target="#fails-collapse-c40e1134-4572-45b7-9004-94cb35ed187e" aria-expanded="false" aria-controls="collapse" id="fails-c40e1134-4572-45b7-9004-94cb35ed187e" class="collapsed text-white z-block">
+                                    Iteration 1 - TypeError - PushPublishFilterResource - Check Filter Order - Sort Value <i class="float-lg-right fa fa-chevron-down" style="padding-top:5px;"></i>
+                                </a>
+                            </div>
+                            <div id="fails-collapse-c40e1134-4572-45b7-9004-94cb35ed187e" class="collapse" aria-labelledby="fails-c40e1134-4572-45b7-9004-94cb35ed187e">
+                            <div class="card-body">
+                                <h5 ><strong>Failed Test:</strong> The &#x27;TestPPFilter.yml&#x27; Filter must be #7 in the list, as it was updated before to have sort &#x3D; 20</h5>
+                            <hr>
+                            <h5 class="card-title text-uppercase text-white text-center bg-danger">Assertion Error Message</h5>
+                            <div>
+                                <pre><code >Cannot read properties of undefined (reading &#x27;key&#x27;)</code></pre>
+                            </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
             </div>
 
             <div class="tab-pane fade" id="pills-skipped" role="tabcard" aria-labelledby="pills-skipped-tab">
@@ -641,6 +836,7 @@ You may create as many filters as you wish. You can specify permissions for the 
             <button id="topOfRequestsScreen" class="btn btn-outline-success btn-sm backToTop" onclick="topFunction()">Go To Top</button>
 
             <div class="btn-group float-right" role="group" aria-label="Button Group">
+                <button id="showOnlyFailures" class="btn btn-outline-success btn-sm float-right" style="text-align: center; width:160px;">Show Failed Iterations</button>
                 <button id="openAll" class="btn btn-outline-success btn-sm float-right" style="text-align: center; width: 140px;">Expand Folders</button>
                 <button id="openAllRequests" class="btn btn-outline-success btn-sm float-right" style="text-align: center; width: 140px;">Expand Requests</button>
             </div>
@@ -655,16 +851,16 @@ You may create as many filters as you wish. You can specify permissions for the 
     </div>
     <h6 class="text-uppercase text-muted" id="iterationSelected" style="padding-top: 10px;"></h6>
 	<div class="tab-content" id="execution-data">
-            <div id="folder-f0cb1bd2-097e-4ce3-a60b-4b66198bdc92" class="card-deck iteration-0">
+            <div id="folder-c1bda159-d12e-4314-bf77-a5b47d5c9071" class="card-deck iteration-0">
             <div class="row iteration-0">
                 <div class="col-sm-12 mb-3 iteration-0">
                 <div class="card iteration-0">
-                    <div class="card-header  bg-success iteration-0">
-                        <a data-toggle="collapse" href="#" data-target="#collapse-f0cb1bd2-097e-4ce3-a60b-4b66198bdc92" aria-expanded="false" aria-controls="collapse" id="requests-f0cb1bd2-097e-4ce3-a60b-4b66198bdc92" class="collapsed text-white z-block">
+                    <div class="card-header  bg-danger iteration-0">
+                        <a data-toggle="collapse" href="#" data-target="#collapse-c1bda159-d12e-4314-bf77-a5b47d5c9071" aria-expanded="false" aria-controls="collapse" id="requests-c1bda159-d12e-4314-bf77-a5b47d5c9071" class="collapsed text-white z-block">
                     Iteration: 1 - Get All Filters <i class="float-lg-right fa fa-chevron-down" style="padding-top: 5px;"></i>
                 </a>
                     </div>
-                    <div id="collapse-f0cb1bd2-097e-4ce3-a60b-4b66198bdc92" class="collapse" aria-labelledby="requests-f0cb1bd2-097e-4ce3-a60b-4b66198bdc92">
+                    <div id="collapse-c1bda159-d12e-4314-bf77-a5b47d5c9071" class="collapse" aria-labelledby="requests-c1bda159-d12e-4314-bf77-a5b47d5c9071">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-sm-12 mb-3">
@@ -681,13 +877,13 @@ You may create as many filters as you wish. You can specify permissions for the 
                                     <h5 class="card-title text-uppercase text-white text-center bg-info">Response Information</h5>
                                     <span><i class="fas fa-info-circle"></i></span><strong> Response Code:</strong> <span class="float-right badge-outline badge badge-success"> 200 - OK</span><br>
                                     <span><i class="fas fa-stopwatch"></i></span><strong> Mean time per request:</strong> <span class="float-right badge-outline badge badge-success"> 6.1s</span><br>
-                                    <span><i class="fas fa-database"></i></span><strong> Mean size per request:</strong> <span class="float-right badge-outline badge badge-success"> 1.78KB</span><br>
+                                    <span><i class="fas fa-database"></i></span><strong> Mean size per request:</strong> <span class="float-right badge-outline badge badge-success"> 77B</span><br>
                                     <hr>
                                     <h5 class="card-title text-uppercase text-white text-center bg-info">Test Pass Percentage</h5>
                                     <div>
                                         <div class="progress" style="height: 40px;">
-                                            <div class="progress-bar  bg-success" style="width: 100%" role="progressbar">
-                                            <h5 style="padding-top:5px;"><strong>100 %</strong></h5>
+                                            <div class="progress-bar  bg-danger" style="width: 100%" role="progressbar">
+                                            <h5 style="padding-top:5px;"><strong>50 %</strong></h5>
                                             </div>
                                         </div>
                                     </div>
@@ -724,7 +920,7 @@ You may create as many filters as you wish. You can specify permissions for the 
                                                     </tr>
                                                     <tr>
                                                         <td class="text-nowrap">Postman-Token</td>
-                                                        <td class="text-wrap">72bf294c-c482-49c3-b867-34441ca0ced2</td>
+                                                        <td class="text-wrap">dc627fcb-1b3e-45e6-be79-673dfa307ee8</td>
                                                     </tr>
                                                     <tr>
                                                         <td class="text-nowrap">Host</td>
@@ -770,15 +966,15 @@ You may create as many filters as you wish. You can specify permissions for the 
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">x-dot-server</td>
-                                                    <td class="text-wrap">d22871dfa46b|2404456ec3</td>
+                                                    <td class="text-wrap">fcf3b10536e3|3da47911b9</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">Set-Cookie</td>
-                                                    <td class="text-wrap">JSESSIONID&#x3D;8E3AF70F213B07B245D06BBA90543EC3; Path&#x3D;/; Secure; HttpOnly; SameSite&#x3D;Lax</td>
+                                                    <td class="text-wrap">JSESSIONID&#x3D;5393627DE15FEE3E9FF937445B574DCB; Path&#x3D;/; Secure; HttpOnly; SameSite&#x3D;Lax</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">Set-Cookie</td>
-                                                    <td class="text-wrap">access_token&#x3D;eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxM2Y3NGUyNC0wMDAzLTQ1ZjctOTM4OC1hYzRlY2E0MDEyNmYiLCJ4bW9kIjoxNjcwNjE2MTYwNzQzLCJzdWIiOiJkb3RjbXMub3JnLjEiLCJpYXQiOjE2NzA2MTYxNjMsImlzcyI6ImY5NWZmYTAyYTUiLCJleHAiOjE2NzA3MDI1NjN9.9YYsRUdQW0mwdJ1BtNE-OfVwipecXSpOazeFJdrWLeI; Path&#x3D;/; HttpOnly; SameSite&#x3D;Lax</td>
+                                                    <td class="text-wrap">access_token&#x3D;eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJhYTcyNWZjZS1iOTczLTQyODctYWQ2Ny1hZGI5YzQ0OWUzZmMiLCJ4bW9kIjoxNjcxMTI0MDU5ODk0LCJzdWIiOiJkb3RjbXMub3JnLjEiLCJpYXQiOjE2NzExMjQwNjIsImlzcyI6Ijg0YzNlNDVmNzUiLCJleHAiOjE2NzEyMTA0NjJ9.wBUDiW87zzW1BaExOyDvvRpSTMCNFe8EKjws2ruM4eU; Path&#x3D;/; HttpOnly; SameSite&#x3D;Lax</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">Access-Control-Allow-Origin</td>
@@ -813,24 +1009,16 @@ You may create as many filters as you wish. You can specify permissions for the 
                                                     <td class="text-wrap">Mon, 26 Jul 1997 05:00:00 GMT</td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="text-nowrap">vary</td>
-                                                    <td class="text-wrap">accept-encoding</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-nowrap">Content-Encoding</td>
-                                                    <td class="text-wrap">gzip</td>
-                                                </tr>
-                                                <tr>
                                                     <td class="text-nowrap">Content-Type</td>
                                                     <td class="text-wrap">application/json</td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="text-nowrap">Transfer-Encoding</td>
-                                                    <td class="text-wrap">chunked</td>
+                                                    <td class="text-nowrap">Content-Length</td>
+                                                    <td class="text-wrap">77</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">Date</td>
-                                                    <td class="text-wrap">Fri, 09 Dec 2022 20:02:43 GMT</td>
+                                                    <td class="text-wrap">Thu, 15 Dec 2022 17:07:42 GMT</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">Keep-Alive</td>
@@ -855,10 +1043,10 @@ You may create as many filters as you wish. You can specify permissions for the 
                                 <div class="card-body">
                                     <h5 class="card-title text-uppercase text-white text-center bg-info">Response Body</h5>
                                         <div class="dyn-height">
-                                                <pre><code id="copyText-be640de3-f7ca-48bc-849e-54b181ee5596" class="prettyPrint">{&quot;entity&quot;:[{&quot;filters&quot;:{&quot;dependencies&quot;:true,&quot;excludeClasses&quot;:[&quot;ContentType&quot;,&quot;Template&quot;,&quot;Containers&quot;,&quot;Folder&quot;,&quot;Host&quot;,&quot;Links&quot;,&quot;Workflow&quot;,&quot;Language&quot;,&quot;Rule&quot;,&quot;User&quot;,&quot;OSGI&quot;],&quot;excludeDependencyClasses&quot;:[&quot;ContentType&quot;,&quot;Template&quot;,&quot;Containers&quot;,&quot;Folder&quot;,&quot;Host&quot;,&quot;Links&quot;,&quot;Workflow&quot;,&quot;Language&quot;,&quot;Rule&quot;],&quot;excludeDependencyQuery&quot;:&quot;&quot;,&quot;excludeQuery&quot;:&quot;&quot;,&quot;forcePush&quot;:false,&quot;relationships&quot;:true},&quot;key&quot;:&quot;ContentOnly.yml&quot;,&quot;roles&quot;:&quot;DOTCMS_BACK_END_USER&quot;,&quot;sort&quot;:&quot;1&quot;,&quot;title&quot;:&quot;Content and Relationships&quot;,&quot;defaultFilter&quot;:false},{&quot;filters&quot;:{&quot;dependencies&quot;:true,&quot;excludeClasses&quot;:[&quot;Host&quot;,&quot;Workflow&quot;,&quot;ContentType&quot;,&quot;User&quot;,&quot;OSGI&quot;,&quot;Language&quot;],&quot;excludeDependencyClasses&quot;:[&quot;Host&quot;,&quot;Workflow&quot;,&quot;ContentType&quot;,&quot;Language&quot;],&quot;excludeDependencyQuery&quot;:&quot;&quot;,&quot;excludeQuery&quot;:&quot;&quot;,&quot;forcePush&quot;:false,&quot;relationships&quot;:true},&quot;key&quot;:&quot;WebContentOnly.yml&quot;,&quot;roles&quot;:&quot;DOTCMS_BACK_END_USER&quot;,&quot;sort&quot;:&quot;2&quot;,&quot;title&quot;:&quot;Content, Assets and Pages&quot;,&quot;defaultFilter&quot;:false},{&quot;filters&quot;:{&quot;dependencies&quot;:true,&quot;excludeClasses&quot;:[],&quot;excludeDependencyClasses&quot;:[],&quot;excludeDependencyQuery&quot;:&quot;&quot;,&quot;excludeQuery&quot;:&quot;&quot;,&quot;forcePush&quot;:false,&quot;relationships&quot;:true},&quot;key&quot;:&quot;Intelligent.yml&quot;,&quot;roles&quot;:&quot;DOTCMS_BACK_END_USER&quot;,&quot;sort&quot;:&quot;3&quot;,&quot;title&quot;:&quot;Everything and Dependencies&quot;,&quot;defaultFilter&quot;:true},{&quot;filters&quot;:{&quot;dependencies&quot;:true,&quot;excludeClasses&quot;:[],&quot;excludeDependencyClasses&quot;:[],&quot;excludeDependencyQuery&quot;:&quot;&quot;,&quot;excludeQuery&quot;:&quot;&quot;,&quot;forcePush&quot;:true,&quot;relationships&quot;:true},&quot;key&quot;:&quot;ForcePush.yml&quot;,&quot;roles&quot;:&quot;DOTCMS_BACK_END_USER&quot;,&quot;sort&quot;:&quot;4&quot;,&quot;title&quot;:&quot;Force Push Everything&quot;,&quot;defaultFilter&quot;:false},{&quot;filters&quot;:{&quot;dependencies&quot;:false,&quot;excludeClasses&quot;:[],&quot;excludeDependencyClasses&quot;:[],&quot;excludeDependencyQuery&quot;:&quot;&quot;,&quot;excludeQuery&quot;:&quot;&quot;,&quot;forcePush&quot;:false,&quot;relationships&quot;:false},&quot;key&quot;:&quot;ShallowPush.yml&quot;,&quot;roles&quot;:&quot;DOTCMS_BACK_END_USER&quot;,&quot;sort&quot;:&quot;5&quot;,&quot;title&quot;:&quot;Only Selected Items&quot;,&quot;defaultFilter&quot;:false}],&quot;errors&quot;:[],&quot;i18nMessagesMap&quot;:{},&quot;messages&quot;:[],&quot;permissions&quot;:[]}</code></pre>
+                                                <pre><code id="copyText-43817a1c-790f-4c4d-be26-23b8add1b36b" class="prettyPrint">{&quot;entity&quot;:[],&quot;errors&quot;:[],&quot;i18nMessagesMap&quot;:{},&quot;messages&quot;:[],&quot;permissions&quot;:[]}</code></pre>
                                         </div>
                                         <div class="card-footer">
-                                            <button class="btn btn-outline-secondary btn-sm copyButton" type="button" data-clipboard-action="copy" data-clipboard-target="#copyText-be640de3-f7ca-48bc-849e-54b181ee5596">Copy to Clipboard</button>
+                                            <button class="btn btn-outline-secondary btn-sm copyButton" type="button" data-clipboard-action="copy" data-clipboard-target="#copyText-43817a1c-790f-4c4d-be26-23b8add1b36b">Copy to Clipboard</button>
                                         </div>
                                 </div>
                             </div>
@@ -881,22 +1069,22 @@ You may create as many filters as you wish. You can specify permissions for the 
                                                 </tr>
                                                 <tr >
                                                     <td >The &#x27;ContentOnly.yml&#x27; Filter must be the first one in the list</td>
-                                                    <td class="text-center bg-success">1</td>
                                                     <td class="text-center ">0</td>
+                                                    <td class="text-center bg-danger">1</td>
                                                     <td class="text-center ">0</td>
                                                 </tr>
                                             </tbody>
                                             <tfoot>
                                                 <tr class="bg-light">
                                                     <td><strong>Total</strong></td>
-                                                    <td class="text-center">2</td>
-                                                    <td class="text-center">0</td>
+                                                    <td class="text-center">1</td>
+                                                    <td class="text-center">1</td>
                                                     <td class="text-center">0</td>
                                                 </tr>
                                             </tfoot>
                                         </table>
                                     </div>
-                                    <div class="row d-none">
+                                    <div class="row ">
                                     <div class="col-sm-12 mb-3">
                                         <div class="card-deck">
                                         <div class="card border-danger" style="width: 50rem;">
@@ -906,6 +1094,10 @@ You may create as many filters as you wish. You can specify permissions for the 
                                                     <table class="table table-hover">
                                                     <thead><tr class="text-nowrap"><th>Test Name</th><th>Assertion Error</th></tr></thead>
                                                         <tbody>
+                                                            <tr>
+                                                                <td class="w-45 text-nowrap ">The &#x27;ContentOnly.yml&#x27; Filter must be the first one in the list</td>
+                                                                <td class="w-55"><pre><code >Cannot read properties of undefined (reading &#x27;key&#x27;)</code></pre></td>
+                                                            </tr>
                                                         </tbody>
                                                     </table>
                                                 </div>
@@ -923,16 +1115,16 @@ You may create as many filters as you wish. You can specify permissions for the 
                 </div>
             </div>
             </div>
-            <div id="folder-33707966-c7a3-48b1-84b5-e584294dc508" class="card-deck iteration-0">
+            <div id="folder-21b6020d-0848-424d-823f-e6a71b89328a" class="card-deck iteration-0">
             <div class="row iteration-0">
                 <div class="col-sm-12 mb-3 iteration-0">
                 <div class="card iteration-0">
-                    <div class="card-header  bg-success iteration-0">
-                        <a data-toggle="collapse" href="#" data-target="#collapse-33707966-c7a3-48b1-84b5-e584294dc508" aria-expanded="false" aria-controls="collapse" id="requests-33707966-c7a3-48b1-84b5-e584294dc508" class="collapsed text-white z-block">
+                    <div class="card-header  bg-danger iteration-0">
+                        <a data-toggle="collapse" href="#" data-target="#collapse-21b6020d-0848-424d-823f-e6a71b89328a" aria-expanded="false" aria-controls="collapse" id="requests-21b6020d-0848-424d-823f-e6a71b89328a" class="collapsed text-white z-block">
                     Iteration: 1 - Get a Specific Filter <i class="float-lg-right fa fa-chevron-down" style="padding-top: 5px;"></i>
                 </a>
                     </div>
-                    <div id="collapse-33707966-c7a3-48b1-84b5-e584294dc508" class="collapse" aria-labelledby="requests-33707966-c7a3-48b1-84b5-e584294dc508">
+                    <div id="collapse-21b6020d-0848-424d-823f-e6a71b89328a" class="collapse" aria-labelledby="requests-21b6020d-0848-424d-823f-e6a71b89328a">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-sm-12 mb-3">
@@ -947,15 +1139,15 @@ You may create as many filters as you wish. You can specify permissions for the 
                                 <div class="card border-info" style="width: 50rem;">
                                     <div class="card-body">
                                     <h5 class="card-title text-uppercase text-white text-center bg-info">Response Information</h5>
-                                    <span><i class="fas fa-info-circle"></i></span><strong> Response Code:</strong> <span class="float-right badge-outline badge badge-success"> 200 - OK</span><br>
+                                    <span><i class="fas fa-info-circle"></i></span><strong> Response Code:</strong> <span class="float-right badge-outline badge badge-success"> 404 - Not Found</span><br>
                                     <span><i class="fas fa-stopwatch"></i></span><strong> Mean time per request:</strong> <span class="float-right badge-outline badge badge-success"> 3s</span><br>
-                                    <span><i class="fas fa-database"></i></span><strong> Mean size per request:</strong> <span class="float-right badge-outline badge badge-success"> 360B</span><br>
+                                    <span><i class="fas fa-database"></i></span><strong> Mean size per request:</strong> <span class="float-right badge-outline badge badge-success"> 9.63KB</span><br>
                                     <hr>
                                     <h5 class="card-title text-uppercase text-white text-center bg-info">Test Pass Percentage</h5>
                                     <div>
                                         <div class="progress" style="height: 40px;">
-                                            <div class="progress-bar  bg-success" style="width: 100%" role="progressbar">
-                                            <h5 style="padding-top:5px;"><strong>100 %</strong></h5>
+                                            <div class="progress-bar  bg-danger" style="width: 100%" role="progressbar">
+                                            <h5 style="padding-top:5px;"><strong>0 %</strong></h5>
                                             </div>
                                         </div>
                                     </div>
@@ -992,7 +1184,7 @@ You may create as many filters as you wish. You can specify permissions for the 
                                                     </tr>
                                                     <tr>
                                                         <td class="text-nowrap">Postman-Token</td>
-                                                        <td class="text-wrap">aefd376d-b7bc-4a89-8268-6068d8cbe169</td>
+                                                        <td class="text-wrap">f529816d-7b51-4e02-82ec-3d42062abd75</td>
                                                     </tr>
                                                     <tr>
                                                         <td class="text-nowrap">Host</td>
@@ -1008,7 +1200,7 @@ You may create as many filters as you wish. You can specify permissions for the 
                                                     </tr>
                                                     <tr>
                                                         <td class="text-nowrap">Cookie</td>
-                                                        <td class="text-wrap">access_token&#x3D;eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxM2Y3NGUyNC0wMDAzLTQ1ZjctOTM4OC1hYzRlY2E0MDEyNmYiLCJ4bW9kIjoxNjcwNjE2MTYwNzQzLCJzdWIiOiJkb3RjbXMub3JnLjEiLCJpYXQiOjE2NzA2MTYxNjMsImlzcyI6ImY5NWZmYTAyYTUiLCJleHAiOjE2NzA3MDI1NjN9.9YYsRUdQW0mwdJ1BtNE-OfVwipecXSpOazeFJdrWLeI</td>
+                                                        <td class="text-wrap">access_token&#x3D;eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJhYTcyNWZjZS1iOTczLTQyODctYWQ2Ny1hZGI5YzQ0OWUzZmMiLCJ4bW9kIjoxNjcxMTI0MDU5ODk0LCJzdWIiOiJkb3RjbXMub3JnLjEiLCJpYXQiOjE2NzExMjQwNjIsImlzcyI6Ijg0YzNlNDVmNzUiLCJleHAiOjE2NzEyMTA0NjJ9.wBUDiW87zzW1BaExOyDvvRpSTMCNFe8EKjws2ruM4eU</td>
                                                     </tr>
                                                 </tbody>
                                             </table>
@@ -1042,11 +1234,15 @@ You may create as many filters as you wish. You can specify permissions for the 
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">x-dot-server</td>
-                                                    <td class="text-wrap">d22871dfa46b|2404456ec3</td>
+                                                    <td class="text-wrap">fcf3b10536e3|3da47911b9</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">Set-Cookie</td>
-                                                    <td class="text-wrap">JSESSIONID&#x3D;D1E6265872D1A013F5BEB769D03E7F33; Path&#x3D;/; Secure; HttpOnly; SameSite&#x3D;Lax</td>
+                                                    <td class="text-wrap">JSESSIONID&#x3D;E18625DAF1644E00C63174B09D012FEB; Path&#x3D;/; Secure; HttpOnly; SameSite&#x3D;Lax</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-nowrap">error-key</td>
+                                                    <td class="text-wrap">dotcms.api.error.db.not.found</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">Access-Control-Allow-Origin</td>
@@ -1069,18 +1265,6 @@ You may create as many filters as you wish. You can specify permissions for the 
                                                     <td class="text-wrap">*</td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="text-nowrap">Cache-Control</td>
-                                                    <td class="text-wrap">no-cache, no-store, must-revalidate</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-nowrap">Pragma</td>
-                                                    <td class="text-wrap">no-cache</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-nowrap">Expires</td>
-                                                    <td class="text-wrap">Mon, 26 Jul 1997 05:00:00 GMT</td>
-                                                </tr>
-                                                <tr>
                                                     <td class="text-nowrap">vary</td>
                                                     <td class="text-wrap">accept-encoding</td>
                                                 </tr>
@@ -1098,7 +1282,7 @@ You may create as many filters as you wish. You can specify permissions for the 
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">Date</td>
-                                                    <td class="text-wrap">Fri, 09 Dec 2022 20:02:46 GMT</td>
+                                                    <td class="text-wrap">Thu, 15 Dec 2022 17:07:45 GMT</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">Keep-Alive</td>
@@ -1123,10 +1307,10 @@ You may create as many filters as you wish. You can specify permissions for the 
                                 <div class="card-body">
                                     <h5 class="card-title text-uppercase text-white text-center bg-info">Response Body</h5>
                                         <div class="dyn-height">
-                                                <pre><code id="copyText-04360293-4117-4ed3-829b-4e15fabbb98a" class="prettyPrint">{&quot;entity&quot;:{&quot;filters&quot;:{&quot;dependencies&quot;:true,&quot;excludeClasses&quot;:[],&quot;excludeDependencyClasses&quot;:[],&quot;excludeDependencyQuery&quot;:&quot;&quot;,&quot;excludeQuery&quot;:&quot;&quot;,&quot;forcePush&quot;:true,&quot;relationships&quot;:true},&quot;key&quot;:&quot;ForcePush.yml&quot;,&quot;roles&quot;:&quot;DOTCMS_BACK_END_USER&quot;,&quot;sort&quot;:&quot;4&quot;,&quot;title&quot;:&quot;Force Push Everything&quot;,&quot;defaultFilter&quot;:false},&quot;errors&quot;:[],&quot;i18nMessagesMap&quot;:{},&quot;messages&quot;:[],&quot;permissions&quot;:[]}</code></pre>
+                                                <pre><code id="copyText-08c41118-d9ef-4b23-a5b0-53408bd1a72e" class="prettyPrint">{&quot;message&quot;:&quot;Filter &#x27;ForcePush.yml&#x27; does not exist&quot;,&quot;stacktrace&quot;:{&quot;buffer&quot;:&quot;com.dotmarketing.exception.DoesNotExistException: Filter &#x27;ForcePush.yml&#x27; does not exist\n\tat com.dotcms.rest.api.v1.pushpublish.PushPublishFilterResource.getFilter(PushPublishFilterResource.java:150)\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\n\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:566)\n\tat org.glassfish.jersey.server.model.internal.ResourceMethodInvocationHandlerFactory$1.invoke(ResourceMethodInvocationHandlerFactory.java:81)\n\tat org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher$1.run(AbstractJavaResourceMethodDispatcher.java:144)\n\tat org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.invoke(AbstractJavaResourceMethodDispatcher.java:161)\n\tat org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$ResponseOutInvoker.doDispatch(JavaResourceMethodDispatcherProvider.java:160)\n\tat org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.dispatch(AbstractJavaResourceMethodDispatcher.java:99)\n\tat org.glassfish.jersey.server.model.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:389)\n\tat org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:347)\n\tat org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:102)\n\tat org.glassfish.jersey.server.ServerRuntime$2.run(ServerRuntime.java:326)\n\tat org.glassfish.jersey.internal.Errors$1.call(Errors.java:271)\n\tat org.glassfish.jersey.internal.Errors$1.call(Errors.java:267)\n\tat org.glassfish.jersey.internal.Errors.process(Errors.java:315)\n\tat org.glassfish.jersey.internal.Errors.process(Errors.java:297)\n\tat org.glassfish.jersey.internal.Errors.process(Errors.java:267)\n\tat org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:317)\n\tat org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:305)\n\tat org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:1154)\n\tat org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:471)\n\tat org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:425)\n\tat org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:383)\n\tat org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:336)\n\tat org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:223)\n\tat com.dotcms.rest.servlet.ReloadableServletContainer.service(ReloadableServletContainer.java:116)\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)\n\tat org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)\n\tat com.dotmarketing.filters.CMSFilter.doFilterInternal(CMSFilter.java:168)\n\tat com.dotmarketing.filters.CMSFilter.doFilter(CMSFilter.java:49)\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)\n\tat com.dotcms.filters.interceptor.AbstractWebInterceptorSupportFilter.doFilter(AbstractWebInterceptorSupportFilter.java:90)\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)\n\tat com.dotcms.filters.interceptor.AbstractWebInterceptorSupportFilter.doFilter(AbstractWebInterceptorSupportFilter.java:90)\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)\n\tat com.dotcms.visitor.filter.servlet.VisitorFilter.doFilter(VisitorFilter.java:81)\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)\n\tat com.dotcms.vanityurl.filters.VanityURLFilter.doFilter(VanityURLFilter.java:114)\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)\n\tat org.tuckey.web.filters.urlrewrite.RuleChain.handleRewrite(RuleChain.java:176)\n\tat org.tuckey.web.filters.urlrewrite.RuleChain.doRules(RuleChain.java:145)\n\tat org.tuckey.web.filters.urlrewrite.UrlRewriter.processRequest(UrlRewriter.java:92)\n\tat org.tuckey.web.filters.urlrewrite.UrlRewriteFilter.doFilter(UrlRewriteFilter.java:389)\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)\n\tat com.dotmarketing.filters.TimeMachineFilter.doFilter(TimeMachineFilter.java:67)\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)\n\tat com.dotmarketing.filters.ThreadNameFilter.doFilter(ThreadNameFilter.java:88)\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)\n\tat com.dotmarketing.filters.CookiesFilter.doFilter(CookiesFilter.java:53)\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)\n\tat com.dotmarketing.filters.CharsetEncodingFilter.doFilter(CharsetEncodingFilter.java:99)\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)\n\tat com.dotcms.filters.interceptor.AbstractWebInterceptorSupportFilter.doFilter(AbstractWebInterceptorSupportFilter.java:90)\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)\n\tat org.apache.catalina.filters.HttpHeaderSecurityFilter.doFilter(HttpHeaderSecurityFilter.java:126)\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)\n\tat com.dotcms.filters.NormalizationFilter.doFilter(NormalizationFilter.java:88)\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)\n\tat org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)\n\tat org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)\n\tat org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)\n\tat org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)\n\tat org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:687)\n\tat org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)\n\tat org.apache.catalina.valves.RemoteIpValve.invoke(RemoteIpValve.java:769)\n\tat org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)\n\tat org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)\n\tat org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)\n\tat org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)\n\tat org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:889)\n\tat org.apache.tomcat.util.net.Nio2Endpoint$SocketProcessor.doRun(Nio2Endpoint.java:1701)\n\tat org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)\n\tat org.apache.tomcat.util.net.AbstractEndpoint.processSocket(AbstractEndpoint.java:1190)\n\tat org.apache.tomcat.util.net.Nio2Endpoint$Nio2SocketWrapper$2.completed(Nio2Endpoint.java:633)\n\tat org.apache.tomcat.util.net.Nio2Endpoint$Nio2SocketWrapper$2.completed(Nio2Endpoint.java:611)\n\tat java.base/sun.nio.ch.Invoker.invokeUnchecked(Invoker.java:127)\n\tat java.base/sun.nio.ch.UnixAsynchronousSocketChannelImpl.finishRead(UnixAsynchronousSocketChannelImpl.java:439)\n\tat java.base/sun.nio.ch.UnixAsynchronousSocketChannelImpl.finish(UnixAsynchronousSocketChannelImpl.java:191)\n\tat java.base/sun.nio.ch.UnixAsynchronousSocketChannelImpl.onEvent(UnixAsynchronousSocketChannelImpl.java:213)\n\tat java.base/sun.nio.ch.EPollPort$EventHandlerTask.run(EPollPort.java:306)\n\tat java.base/sun.nio.ch.AsynchronousChannelGroupImpl$1.run(AsynchronousChannelGroupImpl.java:112)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)\n\tat java.base/java.lang.Thread.run(Thread.java:829)\n&quot;}}</code></pre>
                                         </div>
                                         <div class="card-footer">
-                                            <button class="btn btn-outline-secondary btn-sm copyButton" type="button" data-clipboard-action="copy" data-clipboard-target="#copyText-04360293-4117-4ed3-829b-4e15fabbb98a">Copy to Clipboard</button>
+                                            <button class="btn btn-outline-secondary btn-sm copyButton" type="button" data-clipboard-action="copy" data-clipboard-target="#copyText-08c41118-d9ef-4b23-a5b0-53408bd1a72e">Copy to Clipboard</button>
                                         </div>
                                 </div>
                             </div>
@@ -1143,37 +1327,45 @@ You may create as many filters as you wish. You can specify permissions for the 
                                             <tbody>
                                                 <tr >
                                                     <td >Status code must be 200</td>
-                                                    <td class="text-center bg-success">1</td>
                                                     <td class="text-center ">0</td>
+                                                    <td class="text-center bg-danger">1</td>
                                                     <td class="text-center ">0</td>
                                                 </tr>
                                                 <tr >
                                                     <td >The &#x27;ForcePush.yml&#x27; Filter mut be the only result</td>
-                                                    <td class="text-center bg-success">1</td>
                                                     <td class="text-center ">0</td>
+                                                    <td class="text-center bg-danger">1</td>
                                                     <td class="text-center ">0</td>
                                                 </tr>
                                             </tbody>
                                             <tfoot>
                                                 <tr class="bg-light">
                                                     <td><strong>Total</strong></td>
-                                                    <td class="text-center">2</td>
                                                     <td class="text-center">0</td>
+                                                    <td class="text-center">2</td>
                                                     <td class="text-center">0</td>
                                                 </tr>
                                             </tfoot>
                                         </table>
                                     </div>
-                                    <div class="row d-none">
+                                    <div class="row ">
                                     <div class="col-sm-12 mb-3">
                                         <div class="card-deck">
                                         <div class="card border-danger" style="width: 50rem;">
                                             <div class="card-body">
-                                                <h5 class="card-title text-uppercase text-white text-center bg-danger">Test Failure</h5>
+                                                <h5 class="card-title text-uppercase text-white text-center bg-danger">Test Failures</h5>
                                                 <div class="table-responsive">
                                                     <table class="table table-hover">
                                                     <thead><tr class="text-nowrap"><th>Test Name</th><th>Assertion Error</th></tr></thead>
                                                         <tbody>
+                                                            <tr>
+                                                                <td class="w-45 text-nowrap ">Status code must be 200</td>
+                                                                <td class="w-55"><pre><code >expected response to have status code 200 but got 404</code></pre></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="w-45 text-nowrap ">The &#x27;ForcePush.yml&#x27; Filter mut be the only result</td>
+                                                                <td class="w-55"><pre><code >Cannot read properties of undefined (reading &#x27;key&#x27;)</code></pre></td>
+                                                            </tr>
                                                         </tbody>
                                                     </table>
                                                 </div>
@@ -1191,16 +1383,16 @@ You may create as many filters as you wish. You can specify permissions for the 
                 </div>
             </div>
             </div>
-            <div id="folder-d4125c05-2248-4cb3-a870-db36a7dd78ca" class="card-deck iteration-0">
+            <div id="folder-8b6777e9-04bd-4905-b87f-f61d7432b5ff" class="card-deck iteration-0">
             <div class="row iteration-0">
                 <div class="col-sm-12 mb-3 iteration-0">
                 <div class="card iteration-0">
                     <div class="card-header  bg-success iteration-0">
-                        <a data-toggle="collapse" href="#" data-target="#collapse-d4125c05-2248-4cb3-a870-db36a7dd78ca" aria-expanded="false" aria-controls="collapse" id="requests-d4125c05-2248-4cb3-a870-db36a7dd78ca" class="collapsed text-white z-block">
+                        <a data-toggle="collapse" href="#" data-target="#collapse-8b6777e9-04bd-4905-b87f-f61d7432b5ff" aria-expanded="false" aria-controls="collapse" id="requests-8b6777e9-04bd-4905-b87f-f61d7432b5ff" class="collapsed text-white z-block">
                     Iteration: 1 - Add Filter by Form <i class="float-lg-right fa fa-chevron-down" style="padding-top: 5px;"></i>
                 </a>
                     </div>
-                    <div id="collapse-d4125c05-2248-4cb3-a870-db36a7dd78ca" class="collapse" aria-labelledby="requests-d4125c05-2248-4cb3-a870-db36a7dd78ca">
+                    <div id="collapse-8b6777e9-04bd-4905-b87f-f61d7432b5ff" class="collapse" aria-labelledby="requests-8b6777e9-04bd-4905-b87f-f61d7432b5ff">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-sm-12 mb-3">
@@ -1217,7 +1409,7 @@ You may create as many filters as you wish. You can specify permissions for the 
                                     <h5 class="card-title text-uppercase text-white text-center bg-info">Response Information</h5>
                                     <span><i class="fas fa-info-circle"></i></span><strong> Response Code:</strong> <span class="float-right badge-outline badge badge-success"> 200 - OK</span><br>
                                     <span><i class="fas fa-stopwatch"></i></span><strong> Mean time per request:</strong> <span class="float-right badge-outline badge badge-success"> 3.1s</span><br>
-                                    <span><i class="fas fa-database"></i></span><strong> Mean size per request:</strong> <span class="float-right badge-outline badge badge-success"> 184B</span><br>
+                                    <span><i class="fas fa-database"></i></span><strong> Mean size per request:</strong> <span class="float-right badge-outline badge badge-success"> 93B</span><br>
                                     <hr>
                                     <h5 class="card-title text-uppercase text-white text-center bg-info">Test Pass Percentage</h5>
                                     <div>
@@ -1264,7 +1456,7 @@ You may create as many filters as you wish. You can specify permissions for the 
                                                     </tr>
                                                     <tr>
                                                         <td class="text-nowrap">Postman-Token</td>
-                                                        <td class="text-wrap">389e519b-8351-415b-822c-068f02d4b30c</td>
+                                                        <td class="text-wrap">137644d9-bd50-4fd1-896f-5a3fb7e1c7d3</td>
                                                     </tr>
                                                     <tr>
                                                         <td class="text-nowrap">Host</td>
@@ -1284,7 +1476,7 @@ You may create as many filters as you wish. You can specify permissions for the 
                                                     </tr>
                                                     <tr>
                                                         <td class="text-nowrap">Cookie</td>
-                                                        <td class="text-wrap">access_token&#x3D;eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxM2Y3NGUyNC0wMDAzLTQ1ZjctOTM4OC1hYzRlY2E0MDEyNmYiLCJ4bW9kIjoxNjcwNjE2MTYwNzQzLCJzdWIiOiJkb3RjbXMub3JnLjEiLCJpYXQiOjE2NzA2MTYxNjMsImlzcyI6ImY5NWZmYTAyYTUiLCJleHAiOjE2NzA3MDI1NjN9.9YYsRUdQW0mwdJ1BtNE-OfVwipecXSpOazeFJdrWLeI</td>
+                                                        <td class="text-wrap">access_token&#x3D;eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJhYTcyNWZjZS1iOTczLTQyODctYWQ2Ny1hZGI5YzQ0OWUzZmMiLCJ4bW9kIjoxNjcxMTI0MDU5ODk0LCJzdWIiOiJkb3RjbXMub3JnLjEiLCJpYXQiOjE2NzExMjQwNjIsImlzcyI6Ijg0YzNlNDVmNzUiLCJleHAiOjE2NzEyMTA0NjJ9.wBUDiW87zzW1BaExOyDvvRpSTMCNFe8EKjws2ruM4eU</td>
                                                     </tr>
                                                 </tbody>
                                             </table>
@@ -1349,11 +1541,11 @@ You may create as many filters as you wish. You can specify permissions for the 
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">x-dot-server</td>
-                                                    <td class="text-wrap">d22871dfa46b|2404456ec3</td>
+                                                    <td class="text-wrap">fcf3b10536e3|3da47911b9</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">Set-Cookie</td>
-                                                    <td class="text-wrap">JSESSIONID&#x3D;605A41C5E2D21AD805169F7217052186; Path&#x3D;/; Secure; HttpOnly; SameSite&#x3D;Lax</td>
+                                                    <td class="text-wrap">JSESSIONID&#x3D;8D8177EF38CE84D24E48EA049120F6A5; Path&#x3D;/; Secure; HttpOnly; SameSite&#x3D;Lax</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">Access-Control-Allow-Origin</td>
@@ -1388,24 +1580,16 @@ You may create as many filters as you wish. You can specify permissions for the 
                                                     <td class="text-wrap">Mon, 26 Jul 1997 05:00:00 GMT</td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="text-nowrap">vary</td>
-                                                    <td class="text-wrap">accept-encoding</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-nowrap">Content-Encoding</td>
-                                                    <td class="text-wrap">gzip</td>
-                                                </tr>
-                                                <tr>
                                                     <td class="text-nowrap">Content-Type</td>
                                                     <td class="text-wrap">application/json</td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="text-nowrap">Transfer-Encoding</td>
-                                                    <td class="text-wrap">chunked</td>
+                                                    <td class="text-nowrap">Content-Length</td>
+                                                    <td class="text-wrap">93</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">Date</td>
-                                                    <td class="text-wrap">Fri, 09 Dec 2022 20:02:49 GMT</td>
+                                                    <td class="text-wrap">Thu, 15 Dec 2022 17:07:49 GMT</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">Keep-Alive</td>
@@ -1430,10 +1614,10 @@ You may create as many filters as you wish. You can specify permissions for the 
                                 <div class="card-body">
                                     <h5 class="card-title text-uppercase text-white text-center bg-info">Response Body</h5>
                                         <div class="dyn-height">
-                                                <pre><code id="copyText-251bb01e-cea6-44a0-afe1-87aa0e1dc606" class="prettyPrint">{&quot;entity&quot;:[&quot;ContentOnly.yml&quot;,&quot;WebContentOnly.yml&quot;,&quot;Intelligent.yml&quot;,&quot;ForcePush.yml&quot;,&quot;ShallowPush.yml&quot;,&quot;NoWorkflow.yml&quot;],&quot;errors&quot;:[],&quot;i18nMessagesMap&quot;:{},&quot;messages&quot;:[],&quot;permissions&quot;:[]}</code></pre>
+                                                <pre><code id="copyText-db1781f9-c18a-43e4-b665-6629370b7cec" class="prettyPrint">{&quot;entity&quot;:[&quot;NoWorkflow.yml&quot;],&quot;errors&quot;:[],&quot;i18nMessagesMap&quot;:{},&quot;messages&quot;:[],&quot;permissions&quot;:[]}</code></pre>
                                         </div>
                                         <div class="card-footer">
-                                            <button class="btn btn-outline-secondary btn-sm copyButton" type="button" data-clipboard-action="copy" data-clipboard-target="#copyText-251bb01e-cea6-44a0-afe1-87aa0e1dc606">Copy to Clipboard</button>
+                                            <button class="btn btn-outline-secondary btn-sm copyButton" type="button" data-clipboard-action="copy" data-clipboard-target="#copyText-db1781f9-c18a-43e4-b665-6629370b7cec">Copy to Clipboard</button>
                                         </div>
                                 </div>
                             </div>
@@ -1498,16 +1682,16 @@ You may create as many filters as you wish. You can specify permissions for the 
                 </div>
             </div>
             </div>
-            <div id="folder-bbea0ffc-9386-4c78-ad1b-bf55e868aafe" class="card-deck iteration-0">
+            <div id="folder-999ad596-59ee-45e1-9587-37cc9ae3f64f" class="card-deck iteration-0">
             <div class="row iteration-0">
                 <div class="col-sm-12 mb-3 iteration-0">
                 <div class="card iteration-0">
                     <div class="card-header  bg-success iteration-0">
-                        <a data-toggle="collapse" href="#" data-target="#collapse-bbea0ffc-9386-4c78-ad1b-bf55e868aafe" aria-expanded="false" aria-controls="collapse" id="requests-bbea0ffc-9386-4c78-ad1b-bf55e868aafe" class="collapsed text-white z-block">
+                        <a data-toggle="collapse" href="#" data-target="#collapse-999ad596-59ee-45e1-9587-37cc9ae3f64f" aria-expanded="false" aria-controls="collapse" id="requests-999ad596-59ee-45e1-9587-37cc9ae3f64f" class="collapsed text-white z-block">
                     Iteration: 1 - Add Filter by File <i class="float-lg-right fa fa-chevron-down" style="padding-top: 5px;"></i>
                 </a>
                     </div>
-                    <div id="collapse-bbea0ffc-9386-4c78-ad1b-bf55e868aafe" class="collapse" aria-labelledby="requests-bbea0ffc-9386-4c78-ad1b-bf55e868aafe">
+                    <div id="collapse-999ad596-59ee-45e1-9587-37cc9ae3f64f" class="collapse" aria-labelledby="requests-999ad596-59ee-45e1-9587-37cc9ae3f64f">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-sm-12 mb-3">
@@ -1524,7 +1708,7 @@ You may create as many filters as you wish. You can specify permissions for the 
                                     <h5 class="card-title text-uppercase text-white text-center bg-info">Response Information</h5>
                                     <span><i class="fas fa-info-circle"></i></span><strong> Response Code:</strong> <span class="float-right badge-outline badge badge-success"> 200 - OK</span><br>
                                     <span><i class="fas fa-stopwatch"></i></span><strong> Mean time per request:</strong> <span class="float-right badge-outline badge badge-success"> 3s</span><br>
-                                    <span><i class="fas fa-database"></i></span><strong> Mean size per request:</strong> <span class="float-right badge-outline badge badge-success"> 203B</span><br>
+                                    <span><i class="fas fa-database"></i></span><strong> Mean size per request:</strong> <span class="float-right badge-outline badge badge-success"> 112B</span><br>
                                     <hr>
                                     <h5 class="card-title text-uppercase text-white text-center bg-info">Test Pass Percentage</h5>
                                     <div>
@@ -1567,7 +1751,7 @@ You may create as many filters as you wish. You can specify permissions for the 
                                                     </tr>
                                                     <tr>
                                                         <td class="text-nowrap">Postman-Token</td>
-                                                        <td class="text-wrap">c0b8b9d5-72c1-477a-81c3-8ffa27b6f416</td>
+                                                        <td class="text-wrap">7b56f053-37e5-4070-af10-86d445c99adc</td>
                                                     </tr>
                                                     <tr>
                                                         <td class="text-nowrap">Host</td>
@@ -1583,7 +1767,7 @@ You may create as many filters as you wish. You can specify permissions for the 
                                                     </tr>
                                                     <tr>
                                                         <td class="text-nowrap">Cookie</td>
-                                                        <td class="text-wrap">access_token&#x3D;eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxM2Y3NGUyNC0wMDAzLTQ1ZjctOTM4OC1hYzRlY2E0MDEyNmYiLCJ4bW9kIjoxNjcwNjE2MTYwNzQzLCJzdWIiOiJkb3RjbXMub3JnLjEiLCJpYXQiOjE2NzA2MTYxNjMsImlzcyI6ImY5NWZmYTAyYTUiLCJleHAiOjE2NzA3MDI1NjN9.9YYsRUdQW0mwdJ1BtNE-OfVwipecXSpOazeFJdrWLeI</td>
+                                                        <td class="text-wrap">access_token&#x3D;eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJhYTcyNWZjZS1iOTczLTQyODctYWQ2Ny1hZGI5YzQ0OWUzZmMiLCJ4bW9kIjoxNjcxMTI0MDU5ODk0LCJzdWIiOiJkb3RjbXMub3JnLjEiLCJpYXQiOjE2NzExMjQwNjIsImlzcyI6Ijg0YzNlNDVmNzUiLCJleHAiOjE2NzEyMTA0NjJ9.wBUDiW87zzW1BaExOyDvvRpSTMCNFe8EKjws2ruM4eU</td>
                                                     </tr>
                                                     <tr>
                                                         <td class="text-nowrap">Content-Length</td>
@@ -1638,11 +1822,11 @@ You may create as many filters as you wish. You can specify permissions for the 
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">x-dot-server</td>
-                                                    <td class="text-wrap">d22871dfa46b|2404456ec3</td>
+                                                    <td class="text-wrap">fcf3b10536e3|3da47911b9</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">Set-Cookie</td>
-                                                    <td class="text-wrap">JSESSIONID&#x3D;21E88F4D86BDA2714A2856AC8B356EBB; Path&#x3D;/; Secure; HttpOnly; SameSite&#x3D;Lax</td>
+                                                    <td class="text-wrap">JSESSIONID&#x3D;9D0F6FF006E700446BFE80C6FD68B26C; Path&#x3D;/; Secure; HttpOnly; SameSite&#x3D;Lax</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">Access-Control-Allow-Origin</td>
@@ -1677,24 +1861,16 @@ You may create as many filters as you wish. You can specify permissions for the 
                                                     <td class="text-wrap">Mon, 26 Jul 1997 05:00:00 GMT</td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="text-nowrap">vary</td>
-                                                    <td class="text-wrap">accept-encoding</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-nowrap">Content-Encoding</td>
-                                                    <td class="text-wrap">gzip</td>
-                                                </tr>
-                                                <tr>
                                                     <td class="text-nowrap">Content-Type</td>
                                                     <td class="text-wrap">application/json</td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="text-nowrap">Transfer-Encoding</td>
-                                                    <td class="text-wrap">chunked</td>
+                                                    <td class="text-nowrap">Content-Length</td>
+                                                    <td class="text-wrap">112</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">Date</td>
-                                                    <td class="text-wrap">Fri, 09 Dec 2022 20:02:53 GMT</td>
+                                                    <td class="text-wrap">Thu, 15 Dec 2022 17:07:52 GMT</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">Keep-Alive</td>
@@ -1719,10 +1895,10 @@ You may create as many filters as you wish. You can specify permissions for the 
                                 <div class="card-body">
                                     <h5 class="card-title text-uppercase text-white text-center bg-info">Response Body</h5>
                                         <div class="dyn-height">
-                                                <pre><code id="copyText-47bb8eed-b5f4-4a12-b0d9-ac83cbe03102" class="prettyPrint">{&quot;entity&quot;:[&quot;ContentOnly.yml&quot;,&quot;WebContentOnly.yml&quot;,&quot;Intelligent.yml&quot;,&quot;ForcePush.yml&quot;,&quot;ShallowPush.yml&quot;,&quot;TestPPFilter.yml&quot;,&quot;NoWorkflow.yml&quot;],&quot;errors&quot;:[],&quot;i18nMessagesMap&quot;:{},&quot;messages&quot;:[],&quot;permissions&quot;:[]}</code></pre>
+                                                <pre><code id="copyText-bfcd8836-806f-475d-a63a-644a556767fc" class="prettyPrint">{&quot;entity&quot;:[&quot;TestPPFilter.yml&quot;,&quot;NoWorkflow.yml&quot;],&quot;errors&quot;:[],&quot;i18nMessagesMap&quot;:{},&quot;messages&quot;:[],&quot;permissions&quot;:[]}</code></pre>
                                         </div>
                                         <div class="card-footer">
-                                            <button class="btn btn-outline-secondary btn-sm copyButton" type="button" data-clipboard-action="copy" data-clipboard-target="#copyText-47bb8eed-b5f4-4a12-b0d9-ac83cbe03102">Copy to Clipboard</button>
+                                            <button class="btn btn-outline-secondary btn-sm copyButton" type="button" data-clipboard-action="copy" data-clipboard-target="#copyText-bfcd8836-806f-475d-a63a-644a556767fc">Copy to Clipboard</button>
                                         </div>
                                 </div>
                             </div>
@@ -1787,16 +1963,16 @@ You may create as many filters as you wish. You can specify permissions for the 
                 </div>
             </div>
             </div>
-            <div id="folder-a5d21db0-aed0-495f-b171-d84c3281c37f" class="card-deck iteration-0">
+            <div id="folder-6b7e6254-e72e-4f11-8d7e-a20b5f274f31" class="card-deck iteration-0">
             <div class="row iteration-0">
                 <div class="col-sm-12 mb-3 iteration-0">
                 <div class="card iteration-0">
                     <div class="card-header  bg-success iteration-0">
-                        <a data-toggle="collapse" href="#" data-target="#collapse-a5d21db0-aed0-495f-b171-d84c3281c37f" aria-expanded="false" aria-controls="collapse" id="requests-a5d21db0-aed0-495f-b171-d84c3281c37f" class="collapsed text-white z-block">
+                        <a data-toggle="collapse" href="#" data-target="#collapse-6b7e6254-e72e-4f11-8d7e-a20b5f274f31" aria-expanded="false" aria-controls="collapse" id="requests-6b7e6254-e72e-4f11-8d7e-a20b5f274f31" class="collapsed text-white z-block">
                     Iteration: 1 - Update Filter by Form <i class="float-lg-right fa fa-chevron-down" style="padding-top: 5px;"></i>
                 </a>
                     </div>
-                    <div id="collapse-a5d21db0-aed0-495f-b171-d84c3281c37f" class="collapse" aria-labelledby="requests-a5d21db0-aed0-495f-b171-d84c3281c37f">
+                    <div id="collapse-6b7e6254-e72e-4f11-8d7e-a20b5f274f31" class="collapse" aria-labelledby="requests-6b7e6254-e72e-4f11-8d7e-a20b5f274f31">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-sm-12 mb-3">
@@ -1813,7 +1989,7 @@ You may create as many filters as you wish. You can specify permissions for the 
                                     <h5 class="card-title text-uppercase text-white text-center bg-info">Response Information</h5>
                                     <span><i class="fas fa-info-circle"></i></span><strong> Response Code:</strong> <span class="float-right badge-outline badge badge-success"> 200 - OK</span><br>
                                     <span><i class="fas fa-stopwatch"></i></span><strong> Mean time per request:</strong> <span class="float-right badge-outline badge badge-success"> 3s</span><br>
-                                    <span><i class="fas fa-database"></i></span><strong> Mean size per request:</strong> <span class="float-right badge-outline badge badge-success"> 203B</span><br>
+                                    <span><i class="fas fa-database"></i></span><strong> Mean size per request:</strong> <span class="float-right badge-outline badge badge-success"> 112B</span><br>
                                     <hr>
                                     <h5 class="card-title text-uppercase text-white text-center bg-info">Test Pass Percentage</h5>
                                     <div>
@@ -1860,7 +2036,7 @@ You may create as many filters as you wish. You can specify permissions for the 
                                                     </tr>
                                                     <tr>
                                                         <td class="text-nowrap">Postman-Token</td>
-                                                        <td class="text-wrap">58c6ae6b-d572-40ac-be3e-53c467f72fb6</td>
+                                                        <td class="text-wrap">e5f3c0f5-e717-45e0-a22e-0be1956e72d9</td>
                                                     </tr>
                                                     <tr>
                                                         <td class="text-nowrap">Host</td>
@@ -1880,7 +2056,7 @@ You may create as many filters as you wish. You can specify permissions for the 
                                                     </tr>
                                                     <tr>
                                                         <td class="text-nowrap">Cookie</td>
-                                                        <td class="text-wrap">access_token&#x3D;eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxM2Y3NGUyNC0wMDAzLTQ1ZjctOTM4OC1hYzRlY2E0MDEyNmYiLCJ4bW9kIjoxNjcwNjE2MTYwNzQzLCJzdWIiOiJkb3RjbXMub3JnLjEiLCJpYXQiOjE2NzA2MTYxNjMsImlzcyI6ImY5NWZmYTAyYTUiLCJleHAiOjE2NzA3MDI1NjN9.9YYsRUdQW0mwdJ1BtNE-OfVwipecXSpOazeFJdrWLeI</td>
+                                                        <td class="text-wrap">access_token&#x3D;eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJhYTcyNWZjZS1iOTczLTQyODctYWQ2Ny1hZGI5YzQ0OWUzZmMiLCJ4bW9kIjoxNjcxMTI0MDU5ODk0LCJzdWIiOiJkb3RjbXMub3JnLjEiLCJpYXQiOjE2NzExMjQwNjIsImlzcyI6Ijg0YzNlNDVmNzUiLCJleHAiOjE2NzEyMTA0NjJ9.wBUDiW87zzW1BaExOyDvvRpSTMCNFe8EKjws2ruM4eU</td>
                                                     </tr>
                                                 </tbody>
                                             </table>
@@ -1946,11 +2122,11 @@ You may create as many filters as you wish. You can specify permissions for the 
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">x-dot-server</td>
-                                                    <td class="text-wrap">d22871dfa46b|2404456ec3</td>
+                                                    <td class="text-wrap">fcf3b10536e3|3da47911b9</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">Set-Cookie</td>
-                                                    <td class="text-wrap">JSESSIONID&#x3D;C5C8FBCA4240241E81D0AB6F53E7C721; Path&#x3D;/; Secure; HttpOnly; SameSite&#x3D;Lax</td>
+                                                    <td class="text-wrap">JSESSIONID&#x3D;0C1B79567A649D9E6FCC1A8863D4DC6E; Path&#x3D;/; Secure; HttpOnly; SameSite&#x3D;Lax</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">Access-Control-Allow-Origin</td>
@@ -1985,24 +2161,16 @@ You may create as many filters as you wish. You can specify permissions for the 
                                                     <td class="text-wrap">Mon, 26 Jul 1997 05:00:00 GMT</td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="text-nowrap">vary</td>
-                                                    <td class="text-wrap">accept-encoding</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-nowrap">Content-Encoding</td>
-                                                    <td class="text-wrap">gzip</td>
-                                                </tr>
-                                                <tr>
                                                     <td class="text-nowrap">Content-Type</td>
                                                     <td class="text-wrap">application/json</td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="text-nowrap">Transfer-Encoding</td>
-                                                    <td class="text-wrap">chunked</td>
+                                                    <td class="text-nowrap">Content-Length</td>
+                                                    <td class="text-wrap">112</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">Date</td>
-                                                    <td class="text-wrap">Fri, 09 Dec 2022 20:02:56 GMT</td>
+                                                    <td class="text-wrap">Thu, 15 Dec 2022 17:07:55 GMT</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">Keep-Alive</td>
@@ -2027,10 +2195,10 @@ You may create as many filters as you wish. You can specify permissions for the 
                                 <div class="card-body">
                                     <h5 class="card-title text-uppercase text-white text-center bg-info">Response Body</h5>
                                         <div class="dyn-height">
-                                                <pre><code id="copyText-7b98e55b-065d-4195-a8ae-a3b9986c3744" class="prettyPrint">{&quot;entity&quot;:[&quot;NoWorkflow.yml&quot;,&quot;ContentOnly.yml&quot;,&quot;WebContentOnly.yml&quot;,&quot;Intelligent.yml&quot;,&quot;ForcePush.yml&quot;,&quot;ShallowPush.yml&quot;,&quot;TestPPFilter.yml&quot;],&quot;errors&quot;:[],&quot;i18nMessagesMap&quot;:{},&quot;messages&quot;:[],&quot;permissions&quot;:[]}</code></pre>
+                                                <pre><code id="copyText-9ddfb76e-1c71-471e-a644-1c3735206d6e" class="prettyPrint">{&quot;entity&quot;:[&quot;NoWorkflow.yml&quot;,&quot;TestPPFilter.yml&quot;],&quot;errors&quot;:[],&quot;i18nMessagesMap&quot;:{},&quot;messages&quot;:[],&quot;permissions&quot;:[]}</code></pre>
                                         </div>
                                         <div class="card-footer">
-                                            <button class="btn btn-outline-secondary btn-sm copyButton" type="button" data-clipboard-action="copy" data-clipboard-target="#copyText-7b98e55b-065d-4195-a8ae-a3b9986c3744">Copy to Clipboard</button>
+                                            <button class="btn btn-outline-secondary btn-sm copyButton" type="button" data-clipboard-action="copy" data-clipboard-target="#copyText-9ddfb76e-1c71-471e-a644-1c3735206d6e">Copy to Clipboard</button>
                                         </div>
                                 </div>
                             </div>
@@ -2095,16 +2263,16 @@ You may create as many filters as you wish. You can specify permissions for the 
                 </div>
             </div>
             </div>
-            <div id="folder-080d1b04-bd6c-431d-854f-56656707dceb" class="card-deck iteration-0">
+            <div id="folder-8c09e691-75f8-4490-b946-6f9d169c71ed" class="card-deck iteration-0">
             <div class="row iteration-0">
                 <div class="col-sm-12 mb-3 iteration-0">
                 <div class="card iteration-0">
                     <div class="card-header  bg-success iteration-0">
-                        <a data-toggle="collapse" href="#" data-target="#collapse-080d1b04-bd6c-431d-854f-56656707dceb" aria-expanded="false" aria-controls="collapse" id="requests-080d1b04-bd6c-431d-854f-56656707dceb" class="collapsed text-white z-block">
+                        <a data-toggle="collapse" href="#" data-target="#collapse-8c09e691-75f8-4490-b946-6f9d169c71ed" aria-expanded="false" aria-controls="collapse" id="requests-8c09e691-75f8-4490-b946-6f9d169c71ed" class="collapsed text-white z-block">
                     Iteration: 1 - Update Filter by File <i class="float-lg-right fa fa-chevron-down" style="padding-top: 5px;"></i>
                 </a>
                     </div>
-                    <div id="collapse-080d1b04-bd6c-431d-854f-56656707dceb" class="collapse" aria-labelledby="requests-080d1b04-bd6c-431d-854f-56656707dceb">
+                    <div id="collapse-8c09e691-75f8-4490-b946-6f9d169c71ed" class="collapse" aria-labelledby="requests-8c09e691-75f8-4490-b946-6f9d169c71ed">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-sm-12 mb-3">
@@ -2121,7 +2289,7 @@ You may create as many filters as you wish. You can specify permissions for the 
                                     <h5 class="card-title text-uppercase text-white text-center bg-info">Response Information</h5>
                                     <span><i class="fas fa-info-circle"></i></span><strong> Response Code:</strong> <span class="float-right badge-outline badge badge-success"> 200 - OK</span><br>
                                     <span><i class="fas fa-stopwatch"></i></span><strong> Mean time per request:</strong> <span class="float-right badge-outline badge badge-success"> 3s</span><br>
-                                    <span><i class="fas fa-database"></i></span><strong> Mean size per request:</strong> <span class="float-right badge-outline badge badge-success"> 203B</span><br>
+                                    <span><i class="fas fa-database"></i></span><strong> Mean size per request:</strong> <span class="float-right badge-outline badge badge-success"> 112B</span><br>
                                     <hr>
                                     <h5 class="card-title text-uppercase text-white text-center bg-info">Test Pass Percentage</h5>
                                     <div>
@@ -2164,7 +2332,7 @@ You may create as many filters as you wish. You can specify permissions for the 
                                                     </tr>
                                                     <tr>
                                                         <td class="text-nowrap">Postman-Token</td>
-                                                        <td class="text-wrap">d6381766-1d80-4177-80bb-72adbcd866c3</td>
+                                                        <td class="text-wrap">3f05c4d5-5583-4d97-8916-f56f463f02d3</td>
                                                     </tr>
                                                     <tr>
                                                         <td class="text-nowrap">Host</td>
@@ -2180,7 +2348,7 @@ You may create as many filters as you wish. You can specify permissions for the 
                                                     </tr>
                                                     <tr>
                                                         <td class="text-nowrap">Cookie</td>
-                                                        <td class="text-wrap">access_token&#x3D;eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxM2Y3NGUyNC0wMDAzLTQ1ZjctOTM4OC1hYzRlY2E0MDEyNmYiLCJ4bW9kIjoxNjcwNjE2MTYwNzQzLCJzdWIiOiJkb3RjbXMub3JnLjEiLCJpYXQiOjE2NzA2MTYxNjMsImlzcyI6ImY5NWZmYTAyYTUiLCJleHAiOjE2NzA3MDI1NjN9.9YYsRUdQW0mwdJ1BtNE-OfVwipecXSpOazeFJdrWLeI</td>
+                                                        <td class="text-wrap">access_token&#x3D;eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJhYTcyNWZjZS1iOTczLTQyODctYWQ2Ny1hZGI5YzQ0OWUzZmMiLCJ4bW9kIjoxNjcxMTI0MDU5ODk0LCJzdWIiOiJkb3RjbXMub3JnLjEiLCJpYXQiOjE2NzExMjQwNjIsImlzcyI6Ijg0YzNlNDVmNzUiLCJleHAiOjE2NzEyMTA0NjJ9.wBUDiW87zzW1BaExOyDvvRpSTMCNFe8EKjws2ruM4eU</td>
                                                     </tr>
                                                     <tr>
                                                         <td class="text-nowrap">Content-Length</td>
@@ -2235,11 +2403,11 @@ You may create as many filters as you wish. You can specify permissions for the 
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">x-dot-server</td>
-                                                    <td class="text-wrap">d22871dfa46b|2404456ec3</td>
+                                                    <td class="text-wrap">fcf3b10536e3|3da47911b9</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">Set-Cookie</td>
-                                                    <td class="text-wrap">JSESSIONID&#x3D;98219D95D060E30428CCD2FB30C3EB62; Path&#x3D;/; Secure; HttpOnly; SameSite&#x3D;Lax</td>
+                                                    <td class="text-wrap">JSESSIONID&#x3D;27207C7860E9CA448A998A20A56A381F; Path&#x3D;/; Secure; HttpOnly; SameSite&#x3D;Lax</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">Access-Control-Allow-Origin</td>
@@ -2274,24 +2442,16 @@ You may create as many filters as you wish. You can specify permissions for the 
                                                     <td class="text-wrap">Mon, 26 Jul 1997 05:00:00 GMT</td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="text-nowrap">vary</td>
-                                                    <td class="text-wrap">accept-encoding</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-nowrap">Content-Encoding</td>
-                                                    <td class="text-wrap">gzip</td>
-                                                </tr>
-                                                <tr>
                                                     <td class="text-nowrap">Content-Type</td>
                                                     <td class="text-wrap">application/json</td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="text-nowrap">Transfer-Encoding</td>
-                                                    <td class="text-wrap">chunked</td>
+                                                    <td class="text-nowrap">Content-Length</td>
+                                                    <td class="text-wrap">112</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">Date</td>
-                                                    <td class="text-wrap">Fri, 09 Dec 2022 20:02:59 GMT</td>
+                                                    <td class="text-wrap">Thu, 15 Dec 2022 17:07:58 GMT</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">Keep-Alive</td>
@@ -2316,10 +2476,10 @@ You may create as many filters as you wish. You can specify permissions for the 
                                 <div class="card-body">
                                     <h5 class="card-title text-uppercase text-white text-center bg-info">Response Body</h5>
                                         <div class="dyn-height">
-                                                <pre><code id="copyText-171019f4-0772-489b-842a-d37417ee136a" class="prettyPrint">{&quot;entity&quot;:[&quot;NoWorkflow.yml&quot;,&quot;ContentOnly.yml&quot;,&quot;WebContentOnly.yml&quot;,&quot;Intelligent.yml&quot;,&quot;ForcePush.yml&quot;,&quot;ShallowPush.yml&quot;,&quot;TestPPFilter.yml&quot;],&quot;errors&quot;:[],&quot;i18nMessagesMap&quot;:{},&quot;messages&quot;:[],&quot;permissions&quot;:[]}</code></pre>
+                                                <pre><code id="copyText-2a11cf21-1c29-41b8-a5e0-c719fdbbb9ad" class="prettyPrint">{&quot;entity&quot;:[&quot;NoWorkflow.yml&quot;,&quot;TestPPFilter.yml&quot;],&quot;errors&quot;:[],&quot;i18nMessagesMap&quot;:{},&quot;messages&quot;:[],&quot;permissions&quot;:[]}</code></pre>
                                         </div>
                                         <div class="card-footer">
-                                            <button class="btn btn-outline-secondary btn-sm copyButton" type="button" data-clipboard-action="copy" data-clipboard-target="#copyText-171019f4-0772-489b-842a-d37417ee136a">Copy to Clipboard</button>
+                                            <button class="btn btn-outline-secondary btn-sm copyButton" type="button" data-clipboard-action="copy" data-clipboard-target="#copyText-2a11cf21-1c29-41b8-a5e0-c719fdbbb9ad">Copy to Clipboard</button>
                                         </div>
                                 </div>
                             </div>
@@ -2384,16 +2544,16 @@ You may create as many filters as you wish. You can specify permissions for the 
                 </div>
             </div>
             </div>
-            <div id="folder-d45518ab-14b6-4572-822d-6b2d58564488" class="card-deck iteration-0">
+            <div id="folder-4ffbc835-9e3a-4ce0-aaf7-388b5107bfdb" class="card-deck iteration-0">
             <div class="row iteration-0">
                 <div class="col-sm-12 mb-3 iteration-0">
                 <div class="card iteration-0">
-                    <div class="card-header  bg-success iteration-0">
-                        <a data-toggle="collapse" href="#" data-target="#collapse-d45518ab-14b6-4572-822d-6b2d58564488" aria-expanded="false" aria-controls="collapse" id="requests-d45518ab-14b6-4572-822d-6b2d58564488" class="collapsed text-white z-block">
+                    <div class="card-header  bg-danger iteration-0">
+                        <a data-toggle="collapse" href="#" data-target="#collapse-4ffbc835-9e3a-4ce0-aaf7-388b5107bfdb" aria-expanded="false" aria-controls="collapse" id="requests-4ffbc835-9e3a-4ce0-aaf7-388b5107bfdb" class="collapsed text-white z-block">
                     Iteration: 1 - Check Filter Order - Sort Value <i class="float-lg-right fa fa-chevron-down" style="padding-top: 5px;"></i>
                 </a>
                     </div>
-                    <div id="collapse-d45518ab-14b6-4572-822d-6b2d58564488" class="collapse" aria-labelledby="requests-d45518ab-14b6-4572-822d-6b2d58564488">
+                    <div id="collapse-4ffbc835-9e3a-4ce0-aaf7-388b5107bfdb" class="collapse" aria-labelledby="requests-4ffbc835-9e3a-4ce0-aaf7-388b5107bfdb">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-sm-12 mb-3">
@@ -2426,13 +2586,13 @@ You may create as many filters as you wish. You can specify permissions for the 
                                     <h5 class="card-title text-uppercase text-white text-center bg-info">Response Information</h5>
                                     <span><i class="fas fa-info-circle"></i></span><strong> Response Code:</strong> <span class="float-right badge-outline badge badge-success"> 200 - OK</span><br>
                                     <span><i class="fas fa-stopwatch"></i></span><strong> Mean time per request:</strong> <span class="float-right badge-outline badge badge-success"> 3s</span><br>
-                                    <span><i class="fas fa-database"></i></span><strong> Mean size per request:</strong> <span class="float-right badge-outline badge badge-success"> 2.4KB</span><br>
+                                    <span><i class="fas fa-database"></i></span><strong> Mean size per request:</strong> <span class="float-right badge-outline badge badge-success"> 705B</span><br>
                                     <hr>
                                     <h5 class="card-title text-uppercase text-white text-center bg-info">Test Pass Percentage</h5>
                                     <div>
                                         <div class="progress" style="height: 40px;">
-                                            <div class="progress-bar  bg-success" style="width: 100%" role="progressbar">
-                                            <h5 style="padding-top:5px;"><strong>100 %</strong></h5>
+                                            <div class="progress-bar  bg-danger" style="width: 100%" role="progressbar">
+                                            <h5 style="padding-top:5px;"><strong>25 %</strong></h5>
                                             </div>
                                         </div>
                                     </div>
@@ -2469,7 +2629,7 @@ You may create as many filters as you wish. You can specify permissions for the 
                                                     </tr>
                                                     <tr>
                                                         <td class="text-nowrap">Postman-Token</td>
-                                                        <td class="text-wrap">d3c93dae-de75-4295-83c1-3685f84c065f</td>
+                                                        <td class="text-wrap">ebd7124b-53db-40c5-a32e-02ba325c59f6</td>
                                                     </tr>
                                                     <tr>
                                                         <td class="text-nowrap">Host</td>
@@ -2485,7 +2645,7 @@ You may create as many filters as you wish. You can specify permissions for the 
                                                     </tr>
                                                     <tr>
                                                         <td class="text-nowrap">Cookie</td>
-                                                        <td class="text-wrap">access_token&#x3D;eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxM2Y3NGUyNC0wMDAzLTQ1ZjctOTM4OC1hYzRlY2E0MDEyNmYiLCJ4bW9kIjoxNjcwNjE2MTYwNzQzLCJzdWIiOiJkb3RjbXMub3JnLjEiLCJpYXQiOjE2NzA2MTYxNjMsImlzcyI6ImY5NWZmYTAyYTUiLCJleHAiOjE2NzA3MDI1NjN9.9YYsRUdQW0mwdJ1BtNE-OfVwipecXSpOazeFJdrWLeI</td>
+                                                        <td class="text-wrap">access_token&#x3D;eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJhYTcyNWZjZS1iOTczLTQyODctYWQ2Ny1hZGI5YzQ0OWUzZmMiLCJ4bW9kIjoxNjcxMTI0MDU5ODk0LCJzdWIiOiJkb3RjbXMub3JnLjEiLCJpYXQiOjE2NzExMjQwNjIsImlzcyI6Ijg0YzNlNDVmNzUiLCJleHAiOjE2NzEyMTA0NjJ9.wBUDiW87zzW1BaExOyDvvRpSTMCNFe8EKjws2ruM4eU</td>
                                                     </tr>
                                                 </tbody>
                                             </table>
@@ -2519,11 +2679,11 @@ You may create as many filters as you wish. You can specify permissions for the 
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">x-dot-server</td>
-                                                    <td class="text-wrap">d22871dfa46b|2404456ec3</td>
+                                                    <td class="text-wrap">fcf3b10536e3|3da47911b9</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">Set-Cookie</td>
-                                                    <td class="text-wrap">JSESSIONID&#x3D;D14FA63B6963A2D2118626CE835EB534; Path&#x3D;/; Secure; HttpOnly; SameSite&#x3D;Lax</td>
+                                                    <td class="text-wrap">JSESSIONID&#x3D;2EDC35B97D43139BC39072E9A8EA0437; Path&#x3D;/; Secure; HttpOnly; SameSite&#x3D;Lax</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">Access-Control-Allow-Origin</td>
@@ -2575,7 +2735,7 @@ You may create as many filters as you wish. You can specify permissions for the 
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">Date</td>
-                                                    <td class="text-wrap">Fri, 09 Dec 2022 20:03:02 GMT</td>
+                                                    <td class="text-wrap">Thu, 15 Dec 2022 17:08:01 GMT</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">Keep-Alive</td>
@@ -2600,10 +2760,10 @@ You may create as many filters as you wish. You can specify permissions for the 
                                 <div class="card-body">
                                     <h5 class="card-title text-uppercase text-white text-center bg-info">Response Body</h5>
                                         <div class="dyn-height">
-                                                <pre><code id="copyText-f9492705-c68c-4ccd-bb0c-5656ac781e95" class="prettyPrint">{&quot;entity&quot;:[{&quot;filters&quot;:{&quot;dependencies&quot;:true,&quot;excludeClasses&quot;:[&quot;Host&quot;,&quot;Workflow&quot;,&quot;OSGI&quot;],&quot;excludeDependencyClasses&quot;:[&quot;Host&quot;,&quot;Workflow&quot;],&quot;excludeDependencyQuery&quot;:&quot;&quot;,&quot;excludeQuery&quot;:&quot;&quot;,&quot;forcePush&quot;:false,&quot;relationships&quot;:false},&quot;key&quot;:&quot;NoWorkflow.yml&quot;,&quot;roles&quot;:&quot;DOTCMS_BACK_END_USER&quot;,&quot;sort&quot;:&quot;0&quot;,&quot;title&quot;:&quot;Push without Wofklows Updated.&quot;,&quot;defaultFilter&quot;:false},{&quot;filters&quot;:{&quot;dependencies&quot;:true,&quot;excludeClasses&quot;:[&quot;ContentType&quot;,&quot;Template&quot;,&quot;Containers&quot;,&quot;Folder&quot;,&quot;Host&quot;,&quot;Links&quot;,&quot;Workflow&quot;,&quot;Language&quot;,&quot;Rule&quot;,&quot;User&quot;,&quot;OSGI&quot;],&quot;excludeDependencyClasses&quot;:[&quot;ContentType&quot;,&quot;Template&quot;,&quot;Containers&quot;,&quot;Folder&quot;,&quot;Host&quot;,&quot;Links&quot;,&quot;Workflow&quot;,&quot;Language&quot;,&quot;Rule&quot;],&quot;excludeDependencyQuery&quot;:&quot;&quot;,&quot;excludeQuery&quot;:&quot;&quot;,&quot;forcePush&quot;:false,&quot;relationships&quot;:true},&quot;key&quot;:&quot;ContentOnly.yml&quot;,&quot;roles&quot;:&quot;DOTCMS_BACK_END_USER&quot;,&quot;sort&quot;:&quot;1&quot;,&quot;title&quot;:&quot;Content and Relationships&quot;,&quot;defaultFilter&quot;:false},{&quot;filters&quot;:{&quot;dependencies&quot;:true,&quot;excludeClasses&quot;:[&quot;Host&quot;,&quot;Workflow&quot;,&quot;ContentType&quot;,&quot;User&quot;,&quot;OSGI&quot;,&quot;Language&quot;],&quot;excludeDependencyClasses&quot;:[&quot;Host&quot;,&quot;Workflow&quot;,&quot;ContentType&quot;,&quot;Language&quot;],&quot;excludeDependencyQuery&quot;:&quot;&quot;,&quot;excludeQuery&quot;:&quot;&quot;,&quot;forcePush&quot;:false,&quot;relationships&quot;:true},&quot;key&quot;:&quot;WebContentOnly.yml&quot;,&quot;roles&quot;:&quot;DOTCMS_BACK_END_USER&quot;,&quot;sort&quot;:&quot;2&quot;,&quot;title&quot;:&quot;Content, Assets and Pages&quot;,&quot;defaultFilter&quot;:false},{&quot;filters&quot;:{&quot;dependencies&quot;:true,&quot;excludeClasses&quot;:[],&quot;excludeDependencyClasses&quot;:[],&quot;excludeDependencyQuery&quot;:&quot;&quot;,&quot;excludeQuery&quot;:&quot;&quot;,&quot;forcePush&quot;:false,&quot;relationships&quot;:true},&quot;key&quot;:&quot;Intelligent.yml&quot;,&quot;roles&quot;:&quot;DOTCMS_BACK_END_USER&quot;,&quot;sort&quot;:&quot;3&quot;,&quot;title&quot;:&quot;Everything and Dependencies&quot;,&quot;defaultFilter&quot;:true},{&quot;filters&quot;:{&quot;dependencies&quot;:true,&quot;excludeClasses&quot;:[],&quot;excludeDependencyClasses&quot;:[],&quot;excludeDependencyQuery&quot;:&quot;&quot;,&quot;excludeQuery&quot;:&quot;&quot;,&quot;forcePush&quot;:true,&quot;relationships&quot;:true},&quot;key&quot;:&quot;ForcePush.yml&quot;,&quot;roles&quot;:&quot;DOTCMS_BACK_END_USER&quot;,&quot;sort&quot;:&quot;4&quot;,&quot;title&quot;:&quot;Force Push Everything&quot;,&quot;defaultFilter&quot;:false},{&quot;filters&quot;:{&quot;dependencies&quot;:false,&quot;excludeClasses&quot;:[],&quot;excludeDependencyClasses&quot;:[],&quot;excludeDependencyQuery&quot;:&quot;&quot;,&quot;excludeQuery&quot;:&quot;&quot;,&quot;forcePush&quot;:false,&quot;relationships&quot;:false},&quot;key&quot;:&quot;ShallowPush.yml&quot;,&quot;roles&quot;:&quot;DOTCMS_BACK_END_USER&quot;,&quot;sort&quot;:&quot;5&quot;,&quot;title&quot;:&quot;Only Selected Items&quot;,&quot;defaultFilter&quot;:false},{&quot;filters&quot;:{&quot;dependencies&quot;:true,&quot;excludeClasses&quot;:[],&quot;excludeDependencyClasses&quot;:[],&quot;excludeDependencyQuery&quot;:&quot;&quot;,&quot;excludeQuery&quot;:&quot;&quot;,&quot;forcePush&quot;:true,&quot;relationships&quot;:true},&quot;key&quot;:&quot;TestPPFilter.yml&quot;,&quot;roles&quot;:&quot;DOTCMS_BACK_END_USER&quot;,&quot;sort&quot;:&quot;20&quot;,&quot;title&quot;:&quot;Force Push Everything&quot;,&quot;defaultFilter&quot;:false}],&quot;errors&quot;:[],&quot;i18nMessagesMap&quot;:{},&quot;messages&quot;:[],&quot;permissions&quot;:[]}</code></pre>
+                                                <pre><code id="copyText-37972438-d1a1-4447-ae35-029d39c88fe5" class="prettyPrint">{&quot;entity&quot;:[{&quot;filters&quot;:{&quot;dependencies&quot;:true,&quot;excludeClasses&quot;:[&quot;Host&quot;,&quot;Workflow&quot;,&quot;OSGI&quot;],&quot;excludeDependencyClasses&quot;:[&quot;Host&quot;,&quot;Workflow&quot;],&quot;excludeDependencyQuery&quot;:&quot;&quot;,&quot;excludeQuery&quot;:&quot;&quot;,&quot;forcePush&quot;:false,&quot;relationships&quot;:false},&quot;key&quot;:&quot;NoWorkflow.yml&quot;,&quot;roles&quot;:&quot;DOTCMS_BACK_END_USER&quot;,&quot;sort&quot;:&quot;0&quot;,&quot;title&quot;:&quot;Push without Wofklows Updated.&quot;,&quot;defaultFilter&quot;:false},{&quot;filters&quot;:{&quot;dependencies&quot;:true,&quot;excludeClasses&quot;:[],&quot;excludeDependencyClasses&quot;:[],&quot;excludeDependencyQuery&quot;:&quot;&quot;,&quot;excludeQuery&quot;:&quot;&quot;,&quot;forcePush&quot;:true,&quot;relationships&quot;:true},&quot;key&quot;:&quot;TestPPFilter.yml&quot;,&quot;roles&quot;:&quot;DOTCMS_BACK_END_USER&quot;,&quot;sort&quot;:&quot;20&quot;,&quot;title&quot;:&quot;Force Push Everything&quot;,&quot;defaultFilter&quot;:false}],&quot;errors&quot;:[],&quot;i18nMessagesMap&quot;:{},&quot;messages&quot;:[],&quot;permissions&quot;:[]}</code></pre>
                                         </div>
                                         <div class="card-footer">
-                                            <button class="btn btn-outline-secondary btn-sm copyButton" type="button" data-clipboard-action="copy" data-clipboard-target="#copyText-f9492705-c68c-4ccd-bb0c-5656ac781e95">Copy to Clipboard</button>
+                                            <button class="btn btn-outline-secondary btn-sm copyButton" type="button" data-clipboard-action="copy" data-clipboard-target="#copyText-37972438-d1a1-4447-ae35-029d39c88fe5">Copy to Clipboard</button>
                                         </div>
                                 </div>
                             </div>
@@ -2632,61 +2792,85 @@ You may create as many filters as you wish. You can specify permissions for the 
                                                 </tr>
                                                 <tr >
                                                     <td >The &#x27;ContentOnly.yml&#x27; Filter must be #2 in the list.</td>
-                                                    <td class="text-center bg-success">1</td>
                                                     <td class="text-center ">0</td>
+                                                    <td class="text-center bg-danger">1</td>
                                                     <td class="text-center ">0</td>
                                                 </tr>
                                                 <tr >
                                                     <td >The &#x27;WebContentOnly.yml&#x27; Filter must be #3 in the list.</td>
-                                                    <td class="text-center bg-success">1</td>
                                                     <td class="text-center ">0</td>
+                                                    <td class="text-center bg-danger">1</td>
                                                     <td class="text-center ">0</td>
                                                 </tr>
                                                 <tr >
                                                     <td >The &#x27;Intelligent.yml&#x27; Filter must be #4 in the list.</td>
-                                                    <td class="text-center bg-success">1</td>
                                                     <td class="text-center ">0</td>
+                                                    <td class="text-center bg-danger">1</td>
                                                     <td class="text-center ">0</td>
                                                 </tr>
                                                 <tr >
                                                     <td >The &#x27;ForcePush.yml&#x27; Filter must be #5 in the list.</td>
-                                                    <td class="text-center bg-success">1</td>
                                                     <td class="text-center ">0</td>
+                                                    <td class="text-center bg-danger">1</td>
                                                     <td class="text-center ">0</td>
                                                 </tr>
                                                 <tr >
                                                     <td >The &#x27;ShallowPush.yml&#x27; Filter must be #6 in the list.</td>
-                                                    <td class="text-center bg-success">1</td>
                                                     <td class="text-center ">0</td>
+                                                    <td class="text-center bg-danger">1</td>
                                                     <td class="text-center ">0</td>
                                                 </tr>
                                                 <tr >
                                                     <td >The &#x27;TestPPFilter.yml&#x27; Filter must be #7 in the list, as it was updated before to have sort &#x3D; 20</td>
-                                                    <td class="text-center bg-success">1</td>
                                                     <td class="text-center ">0</td>
+                                                    <td class="text-center bg-danger">1</td>
                                                     <td class="text-center ">0</td>
                                                 </tr>
                                             </tbody>
                                             <tfoot>
                                                 <tr class="bg-light">
                                                     <td><strong>Total</strong></td>
-                                                    <td class="text-center">8</td>
-                                                    <td class="text-center">0</td>
+                                                    <td class="text-center">2</td>
+                                                    <td class="text-center">6</td>
                                                     <td class="text-center">0</td>
                                                 </tr>
                                             </tfoot>
                                         </table>
                                     </div>
-                                    <div class="row d-none">
+                                    <div class="row ">
                                     <div class="col-sm-12 mb-3">
                                         <div class="card-deck">
                                         <div class="card border-danger" style="width: 50rem;">
                                             <div class="card-body">
-                                                <h5 class="card-title text-uppercase text-white text-center bg-danger">Test Failure</h5>
+                                                <h5 class="card-title text-uppercase text-white text-center bg-danger">Test Failures</h5>
                                                 <div class="table-responsive">
                                                     <table class="table table-hover">
                                                     <thead><tr class="text-nowrap"><th>Test Name</th><th>Assertion Error</th></tr></thead>
                                                         <tbody>
+                                                            <tr>
+                                                                <td class="w-45 text-nowrap ">The &#x27;ContentOnly.yml&#x27; Filter must be #2 in the list.</td>
+                                                                <td class="w-55"><pre><code >expected &#x27;TestPPFilter.yml&#x27; to deeply equal &#x27;ContentOnly.yml&#x27;</code></pre></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="w-45 text-nowrap ">The &#x27;WebContentOnly.yml&#x27; Filter must be #3 in the list.</td>
+                                                                <td class="w-55"><pre><code >Cannot read properties of undefined (reading &#x27;key&#x27;)</code></pre></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="w-45 text-nowrap ">The &#x27;Intelligent.yml&#x27; Filter must be #4 in the list.</td>
+                                                                <td class="w-55"><pre><code >Cannot read properties of undefined (reading &#x27;key&#x27;)</code></pre></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="w-45 text-nowrap ">The &#x27;ForcePush.yml&#x27; Filter must be #5 in the list.</td>
+                                                                <td class="w-55"><pre><code >Cannot read properties of undefined (reading &#x27;key&#x27;)</code></pre></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="w-45 text-nowrap ">The &#x27;ShallowPush.yml&#x27; Filter must be #6 in the list.</td>
+                                                                <td class="w-55"><pre><code >Cannot read properties of undefined (reading &#x27;key&#x27;)</code></pre></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="w-45 text-nowrap ">The &#x27;TestPPFilter.yml&#x27; Filter must be #7 in the list, as it was updated before to have sort &#x3D; 20</td>
+                                                                <td class="w-55"><pre><code >Cannot read properties of undefined (reading &#x27;key&#x27;)</code></pre></td>
+                                                            </tr>
                                                         </tbody>
                                                     </table>
                                                 </div>
@@ -2704,16 +2888,16 @@ You may create as many filters as you wish. You can specify permissions for the 
                 </div>
             </div>
             </div>
-            <div id="folder-1fb4c2a0-90df-45b6-a824-df12984b2fcd" class="card-deck iteration-0">
+            <div id="folder-e4edf81e-828b-4ea8-8ce6-f25940e022db" class="card-deck iteration-0">
             <div class="row iteration-0">
                 <div class="col-sm-12 mb-3 iteration-0">
                 <div class="card iteration-0">
                     <div class="card-header  bg-success iteration-0">
-                        <a data-toggle="collapse" href="#" data-target="#collapse-1fb4c2a0-90df-45b6-a824-df12984b2fcd" aria-expanded="false" aria-controls="collapse" id="requests-1fb4c2a0-90df-45b6-a824-df12984b2fcd" class="collapsed text-white z-block">
+                        <a data-toggle="collapse" href="#" data-target="#collapse-e4edf81e-828b-4ea8-8ce6-f25940e022db" aria-expanded="false" aria-controls="collapse" id="requests-e4edf81e-828b-4ea8-8ce6-f25940e022db" class="collapsed text-white z-block">
                     Iteration: 1 - Delete No Workflow <i class="float-lg-right fa fa-chevron-down" style="padding-top: 5px;"></i>
                 </a>
                     </div>
-                    <div id="collapse-1fb4c2a0-90df-45b6-a824-df12984b2fcd" class="collapse" aria-labelledby="requests-1fb4c2a0-90df-45b6-a824-df12984b2fcd">
+                    <div id="collapse-e4edf81e-828b-4ea8-8ce6-f25940e022db" class="collapse" aria-labelledby="requests-e4edf81e-828b-4ea8-8ce6-f25940e022db">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-sm-12 mb-3">
@@ -2730,7 +2914,7 @@ You may create as many filters as you wish. You can specify permissions for the 
                                     <h5 class="card-title text-uppercase text-white text-center bg-info">Response Information</h5>
                                     <span><i class="fas fa-info-circle"></i></span><strong> Response Code:</strong> <span class="float-right badge-outline badge badge-success"> 200 - OK</span><br>
                                     <span><i class="fas fa-stopwatch"></i></span><strong> Mean time per request:</strong> <span class="float-right badge-outline badge badge-success"> 3s</span><br>
-                                    <span><i class="fas fa-database"></i></span><strong> Mean size per request:</strong> <span class="float-right badge-outline badge badge-success"> 186B</span><br>
+                                    <span><i class="fas fa-database"></i></span><strong> Mean size per request:</strong> <span class="float-right badge-outline badge badge-success"> 95B</span><br>
                                     <hr>
                                     <h5 class="card-title text-uppercase text-white text-center bg-info">Test Pass Percentage</h5>
                                     <div>
@@ -2769,7 +2953,7 @@ You may create as many filters as you wish. You can specify permissions for the 
                                                     </tr>
                                                     <tr>
                                                         <td class="text-nowrap">Postman-Token</td>
-                                                        <td class="text-wrap">abd5da4e-d023-443a-89e5-fddabd7571df</td>
+                                                        <td class="text-wrap">c183400a-dfd1-4f67-ab6e-cf95e075a26e</td>
                                                     </tr>
                                                     <tr>
                                                         <td class="text-nowrap">Host</td>
@@ -2785,7 +2969,7 @@ You may create as many filters as you wish. You can specify permissions for the 
                                                     </tr>
                                                     <tr>
                                                         <td class="text-nowrap">Cookie</td>
-                                                        <td class="text-wrap">access_token&#x3D;eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxM2Y3NGUyNC0wMDAzLTQ1ZjctOTM4OC1hYzRlY2E0MDEyNmYiLCJ4bW9kIjoxNjcwNjE2MTYwNzQzLCJzdWIiOiJkb3RjbXMub3JnLjEiLCJpYXQiOjE2NzA2MTYxNjMsImlzcyI6ImY5NWZmYTAyYTUiLCJleHAiOjE2NzA3MDI1NjN9.9YYsRUdQW0mwdJ1BtNE-OfVwipecXSpOazeFJdrWLeI</td>
+                                                        <td class="text-wrap">access_token&#x3D;eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJhYTcyNWZjZS1iOTczLTQyODctYWQ2Ny1hZGI5YzQ0OWUzZmMiLCJ4bW9kIjoxNjcxMTI0MDU5ODk0LCJzdWIiOiJkb3RjbXMub3JnLjEiLCJpYXQiOjE2NzExMjQwNjIsImlzcyI6Ijg0YzNlNDVmNzUiLCJleHAiOjE2NzEyMTA0NjJ9.wBUDiW87zzW1BaExOyDvvRpSTMCNFe8EKjws2ruM4eU</td>
                                                     </tr>
                                                 </tbody>
                                             </table>
@@ -2819,11 +3003,11 @@ You may create as many filters as you wish. You can specify permissions for the 
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">x-dot-server</td>
-                                                    <td class="text-wrap">d22871dfa46b|2404456ec3</td>
+                                                    <td class="text-wrap">fcf3b10536e3|3da47911b9</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">Set-Cookie</td>
-                                                    <td class="text-wrap">JSESSIONID&#x3D;259909CF4BA70DFAED6331F4770E7F3E; Path&#x3D;/; Secure; HttpOnly; SameSite&#x3D;Lax</td>
+                                                    <td class="text-wrap">JSESSIONID&#x3D;BEEDAA547B0828C4305C410441ACE478; Path&#x3D;/; Secure; HttpOnly; SameSite&#x3D;Lax</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">Access-Control-Allow-Origin</td>
@@ -2858,24 +3042,16 @@ You may create as many filters as you wish. You can specify permissions for the 
                                                     <td class="text-wrap">Mon, 26 Jul 1997 05:00:00 GMT</td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="text-nowrap">vary</td>
-                                                    <td class="text-wrap">accept-encoding</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-nowrap">Content-Encoding</td>
-                                                    <td class="text-wrap">gzip</td>
-                                                </tr>
-                                                <tr>
                                                     <td class="text-nowrap">Content-Type</td>
                                                     <td class="text-wrap">application/json</td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="text-nowrap">Transfer-Encoding</td>
-                                                    <td class="text-wrap">chunked</td>
+                                                    <td class="text-nowrap">Content-Length</td>
+                                                    <td class="text-wrap">95</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">Date</td>
-                                                    <td class="text-wrap">Fri, 09 Dec 2022 20:03:05 GMT</td>
+                                                    <td class="text-wrap">Thu, 15 Dec 2022 17:08:04 GMT</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">Keep-Alive</td>
@@ -2900,10 +3076,10 @@ You may create as many filters as you wish. You can specify permissions for the 
                                 <div class="card-body">
                                     <h5 class="card-title text-uppercase text-white text-center bg-info">Response Body</h5>
                                         <div class="dyn-height">
-                                                <pre><code id="copyText-9c9dedbc-5108-4993-9de5-db6dc402d941" class="prettyPrint">{&quot;entity&quot;:[&quot;ContentOnly.yml&quot;,&quot;WebContentOnly.yml&quot;,&quot;Intelligent.yml&quot;,&quot;ForcePush.yml&quot;,&quot;ShallowPush.yml&quot;,&quot;TestPPFilter.yml&quot;],&quot;errors&quot;:[],&quot;i18nMessagesMap&quot;:{},&quot;messages&quot;:[],&quot;permissions&quot;:[]}</code></pre>
+                                                <pre><code id="copyText-e69bef8a-4a52-4760-bc89-df06af5a2485" class="prettyPrint">{&quot;entity&quot;:[&quot;TestPPFilter.yml&quot;],&quot;errors&quot;:[],&quot;i18nMessagesMap&quot;:{},&quot;messages&quot;:[],&quot;permissions&quot;:[]}</code></pre>
                                         </div>
                                         <div class="card-footer">
-                                            <button class="btn btn-outline-secondary btn-sm copyButton" type="button" data-clipboard-action="copy" data-clipboard-target="#copyText-9c9dedbc-5108-4993-9de5-db6dc402d941">Copy to Clipboard</button>
+                                            <button class="btn btn-outline-secondary btn-sm copyButton" type="button" data-clipboard-action="copy" data-clipboard-target="#copyText-e69bef8a-4a52-4760-bc89-df06af5a2485">Copy to Clipboard</button>
                                         </div>
                                 </div>
                             </div>
@@ -2968,16 +3144,16 @@ You may create as many filters as you wish. You can specify permissions for the 
                 </div>
             </div>
             </div>
-            <div id="folder-3efc612e-34f4-480f-985b-fbcefe77444a" class="card-deck iteration-0">
+            <div id="folder-cdb7fd49-fce0-4939-ab22-a9316f4072ad" class="card-deck iteration-0">
             <div class="row iteration-0">
                 <div class="col-sm-12 mb-3 iteration-0">
                 <div class="card iteration-0">
                     <div class="card-header  bg-success iteration-0">
-                        <a data-toggle="collapse" href="#" data-target="#collapse-3efc612e-34f4-480f-985b-fbcefe77444a" aria-expanded="false" aria-controls="collapse" id="requests-3efc612e-34f4-480f-985b-fbcefe77444a" class="collapsed text-white z-block">
+                        <a data-toggle="collapse" href="#" data-target="#collapse-cdb7fd49-fce0-4939-ab22-a9316f4072ad" aria-expanded="false" aria-controls="collapse" id="requests-cdb7fd49-fce0-4939-ab22-a9316f4072ad" class="collapsed text-white z-block">
                     Iteration: 1 - Delete Test PP Filter <i class="float-lg-right fa fa-chevron-down" style="padding-top: 5px;"></i>
                 </a>
                     </div>
-                    <div id="collapse-3efc612e-34f4-480f-985b-fbcefe77444a" class="collapse" aria-labelledby="requests-3efc612e-34f4-480f-985b-fbcefe77444a">
+                    <div id="collapse-cdb7fd49-fce0-4939-ab22-a9316f4072ad" class="collapse" aria-labelledby="requests-cdb7fd49-fce0-4939-ab22-a9316f4072ad">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-sm-12 mb-3">
@@ -2994,7 +3170,7 @@ You may create as many filters as you wish. You can specify permissions for the 
                                     <h5 class="card-title text-uppercase text-white text-center bg-info">Response Information</h5>
                                     <span><i class="fas fa-info-circle"></i></span><strong> Response Code:</strong> <span class="float-right badge-outline badge badge-success"> 200 - OK</span><br>
                                     <span><i class="fas fa-stopwatch"></i></span><strong> Mean time per request:</strong> <span class="float-right badge-outline badge badge-success"> 3s</span><br>
-                                    <span><i class="fas fa-database"></i></span><strong> Mean size per request:</strong> <span class="float-right badge-outline badge badge-success"> 167B</span><br>
+                                    <span><i class="fas fa-database"></i></span><strong> Mean size per request:</strong> <span class="float-right badge-outline badge badge-success"> 77B</span><br>
                                     <hr>
                                     <h5 class="card-title text-uppercase text-white text-center bg-info">Test Pass Percentage</h5>
                                     <div>
@@ -3033,7 +3209,7 @@ You may create as many filters as you wish. You can specify permissions for the 
                                                     </tr>
                                                     <tr>
                                                         <td class="text-nowrap">Postman-Token</td>
-                                                        <td class="text-wrap">301a5dad-7a3a-4026-92fa-92aaad680997</td>
+                                                        <td class="text-wrap">d5820eae-7a29-4a62-9f81-24a0956cc58e</td>
                                                     </tr>
                                                     <tr>
                                                         <td class="text-nowrap">Host</td>
@@ -3049,7 +3225,7 @@ You may create as many filters as you wish. You can specify permissions for the 
                                                     </tr>
                                                     <tr>
                                                         <td class="text-nowrap">Cookie</td>
-                                                        <td class="text-wrap">access_token&#x3D;eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxM2Y3NGUyNC0wMDAzLTQ1ZjctOTM4OC1hYzRlY2E0MDEyNmYiLCJ4bW9kIjoxNjcwNjE2MTYwNzQzLCJzdWIiOiJkb3RjbXMub3JnLjEiLCJpYXQiOjE2NzA2MTYxNjMsImlzcyI6ImY5NWZmYTAyYTUiLCJleHAiOjE2NzA3MDI1NjN9.9YYsRUdQW0mwdJ1BtNE-OfVwipecXSpOazeFJdrWLeI</td>
+                                                        <td class="text-wrap">access_token&#x3D;eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJhYTcyNWZjZS1iOTczLTQyODctYWQ2Ny1hZGI5YzQ0OWUzZmMiLCJ4bW9kIjoxNjcxMTI0MDU5ODk0LCJzdWIiOiJkb3RjbXMub3JnLjEiLCJpYXQiOjE2NzExMjQwNjIsImlzcyI6Ijg0YzNlNDVmNzUiLCJleHAiOjE2NzEyMTA0NjJ9.wBUDiW87zzW1BaExOyDvvRpSTMCNFe8EKjws2ruM4eU</td>
                                                     </tr>
                                                 </tbody>
                                             </table>
@@ -3083,11 +3259,11 @@ You may create as many filters as you wish. You can specify permissions for the 
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">x-dot-server</td>
-                                                    <td class="text-wrap">d22871dfa46b|2404456ec3</td>
+                                                    <td class="text-wrap">fcf3b10536e3|3da47911b9</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">Set-Cookie</td>
-                                                    <td class="text-wrap">JSESSIONID&#x3D;6052445BFB6F961CE11C4977CD9E35D4; Path&#x3D;/; Secure; HttpOnly; SameSite&#x3D;Lax</td>
+                                                    <td class="text-wrap">JSESSIONID&#x3D;FFAF0CD949BB66AF02EACDF3E72EC344; Path&#x3D;/; Secure; HttpOnly; SameSite&#x3D;Lax</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">Access-Control-Allow-Origin</td>
@@ -3122,24 +3298,16 @@ You may create as many filters as you wish. You can specify permissions for the 
                                                     <td class="text-wrap">Mon, 26 Jul 1997 05:00:00 GMT</td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="text-nowrap">vary</td>
-                                                    <td class="text-wrap">accept-encoding</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-nowrap">Content-Encoding</td>
-                                                    <td class="text-wrap">gzip</td>
-                                                </tr>
-                                                <tr>
                                                     <td class="text-nowrap">Content-Type</td>
                                                     <td class="text-wrap">application/json</td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="text-nowrap">Transfer-Encoding</td>
-                                                    <td class="text-wrap">chunked</td>
+                                                    <td class="text-nowrap">Content-Length</td>
+                                                    <td class="text-wrap">77</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">Date</td>
-                                                    <td class="text-wrap">Fri, 09 Dec 2022 20:03:08 GMT</td>
+                                                    <td class="text-wrap">Thu, 15 Dec 2022 17:08:07 GMT</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">Keep-Alive</td>
@@ -3164,10 +3332,10 @@ You may create as many filters as you wish. You can specify permissions for the 
                                 <div class="card-body">
                                     <h5 class="card-title text-uppercase text-white text-center bg-info">Response Body</h5>
                                         <div class="dyn-height">
-                                                <pre><code id="copyText-761e5810-11b7-4b97-b301-b48135027459" class="prettyPrint">{&quot;entity&quot;:[&quot;ContentOnly.yml&quot;,&quot;WebContentOnly.yml&quot;,&quot;Intelligent.yml&quot;,&quot;ForcePush.yml&quot;,&quot;ShallowPush.yml&quot;],&quot;errors&quot;:[],&quot;i18nMessagesMap&quot;:{},&quot;messages&quot;:[],&quot;permissions&quot;:[]}</code></pre>
+                                                <pre><code id="copyText-b7723912-228b-4bc2-9a3d-d55ef1c8360f" class="prettyPrint">{&quot;entity&quot;:[],&quot;errors&quot;:[],&quot;i18nMessagesMap&quot;:{},&quot;messages&quot;:[],&quot;permissions&quot;:[]}</code></pre>
                                         </div>
                                         <div class="card-footer">
-                                            <button class="btn btn-outline-secondary btn-sm copyButton" type="button" data-clipboard-action="copy" data-clipboard-target="#copyText-761e5810-11b7-4b97-b301-b48135027459">Copy to Clipboard</button>
+                                            <button class="btn btn-outline-secondary btn-sm copyButton" type="button" data-clipboard-action="copy" data-clipboard-target="#copyText-b7723912-228b-4bc2-9a3d-d55ef1c8360f">Copy to Clipboard</button>
                                         </div>
                                 </div>
                             </div>
@@ -3320,81 +3488,81 @@ $('#openAllRequests').on('click', function(e) {
 let clickCount = $(this).data("clickCount") || 1
 switch (clickCount){
     case 1:
-            $('#requests-f0cb1bd2-097e-4ce3-a60b-4b66198bdc92').removeClass('collapsed')
-            $('#collapse-f0cb1bd2-097e-4ce3-a60b-4b66198bdc92').removeClass('collapsed')
-            $('#requests-f0cb1bd2-097e-4ce3-a60b-4b66198bdc92').addClass('show')
-            $('#collapse-f0cb1bd2-097e-4ce3-a60b-4b66198bdc92').addClass('show')
-            $('#requests-33707966-c7a3-48b1-84b5-e584294dc508').removeClass('collapsed')
-            $('#collapse-33707966-c7a3-48b1-84b5-e584294dc508').removeClass('collapsed')
-            $('#requests-33707966-c7a3-48b1-84b5-e584294dc508').addClass('show')
-            $('#collapse-33707966-c7a3-48b1-84b5-e584294dc508').addClass('show')
-            $('#requests-d4125c05-2248-4cb3-a870-db36a7dd78ca').removeClass('collapsed')
-            $('#collapse-d4125c05-2248-4cb3-a870-db36a7dd78ca').removeClass('collapsed')
-            $('#requests-d4125c05-2248-4cb3-a870-db36a7dd78ca').addClass('show')
-            $('#collapse-d4125c05-2248-4cb3-a870-db36a7dd78ca').addClass('show')
-            $('#requests-bbea0ffc-9386-4c78-ad1b-bf55e868aafe').removeClass('collapsed')
-            $('#collapse-bbea0ffc-9386-4c78-ad1b-bf55e868aafe').removeClass('collapsed')
-            $('#requests-bbea0ffc-9386-4c78-ad1b-bf55e868aafe').addClass('show')
-            $('#collapse-bbea0ffc-9386-4c78-ad1b-bf55e868aafe').addClass('show')
-            $('#requests-a5d21db0-aed0-495f-b171-d84c3281c37f').removeClass('collapsed')
-            $('#collapse-a5d21db0-aed0-495f-b171-d84c3281c37f').removeClass('collapsed')
-            $('#requests-a5d21db0-aed0-495f-b171-d84c3281c37f').addClass('show')
-            $('#collapse-a5d21db0-aed0-495f-b171-d84c3281c37f').addClass('show')
-            $('#requests-080d1b04-bd6c-431d-854f-56656707dceb').removeClass('collapsed')
-            $('#collapse-080d1b04-bd6c-431d-854f-56656707dceb').removeClass('collapsed')
-            $('#requests-080d1b04-bd6c-431d-854f-56656707dceb').addClass('show')
-            $('#collapse-080d1b04-bd6c-431d-854f-56656707dceb').addClass('show')
-            $('#requests-d45518ab-14b6-4572-822d-6b2d58564488').removeClass('collapsed')
-            $('#collapse-d45518ab-14b6-4572-822d-6b2d58564488').removeClass('collapsed')
-            $('#requests-d45518ab-14b6-4572-822d-6b2d58564488').addClass('show')
-            $('#collapse-d45518ab-14b6-4572-822d-6b2d58564488').addClass('show')
-            $('#requests-1fb4c2a0-90df-45b6-a824-df12984b2fcd').removeClass('collapsed')
-            $('#collapse-1fb4c2a0-90df-45b6-a824-df12984b2fcd').removeClass('collapsed')
-            $('#requests-1fb4c2a0-90df-45b6-a824-df12984b2fcd').addClass('show')
-            $('#collapse-1fb4c2a0-90df-45b6-a824-df12984b2fcd').addClass('show')
-            $('#requests-3efc612e-34f4-480f-985b-fbcefe77444a').removeClass('collapsed')
-            $('#collapse-3efc612e-34f4-480f-985b-fbcefe77444a').removeClass('collapsed')
-            $('#requests-3efc612e-34f4-480f-985b-fbcefe77444a').addClass('show')
-            $('#collapse-3efc612e-34f4-480f-985b-fbcefe77444a').addClass('show')
+            $('#requests-c1bda159-d12e-4314-bf77-a5b47d5c9071').removeClass('collapsed')
+            $('#collapse-c1bda159-d12e-4314-bf77-a5b47d5c9071').removeClass('collapsed')
+            $('#requests-c1bda159-d12e-4314-bf77-a5b47d5c9071').addClass('show')
+            $('#collapse-c1bda159-d12e-4314-bf77-a5b47d5c9071').addClass('show')
+            $('#requests-21b6020d-0848-424d-823f-e6a71b89328a').removeClass('collapsed')
+            $('#collapse-21b6020d-0848-424d-823f-e6a71b89328a').removeClass('collapsed')
+            $('#requests-21b6020d-0848-424d-823f-e6a71b89328a').addClass('show')
+            $('#collapse-21b6020d-0848-424d-823f-e6a71b89328a').addClass('show')
+            $('#requests-8b6777e9-04bd-4905-b87f-f61d7432b5ff').removeClass('collapsed')
+            $('#collapse-8b6777e9-04bd-4905-b87f-f61d7432b5ff').removeClass('collapsed')
+            $('#requests-8b6777e9-04bd-4905-b87f-f61d7432b5ff').addClass('show')
+            $('#collapse-8b6777e9-04bd-4905-b87f-f61d7432b5ff').addClass('show')
+            $('#requests-999ad596-59ee-45e1-9587-37cc9ae3f64f').removeClass('collapsed')
+            $('#collapse-999ad596-59ee-45e1-9587-37cc9ae3f64f').removeClass('collapsed')
+            $('#requests-999ad596-59ee-45e1-9587-37cc9ae3f64f').addClass('show')
+            $('#collapse-999ad596-59ee-45e1-9587-37cc9ae3f64f').addClass('show')
+            $('#requests-6b7e6254-e72e-4f11-8d7e-a20b5f274f31').removeClass('collapsed')
+            $('#collapse-6b7e6254-e72e-4f11-8d7e-a20b5f274f31').removeClass('collapsed')
+            $('#requests-6b7e6254-e72e-4f11-8d7e-a20b5f274f31').addClass('show')
+            $('#collapse-6b7e6254-e72e-4f11-8d7e-a20b5f274f31').addClass('show')
+            $('#requests-8c09e691-75f8-4490-b946-6f9d169c71ed').removeClass('collapsed')
+            $('#collapse-8c09e691-75f8-4490-b946-6f9d169c71ed').removeClass('collapsed')
+            $('#requests-8c09e691-75f8-4490-b946-6f9d169c71ed').addClass('show')
+            $('#collapse-8c09e691-75f8-4490-b946-6f9d169c71ed').addClass('show')
+            $('#requests-4ffbc835-9e3a-4ce0-aaf7-388b5107bfdb').removeClass('collapsed')
+            $('#collapse-4ffbc835-9e3a-4ce0-aaf7-388b5107bfdb').removeClass('collapsed')
+            $('#requests-4ffbc835-9e3a-4ce0-aaf7-388b5107bfdb').addClass('show')
+            $('#collapse-4ffbc835-9e3a-4ce0-aaf7-388b5107bfdb').addClass('show')
+            $('#requests-e4edf81e-828b-4ea8-8ce6-f25940e022db').removeClass('collapsed')
+            $('#collapse-e4edf81e-828b-4ea8-8ce6-f25940e022db').removeClass('collapsed')
+            $('#requests-e4edf81e-828b-4ea8-8ce6-f25940e022db').addClass('show')
+            $('#collapse-e4edf81e-828b-4ea8-8ce6-f25940e022db').addClass('show')
+            $('#requests-cdb7fd49-fce0-4939-ab22-a9316f4072ad').removeClass('collapsed')
+            $('#collapse-cdb7fd49-fce0-4939-ab22-a9316f4072ad').removeClass('collapsed')
+            $('#requests-cdb7fd49-fce0-4939-ab22-a9316f4072ad').addClass('show')
+            $('#collapse-cdb7fd49-fce0-4939-ab22-a9316f4072ad').addClass('show')
         $('#openAllRequests').html("Collapse Requests");
         break;
     case 2:
-            $('#requests-f0cb1bd2-097e-4ce3-a60b-4b66198bdc92').addClass('collapsed')
-            $('#collapse-f0cb1bd2-097e-4ce3-a60b-4b66198bdc92').addClass('collapsed')
-            $('#requests-f0cb1bd2-097e-4ce3-a60b-4b66198bdc92').removeClass('show')
-            $('#collapse-f0cb1bd2-097e-4ce3-a60b-4b66198bdc92').removeClass('show')
-            $('#requests-33707966-c7a3-48b1-84b5-e584294dc508').addClass('collapsed')
-            $('#collapse-33707966-c7a3-48b1-84b5-e584294dc508').addClass('collapsed')
-            $('#requests-33707966-c7a3-48b1-84b5-e584294dc508').removeClass('show')
-            $('#collapse-33707966-c7a3-48b1-84b5-e584294dc508').removeClass('show')
-            $('#requests-d4125c05-2248-4cb3-a870-db36a7dd78ca').addClass('collapsed')
-            $('#collapse-d4125c05-2248-4cb3-a870-db36a7dd78ca').addClass('collapsed')
-            $('#requests-d4125c05-2248-4cb3-a870-db36a7dd78ca').removeClass('show')
-            $('#collapse-d4125c05-2248-4cb3-a870-db36a7dd78ca').removeClass('show')
-            $('#requests-bbea0ffc-9386-4c78-ad1b-bf55e868aafe').addClass('collapsed')
-            $('#collapse-bbea0ffc-9386-4c78-ad1b-bf55e868aafe').addClass('collapsed')
-            $('#requests-bbea0ffc-9386-4c78-ad1b-bf55e868aafe').removeClass('show')
-            $('#collapse-bbea0ffc-9386-4c78-ad1b-bf55e868aafe').removeClass('show')
-            $('#requests-a5d21db0-aed0-495f-b171-d84c3281c37f').addClass('collapsed')
-            $('#collapse-a5d21db0-aed0-495f-b171-d84c3281c37f').addClass('collapsed')
-            $('#requests-a5d21db0-aed0-495f-b171-d84c3281c37f').removeClass('show')
-            $('#collapse-a5d21db0-aed0-495f-b171-d84c3281c37f').removeClass('show')
-            $('#requests-080d1b04-bd6c-431d-854f-56656707dceb').addClass('collapsed')
-            $('#collapse-080d1b04-bd6c-431d-854f-56656707dceb').addClass('collapsed')
-            $('#requests-080d1b04-bd6c-431d-854f-56656707dceb').removeClass('show')
-            $('#collapse-080d1b04-bd6c-431d-854f-56656707dceb').removeClass('show')
-            $('#requests-d45518ab-14b6-4572-822d-6b2d58564488').addClass('collapsed')
-            $('#collapse-d45518ab-14b6-4572-822d-6b2d58564488').addClass('collapsed')
-            $('#requests-d45518ab-14b6-4572-822d-6b2d58564488').removeClass('show')
-            $('#collapse-d45518ab-14b6-4572-822d-6b2d58564488').removeClass('show')
-            $('#requests-1fb4c2a0-90df-45b6-a824-df12984b2fcd').addClass('collapsed')
-            $('#collapse-1fb4c2a0-90df-45b6-a824-df12984b2fcd').addClass('collapsed')
-            $('#requests-1fb4c2a0-90df-45b6-a824-df12984b2fcd').removeClass('show')
-            $('#collapse-1fb4c2a0-90df-45b6-a824-df12984b2fcd').removeClass('show')
-            $('#requests-3efc612e-34f4-480f-985b-fbcefe77444a').addClass('collapsed')
-            $('#collapse-3efc612e-34f4-480f-985b-fbcefe77444a').addClass('collapsed')
-            $('#requests-3efc612e-34f4-480f-985b-fbcefe77444a').removeClass('show')
-            $('#collapse-3efc612e-34f4-480f-985b-fbcefe77444a').removeClass('show')
+            $('#requests-c1bda159-d12e-4314-bf77-a5b47d5c9071').addClass('collapsed')
+            $('#collapse-c1bda159-d12e-4314-bf77-a5b47d5c9071').addClass('collapsed')
+            $('#requests-c1bda159-d12e-4314-bf77-a5b47d5c9071').removeClass('show')
+            $('#collapse-c1bda159-d12e-4314-bf77-a5b47d5c9071').removeClass('show')
+            $('#requests-21b6020d-0848-424d-823f-e6a71b89328a').addClass('collapsed')
+            $('#collapse-21b6020d-0848-424d-823f-e6a71b89328a').addClass('collapsed')
+            $('#requests-21b6020d-0848-424d-823f-e6a71b89328a').removeClass('show')
+            $('#collapse-21b6020d-0848-424d-823f-e6a71b89328a').removeClass('show')
+            $('#requests-8b6777e9-04bd-4905-b87f-f61d7432b5ff').addClass('collapsed')
+            $('#collapse-8b6777e9-04bd-4905-b87f-f61d7432b5ff').addClass('collapsed')
+            $('#requests-8b6777e9-04bd-4905-b87f-f61d7432b5ff').removeClass('show')
+            $('#collapse-8b6777e9-04bd-4905-b87f-f61d7432b5ff').removeClass('show')
+            $('#requests-999ad596-59ee-45e1-9587-37cc9ae3f64f').addClass('collapsed')
+            $('#collapse-999ad596-59ee-45e1-9587-37cc9ae3f64f').addClass('collapsed')
+            $('#requests-999ad596-59ee-45e1-9587-37cc9ae3f64f').removeClass('show')
+            $('#collapse-999ad596-59ee-45e1-9587-37cc9ae3f64f').removeClass('show')
+            $('#requests-6b7e6254-e72e-4f11-8d7e-a20b5f274f31').addClass('collapsed')
+            $('#collapse-6b7e6254-e72e-4f11-8d7e-a20b5f274f31').addClass('collapsed')
+            $('#requests-6b7e6254-e72e-4f11-8d7e-a20b5f274f31').removeClass('show')
+            $('#collapse-6b7e6254-e72e-4f11-8d7e-a20b5f274f31').removeClass('show')
+            $('#requests-8c09e691-75f8-4490-b946-6f9d169c71ed').addClass('collapsed')
+            $('#collapse-8c09e691-75f8-4490-b946-6f9d169c71ed').addClass('collapsed')
+            $('#requests-8c09e691-75f8-4490-b946-6f9d169c71ed').removeClass('show')
+            $('#collapse-8c09e691-75f8-4490-b946-6f9d169c71ed').removeClass('show')
+            $('#requests-4ffbc835-9e3a-4ce0-aaf7-388b5107bfdb').addClass('collapsed')
+            $('#collapse-4ffbc835-9e3a-4ce0-aaf7-388b5107bfdb').addClass('collapsed')
+            $('#requests-4ffbc835-9e3a-4ce0-aaf7-388b5107bfdb').removeClass('show')
+            $('#collapse-4ffbc835-9e3a-4ce0-aaf7-388b5107bfdb').removeClass('show')
+            $('#requests-e4edf81e-828b-4ea8-8ce6-f25940e022db').addClass('collapsed')
+            $('#collapse-e4edf81e-828b-4ea8-8ce6-f25940e022db').addClass('collapsed')
+            $('#requests-e4edf81e-828b-4ea8-8ce6-f25940e022db').removeClass('show')
+            $('#collapse-e4edf81e-828b-4ea8-8ce6-f25940e022db').removeClass('show')
+            $('#requests-cdb7fd49-fce0-4939-ab22-a9316f4072ad').addClass('collapsed')
+            $('#collapse-cdb7fd49-fce0-4939-ab22-a9316f4072ad').addClass('collapsed')
+            $('#requests-cdb7fd49-fce0-4939-ab22-a9316f4072ad').removeClass('show')
+            $('#collapse-cdb7fd49-fce0-4939-ab22-a9316f4072ad').removeClass('show')
         $('#openAllRequests').html("Expand Requests");
         break;
 }
@@ -3410,81 +3578,81 @@ $('#openAllSkipped').on('click', function(e) {
 let clickCount = $(this).data("clickCount") || 1
 switch (clickCount){
     case 1:
-            $('#skipped-f0cb1bd2-097e-4ce3-a60b-4b66198bdc92').removeClass('collapsed')
-            $('#skipped-collapse-f0cb1bd2-097e-4ce3-a60b-4b66198bdc92').removeClass('collapsed')
-            $('#skipped-f0cb1bd2-097e-4ce3-a60b-4b66198bdc92').addClass('show')
-            $('#skipped-collapse-f0cb1bd2-097e-4ce3-a60b-4b66198bdc92').addClass('show')
-            $('#skipped-33707966-c7a3-48b1-84b5-e584294dc508').removeClass('collapsed')
-            $('#skipped-collapse-33707966-c7a3-48b1-84b5-e584294dc508').removeClass('collapsed')
-            $('#skipped-33707966-c7a3-48b1-84b5-e584294dc508').addClass('show')
-            $('#skipped-collapse-33707966-c7a3-48b1-84b5-e584294dc508').addClass('show')
-            $('#skipped-d4125c05-2248-4cb3-a870-db36a7dd78ca').removeClass('collapsed')
-            $('#skipped-collapse-d4125c05-2248-4cb3-a870-db36a7dd78ca').removeClass('collapsed')
-            $('#skipped-d4125c05-2248-4cb3-a870-db36a7dd78ca').addClass('show')
-            $('#skipped-collapse-d4125c05-2248-4cb3-a870-db36a7dd78ca').addClass('show')
-            $('#skipped-bbea0ffc-9386-4c78-ad1b-bf55e868aafe').removeClass('collapsed')
-            $('#skipped-collapse-bbea0ffc-9386-4c78-ad1b-bf55e868aafe').removeClass('collapsed')
-            $('#skipped-bbea0ffc-9386-4c78-ad1b-bf55e868aafe').addClass('show')
-            $('#skipped-collapse-bbea0ffc-9386-4c78-ad1b-bf55e868aafe').addClass('show')
-            $('#skipped-a5d21db0-aed0-495f-b171-d84c3281c37f').removeClass('collapsed')
-            $('#skipped-collapse-a5d21db0-aed0-495f-b171-d84c3281c37f').removeClass('collapsed')
-            $('#skipped-a5d21db0-aed0-495f-b171-d84c3281c37f').addClass('show')
-            $('#skipped-collapse-a5d21db0-aed0-495f-b171-d84c3281c37f').addClass('show')
-            $('#skipped-080d1b04-bd6c-431d-854f-56656707dceb').removeClass('collapsed')
-            $('#skipped-collapse-080d1b04-bd6c-431d-854f-56656707dceb').removeClass('collapsed')
-            $('#skipped-080d1b04-bd6c-431d-854f-56656707dceb').addClass('show')
-            $('#skipped-collapse-080d1b04-bd6c-431d-854f-56656707dceb').addClass('show')
-            $('#skipped-d45518ab-14b6-4572-822d-6b2d58564488').removeClass('collapsed')
-            $('#skipped-collapse-d45518ab-14b6-4572-822d-6b2d58564488').removeClass('collapsed')
-            $('#skipped-d45518ab-14b6-4572-822d-6b2d58564488').addClass('show')
-            $('#skipped-collapse-d45518ab-14b6-4572-822d-6b2d58564488').addClass('show')
-            $('#skipped-1fb4c2a0-90df-45b6-a824-df12984b2fcd').removeClass('collapsed')
-            $('#skipped-collapse-1fb4c2a0-90df-45b6-a824-df12984b2fcd').removeClass('collapsed')
-            $('#skipped-1fb4c2a0-90df-45b6-a824-df12984b2fcd').addClass('show')
-            $('#skipped-collapse-1fb4c2a0-90df-45b6-a824-df12984b2fcd').addClass('show')
-            $('#skipped-3efc612e-34f4-480f-985b-fbcefe77444a').removeClass('collapsed')
-            $('#skipped-collapse-3efc612e-34f4-480f-985b-fbcefe77444a').removeClass('collapsed')
-            $('#skipped-3efc612e-34f4-480f-985b-fbcefe77444a').addClass('show')
-            $('#skipped-collapse-3efc612e-34f4-480f-985b-fbcefe77444a').addClass('show')
+            $('#skipped-c1bda159-d12e-4314-bf77-a5b47d5c9071').removeClass('collapsed')
+            $('#skipped-collapse-c1bda159-d12e-4314-bf77-a5b47d5c9071').removeClass('collapsed')
+            $('#skipped-c1bda159-d12e-4314-bf77-a5b47d5c9071').addClass('show')
+            $('#skipped-collapse-c1bda159-d12e-4314-bf77-a5b47d5c9071').addClass('show')
+            $('#skipped-21b6020d-0848-424d-823f-e6a71b89328a').removeClass('collapsed')
+            $('#skipped-collapse-21b6020d-0848-424d-823f-e6a71b89328a').removeClass('collapsed')
+            $('#skipped-21b6020d-0848-424d-823f-e6a71b89328a').addClass('show')
+            $('#skipped-collapse-21b6020d-0848-424d-823f-e6a71b89328a').addClass('show')
+            $('#skipped-8b6777e9-04bd-4905-b87f-f61d7432b5ff').removeClass('collapsed')
+            $('#skipped-collapse-8b6777e9-04bd-4905-b87f-f61d7432b5ff').removeClass('collapsed')
+            $('#skipped-8b6777e9-04bd-4905-b87f-f61d7432b5ff').addClass('show')
+            $('#skipped-collapse-8b6777e9-04bd-4905-b87f-f61d7432b5ff').addClass('show')
+            $('#skipped-999ad596-59ee-45e1-9587-37cc9ae3f64f').removeClass('collapsed')
+            $('#skipped-collapse-999ad596-59ee-45e1-9587-37cc9ae3f64f').removeClass('collapsed')
+            $('#skipped-999ad596-59ee-45e1-9587-37cc9ae3f64f').addClass('show')
+            $('#skipped-collapse-999ad596-59ee-45e1-9587-37cc9ae3f64f').addClass('show')
+            $('#skipped-6b7e6254-e72e-4f11-8d7e-a20b5f274f31').removeClass('collapsed')
+            $('#skipped-collapse-6b7e6254-e72e-4f11-8d7e-a20b5f274f31').removeClass('collapsed')
+            $('#skipped-6b7e6254-e72e-4f11-8d7e-a20b5f274f31').addClass('show')
+            $('#skipped-collapse-6b7e6254-e72e-4f11-8d7e-a20b5f274f31').addClass('show')
+            $('#skipped-8c09e691-75f8-4490-b946-6f9d169c71ed').removeClass('collapsed')
+            $('#skipped-collapse-8c09e691-75f8-4490-b946-6f9d169c71ed').removeClass('collapsed')
+            $('#skipped-8c09e691-75f8-4490-b946-6f9d169c71ed').addClass('show')
+            $('#skipped-collapse-8c09e691-75f8-4490-b946-6f9d169c71ed').addClass('show')
+            $('#skipped-4ffbc835-9e3a-4ce0-aaf7-388b5107bfdb').removeClass('collapsed')
+            $('#skipped-collapse-4ffbc835-9e3a-4ce0-aaf7-388b5107bfdb').removeClass('collapsed')
+            $('#skipped-4ffbc835-9e3a-4ce0-aaf7-388b5107bfdb').addClass('show')
+            $('#skipped-collapse-4ffbc835-9e3a-4ce0-aaf7-388b5107bfdb').addClass('show')
+            $('#skipped-e4edf81e-828b-4ea8-8ce6-f25940e022db').removeClass('collapsed')
+            $('#skipped-collapse-e4edf81e-828b-4ea8-8ce6-f25940e022db').removeClass('collapsed')
+            $('#skipped-e4edf81e-828b-4ea8-8ce6-f25940e022db').addClass('show')
+            $('#skipped-collapse-e4edf81e-828b-4ea8-8ce6-f25940e022db').addClass('show')
+            $('#skipped-cdb7fd49-fce0-4939-ab22-a9316f4072ad').removeClass('collapsed')
+            $('#skipped-collapse-cdb7fd49-fce0-4939-ab22-a9316f4072ad').removeClass('collapsed')
+            $('#skipped-cdb7fd49-fce0-4939-ab22-a9316f4072ad').addClass('show')
+            $('#skipped-collapse-cdb7fd49-fce0-4939-ab22-a9316f4072ad').addClass('show')
         $('#openAllSkipped').html("Collapse All Skipped Tests");
         break;
     case 2:
-            $('#skipped-f0cb1bd2-097e-4ce3-a60b-4b66198bdc92').addClass('collapsed')
-            $('#skipped-collapse-f0cb1bd2-097e-4ce3-a60b-4b66198bdc92').addClass('collapsed')
-            $('#skipped-f0cb1bd2-097e-4ce3-a60b-4b66198bdc92').removeClass('show')
-            $('#skipped-collapse-f0cb1bd2-097e-4ce3-a60b-4b66198bdc92').removeClass('show')
-            $('#skipped-33707966-c7a3-48b1-84b5-e584294dc508').addClass('collapsed')
-            $('#skipped-collapse-33707966-c7a3-48b1-84b5-e584294dc508').addClass('collapsed')
-            $('#skipped-33707966-c7a3-48b1-84b5-e584294dc508').removeClass('show')
-            $('#skipped-collapse-33707966-c7a3-48b1-84b5-e584294dc508').removeClass('show')
-            $('#skipped-d4125c05-2248-4cb3-a870-db36a7dd78ca').addClass('collapsed')
-            $('#skipped-collapse-d4125c05-2248-4cb3-a870-db36a7dd78ca').addClass('collapsed')
-            $('#skipped-d4125c05-2248-4cb3-a870-db36a7dd78ca').removeClass('show')
-            $('#skipped-collapse-d4125c05-2248-4cb3-a870-db36a7dd78ca').removeClass('show')
-            $('#skipped-bbea0ffc-9386-4c78-ad1b-bf55e868aafe').addClass('collapsed')
-            $('#skipped-collapse-bbea0ffc-9386-4c78-ad1b-bf55e868aafe').addClass('collapsed')
-            $('#skipped-bbea0ffc-9386-4c78-ad1b-bf55e868aafe').removeClass('show')
-            $('#skipped-collapse-bbea0ffc-9386-4c78-ad1b-bf55e868aafe').removeClass('show')
-            $('#skipped-a5d21db0-aed0-495f-b171-d84c3281c37f').addClass('collapsed')
-            $('#skipped-collapse-a5d21db0-aed0-495f-b171-d84c3281c37f').addClass('collapsed')
-            $('#skipped-a5d21db0-aed0-495f-b171-d84c3281c37f').removeClass('show')
-            $('#skipped-collapse-a5d21db0-aed0-495f-b171-d84c3281c37f').removeClass('show')
-            $('#skipped-080d1b04-bd6c-431d-854f-56656707dceb').addClass('collapsed')
-            $('#skipped-collapse-080d1b04-bd6c-431d-854f-56656707dceb').addClass('collapsed')
-            $('#skipped-080d1b04-bd6c-431d-854f-56656707dceb').removeClass('show')
-            $('#skipped-collapse-080d1b04-bd6c-431d-854f-56656707dceb').removeClass('show')
-            $('#skipped-d45518ab-14b6-4572-822d-6b2d58564488').addClass('collapsed')
-            $('#skipped-collapse-d45518ab-14b6-4572-822d-6b2d58564488').addClass('collapsed')
-            $('#skipped-d45518ab-14b6-4572-822d-6b2d58564488').removeClass('show')
-            $('#skipped-collapse-d45518ab-14b6-4572-822d-6b2d58564488').removeClass('show')
-            $('#skipped-1fb4c2a0-90df-45b6-a824-df12984b2fcd').addClass('collapsed')
-            $('#skipped-collapse-1fb4c2a0-90df-45b6-a824-df12984b2fcd').addClass('collapsed')
-            $('#skipped-1fb4c2a0-90df-45b6-a824-df12984b2fcd').removeClass('show')
-            $('#skipped-collapse-1fb4c2a0-90df-45b6-a824-df12984b2fcd').removeClass('show')
-            $('#skipped-3efc612e-34f4-480f-985b-fbcefe77444a').addClass('collapsed')
-            $('#skipped-collapse-3efc612e-34f4-480f-985b-fbcefe77444a').addClass('collapsed')
-            $('#skipped-3efc612e-34f4-480f-985b-fbcefe77444a').removeClass('show')
-            $('#skipped-collapse-3efc612e-34f4-480f-985b-fbcefe77444a').removeClass('show')
+            $('#skipped-c1bda159-d12e-4314-bf77-a5b47d5c9071').addClass('collapsed')
+            $('#skipped-collapse-c1bda159-d12e-4314-bf77-a5b47d5c9071').addClass('collapsed')
+            $('#skipped-c1bda159-d12e-4314-bf77-a5b47d5c9071').removeClass('show')
+            $('#skipped-collapse-c1bda159-d12e-4314-bf77-a5b47d5c9071').removeClass('show')
+            $('#skipped-21b6020d-0848-424d-823f-e6a71b89328a').addClass('collapsed')
+            $('#skipped-collapse-21b6020d-0848-424d-823f-e6a71b89328a').addClass('collapsed')
+            $('#skipped-21b6020d-0848-424d-823f-e6a71b89328a').removeClass('show')
+            $('#skipped-collapse-21b6020d-0848-424d-823f-e6a71b89328a').removeClass('show')
+            $('#skipped-8b6777e9-04bd-4905-b87f-f61d7432b5ff').addClass('collapsed')
+            $('#skipped-collapse-8b6777e9-04bd-4905-b87f-f61d7432b5ff').addClass('collapsed')
+            $('#skipped-8b6777e9-04bd-4905-b87f-f61d7432b5ff').removeClass('show')
+            $('#skipped-collapse-8b6777e9-04bd-4905-b87f-f61d7432b5ff').removeClass('show')
+            $('#skipped-999ad596-59ee-45e1-9587-37cc9ae3f64f').addClass('collapsed')
+            $('#skipped-collapse-999ad596-59ee-45e1-9587-37cc9ae3f64f').addClass('collapsed')
+            $('#skipped-999ad596-59ee-45e1-9587-37cc9ae3f64f').removeClass('show')
+            $('#skipped-collapse-999ad596-59ee-45e1-9587-37cc9ae3f64f').removeClass('show')
+            $('#skipped-6b7e6254-e72e-4f11-8d7e-a20b5f274f31').addClass('collapsed')
+            $('#skipped-collapse-6b7e6254-e72e-4f11-8d7e-a20b5f274f31').addClass('collapsed')
+            $('#skipped-6b7e6254-e72e-4f11-8d7e-a20b5f274f31').removeClass('show')
+            $('#skipped-collapse-6b7e6254-e72e-4f11-8d7e-a20b5f274f31').removeClass('show')
+            $('#skipped-8c09e691-75f8-4490-b946-6f9d169c71ed').addClass('collapsed')
+            $('#skipped-collapse-8c09e691-75f8-4490-b946-6f9d169c71ed').addClass('collapsed')
+            $('#skipped-8c09e691-75f8-4490-b946-6f9d169c71ed').removeClass('show')
+            $('#skipped-collapse-8c09e691-75f8-4490-b946-6f9d169c71ed').removeClass('show')
+            $('#skipped-4ffbc835-9e3a-4ce0-aaf7-388b5107bfdb').addClass('collapsed')
+            $('#skipped-collapse-4ffbc835-9e3a-4ce0-aaf7-388b5107bfdb').addClass('collapsed')
+            $('#skipped-4ffbc835-9e3a-4ce0-aaf7-388b5107bfdb').removeClass('show')
+            $('#skipped-collapse-4ffbc835-9e3a-4ce0-aaf7-388b5107bfdb').removeClass('show')
+            $('#skipped-e4edf81e-828b-4ea8-8ce6-f25940e022db').addClass('collapsed')
+            $('#skipped-collapse-e4edf81e-828b-4ea8-8ce6-f25940e022db').addClass('collapsed')
+            $('#skipped-e4edf81e-828b-4ea8-8ce6-f25940e022db').removeClass('show')
+            $('#skipped-collapse-e4edf81e-828b-4ea8-8ce6-f25940e022db').removeClass('show')
+            $('#skipped-cdb7fd49-fce0-4939-ab22-a9316f4072ad').addClass('collapsed')
+            $('#skipped-collapse-cdb7fd49-fce0-4939-ab22-a9316f4072ad').addClass('collapsed')
+            $('#skipped-cdb7fd49-fce0-4939-ab22-a9316f4072ad').removeClass('show')
+            $('#skipped-collapse-cdb7fd49-fce0-4939-ab22-a9316f4072ad').removeClass('show')
         $('#openAllSkipped').html("Expand All Skipped Tests");
         break;
 }
@@ -3502,9 +3670,117 @@ let failedItemContent
 let failedItemHeading
 switch (clickCount){
     case 1:
+            failedItemHeading = $('#fails-8af01b20-8c8e-4aa4-99eb-9ee5db4f5baa');
+            failedItemContent = $("#fails-collapse-8af01b20-8c8e-4aa4-99eb-9ee5db4f5baa");
+            failedItemHeading.removeClass('collapsed')
+            failedItemContent.removeClass('collapsed')
+            failedItemHeading.addClass('show')
+            failedItemContent.addClass('show')
+            failedItemHeading = $('#fails-06c8d3ef-7e19-4d75-9bd4-0a2ae9536a69');
+            failedItemContent = $("#fails-collapse-06c8d3ef-7e19-4d75-9bd4-0a2ae9536a69");
+            failedItemHeading.removeClass('collapsed')
+            failedItemContent.removeClass('collapsed')
+            failedItemHeading.addClass('show')
+            failedItemContent.addClass('show')
+            failedItemHeading = $('#fails-605b6244-4567-4327-a8fd-7c9904334711');
+            failedItemContent = $("#fails-collapse-605b6244-4567-4327-a8fd-7c9904334711");
+            failedItemHeading.removeClass('collapsed')
+            failedItemContent.removeClass('collapsed')
+            failedItemHeading.addClass('show')
+            failedItemContent.addClass('show')
+            failedItemHeading = $('#fails-ff2048c7-817b-446e-98d7-800955f64ff5');
+            failedItemContent = $("#fails-collapse-ff2048c7-817b-446e-98d7-800955f64ff5");
+            failedItemHeading.removeClass('collapsed')
+            failedItemContent.removeClass('collapsed')
+            failedItemHeading.addClass('show')
+            failedItemContent.addClass('show')
+            failedItemHeading = $('#fails-b413af0b-89fa-4922-b7d7-f471400c4be2');
+            failedItemContent = $("#fails-collapse-b413af0b-89fa-4922-b7d7-f471400c4be2");
+            failedItemHeading.removeClass('collapsed')
+            failedItemContent.removeClass('collapsed')
+            failedItemHeading.addClass('show')
+            failedItemContent.addClass('show')
+            failedItemHeading = $('#fails-b783ecd6-791f-49a7-8074-44b81c06d528');
+            failedItemContent = $("#fails-collapse-b783ecd6-791f-49a7-8074-44b81c06d528");
+            failedItemHeading.removeClass('collapsed')
+            failedItemContent.removeClass('collapsed')
+            failedItemHeading.addClass('show')
+            failedItemContent.addClass('show')
+            failedItemHeading = $('#fails-6a3415eb-f66b-477d-ac0e-6986bb8cafb1');
+            failedItemContent = $("#fails-collapse-6a3415eb-f66b-477d-ac0e-6986bb8cafb1");
+            failedItemHeading.removeClass('collapsed')
+            failedItemContent.removeClass('collapsed')
+            failedItemHeading.addClass('show')
+            failedItemContent.addClass('show')
+            failedItemHeading = $('#fails-8eee907f-d539-4d39-94cc-e5c2dadb7a14');
+            failedItemContent = $("#fails-collapse-8eee907f-d539-4d39-94cc-e5c2dadb7a14");
+            failedItemHeading.removeClass('collapsed')
+            failedItemContent.removeClass('collapsed')
+            failedItemHeading.addClass('show')
+            failedItemContent.addClass('show')
+            failedItemHeading = $('#fails-c40e1134-4572-45b7-9004-94cb35ed187e');
+            failedItemContent = $("#fails-collapse-c40e1134-4572-45b7-9004-94cb35ed187e");
+            failedItemHeading.removeClass('collapsed')
+            failedItemContent.removeClass('collapsed')
+            failedItemHeading.addClass('show')
+            failedItemContent.addClass('show')
         $('#openAllFailed').html("Collapse All Failed Tests");
         break;
     case 2:
+            failedItemHeading = $('#fails-8af01b20-8c8e-4aa4-99eb-9ee5db4f5baa');
+            failedItemContent = $("#fails-collapse-8af01b20-8c8e-4aa4-99eb-9ee5db4f5baa");
+            failedItemHeading.removeClass('show')
+            failedItemContent.removeClass('show')
+            failedItemHeading.addClass('collapsed')
+            failedItemContent.addClass('collapsed')
+            failedItemHeading = $('#fails-06c8d3ef-7e19-4d75-9bd4-0a2ae9536a69');
+            failedItemContent = $("#fails-collapse-06c8d3ef-7e19-4d75-9bd4-0a2ae9536a69");
+            failedItemHeading.removeClass('show')
+            failedItemContent.removeClass('show')
+            failedItemHeading.addClass('collapsed')
+            failedItemContent.addClass('collapsed')
+            failedItemHeading = $('#fails-605b6244-4567-4327-a8fd-7c9904334711');
+            failedItemContent = $("#fails-collapse-605b6244-4567-4327-a8fd-7c9904334711");
+            failedItemHeading.removeClass('show')
+            failedItemContent.removeClass('show')
+            failedItemHeading.addClass('collapsed')
+            failedItemContent.addClass('collapsed')
+            failedItemHeading = $('#fails-ff2048c7-817b-446e-98d7-800955f64ff5');
+            failedItemContent = $("#fails-collapse-ff2048c7-817b-446e-98d7-800955f64ff5");
+            failedItemHeading.removeClass('show')
+            failedItemContent.removeClass('show')
+            failedItemHeading.addClass('collapsed')
+            failedItemContent.addClass('collapsed')
+            failedItemHeading = $('#fails-b413af0b-89fa-4922-b7d7-f471400c4be2');
+            failedItemContent = $("#fails-collapse-b413af0b-89fa-4922-b7d7-f471400c4be2");
+            failedItemHeading.removeClass('show')
+            failedItemContent.removeClass('show')
+            failedItemHeading.addClass('collapsed')
+            failedItemContent.addClass('collapsed')
+            failedItemHeading = $('#fails-b783ecd6-791f-49a7-8074-44b81c06d528');
+            failedItemContent = $("#fails-collapse-b783ecd6-791f-49a7-8074-44b81c06d528");
+            failedItemHeading.removeClass('show')
+            failedItemContent.removeClass('show')
+            failedItemHeading.addClass('collapsed')
+            failedItemContent.addClass('collapsed')
+            failedItemHeading = $('#fails-6a3415eb-f66b-477d-ac0e-6986bb8cafb1');
+            failedItemContent = $("#fails-collapse-6a3415eb-f66b-477d-ac0e-6986bb8cafb1");
+            failedItemHeading.removeClass('show')
+            failedItemContent.removeClass('show')
+            failedItemHeading.addClass('collapsed')
+            failedItemContent.addClass('collapsed')
+            failedItemHeading = $('#fails-8eee907f-d539-4d39-94cc-e5c2dadb7a14');
+            failedItemContent = $("#fails-collapse-8eee907f-d539-4d39-94cc-e5c2dadb7a14");
+            failedItemHeading.removeClass('show')
+            failedItemContent.removeClass('show')
+            failedItemHeading.addClass('collapsed')
+            failedItemContent.addClass('collapsed')
+            failedItemHeading = $('#fails-c40e1134-4572-45b7-9004-94cb35ed187e');
+            failedItemContent = $("#fails-collapse-c40e1134-4572-45b7-9004-94cb35ed187e");
+            failedItemHeading.removeClass('show')
+            failedItemContent.removeClass('show')
+            failedItemHeading.addClass('collapsed')
+            failedItemContent.addClass('collapsed')
         $('#openAllFailed').html("Expand All Failed Tests");
         break;
 }
@@ -3629,6 +3905,8 @@ function scrollFunction() {
     document.getElementById("openAllRequests").style.display = "none";
 
 
+    document.getElementById("showOnlyFailures").style.display = "none";
+    document.getElementById("openAllFailed").style.display = "none";
   } else {
     document.getElementById("topOfRequestsScreen").style.display = "none";
     document.getElementById("topOfFailuresScreen").style.display = "none";
@@ -3636,6 +3914,8 @@ function scrollFunction() {
     document.getElementById("openAll").style.display = "block";
     document.getElementById("openAllRequests").style.display = "block";
 
+    document.getElementById("showOnlyFailures").style.display = "block";
+    document.getElementById("openAllFailed").style.display = "block";
   }
 }
 
@@ -3698,6 +3978,9 @@ window.onload = function () {
   document.getElementById('iteration-0').click();
   document.getElementById('iterationSelected').innerHTML = `Iteration ${document.getElementById('iteration-0').innerHTML} selected`
 
+    $("#iteration-0").removeClass('itPassed').addClass('itFailed')
+    $("#iteration-0").removeClass('itPassed').addClass('itFailed')
+    $("#iteration-0").removeClass('itPassed').addClass('itFailed')
 }
 </script>
 
