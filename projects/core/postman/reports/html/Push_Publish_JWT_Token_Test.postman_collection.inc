@@ -1,2 +1,2 @@
 <tr><td><a href="./Push_Publish_JWT_Token_Test.postman_collection.html">Push Publish JWT Token Test.postman_collection.json</a></td><td style="color: #ffffff; background-color: #28a745; font-weight: bold;">PASSED</td>
-      <td>23.042</td></tr>
+      <td>22.415</td></tr>
