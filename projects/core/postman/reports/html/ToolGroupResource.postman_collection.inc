@@ -1,2 +1,2 @@
 <tr><td><a href="./ToolGroupResource.postman_collection.html">ToolGroupResource.postman_collection.json</a></td><td style="color: #ffffff; background-color: #28a745; font-weight: bold;">PASSED</td>
-      <td>67.838</td></tr>
+      <td>67.664</td></tr>

@@ -1,2 +1,2 @@
 <tr><td><a href="./RoleResource.postman_collection.html">RoleResource.postman_collection.json</a></td><td style="color: #ffffff; background-color: #28a745; font-weight: bold;">PASSED</td>
-      <td>31.979</td></tr>
+      <td>31.589</td></tr>

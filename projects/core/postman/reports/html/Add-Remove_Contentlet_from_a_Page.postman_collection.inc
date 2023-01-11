@@ -1,2 +1,2 @@
 <tr><td><a href="./Add-Remove_Contentlet_from_a_Page.postman_collection.html">Add-Remove Contentlet from a Page.postman_collection.json</a></td><td style="color: #ffffff; background-color: #28a745; font-weight: bold;">PASSED</td>
-      <td>103.557</td></tr>
+      <td>101.201</td></tr>
