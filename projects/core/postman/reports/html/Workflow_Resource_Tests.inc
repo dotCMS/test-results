@@ -1,2 +1,2 @@
-<tr><td><a href="./Workflow_Resource_Tests.html">Workflow Resource Tests.json</a></td><td style="color: #ffffff; background-color: #dc3545; font-weight: bold;">FAILED</td>
-      <td>1066.082</td></tr>
+<tr><td><a href="./Workflow_Resource_Tests.html">Workflow Resource Tests.json</a></td><td style="color: #ffffff; background-color: #28a745; font-weight: bold;">PASSED</td>
+      <td>1091.634</td></tr>
