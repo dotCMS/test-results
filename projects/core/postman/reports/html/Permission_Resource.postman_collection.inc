@@ -1,0 +1,2 @@
+<tr><td><a href="./Permission_Resource.postman_collection.html">Permission Resource.postman_collection.json</a></td><td style="color: #ffffff; background-color: #28a745; font-weight: bold;">PASSED</td>
+      <td>56.159</td></tr>
