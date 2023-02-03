@@ -1,2 +1,2 @@
 <tr><td><a href="./Integrity_Checker_JWT_Token_Test.postman_collection.html">Integrity Checker JWT Token Test.postman_collection.json</a></td><td style="color: #ffffff; background-color: #28a745; font-weight: bold;">PASSED</td>
-      <td>92.121</td></tr>
+      <td>94.13</td></tr>
