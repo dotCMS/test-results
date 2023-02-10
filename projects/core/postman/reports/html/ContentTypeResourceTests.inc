@@ -1,2 +1,2 @@
 <tr><td><a href="./ContentTypeResourceTests.html">ContentTypeResourceTests.json</a></td><td style="color: #ffffff; background-color: #28a745; font-weight: bold;">PASSED</td>
-      <td>185.671</td></tr>
+      <td>184.271</td></tr>
