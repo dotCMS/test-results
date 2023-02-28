@@ -1,2 +1,2 @@
 <tr><td><a href="./PortletResource.html">PortletResource.json</a></td><td style="color: #ffffff; background-color: #28a745; font-weight: bold;">PASSED</td>
-      <td>62.233</td></tr>
+      <td>61.121</td></tr>
