@@ -1,2 +1,2 @@
 <tr><td><a href="./GraphQLTests.html">GraphQLTests.json</a></td><td style="color: #ffffff; background-color: #28a745; font-weight: bold;">PASSED</td>
-      <td>1942.425</td></tr>
+      <td>2226.074</td></tr>
