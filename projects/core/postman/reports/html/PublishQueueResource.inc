@@ -1,2 +1,2 @@
 <tr><td><a href="./PublishQueueResource.html">PublishQueueResource.json</a></td><td style="color: #ffffff; background-color: #28a745; font-weight: bold;">PASSED</td>
-      <td>11.02</td></tr>
+      <td>23.28</td></tr>
