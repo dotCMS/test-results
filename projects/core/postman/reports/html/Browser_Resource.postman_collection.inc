@@ -1,2 +1,0 @@
-<tr><td><a href="./Browser_Resource.postman_collection.html">Browser Resource.postman_collection.json</a></td><td style="color: #ffffff; background-color: #28a745; font-weight: bold;">PASSED</td>
-      <td>36.847</td></tr>
