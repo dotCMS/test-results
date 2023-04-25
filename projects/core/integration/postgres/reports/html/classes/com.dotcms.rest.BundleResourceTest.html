@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">18.462s</div>
+<div class="counter">17.728s</div>
 <p>duration</p>
 </div>
 </td>
@@ -76,7 +76,7 @@
 <a name="test_downloadBundle_success"></a>
 <h3 class="failures">test_downloadBundle_success</h3>
 <span class="code">
-<pre>com.dotmarketing.exception.DotRuntimeException: Error generating bundle ID 'ed49a10a-401a-4565-9e5c-11f37a88d3d1': Unable to make field private static final jdk.internal.misc.Unsafe jdk.internal.misc.InnocuousThread.UNSAFE accessible: module java.base does not &quot;opens jdk.internal.misc&quot; to unnamed module @67e2d983
+<pre>com.dotmarketing.exception.DotRuntimeException: Error generating bundle ID 'acbdfa61-567a-4a02-b403-0d9af1921c55': Unable to make field private final jdk.internal.loader.BuiltinClassLoader jdk.internal.loader.BuiltinClassLoader.parent accessible: module java.base does not &quot;opens jdk.internal.loader&quot; to unnamed module @5d47c63f
 	at app//com.dotcms.publisher.bundle.business.BundleAPIImpl.generateTarGzipBundleFile(BundleAPIImpl.java:435)
 	at app//com.dotcms.rest.BundleResourceTest.test_downloadBundle_success(BundleResourceTest.java:223)
 	at java.base@11.0.18/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -134,12 +134,12 @@
 	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
-Caused by: com.dotcms.publishing.DotPublishingException: Error generating bundle ID 'ed49a10a-401a-4565-9e5c-11f37a88d3d1': Unable to make field private static final jdk.internal.misc.Unsafe jdk.internal.misc.InnocuousThread.UNSAFE accessible: module java.base does not &quot;opens jdk.internal.misc&quot; to unnamed module @67e2d983
+Caused by: com.dotcms.publishing.DotPublishingException: Error generating bundle ID 'acbdfa61-567a-4a02-b403-0d9af1921c55': Unable to make field private final jdk.internal.loader.BuiltinClassLoader jdk.internal.loader.BuiltinClassLoader.parent accessible: module java.base does not &quot;opens jdk.internal.loader&quot; to unnamed module @5d47c63f
 	at app//com.dotcms.publishing.PublisherAPIImpl.publish(PublisherAPIImpl.java:178)
 	at app//com.dotcms.publishing.PublisherAPIImpl.publish(PublisherAPIImpl.java:64)
 	at app//com.dotcms.publisher.bundle.business.BundleAPIImpl.generateTarGzipBundleFile(BundleAPIImpl.java:430)
 	... 56 more
-Caused by: java.lang.reflect.InaccessibleObjectException: Unable to make field private static final jdk.internal.misc.Unsafe jdk.internal.misc.InnocuousThread.UNSAFE accessible: module java.base does not &quot;opens jdk.internal.misc&quot; to unnamed module @67e2d983
+Caused by: java.lang.reflect.InaccessibleObjectException: Unable to make field private final jdk.internal.loader.BuiltinClassLoader jdk.internal.loader.BuiltinClassLoader.parent accessible: module java.base does not &quot;opens jdk.internal.loader&quot; to unnamed module @5d47c63f
 	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:340)
 	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:280)
 	at java.base/java.lang.reflect.Field.checkCanSetAccessible(Field.java:176)
@@ -152,12 +152,6 @@ Caused by: java.lang.reflect.InaccessibleObjectException: Unable to make field p
 	at com.thoughtworks.xstream.core.DefaultConverterLookup.lookupConverterForType(DefaultConverterLookup.java:56)
 	at com.thoughtworks.xstream.XStream$1.lookupConverterForType(XStream.java:498)
 	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:48)
-	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:43)
-	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller$1.convertAnother(AbstractReferenceMarshaller.java:88)
-	at com.thoughtworks.xstream.converters.collections.AbstractCollectionConverter.writeItem(AbstractCollectionConverter.java:64)
-	at com.thoughtworks.xstream.converters.collections.ArrayConverter.marshal(ArrayConverter.java:45)
-	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller.convert(AbstractReferenceMarshaller.java:69)
-	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:58)
 	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller$1.convertAnother(AbstractReferenceMarshaller.java:84)
 	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshallField(AbstractReflectionConverter.java:256)
 	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.writeField(AbstractReflectionConverter.java:232)
@@ -271,27 +265,27 @@ Caused by: java.lang.reflect.InaccessibleObjectException: Unable to make field p
 </thead>
 <tr>
 <td class="success">shouldCleanRelationshipCache</td>
-<td class="success">5.542s</td>
+<td class="success">5.586s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">test_deleteAll</td>
-<td class="success">10.933s</td>
+<td class="success">10.744s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">test_downloadBundle_fileNotGenerated_return404</td>
-<td class="success">0.991s</td>
+<td class="success">0.717s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="failures">test_downloadBundle_success</td>
-<td class="failures">0.036s</td>
+<td class="failures">0.031s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
 <td class="success">test_generateBundle_success</td>
-<td class="success">0.960s</td>
+<td class="success">0.650s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -312,7 +306,7 @@ Caused by: java.lang.reflect.InaccessibleObjectException: Unable to make field p
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 7.3.3</a> at Apr 25, 2023, 5:20:38 PM</p>
+<a href="http://www.gradle.org">Gradle 7.3.3</a> at Apr 25, 2023, 6:26:21 PM</p>
 </div>
 </div>
 </body>
