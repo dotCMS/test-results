@@ -1,2 +1,2 @@
 <tr><td><a href="./TempAPI.postman_collection.html">TempAPI.postman_collection.json</a></td><td style="color: #ffffff; background-color: #28a745; font-weight: bold;">PASSED</td>
-      <td>6.233</td></tr>
+      <td>5.837</td></tr>
