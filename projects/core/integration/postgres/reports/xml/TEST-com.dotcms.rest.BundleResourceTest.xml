@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.dotcms.rest.BundleResourceTest" tests="5" skipped="0" failures="1" errors="0" timestamp="2023-05-01T22:37:56" hostname="fv-az573-232" time="20.024">
+<testsuite name="com.dotcms.rest.BundleResourceTest" tests="5" skipped="0" failures="1" errors="0" timestamp="2023-05-01T23:43:07" hostname="fv-az1236-939" time="17.869">
   <properties/>
-  <testcase name="shouldCleanRelationshipCache" classname="com.dotcms.rest.BundleResourceTest" time="6.849"/>
-  <testcase name="test_generateBundle_success" classname="com.dotcms.rest.BundleResourceTest" time="0.97"/>
-  <testcase name="test_downloadBundle_success" classname="com.dotcms.rest.BundleResourceTest" time="0.065">
-    <failure message="com.dotmarketing.exception.DotRuntimeException: Error generating bundle ID '82227e0e-7708-4d1f-a587-a895cd28ac6f': Unable to make field private final jdk.internal.loader.BuiltinClassLoader jdk.internal.loader.BuiltinClassLoader.parent accessible: module java.base does not &quot;opens jdk.internal.loader&quot; to unnamed module @5d47c63f" type="com.dotmarketing.exception.DotRuntimeException">com.dotmarketing.exception.DotRuntimeException: Error generating bundle ID '82227e0e-7708-4d1f-a587-a895cd28ac6f': Unable to make field private final jdk.internal.loader.BuiltinClassLoader jdk.internal.loader.BuiltinClassLoader.parent accessible: module java.base does not &quot;opens jdk.internal.loader&quot; to unnamed module @5d47c63f
+  <testcase name="shouldCleanRelationshipCache" classname="com.dotcms.rest.BundleResourceTest" time="5.357"/>
+  <testcase name="test_generateBundle_success" classname="com.dotcms.rest.BundleResourceTest" time="0.799"/>
+  <testcase name="test_downloadBundle_success" classname="com.dotcms.rest.BundleResourceTest" time="0.03">
+    <failure message="com.dotmarketing.exception.DotRuntimeException: Error generating bundle ID 'e01553d0-7838-4f76-b745-62b9892c0e2f': Unable to make field private final jdk.internal.loader.BuiltinClassLoader jdk.internal.loader.BuiltinClassLoader.parent accessible: module java.base does not &quot;opens jdk.internal.loader&quot; to unnamed module @5d47c63f" type="com.dotmarketing.exception.DotRuntimeException">com.dotmarketing.exception.DotRuntimeException: Error generating bundle ID 'e01553d0-7838-4f76-b745-62b9892c0e2f': Unable to make field private final jdk.internal.loader.BuiltinClassLoader jdk.internal.loader.BuiltinClassLoader.parent accessible: module java.base does not &quot;opens jdk.internal.loader&quot; to unnamed module @5d47c63f
 	at app//com.dotcms.publisher.bundle.business.BundleAPIImpl.generateTarGzipBundleFile(BundleAPIImpl.java:435)
 	at app//com.dotcms.rest.BundleResourceTest.test_downloadBundle_success(BundleResourceTest.java:223)
 	at java.base@11.0.18/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -62,7 +62,7 @@
 	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
-Caused by: com.dotcms.publishing.DotPublishingException: Error generating bundle ID '82227e0e-7708-4d1f-a587-a895cd28ac6f': Unable to make field private final jdk.internal.loader.BuiltinClassLoader jdk.internal.loader.BuiltinClassLoader.parent accessible: module java.base does not &quot;opens jdk.internal.loader&quot; to unnamed module @5d47c63f
+Caused by: com.dotcms.publishing.DotPublishingException: Error generating bundle ID 'e01553d0-7838-4f76-b745-62b9892c0e2f': Unable to make field private final jdk.internal.loader.BuiltinClassLoader jdk.internal.loader.BuiltinClassLoader.parent accessible: module java.base does not &quot;opens jdk.internal.loader&quot; to unnamed module @5d47c63f
 	at app//com.dotcms.publishing.PublisherAPIImpl.publish(PublisherAPIImpl.java:178)
 	at app//com.dotcms.publishing.PublisherAPIImpl.publish(PublisherAPIImpl.java:64)
 	at app//com.dotcms.publisher.bundle.business.BundleAPIImpl.generateTarGzipBundleFile(BundleAPIImpl.java:430)
@@ -80,6 +80,44 @@ Caused by: java.lang.reflect.InaccessibleObjectException: Unable to make field p
 	at com.thoughtworks.xstream.core.DefaultConverterLookup.lookupConverterForType(DefaultConverterLookup.java:56)
 	at com.thoughtworks.xstream.XStream$1.lookupConverterForType(XStream.java:498)
 	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:48)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller$1.convertAnother(AbstractReferenceMarshaller.java:84)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshallField(AbstractReflectionConverter.java:256)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.writeField(AbstractReflectionConverter.java:232)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.&lt;init&gt;(AbstractReflectionConverter.java:195)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doMarshal(AbstractReflectionConverter.java:141)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshal(AbstractReflectionConverter.java:89)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller.convert(AbstractReferenceMarshaller.java:69)
+	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:58)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller$1.convertAnother(AbstractReferenceMarshaller.java:84)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshallField(AbstractReflectionConverter.java:256)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.writeField(AbstractReflectionConverter.java:232)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.&lt;init&gt;(AbstractReflectionConverter.java:195)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doMarshal(AbstractReflectionConverter.java:141)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshal(AbstractReflectionConverter.java:89)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller.convert(AbstractReferenceMarshaller.java:69)
+	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:58)
+	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:43)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller$1.convertAnother(AbstractReferenceMarshaller.java:88)
+	at com.thoughtworks.xstream.converters.collections.AbstractCollectionConverter.writeItem(AbstractCollectionConverter.java:64)
+	at com.thoughtworks.xstream.converters.collections.CollectionConverter.marshal(CollectionConverter.java:74)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller.convert(AbstractReferenceMarshaller.java:69)
+	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:58)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller$1.convertAnother(AbstractReferenceMarshaller.java:84)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshallField(AbstractReflectionConverter.java:256)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.writeField(AbstractReflectionConverter.java:232)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.&lt;init&gt;(AbstractReflectionConverter.java:195)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doMarshal(AbstractReflectionConverter.java:141)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshal(AbstractReflectionConverter.java:89)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller.convert(AbstractReferenceMarshaller.java:69)
+	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:58)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller$1.convertAnother(AbstractReferenceMarshaller.java:84)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshallField(AbstractReflectionConverter.java:256)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.writeField(AbstractReflectionConverter.java:232)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.&lt;init&gt;(AbstractReflectionConverter.java:195)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doMarshal(AbstractReflectionConverter.java:141)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshal(AbstractReflectionConverter.java:89)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller.convert(AbstractReferenceMarshaller.java:69)
+	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:58)
 	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller$1.convertAnother(AbstractReferenceMarshaller.java:84)
 	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshallField(AbstractReflectionConverter.java:256)
 	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.writeField(AbstractReflectionConverter.java:232)
@@ -179,8 +217,8 @@ Caused by: java.lang.reflect.InaccessibleObjectException: Unable to make field p
 	... 58 more
 </failure>
   </testcase>
-  <testcase name="test_downloadBundle_fileNotGenerated_return404" classname="com.dotcms.rest.BundleResourceTest" time="1.126"/>
-  <testcase name="test_deleteAll" classname="com.dotcms.rest.BundleResourceTest" time="11.013"/>
+  <testcase name="test_downloadBundle_fileNotGenerated_return404" classname="com.dotcms.rest.BundleResourceTest" time="0.863"/>
+  <testcase name="test_deleteAll" classname="com.dotcms.rest.BundleResourceTest" time="10.819"/>
   <system-out><![CDATA[
 
 ]]></system-out>
