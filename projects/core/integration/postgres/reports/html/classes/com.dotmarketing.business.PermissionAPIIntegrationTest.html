@@ -23,7 +23,7 @@
 <tr>
 <td>
 <div class="infoBox" id="tests">
-<div class="counter">1</div>
+<div class="counter">4</div>
 <p>tests</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0s</div>
+<div class="counter">8.733s</div>
 <p>duration</p>
 </div>
 </td>
@@ -51,7 +51,7 @@
 </td>
 <td>
 <div class="infoBox failures" id="successRate">
-<div class="percent">0%</div>
+<div class="percent">75%</div>
 <p>successful</p>
 </div>
 </td>
@@ -70,30 +70,29 @@
 <div id="tab0" class="tab">
 <h2>Failed tests</h2>
 <div class="test">
-<a name="classMethod"></a>
-<h3 class="failures">classMethod</h3>
+<a name="resetPermissionsUnder"></a>
+<h3 class="failures">resetPermissionsUnder</h3>
 <span class="code">
 <pre>com.dotmarketing.exception.DotDataException: ERROR: could not load library &quot;/usr/local/lib/postgresql/llvmjit.so&quot;: Error relocating /usr/local/lib/postgresql/llvmjit.so: LLVMBuildGEP: symbol not found{
-  &quot;SQL&quot;: [&quot;delete from permission_reference where exists(\tselect distinct structure.inode from structure where ( (structure.folder &lt;&gt; 'SYSTEM_FOLDER' AND exists(         select folder.inode from folder join identifier on (identifier.id=folder.identifier)          where structure.folder = folder.inode and dotFolderPath(parent_path,asset_name) like ?)) OR (structure.host &lt;&gt; 'SYSTEM_HOST' AND structure.host = ?) OR (structure.host = 'SYSTEM_HOST' AND exists (select inode from contentlet where title = 'System Host' AND inode = ?))) and asset_id = structure.inode and permission_type = 'com.dotmarketing.portlets.structure.model.Structure' and reference_id not in (select ref_folder.inode from folder ref_folder join identifier ref_ident on (ref_folder.identifier = ref_ident.id) where ref_ident.host_inode = ? and dotFolderPath(ref_ident.parent_path,ref_ident.asset_name) like ?)) and (reference_id in (select distinct folder.inode from folder join identifier on(folder.identifier = identifier.id) where identifier.host_inode = ? and (dotFolderPath(parent_path,asset_name) not like ? OR dotFolderPath(parent_path,asset_name) = ?) and permission_type = 'com.dotmarketing.portlets.folders.model.Folder' and reference_id = folder.inode) OR EXISTS(SELECT c.inode FROM contentlet c   WHERE c.identifier = reference_id)\t)&quot;],
+  &quot;SQL&quot;: [&quot;delete from permission_reference where exists(\tselect distinct structure.inode from structure where ( (structure.folder &lt;&gt; 'SYSTEM_FOLDER' AND exists(            select folder.inode from folder join identifier on(identifier.id=folder.identifier)             where structure.folder = folder.inode and dotFolderPath(parent_path,asset_name) like ?)) OR (structure.host = 'SYSTEM_HOST' AND exists (select inode from contentlet where title = 'System Host' AND inode = ?))) and asset_id = structure.inode and permission_type = 'com.dotmarketing.portlets.structure.model.Structure' and reference_id not in (select ref_folder.inode from folder ref_folder join identifier ref_ident on(ref_folder.identifier = ref_ident.id) where  ref_ident.host_inode = ? and dotFolderPath(ref_ident.parent_path,ref_ident.asset_name) like ?)) and (reference_id in (select distinct folder.inode from folder join identifier on (folder.identifier = identifier.id) where identifier.host_inode = ? and (dotFolderPath(parent_path,asset_name) not like ? OR dotFolderPath(parent_path,asset_name) = ?) and permission_type = 'com.dotmarketing.portlets.folders.model.Folder' and reference_id = folder.inode) OR EXISTS(SELECT c.inode FROM contentlet c   WHERE c.identifier = reference_id)\t)&quot;],
   &quot;maxRows&quot;: [-1],
   &quot;offest&quot;: [0],
   &quot;params&quot;: [
-    &quot;%&quot;,
+    &quot;/f5/f1/f1/f1/%&quot;,
     &quot;3b60cb97ecbb7af065fabde970cf5801&quot;,
     &quot;3b60cb97ecbb7af065fabde970cf5801&quot;,
+    &quot;/f5/f1/f1/f1/%&quot;,
     &quot;3b60cb97ecbb7af065fabde970cf5801&quot;,
-    &quot;%&quot;,
-    &quot;3b60cb97ecbb7af065fabde970cf5801&quot;,
-    &quot;%&quot;,
-    &quot;&quot;
+    &quot;/f5/f1/f1/f1/%&quot;,
+    &quot;/f5/f1/f1/f1/&quot;
   ]
 }
 	at app//com.dotmarketing.common.db.DotConnect.loadResult(DotConnect.java:276)
-	at app//com.dotmarketing.business.PermissionBitFactoryImpl.updatePermissionReferencesOnAdd(PermissionBitFactoryImpl.java:1067)
+	at app//com.dotmarketing.business.PermissionBitFactoryImpl.updatePermissionReferencesOnAdd(PermissionBitFactoryImpl.java:1089)
 	at app//com.dotmarketing.business.PermissionBitFactoryImpl.savePermission(PermissionBitFactoryImpl.java:1296)
 	at app//com.dotmarketing.business.PermissionBitFactoryImpl.assignPermissions(PermissionBitFactoryImpl.java:1265)
 	at app//com.dotmarketing.business.PermissionBitAPIImpl.permissionIndividually(PermissionBitAPIImpl.java:1518)
-	at app//com.dotmarketing.business.PermissionAPIIntegrationTest.createTestHost(PermissionAPIIntegrationTest.java:89)
+	at app//com.dotmarketing.business.PermissionAPIIntegrationTest.resetPermissionsUnder(PermissionAPIIntegrationTest.java:161)
 	at java.base@11.0.19/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base@11.0.19/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base@11.0.19/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -101,8 +100,22 @@
 	at app//org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
 	at app//org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
 	at app//org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
-	at app//org.junit.internal.runners.statements.RunBefores.invokeMethod(RunBefores.java:33)
-	at app//org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at app//org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at app//org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at app//org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at app//org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61)
+	at app//org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at app//org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61)
+	at app//org.junit.rules.RunRules.evaluate(RunRules.java:20)
+	at app//org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at app//com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:34)
+	at app//com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:19)
+	at app//org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at app//org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at app//org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at app//org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at app//org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at app//org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
 	at app//org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
 	at app//org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
 	at app//org.junit.runners.ParentRunner.run(ParentRunner.java:413)
@@ -152,7 +165,7 @@ Caused by: org.postgresql.util.PSQLException: ERROR: could not load library &quo
 	at app//com.dotmarketing.common.db.DotConnect.executeQuery(DotConnect.java:642)
 	at app//com.dotmarketing.common.db.DotConnect.executeQuery(DotConnect.java:565)
 	at app//com.dotmarketing.common.db.DotConnect.loadResult(DotConnect.java:274)
-	... 50 more
+	... 64 more
 </pre>
 </span>
 </div>
@@ -168,9 +181,24 @@ Caused by: org.postgresql.util.PSQLException: ERROR: could not load library &quo
 </tr>
 </thead>
 <tr>
-<td class="failures">classMethod</td>
-<td class="failures">0s</td>
+<td class="success">Test_Parent_Individual_Permissions_Should_not_Appear_On_getPermission_Over_Children_Assets</td>
+<td class="success">4.678s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">issue11850</td>
+<td class="success">1.976s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="failures">resetPermissionsUnder</td>
+<td class="failures">0.484s</td>
 <td class="failures">failed</td>
+</tr>
+<tr>
+<td class="success">test_permissionIndividuallyByRole</td>
+<td class="success">1.595s</td>
+<td class="success">passed</td>
 </tr>
 </table>
 </div>
@@ -182,7 +210,7 @@ Caused by: org.postgresql.util.PSQLException: ERROR: could not load library &quo
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 7.3.3</a> at May 12, 2023, 12:13:20 AM</p>
+<a href="http://www.gradle.org">Gradle 7.3.3</a> at May 12, 2023, 12:36:46 AM</p>
 </div>
 </div>
 </body>
