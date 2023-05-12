@@ -29,7 +29,7 @@
 </td>
 <td>
 <div class="infoBox" id="failures">
-<div class="counter">0</div>
+<div class="counter">1</div>
 <p>failures</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">43.339s</div>
+<div class="counter">31.886s</div>
 <p>duration</p>
 </div>
 </td>
@@ -50,8 +50,8 @@
 </div>
 </td>
 <td>
-<div class="infoBox success" id="successRate">
-<div class="percent">100%</div>
+<div class="infoBox failures" id="successRate">
+<div class="percent">96%</div>
 <p>successful</p>
 </div>
 </td>
@@ -61,10 +61,116 @@
 <div id="tabs">
 <ul class="tabLinks">
 <li>
-<a href="#tab0">Tests</a>
+<a href="#tab0">Failed tests</a>
+</li>
+<li>
+<a href="#tab1">Tests</a>
 </li>
 </ul>
 <div id="tab0" class="tab">
+<h2>Failed tests</h2>
+<div class="test">
+<a name="delete"></a>
+<h3 class="failures">delete</h3>
+<span class="code">
+<pre>com.dotmarketing.exception.DotDataException: ERROR: could not load library &quot;/usr/local/lib/postgresql/llvmjit.so&quot;: Error relocating /usr/local/lib/postgresql/llvmjit.so: LLVMBuildGEP: symbol not found{
+  &quot;SQL&quot;: [&quot;delete from permission_reference where exists(\tselect distinct structure.inode from structure where ( (structure.folder &lt;&gt; 'SYSTEM_FOLDER' AND exists(         select folder.inode from folder join identifier on (identifier.id=folder.identifier)          where structure.folder = folder.inode and dotFolderPath(parent_path,asset_name) like ?)) OR (structure.host &lt;&gt; 'SYSTEM_HOST' AND structure.host = ?) OR (structure.host = 'SYSTEM_HOST' AND exists (select inode from contentlet where title = 'System Host' AND inode = ?))) and asset_id = structure.inode and permission_type = 'com.dotmarketing.portlets.structure.model.Structure' and reference_id not in (select ref_folder.inode from folder ref_folder join identifier ref_ident on (ref_folder.identifier = ref_ident.id) where ref_ident.host_inode = ? and dotFolderPath(ref_ident.parent_path,ref_ident.asset_name) like ?)) and (reference_id in (select distinct folder.inode from folder join identifier on(folder.identifier = identifier.id) where identifier.host_inode = ? and (dotFolderPath(parent_path,asset_name) not like ? OR dotFolderPath(parent_path,asset_name) = ?) and permission_type = 'com.dotmarketing.portlets.folders.model.Folder' and reference_id = folder.inode) OR EXISTS(SELECT c.inode FROM contentlet c   WHERE c.identifier = reference_id)\t)&quot;],
+  &quot;maxRows&quot;: [-1],
+  &quot;offest&quot;: [0],
+  &quot;params&quot;: [
+    &quot;%&quot;,
+    &quot;123d95aab890f8ab494ec36fd26bc35e&quot;,
+    &quot;123d95aab890f8ab494ec36fd26bc35e&quot;,
+    &quot;123d95aab890f8ab494ec36fd26bc35e&quot;,
+    &quot;%&quot;,
+    &quot;123d95aab890f8ab494ec36fd26bc35e&quot;,
+    &quot;%&quot;,
+    &quot;&quot;
+  ]
+}
+	at app//com.dotmarketing.common.db.DotConnect.loadResult(DotConnect.java:276)
+	at app//com.dotmarketing.business.PermissionBitFactoryImpl.updatePermissionReferencesOnAdd(PermissionBitFactoryImpl.java:1067)
+	at app//com.dotmarketing.business.PermissionBitFactoryImpl.savePermission(PermissionBitFactoryImpl.java:1296)
+	at app//com.dotmarketing.business.PermissionBitFactoryImpl.assignPermissions(PermissionBitFactoryImpl.java:1265)
+	at app//com.dotmarketing.business.PermissionBitAPIImpl.permissionIndividually(PermissionBitAPIImpl.java:1518)
+	at app//com.dotmarketing.business.UserAPITest.delete(UserAPITest.java:183)
+	at java.base@11.0.19/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base@11.0.19/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base@11.0.19/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@11.0.19/java.lang.reflect.Method.invoke(Method.java:566)
+	at app//org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at app//org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at app//org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at app//org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at app//org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at app//org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at app//org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61)
+	at app//org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at app//org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61)
+	at app//org.junit.rules.RunRules.evaluate(RunRules.java:20)
+	at app//org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at app//com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:34)
+	at app//com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:19)
+	at app//org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at app//org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at app//org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at app//org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at app//org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at app//org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at app//org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at app//org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at app//com.dotcms.junit.MainBaseSuite$DotRunner.run(MainBaseSuite.java:65)
+	at app//org.junit.runners.Suite.runChild(Suite.java:128)
+	at app//org.junit.runners.Suite.runChild(Suite.java:27)
+	at app//org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at app//org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at app//org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at app//org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at app//org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at app//org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at app//org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38)
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51)
+	at java.base@11.0.19/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base@11.0.19/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base@11.0.19/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@11.0.19/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
+	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+Caused by: org.postgresql.util.PSQLException: ERROR: could not load library &quot;/usr/local/lib/postgresql/llvmjit.so&quot;: Error relocating /usr/local/lib/postgresql/llvmjit.so: LLVMBuildGEP: symbol not found
+	at app//org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2676)
+	at app//org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2366)
+	at app//org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:356)
+	at app//org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:496)
+	at app//org.postgresql.jdbc.PgStatement.execute(PgStatement.java:413)
+	at app//org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:190)
+	at app//org.postgresql.jdbc.PgPreparedStatement.execute(PgPreparedStatement.java:177)
+	at app//com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at app//com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at app//com.dotmarketing.common.db.DotConnect.executeQuery(DotConnect.java:642)
+	at app//com.dotmarketing.common.db.DotConnect.executeQuery(DotConnect.java:565)
+	at app//com.dotmarketing.common.db.DotConnect.loadResult(DotConnect.java:274)
+	... 63 more
+</pre>
+</span>
+</div>
+</div>
+<div id="tab1" class="tab">
 <h2>Tests</h2>
 <table>
 <thead>
@@ -76,112 +182,112 @@
 </thead>
 <tr>
 <td class="success">Test_User_Returns_No_Gravatar_When_No_Email_Is_Available_And_OtherWise</td>
-<td class="success">0.853s</td>
+<td class="success">0.695s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">delete</td>
-<td class="success">5.146s</td>
-<td class="success">passed</td>
+<td class="failures">delete</td>
+<td class="failures">0.144s</td>
+<td class="failures">failed</td>
 </tr>
 <tr>
 <td class="success">deleteAnonymous</td>
-<td class="success">0s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testFindAllUsers</td>
-<td class="success">0.902s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testFrontendAndBackendUser</td>
-<td class="success">2.505s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testGetCountUsersByName</td>
-<td class="success">0.829s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testGetCountUsersByNameOrEmail</td>
-<td class="success">0.801s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testGetCountUsersByNameOrEmailDeleted</td>
-<td class="success">0.856s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testGetCountUsersByNameOrEmailOrUserID</td>
-<td class="success">0.853s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testGetCountUsersByNameOrEmailOrUserIDDeleted</td>
-<td class="success">0.848s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testGetUnDeletedUsers</td>
-<td class="success">0.856s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testGetUsersByName</td>
-<td class="success">0.821s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testGetUsersByNameDeleted</td>
-<td class="success">0.866s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testGetUsersByNameOrEmail</td>
-<td class="success">0.873s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testGetUsersByNameOrEmailDeleted</td>
-<td class="success">0.799s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testGetUsersByNameOrEmailOrUserID</td>
-<td class="success">0.048s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testGetUsersByNameOrEmailOrUserIDDeleted</td>
-<td class="success">0.832s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testGetUsersByNameOrEmailOrUserIDWithFilter</td>
-<td class="success">0.902s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testGetUsersIdsByCreationDate</td>
 <td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
+<td class="success">testFindAllUsers</td>
+<td class="success">0.810s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testFrontendAndBackendUser</td>
+<td class="success">2.113s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testGetCountUsersByName</td>
+<td class="success">0.695s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testGetCountUsersByNameOrEmail</td>
+<td class="success">0.694s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testGetCountUsersByNameOrEmailDeleted</td>
+<td class="success">0.809s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testGetCountUsersByNameOrEmailOrUserID</td>
+<td class="success">0.697s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testGetCountUsersByNameOrEmailOrUserIDDeleted</td>
+<td class="success">0.697s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testGetUnDeletedUsers</td>
+<td class="success">0.699s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testGetUsersByName</td>
+<td class="success">0.693s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testGetUsersByNameDeleted</td>
+<td class="success">0.698s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testGetUsersByNameOrEmail</td>
+<td class="success">0.697s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testGetUsersByNameOrEmailDeleted</td>
+<td class="success">0.690s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testGetUsersByNameOrEmailOrUserID</td>
+<td class="success">0.036s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testGetUsersByNameOrEmailOrUserIDDeleted</td>
+<td class="success">0.688s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testGetUsersByNameOrEmailOrUserIDWithFilter</td>
+<td class="success">0.710s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testGetUsersIdsByCreationDate</td>
+<td class="success">0.002s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
 <td class="success">testGetUsersIdsByCreationDateDeleted</td>
-<td class="success">0.837s</td>
+<td class="success">0.692s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testUserApiFilterUsersByNameAndRole</td>
-<td class="success">0.006s</td>
+<td class="success">0.005s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">testUserApiGetCount</td>
-<td class="success">17.004s</td>
+<td class="success">14.000s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -201,42 +307,42 @@
 </tr>
 <tr>
 <td class="success">test_getUserIdByIcqId_success</td>
-<td class="success">0.832s</td>
+<td class="success">0.695s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">test_getUserRole_null</td>
-<td class="success">0.003s</td>
+<td class="success">0.004s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">test_getUserRole_success</td>
-<td class="success">0.885s</td>
+<td class="success">0.694s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">test_loadByUserByEmail_selfUser</td>
-<td class="success">0.837s</td>
+<td class="success">0.727s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">test_loadByUserById_selfUser</td>
-<td class="success">0.844s</td>
+<td class="success">0.705s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">test_saveNewUser_withAdditionalInfo</td>
-<td class="success">0.801s</td>
+<td class="success">0.694s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">test_save_selfUser</td>
-<td class="success">0.864s</td>
+<td class="success">0.706s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">test_updateUser_withAdditionalInfo</td>
-<td class="success">0.834s</td>
+<td class="success">0.695s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -249,7 +355,7 @@
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 7.3.3</a> at May 10, 2023, 10:06:19 PM</p>
+<a href="http://www.gradle.org">Gradle 7.3.3</a> at May 12, 2023, 12:13:20 AM</p>
 </div>
 </div>
 </body>
