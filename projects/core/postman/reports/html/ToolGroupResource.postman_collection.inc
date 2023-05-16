@@ -1,2 +1,0 @@
-<tr><td><a href="./ToolGroupResource.postman_collection.html">ToolGroupResource.postman_collection.json</a></td><td style="color: #ffffff; background-color: #dc3545; font-weight: bold;">FAILED</td>
-      <td>56.539</td></tr>
