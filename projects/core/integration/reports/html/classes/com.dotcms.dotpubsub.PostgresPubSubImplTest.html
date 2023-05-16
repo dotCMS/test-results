@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - Class com.dotcms.dotpubsub.PostgresPubSubImplTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>Class com.dotcms.dotpubsub.PostgresPubSubImplTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/com.dotcms.dotpubsub.html">com.dotcms.dotpubsub</a> &gt; PostgresPubSubImplTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">5</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">13.099s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard error</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">test_adding_removing_topic</td>
+<td class="success">4.013s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">test_cluster_request_response</td>
+<td class="success">2.002s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">test_ping</td>
+<td class="success">2.008s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">test_reconnection</td>
+<td class="success">5.070s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">test_sending_a_large_message_fails_and_recovers</td>
+<td class="success">0.006s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard error</h2>
+<span class="code">
+<pre>May 16, 2023 10:26:19 PM com.impossibl.postgres.system.Settings set
+WARNING: Applying unknown setting: autosave
+May 16, 2023 10:26:21 PM com.impossibl.postgres.jdbc.PGDirectConnection reportNotification
+WARNING: Exception in connection listener
+java.lang.NullPointerException
+	at com.dotcms.enterprise.ClusterUtil.getNodeInfo(ClusterUtil.java:127)
+	at com.dotcms.enterprise.ClusterUtilProxy.getNodeInfo(ClusterUtilProxy.java:81)
+	at com.dotcms.cache.transport.CacheTransportTopic.lambda$new$edddb4be$1(CacheTransportTopic.java:128)
+	at com.dotcms.cache.transport.CacheTransportTopic.notify(CacheTransportTopic.java:87)
+	at com.dotcms.dotpubsub.PostgresPubSubImpl$1.lambda$notification$4(PostgresPubSubImpl.java:125)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at com.dotcms.dotpubsub.PostgresPubSubImpl$1.notification(PostgresPubSubImpl.java:123)
+	at com.impossibl.postgres.jdbc.PGDirectConnection.reportNotification(PGDirectConnection.java:1507)
+	at com.impossibl.postgres.jdbc.PGDirectConnection.connectionNotificationReceived(PGDirectConnection.java:1441)
+	at com.impossibl.postgres.system.BasicContext$ServerConnectionListener.notificationReceived(BasicContext.java:133)
+	at com.impossibl.postgres.protocol.v30.ServerConnectionFactory$DefaultHandler.notification(ServerConnectionFactory.java:556)
+	at com.impossibl.postgres.protocol.v30.MessageDispatchHandler.receiveNotification(MessageDispatchHandler.java:417)
+	at com.impossibl.postgres.protocol.v30.MessageDispatchHandler.parseAndDispatch(MessageDispatchHandler.java:307)
+	at com.impossibl.postgres.protocol.v30.MessageDispatchHandler.dispatch(MessageDispatchHandler.java:221)
+	at com.impossibl.postgres.protocol.v30.MessageDispatchHandler.channelRead(MessageDispatchHandler.java:152)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:355)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:321)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:295)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:355)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+	at io.netty.channel.epoll.AbstractEpollStreamChannel$EpollStreamUnsafe.epollInReady(AbstractEpollStreamChannel.java:792)
+	at io.netty.channel.epoll.EpollEventLoop.processReady(EpollEventLoop.java:475)
+	at io.netty.channel.epoll.EpollEventLoop.run(EpollEventLoop.java:378)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 7.3.3</a> at May 16, 2023, 10:45:09 PM</p>
+</div>
+</div>
+</body>
+</html>
