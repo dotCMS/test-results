@@ -1,2 +1,2 @@
 <tr><td><a href="./Push_Publish_from_sender.postman_collection.html">Push Publish from sender.postman_collection.json</a></td><td style="color: #ffffff; background-color: #28a745; font-weight: bold;">PASSED</td>
-      <td>137.028</td></tr>
+      <td>139.375</td></tr>
