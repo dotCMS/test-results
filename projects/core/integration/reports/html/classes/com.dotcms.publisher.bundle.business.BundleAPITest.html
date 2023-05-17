@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">6.881s</div>
+<div class="counter">5.542s</div>
 <p>duration</p>
 </div>
 </td>
@@ -76,7 +76,7 @@
 <a name="test_bundleTgzExists_returnTrue"></a>
 <h3 class="failures">test_bundleTgzExists_returnTrue</h3>
 <span class="code">
-<pre>com.dotmarketing.exception.DotRuntimeException: Error generating bundle ID '654d2daa-7b6b-4b50-83d4-83da20cc4461': Unable to make field private static final jdk.internal.misc.Unsafe jdk.internal.misc.InnocuousThread.UNSAFE accessible: module java.base does not &quot;opens jdk.internal.misc&quot; to unnamed module @551bdc27
+<pre>com.dotmarketing.exception.DotRuntimeException: Error generating bundle ID 'd1c7bdde-664b-4204-926e-739b496f1a08': Unable to make field private final jdk.internal.loader.BuiltinClassLoader jdk.internal.loader.BuiltinClassLoader.parent accessible: module java.base does not &quot;opens jdk.internal.loader&quot; to unnamed module @dd3b207
 	at app//com.dotcms.publisher.bundle.business.BundleAPIImpl.generateTarGzipBundleFile(BundleAPIImpl.java:435)
 	at app//com.dotcms.publisher.bundle.business.BundleAPITest.test_bundleTgzExists_returnTrue(BundleAPITest.java:261)
 	at java.base@11.0.19/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -134,12 +134,12 @@
 	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
-Caused by: com.dotcms.publishing.DotPublishingException: Error generating bundle ID '654d2daa-7b6b-4b50-83d4-83da20cc4461': Unable to make field private static final jdk.internal.misc.Unsafe jdk.internal.misc.InnocuousThread.UNSAFE accessible: module java.base does not &quot;opens jdk.internal.misc&quot; to unnamed module @551bdc27
+Caused by: com.dotcms.publishing.DotPublishingException: Error generating bundle ID 'd1c7bdde-664b-4204-926e-739b496f1a08': Unable to make field private final jdk.internal.loader.BuiltinClassLoader jdk.internal.loader.BuiltinClassLoader.parent accessible: module java.base does not &quot;opens jdk.internal.loader&quot; to unnamed module @dd3b207
 	at app//com.dotcms.publishing.PublisherAPIImpl.publish(PublisherAPIImpl.java:178)
 	at app//com.dotcms.publishing.PublisherAPIImpl.publish(PublisherAPIImpl.java:64)
 	at app//com.dotcms.publisher.bundle.business.BundleAPIImpl.generateTarGzipBundleFile(BundleAPIImpl.java:430)
 	... 56 more
-Caused by: java.lang.reflect.InaccessibleObjectException: Unable to make field private static final jdk.internal.misc.Unsafe jdk.internal.misc.InnocuousThread.UNSAFE accessible: module java.base does not &quot;opens jdk.internal.misc&quot; to unnamed module @551bdc27
+Caused by: java.lang.reflect.InaccessibleObjectException: Unable to make field private final jdk.internal.loader.BuiltinClassLoader jdk.internal.loader.BuiltinClassLoader.parent accessible: module java.base does not &quot;opens jdk.internal.loader&quot; to unnamed module @dd3b207
 	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:340)
 	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:280)
 	at java.base/java.lang.reflect.Field.checkCanSetAccessible(Field.java:176)
@@ -152,12 +152,6 @@ Caused by: java.lang.reflect.InaccessibleObjectException: Unable to make field p
 	at com.thoughtworks.xstream.core.DefaultConverterLookup.lookupConverterForType(DefaultConverterLookup.java:56)
 	at com.thoughtworks.xstream.XStream$1.lookupConverterForType(XStream.java:498)
 	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:48)
-	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:43)
-	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller$1.convertAnother(AbstractReferenceMarshaller.java:88)
-	at com.thoughtworks.xstream.converters.collections.AbstractCollectionConverter.writeItem(AbstractCollectionConverter.java:64)
-	at com.thoughtworks.xstream.converters.collections.ArrayConverter.marshal(ArrayConverter.java:45)
-	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller.convert(AbstractReferenceMarshaller.java:69)
-	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:58)
 	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller$1.convertAnother(AbstractReferenceMarshaller.java:84)
 	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshallField(AbstractReflectionConverter.java:256)
 	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.writeField(AbstractReflectionConverter.java:232)
@@ -271,32 +265,32 @@ Caused by: java.lang.reflect.InaccessibleObjectException: Unable to make field p
 </thead>
 <tr>
 <td class="success">test_bundleTgzExists_returnFalse</td>
-<td class="success">0.004s</td>
+<td class="success">0.003s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="failures">test_bundleTgzExists_returnTrue</td>
-<td class="failures">0.025s</td>
+<td class="failures">0.023s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
 <td class="success">test_deleteAllBundles_byAdmin</td>
-<td class="success">0.893s</td>
+<td class="success">0.749s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">test_deleteAllBundles_byLimitedUser</td>
-<td class="success">0.938s</td>
+<td class="success">0.746s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">test_deleteBundleAndDependenciesOlderThan_byAdmin</td>
-<td class="success">2.230s</td>
+<td class="success">1.856s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">test_deleteBundleAndDependenciesOlderThan_byLimitedUser</td>
-<td class="success">0.938s</td>
+<td class="success">0.738s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -306,22 +300,22 @@ Caused by: java.lang.reflect.InaccessibleObjectException: Unable to make field p
 </tr>
 <tr>
 <td class="success">test_deleteBundleAndDependencies_bundleIdDoesNotExist</td>
-<td class="success">0.006s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">test_deleteBundleAndDependencies_byAdmin</td>
-<td class="success">0.931s</td>
+<td class="success">0.719s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">test_deleteBundleAndDependencies_byLimitedUser</td>
-<td class="success">0.903s</td>
+<td class="success">0.699s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">test_deleteBundleById_uploadedBundle</td>
-<td class="success">0.012s</td>
+<td class="success">0.007s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -341,7 +335,7 @@ Caused by: java.lang.reflect.InaccessibleObjectException: Unable to make field p
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 7.3.3</a> at May 17, 2023, 12:06:24 AM</p>
+<a href="http://www.gradle.org">Gradle 7.3.3</a> at May 17, 2023, 12:34:14 AM</p>
 </div>
 </div>
 </body>
