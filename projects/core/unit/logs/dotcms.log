@@ -1,0 +1,81 @@
+[19/05/23 15:19:30:232 UTC]  INFO util.Config: Initializing properties reader.
+[19/05/23 15:19:30:243 UTC]  INFO util.Config: Loading dotCMS [dotmarketing-config.properties] Properties...
+[19/05/23 15:19:30:321 UTC]  INFO util.Config: dotCMS Properties [dotmarketing-config.properties] Loaded
+[19/05/23 15:19:30:392 UTC]  INFO util.Config: Loading dotCMS [dotcms-config-cluster.properties] Properties...
+[19/05/23 15:19:30:393 UTC]  INFO util.Config: dotCMS Properties [dotcms-config-cluster.properties] Loaded
+[19/05/23 15:19:30:404 UTC]  INFO util.Config: Assigned default refresh: 5 minutes.
+[19/05/23 15:19:30:826 UTC]  INFO business.CacheLocator: loading cache administrator: ChainableCacheAdministratorImpl
+[19/05/23 15:19:30:886 UTC] FATAL util.FileUtil: Config.CONTEXT not initialized with a servlet context, dying
+[19/05/23 15:19:30:913 UTC] FATAL util.FileUtil: Config.CONTEXT not initialized with a servlet context, dying
+[19/05/23 15:19:30:928 UTC] FATAL util.FileUtil: Config.CONTEXT not initialized with a servlet context, dying
+[19/05/23 15:19:30:931 UTC]  WARN lang.System: No Valid License Found : /home/runner/work/core/core/dotCMS/./dotsecure/license/license.dat
+[19/05/23 15:19:30:932 UTC]  INFO enterprise.LicenseUtil: Setting up default license
+[19/05/23 15:19:31:119 UTC]  WARN hikari.HikariConfig: jdbc/dotCMSPool - idleTimeout is close to or more than maxLifetime, disabling it.
+[19/05/23 15:19:31:126 UTC]  INFO hikari.HikariDataSource: jdbc/dotCMSPool - Starting...
+[19/05/23 15:19:32:101 UTC]  WARN helper.AnalyticsHelper: ACCESS_TOKEN does not have a issued date, filtering token out
+[19/05/23 15:19:32:409 UTC] ERROR helper.BayesianHelper: Control results are missing
+[19/05/23 15:19:32:418 UTC] ERROR helper.BayesianHelper: Variants results are missing
+[19/05/23 15:19:32:537 UTC] ERROR pool.HikariPool: jdbc/dotCMSPool - Exception during pool initialization.
+org.postgresql.util.PSQLException: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:319) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:49) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:247) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.Driver.makeConnection(Driver.java:434) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.Driver.connect(Driver.java:291) ~[postgresql-42.5.1.jar:42.5.1]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-3.4.2.jar:?]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:354) ~[HikariCP-3.4.2.jar:?]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:202) ~[HikariCP-3.4.2.jar:?]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:473) ~[HikariCP-3.4.2.jar:?]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:554) ~[HikariCP-3.4.2.jar:?]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) ~[HikariCP-3.4.2.jar:?]
+	at com.zaxxer.hikari.HikariDataSource.<init>(HikariDataSource.java:81) ~[HikariCP-3.4.2.jar:?]
+	at com.dotmarketing.db.DBPropertiesDataSourceStrategy.apply(DBPropertiesDataSourceStrategy.java:63) ~[main/:?]
+	at com.dotmarketing.db.DataSourceStrategyProvider.get(DataSourceStrategyProvider.java:77) ~[main/:?]
+	at com.dotmarketing.db.DbConnectionFactory.getDataSource(DbConnectionFactory.java:116) ~[main/:?]
+	at com.dotmarketing.db.DbConnectionFactory.getConnection(DbConnectionFactory.java:227) ~[main/:?]
+	at com.dotmarketing.db.HibernateUtil.startLocalTransactionIfNeeded(HibernateUtil.java:1292) ~[main/:?]
+	at com.dotmarketing.db.LocalTransaction.wrap(LocalTransaction.java:162) ~[main/:?]
+	at com.dotcms.enterprise.license.LicenseManager$1.run(LicenseManager.java:216) ~[main/:?]
+	at java.lang.Thread.run(Thread.java:829) [?:?]
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method) ~[?:?]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:412) ~[?:?]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:255) ~[?:?]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:237) ~[?:?]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[?:?]
+	at java.net.Socket.connect(Socket.java:609) ~[?:?]
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:241) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.core.PGStream.<init>(PGStream.java:98) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:109) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:235) ~[postgresql-42.5.1.jar:42.5.1]
+	... 19 more
+[19/05/23 15:19:32:543 UTC]  WARN db.DataSourceStrategyProvider: Error initializing datasource. Reason: Failed to initialize pool: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.Trying to load datasource from context.xml ...
+[19/05/23 15:19:32:543 UTC]  WARN db.DataSourceStrategyProvider: Failed to initialize pool: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+[19/05/23 15:19:32:544 UTC]  WARN db.DataSourceStrategyProvider: com.zaxxer.hikari.pool.HikariPool.throwPoolInitializationException(HikariPool.java:589)
+[19/05/23 15:19:32:597 UTC] ERROR db.TomcatDataSourceStrategy: ---------- Error getting dbconnection jdbc/dotCMSPool from context.xml
+javax.naming.NoInitialContextException: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+	at javax.naming.spi.NamingManager.getInitialContext(NamingManager.java:702) ~[?:?]
+	at javax.naming.InitialContext.getDefaultInitCtx(InitialContext.java:305) ~[?:?]
+	at javax.naming.InitialContext.getURLOrDefaultInitCtx(InitialContext.java:342) ~[?:?]
+	at javax.naming.InitialContext.lookup(InitialContext.java:409) ~[?:?]
+	at com.liferay.util.JNDIUtil.lookup(JNDIUtil.java:88) ~[main/:?]
+	at com.dotmarketing.db.TomcatDataSourceStrategy.apply(TomcatDataSourceStrategy.java:36) ~[main/:?]
+	at com.dotmarketing.db.DataSourceStrategyProvider.get(DataSourceStrategyProvider.java:108) ~[main/:?]
+	at com.dotmarketing.db.DbConnectionFactory.getDataSource(DbConnectionFactory.java:116) ~[main/:?]
+	at com.dotmarketing.db.DbConnectionFactory.getConnection(DbConnectionFactory.java:227) ~[main/:?]
+	at com.dotmarketing.db.HibernateUtil.startLocalTransactionIfNeeded(HibernateUtil.java:1292) ~[main/:?]
+	at com.dotmarketing.db.LocalTransaction.wrap(LocalTransaction.java:162) ~[main/:?]
+	at com.dotcms.enterprise.license.LicenseManager$1.run(LicenseManager.java:216) ~[main/:?]
+	at java.lang.Thread.run(Thread.java:829) [?:?]
+[19/05/23 15:19:32:601 UTC] ERROR db.DbConnectionFactory: ---------- DBConnectionFactory: error getting dbconnection jdbc/dotCMSPool
+com.dotmarketing.exception.DotRuntimeException: javax.naming.NoInitialContextException: Need to specify class name in environment or system property, or in an application resource file: java.naming.factory.initial
+	at com.dotmarketing.db.TomcatDataSourceStrategy.apply(TomcatDataSourceStrategy.java:43) ~[main/:?]
+	at com.dotmarketing.db.DataSourceStrategyProvider.get(DataSourceStrategyProvider.java:108) ~[main/:?]
+	at com.dotmarketing.db.DbConnectionFactory.getDataSource(DbConnectionFactory.java:116) ~[main/:?]
+	at com.dotmarketing.db.DbConnectionFactory.getConnection(DbConnectionFactory.java:227) ~[main/:?]
+	at com.dotmarketing.db.HibernateUtil.startLocalTransactionIfNeeded(HibernateUtil.java:1292) ~[main/:?]
+	at com.dotmarketing.db.LocalTransaction.wrap(LocalTransaction.java:162) ~[main/:?]
+	at com.dotcms.enterprise.license.LicenseManager$1.run(LicenseManager.java:216) ~[main/:?]
+	at java.lang.Thread.run(Thread.java:829) [?:?]
+[19/05/23 15:19:32:640 UTC]  INFO util.Config: Setting property: API_LOCATOR_IMPLEMENTATION to com.dotcms.UnitTestBase$MyAPILocator
+[19/05/23 15:19:32:641 UTC]  INFO util.Config: Setting property: SYSTEM_EXIT_ON_STARTUP_FAILURE to false
