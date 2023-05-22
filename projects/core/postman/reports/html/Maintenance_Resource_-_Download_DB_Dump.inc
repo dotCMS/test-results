@@ -1,2 +1,0 @@
-<tr><td><a href="./Maintenance_Resource_-_Download_DB_Dump.html">Maintenance Resource - Download DB Dump.json</a></td><td style="color: #ffffff; background-color: #dc3545; font-weight: bold;">FAILED</td>
-      <td>1.415</td></tr>

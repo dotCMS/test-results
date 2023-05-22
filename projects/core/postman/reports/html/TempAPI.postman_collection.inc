@@ -1,2 +1,0 @@
-<tr><td><a href="./TempAPI.postman_collection.html">TempAPI.postman_collection.json</a></td><td style="color: #ffffff; background-color: #dc3545; font-weight: bold;">FAILED</td>
-      <td>4.121</td></tr>
