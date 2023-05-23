@@ -1,2 +1,2 @@
 <tr><td><a href="./CacheResource.postman_collection.html">CacheResource.postman_collection.json</a></td><td style="color: #ffffff; background-color: #28a745; font-weight: bold;">PASSED</td>
-      <td>27.29</td></tr>
+      <td>26.99</td></tr>

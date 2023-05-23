@@ -1,2 +1,2 @@
 <tr><td><a href="./Velocity.postman_collection.html">Velocity.postman_collection.json</a></td><td style="color: #ffffff; background-color: #28a745; font-weight: bold;">PASSED</td>
-      <td>25.583</td></tr>
+      <td>24.508</td></tr>
