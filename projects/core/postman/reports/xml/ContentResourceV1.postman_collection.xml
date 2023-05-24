@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="ContentResourceV1" tests="23" time="197.309">
+  <testsuite name="Content not exists" id="3e1976db-a472-44ac-b621-55d784c7af1d" timestamp="2023-05-24T15:30:01.569Z" tests="1" failures="0" errors="0" time="3.842">
+    <testcase name="Status code should be 404" time="3.842" classname="ContentResourceV1"/>
+  </testsuite>
+  <testsuite name="SuccessRequest" id="a874b512-548d-4236-994a-cc8949abd14f" timestamp="2023-05-24T15:30:01.569Z" tests="2" failures="0" errors="0" time="9.317">
+    <testcase name="Status code is 200 " time="9.317" classname="ContentResourceV1"/>
+    <testcase name="Valid response" time="9.317" classname="ContentResourceV1"/>
+  </testsuite>
+  <testsuite name="Content exists by identifier" id="ea6d6574-5b3a-4861-97a1-b92f170bdd61" timestamp="2023-05-24T15:30:01.569Z" tests="2" failures="0" errors="0" time="3.035">
+    <testcase name="Status code should be 200" time="3.035" classname="ContentResourceV1"/>
+    <testcase name="Id check" time="3.035" classname="ContentResourceV1"/>
+  </testsuite>
+  <testsuite name="Content exists by inode" id="0ea2f9ec-76f6-4eac-a07c-a868a11b2852" timestamp="2023-05-24T15:30:01.569Z" tests="2" failures="0" errors="0" time="3.027">
+    <testcase name="Status code should be 200" time="3.027" classname="ContentResourceV1"/>
+    <testcase name="Id check" time="3.027" classname="ContentResourceV1"/>
+  </testsuite>
+  <testsuite name="Content can lock" id="e8972af7-f74d-4ae0-8f49-f6332c5c54c1" timestamp="2023-05-24T15:30:01.569Z" tests="3" failures="0" errors="0" time="3.039">
+    <testcase name="Status code should be 200" time="3.039" classname="ContentResourceV1"/>
+    <testcase name="Id check" time="3.039" classname="ContentResourceV1"/>
+    <testcase name="Can lock" time="3.039" classname="ContentResourceV1"/>
+  </testsuite>
+  <testsuite name="Related - Non Existing id" id="05b7974a-2497-4207-90c0-b5e5e4de8589" timestamp="2023-05-24T15:30:01.569Z" tests="1" failures="0" errors="0" time="3.050">
+    <testcase name="Status code should be 404" time="3.050" classname="ContentResourceV1"/>
+  </testsuite>
+  <testsuite name="Create Parent Content type" id="85bf5be8-82f2-4d4c-943a-0f72b56bfcaf" timestamp="2023-05-24T15:30:01.569Z" tests="0" failures="0" errors="0" time="9.084"/>
+  <testsuite name="Create Child Content Type" id="ac10d092-b625-451b-bd53-04f428fd471b" timestamp="2023-05-24T15:30:01.569Z" tests="0" failures="0" errors="0" time="9.260"/>
+  <testsuite name="Update Parent Content type" id="87e32a57-8322-4b26-aa7a-07675c38adef" timestamp="2023-05-24T15:30:01.569Z" tests="0" failures="0" errors="0" time="9.176"/>
+  <testsuite name="Create parent1 instance" id="854c9357-5e3f-4e90-b140-6cddc60bee4b" timestamp="2023-05-24T15:30:01.569Z" tests="1" failures="0" errors="0" time="9.196">
+    <testcase name="Status code is 200 " time="9.196" classname="ContentResourceV1"/>
+  </testsuite>
+  <testsuite name="Create parent2 Instance" id="2c8808e2-6a1e-480f-85e3-20b90fcfeb68" timestamp="2023-05-24T15:30:01.569Z" tests="1" failures="0" errors="0" time="9.163">
+    <testcase name="Status code is 200 " time="9.163" classname="ContentResourceV1"/>
+  </testsuite>
+  <testsuite name="Save Multiple Childs for parent 1" id="792961df-639f-465c-8691-b315685ed45c" timestamp="2023-05-24T15:30:01.569Z" tests="2" failures="0" errors="0" time="31.120">
+    <testcase name="No errors" time="31.120" classname="ContentResourceV1"/>
+    <testcase name="Information Saved Correctly" time="31.120" classname="ContentResourceV1"/>
+  </testsuite>
+  <testsuite name="Save Multiple Childs for parent 2" id="83712a2b-9570-4adf-bf99-88d18e7f9e37" timestamp="2023-05-24T15:30:01.569Z" tests="2" failures="0" errors="0" time="64.502">
+    <testcase name="No errors" time="64.502" classname="ContentResourceV1"/>
+    <testcase name="Information Saved Correctly" time="64.502" classname="ContentResourceV1"/>
+  </testsuite>
+  <testsuite name="Update parent1  children" id="8107264c-4e98-4182-a31e-15cdf1864b98" timestamp="2023-05-24T15:30:01.569Z" tests="1" failures="1" errors="1" time="3.227">
+    <system-err><![CDATA[Iteration: 0
+
+---
+testScriptError: Cannot read properties of undefined (reading 'identifier')
+---
+]]></system-err>
+    <testcase name="Status code is 200 " time="3.227" classname="ContentResourceV1">
+      <failure type="AssertionFailure" message="expected response to have status code 200 but got 500">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: a7037756-a113-4775-888b-9a96d00896bc.]]>
+        <![CDATA[Collection name: ContentResourceV1.]]>
+        <![CDATA[Request name: Update parent1  children.]]>
+        <![CDATA[Test description: Status code is 200 .]]>
+        <![CDATA[Error message: expected response to have status code 200 but got 500.]]>
+        <![CDATA[Stacktrace: AssertionError: expected response to have status code 200 but got 500
+   at Object.eval sandbox-script.js:1:14).]]>
+      </failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Update parent2 children" id="976d9eb5-97ce-4ef5-a7a3-1691f161c3c6" timestamp="2023-05-24T15:30:01.569Z" tests="1" failures="1" errors="0" time="3.083">
+    <testcase name="Status code is 200 " time="3.083" classname="ContentResourceV1">
+      <failure type="AssertionFailure" message="expected response to have status code 200 but got 500">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: a7037756-a113-4775-888b-9a96d00896bc.]]>
+        <![CDATA[Collection name: ContentResourceV1.]]>
+        <![CDATA[Request name: Update parent2 children.]]>
+        <![CDATA[Test description: Status code is 200 .]]>
+        <![CDATA[Error message: expected response to have status code 200 but got 500.]]>
+        <![CDATA[Stacktrace: AssertionError: expected response to have status code 200 but got 500
+   at Object.eval sandbox-script.js:1:15).]]>
+      </failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Related - Invalid relationship field variable" id="af194692-2678-425f-a697-e7eeeea534bf" timestamp="2023-05-24T15:30:01.569Z" tests="1" failures="0" errors="0" time="3.019">
+    <testcase name="Status code should be 400" time="3.019" classname="ContentResourceV1"/>
+  </testsuite>
+  <testsuite name="Related - Easy case parent1" id="6184057a-13f1-484e-ad6c-f97755f4e319" timestamp="2023-05-24T15:30:01.569Z" tests="2" failures="1" errors="0" time="3.036">
+    <testcase name="Status code should be 200" time="3.036" classname="ContentResourceV1"/>
+    <testcase name="length check" time="3.036" classname="ContentResourceV1">
+      <failure type="AssertionFailure" message="expected 0 to deeply equal 10">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: a7037756-a113-4775-888b-9a96d00896bc.]]>
+        <![CDATA[Collection name: ContentResourceV1.]]>
+        <![CDATA[Request name: Related - Easy case parent1.]]>
+        <![CDATA[Test description: length check.]]>
+        <![CDATA[Error message: expected 0 to deeply equal 10.]]>
+        <![CDATA[Stacktrace: AssertionError: expected 0 to deeply equal 10
+   at Object.eval sandbox-script.js:2:17).]]>
+      </failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Related - Easy case parent1 filtering by Contentlet1" id="5143bbae-1065-4764-84be-f4866a36b72f" timestamp="2023-05-24T15:30:01.569Z" tests="2" failures="1" errors="0" time="3.017">
+    <testcase name="Status code should be 200" time="3.017" classname="ContentResourceV1"/>
+    <testcase name="length check" time="3.017" classname="ContentResourceV1">
+      <failure type="AssertionFailure" message="expected 0 to deeply equal 2">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: a7037756-a113-4775-888b-9a96d00896bc.]]>
+        <![CDATA[Collection name: ContentResourceV1.]]>
+        <![CDATA[Request name: Related - Easy case parent1 filtering by Contentlet1.]]>
+        <![CDATA[Test description: length check.]]>
+        <![CDATA[Error message: expected 0 to deeply equal 2.]]>
+        <![CDATA[Stacktrace: AssertionError: expected 0 to deeply equal 2
+   at Object.eval sandbox-script.js:2:18).]]>
+      </failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Related - Easy case parent2" id="996538c1-5d5c-45d7-80ad-4ac47657c958" timestamp="2023-05-24T15:30:01.569Z" tests="2" failures="1" errors="0" time="3.018">
+    <testcase name="Status code should be 200" time="3.018" classname="ContentResourceV1"/>
+    <testcase name="length check" time="3.018" classname="ContentResourceV1">
+      <failure type="AssertionFailure" message="expected 0 to deeply equal 20">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: a7037756-a113-4775-888b-9a96d00896bc.]]>
+        <![CDATA[Collection name: ContentResourceV1.]]>
+        <![CDATA[Request name: Related - Easy case parent2.]]>
+        <![CDATA[Test description: length check.]]>
+        <![CDATA[Error message: expected 0 to deeply equal 20.]]>
+        <![CDATA[Stacktrace: AssertionError: expected 0 to deeply equal 20
+   at Object.eval sandbox-script.js:2:19).]]>
+      </failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Related - Easy case parent2 pagination" id="9d8ffd30-630a-4009-a5b9-cf675e48300f" timestamp="2023-05-24T15:30:01.569Z" tests="2" failures="1" errors="0" time="3.015">
+    <testcase name="Status code should be 200" time="3.015" classname="ContentResourceV1"/>
+    <testcase name="length check" time="3.015" classname="ContentResourceV1">
+      <failure type="AssertionFailure" message="expected 0 to deeply equal 20">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: a7037756-a113-4775-888b-9a96d00896bc.]]>
+        <![CDATA[Collection name: ContentResourceV1.]]>
+        <![CDATA[Request name: Related - Easy case parent2 pagination.]]>
+        <![CDATA[Test description: length check.]]>
+        <![CDATA[Error message: expected 0 to deeply equal 20.]]>
+        <![CDATA[Stacktrace: AssertionError: expected 0 to deeply equal 20
+   at Object.eval sandbox-script.js:2:20).]]>
+      </failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Related - Easy case parent2 pagination last page" id="ac98dbfe-d231-4ed7-8050-c2d92c4da237" timestamp="2023-05-24T15:30:01.569Z" tests="2" failures="1" errors="1" time="3.014">
+    <system-err><![CDATA[Iteration: 0
+
+---
+testScriptError: Cannot read properties of undefined (reading 'title')
+---
+]]></system-err>
+    <testcase name="Status code should be 200" time="3.014" classname="ContentResourceV1"/>
+    <testcase name="length check" time="3.014" classname="ContentResourceV1">
+      <failure type="AssertionFailure" message="expected 0 to deeply equal 10">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: a7037756-a113-4775-888b-9a96d00896bc.]]>
+        <![CDATA[Collection name: ContentResourceV1.]]>
+        <![CDATA[Request name: Related - Easy case parent2 pagination last page.]]>
+        <![CDATA[Test description: length check.]]>
+        <![CDATA[Error message: expected 0 to deeply equal 10.]]>
+        <![CDATA[Stacktrace: AssertionError: expected 0 to deeply equal 10
+   at Object.eval sandbox-script.js:2:21).]]>
+      </failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Logout to test Anon User" id="0ea88d01-cb22-4b54-a2c6-8cea7258f0b1" timestamp="2023-05-24T15:30:01.569Z" tests="0" failures="0" errors="0" time="3.048"/>
+  <testsuite name="Related - Easy case parent1 Anon user" id="b2fb70ba-2c2e-4094-92e5-0d5b67a161c6" timestamp="2023-05-24T15:30:01.569Z" tests="2" failures="1" errors="0" time="3.021">
+    <testcase name="Status code should be 200" time="3.021" classname="ContentResourceV1"/>
+    <testcase name="length check" time="3.021" classname="ContentResourceV1">
+      <failure type="AssertionFailure" message="expected 0 to deeply equal 10">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: a7037756-a113-4775-888b-9a96d00896bc.]]>
+        <![CDATA[Collection name: ContentResourceV1.]]>
+        <![CDATA[Request name: Related - Easy case parent1 Anon user.]]>
+        <![CDATA[Test description: length check.]]>
+        <![CDATA[Error message: expected 0 to deeply equal 10.]]>
+        <![CDATA[Stacktrace: AssertionError: expected 0 to deeply equal 10
+   at Object.eval sandbox-script.js:2:23).]]>
+      </failure>
+    </testcase>
+  </testsuite>
+</testsuites>
