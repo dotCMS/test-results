@@ -1,2 +1,0 @@
-<tr><td><a href="./ForgotPasswordResource.postman_collection.html">ForgotPasswordResource.postman_collection.json</a></td><td style="color: #ffffff; background-color: #dc3545; font-weight: bold;">FAILED</td>
-      <td>1.32</td></tr>
