@@ -10,10 +10,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
       - name: Run delete-old-branches-action
-        uses: beatlabs/delete-old-branches-action@v0.0.9
+        uses: beatlabs/delete-old-branches-action@v0.10.0
         with:
           repo_token: ${{ github.token }}
           date: '2 weeks ago'
           default_branches: main,master,scratch
+          extra_protected_branch_regex: ^(release-*)$
+          exclude_open_pr_branches: true
           dry_run: false
           delete_tags: true
