@@ -1,2 +1,0 @@
-<tr><td><a href="./Maintenance_Resource_-_Donwload_Log_File.html">Maintenance Resource - Donwload Log File.json</a></td><td style="color: #ffffff; background-color: #dc3545; font-weight: bold;">FAILED</td>
-      <td>12.534</td></tr>
