@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">16.753s</div>
+<div class="counter">16.153s</div>
 <p>duration</p>
 </div>
 </td>
@@ -144,7 +144,7 @@
 <a name="test_downloadBundle_success"></a>
 <h3 class="failures">test_downloadBundle_success</h3>
 <span class="code">
-<pre>com.dotmarketing.exception.DotRuntimeException: Error generating bundle ID '9745d0a0-cdbb-437c-ac91-ef8662f94676': Unable to make field private final jdk.internal.loader.BuiltinClassLoader jdk.internal.loader.BuiltinClassLoader.parent accessible: module java.base does not &quot;opens jdk.internal.loader&quot; to unnamed module @67e2d983
+<pre>com.dotmarketing.exception.DotRuntimeException: Error generating bundle ID '37d68713-220f-4bcd-b90e-b0be8191e290': Unable to make field private final jdk.internal.loader.BuiltinClassLoader jdk.internal.loader.BuiltinClassLoader.parent accessible: module java.base does not &quot;opens jdk.internal.loader&quot; to unnamed module @5d47c63f
 	at app//com.dotcms.publisher.bundle.business.BundleAPIImpl.generateTarGzipBundleFile(BundleAPIImpl.java:435)
 	at app//com.dotcms.rest.BundleResourceTest.test_downloadBundle_success(BundleResourceTest.java:223)
 	at java.base@11.0.19/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -202,12 +202,12 @@
 	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
-Caused by: com.dotcms.publishing.DotPublishingException: Error generating bundle ID '9745d0a0-cdbb-437c-ac91-ef8662f94676': Unable to make field private final jdk.internal.loader.BuiltinClassLoader jdk.internal.loader.BuiltinClassLoader.parent accessible: module java.base does not &quot;opens jdk.internal.loader&quot; to unnamed module @67e2d983
+Caused by: com.dotcms.publishing.DotPublishingException: Error generating bundle ID '37d68713-220f-4bcd-b90e-b0be8191e290': Unable to make field private final jdk.internal.loader.BuiltinClassLoader jdk.internal.loader.BuiltinClassLoader.parent accessible: module java.base does not &quot;opens jdk.internal.loader&quot; to unnamed module @5d47c63f
 	at app//com.dotcms.publishing.PublisherAPIImpl.publish(PublisherAPIImpl.java:178)
 	at app//com.dotcms.publishing.PublisherAPIImpl.publish(PublisherAPIImpl.java:64)
 	at app//com.dotcms.publisher.bundle.business.BundleAPIImpl.generateTarGzipBundleFile(BundleAPIImpl.java:430)
 	... 56 more
-Caused by: java.lang.reflect.InaccessibleObjectException: Unable to make field private final jdk.internal.loader.BuiltinClassLoader jdk.internal.loader.BuiltinClassLoader.parent accessible: module java.base does not &quot;opens jdk.internal.loader&quot; to unnamed module @67e2d983
+Caused by: java.lang.reflect.InaccessibleObjectException: Unable to make field private final jdk.internal.loader.BuiltinClassLoader jdk.internal.loader.BuiltinClassLoader.parent accessible: module java.base does not &quot;opens jdk.internal.loader&quot; to unnamed module @5d47c63f
 	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:340)
 	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:280)
 	at java.base/java.lang.reflect.Field.checkCanSetAccessible(Field.java:176)
@@ -220,6 +220,44 @@ Caused by: java.lang.reflect.InaccessibleObjectException: Unable to make field p
 	at com.thoughtworks.xstream.core.DefaultConverterLookup.lookupConverterForType(DefaultConverterLookup.java:56)
 	at com.thoughtworks.xstream.XStream$1.lookupConverterForType(XStream.java:498)
 	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:48)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller$1.convertAnother(AbstractReferenceMarshaller.java:84)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshallField(AbstractReflectionConverter.java:256)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.writeField(AbstractReflectionConverter.java:232)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.&lt;init&gt;(AbstractReflectionConverter.java:195)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doMarshal(AbstractReflectionConverter.java:141)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshal(AbstractReflectionConverter.java:89)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller.convert(AbstractReferenceMarshaller.java:69)
+	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:58)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller$1.convertAnother(AbstractReferenceMarshaller.java:84)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshallField(AbstractReflectionConverter.java:256)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.writeField(AbstractReflectionConverter.java:232)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.&lt;init&gt;(AbstractReflectionConverter.java:195)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doMarshal(AbstractReflectionConverter.java:141)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshal(AbstractReflectionConverter.java:89)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller.convert(AbstractReferenceMarshaller.java:69)
+	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:58)
+	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:43)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller$1.convertAnother(AbstractReferenceMarshaller.java:88)
+	at com.thoughtworks.xstream.converters.collections.AbstractCollectionConverter.writeItem(AbstractCollectionConverter.java:64)
+	at com.thoughtworks.xstream.converters.collections.CollectionConverter.marshal(CollectionConverter.java:74)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller.convert(AbstractReferenceMarshaller.java:69)
+	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:58)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller$1.convertAnother(AbstractReferenceMarshaller.java:84)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshallField(AbstractReflectionConverter.java:256)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.writeField(AbstractReflectionConverter.java:232)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.&lt;init&gt;(AbstractReflectionConverter.java:195)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doMarshal(AbstractReflectionConverter.java:141)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshal(AbstractReflectionConverter.java:89)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller.convert(AbstractReferenceMarshaller.java:69)
+	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:58)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller$1.convertAnother(AbstractReferenceMarshaller.java:84)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshallField(AbstractReflectionConverter.java:256)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.writeField(AbstractReflectionConverter.java:232)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.&lt;init&gt;(AbstractReflectionConverter.java:195)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.doMarshal(AbstractReflectionConverter.java:141)
+	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshal(AbstractReflectionConverter.java:89)
+	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller.convert(AbstractReferenceMarshaller.java:69)
+	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:58)
 	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller$1.convertAnother(AbstractReferenceMarshaller.java:84)
 	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshallField(AbstractReflectionConverter.java:256)
 	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.writeField(AbstractReflectionConverter.java:232)
@@ -333,27 +371,27 @@ Caused by: java.lang.reflect.InaccessibleObjectException: Unable to make field p
 </thead>
 <tr>
 <td class="failures">shouldCleanRelationshipCache</td>
-<td class="failures">4.127s</td>
+<td class="failures">3.593s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
 <td class="success">test_deleteAll</td>
-<td class="success">10.854s</td>
+<td class="success">10.827s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">test_downloadBundle_fileNotGenerated_return404</td>
-<td class="success">0.843s</td>
+<td class="success">0.863s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="failures">test_downloadBundle_success</td>
-<td class="failures">0.041s</td>
+<td class="failures">0.024s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
 <td class="success">test_generateBundle_success</td>
-<td class="success">0.888s</td>
+<td class="success">0.846s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -374,7 +412,7 @@ Caused by: java.lang.reflect.InaccessibleObjectException: Unable to make field p
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 7.3.3</a> at May 26, 2023, 7:45:10 PM</p>
+<a href="http://www.gradle.org">Gradle 7.3.3</a> at May 26, 2023, 11:02:02 PM</p>
 </div>
 </div>
 </body>
