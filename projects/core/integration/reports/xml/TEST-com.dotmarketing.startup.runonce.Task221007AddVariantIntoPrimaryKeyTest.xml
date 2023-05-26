@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.dotmarketing.startup.runonce.Task221007AddVariantIntoPrimaryKeyTest" tests="3" skipped="0" failures="3" errors="0" timestamp="2023-05-25T15:55:26" hostname="fv-az413-565" time="0.022">
+<testsuite name="com.dotmarketing.startup.runonce.Task221007AddVariantIntoPrimaryKeyTest" tests="3" skipped="0" failures="3" errors="0" timestamp="2023-05-26T21:28:11" hostname="fv-az1243-988" time="0.027">
   <properties/>
-  <testcase name="executeUpgrade" classname="com.dotmarketing.startup.runonce.Task221007AddVariantIntoPrimaryKeyTest" time="0.007">
-    <failure message="org.postgresql.util.PSQLException: ERROR: could not create unique index &quot;contentlet_version_info_pkey&quot;&#10;  Detail: Key (identifier, lang)=(8966a54e84d865639977c9c4b3521ce2, 1) is duplicated." type="org.postgresql.util.PSQLException">org.postgresql.util.PSQLException: ERROR: could not create unique index &quot;contentlet_version_info_pkey&quot;
-  Detail: Key (identifier, lang)=(8966a54e84d865639977c9c4b3521ce2, 1) is duplicated.
+  <testcase name="executeUpgrade" classname="com.dotmarketing.startup.runonce.Task221007AddVariantIntoPrimaryKeyTest" time="0.009">
+    <failure message="org.postgresql.util.PSQLException: ERROR: could not create unique index &quot;contentlet_version_info_pkey&quot;&#10;  Detail: Key (identifier, lang)=(f8323b064295f0e0090d7644d3b4a239, 1) is duplicated." type="org.postgresql.util.PSQLException">org.postgresql.util.PSQLException: ERROR: could not create unique index &quot;contentlet_version_info_pkey&quot;
+  Detail: Key (identifier, lang)=(f8323b064295f0e0090d7644d3b4a239, 1) is duplicated.
 	at app//org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2676)
 	at app//org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2366)
 	at app//org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:356)
@@ -76,9 +76,9 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="primaryKeyWithNoDefaultName" classname="com.dotmarketing.startup.runonce.Task221007AddVariantIntoPrimaryKeyTest" time="0.003">
-    <failure message="org.postgresql.util.PSQLException: ERROR: could not create unique index &quot;whatever_name&quot;&#10;  Detail: Key (identifier, lang)=(8966a54e84d865639977c9c4b3521ce2, 1) is duplicated." type="org.postgresql.util.PSQLException">org.postgresql.util.PSQLException: ERROR: could not create unique index &quot;whatever_name&quot;
-  Detail: Key (identifier, lang)=(8966a54e84d865639977c9c4b3521ce2, 1) is duplicated.
+  <testcase name="primaryKeyWithNoDefaultName" classname="com.dotmarketing.startup.runonce.Task221007AddVariantIntoPrimaryKeyTest" time="0.004">
+    <failure message="org.postgresql.util.PSQLException: ERROR: could not create unique index &quot;whatever_name&quot;&#10;  Detail: Key (identifier, lang)=(f8323b064295f0e0090d7644d3b4a239, 1) is duplicated." type="org.postgresql.util.PSQLException">org.postgresql.util.PSQLException: ERROR: could not create unique index &quot;whatever_name&quot;
+  Detail: Key (identifier, lang)=(f8323b064295f0e0090d7644d3b4a239, 1) is duplicated.
 	at app//org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2676)
 	at app//org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2366)
 	at app//org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:356)
@@ -150,9 +150,9 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="whenThePrimaryKeyDoesNotExists" classname="com.dotmarketing.startup.runonce.Task221007AddVariantIntoPrimaryKeyTest" time="0.012">
-    <failure message="com.dotmarketing.exception.DotDataException: ERROR: could not create unique index &quot;contentlet_version_info_pkey&quot;&#10;  Detail: Key (identifier, lang, variant_id)=(8966a54e84d865639977c9c4b3521ce2, 1, DEFAULT) is duplicated." type="com.dotmarketing.exception.DotDataException">com.dotmarketing.exception.DotDataException: ERROR: could not create unique index &quot;contentlet_version_info_pkey&quot;
-  Detail: Key (identifier, lang, variant_id)=(8966a54e84d865639977c9c4b3521ce2, 1, DEFAULT) is duplicated.
+  <testcase name="whenThePrimaryKeyDoesNotExists" classname="com.dotmarketing.startup.runonce.Task221007AddVariantIntoPrimaryKeyTest" time="0.014">
+    <failure message="com.dotmarketing.exception.DotDataException: ERROR: could not create unique index &quot;contentlet_version_info_pkey&quot;&#10;  Detail: Key (identifier, lang, variant_id)=(f8323b064295f0e0090d7644d3b4a239, 1, DEFAULT) is duplicated." type="com.dotmarketing.exception.DotDataException">com.dotmarketing.exception.DotDataException: ERROR: could not create unique index &quot;contentlet_version_info_pkey&quot;
+  Detail: Key (identifier, lang, variant_id)=(f8323b064295f0e0090d7644d3b4a239, 1, DEFAULT) is duplicated.
 	at app//com.dotmarketing.startup.AbstractJDBCStartupTask.executeUpgrade(AbstractJDBCStartupTask.java:795)
 	at app//com.dotmarketing.startup.runonce.Task221007AddVariantIntoPrimaryKeyTest.whenThePrimaryKeyDoesNotExists(Task221007AddVariantIntoPrimaryKeyTest.java:106)
 	at java.base@11.0.19/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -211,7 +211,7 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 Caused by: org.postgresql.util.PSQLException: ERROR: could not create unique index &quot;contentlet_version_info_pkey&quot;
-  Detail: Key (identifier, lang, variant_id)=(8966a54e84d865639977c9c4b3521ce2, 1, DEFAULT) is duplicated.
+  Detail: Key (identifier, lang, variant_id)=(f8323b064295f0e0090d7644d3b4a239, 1, DEFAULT) is duplicated.
 	at app//org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2676)
 	at app//org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2366)
 	at app//org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:356)
