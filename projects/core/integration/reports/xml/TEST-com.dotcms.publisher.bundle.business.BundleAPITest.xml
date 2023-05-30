@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.dotcms.publisher.bundle.business.BundleAPITest" tests="11" skipped="0" failures="1" errors="0" timestamp="2023-05-30T19:46:58" hostname="fv-az417-562" time="5.997">
+<testsuite name="com.dotcms.publisher.bundle.business.BundleAPITest" tests="11" skipped="0" failures="1" errors="0" timestamp="2023-05-30T19:47:36" hostname="fv-az404-491" time="5.543">
   <properties/>
-  <testcase name="test_deleteBundleById_uploadedBundle" classname="com.dotcms.publisher.bundle.business.BundleAPITest" time="0.005"/>
+  <testcase name="test_deleteBundleById_uploadedBundle" classname="com.dotcms.publisher.bundle.business.BundleAPITest" time="0.006"/>
   <testcase name="test_deleteBundleAndDependencies_bundleIdDoesNotExist" classname="com.dotcms.publisher.bundle.business.BundleAPITest" time="0.001"/>
-  <testcase name="test_deleteAllBundles_byLimitedUser" classname="com.dotcms.publisher.bundle.business.BundleAPITest" time="0.833"/>
-  <testcase name="test_bundleTgzExists_returnFalse" classname="com.dotcms.publisher.bundle.business.BundleAPITest" time="0.002"/>
-  <testcase name="test_deleteBundleAndDependencies_byAdmin" classname="com.dotcms.publisher.bundle.business.BundleAPITest" time="0.801"/>
+  <testcase name="test_deleteAllBundles_byLimitedUser" classname="com.dotcms.publisher.bundle.business.BundleAPITest" time="0.739"/>
+  <testcase name="test_bundleTgzExists_returnFalse" classname="com.dotcms.publisher.bundle.business.BundleAPITest" time="0.003"/>
+  <testcase name="test_deleteBundleAndDependencies_byAdmin" classname="com.dotcms.publisher.bundle.business.BundleAPITest" time="0.716"/>
   <testcase name="test_deleteBundleAndDependenciesOlderThan_futureDate" classname="com.dotcms.publisher.bundle.business.BundleAPITest" time="0.001"/>
-  <testcase name="test_deleteBundleAndDependenciesOlderThan_byAdmin" classname="com.dotcms.publisher.bundle.business.BundleAPITest" time="1.831"/>
-  <testcase name="test_deleteBundleAndDependenciesOlderThan_byLimitedUser" classname="com.dotcms.publisher.bundle.business.BundleAPITest" time="0.827"/>
-  <testcase name="test_bundleTgzExists_returnTrue" classname="com.dotcms.publisher.bundle.business.BundleAPITest" time="0.027">
-    <failure message="com.dotmarketing.exception.DotRuntimeException: Error generating bundle ID 'df724fc8-498d-474b-bc0f-d11a929e50b9': Unable to make field private static final jdk.internal.misc.Unsafe jdk.internal.misc.InnocuousThread.UNSAFE accessible: module java.base does not &quot;opens jdk.internal.misc&quot; to unnamed module @67e2d983" type="com.dotmarketing.exception.DotRuntimeException">com.dotmarketing.exception.DotRuntimeException: Error generating bundle ID 'df724fc8-498d-474b-bc0f-d11a929e50b9': Unable to make field private static final jdk.internal.misc.Unsafe jdk.internal.misc.InnocuousThread.UNSAFE accessible: module java.base does not &quot;opens jdk.internal.misc&quot; to unnamed module @67e2d983
+  <testcase name="test_deleteBundleAndDependenciesOlderThan_byAdmin" classname="com.dotcms.publisher.bundle.business.BundleAPITest" time="1.836"/>
+  <testcase name="test_deleteBundleAndDependenciesOlderThan_byLimitedUser" classname="com.dotcms.publisher.bundle.business.BundleAPITest" time="0.731"/>
+  <testcase name="test_bundleTgzExists_returnTrue" classname="com.dotcms.publisher.bundle.business.BundleAPITest" time="0.035">
+    <failure message="com.dotmarketing.exception.DotRuntimeException: Error generating bundle ID '0fddf3aa-43f3-47de-9186-b8439a9a9b65': Unable to make field private final jdk.internal.loader.BuiltinClassLoader jdk.internal.loader.BuiltinClassLoader.parent accessible: module java.base does not &quot;opens jdk.internal.loader&quot; to unnamed module @67e2d983" type="com.dotmarketing.exception.DotRuntimeException">com.dotmarketing.exception.DotRuntimeException: Error generating bundle ID '0fddf3aa-43f3-47de-9186-b8439a9a9b65': Unable to make field private final jdk.internal.loader.BuiltinClassLoader jdk.internal.loader.BuiltinClassLoader.parent accessible: module java.base does not &quot;opens jdk.internal.loader&quot; to unnamed module @67e2d983
 	at app//com.dotcms.publisher.bundle.business.BundleAPIImpl.generateTarGzipBundleFile(BundleAPIImpl.java:435)
 	at app//com.dotcms.publisher.bundle.business.BundleAPITest.test_bundleTgzExists_returnTrue(BundleAPITest.java:261)
 	at java.base@11.0.19/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -68,12 +68,12 @@
 	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
-Caused by: com.dotcms.publishing.DotPublishingException: Error generating bundle ID 'df724fc8-498d-474b-bc0f-d11a929e50b9': Unable to make field private static final jdk.internal.misc.Unsafe jdk.internal.misc.InnocuousThread.UNSAFE accessible: module java.base does not &quot;opens jdk.internal.misc&quot; to unnamed module @67e2d983
+Caused by: com.dotcms.publishing.DotPublishingException: Error generating bundle ID '0fddf3aa-43f3-47de-9186-b8439a9a9b65': Unable to make field private final jdk.internal.loader.BuiltinClassLoader jdk.internal.loader.BuiltinClassLoader.parent accessible: module java.base does not &quot;opens jdk.internal.loader&quot; to unnamed module @67e2d983
 	at app//com.dotcms.publishing.PublisherAPIImpl.publish(PublisherAPIImpl.java:178)
 	at app//com.dotcms.publishing.PublisherAPIImpl.publish(PublisherAPIImpl.java:64)
 	at app//com.dotcms.publisher.bundle.business.BundleAPIImpl.generateTarGzipBundleFile(BundleAPIImpl.java:430)
 	... 56 more
-Caused by: java.lang.reflect.InaccessibleObjectException: Unable to make field private static final jdk.internal.misc.Unsafe jdk.internal.misc.InnocuousThread.UNSAFE accessible: module java.base does not &quot;opens jdk.internal.misc&quot; to unnamed module @67e2d983
+Caused by: java.lang.reflect.InaccessibleObjectException: Unable to make field private final jdk.internal.loader.BuiltinClassLoader jdk.internal.loader.BuiltinClassLoader.parent accessible: module java.base does not &quot;opens jdk.internal.loader&quot; to unnamed module @67e2d983
 	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:340)
 	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:280)
 	at java.base/java.lang.reflect.Field.checkCanSetAccessible(Field.java:176)
@@ -86,12 +86,6 @@ Caused by: java.lang.reflect.InaccessibleObjectException: Unable to make field p
 	at com.thoughtworks.xstream.core.DefaultConverterLookup.lookupConverterForType(DefaultConverterLookup.java:56)
 	at com.thoughtworks.xstream.XStream$1.lookupConverterForType(XStream.java:498)
 	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:48)
-	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:43)
-	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller$1.convertAnother(AbstractReferenceMarshaller.java:88)
-	at com.thoughtworks.xstream.converters.collections.AbstractCollectionConverter.writeItem(AbstractCollectionConverter.java:64)
-	at com.thoughtworks.xstream.converters.collections.ArrayConverter.marshal(ArrayConverter.java:45)
-	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller.convert(AbstractReferenceMarshaller.java:69)
-	at com.thoughtworks.xstream.core.TreeMarshaller.convertAnother(TreeMarshaller.java:58)
 	at com.thoughtworks.xstream.core.AbstractReferenceMarshaller$1.convertAnother(AbstractReferenceMarshaller.java:84)
 	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter.marshallField(AbstractReflectionConverter.java:256)
 	at com.thoughtworks.xstream.converters.reflection.AbstractReflectionConverter$2.writeField(AbstractReflectionConverter.java:232)
@@ -191,8 +185,8 @@ Caused by: java.lang.reflect.InaccessibleObjectException: Unable to make field p
 	... 58 more
 </failure>
   </testcase>
-  <testcase name="test_deleteAllBundles_byAdmin" classname="com.dotcms.publisher.bundle.business.BundleAPITest" time="0.872"/>
-  <testcase name="test_deleteBundleAndDependencies_byLimitedUser" classname="com.dotcms.publisher.bundle.business.BundleAPITest" time="0.796"/>
+  <testcase name="test_deleteAllBundles_byAdmin" classname="com.dotcms.publisher.bundle.business.BundleAPITest" time="0.764"/>
+  <testcase name="test_deleteBundleAndDependencies_byLimitedUser" classname="com.dotcms.publisher.bundle.business.BundleAPITest" time="0.711"/>
   <system-out><![CDATA[
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
