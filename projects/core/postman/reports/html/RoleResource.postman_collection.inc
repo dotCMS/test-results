@@ -1,2 +1,0 @@
-<tr><td><a href="./RoleResource.postman_collection.html">RoleResource.postman_collection.json</a></td><td style="color: #ffffff; background-color: #dc3545; font-weight: bold;">FAILED</td>
-      <td>29.263</td></tr>
