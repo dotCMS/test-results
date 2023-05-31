@@ -1,2 +1,2 @@
 <tr><td><a href="./Promote_Variant.postman_collection.html">Promote Variant.postman_collection.json</a></td><td style="color: #ffffff; background-color: #28a745; font-weight: bold;">PASSED</td>
-      <td>5.745</td></tr>
+      <td>5.275</td></tr>
