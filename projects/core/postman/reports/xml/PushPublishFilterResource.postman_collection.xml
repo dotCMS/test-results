@@ -1,44 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="PushPublishFilterResource" tests="9" time="28.547">
-  <testsuite name="Get All Filters" id="b59f4506-0333-4317-9341-4150c1bf7c25" timestamp="2023-06-02T15:59:06.309Z" tests="2" failures="0" errors="0" time="3.911">
-    <testcase name="Status code must be 200" time="3.911" classname="PushPublishFilterResource"/>
-    <testcase name="The 'ContentOnly.yml' Filter must be the first one in the list" time="3.911" classname="PushPublishFilterResource"/>
+<testsuites name="PushPublishFilterResource" tests="9" time="28.698">
+  <testsuite name="Get All Filters" id="6ac97982-59ea-4e89-a4dc-e17a086b02a7" timestamp="2023-06-02T20:36:34.660Z" tests="2" failures="0" errors="0" time="3.988">
+    <testcase name="Status code must be 200" time="3.988" classname="PushPublishFilterResource"/>
+    <testcase name="The 'ContentOnly.yml' Filter must be the first one in the list" time="3.988" classname="PushPublishFilterResource"/>
   </testsuite>
-  <testsuite name="Get a Specific Filter" id="414c3635-0056-4a80-b078-965e4c5cf36a" timestamp="2023-06-02T15:59:06.309Z" tests="2" failures="0" errors="0" time="3.026">
+  <testsuite name="Get a Specific Filter" id="fac360f6-5caf-4af6-bff7-726acdbe10ae" timestamp="2023-06-02T20:36:34.660Z" tests="2" failures="0" errors="0" time="3.025">
+    <testcase name="Status code must be 200" time="3.025" classname="PushPublishFilterResource"/>
+    <testcase name="The 'ForcePush.yml' Filter mut be the only result" time="3.025" classname="PushPublishFilterResource"/>
+  </testsuite>
+  <testsuite name="Add Filter by Form" id="e1838065-766b-456c-a432-a008285637fc" timestamp="2023-06-02T20:36:34.660Z" tests="2" failures="0" errors="0" time="3.374">
+    <testcase name="Status code must be 200" time="3.374" classname="PushPublishFilterResource"/>
+    <testcase name="The 'NoWorkflow.yml' Filter must be present in the filter list via Form" time="3.374" classname="PushPublishFilterResource"/>
+  </testsuite>
+  <testsuite name="Add Filter by File" id="09952b88-3404-4f50-bf0f-47bf2def060e" timestamp="2023-06-02T20:36:34.660Z" tests="2" failures="0" errors="0" time="3.098">
+    <testcase name="Status code must be 200" time="3.098" classname="PushPublishFilterResource"/>
+    <testcase name="The 'TestPPFilter.yml' Filter must be present in the filter list via File" time="3.098" classname="PushPublishFilterResource"/>
+  </testsuite>
+  <testsuite name="Update Filter by Form" id="048c19e7-61db-43c0-8a1e-7edef2f97fae" timestamp="2023-06-02T20:36:34.660Z" tests="2" failures="0" errors="0" time="3.067">
+    <testcase name="Status code must be 200" time="3.067" classname="PushPublishFilterResource"/>
+    <testcase name="The 'NoWorkflow.yml' must have been updated via Form" time="3.067" classname="PushPublishFilterResource"/>
+  </testsuite>
+  <testsuite name="Update Filter by File" id="494543fb-69d9-4afc-8e32-640ea095f2cc" timestamp="2023-06-02T20:36:34.660Z" tests="2" failures="0" errors="0" time="3.051">
+    <testcase name="Status code must be 200" time="3.051" classname="PushPublishFilterResource"/>
+    <testcase name="The 'TestPPFilter.yml' Filter must have been pudated via File" time="3.051" classname="PushPublishFilterResource"/>
+  </testsuite>
+  <testsuite name="Check Filter Order - Sort Value" id="b17105ae-5b0a-4d7d-87aa-b85ebfc39e5a" timestamp="2023-06-02T20:36:34.660Z" tests="8" failures="0" errors="0" time="3.026">
     <testcase name="Status code must be 200" time="3.026" classname="PushPublishFilterResource"/>
-    <testcase name="The 'ForcePush.yml' Filter mut be the only result" time="3.026" classname="PushPublishFilterResource"/>
+    <testcase name="The 'NoWorkflow.yml' Filter must be #1 in the list, as it was updated before to have sort = 0." time="3.026" classname="PushPublishFilterResource"/>
+    <testcase name="The 'ContentOnly.yml' Filter must be #2 in the list." time="3.026" classname="PushPublishFilterResource"/>
+    <testcase name="The 'WebContentOnly.yml' Filter must be #3 in the list." time="3.026" classname="PushPublishFilterResource"/>
+    <testcase name="The 'Intelligent.yml' Filter must be #4 in the list." time="3.026" classname="PushPublishFilterResource"/>
+    <testcase name="The 'ForcePush.yml' Filter must be #5 in the list." time="3.026" classname="PushPublishFilterResource"/>
+    <testcase name="The 'ShallowPush.yml' Filter must be #6 in the list." time="3.026" classname="PushPublishFilterResource"/>
+    <testcase name="The 'TestPPFilter.yml' Filter must be #7 in the list, as it was updated before to have sort = 20" time="3.026" classname="PushPublishFilterResource"/>
   </testsuite>
-  <testsuite name="Add Filter by Form" id="2dd803b4-fbe6-49ee-91d6-82c0c0c41c42" timestamp="2023-06-02T15:59:06.309Z" tests="2" failures="0" errors="0" time="3.330">
-    <testcase name="Status code must be 200" time="3.330" classname="PushPublishFilterResource"/>
-    <testcase name="The 'NoWorkflow.yml' Filter must be present in the filter list via Form" time="3.330" classname="PushPublishFilterResource"/>
+  <testsuite name="Delete No Workflow" id="bdf2fd78-b74e-408a-83a0-6913eedbd90e" timestamp="2023-06-02T20:36:34.660Z" tests="2" failures="0" errors="0" time="3.036">
+    <testcase name="Status code must be 200" time="3.036" classname="PushPublishFilterResource"/>
+    <testcase name="The 'NoWorkflow.yml' must NOT be part of the list now" time="3.036" classname="PushPublishFilterResource"/>
   </testsuite>
-  <testsuite name="Add Filter by File" id="c69c5f39-21ef-4727-88ed-388a4c5ddd44" timestamp="2023-06-02T15:59:06.309Z" tests="2" failures="0" errors="0" time="3.091">
-    <testcase name="Status code must be 200" time="3.091" classname="PushPublishFilterResource"/>
-    <testcase name="The 'TestPPFilter.yml' Filter must be present in the filter list via File" time="3.091" classname="PushPublishFilterResource"/>
-  </testsuite>
-  <testsuite name="Update Filter by Form" id="353408eb-9a12-4950-9fc2-5df461709676" timestamp="2023-06-02T15:59:06.309Z" tests="2" failures="0" errors="0" time="3.056">
-    <testcase name="Status code must be 200" time="3.056" classname="PushPublishFilterResource"/>
-    <testcase name="The 'NoWorkflow.yml' must have been updated via Form" time="3.056" classname="PushPublishFilterResource"/>
-  </testsuite>
-  <testsuite name="Update Filter by File" id="41fe3da4-6ee8-4629-9a77-a4c328ec6c54" timestamp="2023-06-02T15:59:06.309Z" tests="2" failures="0" errors="0" time="3.048">
-    <testcase name="Status code must be 200" time="3.048" classname="PushPublishFilterResource"/>
-    <testcase name="The 'TestPPFilter.yml' Filter must have been pudated via File" time="3.048" classname="PushPublishFilterResource"/>
-  </testsuite>
-  <testsuite name="Check Filter Order - Sort Value" id="73a2ba0a-c23c-4fd6-8129-af82898d4fa8" timestamp="2023-06-02T15:59:06.309Z" tests="8" failures="0" errors="0" time="3.020">
-    <testcase name="Status code must be 200" time="3.020" classname="PushPublishFilterResource"/>
-    <testcase name="The 'NoWorkflow.yml' Filter must be #1 in the list, as it was updated before to have sort = 0." time="3.020" classname="PushPublishFilterResource"/>
-    <testcase name="The 'ContentOnly.yml' Filter must be #2 in the list." time="3.020" classname="PushPublishFilterResource"/>
-    <testcase name="The 'WebContentOnly.yml' Filter must be #3 in the list." time="3.020" classname="PushPublishFilterResource"/>
-    <testcase name="The 'Intelligent.yml' Filter must be #4 in the list." time="3.020" classname="PushPublishFilterResource"/>
-    <testcase name="The 'ForcePush.yml' Filter must be #5 in the list." time="3.020" classname="PushPublishFilterResource"/>
-    <testcase name="The 'ShallowPush.yml' Filter must be #6 in the list." time="3.020" classname="PushPublishFilterResource"/>
-    <testcase name="The 'TestPPFilter.yml' Filter must be #7 in the list, as it was updated before to have sort = 20" time="3.020" classname="PushPublishFilterResource"/>
-  </testsuite>
-  <testsuite name="Delete No Workflow" id="5f273e16-6596-4439-8d64-40a96fce319d" timestamp="2023-06-02T15:59:06.309Z" tests="2" failures="0" errors="0" time="3.032">
-    <testcase name="Status code must be 200" time="3.032" classname="PushPublishFilterResource"/>
-    <testcase name="The 'NoWorkflow.yml' must NOT be part of the list now" time="3.032" classname="PushPublishFilterResource"/>
-  </testsuite>
-  <testsuite name="Delete Test PP Filter" id="10c5e3a7-bb6c-42a6-bdab-5fddd8c62be1" timestamp="2023-06-02T15:59:06.309Z" tests="2" failures="0" errors="0" time="3.033">
+  <testsuite name="Delete Test PP Filter" id="8d00cd49-fee9-4a34-89c9-0c27bd4def09" timestamp="2023-06-02T20:36:34.660Z" tests="2" failures="0" errors="0" time="3.033">
     <testcase name="Status code must be 200" time="3.033" classname="PushPublishFilterResource"/>
     <testcase name="The 'TestPPFilter.yml' must NOT be part of the list now" time="3.033" classname="PushPublishFilterResource"/>
   </testsuite>
