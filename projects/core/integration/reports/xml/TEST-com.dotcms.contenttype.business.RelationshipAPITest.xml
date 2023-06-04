@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.dotcms.contenttype.business.RelationshipAPITest" tests="6" skipped="0" failures="0" errors="0" timestamp="2023-06-04T21:43:52" hostname="fv-az616-866" time="15.979">
+  <properties/>
+  <testcase name="testSave_RelationshipWithModifiedRelationTypeValue_ShouldThrowException" classname="com.dotcms.contenttype.business.RelationshipAPITest" time="0.003"/>
+  <testcase name="testconvertRelationshipToRelationshipField_Success" classname="com.dotcms.contenttype.business.RelationshipAPITest" time="4.694"/>
+  <testcase name="testconvertRelationshipToRelationshipField_SelfRelated_Success" classname="com.dotcms.contenttype.business.RelationshipAPITest" time="3.717"/>
+  <testcase name="testDbRelatedContentWhenSelfJoinRelationship" classname="com.dotcms.contenttype.business.RelationshipAPITest" time="3.352"/>
+  <testcase name="testDbRelatedContentWhenNonSelfJoinRelationship" classname="com.dotcms.contenttype.business.RelationshipAPITest" time="4.21"/>
+  <testcase name="testSave_RelationshipWithNonUniqueRelationTypeValue_ShouldThrowException" classname="com.dotcms.contenttype.business.RelationshipAPITest" time="0.003"/>
+  <system-out><![CDATA[21:43:55.636 [dotCMSQuartz_Worker-1] ERROR com.dotmarketing.quartz.job.CleanUpFieldReferencesJob - Error cleaning up field references. Field velocity var: childcontenttype1685915032403s
+com.dotcms.contenttype.exception.NotFoundInDbException: Content Type with id:'5e107d032f04ceeb3b54311d57848a87' not found
+	at com.dotcms.contenttype.business.ContentTypeFactoryImpl.dbById(ContentTypeFactoryImpl.java:343) ~[main/:?]
+	at com.dotcms.contenttype.business.ContentTypeFactoryImpl.find(ContentTypeFactoryImpl.java:114) ~[main/:?]
+	at com.dotcms.contenttype.business.ContentTypeAPIImpl.find(ContentTypeAPIImpl.java:375) ~[main/:?]
+	at com.dotmarketing.quartz.job.CleanUpFieldReferencesJob.run(CleanUpFieldReferencesJob.java:74) ~[main/:?]
+	at com.dotmarketing.quartz.DotJob.execute(DotJob.java:42) ~[main/:?]
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:223) ~[dot.quartz-all-1.8.6_2.jar:?]
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:549) ~[dot.quartz-all-1.8.6_2.jar:?]
+21:43:56.080 [Test worker] ERROR com.dotcms.IntegrationTestBase - Test testconvertRelationshipToRelationshipField_Success has open connection after
+21:43:59.612 [dotCMSQuartz_Worker-2] ERROR com.dotmarketing.quartz.job.CleanUpFieldReferencesJob - Error cleaning up field references. Field velocity var: contenttype1685915037089children
+com.dotcms.contenttype.exception.NotFoundInDbException: Content Type with id:'804df1a9cc519fe7d33b647c9c30ff08' not found
+	at com.dotcms.contenttype.business.ContentTypeFactoryImpl.dbById(ContentTypeFactoryImpl.java:343) ~[main/:?]
+	at com.dotcms.contenttype.business.ContentTypeFactoryImpl.find(ContentTypeFactoryImpl.java:114) ~[main/:?]
+	at com.dotcms.contenttype.business.ContentTypeAPIImpl.find(ContentTypeAPIImpl.java:375) ~[main/:?]
+	at com.dotmarketing.quartz.job.CleanUpFieldReferencesJob.run(CleanUpFieldReferencesJob.java:74) ~[main/:?]
+	at com.dotmarketing.quartz.DotJob.execute(DotJob.java:42) ~[main/:?]
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:223) ~[dot.quartz-all-1.8.6_2.jar:?]
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:549) ~[dot.quartz-all-1.8.6_2.jar:?]
+21:43:59.802 [Test worker] ERROR com.dotcms.IntegrationTestBase - Test testconvertRelationshipToRelationshipField_SelfRelated_Success has open connection after
+21:44:03.148 [Test worker] ERROR com.dotcms.IntegrationTestBase - Test testDbRelatedContentWhenSelfJoinRelationship has open connection after
+21:44:07.364 [Test worker] ERROR com.dotcms.IntegrationTestBase - Test testDbRelatedContentWhenNonSelfJoinRelationship has open connection after
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

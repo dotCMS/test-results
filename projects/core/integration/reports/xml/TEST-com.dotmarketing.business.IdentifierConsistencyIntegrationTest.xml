@@ -1,0 +1,653 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.dotmarketing.business.IdentifierConsistencyIntegrationTest" tests="8" skipped="1" failures="0" errors="0" timestamp="2023-06-04T22:30:10" hostname="fv-az616-866" time="0.449">
+  <properties/>
+  <testcase name="Test_Identifier_Update_Dupe_Asset_Name_Expect_Name_Collision" classname="com.dotmarketing.business.IdentifierConsistencyIntegrationTest" time="0.014"/>
+  <testcase name="Test_Rename_Asset_Expect_SubPaths_Get_Renamed" classname="com.dotmarketing.business.IdentifierConsistencyIntegrationTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="Test_Identifier_Delete_Parent_Folder_With_Existing_Children_Expect_Error" classname="com.dotmarketing.business.IdentifierConsistencyIntegrationTest" time="0.009"/>
+  <testcase name="Test_Identifier_Insert_Subfolder_Expect_Name_Collision" classname="com.dotmarketing.business.IdentifierConsistencyIntegrationTest" time="0.008"/>
+  <testcase name="Test_Identifier_Insert_Case_Insensitive_Dupe_Asset_Name" classname="com.dotmarketing.business.IdentifierConsistencyIntegrationTest" time="0.004"/>
+  <testcase name="Test_Create_Folder_Tree_Then_Rename_Parent_Verify_Children_Are_Renamed" classname="com.dotmarketing.business.IdentifierConsistencyIntegrationTest" time="0.108"/>
+  <testcase name="Test_Identifier_Create_Folder_Tree_Then_Update_Update_Identifier_Non_existing_Path" classname="com.dotmarketing.business.IdentifierConsistencyIntegrationTest" time="0.26"/>
+  <testcase name="Test_Identifier_Insert_Subfolder_Then_Update_Expect_Name_Collision" classname="com.dotmarketing.business.IdentifierConsistencyIntegrationTest" time="0.046"/>
+  <system-out><![CDATA[22:30:10.610 [Test worker] ERROR com.dotmarketing.business.IdentifierConsistencyIntegrationTest - updateIdentifier failed: com.dotmarketing.exception.DotDataException: ERROR: duplicate key value violates unique constraint "idx_ident_uniq_asset_name"
+  Detail: Key (full_path_lc(identifier.*), host_inode)=(/anyassetname, a7b8580c86a6bcf08d2c4608ff93ed6d) already exists.{
+  "SQL": ["UPDATE identifier set parent_path=?, asset_name=?, host_inode=?, asset_type=?, syspublish_date=?, sysexpire_date=? where id=?"],
+  "maxRows": [-1],
+  "offest": [0],
+  "params": [
+    "/",
+    "anyassetname",
+    "a7b8580c86a6bcf08d2c4608ff93ed6d",
+    "contentlet",
+    null,
+    null,
+    "0cf775d6-49f8-402a-84d9-145e2f972bb5"
+  ]
+}
+com.dotmarketing.exception.DotDataException: ERROR: duplicate key value violates unique constraint "idx_ident_uniq_asset_name"
+  Detail: Key (full_path_lc(identifier.*), host_inode)=(/anyassetname, a7b8580c86a6bcf08d2c4608ff93ed6d) already exists.{
+  "SQL": ["UPDATE identifier set parent_path=?, asset_name=?, host_inode=?, asset_type=?, syspublish_date=?, sysexpire_date=? where id=?"],
+  "maxRows": [-1],
+  "offest": [0],
+  "params": [
+    "/",
+    "anyassetname",
+    "a7b8580c86a6bcf08d2c4608ff93ed6d",
+    "contentlet",
+    null,
+    null,
+    "0cf775d6-49f8-402a-84d9-145e2f972bb5"
+  ]
+}
+	at com.dotmarketing.common.db.DotConnect.loadResult(DotConnect.java:276) ~[main/:?]
+	at com.dotmarketing.business.IdentifierConsistencyIntegrationTest.updateIdentifier(IdentifierConsistencyIntegrationTest.java:468) ~[integrationTest/:?]
+	at com.dotmarketing.business.IdentifierConsistencyIntegrationTest.Test_Identifier_Update_Dupe_Asset_Name_Expect_Name_Collision(IdentifierConsistencyIntegrationTest.java:97) ~[integrationTest/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:19) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:38) ~[integrationTest/:?]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:14) ~[integrationTest/:?]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.MainBaseSuite$DotRunner.run(MainBaseSuite.java:60) ~[integrationTest/:?]
+	at org.junit.runners.Suite.runChild(Suite.java:128) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.Suite.runChild(Suite.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[?:?]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[?:?]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[?:?]
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[?:?]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[?:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:?]
+Caused by: org.postgresql.util.PSQLException: ERROR: duplicate key value violates unique constraint "idx_ident_uniq_asset_name"
+  Detail: Key (full_path_lc(identifier.*), host_inode)=(/anyassetname, a7b8580c86a6bcf08d2c4608ff93ed6d) already exists.
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2676) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2366) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:356) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:496) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:413) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:190) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.jdbc.PgPreparedStatement.execute(PgPreparedStatement.java:177) ~[postgresql-42.5.1.jar:42.5.1]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44) ~[HikariCP-3.4.2.jar:?]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java) ~[HikariCP-3.4.2.jar:?]
+	at com.dotmarketing.common.db.DotConnect.executeQuery(DotConnect.java:643) ~[main/:?]
+	at com.dotmarketing.common.db.DotConnect.executeQuery(DotConnect.java:566) ~[main/:?]
+	at com.dotmarketing.common.db.DotConnect.loadResult(DotConnect.java:274) ~[main/:?]
+	... 62 more
+22:30:10.619 [Test worker] ERROR com.dotcms.IntegrationTestBase - Test Test_Identifier_Update_Dupe_Asset_Name_Expect_Name_Collision has open connection after
+22:30:10.624 [Test worker] ERROR com.dotmarketing.business.IdentifierFactoryImpl - updateIdentifier failed: com.dotmarketing.exception.DotDataException: ERROR: Cannot delete as this path has children
+  Where: PL/pgSQL function check_child_assets() line 13 at RAISE{
+  "SQL": ["DELETE FROM identifier where id=?"],
+  "maxRows": [-1],
+  "offest": [0],
+  "params": "aeac64ef-30e0-445e-82fe-e26ee52b9507"
+}
+com.dotmarketing.exception.DotDataException: ERROR: Cannot delete as this path has children
+  Where: PL/pgSQL function check_child_assets() line 13 at RAISE{
+  "SQL": ["DELETE FROM identifier where id=?"],
+  "maxRows": [-1],
+  "offest": [0],
+  "params": "aeac64ef-30e0-445e-82fe-e26ee52b9507"
+}
+	at com.dotmarketing.common.db.DotConnect.loadResult(DotConnect.java:276) ~[main/:?]
+	at com.dotmarketing.business.IdentifierConsistencyIntegrationTest.lambda$deleteIdentifier$7(IdentifierConsistencyIntegrationTest.java:494) ~[integrationTest/:?]
+	at com.dotmarketing.db.LocalTransaction.wrap(LocalTransaction.java:165) ~[main/:?]
+	at com.dotmarketing.business.IdentifierConsistencyIntegrationTest.deleteIdentifier(IdentifierConsistencyIntegrationTest.java:487) ~[integrationTest/:?]
+	at com.dotmarketing.business.IdentifierConsistencyIntegrationTest.Test_Identifier_Delete_Parent_Folder_With_Existing_Children_Expect_Error(IdentifierConsistencyIntegrationTest.java:313) ~[integrationTest/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:19) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:38) ~[integrationTest/:?]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:14) ~[integrationTest/:?]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.MainBaseSuite$DotRunner.run(MainBaseSuite.java:60) ~[integrationTest/:?]
+	at org.junit.runners.Suite.runChild(Suite.java:128) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.Suite.runChild(Suite.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[?:?]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[?:?]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[?:?]
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[?:?]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[?:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:?]
+Caused by: org.postgresql.util.PSQLException: ERROR: Cannot delete as this path has children
+  Where: PL/pgSQL function check_child_assets() line 13 at RAISE
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2676) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2366) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:356) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:496) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:413) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:190) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.jdbc.PgPreparedStatement.execute(PgPreparedStatement.java:177) ~[postgresql-42.5.1.jar:42.5.1]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44) ~[HikariCP-3.4.2.jar:?]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java) ~[HikariCP-3.4.2.jar:?]
+	at com.dotmarketing.common.db.DotConnect.executeQuery(DotConnect.java:643) ~[main/:?]
+	at com.dotmarketing.common.db.DotConnect.executeQuery(DotConnect.java:566) ~[main/:?]
+	at com.dotmarketing.common.db.DotConnect.loadResult(DotConnect.java:274) ~[main/:?]
+	... 64 more
+22:30:10.631 [Test worker] ERROR com.dotmarketing.business.IdentifierConsistencyIntegrationTest - insertIdentifier failed:com.dotmarketing.exception.DotDataException: ERROR: duplicate key value violates unique constraint "idx_ident_uniq_asset_name"
+  Detail: Key (full_path_lc(identifier.*), host_inode)=(//1685917810628_anyfolder/subfolder, a7b8580c86a6bcf08d2c4608ff93ed6d) already exists.{
+  "SQL": ["INSERT INTO identifier (parent_path,asset_name,host_inode,asset_type,syspublish_date,sysexpire_date,id) values (?,?,?,?,?,?,?)"],
+  "maxRows": [-1],
+  "offest": [0],
+  "params": [
+    "//1685917810628_anyFolder/",
+    "SUBFOLDER",
+    "a7b8580c86a6bcf08d2c4608ff93ed6d",
+    "folder",
+    null,
+    null,
+    "0b39c985-9657-4550-9df6-81e95d52b761"
+  ]
+}
+com.dotmarketing.exception.DotDataException: ERROR: duplicate key value violates unique constraint "idx_ident_uniq_asset_name"
+  Detail: Key (full_path_lc(identifier.*), host_inode)=(//1685917810628_anyfolder/subfolder, a7b8580c86a6bcf08d2c4608ff93ed6d) already exists.{
+  "SQL": ["INSERT INTO identifier (parent_path,asset_name,host_inode,asset_type,syspublish_date,sysexpire_date,id) values (?,?,?,?,?,?,?)"],
+  "maxRows": [-1],
+  "offest": [0],
+  "params": [
+    "//1685917810628_anyFolder/",
+    "SUBFOLDER",
+    "a7b8580c86a6bcf08d2c4608ff93ed6d",
+    "folder",
+    null,
+    null,
+    "0b39c985-9657-4550-9df6-81e95d52b761"
+  ]
+}
+	at com.dotmarketing.common.db.DotConnect.loadResult(DotConnect.java:276) ~[main/:?]
+	at com.dotmarketing.business.IdentifierConsistencyIntegrationTest.insertIdentifier(IdentifierConsistencyIntegrationTest.java:432) ~[integrationTest/:?]
+	at com.dotmarketing.business.IdentifierConsistencyIntegrationTest.Test_Identifier_Insert_Subfolder_Expect_Name_Collision(IdentifierConsistencyIntegrationTest.java:237) ~[integrationTest/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:19) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:38) ~[integrationTest/:?]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:14) ~[integrationTest/:?]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.MainBaseSuite$DotRunner.run(MainBaseSuite.java:60) ~[integrationTest/:?]
+	at org.junit.runners.Suite.runChild(Suite.java:128) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.Suite.runChild(Suite.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[?:?]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[?:?]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[?:?]
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[?:?]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[?:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:?]
+Caused by: org.postgresql.util.PSQLException: ERROR: duplicate key value violates unique constraint "idx_ident_uniq_asset_name"
+  Detail: Key (full_path_lc(identifier.*), host_inode)=(//1685917810628_anyfolder/subfolder, a7b8580c86a6bcf08d2c4608ff93ed6d) already exists.
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2676) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2366) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:356) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:496) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:413) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:190) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.jdbc.PgPreparedStatement.execute(PgPreparedStatement.java:177) ~[postgresql-42.5.1.jar:42.5.1]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44) ~[HikariCP-3.4.2.jar:?]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java) ~[HikariCP-3.4.2.jar:?]
+	at com.dotmarketing.common.db.DotConnect.executeQuery(DotConnect.java:643) ~[main/:?]
+	at com.dotmarketing.common.db.DotConnect.executeQuery(DotConnect.java:566) ~[main/:?]
+	at com.dotmarketing.common.db.DotConnect.loadResult(DotConnect.java:274) ~[main/:?]
+	... 62 more
+22:30:10.638 [Test worker] ERROR com.dotmarketing.business.IdentifierConsistencyIntegrationTest - insertIdentifier failed:com.dotmarketing.exception.DotDataException: ERROR: duplicate key value violates unique constraint "idx_ident_uniq_asset_name"
+  Detail: Key (full_path_lc(identifier.*), host_inode)=(/1685917810636_assetname, a7b8580c86a6bcf08d2c4608ff93ed6d) already exists.{
+  "SQL": ["INSERT INTO identifier (parent_path,asset_name,host_inode,asset_type,syspublish_date,sysexpire_date,id) values (?,?,?,?,?,?,?)"],
+  "maxRows": [-1],
+  "offest": [0],
+  "params": [
+    "/",
+    "1685917810636_assetname",
+    "a7b8580c86a6bcf08d2c4608ff93ed6d",
+    "contentlet",
+    null,
+    null,
+    "c38a26f7-bcfe-4026-9772-852d63152877"
+  ]
+}
+com.dotmarketing.exception.DotDataException: ERROR: duplicate key value violates unique constraint "idx_ident_uniq_asset_name"
+  Detail: Key (full_path_lc(identifier.*), host_inode)=(/1685917810636_assetname, a7b8580c86a6bcf08d2c4608ff93ed6d) already exists.{
+  "SQL": ["INSERT INTO identifier (parent_path,asset_name,host_inode,asset_type,syspublish_date,sysexpire_date,id) values (?,?,?,?,?,?,?)"],
+  "maxRows": [-1],
+  "offest": [0],
+  "params": [
+    "/",
+    "1685917810636_assetname",
+    "a7b8580c86a6bcf08d2c4608ff93ed6d",
+    "contentlet",
+    null,
+    null,
+    "c38a26f7-bcfe-4026-9772-852d63152877"
+  ]
+}
+	at com.dotmarketing.common.db.DotConnect.loadResult(DotConnect.java:276) ~[main/:?]
+	at com.dotmarketing.business.IdentifierConsistencyIntegrationTest.insertIdentifier(IdentifierConsistencyIntegrationTest.java:432) ~[integrationTest/:?]
+	at com.dotmarketing.business.IdentifierConsistencyIntegrationTest.Test_Identifier_Insert_Case_Insensitive_Dupe_Asset_Name(IdentifierConsistencyIntegrationTest.java:82) ~[integrationTest/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:19) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:38) ~[integrationTest/:?]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:14) ~[integrationTest/:?]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.MainBaseSuite$DotRunner.run(MainBaseSuite.java:60) ~[integrationTest/:?]
+	at org.junit.runners.Suite.runChild(Suite.java:128) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.Suite.runChild(Suite.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[?:?]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[?:?]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[?:?]
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[?:?]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[?:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:?]
+Caused by: org.postgresql.util.PSQLException: ERROR: duplicate key value violates unique constraint "idx_ident_uniq_asset_name"
+  Detail: Key (full_path_lc(identifier.*), host_inode)=(/1685917810636_assetname, a7b8580c86a6bcf08d2c4608ff93ed6d) already exists.
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2676) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2366) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:356) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:496) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:413) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:190) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.jdbc.PgPreparedStatement.execute(PgPreparedStatement.java:177) ~[postgresql-42.5.1.jar:42.5.1]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44) ~[HikariCP-3.4.2.jar:?]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java) ~[HikariCP-3.4.2.jar:?]
+	at com.dotmarketing.common.db.DotConnect.executeQuery(DotConnect.java:643) ~[main/:?]
+	at com.dotmarketing.common.db.DotConnect.executeQuery(DotConnect.java:566) ~[main/:?]
+	at com.dotmarketing.common.db.DotConnect.loadResult(DotConnect.java:274) ~[main/:?]
+	... 62 more
+22:30:10.747 [Test worker] ERROR com.dotcms.IntegrationTestBase - Test Test_Create_Folder_Tree_Then_Rename_Parent_Verify_Children_Are_Renamed has open connection after
+22:30:10.814 [Test worker] ERROR com.dotmarketing.business.IdentifierConsistencyIntegrationTest - updateIdentifier failed: com.dotmarketing.exception.DotDataException: ERROR: Cannot UPDATE folder child-3-1 [1264a61d98ee00e17b0c6fb9f106ed3d] in path /1685917810747_root/lol/ as one or more parent folders do not exist in Site a7b8580c86a6bcf08d2c4608ff93ed6d
+  Where: PL/pgSQL function identifier_parent_path_check() line 13 at RAISE{
+  "SQL": ["UPDATE identifier set parent_path=?, asset_name=?, host_inode=?, asset_type=?, syspublish_date=?, sysexpire_date=? where id=?"],
+  "maxRows": [-1],
+  "offest": [0],
+  "params": [
+    "/1685917810747_root/lol/",
+    "child-3-1",
+    "a7b8580c86a6bcf08d2c4608ff93ed6d",
+    "folder",
+    null,
+    null,
+    "1264a61d98ee00e17b0c6fb9f106ed3d"
+  ]
+}
+com.dotmarketing.exception.DotDataException: ERROR: Cannot UPDATE folder child-3-1 [1264a61d98ee00e17b0c6fb9f106ed3d] in path /1685917810747_root/lol/ as one or more parent folders do not exist in Site a7b8580c86a6bcf08d2c4608ff93ed6d
+  Where: PL/pgSQL function identifier_parent_path_check() line 13 at RAISE{
+  "SQL": ["UPDATE identifier set parent_path=?, asset_name=?, host_inode=?, asset_type=?, syspublish_date=?, sysexpire_date=? where id=?"],
+  "maxRows": [-1],
+  "offest": [0],
+  "params": [
+    "/1685917810747_root/lol/",
+    "child-3-1",
+    "a7b8580c86a6bcf08d2c4608ff93ed6d",
+    "folder",
+    null,
+    null,
+    "1264a61d98ee00e17b0c6fb9f106ed3d"
+  ]
+}
+	at com.dotmarketing.common.db.DotConnect.loadResult(DotConnect.java:276) ~[main/:?]
+	at com.dotmarketing.business.IdentifierConsistencyIntegrationTest.updateIdentifier(IdentifierConsistencyIntegrationTest.java:468) ~[integrationTest/:?]
+	at com.dotmarketing.business.IdentifierConsistencyIntegrationTest.Test_Identifier_Create_Folder_Tree_Then_Update_Update_Identifier_Non_existing_Path(IdentifierConsistencyIntegrationTest.java:157) ~[integrationTest/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:38) ~[integrationTest/:?]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:14) ~[integrationTest/:?]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.MainBaseSuite$DotRunner.run(MainBaseSuite.java:60) ~[integrationTest/:?]
+	at org.junit.runners.Suite.runChild(Suite.java:128) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.Suite.runChild(Suite.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[?:?]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[?:?]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[?:?]
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[?:?]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[?:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:?]
+Caused by: org.postgresql.util.PSQLException: ERROR: Cannot UPDATE folder child-3-1 [1264a61d98ee00e17b0c6fb9f106ed3d] in path /1685917810747_root/lol/ as one or more parent folders do not exist in Site a7b8580c86a6bcf08d2c4608ff93ed6d
+  Where: PL/pgSQL function identifier_parent_path_check() line 13 at RAISE
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2676) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2366) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:356) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:496) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:413) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:190) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.jdbc.PgPreparedStatement.execute(PgPreparedStatement.java:177) ~[postgresql-42.5.1.jar:42.5.1]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44) ~[HikariCP-3.4.2.jar:?]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java) ~[HikariCP-3.4.2.jar:?]
+	at com.dotmarketing.common.db.DotConnect.executeQuery(DotConnect.java:643) ~[main/:?]
+	at com.dotmarketing.common.db.DotConnect.executeQuery(DotConnect.java:566) ~[main/:?]
+	at com.dotmarketing.common.db.DotConnect.loadResult(DotConnect.java:274) ~[main/:?]
+	... 61 more
+22:30:11.006 [Test worker] ERROR com.dotcms.IntegrationTestBase - Test Test_Identifier_Create_Folder_Tree_Then_Update_Update_Identifier_Non_existing_Path has open connection after
+22:30:11.016 [Test worker] ERROR com.dotmarketing.business.IdentifierConsistencyIntegrationTest - updateIdentifier failed: com.dotmarketing.exception.DotDataException: ERROR: duplicate key value violates unique constraint "identifier_parent_path_asset_name_host_inode_key"
+  Detail: Key (parent_path, asset_name, host_inode)=(//1685917811008_anyFolder/, subFolder-1, a7b8580c86a6bcf08d2c4608ff93ed6d) already exists.{
+  "SQL": ["UPDATE identifier set parent_path=?, asset_name=?, host_inode=?, asset_type=?, syspublish_date=?, sysexpire_date=? where id=?"],
+  "maxRows": [-1],
+  "offest": [0],
+  "params": [
+    "//1685917811008_anyFolder/",
+    "subFolder-1",
+    "a7b8580c86a6bcf08d2c4608ff93ed6d",
+    "folder",
+    null,
+    null,
+    "4874d228-5bcc-446a-9b49-25e8eaf57051"
+  ]
+}
+com.dotmarketing.exception.DotDataException: ERROR: duplicate key value violates unique constraint "identifier_parent_path_asset_name_host_inode_key"
+  Detail: Key (parent_path, asset_name, host_inode)=(//1685917811008_anyFolder/, subFolder-1, a7b8580c86a6bcf08d2c4608ff93ed6d) already exists.{
+  "SQL": ["UPDATE identifier set parent_path=?, asset_name=?, host_inode=?, asset_type=?, syspublish_date=?, sysexpire_date=? where id=?"],
+  "maxRows": [-1],
+  "offest": [0],
+  "params": [
+    "//1685917811008_anyFolder/",
+    "subFolder-1",
+    "a7b8580c86a6bcf08d2c4608ff93ed6d",
+    "folder",
+    null,
+    null,
+    "4874d228-5bcc-446a-9b49-25e8eaf57051"
+  ]
+}
+	at com.dotmarketing.common.db.DotConnect.loadResult(DotConnect.java:276) ~[main/:?]
+	at com.dotmarketing.business.IdentifierConsistencyIntegrationTest.updateIdentifier(IdentifierConsistencyIntegrationTest.java:468) ~[integrationTest/:?]
+	at com.dotmarketing.business.IdentifierConsistencyIntegrationTest.Test_Identifier_Insert_Subfolder_Then_Update_Expect_Name_Collision(IdentifierConsistencyIntegrationTest.java:272) ~[integrationTest/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:19) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:38) ~[integrationTest/:?]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:14) ~[integrationTest/:?]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.MainBaseSuite$DotRunner.run(MainBaseSuite.java:60) ~[integrationTest/:?]
+	at org.junit.runners.Suite.runChild(Suite.java:128) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.Suite.runChild(Suite.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[?:?]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[?:?]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[?:?]
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[?:?]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[?:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:?]
+Caused by: org.postgresql.util.PSQLException: ERROR: duplicate key value violates unique constraint "identifier_parent_path_asset_name_host_inode_key"
+  Detail: Key (parent_path, asset_name, host_inode)=(//1685917811008_anyFolder/, subFolder-1, a7b8580c86a6bcf08d2c4608ff93ed6d) already exists.
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2676) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2366) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:356) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:496) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:413) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:190) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.jdbc.PgPreparedStatement.execute(PgPreparedStatement.java:177) ~[postgresql-42.5.1.jar:42.5.1]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44) ~[HikariCP-3.4.2.jar:?]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java) ~[HikariCP-3.4.2.jar:?]
+	at com.dotmarketing.common.db.DotConnect.executeQuery(DotConnect.java:643) ~[main/:?]
+	at com.dotmarketing.common.db.DotConnect.executeQuery(DotConnect.java:566) ~[main/:?]
+	at com.dotmarketing.common.db.DotConnect.loadResult(DotConnect.java:274) ~[main/:?]
+	... 62 more
+22:30:11.052 [Test worker] ERROR com.dotcms.IntegrationTestBase - Test Test_Identifier_Insert_Subfolder_Then_Update_Expect_Name_Collision has open connection after
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.dotmarketing.portlets.linkchecker.business.LinkCheckerAPITest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-06-04T22:12:27" hostname="fv-az616-866" time="11.803">
+  <properties/>
+  <testcase name="findInvalidLinks" classname="com.dotmarketing.portlets.linkchecker.business.LinkCheckerAPITest" time="11.803"/>
+  <system-out><![CDATA[
+
+
+
+22:12:34.855 [dot-ReindexThreadSubmitter-0] ERROR com.dotcms.tika.TikaUtils - Failure retrieving OSGI Service [interface com.dotcms.tika.TikaServiceBuilder] in bundle [com.dotcms.tika]
+java.lang.IllegalStateException: [com.dotcms.tika] OSGI bundle NOT FOUND.
+	at org.apache.felix.framework.OSGISystem.getService(OSGISystem.java:228) ~[main/:?]
+	at com.dotcms.tika.TikaUtils.<init>(TikaUtils.java:63) ~[main/:?]
+	at com.dotcms.storage.MetadataGeneratorImpl.tikaBasedMetadata(MetadataGeneratorImpl.java:49) ~[main/:?]
+	at com.dotcms.storage.FileStorageAPIImpl.generateFullMetaData(FileStorageAPIImpl.java:151) ~[main/:?]
+	at com.dotcms.storage.FileStorageAPIImpl.generateMetaData(FileStorageAPIImpl.java:238) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.generateFullMetadata(FileMetadataAPIImpl.java:198) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.internalGenerateContentletMetadata(FileMetadataAPIImpl.java:91) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.generateContentletMetadata(FileMetadataAPIImpl.java:275) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.generateContentletMetadata(FileMetadataAPIImpl.java:260) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESMappingAPIImpl.writeMetadata(ESMappingAPIImpl.java:522) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESMappingAPIImpl.toMap(ESMappingAPIImpl.java:487) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.lambda$addBulkRequest$4c66ed82$1(ContentletIndexAPIImpl.java:806) ~[main/:?]
+	at io.vavr.control.Try.of(Try.java:75) ~[vavr-0.10.3.jar:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.addBulkRequest(ContentletIndexAPIImpl.java:805) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.appendBulkRequest(ContentletIndexAPIImpl.java:743) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.appendToBulkProcessor(ContentletIndexAPIImpl.java:759) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.appendToBulkProcessor(ContentletIndexAPIImpl.java:685) ~[main/:?]
+	at com.dotmarketing.common.reindex.ReindexThread.runReindexLoop(ReindexThread.java:227) ~[main/:?]
+	at com.dotmarketing.common.reindex.ReindexThread.lambda$new$1(ReindexThread.java:159) ~[main/:?]
+	at java.lang.Thread.run(Thread.java:829) ~[?:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) ~[?:?]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[?:?]
+	at java.lang.Thread.run(Thread.java:829) [?:?]
+22:12:34.855 [dot-ReindexThreadSubmitter-0] ERROR com.dotcms.tika.TikaUtils - Unable to get file Meta Data, OSGI Framework not initialized
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
