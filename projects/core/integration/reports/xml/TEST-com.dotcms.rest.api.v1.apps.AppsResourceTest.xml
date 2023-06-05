@@ -1,0 +1,1542 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.dotcms.rest.api.v1.apps.AppsResourceTest" tests="18" skipped="0" failures="0" errors="0" timestamp="2023-06-05T22:12:26" hostname="fv-az306-998" time="59.092">
+  <properties/>
+  <testcase name="Test_Create_App_Descriptor_Then_Create_App_Integration_Then_Delete_App_Descriptor" classname="com.dotcms.rest.api.v1.apps.AppsResourceTest" time="10.433"/>
+  <testcase name="Test_Pagination_And_Sort_Then_Request_Filter_Expect_Empty_Results" classname="com.dotcms.rest.api.v1.apps.AppsResourceTest" time="27.57"/>
+  <testcase name="Test_List_Available_Apps_Invalid_License" classname="com.dotcms.rest.api.v1.apps.AppsResourceTest" time="0.005"/>
+  <testcase name="Test_Create_App_descriptor_Then_Create_App_Integration_Then_Delete_One_Single_Secret" classname="com.dotcms.rest.api.v1.apps.AppsResourceTest" time="0.987"/>
+  <testcase name="Test_Required_Params_Sent_Empty_Value_Expect_Bad_Request" classname="com.dotcms.rest.api.v1.apps.AppsResourceTest" time="0.671"/>
+  <testcase name="Test_Create_App_descriptor_Then_Create_App_Integration_Then_Update_Secrets" classname="com.dotcms.rest.api.v1.apps.AppsResourceTest" time="1.139"/>
+  <testcase name="Test_Select_List_Param" classname="com.dotcms.rest.api.v1.apps.AppsResourceTest" time="1.044"/>
+  <testcase name="Test_Create_App_descriptor_Then_Create_App_Integration_Then_Archive_Site_Expect_Secrets_No_Longer_Available" classname="com.dotcms.rest.api.v1.apps.AppsResourceTest" time="1.608"/>
+  <testcase name="Test_Secret_Form_Keys_And_Values_Are_Trimmed" classname="com.dotcms.rest.api.v1.apps.AppsResourceTest" time="0.403"/>
+  <testcase name="Test_Get_App_Detail_Invalid_License" classname="com.dotcms.rest.api.v1.apps.AppsResourceTest" time="0.013"/>
+  <testcase name="Test_Export_Import" classname="com.dotcms.rest.api.v1.apps.AppsResourceTest" time="0.997"/>
+  <testcase name="Test_Create_Descriptor_Then_Add_Dynamic_Prop" classname="com.dotcms.rest.api.v1.apps.AppsResourceTest" time="1.166"/>
+  <testcase name="Test_Create_app_descriptor_Then_Create_App_Integration_Then_Delete_The_Whole_App" classname="com.dotcms.rest.api.v1.apps.AppsResourceTest" time="1.844"/>
+  <testcase name="Test_App_Key_Casing" classname="com.dotcms.rest.api.v1.apps.AppsResourceTest" time="5.106"/>
+  <testcase name="Test_Secret_Serializer_Returned_Values_Match_Descriptor_Verify_Hidden_Secrets_Are_Protected_Verify_Params_Are_Ordered" classname="com.dotcms.rest.api.v1.apps.AppsResourceTest" time="5.2"/>
+  <testcase name="Test_Required_Params_Send_Missing_Required_Param_Expect_Bad_Request" classname="com.dotcms.rest.api.v1.apps.AppsResourceTest" time="0.876"/>
+  <testcase name="Test_Get_App_By_Key_Invalid_License" classname="com.dotcms.rest.api.v1.apps.AppsResourceTest" time="0.013"/>
+  <testcase name="Test_Already_Exists_Exception_Expect_Bad_Request" classname="com.dotcms.rest.api.v1.apps.AppsResourceTest" time="0.014"/>
+  <system-out><![CDATA[22:12:26.775  INFO  apps.AppsHelper -  tmp upload directory `/home/runner/work/core/custom/assets/tmp_uploade996586e-9b9e-45b9-bea3-1f345bf17683` removed successfully. 
+22:12:27.700  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:12:27.705  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:12:27.722  INFO  business.LocalSystemEventsAPIImpl -  Broadcasting a Filterable Event.
+22:12:27.722  INFO  business.LocalSystemEventsAPIImpl -  Filtered Audience for event with key `app_1686003146770`  is `0` long. 
+22:12:28.713  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:12:28.718  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:12:28.736  INFO  business.LocalSystemEventsAPIImpl -  Broadcasting a Filterable Event.
+22:12:28.736  INFO  business.LocalSystemEventsAPIImpl -  Filtered Audience for event with key `app_1686003146770`  is `0` long. 
+22:12:29.761  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:12:29.766  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:12:29.784  INFO  business.LocalSystemEventsAPIImpl -  Broadcasting a Filterable Event.
+22:12:29.784  INFO  business.LocalSystemEventsAPIImpl -  Filtered Audience for event with key `app_1686003146770`  is `0` long. 
+22:12:30.760  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:12:30.764  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:12:30.782  INFO  business.LocalSystemEventsAPIImpl -  Broadcasting a Filterable Event.
+22:12:30.782  INFO  business.LocalSystemEventsAPIImpl -  Filtered Audience for event with key `app_1686003146770`  is `0` long. 
+22:12:31.790  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:12:31.794  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:12:31.812  INFO  business.LocalSystemEventsAPIImpl -  Broadcasting a Filterable Event.
+22:12:31.812  INFO  business.LocalSystemEventsAPIImpl -  Filtered Audience for event with key `app_1686003146770`  is `0` long. 
+22:12:32.777  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:12:32.782  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:12:32.799  INFO  business.LocalSystemEventsAPIImpl -  Broadcasting a Filterable Event.
+22:12:32.800  INFO  business.LocalSystemEventsAPIImpl -  Filtered Audience for event with key `app_1686003146770`  is `0` long. 
+22:12:33.814  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:12:33.820  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:12:33.837  INFO  business.LocalSystemEventsAPIImpl -  Broadcasting a Filterable Event.
+22:12:33.837  INFO  business.LocalSystemEventsAPIImpl -  Filtered Audience for event with key `app_1686003146770`  is `0` long. 
+22:12:34.852  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:12:34.858  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:12:34.907  INFO  business.LocalSystemEventsAPIImpl -  Broadcasting a Filterable Event.
+22:12:34.907  INFO  business.LocalSystemEventsAPIImpl -  Filtered Audience for event with key `app_1686003146770`  is `0` long. 
+22:12:35.815  WARN  pool.ProxyLeakTask - Connection leak detection triggered for org.postgresql.jdbc.PgConnection@2a7dc5e9 on thread Test worker, stack trace follows
+java.lang.Exception: Apparent connection leak detected
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:100) ~[HikariCP-3.4.2.jar:?]
+	at com.dotmarketing.startup.runonce.Task05070AddIdentifierVirtualColumn.executeUpgrade(Task05070AddIdentifierVirtualColumn.java:43) ~[main/:?]
+	at com.dotmarketing.startup.runonce.Task05070AndTask05080Test.testExecuteUpgrade(Task05070AndTask05080Test.java:26) ~[integrationTest/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:38) ~[integrationTest/:?]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:14) ~[integrationTest/:?]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.MainBaseSuite$DotRunner.run(MainBaseSuite.java:60) ~[integrationTest/:?]
+	at org.junit.runners.Suite.runChild(Suite.java:128) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.Suite.runChild(Suite.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[?:?]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[?:?]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[?:?]
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[?:?]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[?:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:?]
+22:12:35.856  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:12:35.860  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:12:35.878  INFO  business.LocalSystemEventsAPIImpl -  Broadcasting a Filterable Event.
+22:12:35.878  INFO  business.LocalSystemEventsAPIImpl -  Filtered Audience for event with key `app_1686003146770`  is `0` long. 
+22:12:36.859  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:12:36.864  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:12:36.882  INFO  business.LocalSystemEventsAPIImpl -  Broadcasting a Filterable Event.
+22:12:36.882  INFO  business.LocalSystemEventsAPIImpl -  Filtered Audience for event with key `app_1686003146770`  is `0` long. 
+22:12:37.074  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:12:37.082  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:12:37.090  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:12:37.098  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:12:37.106  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:12:37.113  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:12:37.121  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:12:37.128  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:12:37.136  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:12:37.143  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:12:37.147  WARN  apps.AppsAPIImpl -  Failed attempt to delete file with path `/home/runner/work/core/custom/assets/server/apps/app_1686003146770.yml` 
+22:12:37.179  ERROR apps.AppsResource - Exception getting app for key: `app_1686003146770`.
+com.dotmarketing.exception.DoesNotExistException: No App was found for key `app_1686003146770`. 
+	at com.dotcms.rest.api.v1.apps.AppsHelper.getAppSiteView(AppsHelper.java:151) ~[main/:?]
+	at com.dotcms.rest.api.v1.apps.AppsResource.getAppByKey(AppsResource.java:126) ~[main/:?]
+	at com.dotcms.rest.api.v1.apps.AppsResourceTest.Test_Create_App_Descriptor_Then_Create_App_Integration_Then_Delete_App_Descriptor(AppsResourceTest.java:662) ~[integrationTest/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:38) ~[integrationTest/:?]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:14) ~[integrationTest/:?]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.MainBaseSuite$DotRunner.run(MainBaseSuite.java:60) ~[integrationTest/:?]
+	at org.junit.runners.Suite.runChild(Suite.java:128) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.Suite.runChild(Suite.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[?:?]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[?:?]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[?:?]
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[?:?]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[?:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:?]
+22:12:37.191  ERROR apps.AppsResource - Exception getting app and secrets with message: No app was found for key `app_1686003146770` and siteId `e628c7911e54fc2bbd4c36d1a7075847`. 
+com.dotmarketing.exception.DoesNotExistException: No app was found for key `app_1686003146770` and siteId `e628c7911e54fc2bbd4c36d1a7075847`. 
+	at com.dotcms.rest.api.v1.apps.AppsResource.getAppDetail(AppsResource.java:174) ~[main/:?]
+	at com.dotcms.rest.api.v1.apps.AppsResourceTest.Test_Create_App_Descriptor_Then_Create_App_Integration_Then_Delete_App_Descriptor(AppsResourceTest.java:667) ~[integrationTest/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:38) ~[integrationTest/:?]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:14) ~[integrationTest/:?]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.MainBaseSuite$DotRunner.run(MainBaseSuite.java:60) ~[integrationTest/:?]
+	at org.junit.runners.Suite.runChild(Suite.java:128) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.Suite.runChild(Suite.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[?:?]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[?:?]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[?:?]
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[?:?]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[?:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:?]
+22:12:37.194  ERROR apps.AppsResource - Exception getting app and secrets with message: No app was found for key `app_1686003146770` and siteId `44896905a22adfc8759b8d1adc3fb9a4`. 
+com.dotmarketing.exception.DoesNotExistException: No app was found for key `app_1686003146770` and siteId `44896905a22adfc8759b8d1adc3fb9a4`. 
+	at com.dotcms.rest.api.v1.apps.AppsResource.getAppDetail(AppsResource.java:174) ~[main/:?]
+	at com.dotcms.rest.api.v1.apps.AppsResourceTest.Test_Create_App_Descriptor_Then_Create_App_Integration_Then_Delete_App_Descriptor(AppsResourceTest.java:667) ~[integrationTest/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:38) ~[integrationTest/:?]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:14) ~[integrationTest/:?]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.MainBaseSuite$DotRunner.run(MainBaseSuite.java:60) ~[integrationTest/:?]
+	at org.junit.runners.Suite.runChild(Suite.java:128) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.Suite.runChild(Suite.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[?:?]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[?:?]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[?:?]
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[?:?]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[?:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:?]
+22:12:37.194  ERROR apps.AppsResource - Exception getting app and secrets with message: No app was found for key `app_1686003146770` and siteId `428ff490a22fbec02ce4bf00f7ba6e04`. 
+com.dotmarketing.exception.DoesNotExistException: No app was found for key `app_1686003146770` and siteId `428ff490a22fbec02ce4bf00f7ba6e04`. 
+	at com.dotcms.rest.api.v1.apps.AppsResource.getAppDetail(AppsResource.java:174) ~[main/:?]
+	at com.dotcms.rest.api.v1.apps.AppsResourceTest.Test_Create_App_Descriptor_Then_Create_App_Integration_Then_Delete_App_Descriptor(AppsResourceTest.java:667) ~[integrationTest/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:38) ~[integrationTest/:?]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:14) ~[integrationTest/:?]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.MainBaseSuite$DotRunner.run(MainBaseSuite.java:60) ~[integrationTest/:?]
+	at org.junit.runners.Suite.runChild(Suite.java:128) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.Suite.runChild(Suite.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[?:?]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[?:?]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[?:?]
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[?:?]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[?:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:?]
+22:12:37.197  ERROR apps.AppsResource - Exception getting app and secrets with message: No app was found for key `app_1686003146770` and siteId `9ec37ba41b36138f8218a6248ef19576`. 
+com.dotmarketing.exception.DoesNotExistException: No app was found for key `app_1686003146770` and siteId `9ec37ba41b36138f8218a6248ef19576`. 
+	at com.dotcms.rest.api.v1.apps.AppsResource.getAppDetail(AppsResource.java:174) ~[main/:?]
+	at com.dotcms.rest.api.v1.apps.AppsResourceTest.Test_Create_App_Descriptor_Then_Create_App_Integration_Then_Delete_App_Descriptor(AppsResourceTest.java:667) ~[integrationTest/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:38) ~[integrationTest/:?]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:14) ~[integrationTest/:?]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.MainBaseSuite$DotRunner.run(MainBaseSuite.java:60) ~[integrationTest/:?]
+	at org.junit.runners.Suite.runChild(Suite.java:128) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.Suite.runChild(Suite.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[?:?]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[?:?]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[?:?]
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[?:?]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[?:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:?]
+22:12:37.197  ERROR apps.AppsResource - Exception getting app and secrets with message: No app was found for key `app_1686003146770` and siteId `f2c4d06a84bb573b4a705c20c527b8fb`. 
+com.dotmarketing.exception.DoesNotExistException: No app was found for key `app_1686003146770` and siteId `f2c4d06a84bb573b4a705c20c527b8fb`. 
+	at com.dotcms.rest.api.v1.apps.AppsResource.getAppDetail(AppsResource.java:174) ~[main/:?]
+	at com.dotcms.rest.api.v1.apps.AppsResourceTest.Test_Create_App_Descriptor_Then_Create_App_Integration_Then_Delete_App_Descriptor(AppsResourceTest.java:667) ~[integrationTest/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:38) ~[integrationTest/:?]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:14) ~[integrationTest/:?]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.MainBaseSuite$DotRunner.run(MainBaseSuite.java:60) ~[integrationTest/:?]
+	at org.junit.runners.Suite.runChild(Suite.java:128) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.Suite.runChild(Suite.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[?:?]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[?:?]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[?:?]
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[?:?]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[?:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:?]
+22:12:37.198  ERROR apps.AppsResource - Exception getting app and secrets with message: No app was found for key `app_1686003146770` and siteId `2dcc513e5dc8afdd6e47c5be6e728cae`. 
+com.dotmarketing.exception.DoesNotExistException: No app was found for key `app_1686003146770` and siteId `2dcc513e5dc8afdd6e47c5be6e728cae`. 
+	at com.dotcms.rest.api.v1.apps.AppsResource.getAppDetail(AppsResource.java:174) ~[main/:?]
+	at com.dotcms.rest.api.v1.apps.AppsResourceTest.Test_Create_App_Descriptor_Then_Create_App_Integration_Then_Delete_App_Descriptor(AppsResourceTest.java:667) ~[integrationTest/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:38) ~[integrationTest/:?]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:14) ~[integrationTest/:?]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.MainBaseSuite$DotRunner.run(MainBaseSuite.java:60) ~[integrationTest/:?]
+	at org.junit.runners.Suite.runChild(Suite.java:128) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.Suite.runChild(Suite.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[?:?]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[?:?]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[?:?]
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[?:?]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[?:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:?]
+22:12:37.198  ERROR apps.AppsResource - Exception getting app and secrets with message: No app was found for key `app_1686003146770` and siteId `e1ff36e804b5c3688898839a5dd9b082`. 
+com.dotmarketing.exception.DoesNotExistException: No app was found for key `app_1686003146770` and siteId `e1ff36e804b5c3688898839a5dd9b082`. 
+	at com.dotcms.rest.api.v1.apps.AppsResource.getAppDetail(AppsResource.java:174) ~[main/:?]
+	at com.dotcms.rest.api.v1.apps.AppsResourceTest.Test_Create_App_Descriptor_Then_Create_App_Integration_Then_Delete_App_Descriptor(AppsResourceTest.java:667) ~[integrationTest/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:38) ~[integrationTest/:?]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:14) ~[integrationTest/:?]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.MainBaseSuite$DotRunner.run(MainBaseSuite.java:60) ~[integrationTest/:?]
+	at org.junit.runners.Suite.runChild(Suite.java:128) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.Suite.runChild(Suite.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[?:?]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[?:?]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[?:?]
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[?:?]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[?:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:?]
+22:12:37.198  ERROR apps.AppsResource - Exception getting app and secrets with message: No app was found for key `app_1686003146770` and siteId `d52d6c1f2cb2019d81553b2d87016f33`. 
+com.dotmarketing.exception.DoesNotExistException: No app was found for key `app_1686003146770` and siteId `d52d6c1f2cb2019d81553b2d87016f33`. 
+	at com.dotcms.rest.api.v1.apps.AppsResource.getAppDetail(AppsResource.java:174) ~[main/:?]
+	at com.dotcms.rest.api.v1.apps.AppsResourceTest.Test_Create_App_Descriptor_Then_Create_App_Integration_Then_Delete_App_Descriptor(AppsResourceTest.java:667) ~[integrationTest/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:38) ~[integrationTest/:?]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:14) ~[integrationTest/:?]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.MainBaseSuite$DotRunner.run(MainBaseSuite.java:60) ~[integrationTest/:?]
+	at org.junit.runners.Suite.runChild(Suite.java:128) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.Suite.runChild(Suite.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[?:?]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[?:?]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[?:?]
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[?:?]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[?:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:?]
+22:12:37.199  ERROR apps.AppsResource - Exception getting app and secrets with message: No app was found for key `app_1686003146770` and siteId `7eb3026253a596bab88a88cdce2823b9`. 
+com.dotmarketing.exception.DoesNotExistException: No app was found for key `app_1686003146770` and siteId `7eb3026253a596bab88a88cdce2823b9`. 
+	at com.dotcms.rest.api.v1.apps.AppsResource.getAppDetail(AppsResource.java:174) ~[main/:?]
+	at com.dotcms.rest.api.v1.apps.AppsResourceTest.Test_Create_App_Descriptor_Then_Create_App_Integration_Then_Delete_App_Descriptor(AppsResourceTest.java:667) ~[integrationTest/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:38) ~[integrationTest/:?]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:14) ~[integrationTest/:?]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.MainBaseSuite$DotRunner.run(MainBaseSuite.java:60) ~[integrationTest/:?]
+	at org.junit.runners.Suite.runChild(Suite.java:128) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.Suite.runChild(Suite.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[?:?]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[?:?]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[?:?]
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[?:?]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[?:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:?]
+22:12:37.199  ERROR apps.AppsResource - Exception getting app and secrets with message: No app was found for key `app_1686003146770` and siteId `0430906ee2e1477df0f65df0b5d56c11`. 
+com.dotmarketing.exception.DoesNotExistException: No app was found for key `app_1686003146770` and siteId `0430906ee2e1477df0f65df0b5d56c11`. 
+	at com.dotcms.rest.api.v1.apps.AppsResource.getAppDetail(AppsResource.java:174) ~[main/:?]
+	at com.dotcms.rest.api.v1.apps.AppsResourceTest.Test_Create_App_Descriptor_Then_Create_App_Integration_Then_Delete_App_Descriptor(AppsResourceTest.java:667) ~[integrationTest/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:38) ~[integrationTest/:?]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:14) ~[integrationTest/:?]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.MainBaseSuite$DotRunner.run(MainBaseSuite.java:60) ~[integrationTest/:?]
+	at org.junit.runners.Suite.runChild(Suite.java:128) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.Suite.runChild(Suite.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[?:?]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[?:?]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[?:?]
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[?:?]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[?:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:?]
+22:12:37.199  INFO  junit.MainBaseSuite - Checking indexer status...
+22:13:03.383  INFO  apps.AppsHelper -  tmp upload directory `/home/runner/work/core/custom/assets/tmp_uploadee8129d3-69cc-4ffc-8616-60e0e602c3e4` removed successfully. 
+22:13:03.473  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:03.477  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:03.495  INFO  business.LocalSystemEventsAPIImpl -  Broadcasting a Filterable Event.
+22:13:03.495  INFO  business.LocalSystemEventsAPIImpl -  Filtered Audience for event with key `app_1686003157200`  is `0` long. 
+22:13:03.499  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:03.503  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:03.520  INFO  business.LocalSystemEventsAPIImpl -  Broadcasting a Filterable Event.
+22:13:03.520  INFO  business.LocalSystemEventsAPIImpl -  Filtered Audience for event with key `app_1686003157200`  is `0` long. 
+22:13:03.524  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:03.528  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:03.546  INFO  business.LocalSystemEventsAPIImpl -  Broadcasting a Filterable Event.
+22:13:03.546  INFO  business.LocalSystemEventsAPIImpl -  Filtered Audience for event with key `app_1686003157200`  is `0` long. 
+22:13:03.550  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:03.554  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:03.571  INFO  business.LocalSystemEventsAPIImpl -  Broadcasting a Filterable Event.
+22:13:03.571  INFO  business.LocalSystemEventsAPIImpl -  Filtered Audience for event with key `app_1686003157200`  is `0` long. 
+22:13:03.575  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:03.579  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:03.596  INFO  business.LocalSystemEventsAPIImpl -  Broadcasting a Filterable Event.
+22:13:03.596  INFO  business.LocalSystemEventsAPIImpl -  Filtered Audience for event with key `app_1686003157200`  is `0` long. 
+22:13:03.601  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:03.605  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:03.622  INFO  business.LocalSystemEventsAPIImpl -  Broadcasting a Filterable Event.
+22:13:03.622  INFO  business.LocalSystemEventsAPIImpl -  Filtered Audience for event with key `app_1686003157200`  is `0` long. 
+22:13:03.626  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:03.630  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:03.647  INFO  business.LocalSystemEventsAPIImpl -  Broadcasting a Filterable Event.
+22:13:03.648  INFO  business.LocalSystemEventsAPIImpl -  Filtered Audience for event with key `app_1686003157200`  is `0` long. 
+22:13:03.652  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:03.656  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:03.673  INFO  business.LocalSystemEventsAPIImpl -  Broadcasting a Filterable Event.
+22:13:03.673  INFO  business.LocalSystemEventsAPIImpl -  Filtered Audience for event with key `app_1686003157200`  is `0` long. 
+22:13:03.677  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:03.681  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:03.699  INFO  business.LocalSystemEventsAPIImpl -  Broadcasting a Filterable Event.
+22:13:03.699  INFO  business.LocalSystemEventsAPIImpl -  Filtered Audience for event with key `app_1686003157200`  is `0` long. 
+22:13:03.703  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:03.707  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:03.724  INFO  business.LocalSystemEventsAPIImpl -  Broadcasting a Filterable Event.
+22:13:03.724  INFO  business.LocalSystemEventsAPIImpl -  Filtered Audience for event with key `app_1686003157200`  is `0` long. 
+22:13:03.729  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:03.733  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:03.750  INFO  business.LocalSystemEventsAPIImpl -  Broadcasting a Filterable Event.
+22:13:03.750  INFO  business.LocalSystemEventsAPIImpl -  Filtered Audience for event with key `app_1686003157200`  is `0` long. 
+22:13:03.755  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:03.759  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:03.777  INFO  business.LocalSystemEventsAPIImpl -  Broadcasting a Filterable Event.
+22:13:03.777  INFO  business.LocalSystemEventsAPIImpl -  Filtered Audience for event with key `app_1686003157200`  is `0` long. 
+22:13:03.781  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:03.785  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:03.802  INFO  business.LocalSystemEventsAPIImpl -  Broadcasting a Filterable Event.
+22:13:03.802  INFO  business.LocalSystemEventsAPIImpl -  Filtered Audience for event with key `app_1686003157200`  is `0` long. 
+22:13:03.807  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:03.811  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:03.828  INFO  business.LocalSystemEventsAPIImpl -  Broadcasting a Filterable Event.
+22:13:03.828  INFO  business.LocalSystemEventsAPIImpl -  Filtered Audience for event with key `app_1686003157200`  is `0` long. 
+22:13:03.832  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:03.836  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:03.854  INFO  business.LocalSystemEventsAPIImpl -  Broadcasting a Filterable Event.
+22:13:03.854  INFO  business.LocalSystemEventsAPIImpl -  Filtered Audience for event with key `app_1686003157200`  is `0` long. 
+22:13:03.858  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:03.862  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:03.879  INFO  business.LocalSystemEventsAPIImpl -  Broadcasting a Filterable Event.
+22:13:03.879  INFO  business.LocalSystemEventsAPIImpl -  Filtered Audience for event with key `app_1686003157200`  is `0` long. 
+22:13:03.884  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:03.888  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:03.905  INFO  business.LocalSystemEventsAPIImpl -  Broadcasting a Filterable Event.
+22:13:03.905  INFO  business.LocalSystemEventsAPIImpl -  Filtered Audience for event with key `app_1686003157200`  is `0` long. 
+22:13:03.909  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:03.913  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:03.931  INFO  business.LocalSystemEventsAPIImpl -  Broadcasting a Filterable Event.
+22:13:03.931  INFO  business.LocalSystemEventsAPIImpl -  Filtered Audience for event with key `app_1686003157200`  is `0` long. 
+22:13:03.935  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:03.939  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:03.957  INFO  business.LocalSystemEventsAPIImpl -  Broadcasting a Filterable Event.
+22:13:03.957  INFO  business.LocalSystemEventsAPIImpl -  Filtered Audience for event with key `app_1686003157200`  is `0` long. 
+22:13:03.961  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:03.965  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:03.983  INFO  business.LocalSystemEventsAPIImpl -  Broadcasting a Filterable Event.
+22:13:03.983  INFO  business.LocalSystemEventsAPIImpl -  Filtered Audience for event with key `app_1686003157200`  is `0` long. 
+22:13:03.987  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:03.991  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:04.009  INFO  business.LocalSystemEventsAPIImpl -  Broadcasting a Filterable Event.
+22:13:04.009  INFO  business.LocalSystemEventsAPIImpl -  Filtered Audience for event with key `app_1686003157200`  is `0` long. 
+22:13:04.013  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:04.017  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:04.034  INFO  business.LocalSystemEventsAPIImpl -  Broadcasting a Filterable Event.
+22:13:04.034  INFO  business.LocalSystemEventsAPIImpl -  Filtered Audience for event with key `app_1686003157200`  is `0` long. 
+22:13:04.039  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:04.043  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:04.060  INFO  business.LocalSystemEventsAPIImpl -  Broadcasting a Filterable Event.
+22:13:04.060  INFO  business.LocalSystemEventsAPIImpl -  Filtered Audience for event with key `app_1686003157200`  is `0` long. 
+22:13:04.064  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:04.068  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:04.086  INFO  business.LocalSystemEventsAPIImpl -  Broadcasting a Filterable Event.
+22:13:04.086  INFO  business.LocalSystemEventsAPIImpl -  Filtered Audience for event with key `app_1686003157200`  is `0` long. 
+22:13:04.090  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:04.094  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:04.111  INFO  business.LocalSystemEventsAPIImpl -  Broadcasting a Filterable Event.
+22:13:04.112  INFO  business.LocalSystemEventsAPIImpl -  Filtered Audience for event with key `app_1686003157200`  is `0` long. 
+22:13:04.116  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:04.120  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:04.137  INFO  business.LocalSystemEventsAPIImpl -  Broadcasting a Filterable Event.
+22:13:04.137  INFO  business.LocalSystemEventsAPIImpl -  Filtered Audience for event with key `app_1686003157200`  is `0` long. 
+22:13:04.769  INFO  junit.MainBaseSuite - Checking indexer status...
+22:13:04.771  ERROR apps.AppsResource - Exception on listing all available apps.
+com.dotmarketing.exception.InvalidLicenseException: Apps requires of an enterprise level license.
+	at com.dotcms.security.apps.AppsAPIImpl.getAppDescriptors(AppsAPIImpl.java:385) ~[main/:?]
+	at com.dotcms.rest.api.v1.apps.AppsHelper.getAvailableDescriptorViews(AppsHelper.java:96) ~[main/:?]
+	at com.dotcms.rest.api.v1.apps.AppsResource.listAvailableApps(AppsResource.java:86) ~[main/:?]
+	at com.dotcms.rest.api.v1.apps.AppsResourceTest.Test_List_Available_Apps_Invalid_License(AppsResourceTest.java:1421) ~[integrationTest/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:38) ~[integrationTest/:?]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:14) ~[integrationTest/:?]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.MainBaseSuite$DotRunner.run(MainBaseSuite.java:60) ~[integrationTest/:?]
+	at org.junit.runners.Suite.runChild(Suite.java:128) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.Suite.runChild(Suite.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[?:?]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[?:?]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[?:?]
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[?:?]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[?:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:?]
+22:13:04.776  INFO  junit.MainBaseSuite - Checking indexer status...
+22:13:05.398  INFO  apps.AppsHelper -  tmp upload directory `/home/runner/work/core/custom/assets/tmp_upload01b142f1-c40b-403b-9679-001f511b6fd5` removed successfully. 
+22:13:05.591  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:05.596  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:05.613  INFO  business.LocalSystemEventsAPIImpl -  Broadcasting a Filterable Event.
+22:13:05.613  INFO  business.LocalSystemEventsAPIImpl -  Filtered Audience for event with key `app_1686003184777`  is `0` long. 
+22:13:05.736  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:05.753  INFO  business.LocalSystemEventsAPIImpl -  Broadcasting a Filterable Event.
+22:13:05.754  INFO  business.LocalSystemEventsAPIImpl -  Filtered Audience for event with key `app_1686003184777`  is `0` long. 
+22:13:05.763  INFO  junit.MainBaseSuite - Checking indexer status...
+22:13:05.767  INFO  apps.AppsHelper -  tmp upload directory `/home/runner/work/core/custom/assets/tmp_upload5acb6e7b-95e2-4f56-be63-51e9d31ebfcc` removed successfully. 
+22:13:06.424  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:06.424  ERROR apps.AppsResource - Exception creating secret integration with form `com.dotcms.rest.api.v1.apps.SecretForm@4cd97996[inputParams={param1=com.dotcms.rest.api.v1.apps.Input@8228cfe}]` 
+java.lang.IllegalArgumentException: Param `param1` is marked required in the descriptor but does not come with a value.
+	at com.dotcms.security.apps.AppsUtil.validateForSave(AppsUtil.java:428) ~[main/:?]
+	at com.dotcms.rest.api.v1.apps.AppsHelper.validateFormForSave(AppsHelper.java:505) ~[main/:?]
+	at com.dotcms.rest.api.v1.apps.AppsHelper.saveSecretForm(AppsHelper.java:330) ~[main/:?]
+	at com.dotcms.rest.api.v1.apps.AppsResource.createAppSecrets(AppsResource.java:260) ~[main/:?]
+	at com.dotcms.rest.api.v1.apps.AppsResourceTest.Test_Required_Params_Sent_Empty_Value_Expect_Bad_Request(AppsResourceTest.java:1007) ~[integrationTest/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:38) ~[integrationTest/:?]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:14) ~[integrationTest/:?]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.MainBaseSuite$DotRunner.run(MainBaseSuite.java:60) ~[integrationTest/:?]
+	at org.junit.runners.Suite.runChild(Suite.java:128) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.Suite.runChild(Suite.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[?:?]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[?:?]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[?:?]
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[?:?]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[?:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:?]
+22:13:06.425  INFO  junit.MainBaseSuite - Checking indexer status...
+22:13:07.447  INFO  apps.AppsHelper -  tmp upload directory `/home/runner/work/core/custom/assets/tmp_uploade0880ec9-eca7-4f63-a530-3192f719c486` removed successfully. 
+22:13:07.458  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:07.463  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:07.481  INFO  business.LocalSystemEventsAPIImpl -  Broadcasting a Filterable Event.
+22:13:07.481  INFO  business.LocalSystemEventsAPIImpl -  Filtered Audience for event with key `app_1686003186436`  is `0` long. 
+22:13:07.523  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:07.534  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:07.559  INFO  business.LocalSystemEventsAPIImpl -  Broadcasting a Filterable Event.
+22:13:07.559  INFO  business.LocalSystemEventsAPIImpl -  Filtered Audience for event with key `app_1686003186436`  is `0` long. 
+22:13:07.573  INFO  junit.MainBaseSuite - Checking indexer status...
+22:13:08.506  INFO  apps.AppsHelper -  tmp upload directory `/home/runner/work/core/custom/assets/tmp_uploadf78982f0-c104-43ab-aa58-fac2714be829` removed successfully. 
+22:13:08.521  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:08.526  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:08.544  INFO  business.LocalSystemEventsAPIImpl -  Broadcasting a Filterable Event.
+22:13:08.544  INFO  business.LocalSystemEventsAPIImpl -  Filtered Audience for event with key `app_1686003187574`  is `0` long. 
+22:13:08.608  ERROR apps.AppsResource - Exception creating secret integration with form `com.dotcms.rest.api.v1.apps.SecretForm@351771f6[inputParams={param1=com.dotcms.rest.api.v1.apps.Input@1ebf7603, selectParam=com.dotcms.rest.api.v1.apps.Input@406137ca}]` 
+java.lang.IllegalArgumentException: Can not find value `5` in the list of permitted values `selectParam`.
+	at com.dotcms.security.apps.AppsUtil.validateForSave(AppsUtil.java:466) ~[main/:?]
+	at com.dotcms.rest.api.v1.apps.AppsHelper.validateFormForSave(AppsHelper.java:505) ~[main/:?]
+	at com.dotcms.rest.api.v1.apps.AppsHelper.saveSecretForm(AppsHelper.java:330) ~[main/:?]
+	at com.dotcms.rest.api.v1.apps.AppsHelper.saveSecretForm(AppsHelper.java:310) ~[main/:?]
+	at com.dotcms.rest.api.v1.apps.AppsResource.createAppSecrets(AppsResource.java:260) ~[main/:?]
+	at com.dotcms.rest.api.v1.apps.AppsResourceTest.Test_Select_List_Param(AppsResourceTest.java:880) ~[integrationTest/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:38) ~[integrationTest/:?]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:14) ~[integrationTest/:?]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.MainBaseSuite$DotRunner.run(MainBaseSuite.java:60) ~[integrationTest/:?]
+	at org.junit.runners.Suite.runChild(Suite.java:128) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.Suite.runChild(Suite.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[?:?]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[?:?]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[?:?]
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[?:?]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[?:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:?]
+22:13:08.616  ERROR apps.AppsResource - Exception creating secret integration with form `com.dotcms.rest.api.v1.apps.SecretForm@44a18ffd[inputParams={param1=com.dotcms.rest.api.v1.apps.Input@4a37de5e, selectParam=com.dotcms.rest.api.v1.apps.Input@2fddb675}]` 
+java.lang.IllegalArgumentException: Param `selectParam` is marked required in the descriptor but does not come with a value.
+	at com.dotcms.security.apps.AppsUtil.validateForSave(AppsUtil.java:428) ~[main/:?]
+	at com.dotcms.rest.api.v1.apps.AppsHelper.validateFormForSave(AppsHelper.java:505) ~[main/:?]
+	at com.dotcms.rest.api.v1.apps.AppsHelper.saveSecretForm(AppsHelper.java:330) ~[main/:?]
+	at com.dotcms.rest.api.v1.apps.AppsHelper.saveSecretForm(AppsHelper.java:310) ~[main/:?]
+	at com.dotcms.rest.api.v1.apps.AppsResource.createAppSecrets(AppsResource.java:260) ~[main/:?]
+	at com.dotcms.rest.api.v1.apps.AppsResourceTest.Test_Select_List_Param(AppsResourceTest.java:889) ~[integrationTest/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:38) ~[integrationTest/:?]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:14) ~[integrationTest/:?]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.MainBaseSuite$DotRunner.run(MainBaseSuite.java:60) ~[integrationTest/:?]
+	at org.junit.runners.Suite.runChild(Suite.java:128) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.Suite.runChild(Suite.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[?:?]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[?:?]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[?:?]
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[?:?]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[?:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:?]
+22:13:08.617  INFO  junit.MainBaseSuite - Checking indexer status...
+22:13:09.509  INFO  apps.AppsHelper -  tmp upload directory `/home/runner/work/core/custom/assets/tmp_upload74c3ab29-b07f-48e3-a85d-78a1f4466032` removed successfully. 
+22:13:09.521  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:09.525  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:09.543  INFO  business.LocalSystemEventsAPIImpl -  Broadcasting a Filterable Event.
+22:13:09.543  INFO  business.LocalSystemEventsAPIImpl -  Filtered Audience for event with key `app_1686003188617`  is `0` long. 
+22:13:10.083  ERROR apps.AppsResource - Exception getting app and secrets with message:  Couldn't find any host with identifier `1f49c2d8d03784a58c26b485b8536530` 
+com.dotmarketing.exception.DoesNotExistException:  Couldn't find any host with identifier `1f49c2d8d03784a58c26b485b8536530` 
+	at com.dotcms.rest.api.v1.apps.AppsHelper.getAppSiteDetailedView(AppsHelper.java:204) ~[main/:?]
+	at com.dotcms.rest.api.v1.apps.AppsResource.getAppDetail(AppsResource.java:169) ~[main/:?]
+	at com.dotcms.rest.api.v1.apps.AppsResourceTest.Test_Create_App_descriptor_Then_Create_App_Integration_Then_Archive_Site_Expect_Secrets_No_Longer_Available(AppsResourceTest.java:570) ~[integrationTest/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:38) ~[integrationTest/:?]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:14) ~[integrationTest/:?]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.MainBaseSuite$DotRunner.run(MainBaseSuite.java:60) ~[integrationTest/:?]
+	at org.junit.runners.Suite.runChild(Suite.java:128) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.Suite.runChild(Suite.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[?:?]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[?:?]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[?:?]
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[?:?]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[?:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:?]
+22:13:10.226  INFO  junit.MainBaseSuite - Checking indexer status...
+22:13:10.229  INFO  apps.AppsHelper -  tmp upload directory `/home/runner/work/core/custom/assets/tmp_upload51732deb-82d9-4ef3-841c-bbdd592a98a2` removed successfully. 
+22:13:10.529  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:10.533  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:10.550  INFO  business.LocalSystemEventsAPIImpl -  Broadcasting a Filterable Event.
+22:13:10.550  INFO  business.LocalSystemEventsAPIImpl -  Filtered Audience for event with key `app_1686003190226`  is `0` long. 
+22:13:10.629  INFO  junit.MainBaseSuite - Checking indexer status...
+22:13:10.630  ERROR apps.AppsResource - Exception getting app and secrets with message: Apps requires of an enterprise level license.
+com.dotmarketing.exception.InvalidLicenseException: Apps requires of an enterprise level license.
+	at com.dotcms.security.apps.AppsAPIImpl.getAppDescriptor(AppsAPIImpl.java:431) ~[main/:?]
+	at com.dotcms.rest.api.v1.apps.AppsHelper.getAppSiteDetailedView(AppsHelper.java:198) ~[main/:?]
+	at com.dotcms.rest.api.v1.apps.AppsResource.getAppDetail(AppsResource.java:169) ~[main/:?]
+	at com.dotcms.rest.api.v1.apps.AppsResourceTest.Test_Get_App_Detail_Invalid_License(AppsResourceTest.java:1447) ~[integrationTest/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:38) ~[integrationTest/:?]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:14) ~[integrationTest/:?]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.MainBaseSuite$DotRunner.run(MainBaseSuite.java:60) ~[integrationTest/:?]
+	at org.junit.runners.Suite.runChild(Suite.java:128) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.Suite.runChild(Suite.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[?:?]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[?:?]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[?:?]
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[?:?]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[?:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:?]
+22:13:10.642  INFO  junit.MainBaseSuite - Checking indexer status...
+22:13:10.646  INFO  apps.AppsHelper -  tmp upload directory `/home/runner/work/core/custom/assets/tmp_uploadd47c5b14-5f18-4b81-bd44-3781e71c978f` removed successfully. 
+22:13:11.544  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:11.548  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:11.572  INFO  business.LocalSystemEventsAPIImpl -  Broadcasting a Filterable Event.
+22:13:11.572  INFO  business.LocalSystemEventsAPIImpl -  Filtered Audience for event with key `app_1686003190643`  is `0` long. 
+22:13:11.575  INFO  apps.AppsHelper - Secrets export: ExportSecretForm{ all={false} {Site 783529f0f3499940b9d53c872209ee5b keys: app_1686003190643}}
+22:13:11.576  INFO  apps.AppsUtil - Apps Password Override supplier has been provided.
+22:13:11.609  INFO  apps.AppsAPIImpl -  exporting : AppsSecretsImportExport{`[{783529f0f3499940b9d53c872209ee5b with : 1 secrets. }]`}
+22:13:11.614  INFO  apps.AppsUtil - Apps Password Override supplier has been provided.
+22:13:11.615  INFO  apps.AppsAPIImpl - Number of secrets found: 1
+22:13:11.615  INFO  apps.AppsAPIImpl - Imported secret `AppSecrets{key= `app_1686003190643` secrets=`[{ name: param1 , type: STRING, hidden: false}, { name: param2 , type: STRING, hidden: false}]` }` 
+22:13:11.619  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:11.638  INFO  business.LocalSystemEventsAPIImpl -  Broadcasting a Filterable Event.
+22:13:11.638  INFO  business.LocalSystemEventsAPIImpl -  Filtered Audience for event with key `app_1686003190643`  is `0` long. 
+22:13:11.638  INFO  apps.AppsHelper -  tmp upload directory `/home/runner/work/core/custom/assets/tmp_upload6017d936-62e8-424a-973a-60ab2b35cc63` removed successfully. 
+22:13:11.638  INFO  junit.MainBaseSuite - Checking indexer status...
+22:13:11.642  INFO  apps.AppsHelper -  tmp upload directory `/home/runner/work/core/custom/assets/tmp_uploadfabcc3b8-71d9-4c36-8d37-c8dd77849f1e` removed successfully. 
+22:13:12.579  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:12.591  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:12.638  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:12.640  INFO  business.LocalSystemEventsAPIImpl -  Broadcasting a Filterable Event.
+22:13:12.640  INFO  business.LocalSystemEventsAPIImpl -  Filtered Audience for event with key `app_1686003191640`  is `0` long. 
+22:13:12.655  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:12.671  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:12.704  INFO  business.LocalSystemEventsAPIImpl -  Broadcasting a Filterable Event.
+22:13:12.704  INFO  business.LocalSystemEventsAPIImpl -  Filtered Audience for event with key `app_1686003191640`  is `0` long. 
+22:13:12.803  INFO  junit.MainBaseSuite - Checking indexer status...
+22:13:13.568  INFO  apps.AppsHelper -  tmp upload directory `/home/runner/work/core/custom/assets/tmp_uploadbe289693-548e-4d91-90ea-bba8488c1bc7` removed successfully. 
+22:13:13.641  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:13.705  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:13.726  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:13.792  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:13.826  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:13.844  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:13.862  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:13.880  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:13.898  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:13.915  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:13.933  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:13.951  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:13.969  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:13.987  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:14.005  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:14.023  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:14.041  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:14.059  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:14.076  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:14.094  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:14.112  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:14.130  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:14.148  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:14.165  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:14.183  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:14.201  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:14.219  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:14.236  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:14.254  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:14.272  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:14.293  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:14.336  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:14.368  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:14.389  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:14.393  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:14.411  INFO  business.LocalSystemEventsAPIImpl -  Broadcasting a Filterable Event.
+22:13:14.411  INFO  business.LocalSystemEventsAPIImpl -  Filtered Audience for event with key `app_1686003193565`  is `0` long. 
+22:13:14.528  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:14.537  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:14.648  INFO  junit.MainBaseSuite - Checking indexer status...
+22:13:14.651  INFO  apps.AppsHelper -  tmp upload directory `/home/runner/work/core/custom/assets/tmp_upload2c0188cb-69fa-4c95-8bfc-f7835c58994f` removed successfully. 
+22:13:15.621  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:15.626  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:15.643  INFO  business.LocalSystemEventsAPIImpl -  Broadcasting a Filterable Event.
+22:13:15.643  INFO  business.LocalSystemEventsAPIImpl -  Filtered Audience for event with key `all_lower_case_not_too_short_prefix_1686003194649`  is `0` long. 
+22:13:16.645  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:16.649  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:16.667  INFO  business.LocalSystemEventsAPIImpl -  Broadcasting a Filterable Event.
+22:13:16.667  INFO  business.LocalSystemEventsAPIImpl -  Filtered Audience for event with key `all_lower_case_not_too_short_prefix_1686003194649`  is `0` long. 
+22:13:17.631  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:17.636  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:17.660  INFO  business.LocalSystemEventsAPIImpl -  Broadcasting a Filterable Event.
+22:13:17.660  INFO  business.LocalSystemEventsAPIImpl -  Filtered Audience for event with key `all_lower_case_not_too_short_prefix_1686003194649`  is `0` long. 
+22:13:18.643  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:18.648  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:18.665  INFO  business.LocalSystemEventsAPIImpl -  Broadcasting a Filterable Event.
+22:13:18.665  INFO  business.LocalSystemEventsAPIImpl -  Filtered Audience for event with key `all_lower_case_not_too_short_prefix_1686003194649`  is `0` long. 
+22:13:19.659  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:19.663  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:19.681  INFO  business.LocalSystemEventsAPIImpl -  Broadcasting a Filterable Event.
+22:13:19.681  INFO  business.LocalSystemEventsAPIImpl -  Filtered Audience for event with key `all_lower_case_not_too_short_prefix_1686003194649`  is `0` long. 
+22:13:19.754  INFO  junit.MainBaseSuite - Checking indexer status...
+22:13:19.758  INFO  apps.AppsHelper -  tmp upload directory `/home/runner/work/core/custom/assets/tmp_upload64d68010-5800-4a77-b7b3-d4e163cbde27` removed successfully. 
+22:13:20.701  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:20.705  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:20.724  INFO  business.LocalSystemEventsAPIImpl -  Broadcasting a Filterable Event.
+22:13:20.724  INFO  business.LocalSystemEventsAPIImpl -  Filtered Audience for event with key `app_1686003199755`  is `0` long. 
+22:13:21.702  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:21.707  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:21.734  INFO  business.LocalSystemEventsAPIImpl -  Broadcasting a Filterable Event.
+22:13:21.734  INFO  business.LocalSystemEventsAPIImpl -  Filtered Audience for event with key `app_1686003199755`  is `0` long. 
+22:13:22.744  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:22.749  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:22.766  INFO  business.LocalSystemEventsAPIImpl -  Broadcasting a Filterable Event.
+22:13:22.766  INFO  business.LocalSystemEventsAPIImpl -  Filtered Audience for event with key `app_1686003199755`  is `0` long. 
+22:13:23.732  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:23.737  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:23.755  INFO  business.LocalSystemEventsAPIImpl -  Broadcasting a Filterable Event.
+22:13:23.755  INFO  business.LocalSystemEventsAPIImpl -  Filtered Audience for event with key `app_1686003199755`  is `0` long. 
+22:13:24.743  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:24.748  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:24.765  INFO  business.LocalSystemEventsAPIImpl -  Broadcasting a Filterable Event.
+22:13:24.765  INFO  business.LocalSystemEventsAPIImpl -  Filtered Audience for event with key `app_1686003199755`  is `0` long. 
+22:13:24.954  INFO  junit.MainBaseSuite - Checking indexer status...
+22:13:24.958  INFO  apps.AppsHelper -  tmp upload directory `/home/runner/work/core/custom/assets/tmp_upload581a6df8-2691-4011-bc99-1e92b3658eb8` removed successfully. 
+22:13:25.818  INFO  apps.SecretsKeyStoreHelper - KeyStore loaded successfully after `1` tries.
+22:13:25.818  ERROR apps.AppsResource - Exception creating secret integration with form `com.dotcms.rest.api.v1.apps.SecretForm@1163562[inputParams={param1=com.dotcms.rest.api.v1.apps.Input@6942b057}]` 
+java.lang.IllegalArgumentException: Param `param2` is marked required in the descriptor but does not come with a value.
+	at com.dotcms.security.apps.AppsUtil.validateForSave(AppsUtil.java:428) ~[main/:?]
+	at com.dotcms.rest.api.v1.apps.AppsHelper.validateFormForSave(AppsHelper.java:505) ~[main/:?]
+	at com.dotcms.rest.api.v1.apps.AppsHelper.saveSecretForm(AppsHelper.java:330) ~[main/:?]
+	at com.dotcms.rest.api.v1.apps.AppsHelper.saveSecretForm(AppsHelper.java:310) ~[main/:?]
+	at com.dotcms.rest.api.v1.apps.AppsResource.createAppSecrets(AppsResource.java:260) ~[main/:?]
+	at com.dotcms.rest.api.v1.apps.AppsResourceTest.Test_Required_Params_Send_Missing_Required_Param_Expect_Bad_Request(AppsResourceTest.java:1056) ~[integrationTest/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:38) ~[integrationTest/:?]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:14) ~[integrationTest/:?]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.MainBaseSuite$DotRunner.run(MainBaseSuite.java:60) ~[integrationTest/:?]
+	at org.junit.runners.Suite.runChild(Suite.java:128) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.Suite.runChild(Suite.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[?:?]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[?:?]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[?:?]
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[?:?]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[?:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:?]
+22:13:25.831  INFO  junit.MainBaseSuite - Checking indexer status...
+22:13:25.833  ERROR apps.AppsResource - Exception getting app for key: `anyKey`.
+com.dotmarketing.exception.InvalidLicenseException: Apps requires of an enterprise level license.
+	at com.dotcms.security.apps.AppsAPIImpl.getAppDescriptor(AppsAPIImpl.java:431) ~[main/:?]
+	at com.dotcms.rest.api.v1.apps.AppsHelper.getAppSiteView(AppsHelper.java:147) ~[main/:?]
+	at com.dotcms.rest.api.v1.apps.AppsResource.getAppByKey(AppsResource.java:126) ~[main/:?]
+	at com.dotcms.rest.api.v1.apps.AppsResourceTest.Test_Get_App_By_Key_Invalid_License(AppsResourceTest.java:1434) ~[integrationTest/:?]
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

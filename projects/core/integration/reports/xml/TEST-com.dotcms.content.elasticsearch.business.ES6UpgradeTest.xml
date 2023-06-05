@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.dotcms.content.elasticsearch.business.ES6UpgradeTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2023-06-05T21:13:43" hostname="fv-az306-998" time="9.014">
+  <properties/>
+  <testcase name="testElasticSearchJson[0: /home/runner/work/core/core/dotCMS/build/resources/integrationTest/com/dotcms/content/elasticsearch/business/json/filter-tags.json]" classname="com.dotcms.content.elasticsearch.business.ES6UpgradeTest" time="1.17"/>
+  <testcase name="testElasticSearchJson[1: /home/runner/work/core/core/dotCMS/build/resources/integrationTest/com/dotcms/content/elasticsearch/business/json/fuzzy-search.json]" classname="com.dotcms.content.elasticsearch.business.ES6UpgradeTest" time="1.076"/>
+  <testcase name="testElasticSearchJson[2: /home/runner/work/core/core/dotCMS/build/resources/integrationTest/com/dotcms/content/elasticsearch/business/json/aggregation-tags.json]" classname="com.dotcms.content.elasticsearch.business.ES6UpgradeTest" time="1.084"/>
+  <testcase name="testElasticSearchJson[3: /home/runner/work/core/core/dotCMS/build/resources/integrationTest/com/dotcms/content/elasticsearch/business/json/filter-tags-whitespace.json]" classname="com.dotcms.content.elasticsearch.business.ES6UpgradeTest" time="1.102"/>
+  <testcase name="testElasticSearchJson[4: /home/runner/work/core/core/dotCMS/build/resources/integrationTest/com/dotcms/content/elasticsearch/business/json/aggregation-content-type.json]" classname="com.dotcms.content.elasticsearch.business.ES6UpgradeTest" time="1.106"/>
+  <testcase name="testElasticSearchJson[5: /home/runner/work/core/core/dotCMS/build/resources/integrationTest/com/dotcms/content/elasticsearch/business/json/filter-catchall.json]" classname="com.dotcms.content.elasticsearch.business.ES6UpgradeTest" time="1.136"/>
+  <testcase name="testElasticSearchJson[6: /home/runner/work/core/core/dotCMS/build/resources/integrationTest/com/dotcms/content/elasticsearch/business/json/filter-title-dates.json]" classname="com.dotcms.content.elasticsearch.business.ES6UpgradeTest" time="1.118"/>
+  <testcase name="testElasticSearchJson[7: /home/runner/work/core/core/dotCMS/build/resources/integrationTest/com/dotcms/content/elasticsearch/business/json/filter-distance.json]" classname="com.dotcms.content.elasticsearch.business.ES6UpgradeTest" time="1.178"/>
+  <testcase name="testElasticSearchJson[8: /home/runner/work/core/core/dotCMS/build/resources/integrationTest/com/dotcms/content/elasticsearch/business/json/function-score.json]" classname="com.dotcms.content.elasticsearch.business.ES6UpgradeTest" time="0.042"/>
+  <system-out><![CDATA[21:13:43.566  INFO  business.ES6UpgradeTest - Testing File: filter-tags.json
+21:13:43.567  INFO  business.ES6UpgradeTest - com.dotcms.content.elasticsearch.business.ES6UpgradeTest$FilterTags maps to file filter-tags.json
+21:13:43.710  INFO  business.ES6UpgradeTest - {
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "term": {
+            "contenttype": "News1685999622388"
+          }
+        },
+        {
+          "term": {
+            "categories": "investing"
+          }
+        },
+        {
+          "term": {
+            "News1685999622388.tags": "gas"
+          }
+        },
+        {
+          "term": {
+            "News1685999622388.byline": "jean"
+          }
+        }
+      ]
+    }
+  }
+}
+21:13:43.722  INFO  business.ES6UpgradeTest - Results size: 1
+21:13:43.722  INFO  business.ES6UpgradeTest - Success Testing File: filter-tags.json
+21:13:43.723  ERROR dotcms.IntegrationTestBase - Test testElasticSearchJson[0: /home/runner/work/core/core/dotCMS/build/resources/integrationTest/com/dotcms/content/elasticsearch/business/json/filter-tags.json] has open connection after
+21:13:43.723  INFO  junit.MainBaseSuite - Checking indexer status...
+21:13:43.723  INFO  junit.MainBaseSuite - Indexer is not empty, waiting for it to finish
+21:13:44.735  INFO  junit.MainBaseSuite - Indexer Complete=true
+21:13:44.735  INFO  business.ES6UpgradeTest - Testing File: fuzzy-search.json
+21:13:44.735  INFO  business.ES6UpgradeTest - com.dotcms.content.elasticsearch.business.ES6UpgradeTest$FuzzySearch maps to file fuzzy-search.json
+21:13:44.794  INFO  business.ES6UpgradeTest - {
+  "query": {
+    "bool": {
+      "must": {
+        "query_string" : {
+          "query" : "+contentType:Blog1685999623095 +Blog1685999623095.body:pass~2"
+        }
+      }
+    }
+  }
+}
+21:13:44.808  INFO  business.ES6UpgradeTest - Results size: 1
+21:13:44.808  INFO  business.ES6UpgradeTest - Success Testing File: fuzzy-search.json
+21:13:44.808  ERROR dotcms.IntegrationTestBase - Test testElasticSearchJson[1: /home/runner/work/core/core/dotCMS/build/resources/integrationTest/com/dotcms/content/elasticsearch/business/json/fuzzy-search.json] has open connection after
+21:13:44.808  INFO  junit.MainBaseSuite - Checking indexer status...
+21:13:44.808  INFO  junit.MainBaseSuite - Indexer is not empty, waiting for it to finish
+21:13:45.812  INFO  junit.MainBaseSuite - Indexer Complete=true
+21:13:45.812  INFO  business.ES6UpgradeTest - Testing File: aggregation-tags.json
+21:13:45.812  INFO  business.ES6UpgradeTest - com.dotcms.content.elasticsearch.business.ES6UpgradeTest$AggregationTags maps to file aggregation-tags.json
+21:13:45.889  INFO  business.ES6UpgradeTest - {
+  "query": {
+    "query_string": {
+      "query": "+contenttype:News1685999622388"
+    }
+  },
+  "aggs" : {
+    "tag" : {
+      "terms" : {
+        "field": "tags",
+        "size" : 20
+      }
+    }
+  },
+  "size":0
+}
+21:13:45.893  INFO  business.ES6UpgradeTest - Results size: 2
+21:13:45.894  INFO  business.ES6UpgradeTest - Success Testing File: aggregation-tags.json
+21:13:45.894  INFO  junit.MainBaseSuite - Checking indexer status...
+21:13:45.894  INFO  junit.MainBaseSuite - Indexer is not empty, waiting for it to finish
+21:13:46.896  INFO  junit.MainBaseSuite - Indexer Complete=true
+21:13:46.897  INFO  business.ES6UpgradeTest - Testing File: filter-tags-whitespace.json
+21:13:46.897  INFO  business.ES6UpgradeTest - com.dotcms.content.elasticsearch.business.ES6UpgradeTest$FilterTagsWhitespace maps to file filter-tags-whitespace.json
+21:13:46.990  INFO  business.ES6UpgradeTest - {
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "term": {
+            "contenttype": "News1685999622388"
+          }
+        },
+        {
+          "term": {
+            "tags": "home prices"
+          }
+        }
+      ]
+    }
+  }
+}
+21:13:46.994  INFO  business.ES6UpgradeTest - Results size: 1
+21:13:46.994  INFO  business.ES6UpgradeTest - Success Testing File: filter-tags-whitespace.json
+21:13:46.994  INFO  junit.MainBaseSuite - Checking indexer status...
+21:13:46.995  INFO  junit.MainBaseSuite - Indexer is not empty, waiting for it to finish
+21:13:47.998  INFO  junit.MainBaseSuite - Indexer Complete=true
+21:13:47.999  INFO  business.ES6UpgradeTest - Testing File: aggregation-content-type.json
+21:13:47.999  INFO  business.ES6UpgradeTest - com.dotcms.content.elasticsearch.business.ES6UpgradeTest$AggregationContentType maps to file aggregation-content-type.json
+21:13:48.094  INFO  business.ES6UpgradeTest - {
+  "query": {
+    "bool": {
+      "must": {
+        "term": {
+          "conHost": "3899f425fe7f110c33f98d933dac1169"
+        }
+      }
+    }
+  },
+  "aggs" : {
+    "tag" : {
+      "terms" : {
+        "field" : "contentType_dotraw",
+        "size" : 100
+      }
+    }
+  },
+  "size":0
+}
+21:13:48.099  INFO  business.ES6UpgradeTest - Results size: 4
+21:13:48.099  INFO  business.ES6UpgradeTest - Success Testing File: aggregation-content-type.json
+21:13:48.099  INFO  junit.MainBaseSuite - Checking indexer status...
+21:13:48.100  INFO  junit.MainBaseSuite - Indexer is not empty, waiting for it to finish
+21:13:49.105  INFO  junit.MainBaseSuite - Indexer Complete=true
+21:13:49.105  INFO  business.ES6UpgradeTest - Testing File: filter-catchall.json
+21:13:49.105  INFO  business.ES6UpgradeTest - com.dotcms.content.elasticsearch.business.ES6UpgradeTest$FilterCatchall maps to file filter-catchall.json
+21:13:49.210  INFO  business.ES6UpgradeTest - {
+  "query": {
+    "bool": {
+      "must": {
+        "term": {
+          "catchall": "gas"
+        }
+      }
+    }
+  }
+}
+21:13:49.232  INFO  business.ES6UpgradeTest - Results size: 1
+21:13:49.232  INFO  business.ES6UpgradeTest - Success Testing File: filter-catchall.json
+21:13:49.232  INFO  junit.MainBaseSuite - Checking indexer status...
+21:13:49.233  INFO  junit.MainBaseSuite - Indexer is not empty, waiting for it to finish
+21:13:50.241  INFO  junit.MainBaseSuite - Indexer Complete=true
+21:13:50.241  INFO  business.ES6UpgradeTest - Testing File: filter-title-dates.json
+21:13:50.241  INFO  business.ES6UpgradeTest - com.dotcms.content.elasticsearch.business.ES6UpgradeTest$FilterTitleDates maps to file filter-title-dates.json
+21:13:50.346  INFO  business.ES6UpgradeTest - {
+   "query": {
+      "bool": {
+           "must": {
+                "query_string" : {
+                   "query" : "+News1685999622388.title:retirement"
+                }
+            },
+            "filter": {
+                "range" : {
+                    "News1685999622388.sysPublishDate" : {
+                        "gte": "01/01/2015",
+                        "lte": "2016",
+                        "format": "MM/dd/yyyy||yyyy"
+                    }
+                }
+            }
+        }
+    }
+}
+21:13:50.355  INFO  business.ES6UpgradeTest - Results size: 1
+21:13:50.355  INFO  business.ES6UpgradeTest - Success Testing File: filter-title-dates.json
+21:13:50.355  INFO  junit.MainBaseSuite - Checking indexer status...
+21:13:50.355  INFO  junit.MainBaseSuite - Indexer is not empty, waiting for it to finish
+21:13:51.358  INFO  junit.MainBaseSuite - Indexer Complete=true
+21:13:51.358  INFO  business.ES6UpgradeTest - Testing File: filter-distance.json
+21:13:51.358  INFO  business.ES6UpgradeTest - com.dotcms.content.elasticsearch.business.ES6UpgradeTest$FilterDistance maps to file filter-distance.json
+21:13:51.488  INFO  business.ES6UpgradeTest - {
+  "query": {
+    "bool": {
+      "must": {
+        "match_all": {}
+      },
+      "filter": {
+        "geo_distance": {
+          "distance": "2000km",
+          "News1685999622388.latlong": {
+            "lat": 37.776,
+            "lon": -122.41
+          }
+        }
+      }
+    }
+  }
+}
+
+21:13:51.533  INFO  business.ES6UpgradeTest - Results size: 1
+21:13:51.533  INFO  business.ES6UpgradeTest - Success Testing File: filter-distance.json
+21:13:51.533  INFO  junit.MainBaseSuite - Checking indexer status...
+21:13:51.534  INFO  junit.MainBaseSuite - Indexer is not empty, waiting for it to finish
+21:13:52.537  INFO  junit.MainBaseSuite - Indexer Complete=true
+21:13:52.537  INFO  business.ES6UpgradeTest - Testing File: function-score.json
+21:13:52.537  INFO  business.ES6UpgradeTest - com.dotcms.content.elasticsearch.business.ES6UpgradeTest$FunctionScore maps to file function-score.json
+21:13:52.538  INFO  business.ES6UpgradeTest - {
+  "query": {
+    "function_score": {
+      "query": { "match_all": {} },
+      "boost": "5",
+      "random_score": {},
+      "boost_mode":"multiply"
+    }
+  }
+}
+21:13:52.579  INFO  business.ES6UpgradeTest - Results size: 888
+21:13:52.579  INFO  business.ES6UpgradeTest - Success Testing File: function-score.json
+21:13:52.579  INFO  junit.MainBaseSuite - Checking indexer status...
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,821 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.dotcms.vanityurl.business.VanityUrlAPITest" tests="15" skipped="0" failures="0" errors="0" timestamp="2023-06-05T21:47:16" hostname="fv-az306-998" time="127.35">
+  <properties/>
+  <testcase name="Test_Vanity_URI_Missing_URI_Expect_Validation_Exception" classname="com.dotcms.vanityurl.business.VanityUrlAPITest" time="16.222"/>
+  <testcase name="testing_the_from_contentlet_method" classname="com.dotcms.vanityurl.business.VanityUrlAPITest" time="4.154"/>
+  <testcase name="vanities_resolve_once_they_are_published" classname="com.dotcms.vanityurl.business.VanityUrlAPITest" time="3.977"/>
+  <testcase name="test_that_regex_does_not_catch_regular_strings" classname="com.dotcms.vanityurl.business.VanityUrlAPITest" time="7.722"/>
+  <testcase name="test_publish_unpublish_on_system_vanity" classname="com.dotcms.vanityurl.business.VanityUrlAPITest" time="3.996"/>
+  <testcase name="vanities_resolve_correctly_after_url_has_been_updated" classname="com.dotcms.vanityurl.business.VanityUrlAPITest" time="4.862"/>
+  <testcase name="insure_vanitys_have_proper_response_actions_set" classname="com.dotcms.vanityurl.business.VanityUrlAPITest" time="3.978"/>
+  <testcase name="differentSitesTest" classname="com.dotcms.vanityurl.business.VanityUrlAPITest" time="9.408"/>
+  <testcase name="Test_Vanity_URI_Ending_With_Forward_Slash_Handles_Non_forward_Slash_Ending_URL" classname="com.dotcms.vanityurl.business.VanityUrlAPITest" time="5.142"/>
+  <testcase name="cache_404_Test" classname="com.dotcms.vanityurl.business.VanityUrlAPITest" time="4.036"/>
+  <testcase name="resolving_multilingual_vanities_with_default_language_unpublished" classname="com.dotcms.vanityurl.business.VanityUrlAPITest" time="5.408"/>
+  <testcase name="vanities_resolve_correctly_after_action_has_been_updated" classname="com.dotcms.vanityurl.business.VanityUrlAPITest" time="5.019"/>
+  <testcase name="testing_vanityurl_ordering" classname="com.dotcms.vanityurl.business.VanityUrlAPITest" time="40.802"/>
+  <testcase name="does_a_site_specific_vanity_override_system_host_vanity" classname="com.dotcms.vanityurl.business.VanityUrlAPITest" time="8.274"/>
+  <testcase name="working_vanities_do_not_resolve" classname="com.dotcms.vanityurl.business.VanityUrlAPITest" time="4.35"/>
+  <system-out><![CDATA[21:47:16.250  INFO  util.Config - Setting property: persist.contentlet.as.json to false
+21:47:16.640  ERROR business.HostAPIImpl - NO DEFAULT HOST, creating a fake one
+com.dotmarketing.business.DotStateException: NO DEFAULT HOST, creating a fake one
+	at com.dotmarketing.portlets.contentlet.business.HostAPIImpl.sendNotification(HostAPIImpl.java:724) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.HostAPIImpl.getOrCreateDefaultHost(HostAPIImpl.java:703) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.HostAPIImpl.findDefaultHost(HostAPIImpl.java:100) ~[main/:?]
+	at com.dotcms.datagen.AbstractDataGen.<init>(AbstractDataGen.java:28) ~[integrationTest/:?]
+	at com.dotcms.datagen.LanguageDataGen.<init>(LanguageDataGen.java:11) ~[integrationTest/:?]
+	at com.dotcms.vanityurl.business.VanityUrlAPITest.Test_Vanity_URI_Missing_URI_Expect_Validation_Exception(VanityUrlAPITest.java:944) ~[integrationTest/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:38) ~[integrationTest/:?]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:14) ~[integrationTest/:?]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.MainBaseSuite$DotRunner.run(MainBaseSuite.java:60) ~[integrationTest/:?]
+	at org.junit.runners.Suite.runChild(Suite.java:128) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.Suite.runChild(Suite.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[?:?]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[?:?]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[?:?]
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[?:?]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[?:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:?]
+21:47:25.374  ERROR business.VanityUrlAPIImpl - Validation error loading vanityURL[EE6B79D24649EC8B6062DDA51D335533] from db.
+com.dotmarketing.portlets.contentlet.business.DotContentletValidationException: Missing field: uri, id: ee6b79d24649ec8b6062dda51d335533
+	at com.dotcms.vanityurl.business.VanityUrlAPIImpl.checkMissingField(VanityUrlAPIImpl.java:346) ~[main/:?]
+	at com.dotcms.vanityurl.business.VanityUrlAPIImpl.validateVanityUrl(VanityUrlAPIImpl.java:306) ~[main/:?]
+	at com.dotcms.vanityurl.business.VanityUrlAPIImpl.fromContentlet(VanityUrlAPIImpl.java:282) ~[main/:?]
+	at com.dotcms.vanityurl.business.VanityUrlAPIImpl.lambda$findInDb$4(VanityUrlAPIImpl.java:169) ~[main/:?]
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195) ~[?:?]
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655) ~[?:?]
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484) ~[?:?]
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474) ~[?:?]
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913) ~[?:?]
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[?:?]
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578) ~[?:?]
+	at com.dotcms.vanityurl.business.VanityUrlAPIImpl.findInDb(VanityUrlAPIImpl.java:178) ~[main/:?]
+	at com.dotcms.vanityurl.business.VanityUrlAPIImpl.findInDb(VanityUrlAPIImpl.java:124) ~[main/:?]
+	at com.dotcms.vanityurl.business.VanityUrlAPITest.Test_Vanity_URI_Missing_URI_Expect_Validation_Exception(VanityUrlAPITest.java:988) ~[integrationTest/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:38) ~[integrationTest/:?]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:14) ~[integrationTest/:?]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.MainBaseSuite$DotRunner.run(MainBaseSuite.java:60) ~[integrationTest/:?]
+	at org.junit.runners.Suite.runChild(Suite.java:128) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.Suite.runChild(Suite.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[?:?]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[?:?]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[?:?]
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[?:?]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[?:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:?]
+21:47:25.387  ERROR business.VanityUrlAPIImpl - Validation error loading vanityURL[0A06F4E847250835D0736388DC530547] from db.
+com.dotmarketing.portlets.contentlet.business.DotContentletValidationException: Missing field: forwardTo, id: 0a06f4e847250835d0736388dc530547
+	at com.dotcms.vanityurl.business.VanityUrlAPIImpl.checkMissingField(VanityUrlAPIImpl.java:346) ~[main/:?]
+	at com.dotcms.vanityurl.business.VanityUrlAPIImpl.validateVanityUrl(VanityUrlAPIImpl.java:307) ~[main/:?]
+	at com.dotcms.vanityurl.business.VanityUrlAPIImpl.fromContentlet(VanityUrlAPIImpl.java:282) ~[main/:?]
+	at com.dotcms.vanityurl.business.VanityUrlAPIImpl.lambda$findInDb$4(VanityUrlAPIImpl.java:169) ~[main/:?]
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195) ~[?:?]
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655) ~[?:?]
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484) ~[?:?]
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474) ~[?:?]
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913) ~[?:?]
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[?:?]
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578) ~[?:?]
+	at com.dotcms.vanityurl.business.VanityUrlAPIImpl.findInDb(VanityUrlAPIImpl.java:178) ~[main/:?]
+	at com.dotcms.vanityurl.business.VanityUrlAPIImpl.findInDb(VanityUrlAPIImpl.java:124) ~[main/:?]
+	at com.dotcms.vanityurl.business.VanityUrlAPITest.Test_Vanity_URI_Missing_URI_Expect_Validation_Exception(VanityUrlAPITest.java:988) ~[integrationTest/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:38) ~[integrationTest/:?]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:14) ~[integrationTest/:?]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.MainBaseSuite$DotRunner.run(MainBaseSuite.java:60) ~[integrationTest/:?]
+	at org.junit.runners.Suite.runChild(Suite.java:128) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.Suite.runChild(Suite.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[?:?]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[?:?]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[?:?]
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[?:?]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[?:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:?]
+21:47:25.394  ERROR business.VanityUrlAPIImpl - Validation error loading vanityURL[9C7564C464013696177D51D379933F2A] from db.
+com.dotmarketing.portlets.contentlet.business.DotContentletValidationException: Missing field: title, id: 9c7564c464013696177d51d379933f2a
+	at com.dotcms.vanityurl.business.VanityUrlAPIImpl.checkMissingField(VanityUrlAPIImpl.java:346) ~[main/:?]
+	at com.dotcms.vanityurl.business.VanityUrlAPIImpl.validateVanityUrl(VanityUrlAPIImpl.java:308) ~[main/:?]
+	at com.dotcms.vanityurl.business.VanityUrlAPIImpl.fromContentlet(VanityUrlAPIImpl.java:282) ~[main/:?]
+	at com.dotcms.vanityurl.business.VanityUrlAPIImpl.lambda$findInDb$4(VanityUrlAPIImpl.java:169) ~[main/:?]
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195) ~[?:?]
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655) ~[?:?]
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484) ~[?:?]
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474) ~[?:?]
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913) ~[?:?]
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[?:?]
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578) ~[?:?]
+	at com.dotcms.vanityurl.business.VanityUrlAPIImpl.findInDb(VanityUrlAPIImpl.java:178) ~[main/:?]
+	at com.dotcms.vanityurl.business.VanityUrlAPIImpl.findInDb(VanityUrlAPIImpl.java:124) ~[main/:?]
+	at com.dotcms.vanityurl.business.VanityUrlAPITest.Test_Vanity_URI_Missing_URI_Expect_Validation_Exception(VanityUrlAPITest.java:988) ~[integrationTest/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:38) ~[integrationTest/:?]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:14) ~[integrationTest/:?]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.MainBaseSuite$DotRunner.run(MainBaseSuite.java:60) ~[integrationTest/:?]
+	at org.junit.runners.Suite.runChild(Suite.java:128) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.Suite.runChild(Suite.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[?:?]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[?:?]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[?:?]
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[?:?]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[?:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:?]
+21:47:32.457  ERROR business.VanityUrlAPIImpl - Validation error loading vanityURL[691DA945235A3B33F2F35730DE1BD9A7] from db.
+com.dotmarketing.portlets.contentlet.business.DotContentletValidationException: Missing field: title, id: 691da945235a3b33f2f35730de1bd9a7
+	at com.dotcms.vanityurl.business.VanityUrlAPIImpl.checkMissingField(VanityUrlAPIImpl.java:346) ~[main/:?]
+	at com.dotcms.vanityurl.business.VanityUrlAPIImpl.validateVanityUrl(VanityUrlAPIImpl.java:308) ~[main/:?]
+	at com.dotcms.vanityurl.business.VanityUrlAPIImpl.fromContentlet(VanityUrlAPIImpl.java:282) ~[main/:?]
+	at com.dotcms.vanityurl.business.VanityUrlAPIImpl.lambda$findInDb$4(VanityUrlAPIImpl.java:169) ~[main/:?]
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195) ~[?:?]
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655) ~[?:?]
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484) ~[?:?]
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474) ~[?:?]
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913) ~[?:?]
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[?:?]
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578) ~[?:?]
+	at com.dotcms.vanityurl.business.VanityUrlAPIImpl.findInDb(VanityUrlAPIImpl.java:178) ~[main/:?]
+	at com.dotcms.vanityurl.business.VanityUrlAPIImpl.findInDb(VanityUrlAPIImpl.java:124) ~[main/:?]
+	at com.dotcms.vanityurl.business.VanityUrlAPITest.Test_Vanity_URI_Missing_URI_Expect_Validation_Exception(VanityUrlAPITest.java:1009) ~[integrationTest/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:38) ~[integrationTest/:?]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:14) ~[integrationTest/:?]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.MainBaseSuite$DotRunner.run(MainBaseSuite.java:60) ~[integrationTest/:?]
+	at org.junit.runners.Suite.runChild(Suite.java:128) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.Suite.runChild(Suite.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[?:?]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[?:?]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[?:?]
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[?:?]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[?:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:?]
+21:47:32.468  INFO  util.Config - Setting property: persist.contentlet.as.json to true
+21:47:32.468  INFO  junit.MainBaseSuite - Checking indexer status...
+21:47:35.216  INFO  business.ESContentletAPIImpl - The contentlet: VanityURL1686001652473 hasn't action id set using the default action: ceca71a0-deee-4999-bd47-b01baa1bcfc8
+21:47:35.216  INFO  business.ESContentletAPIImpl - The action: ceca71a0-deee-4999-bd47-b01baa1bcfc8 has a save contentlet actionlet so firing a workflow and skipping the current checkin for the contentlet: VanityURL1686001652473
+21:47:35.263  INFO  business.ESContentletAPIImpl - A Workflow has been ran instead of checkin the contentlet: 556eaca275658e6b34b734843aadecf1
+21:47:35.623  INFO  junit.MainBaseSuite - Checking indexer status...
+21:47:35.623  INFO  junit.MainBaseSuite - Indexer is not empty, waiting for it to finish
+21:47:36.626  INFO  junit.MainBaseSuite - Indexer Complete=true
+21:47:39.376  INFO  business.ESContentletAPIImpl - The contentlet: VanityURL1686001656626 hasn't action id set using the default action: ceca71a0-deee-4999-bd47-b01baa1bcfc8
+21:47:39.376  INFO  business.ESContentletAPIImpl - The action: ceca71a0-deee-4999-bd47-b01baa1bcfc8 has a save contentlet actionlet so firing a workflow and skipping the current checkin for the contentlet: VanityURL1686001656626
+21:47:39.425  INFO  business.ESContentletAPIImpl - A Workflow has been ran instead of checkin the contentlet: 0295b032176a9ba7e0fcc08c5915f876
+21:47:39.761  INFO  business.ESContentletAPIImpl - The contentlet: 0295b032176a9ba7e0fcc08c5915f876 hasn't action id set using the default action: b9d89c80-3d88-4311-8365-187323c96436
+21:47:39.761  INFO  business.ESContentletAPIImpl - The action: b9d89c80-3d88-4311-8365-187323c96436 has a publish contentlet actionlet so firing a workflow and skipping the current publish for the contentlet: 0295b032176a9ba7e0fcc08c5915f876
+21:47:39.838  INFO  business.ESContentletAPIImpl - A Workflow has been run instead of a simple publish: 0295b032176a9ba7e0fcc08c5915f876
+21:47:43.341  INFO  business.ESContentletAPIImpl - The contentlet: VanityURL1686001660603 hasn't action id set using the default action: ceca71a0-deee-4999-bd47-b01baa1bcfc8
+21:47:43.341  INFO  business.ESContentletAPIImpl - The action: ceca71a0-deee-4999-bd47-b01baa1bcfc8 has a save contentlet actionlet so firing a workflow and skipping the current checkin for the contentlet: VanityURL1686001660603
+21:47:43.381  INFO  business.ESContentletAPIImpl - A Workflow has been ran instead of checkin the contentlet: de293b91a98fea13a71b79a93972ecef
+21:47:43.703  INFO  business.ESContentletAPIImpl - The contentlet: de293b91a98fea13a71b79a93972ecef hasn't action id set using the default action: b9d89c80-3d88-4311-8365-187323c96436
+21:47:43.703  INFO  business.ESContentletAPIImpl - The action: b9d89c80-3d88-4311-8365-187323c96436 has a publish contentlet actionlet so firing a workflow and skipping the current publish for the contentlet: de293b91a98fea13a71b79a93972ecef
+21:47:43.737  INFO  business.ESContentletAPIImpl - A Workflow has been run instead of a simple publish: de293b91a98fea13a71b79a93972ecef
+21:47:47.209  INFO  business.ESContentletAPIImpl - The contentlet: VanityURL1686001660603 hasn't action id set using the default action: ceca71a0-deee-4999-bd47-b01baa1bcfc8
+21:47:47.209  INFO  business.ESContentletAPIImpl - The action: ceca71a0-deee-4999-bd47-b01baa1bcfc8 has a save contentlet actionlet so firing a workflow and skipping the current checkin for the contentlet: VanityURL1686001660603
+21:47:47.244  INFO  business.ESContentletAPIImpl - A Workflow has been ran instead of checkin the contentlet: f93e0f7ae2988d5657ce7892ada52c3c
+21:47:47.589  INFO  business.ESContentletAPIImpl - The contentlet: f93e0f7ae2988d5657ce7892ada52c3c hasn't action id set using the default action: b9d89c80-3d88-4311-8365-187323c96436
+21:47:47.589  INFO  business.ESContentletAPIImpl - The action: b9d89c80-3d88-4311-8365-187323c96436 has a publish contentlet actionlet so firing a workflow and skipping the current publish for the contentlet: f93e0f7ae2988d5657ce7892ada52c3c
+21:47:47.619  INFO  business.ESContentletAPIImpl - A Workflow has been run instead of a simple publish: f93e0f7ae2988d5657ce7892ada52c3c
+21:47:48.325  INFO  junit.MainBaseSuite - Checking indexer status...
+21:47:51.089  INFO  business.ESContentletAPIImpl - The contentlet: test Vanity Url 1686001668326 hasn't action id set using the default action: ceca71a0-deee-4999-bd47-b01baa1bcfc8
+21:47:51.089  INFO  business.ESContentletAPIImpl - The action: ceca71a0-deee-4999-bd47-b01baa1bcfc8 has a save contentlet actionlet so firing a workflow and skipping the current checkin for the contentlet: test Vanity Url 1686001668326
+21:47:51.128  INFO  business.ESContentletAPIImpl - A Workflow has been ran instead of checkin the contentlet: f5ca49387930678b63c8d527322abd10
+21:47:51.429  INFO  business.ESContentletAPIImpl - The contentlet: f5ca49387930678b63c8d527322abd10 hasn't action id set using the default action: b9d89c80-3d88-4311-8365-187323c96436
+21:47:51.429  INFO  business.ESContentletAPIImpl - The action: b9d89c80-3d88-4311-8365-187323c96436 has a publish contentlet actionlet so firing a workflow and skipping the current publish for the contentlet: f5ca49387930678b63c8d527322abd10
+21:47:51.469  INFO  business.ESContentletAPIImpl - A Workflow has been run instead of a simple publish: f5ca49387930678b63c8d527322abd10
+21:47:52.320  INFO  junit.MainBaseSuite - Checking indexer status...
+21:47:55.096  INFO  business.ESContentletAPIImpl - The contentlet: VanityURL1686001672321 hasn't action id set using the default action: ceca71a0-deee-4999-bd47-b01baa1bcfc8
+21:47:55.096  INFO  business.ESContentletAPIImpl - The action: ceca71a0-deee-4999-bd47-b01baa1bcfc8 has a save contentlet actionlet so firing a workflow and skipping the current checkin for the contentlet: VanityURL1686001672321
+21:47:55.151  INFO  business.ESContentletAPIImpl - A Workflow has been ran instead of checkin the contentlet: 3669deaec74c0cc8141fdec18b6c5dd9
+21:47:55.463  INFO  business.ESContentletAPIImpl - The contentlet: 3669deaec74c0cc8141fdec18b6c5dd9 hasn't action id set using the default action: b9d89c80-3d88-4311-8365-187323c96436
+21:47:55.463  INFO  business.ESContentletAPIImpl - The action: b9d89c80-3d88-4311-8365-187323c96436 has a publish contentlet actionlet so firing a workflow and skipping the current publish for the contentlet: 3669deaec74c0cc8141fdec18b6c5dd9
+21:47:55.499  INFO  business.ESContentletAPIImpl - A Workflow has been run instead of a simple publish: 3669deaec74c0cc8141fdec18b6c5dd9
+21:47:56.295  INFO  business.ESContentletAPIImpl - The contentlet: VanityURL1686001672321 hasn't action id set using the default action: ceca71a0-deee-4999-bd47-b01baa1bcfc8
+21:47:56.295  INFO  business.ESContentletAPIImpl - The action: ceca71a0-deee-4999-bd47-b01baa1bcfc8 has a save contentlet actionlet so firing a workflow and skipping the current checkin for the contentlet: VanityURL1686001672321
+21:47:56.319  INFO  business.ESContentletAPIImpl - A Workflow has been ran instead of checkin the contentlet: 3669deaec74c0cc8141fdec18b6c5dd9
+21:47:56.595  INFO  business.ESContentletAPIImpl - The contentlet: 3669deaec74c0cc8141fdec18b6c5dd9 hasn't action id set using the default action: b9d89c80-3d88-4311-8365-187323c96436
+21:47:56.595  INFO  business.ESContentletAPIImpl - The action: b9d89c80-3d88-4311-8365-187323c96436 has a publish contentlet actionlet so firing a workflow and skipping the current publish for the contentlet: 3669deaec74c0cc8141fdec18b6c5dd9
+21:47:56.632  INFO  business.ESContentletAPIImpl - A Workflow has been run instead of a simple publish: 3669deaec74c0cc8141fdec18b6c5dd9
+21:47:57.183  INFO  junit.MainBaseSuite - Checking indexer status...
+21:47:59.990  INFO  business.ESContentletAPIImpl - The contentlet: test Vanity Url 1686001677184 hasn't action id set using the default action: ceca71a0-deee-4999-bd47-b01baa1bcfc8
+21:47:59.990  INFO  business.ESContentletAPIImpl - The action: ceca71a0-deee-4999-bd47-b01baa1bcfc8 has a save contentlet actionlet so firing a workflow and skipping the current checkin for the contentlet: test Vanity Url 1686001677184
+21:48:00.034  INFO  business.ESContentletAPIImpl - A Workflow has been ran instead of checkin the contentlet: 4a4ef418117c544e7209f3af44b02594
+21:48:00.334  INFO  business.ESContentletAPIImpl - The contentlet: 4a4ef418117c544e7209f3af44b02594 hasn't action id set using the default action: b9d89c80-3d88-4311-8365-187323c96436
+21:48:00.334  INFO  business.ESContentletAPIImpl - The action: b9d89c80-3d88-4311-8365-187323c96436 has a publish contentlet actionlet so firing a workflow and skipping the current publish for the contentlet: 4a4ef418117c544e7209f3af44b02594
+21:48:00.396  INFO  business.ESContentletAPIImpl - A Workflow has been run instead of a simple publish: 4a4ef418117c544e7209f3af44b02594
+21:48:01.144  INFO  business.ESContentletAPIImpl - The contentlet: test Vanity Url 1686001677184 hasn't action id set using the default action: ceca71a0-deee-4999-bd47-b01baa1bcfc8
+21:48:01.144  INFO  business.ESContentletAPIImpl - The action: ceca71a0-deee-4999-bd47-b01baa1bcfc8 has a save contentlet actionlet so firing a workflow and skipping the current checkin for the contentlet: test Vanity Url 1686001677184
+21:48:01.153  WARN  business.ESContentletAPIImpl - The action code of the Vanity URL is not valid
+21:48:01.153  WARN  business.ESContentletAPIImpl - The action code of the Vanity URL is not valid
+21:48:01.153  WARN  business.ESContentletAPIImpl - com.dotcms.vanityurl.business.VanityUrlAPIImpl.throwContentletValidationError(VanityUrlAPIImpl.java:326)
+21:48:01.153  WARN  business.ESContentletAPIImpl - The action code of the Vanity URL is not valid
+com.dotmarketing.portlets.contentlet.business.DotContentletValidationException: The action code of the Vanity URL is not valid
+	at com.dotcms.vanityurl.business.VanityUrlAPIImpl.throwContentletValidationError(VanityUrlAPIImpl.java:326) ~[main/:?]
+	at com.dotcms.vanityurl.business.VanityUrlAPIImpl.validateVanityUrl(VanityUrlAPIImpl.java:315) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.validateContentlet(ESContentletAPIImpl.java:8231) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.ContentletAPIInterceptor.validateContentlet(ContentletAPIInterceptor.java:2064) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.internalCheckin(ESContentletAPIImpl.java:5419) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.lambda$checkin$59(ESContentletAPIImpl.java:5032) ~[main/:?]
+	at com.dotcms.concurrent.lock.StripedLockImpl.tryLock(StripedLockImpl.java:100) ~[main/:?]
+	at com.dotcms.concurrent.lock.StripedLockImpl.tryLock(StripedLockImpl.java:55) ~[main/:?]
+	at com.dotcms.concurrent.lock.IdentifierStripedLock.tryLock(IdentifierStripedLock.java:16) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:5031) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:4927) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.saveDraft(ESContentletAPIImpl.java:9647) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.ContentletAPIInterceptor.saveDraft(ContentletAPIInterceptor.java:2562) ~[main/:?]
+	at com.dotmarketing.portlets.workflows.actionlet.SaveContentAsDraftActionlet.executeAction(SaveContentAsDraftActionlet.java:120) ~[main/:?]
+	at com.dotmarketing.portlets.workflows.business.WorkflowAPIImpl.fireWorkflowPostCheckin(WorkflowAPIImpl.java:2410) ~[main/:?]
+	at com.dotmarketing.portlets.workflows.business.WorkflowAPIImpl.lambda$fireContentWorkflow$73(WorkflowAPIImpl.java:3368) ~[main/:?]
+	at com.dotcms.util.ThreadContextUtil.wrapVoidNoReindex(ThreadContextUtil.java:85) ~[main/:?]
+	at com.dotmarketing.portlets.workflows.business.WorkflowAPIImpl.fireContentWorkflow(WorkflowAPIImpl.java:3368) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.validateWorkflowStateOrRunAsWorkflow(ESContentletAPIImpl.java:5258) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:5017) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:10007) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:4867) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.ContentletAPIInterceptor.checkin(ContentletAPIInterceptor.java:266) ~[main/:?]
+	at com.dotcms.vanityurl.business.VanityUrlAPITest.insure_vanitys_have_proper_response_actions_set(VanityUrlAPITest.java:464) ~[integrationTest/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:38) ~[integrationTest/:?]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:14) ~[integrationTest/:?]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.MainBaseSuite$DotRunner.run(MainBaseSuite.java:60) ~[integrationTest/:?]
+	at org.junit.runners.Suite.runChild(Suite.java:128) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.Suite.runChild(Suite.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[?:?]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[?:?]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[?:?]
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[?:?]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[?:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:?]
+21:48:01.153  ERROR actionlet.SaveContentAsDraftActionlet - The action code of the Vanity URL is not valid
+com.dotmarketing.portlets.contentlet.business.DotContentletValidationException: The action code of the Vanity URL is not valid
+	at com.dotcms.vanityurl.business.VanityUrlAPIImpl.throwContentletValidationError(VanityUrlAPIImpl.java:326) ~[main/:?]
+	at com.dotcms.vanityurl.business.VanityUrlAPIImpl.validateVanityUrl(VanityUrlAPIImpl.java:315) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.validateContentlet(ESContentletAPIImpl.java:8231) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.ContentletAPIInterceptor.validateContentlet(ContentletAPIInterceptor.java:2064) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.internalCheckin(ESContentletAPIImpl.java:5419) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.lambda$checkin$59(ESContentletAPIImpl.java:5032) ~[main/:?]
+	at com.dotcms.concurrent.lock.StripedLockImpl.tryLock(StripedLockImpl.java:100) ~[main/:?]
+	at com.dotcms.concurrent.lock.StripedLockImpl.tryLock(StripedLockImpl.java:55) ~[main/:?]
+	at com.dotcms.concurrent.lock.IdentifierStripedLock.tryLock(IdentifierStripedLock.java:16) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:5031) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:4927) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.saveDraft(ESContentletAPIImpl.java:9647) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.ContentletAPIInterceptor.saveDraft(ContentletAPIInterceptor.java:2562) ~[main/:?]
+	at com.dotmarketing.portlets.workflows.actionlet.SaveContentAsDraftActionlet.executeAction(SaveContentAsDraftActionlet.java:120) ~[main/:?]
+	at com.dotmarketing.portlets.workflows.business.WorkflowAPIImpl.fireWorkflowPostCheckin(WorkflowAPIImpl.java:2410) ~[main/:?]
+	at com.dotmarketing.portlets.workflows.business.WorkflowAPIImpl.lambda$fireContentWorkflow$73(WorkflowAPIImpl.java:3368) ~[main/:?]
+	at com.dotcms.util.ThreadContextUtil.wrapVoidNoReindex(ThreadContextUtil.java:85) ~[main/:?]
+	at com.dotmarketing.portlets.workflows.business.WorkflowAPIImpl.fireContentWorkflow(WorkflowAPIImpl.java:3368) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.validateWorkflowStateOrRunAsWorkflow(ESContentletAPIImpl.java:5258) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:5017) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:10007) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:4867) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.ContentletAPIInterceptor.checkin(ContentletAPIInterceptor.java:266) ~[main/:?]
+	at com.dotcms.vanityurl.business.VanityUrlAPITest.insure_vanitys_have_proper_response_actions_set(VanityUrlAPITest.java:464) ~[integrationTest/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:38) ~[integrationTest/:?]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:14) ~[integrationTest/:?]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.MainBaseSuite$DotRunner.run(MainBaseSuite.java:60) ~[integrationTest/:?]
+	at org.junit.runners.Suite.runChild(Suite.java:128) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.Suite.runChild(Suite.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[?:?]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[?:?]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[?:?]
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[?:?]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[?:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:?]
+21:48:01.154  WARN  business.ESContentletAPIImpl - The action code of the Vanity URL is not valid
+com.dotmarketing.exception.DotRuntimeException: The action code of the Vanity URL is not valid
+	at com.dotcms.util.ThreadContextUtil.wrapVoidNoReindex(ThreadContextUtil.java:88) ~[main/:?]
+	at com.dotmarketing.portlets.workflows.business.WorkflowAPIImpl.fireContentWorkflow(WorkflowAPIImpl.java:3368) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.validateWorkflowStateOrRunAsWorkflow(ESContentletAPIImpl.java:5258) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:5017) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:10007) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:4867) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.ContentletAPIInterceptor.checkin(ContentletAPIInterceptor.java:266) ~[main/:?]
+	at com.dotcms.vanityurl.business.VanityUrlAPITest.insure_vanitys_have_proper_response_actions_set(VanityUrlAPITest.java:464) ~[integrationTest/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:38) ~[integrationTest/:?]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:14) ~[integrationTest/:?]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.MainBaseSuite$DotRunner.run(MainBaseSuite.java:60) ~[integrationTest/:?]
+	at org.junit.runners.Suite.runChild(Suite.java:128) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.Suite.runChild(Suite.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[?:?]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[?:?]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[?:?]
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[?:?]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[?:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:?]
+Caused by: com.dotmarketing.portlets.workflows.business.DotWorkflowException: The action code of the Vanity URL is not valid
+	at com.dotmarketing.portlets.workflows.business.WorkflowAPIImpl.fireWorkflowPostCheckin(WorkflowAPIImpl.java:2439) ~[main/:?]
+	at com.dotmarketing.portlets.workflows.business.WorkflowAPIImpl.lambda$fireContentWorkflow$73(WorkflowAPIImpl.java:3368) ~[main/:?]
+	at com.dotcms.util.ThreadContextUtil.wrapVoidNoReindex(ThreadContextUtil.java:85) ~[main/:?]
+	... 62 more
+Caused by: com.dotmarketing.portlets.workflows.model.WorkflowActionFailureException: The action code of the Vanity URL is not valid
+	at com.dotmarketing.portlets.workflows.actionlet.SaveContentAsDraftActionlet.executeAction(SaveContentAsDraftActionlet.java:132) ~[main/:?]
+	at com.dotmarketing.portlets.workflows.business.WorkflowAPIImpl.fireWorkflowPostCheckin(WorkflowAPIImpl.java:2410) ~[main/:?]
+	at com.dotmarketing.portlets.workflows.business.WorkflowAPIImpl.lambda$fireContentWorkflow$73(WorkflowAPIImpl.java:3368) ~[main/:?]
+	at com.dotcms.util.ThreadContextUtil.wrapVoidNoReindex(ThreadContextUtil.java:85) ~[main/:?]
+	... 62 more
+Caused by: com.dotmarketing.portlets.contentlet.business.DotContentletValidationException: The action code of the Vanity URL is not valid
+	at com.dotcms.vanityurl.business.VanityUrlAPIImpl.throwContentletValidationError(VanityUrlAPIImpl.java:326) ~[main/:?]
+	at com.dotcms.vanityurl.business.VanityUrlAPIImpl.validateVanityUrl(VanityUrlAPIImpl.java:315) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.validateContentlet(ESContentletAPIImpl.java:8231) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.ContentletAPIInterceptor.validateContentlet(ContentletAPIInterceptor.java:2064) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.internalCheckin(ESContentletAPIImpl.java:5419) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.lambda$checkin$59(ESContentletAPIImpl.java:5032) ~[main/:?]
+	at com.dotcms.concurrent.lock.StripedLockImpl.tryLock(StripedLockImpl.java:100) ~[main/:?]
+	at com.dotcms.concurrent.lock.StripedLockImpl.tryLock(StripedLockImpl.java:55) ~[main/:?]
+	at com.dotcms.concurrent.lock.IdentifierStripedLock.tryLock(IdentifierStripedLock.java:16) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:5031) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:4927) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.saveDraft(ESContentletAPIImpl.java:9647) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.ContentletAPIInterceptor.saveDraft(ContentletAPIInterceptor.java:2562) ~[main/:?]
+	at com.dotmarketing.portlets.workflows.actionlet.SaveContentAsDraftActionlet.executeAction(SaveContentAsDraftActionlet.java:120) ~[main/:?]
+	at com.dotmarketing.portlets.workflows.business.WorkflowAPIImpl.fireWorkflowPostCheckin(WorkflowAPIImpl.java:2410) ~[main/:?]
+	at com.dotmarketing.portlets.workflows.business.WorkflowAPIImpl.lambda$fireContentWorkflow$73(WorkflowAPIImpl.java:3368) ~[main/:?]
+	at com.dotcms.util.ThreadContextUtil.wrapVoidNoReindex(ThreadContextUtil.java:85) ~[main/:?]
+	... 62 more
+21:48:01.160  INFO  junit.MainBaseSuite - Checking indexer status...
+21:48:03.935  INFO  business.ESContentletAPIImpl - The contentlet: test Vanity Url 1686001681161 hasn't action id set using the default action: ceca71a0-deee-4999-bd47-b01baa1bcfc8
+21:48:03.935  INFO  business.ESContentletAPIImpl - The action: ceca71a0-deee-4999-bd47-b01baa1bcfc8 has a save contentlet actionlet so firing a workflow and skipping the current checkin for the contentlet: test Vanity Url 1686001681161
+21:48:03.974  INFO  business.ESContentletAPIImpl - A Workflow has been ran instead of checkin the contentlet: 1f2957f4e1ffdf51468fcb645d50c9ee
+21:48:04.374  INFO  business.ESContentletAPIImpl - The contentlet: 1f2957f4e1ffdf51468fcb645d50c9ee hasn't action id set using the default action: b9d89c80-3d88-4311-8365-187323c96436
+21:48:04.374  INFO  business.ESContentletAPIImpl - The action: b9d89c80-3d88-4311-8365-187323c96436 has a publish contentlet actionlet so firing a workflow and skipping the current publish for the contentlet: 1f2957f4e1ffdf51468fcb645d50c9ee
+21:48:04.414  INFO  business.ESContentletAPIImpl - A Workflow has been run instead of a simple publish: 1f2957f4e1ffdf51468fcb645d50c9ee
+21:48:07.940  INFO  business.ESContentletAPIImpl - The contentlet: test Vanity Url 1686001685099 hasn't action id set using the default action: ceca71a0-deee-4999-bd47-b01baa1bcfc8
+21:48:07.940  INFO  business.ESContentletAPIImpl - The action: ceca71a0-deee-4999-bd47-b01baa1bcfc8 has a save contentlet actionlet so firing a workflow and skipping the current checkin for the contentlet: test Vanity Url 1686001685099
+21:48:07.990  INFO  business.ESContentletAPIImpl - A Workflow has been ran instead of checkin the contentlet: 3dd9e74fc34ebe0ac43aae2ae7b20dbf
+21:48:08.385  INFO  business.ESContentletAPIImpl - The contentlet: 3dd9e74fc34ebe0ac43aae2ae7b20dbf hasn't action id set using the default action: b9d89c80-3d88-4311-8365-187323c96436
+21:48:08.385  INFO  business.ESContentletAPIImpl - The action: b9d89c80-3d88-4311-8365-187323c96436 has a publish contentlet actionlet so firing a workflow and skipping the current publish for the contentlet: 3dd9e74fc34ebe0ac43aae2ae7b20dbf
+21:48:08.418  INFO  business.ESContentletAPIImpl - A Workflow has been run instead of a simple publish: 3dd9e74fc34ebe0ac43aae2ae7b20dbf
+21:48:10.568  INFO  junit.MainBaseSuite - Checking indexer status...
+21:48:14.580  INFO  business.ESContentletAPIImpl - The contentlet: VanityURL1686001691652 hasn't action id set using the default action: ceca71a0-deee-4999-bd47-b01baa1bcfc8
+21:48:14.580  INFO  business.ESContentletAPIImpl - The action: ceca71a0-deee-4999-bd47-b01baa1bcfc8 has a save contentlet actionlet so firing a workflow and skipping the current checkin for the contentlet: VanityURL1686001691652
+21:48:14.625  INFO  business.ESContentletAPIImpl - A Workflow has been ran instead of checkin the contentlet: 30984a5daf78cff62ecdaa1d1bf42261
+21:48:14.971  INFO  business.ESContentletAPIImpl - The contentlet: 30984a5daf78cff62ecdaa1d1bf42261 hasn't action id set using the default action: b9d89c80-3d88-4311-8365-187323c96436
+21:48:14.971  INFO  business.ESContentletAPIImpl - The action: b9d89c80-3d88-4311-8365-187323c96436 has a publish contentlet actionlet so firing a workflow and skipping the current publish for the contentlet: 30984a5daf78cff62ecdaa1d1bf42261
+21:48:15.009  INFO  business.ESContentletAPIImpl - A Workflow has been run instead of a simple publish: 30984a5daf78cff62ecdaa1d1bf42261
+21:48:15.711  INFO  junit.MainBaseSuite - Checking indexer status...
+21:48:18.557  INFO  business.ESContentletAPIImpl - The contentlet: test Vanity Url 1686001695712 hasn't action id set using the default action: ceca71a0-deee-4999-bd47-b01baa1bcfc8
+21:48:18.557  INFO  business.ESContentletAPIImpl - The action: ceca71a0-deee-4999-bd47-b01baa1bcfc8 has a save contentlet actionlet so firing a workflow and skipping the current checkin for the contentlet: test Vanity Url 1686001695712
+21:48:18.640  INFO  business.ESContentletAPIImpl - A Workflow has been ran instead of checkin the contentlet: 6951d3a7174439783eb2d884623ce573
+21:48:19.006  INFO  business.ESContentletAPIImpl - The contentlet: 6951d3a7174439783eb2d884623ce573 hasn't action id set using the default action: b9d89c80-3d88-4311-8365-187323c96436
+21:48:19.006  INFO  business.ESContentletAPIImpl - The action: b9d89c80-3d88-4311-8365-187323c96436 has a publish contentlet actionlet so firing a workflow and skipping the current publish for the contentlet: 6951d3a7174439783eb2d884623ce573
+21:48:19.032  INFO  business.ESContentletAPIImpl - A Workflow has been run instead of a simple publish: 6951d3a7174439783eb2d884623ce573
+21:48:19.746  INFO  junit.MainBaseSuite - Checking indexer status...
+21:48:22.382  INFO  business.ESContentletAPIImpl - The contentlet: test Vanity Url 1686001699747 hasn't action id set using the default action: ceca71a0-deee-4999-bd47-b01baa1bcfc8
+21:48:22.382  INFO  business.ESContentletAPIImpl - The action: ceca71a0-deee-4999-bd47-b01baa1bcfc8 has a save contentlet actionlet so firing a workflow and skipping the current checkin for the contentlet: test Vanity Url 1686001699747
+21:48:22.410  INFO  business.ESContentletAPIImpl - A Workflow has been ran instead of checkin the contentlet: 7223b7fb89de20aba9ffbdcab0bdf748
+21:48:22.416  INFO  business.ESContentletAPIImpl - The contentlet: 7223b7fb89de20aba9ffbdcab0bdf748 hasn't action id set using the default action: b9d89c80-3d88-4311-8365-187323c96436
+21:48:22.416  INFO  business.ESContentletAPIImpl - The action: b9d89c80-3d88-4311-8365-187323c96436 has a publish contentlet actionlet so firing a workflow and skipping the current publish for the contentlet: 7223b7fb89de20aba9ffbdcab0bdf748
+21:48:22.450  INFO  business.ESContentletAPIImpl - A Workflow has been run instead of a simple publish: 7223b7fb89de20aba9ffbdcab0bdf748
+21:48:22.968  INFO  business.ESContentletAPIImpl - The contentlet: test Vanity Url 1686001699747 hasn't action id set using the default action: ceca71a0-deee-4999-bd47-b01baa1bcfc8
+21:48:22.968  INFO  business.ESContentletAPIImpl - The action: ceca71a0-deee-4999-bd47-b01baa1bcfc8 has a save contentlet actionlet so firing a workflow and skipping the current checkin for the contentlet: test Vanity Url 1686001699747
+21:48:22.990  INFO  business.ESContentletAPIImpl - A Workflow has been ran instead of checkin the contentlet: 7223b7fb89de20aba9ffbdcab0bdf748
+21:48:22.991  INFO  business.VanityUrlAPITest - checking vanities from host:d17ad8e7daf3e50c61c63e0c0391810f
+21:48:23.007  INFO  business.ESContentletAPIImpl - The contentlet: 7223b7fb89de20aba9ffbdcab0bdf748 hasn't action id set using the default action: b9d89c80-3d88-4311-8365-187323c96436
+21:48:23.007  INFO  business.ESContentletAPIImpl - The action: b9d89c80-3d88-4311-8365-187323c96436 has a publish contentlet actionlet so firing a workflow and skipping the current publish for the contentlet: 7223b7fb89de20aba9ffbdcab0bdf748
+21:48:23.038  INFO  business.ESContentletAPIImpl - A Workflow has been run instead of a simple publish: 7223b7fb89de20aba9ffbdcab0bdf748
+21:48:24.148  INFO  junit.MainBaseSuite - Checking indexer status...
+21:48:24.152  INFO  junit.MainBaseSuite - Indexer is not empty, waiting for it to finish
+21:48:25.155  INFO  junit.MainBaseSuite - Indexer Complete=true
+21:48:28.006  INFO  business.ESContentletAPIImpl - The contentlet: VanityURL1686001705155 hasn't action id set using the default action: ceca71a0-deee-4999-bd47-b01baa1bcfc8
+21:48:28.006  INFO  business.ESContentletAPIImpl - The action: ceca71a0-deee-4999-bd47-b01baa1bcfc8 has a save contentlet actionlet so firing a workflow and skipping the current checkin for the contentlet: VanityURL1686001705155
+21:48:28.053  INFO  business.ESContentletAPIImpl - A Workflow has been ran instead of checkin the contentlet: 44406e7793005d3becfbc4df7b3a97d9
+21:48:28.435  INFO  business.ESContentletAPIImpl - The contentlet: 44406e7793005d3becfbc4df7b3a97d9 hasn't action id set using the default action: b9d89c80-3d88-4311-8365-187323c96436
+21:48:28.435  INFO  business.ESContentletAPIImpl - The action: b9d89c80-3d88-4311-8365-187323c96436 has a publish contentlet actionlet so firing a workflow and skipping the current publish for the contentlet: 44406e7793005d3becfbc4df7b3a97d9
+21:48:28.469  INFO  business.ESContentletAPIImpl - A Workflow has been run instead of a simple publish: 44406e7793005d3becfbc4df7b3a97d9
+21:48:29.271  INFO  business.ESContentletAPIImpl - The contentlet: VanityURL1686001705155 hasn't action id set using the default action: ceca71a0-deee-4999-bd47-b01baa1bcfc8
+21:48:29.271  INFO  business.ESContentletAPIImpl - The action: ceca71a0-deee-4999-bd47-b01baa1bcfc8 has a save contentlet actionlet so firing a workflow and skipping the current checkin for the contentlet: VanityURL1686001705155
+21:48:29.296  INFO  business.ESContentletAPIImpl - A Workflow has been ran instead of checkin the contentlet: 44406e7793005d3becfbc4df7b3a97d9
+21:48:29.565  INFO  business.ESContentletAPIImpl - The contentlet: 44406e7793005d3becfbc4df7b3a97d9 hasn't action id set using the default action: b9d89c80-3d88-4311-8365-187323c96436
+21:48:29.565  INFO  business.ESContentletAPIImpl - The action: b9d89c80-3d88-4311-8365-187323c96436 has a publish contentlet actionlet so firing a workflow and skipping the current publish for the contentlet: 44406e7793005d3becfbc4df7b3a97d9
+21:48:29.620  INFO  business.ESContentletAPIImpl - A Workflow has been run instead of a simple publish: 44406e7793005d3becfbc4df7b3a97d9
+21:48:30.173  INFO  junit.MainBaseSuite - Checking indexer status...
+21:48:33.092  INFO  business.ESContentletAPIImpl - The contentlet: VanityURLOrder10 hasn't action id set using the default action: ceca71a0-deee-4999-bd47-b01baa1bcfc8
+21:48:33.092  INFO  business.ESContentletAPIImpl - The action: ceca71a0-deee-4999-bd47-b01baa1bcfc8 has a save contentlet actionlet so firing a workflow and skipping the current checkin for the contentlet: VanityURLOrder10
+21:48:33.137  INFO  business.ESContentletAPIImpl - A Workflow has been ran instead of checkin the contentlet: fbfb4e2da0519f13682c1bebc2dd2e8f
+21:48:33.426  INFO  business.ESContentletAPIImpl - The contentlet: fbfb4e2da0519f13682c1bebc2dd2e8f hasn't action id set using the default action: b9d89c80-3d88-4311-8365-187323c96436
+21:48:33.426  INFO  business.ESContentletAPIImpl - The action: b9d89c80-3d88-4311-8365-187323c96436 has a publish contentlet actionlet so firing a workflow and skipping the current publish for the contentlet: fbfb4e2da0519f13682c1bebc2dd2e8f
+21:48:33.460  INFO  business.ESContentletAPIImpl - A Workflow has been run instead of a simple publish: fbfb4e2da0519f13682c1bebc2dd2e8f
+21:48:37.075  INFO  business.ESContentletAPIImpl - The contentlet: VanityURLOrder9 hasn't action id set using the default action: ceca71a0-deee-4999-bd47-b01baa1bcfc8
+21:48:37.075  INFO  business.ESContentletAPIImpl - The action: ceca71a0-deee-4999-bd47-b01baa1bcfc8 has a save contentlet actionlet so firing a workflow and skipping the current checkin for the contentlet: VanityURLOrder9
+21:48:37.106  INFO  business.ESContentletAPIImpl - A Workflow has been ran instead of checkin the contentlet: 1639a3e966b57f09f93cb4bb5fe8d658
+21:48:37.418  INFO  business.ESContentletAPIImpl - The contentlet: 1639a3e966b57f09f93cb4bb5fe8d658 hasn't action id set using the default action: b9d89c80-3d88-4311-8365-187323c96436
+21:48:37.419  INFO  business.ESContentletAPIImpl - The action: b9d89c80-3d88-4311-8365-187323c96436 has a publish contentlet actionlet so firing a workflow and skipping the current publish for the contentlet: 1639a3e966b57f09f93cb4bb5fe8d658
+21:48:37.450  INFO  business.ESContentletAPIImpl - A Workflow has been run instead of a simple publish: 1639a3e966b57f09f93cb4bb5fe8d658
+21:48:41.040  INFO  business.ESContentletAPIImpl - The contentlet: VanityURLOrder8 hasn't action id set using the default action: ceca71a0-deee-4999-bd47-b01baa1bcfc8
+21:48:41.040  INFO  business.ESContentletAPIImpl - The action: ceca71a0-deee-4999-bd47-b01baa1bcfc8 has a save contentlet actionlet so firing a workflow and skipping the current checkin for the contentlet: VanityURLOrder8
+21:48:41.108  INFO  business.ESContentletAPIImpl - A Workflow has been ran instead of checkin the contentlet: 2a1fb0137910430c04c9e68c8b408223
+21:48:41.456  INFO  business.ESContentletAPIImpl - The contentlet: 2a1fb0137910430c04c9e68c8b408223 hasn't action id set using the default action: b9d89c80-3d88-4311-8365-187323c96436
+21:48:41.456  INFO  business.ESContentletAPIImpl - The action: b9d89c80-3d88-4311-8365-187323c96436 has a publish contentlet actionlet so firing a workflow and skipping the current publish for the contentlet: 2a1fb0137910430c04c9e68c8b408223
+21:48:41.489  INFO  business.ESContentletAPIImpl - A Workflow has been run instead of a simple publish: 2a1fb0137910430c04c9e68c8b408223
+21:48:45.139  INFO  business.ESContentletAPIImpl - The contentlet: VanityURLOrder7 hasn't action id set using the default action: ceca71a0-deee-4999-bd47-b01baa1bcfc8
+21:48:45.139  INFO  business.ESContentletAPIImpl - The action: ceca71a0-deee-4999-bd47-b01baa1bcfc8 has a save contentlet actionlet so firing a workflow and skipping the current checkin for the contentlet: VanityURLOrder7
+21:48:45.178  INFO  business.ESContentletAPIImpl - A Workflow has been ran instead of checkin the contentlet: 46edcd31d69ba8bdd63aaacfb79797c0
+21:48:45.576  INFO  business.ESContentletAPIImpl - The contentlet: 46edcd31d69ba8bdd63aaacfb79797c0 hasn't action id set using the default action: b9d89c80-3d88-4311-8365-187323c96436
+21:48:45.576  INFO  business.ESContentletAPIImpl - The action: b9d89c80-3d88-4311-8365-187323c96436 has a publish contentlet actionlet so firing a workflow and skipping the current publish for the contentlet: 46edcd31d69ba8bdd63aaacfb79797c0
+21:48:45.602  INFO  business.ESContentletAPIImpl - A Workflow has been run instead of a simple publish: 46edcd31d69ba8bdd63aaacfb79797c0
+21:48:49.315  INFO  business.ESContentletAPIImpl - The contentlet: VanityURLOrder6 hasn't action id set using the default action: ceca71a0-deee-4999-bd47-b01baa1bcfc8
+21:48:49.315  INFO  business.ESContentletAPIImpl - The action: ceca71a0-deee-4999-bd47-b01baa1bcfc8 has a save contentlet actionlet so firing a workflow and skipping the current checkin for the contentlet: VanityURLOrder6
+21:48:49.386  INFO  business.ESContentletAPIImpl - A Workflow has been ran instead of checkin the contentlet: 9d74e35f32a6a9501bbc560244caa67f
+21:48:49.774  INFO  business.ESContentletAPIImpl - The contentlet: 9d74e35f32a6a9501bbc560244caa67f hasn't action id set using the default action: b9d89c80-3d88-4311-8365-187323c96436
+21:48:49.774  INFO  business.ESContentletAPIImpl - The action: b9d89c80-3d88-4311-8365-187323c96436 has a publish contentlet actionlet so firing a workflow and skipping the current publish for the contentlet: 9d74e35f32a6a9501bbc560244caa67f
+21:48:49.799  INFO  business.ESContentletAPIImpl - A Workflow has been run instead of a simple publish: 9d74e35f32a6a9501bbc560244caa67f
+21:48:53.461  INFO  business.ESContentletAPIImpl - The contentlet: VanityURLOrder5 hasn't action id set using the default action: ceca71a0-deee-4999-bd47-b01baa1bcfc8
+21:48:53.461  INFO  business.ESContentletAPIImpl - The action: ceca71a0-deee-4999-bd47-b01baa1bcfc8 has a save contentlet actionlet so firing a workflow and skipping the current checkin for the contentlet: VanityURLOrder5
+21:48:53.498  INFO  business.ESContentletAPIImpl - A Workflow has been ran instead of checkin the contentlet: 65bf67f603091b8e4205db86242b334a
+21:48:53.808  INFO  business.ESContentletAPIImpl - The contentlet: 65bf67f603091b8e4205db86242b334a hasn't action id set using the default action: b9d89c80-3d88-4311-8365-187323c96436
+21:48:53.808  INFO  business.ESContentletAPIImpl - The action: b9d89c80-3d88-4311-8365-187323c96436 has a publish contentlet actionlet so firing a workflow and skipping the current publish for the contentlet: 65bf67f603091b8e4205db86242b334a
+21:48:53.854  INFO  business.ESContentletAPIImpl - A Workflow has been run instead of a simple publish: 65bf67f603091b8e4205db86242b334a
+21:48:57.730  INFO  business.ESContentletAPIImpl - The contentlet: VanityURLOrder4 hasn't action id set using the default action: ceca71a0-deee-4999-bd47-b01baa1bcfc8
+21:48:57.730  INFO  business.ESContentletAPIImpl - The action: ceca71a0-deee-4999-bd47-b01baa1bcfc8 has a save contentlet actionlet so firing a workflow and skipping the current checkin for the contentlet: VanityURLOrder4
+21:48:57.766  INFO  business.ESContentletAPIImpl - A Workflow has been ran instead of checkin the contentlet: b09fad911b3acdf65896759d6d23fd88
+21:48:58.069  INFO  business.ESContentletAPIImpl - The contentlet: b09fad911b3acdf65896759d6d23fd88 hasn't action id set using the default action: b9d89c80-3d88-4311-8365-187323c96436
+21:48:58.069  INFO  business.ESContentletAPIImpl - The action: b9d89c80-3d88-4311-8365-187323c96436 has a publish contentlet actionlet so firing a workflow and skipping the current publish for the contentlet: b09fad911b3acdf65896759d6d23fd88
+21:48:58.095  INFO  business.ESContentletAPIImpl - A Workflow has been run instead of a simple publish: b09fad911b3acdf65896759d6d23fd88
+21:49:01.738  INFO  business.ESContentletAPIImpl - The contentlet: VanityURLOrder3 hasn't action id set using the default action: ceca71a0-deee-4999-bd47-b01baa1bcfc8
+21:49:01.738  INFO  business.ESContentletAPIImpl - The action: ceca71a0-deee-4999-bd47-b01baa1bcfc8 has a save contentlet actionlet so firing a workflow and skipping the current checkin for the contentlet: VanityURLOrder3
+21:49:01.775  INFO  business.ESContentletAPIImpl - A Workflow has been ran instead of checkin the contentlet: db5955c4f1a8c7155efcbd3110164418
+21:49:02.178  INFO  business.ESContentletAPIImpl - The contentlet: db5955c4f1a8c7155efcbd3110164418 hasn't action id set using the default action: b9d89c80-3d88-4311-8365-187323c96436
+21:49:02.179  INFO  business.ESContentletAPIImpl - The action: b9d89c80-3d88-4311-8365-187323c96436 has a publish contentlet actionlet so firing a workflow and skipping the current publish for the contentlet: db5955c4f1a8c7155efcbd3110164418
+21:49:02.222  INFO  business.ESContentletAPIImpl - A Workflow has been run instead of a simple publish: db5955c4f1a8c7155efcbd3110164418
+21:49:05.862  INFO  business.ESContentletAPIImpl - The contentlet: VanityURLOrder2 hasn't action id set using the default action: ceca71a0-deee-4999-bd47-b01baa1bcfc8
+21:49:05.862  INFO  business.ESContentletAPIImpl - The action: ceca71a0-deee-4999-bd47-b01baa1bcfc8 has a save contentlet actionlet so firing a workflow and skipping the current checkin for the contentlet: VanityURLOrder2
+21:49:05.903  INFO  business.ESContentletAPIImpl - A Workflow has been ran instead of checkin the contentlet: d676d400b762985124fb8b178c369585
+21:49:06.208  INFO  business.ESContentletAPIImpl - The contentlet: d676d400b762985124fb8b178c369585 hasn't action id set using the default action: b9d89c80-3d88-4311-8365-187323c96436
+21:49:06.208  INFO  business.ESContentletAPIImpl - The action: b9d89c80-3d88-4311-8365-187323c96436 has a publish contentlet actionlet so firing a workflow and skipping the current publish for the contentlet: d676d400b762985124fb8b178c369585
+21:49:06.234  INFO  business.ESContentletAPIImpl - A Workflow has been run instead of a simple publish: d676d400b762985124fb8b178c369585
+21:49:09.849  INFO  business.ESContentletAPIImpl - The contentlet: VanityURLOrder1 hasn't action id set using the default action: ceca71a0-deee-4999-bd47-b01baa1bcfc8
+21:49:09.849  INFO  business.ESContentletAPIImpl - The action: ceca71a0-deee-4999-bd47-b01baa1bcfc8 has a save contentlet actionlet so firing a workflow and skipping the current checkin for the contentlet: VanityURLOrder1
+21:49:09.909  INFO  business.ESContentletAPIImpl - A Workflow has been ran instead of checkin the contentlet: 73f315e53a70a72e987be40092b1542b
+21:49:10.214  INFO  business.ESContentletAPIImpl - The contentlet: 73f315e53a70a72e987be40092b1542b hasn't action id set using the default action: b9d89c80-3d88-4311-8365-187323c96436
+21:49:10.214  INFO  business.ESContentletAPIImpl - The action: b9d89c80-3d88-4311-8365-187323c96436 has a publish contentlet actionlet so firing a workflow and skipping the current publish for the contentlet: 73f315e53a70a72e987be40092b1542b
+21:49:10.254  INFO  business.ESContentletAPIImpl - A Workflow has been run instead of a simple publish: 73f315e53a70a72e987be40092b1542b
+21:49:10.975  INFO  junit.MainBaseSuite - Checking indexer status...
+21:49:13.867  INFO  business.ESContentletAPIImpl - The contentlet: test Vanity Url 1686001750977 hasn't action id set using the default action: ceca71a0-deee-4999-bd47-b01baa1bcfc8
+21:49:13.867  INFO  business.ESContentletAPIImpl - The action: ceca71a0-deee-4999-bd47-b01baa1bcfc8 has a save contentlet actionlet so firing a workflow and skipping the current checkin for the contentlet: test Vanity Url 1686001750977
+21:49:13.909  INFO  business.ESContentletAPIImpl - A Workflow has been ran instead of checkin the contentlet: 21c92d7943b92c69a37cb4e4f574b5e9
+21:49:14.265  INFO  business.ESContentletAPIImpl - The contentlet: 21c92d7943b92c69a37cb4e4f574b5e9 hasn't action id set using the default action: b9d89c80-3d88-4311-8365-187323c96436
+21:49:14.265  INFO  business.ESContentletAPIImpl - The action: b9d89c80-3d88-4311-8365-187323c96436 has a publish contentlet actionlet so firing a workflow and skipping the current publish for the contentlet: 21c92d7943b92c69a37cb4e4f574b5e9
+21:49:14.295  INFO  business.ESContentletAPIImpl - A Workflow has been run instead of a simple publish: 21c92d7943b92c69a37cb4e4f574b5e9
+21:49:17.992  INFO  business.ESContentletAPIImpl - The contentlet: test Vanity Url 1686001755054 hasn't action id set using the default action: ceca71a0-deee-4999-bd47-b01baa1bcfc8
+21:49:17.992  INFO  business.ESContentletAPIImpl - The action: ceca71a0-deee-4999-bd47-b01baa1bcfc8 has a save contentlet actionlet so firing a workflow and skipping the current checkin for the contentlet: test Vanity Url 1686001755054
+21:49:18.034  INFO  business.ESContentletAPIImpl - A Workflow has been ran instead of checkin the contentlet: a8362acb5f4ab4f0f88824795c816136
+21:49:18.385  INFO  business.ESContentletAPIImpl - The contentlet: a8362acb5f4ab4f0f88824795c816136 hasn't action id set using the default action: b9d89c80-3d88-4311-8365-187323c96436
+21:49:18.385  INFO  business.ESContentletAPIImpl - The action: b9d89c80-3d88-4311-8365-187323c96436 has a publish contentlet actionlet so firing a workflow and skipping the current publish for the contentlet: a8362acb5f4ab4f0f88824795c816136
+21:49:18.424  INFO  business.ESContentletAPIImpl - A Workflow has been run instead of a simple publish: a8362acb5f4ab4f0f88824795c816136
+21:49:19.250  INFO  junit.MainBaseSuite - Checking indexer status...
+21:49:22.128  INFO  business.ESContentletAPIImpl - The contentlet: VanityURL1686001759251 hasn't action id set using the default action: ceca71a0-deee-4999-bd47-b01baa1bcfc8
+21:49:22.128  INFO  business.ESContentletAPIImpl - The action: ceca71a0-deee-4999-bd47-b01baa1bcfc8 has a save contentlet actionlet so firing a workflow and skipping the current checkin for the contentlet: VanityURL1686001759251
+21:49:22.210  INFO  business.ESContentletAPIImpl - A Workflow has been ran instead of checkin the contentlet: 7b2a95998185bcaa0d4ec45a66124917
+21:49:22.597  INFO  junit.MainBaseSuite - Checking indexer status...
+21:49:22.598  INFO  junit.MainBaseSuite - Indexer is not empty, waiting for it to finish
+21:49:23.600  INFO  junit.MainBaseSuite - Indexer Complete=true
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

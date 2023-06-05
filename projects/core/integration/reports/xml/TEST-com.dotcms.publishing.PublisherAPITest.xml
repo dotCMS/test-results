@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.dotcms.publishing.PublisherAPITest" tests="10" skipped="0" failures="0" errors="0" timestamp="2023-06-05T21:07:39" hostname="fv-az306-998" time="7.351">
+  <properties/>
+  <testcase name="test_getFiltersByRole_CMSAdmin_returnAllFilters" classname="com.dotcms.publishing.PublisherAPITest" time="0.791"/>
+  <testcase name="test_getFiltersByRole_nonCMSAdmin_RoleHierarchy" classname="com.dotcms.publishing.PublisherAPITest" time="3.169"/>
+  <testcase name="test_getFiltersByRole_nonCMSAdmin_userId" classname="com.dotcms.publishing.PublisherAPITest" time="0.79"/>
+  <testcase name="test_getFilterDescriptorByKey_emptyKey_returnDefaultFilter" classname="com.dotcms.publishing.PublisherAPITest" time="0.0"/>
+  <testcase name="test_addFilter_success" classname="com.dotcms.publishing.PublisherAPITest" time="0.023"/>
+  <testcase name="test_createPublisherFilter_withAllFilters" classname="com.dotcms.publishing.PublisherAPITest" time="0.282"/>
+  <testcase name="test_getFilterDescriptorByKey_success" classname="com.dotcms.publishing.PublisherAPITest" time="0.001"/>
+  <testcase name="test_createPublisherFilter_withSomeFilters" classname="com.dotcms.publishing.PublisherAPITest" time="0.004"/>
+  <testcase name="test_publish_fail_retry" classname="com.dotcms.publishing.PublisherAPITest" time="2.29"/>
+  <testcase name="test_getFilterDescriptorByKey_filterKeyDoesNotExist_returnDefaultFilter" classname="com.dotcms.publishing.PublisherAPITest" time="0.0"/>
+  <system-out><![CDATA[21:07:39.504  WARN  business.UserHelper - Error loading user with id 000c1190-a491-4792-9580-b93266a2e118
+21:07:40.285  WARN  util.LocaleUtil - en is not a valid language id
+21:07:40.293  INFO  junit.MainBaseSuite - Checking indexer status...
+21:07:40.294  WARN  business.UserHelper - Error loading user with id 1970c358-fc97-4e33-a285-2232e9945e27
+21:07:41.073  WARN  util.LocaleUtil - en is not a valid language id
+21:07:41.086  WARN  business.UserHelper - Error loading user with id 5e1bc022-db45-4056-81a0-89f9c33e5e85
+21:07:41.865  WARN  util.LocaleUtil - en is not a valid language id
+21:07:41.872  WARN  business.UserHelper - Error loading user with id 1345e724-8458-4360-838a-4d760a1d2478
+21:07:42.644  WARN  util.LocaleUtil - en is not a valid language id
+21:07:42.651  WARN  business.UserHelper - Error loading user with id 0db85dce-41fa-4786-adff-03f91aa55914
+21:07:43.429  WARN  util.LocaleUtil - en is not a valid language id
+21:07:43.438  INFO  business.RoleFactoryImpl - save : Role saved Id :7bdb0099-dc38-4a65-8c01-6881a579a3b1
+21:07:43.447  INFO  business.RoleFactoryImpl - save : Role saved Id :9942f641-83c9-41dc-a052-fc5d92d25923
+21:07:43.452  INFO  business.RoleFactoryImpl - save : Role saved Id :2a44673b-4f15-43ab-a0df-224f94f0c503
+21:07:43.459  INFO  publishing.PublisherAPIImpl - User Roles: [Role{id='7bdb0099-dc38-4a65-8c01-6881a579a3b1', name='testName1685999263435', description='testDescription1685999263435', roleKey='testKey1685999263435', DBFQN='7bdb0099-dc38-4a65-8c01-6881a579a3b1', FQN='null', parent='7bdb0099-dc38-4a65-8c01-6881a579a3b1', editPermissions=true, editUsers=true, editLayouts=true, locked=false, system=false}, Role{id='897421b6-fc03-4372-af53-42ddea1d9637', name='testFirstName1685999260293 testLastName1685999260293', description='', roleKey='1970c358-fc97-4e33-a285-2232e9945e27', DBFQN='9ac1ff78-71a9-4485-a541-9d1418b17aa4 --> 897421b6-fc03-4372-af53-42ddea1d9637', FQN='Users --> testFirstName1685999260293 testLastName1685999260293', parent='9ac1ff78-71a9-4485-a541-9d1418b17aa4', editPermissions=true, editUsers=false, editLayouts=true, locked=false, system=true}, Role{id='9942f641-83c9-41dc-a052-fc5d92d25923', name='testName1685999263439', description='testDescription1685999263439', roleKey='testKey1685999263439', DBFQN='7bdb0099-dc38-4a65-8c01-6881a579a3b1 --> 9942f641-83c9-41dc-a052-fc5d92d25923', FQN='testName1685999263435 --> testName1685999263439', parent='7bdb0099-dc38-4a65-8c01-6881a579a3b1', editPermissions=true, editUsers=true, editLayouts=true, locked=false, system=false}, Role{id='2a44673b-4f15-43ab-a0df-224f94f0c503', name='testName1685999263447', description='testDescription1685999263447', roleKey='testKey1685999263447', DBFQN='7bdb0099-dc38-4a65-8c01-6881a579a3b1 --> 9942f641-83c9-41dc-a052-fc5d92d25923 --> 2a44673b-4f15-43ab-a0df-224f94f0c503', FQN='testName1685999263435 --> testName1685999263439 --> testName1685999263447', parent='9942f641-83c9-41dc-a052-fc5d92d25923', editPermissions=true, editUsers=true, editLayouts=true, locked=false, system=false}]
+21:07:43.459  INFO  publishing.PublisherAPI - File: filterTest1.yml, Roles: testKey1685999263439,1345e724-8458-4360-838a-4d760a1d2478
+21:07:43.459  INFO  publishing.PublisherAPITest - [FilterDescriptor{key=filterTest1.yml, title=Filter Test Title 1, sort=, default=false, roles=testKey1685999263439,1345e724-8458-4360-838a-4d760a1d2478, filters{{dependencies=true, relationships=true, excludeClasses=Host,Workflow}}}]
+21:07:43.460  INFO  publishing.PublisherAPIImpl - User Roles: [Role{id='5541c5b4-9ea5-4433-94de-afc66883a89e', name='testFirstName1685999261085 testLastName1685999261085', description='', roleKey='5e1bc022-db45-4056-81a0-89f9c33e5e85', DBFQN='9ac1ff78-71a9-4485-a541-9d1418b17aa4 --> 5541c5b4-9ea5-4433-94de-afc66883a89e', FQN='Users --> testFirstName1685999261085 testLastName1685999261085', parent='9ac1ff78-71a9-4485-a541-9d1418b17aa4', editPermissions=true, editUsers=false, editLayouts=true, locked=false, system=true}, Role{id='9942f641-83c9-41dc-a052-fc5d92d25923', name='testName1685999263439', description='testDescription1685999263439', roleKey='testKey1685999263439', DBFQN='7bdb0099-dc38-4a65-8c01-6881a579a3b1 --> 9942f641-83c9-41dc-a052-fc5d92d25923', FQN='testName1685999263435 --> testName1685999263439', parent='7bdb0099-dc38-4a65-8c01-6881a579a3b1', editPermissions=true, editUsers=true, editLayouts=true, locked=false, system=false}, Role{id='2a44673b-4f15-43ab-a0df-224f94f0c503', name='testName1685999263447', description='testDescription1685999263447', roleKey='testKey1685999263447', DBFQN='7bdb0099-dc38-4a65-8c01-6881a579a3b1 --> 9942f641-83c9-41dc-a052-fc5d92d25923 --> 2a44673b-4f15-43ab-a0df-224f94f0c503', FQN='testName1685999263435 --> testName1685999263439 --> testName1685999263447', parent='9942f641-83c9-41dc-a052-fc5d92d25923', editPermissions=true, editUsers=true, editLayouts=true, locked=false, system=false}]
+21:07:43.460  INFO  publishing.PublisherAPI - File: filterTest1.yml, Roles: testKey1685999263439,1345e724-8458-4360-838a-4d760a1d2478
+21:07:43.460  INFO  publishing.PublisherAPITest - [FilterDescriptor{key=filterTest1.yml, title=Filter Test Title 1, sort=, default=false, roles=testKey1685999263439,1345e724-8458-4360-838a-4d760a1d2478, filters{{dependencies=true, relationships=true, excludeClasses=Host,Workflow}}}]
+21:07:43.460  INFO  publishing.PublisherAPIImpl - User Roles: [Role{id='2a44673b-4f15-43ab-a0df-224f94f0c503', name='testName1685999263447', description='testDescription1685999263447', roleKey='testKey1685999263447', DBFQN='7bdb0099-dc38-4a65-8c01-6881a579a3b1 --> 9942f641-83c9-41dc-a052-fc5d92d25923 --> 2a44673b-4f15-43ab-a0df-224f94f0c503', FQN='testName1685999263435 --> testName1685999263439 --> testName1685999263447', parent='9942f641-83c9-41dc-a052-fc5d92d25923', editPermissions=true, editUsers=true, editLayouts=true, locked=false, system=false}, Role{id='4406ad73-d25b-43da-9ce5-e8cdce20dfaa', name='testFirstName1685999261871 testLastName1685999261871', description='', roleKey='1345e724-8458-4360-838a-4d760a1d2478', DBFQN='9ac1ff78-71a9-4485-a541-9d1418b17aa4 --> 4406ad73-d25b-43da-9ce5-e8cdce20dfaa', FQN='Users --> testFirstName1685999261871 testLastName1685999261871', parent='9ac1ff78-71a9-4485-a541-9d1418b17aa4', editPermissions=true, editUsers=false, editLayouts=true, locked=false, system=true}]
+21:07:43.460  INFO  publishing.PublisherAPI - File: filterTest1.yml, Roles: testKey1685999263439,1345e724-8458-4360-838a-4d760a1d2478
+21:07:43.461  INFO  publishing.PublisherAPITest - [FilterDescriptor{key=filterTest1.yml, title=Filter Test Title 1, sort=, default=false, roles=testKey1685999263439,1345e724-8458-4360-838a-4d760a1d2478, filters{{dependencies=true, relationships=true, excludeClasses=Host,Workflow}}}]
+21:07:43.461  INFO  publishing.PublisherAPIImpl - User Roles: [Role{id='0d1cadb9-000f-4376-ba47-adabb457a31f', name='testFirstName1685999262650 testLastName1685999262650', description='', roleKey='0db85dce-41fa-4786-adff-03f91aa55914', DBFQN='9ac1ff78-71a9-4485-a541-9d1418b17aa4 --> 0d1cadb9-000f-4376-ba47-adabb457a31f', FQN='Users --> testFirstName1685999262650 testLastName1685999262650', parent='9ac1ff78-71a9-4485-a541-9d1418b17aa4', editPermissions=true, editUsers=false, editLayouts=true, locked=false, system=true}, Role{id='2a44673b-4f15-43ab-a0df-224f94f0c503', name='testName1685999263447', description='testDescription1685999263447', roleKey='testKey1685999263447', DBFQN='7bdb0099-dc38-4a65-8c01-6881a579a3b1 --> 9942f641-83c9-41dc-a052-fc5d92d25923 --> 2a44673b-4f15-43ab-a0df-224f94f0c503', FQN='testName1685999263435 --> testName1685999263439 --> testName1685999263447', parent='9942f641-83c9-41dc-a052-fc5d92d25923', editPermissions=true, editUsers=true, editLayouts=true, locked=false, system=false}]
+21:07:43.461  INFO  publishing.PublisherAPI - File: filterTest1.yml, Roles: testKey1685999263439,1345e724-8458-4360-838a-4d760a1d2478
+21:07:43.461  INFO  publishing.PublisherAPITest - []
+21:07:43.461  INFO  junit.MainBaseSuite - Checking indexer status...
+21:07:43.463  WARN  business.UserHelper - Error loading user with id 4fde3f09-dc92-4f21-b2ae-1947b70f748c
+21:07:44.245  WARN  util.LocaleUtil - en is not a valid language id
+21:07:44.251  INFO  publishing.PublisherAPIImpl - User Roles: [Role{id='8fc41d7d-2a28-492a-90cc-2a9030097f37', name='testFirstName1685999263462 testLastName1685999263462', description='', roleKey='4fde3f09-dc92-4f21-b2ae-1947b70f748c', DBFQN='9ac1ff78-71a9-4485-a541-9d1418b17aa4 --> 8fc41d7d-2a28-492a-90cc-2a9030097f37', FQN='Users --> testFirstName1685999263462 testLastName1685999263462', parent='9ac1ff78-71a9-4485-a541-9d1418b17aa4', editPermissions=true, editUsers=false, editLayouts=true, locked=false, system=true}]
+21:07:44.251  INFO  publishing.PublisherAPI - File: filterTest1.yml, Roles: Reviewer,4fde3f09-dc92-4f21-b2ae-1947b70f748c
+21:07:44.251  INFO  publishing.PublisherAPI - File: filterTest2.yml, Roles: Reviewer
+21:07:44.251  INFO  publishing.PublisherAPITest - [FilterDescriptor{key=filterTest1.yml, title=Filter Test Title 1, sort=, default=false, roles=Reviewer,4fde3f09-dc92-4f21-b2ae-1947b70f748c, filters{{dependencies=true, relationships=true, excludeClasses=Host,Workflow}}}]
+21:07:44.252  INFO  junit.MainBaseSuite - Checking indexer status...
+21:07:44.252  INFO  junit.MainBaseSuite - Checking indexer status...
+21:07:44.275  INFO  junit.MainBaseSuite - Checking indexer status...
+21:07:44.558  INFO  junit.MainBaseSuite - Checking indexer status...
+21:07:44.559  INFO  junit.MainBaseSuite - Checking indexer status...
+21:07:44.562  INFO  junit.MainBaseSuite - Checking indexer status...
+21:07:44.567  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:752f109a-81dc-4cc8-a6fa-ce7b2f8fde1b. Every asset should have at least 1 permission (or inherited permission) associated with it
+21:07:44.573  INFO  publishing.PublisherAPITest - Using folder: testName1685999259485
+21:07:44.577  INFO  util.PushPublishLogger - class com.dotcms.publisher.business.PublishAuditStatus : Status Update: Pending.
+21:07:44.579  INFO  util.StdOutErrLog - [class com.dotcms.publisher.pusher.PushPublisher]
+
+21:07:44.579  INFO  util.PushPublishLogger - class com.dotcms.publishing.PublisherAPIImpl : [BundleID: 01H26P68T06K9YH88H97TGQDM7] Started Publishing Task
+21:07:44.586  INFO  publishing.PublisherAPIImpl - Start of Bundler: DependencyBundler
+21:07:44.608  INFO  dependencies.ConcurrentDependencyProcessor - DependencyProcessor Finished
+21:07:44.608  INFO  publishing.PublisherAPIImpl - End of Bundler: DependencyBundler
+21:07:44.608  INFO  publishing.PublisherAPIImpl - Start of Bundler: HostBundler
+21:07:44.609  INFO  util.PushPublishLogger - class com.dotcms.enterprise.publishing.remote.bundler.HostBundler : Status Update: Bundling.
+21:07:44.618  INFO  bundler.HostBundler - Searching for ContentletVersionInfo. Identifier: aa4cf8a327d2a4260b460ce2994967e1. Language:1
+21:07:44.626  INFO  util.PushPublishLogger - class com.dotcms.enterprise.publishing.remote.bundler.HostBundler : Status Update: Bundling.
+21:07:44.626  INFO  publishing.PublisherAPIImpl - End of Bundler: HostBundler
+21:07:44.627  INFO  publishing.PublisherAPIImpl - Start of Bundler: ContentBundler
+21:07:44.628  INFO  util.PushPublishLogger - class com.dotcms.enterprise.publishing.remote.bundler.ContentBundler : Status Update: Bundling.
+21:07:44.629  INFO  util.PushPublishLogger - class com.dotcms.enterprise.publishing.remote.bundler.ContentBundler : Status Update: Bundling.
+21:07:44.630  INFO  publishing.PublisherAPIImpl - End of Bundler: ContentBundler
+21:07:44.630  INFO  publishing.PublisherAPIImpl - Start of Bundler: FolderBundler
+21:07:44.633  INFO  publishing.PublisherAPIImpl - End of Bundler: FolderBundler
+21:07:44.633  INFO  publishing.PublisherAPIImpl - Start of Bundler: TemplateBundler
+21:07:44.633  INFO  publishing.PublisherAPIImpl - End of Bundler: TemplateBundler
+21:07:44.633  INFO  publishing.PublisherAPIImpl - Start of Bundler: ContainerBundler
+21:07:44.633  INFO  publishing.PublisherAPIImpl - End of Bundler: ContainerBundler
+21:07:44.633  INFO  publishing.PublisherAPIImpl - Start of Bundler: RuleBundler
+21:07:44.633  INFO  publishing.PublisherAPIImpl - End of Bundler: RuleBundler
+21:07:44.634  INFO  publishing.PublisherAPIImpl - Start of Bundler: LinkBundler
+21:07:44.634  INFO  publishing.PublisherAPIImpl - End of Bundler: LinkBundler
+21:07:44.634  INFO  publishing.PublisherAPIImpl - Start of Bundler: ContentTypeBundler
+21:07:44.642  INFO  publishing.PublisherAPIImpl - End of Bundler: ContentTypeBundler
+21:07:44.642  INFO  publishing.PublisherAPIImpl - Start of Bundler: RelationshipBundler
+21:07:44.642  INFO  publishing.PublisherAPIImpl - End of Bundler: RelationshipBundler
+21:07:44.642  INFO  publishing.PublisherAPIImpl - Start of Bundler: LanguageVariablesBundler
+21:07:44.643  INFO  publishing.PublisherAPIImpl - End of Bundler: LanguageVariablesBundler
+21:07:44.644  INFO  publishing.PublisherAPIImpl - Start of Bundler: WorkflowBundler
+21:07:44.680  INFO  publishing.PublisherAPIImpl - End of Bundler: WorkflowBundler
+21:07:44.680  INFO  publishing.PublisherAPIImpl - Start of Bundler: LanguageBundler
+21:07:44.680  INFO  publishing.PublisherAPIImpl - End of Bundler: LanguageBundler
+21:07:44.680  INFO  publishing.PublisherAPIImpl - Start of Bundler: BundleXMLAsc
+21:07:44.680  INFO  publishing.PublisherAPIImpl - End of Bundler: BundleXMLAsc
+21:07:44.680  INFO  publishing.PublisherAPIImpl - Start of Bundler: CategoryBundler
+21:07:44.680  INFO  publishing.PublisherAPIImpl - End of Bundler: CategoryBundler
+21:07:44.684  INFO  util.PushPublishLogger - class com.dotcms.publisher.pusher.PushPublisher : Status Update: Sending to all environments
+21:07:44.685  INFO  util.PushPublishLogger - class com.dotcms.publisher.pusher.PushPublisher : Status Update: Sending Bundle
+21:07:44.746  ERROR pusher.PushPublisher - An error occurred for the endpoint Publish Endpoint with address 127.0.0.1:8765. Error: java.net.ConnectException: Connection refused (Connection refused)
+javax.ws.rs.ProcessingException: java.net.ConnectException: Connection refused (Connection refused)
+	at org.glassfish.jersey.client.internal.HttpUrlConnector.apply(HttpUrlConnector.java:287) ~[jersey-client-2.22.1.jar:?]
+	at org.glassfish.jersey.client.ClientRuntime.invoke(ClientRuntime.java:255) ~[jersey-client-2.22.1.jar:?]
+	at org.glassfish.jersey.client.JerseyInvocation$1.call(JerseyInvocation.java:684) ~[jersey-client-2.22.1.jar:?]
+	at org.glassfish.jersey.client.JerseyInvocation$1.call(JerseyInvocation.java:681) ~[jersey-client-2.22.1.jar:?]
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:315) ~[jersey-common-2.22.1.jar:?]
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:297) ~[jersey-common-2.22.1.jar:?]
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:228) ~[jersey-common-2.22.1.jar:?]
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:444) ~[jersey-common-2.22.1.jar:?]
+	at org.glassfish.jersey.client.JerseyInvocation.invoke(JerseyInvocation.java:681) ~[jersey-client-2.22.1.jar:?]
+	at org.glassfish.jersey.client.JerseyInvocation$Builder.method(JerseyInvocation.java:437) ~[jersey-client-2.22.1.jar:?]
+	at org.glassfish.jersey.client.JerseyInvocation$Builder.post(JerseyInvocation.java:343) ~[jersey-client-2.22.1.jar:?]
+	at com.dotcms.publisher.pusher.PushPublisher.process(PushPublisher.java:232) ~[main/:?]
+	at com.dotcms.publishing.PublisherAPIImpl.publish(PublisherAPIImpl.java:164) ~[main/:?]
+	at com.dotcms.publishing.PublisherAPIImpl.publish(PublisherAPIImpl.java:64) ~[main/:?]
+	at com.dotcms.publishing.PublisherAPITest.test_publish_fail_retry(PublisherAPITest.java:199) ~[integrationTest/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:38) ~[integrationTest/:?]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:14) ~[integrationTest/:?]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.MainBaseSuite$DotRunner.run(MainBaseSuite.java:60) ~[integrationTest/:?]
+	at org.junit.runners.Suite.runChild(Suite.java:128) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.Suite.runChild(Suite.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[?:?]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[?:?]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[?:?]
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[?:?]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[?:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:?]
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method) ~[?:?]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:412) ~[?:?]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:255) ~[?:?]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:237) ~[?:?]
+	at java.net.Socket.connect(Socket.java:609) ~[?:?]
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:177) ~[?:?]
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:507) ~[?:?]
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:602) ~[?:?]
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:275) ~[?:?]
+	at sun.net.www.http.HttpClient.New(HttpClient.java:374) ~[?:?]
+	at sun.net.www.http.HttpClient.New(HttpClient.java:395) ~[?:?]
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1253) ~[?:?]
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1187) ~[?:?]
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1081) ~[?:?]
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:1015) ~[?:?]
+	at sun.net.www.protocol.http.HttpURLConnection.getOutputStream0(HttpURLConnection.java:1367) ~[?:?]
+	at sun.net.www.protocol.http.HttpURLConnection.getOutputStream(HttpURLConnection.java:1342) ~[?:?]
+	at org.glassfish.jersey.client.internal.HttpUrlConnector$4.getOutputStream(HttpUrlConnector.java:385) ~[jersey-client-2.22.1.jar:?]
+	at org.glassfish.jersey.message.internal.CommittingOutputStream.commitStream(CommittingOutputStream.java:200) ~[jersey-common-2.22.1.jar:?]
+	at org.glassfish.jersey.message.internal.CommittingOutputStream.commitStream(CommittingOutputStream.java:194) ~[jersey-common-2.22.1.jar:?]
+	at org.glassfish.jersey.message.internal.CommittingOutputStream.write(CommittingOutputStream.java:228) ~[jersey-common-2.22.1.jar:?]
+	at org.glassfish.jersey.message.internal.WriterInterceptorExecutor$UnCloseableOutputStream.write(WriterInterceptorExecutor.java:299) ~[jersey-common-2.22.1.jar:?]
+	at org.glassfish.jersey.message.internal.ReaderWriter.writeTo(ReaderWriter.java:116) ~[jersey-common-2.22.1.jar:?]
+	at org.glassfish.jersey.message.internal.AbstractMessageReaderWriterProvider.writeTo(AbstractMessageReaderWriterProvider.java:79) ~[jersey-common-2.22.1.jar:?]
+	at org.glassfish.jersey.message.internal.InputStreamProvider.writeTo(InputStreamProvider.java:105) ~[jersey-common-2.22.1.jar:?]
+	at org.glassfish.jersey.message.internal.InputStreamProvider.writeTo(InputStreamProvider.java:60) ~[jersey-common-2.22.1.jar:?]
+	at org.glassfish.jersey.message.internal.WriterInterceptorExecutor$TerminalWriterInterceptor.invokeWriteTo(WriterInterceptorExecutor.java:265) ~[jersey-common-2.22.1.jar:?]
+	at org.glassfish.jersey.message.internal.WriterInterceptorExecutor$TerminalWriterInterceptor.aroundWriteTo(WriterInterceptorExecutor.java:250) ~[jersey-common-2.22.1.jar:?]
+	at org.glassfish.jersey.message.internal.WriterInterceptorExecutor.proceed(WriterInterceptorExecutor.java:162) ~[jersey-common-2.22.1.jar:?]
+	at org.glassfish.jersey.message.internal.MessageBodyFactory.writeTo(MessageBodyFactory.java:1130) ~[jersey-common-2.22.1.jar:?]
+	at org.glassfish.jersey.client.ClientRequest.writeEntity(ClientRequest.java:502) ~[jersey-client-2.22.1.jar:?]
+	at org.glassfish.jersey.client.internal.HttpUrlConnector._apply(HttpUrlConnector.java:388) ~[jersey-client-2.22.1.jar:?]
+	at org.glassfish.jersey.client.internal.HttpUrlConnector.apply(HttpUrlConnector.java:285) ~[jersey-client-2.22.1.jar:?]
+	... 72 more
+21:07:44.751  INFO  util.PushPublishLogger - class com.dotcms.publisher.pusher.PushPublisher : Status Update: Failed to send bundle. Exception: java.net.ConnectException: Connection refused (Connection refused)
+21:07:44.754  INFO  util.PushPublishLogger - class com.dotcms.publishing.PublisherAPIImpl : [BundleID: 01H26P68T06K9YH88H97TGQDM7] Completed Publishing Task
+21:07:44.757  INFO  publishing.PublisherAPITest - Waiting 2 seconds before 2nd PP run
+
+21:07:46.757  INFO  util.StdOutErrLog - [class com.dotcms.publisher.pusher.PushPublisher]
+21:07:46.757  INFO  util.PushPublishLogger - class com.dotcms.publishing.PublisherAPIImpl : [BundleID: 01H26P68T06K9YH88H97TGQDM7] Started Publishing Task
+21:07:46.759  INFO  publishing.PublisherAPIImpl - Retrying bundle: 01H26P68T06K9YH88H97TGQDM7, we don't need to run bundlers again
+21:07:46.762  INFO  util.PushPublishLogger - class com.dotcms.publisher.pusher.PushPublisher : Status Update: Sending to all environments
+21:07:46.763  INFO  util.PushPublishLogger - class com.dotcms.publisher.pusher.PushPublisher : Status Update: Sending Bundle
+21:07:46.777  ERROR pusher.PushPublisher - An error occurred for the endpoint Publish Endpoint with address 127.0.0.1:8765. Error: java.net.ConnectException: Connection refused (Connection refused)
+javax.ws.rs.ProcessingException: java.net.ConnectException: Connection refused (Connection refused)
+	at org.glassfish.jersey.client.internal.HttpUrlConnector.apply(HttpUrlConnector.java:287) ~[jersey-client-2.22.1.jar:?]
+	at org.glassfish.jersey.client.ClientRuntime.invoke(ClientRuntime.java:255) ~[jersey-client-2.22.1.jar:?]
+	at org.glassfish.jersey.client.JerseyInvocation$1.call(JerseyInvocation.java:684) ~[jersey-client-2.22.1.jar:?]
+	at org.glassfish.jersey.client.JerseyInvocation$1.call(JerseyInvocation.java:681) ~[jersey-client-2.22.1.jar:?]
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:315) ~[jersey-common-2.22.1.jar:?]
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:297) ~[jersey-common-2.22.1.jar:?]
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:228) ~[jersey-common-2.22.1.jar:?]
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:444) ~[jersey-common-2.22.1.jar:?]
+	at org.glassfish.jersey.client.JerseyInvocation.invoke(JerseyInvocation.java:681) ~[jersey-client-2.22.1.jar:?]
+	at org.glassfish.jersey.client.JerseyInvocation$Builder.method(JerseyInvocation.java:437) ~[jersey-client-2.22.1.jar:?]
+	at org.glassfish.jersey.client.JerseyInvocation$Builder.post(JerseyInvocation.java:343) ~[jersey-client-2.22.1.jar:?]
+	at com.dotcms.publisher.pusher.PushPublisher.process(PushPublisher.java:232) ~[main/:?]
+	at com.dotcms.publishing.PublisherAPIImpl.publish(PublisherAPIImpl.java:164) ~[main/:?]
+	at com.dotcms.publishing.PublisherAPIImpl.publish(PublisherAPIImpl.java:64) ~[main/:?]
+	at com.dotcms.publishing.PublisherAPITest.test_publish_fail_retry(PublisherAPITest.java:233) ~[integrationTest/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:38) ~[integrationTest/:?]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:14) ~[integrationTest/:?]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.MainBaseSuite$DotRunner.run(MainBaseSuite.java:60) ~[integrationTest/:?]
+	at org.junit.runners.Suite.runChild(Suite.java:128) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.Suite.runChild(Suite.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[?:?]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[?:?]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[?:?]
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[?:?]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[?:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:?]
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method) ~[?:?]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:412) ~[?:?]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:255) ~[?:?]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:237) ~[?:?]
+	at java.net.Socket.connect(Socket.java:609) ~[?:?]
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:177) ~[?:?]
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:507) ~[?:?]
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:602) ~[?:?]
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:275) ~[?:?]
+	at sun.net.www.http.HttpClient.New(HttpClient.java:374) ~[?:?]
+	at sun.net.www.http.HttpClient.New(HttpClient.java:395) ~[?:?]
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1253) ~[?:?]
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1187) ~[?:?]
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1081) ~[?:?]
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:1015) ~[?:?]
+	at sun.net.www.protocol.http.HttpURLConnection.getOutputStream0(HttpURLConnection.java:1367) ~[?:?]
+	at sun.net.www.protocol.http.HttpURLConnection.getOutputStream(HttpURLConnection.java:1342) ~[?:?]
+	at org.glassfish.jersey.client.internal.HttpUrlConnector$4.getOutputStream(HttpUrlConnector.java:385) ~[jersey-client-2.22.1.jar:?]
+	at org.glassfish.jersey.message.internal.CommittingOutputStream.commitStream(CommittingOutputStream.java:200) ~[jersey-common-2.22.1.jar:?]
+	at org.glassfish.jersey.message.internal.CommittingOutputStream.commitStream(CommittingOutputStream.java:194) ~[jersey-common-2.22.1.jar:?]
+	at org.glassfish.jersey.message.internal.CommittingOutputStream.write(CommittingOutputStream.java:228) ~[jersey-common-2.22.1.jar:?]
+	at org.glassfish.jersey.message.internal.WriterInterceptorExecutor$UnCloseableOutputStream.write(WriterInterceptorExecutor.java:299) ~[jersey-common-2.22.1.jar:?]
+	at org.glassfish.jersey.message.internal.ReaderWriter.writeTo(ReaderWriter.java:116) ~[jersey-common-2.22.1.jar:?]
+	at org.glassfish.jersey.message.internal.AbstractMessageReaderWriterProvider.writeTo(AbstractMessageReaderWriterProvider.java:79) ~[jersey-common-2.22.1.jar:?]
+	at org.glassfish.jersey.message.internal.InputStreamProvider.writeTo(InputStreamProvider.java:105) ~[jersey-common-2.22.1.jar:?]
+	at org.glassfish.jersey.message.internal.InputStreamProvider.writeTo(InputStreamProvider.java:60) ~[jersey-common-2.22.1.jar:?]
+	at org.glassfish.jersey.message.internal.WriterInterceptorExecutor$TerminalWriterInterceptor.invokeWriteTo(WriterInterceptorExecutor.java:265) ~[jersey-common-2.22.1.jar:?]
+	at org.glassfish.jersey.message.internal.WriterInterceptorExecutor$TerminalWriterInterceptor.aroundWriteTo(WriterInterceptorExecutor.java:250) ~[jersey-common-2.22.1.jar:?]
+	at org.glassfish.jersey.message.internal.WriterInterceptorExecutor.proceed(WriterInterceptorExecutor.java:162) ~[jersey-common-2.22.1.jar:?]
+	at org.glassfish.jersey.message.internal.MessageBodyFactory.writeTo(MessageBodyFactory.java:1130) ~[jersey-common-2.22.1.jar:?]
+	at org.glassfish.jersey.client.ClientRequest.writeEntity(ClientRequest.java:502) ~[jersey-client-2.22.1.jar:?]
+	at org.glassfish.jersey.client.internal.HttpUrlConnector._apply(HttpUrlConnector.java:388) ~[jersey-client-2.22.1.jar:?]
+	at org.glassfish.jersey.client.internal.HttpUrlConnector.apply(HttpUrlConnector.java:285) ~[jersey-client-2.22.1.jar:?]
+	... 72 more
+21:07:46.777  INFO  util.PushPublishLogger - class com.dotcms.publisher.pusher.PushPublisher : Status Update: Failed to send bundle. Exception: java.net.ConnectException: Connection refused (Connection refused)
+21:07:46.782  INFO  util.PushPublishLogger - class com.dotcms.publishing.PublisherAPIImpl : [BundleID: 01H26P68T06K9YH88H97TGQDM7] Completed Publishing Task
+21:07:46.783  INFO  publishing.PublisherAPITest - Checking file: /home/runner/work/core/custom/assets/bundles/01H26P68T06K9YH88H97TGQDM7/manifest.csv
+21:07:46.783  INFO  publishing.PublisherAPITest - Checking file: /home/runner/work/core/custom/assets/bundles/01H26P68T06K9YH88H97TGQDM7/ROOT/ba860c270ffa96d590faed936205621d.folder.xml
+21:07:46.783  INFO  publishing.PublisherAPITest - Checking file: /home/runner/work/core/custom/assets/bundles/01H26P68T06K9YH88H97TGQDM7/live/System Host
+21:07:46.783  INFO  publishing.PublisherAPITest - Checking file: /home/runner/work/core/custom/assets/bundles/01H26P68T06K9YH88H97TGQDM7/live
+21:07:46.783  INFO  publishing.PublisherAPITest - Checking file: /home/runner/work/core/custom/assets/bundles/01H26P68T06K9YH88H97TGQDM7/working/System Host/33888b6f-7a8e-4069-b1b6-5c1aa9d0a48d.contentType.json
+21:07:46.783  INFO  publishing.PublisherAPITest - Checking file: /home/runner/work/core/custom/assets/bundles/01H26P68T06K9YH88H97TGQDM7/d61a59e1-a49c-46f2-a929-db2b4bfa88b2.workflow.xml
+21:07:46.783  INFO  publishing.PublisherAPITest - Checking file: /home/runner/work/core/custom/assets/bundles/01H26P68T06K9YH88H97TGQDM7/working/System Host
+21:07:46.783  INFO  publishing.PublisherAPITest - Checking file: /home/runner/work/core/custom/assets/bundles/01H26P68T06K9YH88H97TGQDM7/ROOT
+21:07:46.783  INFO  publishing.PublisherAPITest - Checking file: /home/runner/work/core/custom/assets/bundles/01H26P68T06K9YH88H97TGQDM7/ROOT/testName1685999259485
+21:07:46.783  INFO  publishing.PublisherAPITest - Checking file: /home/runner/work/core/custom/assets/bundles/01H26P68T06K9YH88H97TGQDM7/live/System Host/1
+21:07:46.783  INFO  publishing.PublisherAPITest - Checking file: /home/runner/work/core/custom/assets/bundles/01H26P68T06K9YH88H97TGQDM7/live/System Host/1/content.9c5d6179-4d44-4075-ab73-18c1a91ac014.host.xml
+21:07:46.783  INFO  publishing.PublisherAPITest - Checking file: /home/runner/work/core/custom/assets/bundles/01H26P68T06K9YH88H97TGQDM7/working
+21:07:46.853  INFO  junit.MainBaseSuite - Checking indexer status...
+21:07:46.854  INFO  junit.MainBaseSuite - Checking indexer status...
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

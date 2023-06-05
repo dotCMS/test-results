@@ -1,0 +1,893 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.dotcms.experiments.business.ExperimentAPIImpIntegrationTest" tests="28" skipped="1" failures="0" errors="0" timestamp="2023-06-05T21:02:28" hostname="fv-az306-998" time="52.776">
+  <properties/>
+  <testcase name="pageReachDirectRefererMultiDays" classname="com.dotcms.experiments.business.ExperimentAPIImpIntegrationTest" time="2.171"/>
+  <testcase name="test_calcBayesian_BOverA_BounceRate" classname="com.dotcms.experiments.business.ExperimentAPIImpIntegrationTest" time="1.462"/>
+  <testcase name="pageReachAfterExperimentPageButNotDirectReferer" classname="com.dotcms.experiments.business.ExperimentAPIImpIntegrationTest" time="2.247"/>
+  <testcase name="multiDaysEvent" classname="com.dotcms.experiments.business.ExperimentAPIImpIntegrationTest" time="2.005"/>
+  <testcase name="pageReachNotDirectReferer" classname="com.dotcms.experiments.business.ExperimentAPIImpIntegrationTest" time="1.977"/>
+  <testcase name="resultWithPagination" classname="com.dotcms.experiments.business.ExperimentAPIImpIntegrationTest" time="1.59"/>
+  <testcase name="test_calcBayesian_ABC" classname="com.dotcms.experiments.business.ExperimentAPIImpIntegrationTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="bounceRate" classname="com.dotcms.experiments.business.ExperimentAPIImpIntegrationTest" time="2.133"/>
+  <testcase name="tryToGetResultFromExperimentNotSaved" classname="com.dotcms.experiments.business.ExperimentAPIImpIntegrationTest" time="1.732"/>
+  <testcase name="testSaveExperiment_shouldNotValidateSchedule" classname="com.dotcms.experiments.business.ExperimentAPIImpIntegrationTest" time="2.243"/>
+  <testcase name="testADeleteOriginalVariant_shouldFail" classname="com.dotcms.experiments.business.ExperimentAPIImpIntegrationTest" time="1.668"/>
+  <testcase name="testAddMoreThanOneOriginalVariant_shouldFail" classname="com.dotcms.experiments.business.ExperimentAPIImpIntegrationTest" time="2.022"/>
+  <testcase name="pageNotReachButExperimentPageWasView" classname="com.dotcms.experiments.business.ExperimentAPIImpIntegrationTest" time="1.676"/>
+  <testcase name="addUrlConditionToReachPageGoal" classname="com.dotcms.experiments.business.ExperimentAPIImpIntegrationTest" time="1.58"/>
+  <testcase name="resultWithPaginationWhenTheLastPageIsNotComplte" classname="com.dotcms.experiments.business.ExperimentAPIImpIntegrationTest" time="1.79"/>
+  <testcase name="pageReachDirectReferer" classname="com.dotcms.experiments.business.ExperimentAPIImpIntegrationTest" time="1.647"/>
+  <testcase name="notBounceRateSession" classname="com.dotcms.experiments.business.ExperimentAPIImpIntegrationTest" time="1.832"/>
+  <testcase name="test_calcBayesian_AOverB_ended" classname="com.dotcms.experiments.business.ExperimentAPIImpIntegrationTest" time="1.363"/>
+  <testcase name="testStartExperiment_shouldPublishContent" classname="com.dotcms.experiments.business.ExperimentAPIImpIntegrationTest" time="2.696"/>
+  <testcase name="getEvents" classname="com.dotcms.experiments.business.ExperimentAPIImpIntegrationTest" time="1.263"/>
+  <testcase name="tryToGetResultFromExperimentNotStarted" classname="com.dotcms.experiments.business.ExperimentAPIImpIntegrationTest" time="1.456"/>
+  <testcase name="getSplitTrafficInsideExperimentResults" classname="com.dotcms.experiments.business.ExperimentAPIImpIntegrationTest" time="2.417"/>
+  <testcase name="addUrlConditionToBounceRateCondition" classname="com.dotcms.experiments.business.ExperimentAPIImpIntegrationTest" time="1.715"/>
+  <testcase name="pageReachButExperimentPageWasNotView" classname="com.dotcms.experiments.business.ExperimentAPIImpIntegrationTest" time="1.485"/>
+  <testcase name="test_calcBayesian_AOverB" classname="com.dotcms.experiments.business.ExperimentAPIImpIntegrationTest" time="0.983"/>
+  <testcase name="test_calcBayesian_BOverA" classname="com.dotcms.experiments.business.ExperimentAPIImpIntegrationTest" time="1.821"/>
+  <testcase name="notBounceRate" classname="com.dotcms.experiments.business.ExperimentAPIImpIntegrationTest" time="2.129"/>
+  <testcase name="getRunningExperiment" classname="com.dotcms.experiments.business.ExperimentAPIImpIntegrationTest" time="5.664"/>
+  <system-out><![CDATA[21:02:29.719  INFO  business.ExperimentsAPIImpl - Saving experiment with id: b92c185d-750e-4321-b425-b9bd2c3273b7, and status:DRAFT
+21:02:29.734  INFO  business.ExperimentsAPIImpl - Saving experiment with id: b92c185d-750e-4321-b425-b9bd2c3273b7, and status:DRAFT
+21:02:29.754  INFO  business.ExperimentsAPIImpl - Saving experiment with id: b92c185d-750e-4321-b425-b9bd2c3273b7, and status:DRAFT
+21:02:29.773  INFO  business.ExperimentsAPIImpl - Saving experiment with id: b92c185d-750e-4321-b425-b9bd2c3273b7, and status:RUNNING
+21:02:30.395  ERROR bayesian.BayesianAPIImpl - Cannot calculate probability with zero interactions for input: BayesianInput{type=AB, control=VariantBayesianInput{variant=DEFAULT, successes=0, failures=0}, variantPairs=[VariantBayesianInput{variant=dotexperiment-b92c185d75-variant-1, successes=2, failures=0}], priors=[BayesianPriors{alpha=1.0, beta=1.0}]}
+com.dotmarketing.exception.DotDataException: Variant successes and failures cannot be zero
+	at com.dotcms.analytics.bayesian.BayesianAPIImpl.validateInput(BayesianAPIImpl.java:651) ~[main/:?]
+	at com.dotcms.analytics.bayesian.BayesianAPIImpl.noopFallback(BayesianAPIImpl.java:673) ~[main/:?]
+	at com.dotcms.analytics.bayesian.BayesianAPIImpl.doBayesian(BayesianAPIImpl.java:56) ~[main/:?]
+	at com.dotcms.experiments.business.ExperimentsAPIImpl.calcBayesian(ExperimentsAPIImpl.java:956) ~[main/:?]
+	at com.dotcms.experiments.business.ExperimentsAPIImpl.getResults(ExperimentsAPIImpl.java:926) ~[main/:?]
+	at com.dotcms.experiments.business.ExperimentAPIImpIntegrationTest.pageReachDirectRefererMultiDays(ExperimentAPIImpIntegrationTest.java:1814) ~[integrationTest/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:38) ~[integrationTest/:?]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:14) ~[integrationTest/:?]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.MainBaseSuite$DotRunner.run(MainBaseSuite.java:60) ~[integrationTest/:?]
+	at org.junit.runners.Suite.runChild(Suite.java:128) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.Suite.runChild(Suite.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[?:?]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[?:?]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[?:?]
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[?:?]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[?:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:?]
+21:02:30.416  INFO  business.ExperimentsAPIImpl - Saving experiment with id: b92c185d-750e-4321-b425-b9bd2c3273b7, and status:ENDED
+21:02:30.420  INFO  junit.MainBaseSuite - Checking indexer status...
+21:02:31.543  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 9dd8ff53-7ba8-43b9-a7b2-2c91c1e62d5a, and status:DRAFT
+21:02:31.558  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 9dd8ff53-7ba8-43b9-a7b2-2c91c1e62d5a, and status:DRAFT
+21:02:31.573  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 9dd8ff53-7ba8-43b9-a7b2-2c91c1e62d5a, and status:DRAFT
+21:02:31.589  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 9dd8ff53-7ba8-43b9-a7b2-2c91c1e62d5a, and status:RUNNING
+21:02:31.878  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 9dd8ff53-7ba8-43b9-a7b2-2c91c1e62d5a, and status:ENDED
+21:02:31.883  INFO  junit.MainBaseSuite - Checking indexer status...
+21:02:32.802  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 2e210228-fac3-4a85-ba6b-c9968ae4dfa1, and status:DRAFT
+21:02:32.828  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 2e210228-fac3-4a85-ba6b-c9968ae4dfa1, and status:DRAFT
+21:02:32.853  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 2e210228-fac3-4a85-ba6b-c9968ae4dfa1, and status:DRAFT
+21:02:32.927  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 2e210228-fac3-4a85-ba6b-c9968ae4dfa1, and status:RUNNING
+21:02:33.093  ERROR bayesian.BayesianAPIImpl - Cannot calculate probability with zero interactions for input: BayesianInput{type=AB, control=VariantBayesianInput{variant=DEFAULT, successes=0, failures=0}, variantPairs=[VariantBayesianInput{variant=dotexperiment-2e210228fa-variant-1, successes=0, failures=1}], priors=[BayesianPriors{alpha=1.0, beta=1.0}]}
+com.dotmarketing.exception.DotDataException: Variant successes and failures cannot be zero
+	at com.dotcms.analytics.bayesian.BayesianAPIImpl.validateInput(BayesianAPIImpl.java:651) ~[main/:?]
+	at com.dotcms.analytics.bayesian.BayesianAPIImpl.noopFallback(BayesianAPIImpl.java:673) ~[main/:?]
+	at com.dotcms.analytics.bayesian.BayesianAPIImpl.doBayesian(BayesianAPIImpl.java:56) ~[main/:?]
+	at com.dotcms.experiments.business.ExperimentsAPIImpl.calcBayesian(ExperimentsAPIImpl.java:956) ~[main/:?]
+	at com.dotcms.experiments.business.ExperimentsAPIImpl.getResults(ExperimentsAPIImpl.java:926) ~[main/:?]
+	at com.dotcms.experiments.business.ExperimentAPIImpIntegrationTest.pageReachAfterExperimentPageButNotDirectReferer(ExperimentAPIImpIntegrationTest.java:1432) ~[integrationTest/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:38) ~[integrationTest/:?]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:14) ~[integrationTest/:?]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.MainBaseSuite$DotRunner.run(MainBaseSuite.java:60) ~[integrationTest/:?]
+	at org.junit.runners.Suite.runChild(Suite.java:128) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.Suite.runChild(Suite.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[?:?]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[?:?]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[?:?]
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[?:?]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[?:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:?]
+21:02:33.117  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 2e210228-fac3-4a85-ba6b-c9968ae4dfa1, and status:ENDED
+21:02:33.123  INFO  junit.MainBaseSuite - Checking indexer status...
+21:02:33.127  INFO  junit.MainBaseSuite - Indexer is not empty, waiting for it to finish
+21:02:34.132  INFO  junit.MainBaseSuite - Indexer Complete=true
+21:02:34.947  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 8625e191-70f7-4f2a-8489-f5acfc500c2a, and status:DRAFT
+21:02:34.963  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 8625e191-70f7-4f2a-8489-f5acfc500c2a, and status:DRAFT
+21:02:34.982  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 8625e191-70f7-4f2a-8489-f5acfc500c2a, and status:DRAFT
+21:02:35.001  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 8625e191-70f7-4f2a-8489-f5acfc500c2a, and status:RUNNING
+21:02:35.128  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 8625e191-70f7-4f2a-8489-f5acfc500c2a, and status:ENDED
+21:02:35.132  INFO  junit.MainBaseSuite - Checking indexer status...
+21:02:35.133  INFO  junit.MainBaseSuite - Indexer is not empty, waiting for it to finish
+21:02:36.136  INFO  junit.MainBaseSuite - Indexer Complete=true
+21:02:36.904  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 6713d98f-2cac-4291-915b-3820437170fa, and status:DRAFT
+21:02:36.922  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 6713d98f-2cac-4291-915b-3820437170fa, and status:DRAFT
+21:02:36.941  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 6713d98f-2cac-4291-915b-3820437170fa, and status:DRAFT
+21:02:36.961  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 6713d98f-2cac-4291-915b-3820437170fa, and status:RUNNING
+21:02:37.078  ERROR bayesian.BayesianAPIImpl - Cannot calculate probability with zero interactions for input: BayesianInput{type=AB, control=VariantBayesianInput{variant=DEFAULT, successes=0, failures=0}, variantPairs=[VariantBayesianInput{variant=dotexperiment-6713d98f2c-variant-1, successes=0, failures=1}], priors=[BayesianPriors{alpha=1.0, beta=1.0}]}
+com.dotmarketing.exception.DotDataException: Variant successes and failures cannot be zero
+	at com.dotcms.analytics.bayesian.BayesianAPIImpl.validateInput(BayesianAPIImpl.java:651) ~[main/:?]
+	at com.dotcms.analytics.bayesian.BayesianAPIImpl.noopFallback(BayesianAPIImpl.java:673) ~[main/:?]
+	at com.dotcms.analytics.bayesian.BayesianAPIImpl.doBayesian(BayesianAPIImpl.java:56) ~[main/:?]
+	at com.dotcms.experiments.business.ExperimentsAPIImpl.calcBayesian(ExperimentsAPIImpl.java:956) ~[main/:?]
+	at com.dotcms.experiments.business.ExperimentsAPIImpl.getResults(ExperimentsAPIImpl.java:926) ~[main/:?]
+	at com.dotcms.experiments.business.ExperimentAPIImpIntegrationTest.pageReachNotDirectReferer(ExperimentAPIImpIntegrationTest.java:1160) ~[integrationTest/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:38) ~[integrationTest/:?]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:14) ~[integrationTest/:?]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.MainBaseSuite$DotRunner.run(MainBaseSuite.java:60) ~[integrationTest/:?]
+	at org.junit.runners.Suite.runChild(Suite.java:128) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.Suite.runChild(Suite.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[?:?]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[?:?]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[?:?]
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[?:?]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[?:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:?]
+21:02:37.103  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 6713d98f-2cac-4291-915b-3820437170fa, and status:ENDED
+21:02:37.107  INFO  junit.MainBaseSuite - Checking indexer status...
+21:02:37.108  INFO  junit.MainBaseSuite - Indexer is not empty, waiting for it to finish
+21:02:38.113  INFO  junit.MainBaseSuite - Indexer Complete=true
+21:02:38.941  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 7635b4e8-d375-4fa9-b846-67c556c1e9b8, and status:DRAFT
+21:02:38.955  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 7635b4e8-d375-4fa9-b846-67c556c1e9b8, and status:DRAFT
+21:02:38.970  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 7635b4e8-d375-4fa9-b846-67c556c1e9b8, and status:DRAFT
+21:02:39.142  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 7635b4e8-d375-4fa9-b846-67c556c1e9b8, and status:RUNNING
+21:02:39.698  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 7635b4e8-d375-4fa9-b846-67c556c1e9b8, and status:ENDED
+21:02:39.703  INFO  junit.MainBaseSuite - Checking indexer status...
+21:02:40.642  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 57a3feb8-cd9a-413b-a9a1-ae89f29c3189, and status:DRAFT
+21:02:40.658  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 57a3feb8-cd9a-413b-a9a1-ae89f29c3189, and status:DRAFT
+21:02:40.678  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 57a3feb8-cd9a-413b-a9a1-ae89f29c3189, and status:DRAFT
+21:02:40.696  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 57a3feb8-cd9a-413b-a9a1-ae89f29c3189, and status:RUNNING
+21:02:40.807  ERROR bayesian.BayesianAPIImpl - Cannot calculate probability with zero interactions for input: BayesianInput{type=AB, control=VariantBayesianInput{variant=DEFAULT, successes=0, failures=0}, variantPairs=[VariantBayesianInput{variant=dotexperiment-57a3feb8cd-variant-1, successes=0, failures=1}], priors=[BayesianPriors{alpha=1.0, beta=1.0}]}
+com.dotmarketing.exception.DotDataException: Variant successes and failures cannot be zero
+	at com.dotcms.analytics.bayesian.BayesianAPIImpl.validateInput(BayesianAPIImpl.java:651) ~[main/:?]
+	at com.dotcms.analytics.bayesian.BayesianAPIImpl.noopFallback(BayesianAPIImpl.java:673) ~[main/:?]
+	at com.dotcms.analytics.bayesian.BayesianAPIImpl.doBayesian(BayesianAPIImpl.java:56) ~[main/:?]
+	at com.dotcms.experiments.business.ExperimentsAPIImpl.calcBayesian(ExperimentsAPIImpl.java:956) ~[main/:?]
+	at com.dotcms.experiments.business.ExperimentsAPIImpl.getResults(ExperimentsAPIImpl.java:926) ~[main/:?]
+	at com.dotcms.experiments.business.ExperimentAPIImpIntegrationTest.bounceRate(ExperimentAPIImpIntegrationTest.java:1524) ~[integrationTest/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:38) ~[integrationTest/:?]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:14) ~[integrationTest/:?]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.MainBaseSuite$DotRunner.run(MainBaseSuite.java:60) ~[integrationTest/:?]
+	at org.junit.runners.Suite.runChild(Suite.java:128) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.Suite.runChild(Suite.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[?:?]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[?:?]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[?:?]
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[?:?]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[?:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:?]
+21:02:40.831  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 57a3feb8-cd9a-413b-a9a1-ae89f29c3189, and status:ENDED
+21:02:40.834  ERROR dotcms.IntegrationTestBase - Test bounceRate has open connection after
+21:02:40.835  INFO  junit.MainBaseSuite - Checking indexer status...
+21:02:40.835  INFO  junit.MainBaseSuite - Indexer is not empty, waiting for it to finish
+21:02:41.838  INFO  junit.MainBaseSuite - Indexer Complete=true
+21:02:42.566  INFO  junit.MainBaseSuite - Checking indexer status...
+21:02:42.566  INFO  junit.MainBaseSuite - Indexer is not empty, waiting for it to finish
+21:02:43.569  INFO  junit.MainBaseSuite - Indexer Complete=true
+21:02:44.533  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 513409e4-8807-4516-a592-f7b3f555836b, and status:DRAFT
+21:02:44.546  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 513409e4-8807-4516-a592-f7b3f555836b, and status:DRAFT
+21:02:44.561  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 513409e4-8807-4516-a592-f7b3f555836b, and status:DRAFT
+21:02:44.582  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 513409e4-8807-4516-a592-f7b3f555836b, and status:DRAFT
+21:02:44.661  INFO  business.ExperimentsAPIImpl$MockitoMock$1659246964 - Saving experiment with id: 513409e4-8807-4516-a592-f7b3f555836b, and status:RUNNING
+21:02:44.793  INFO  business.ExperimentsAPIImpl$MockitoMock$1659246964 - Saving experiment with id: 513409e4-8807-4516-a592-f7b3f555836b, and status:ENDED
+21:02:44.807  INFO  business.ExperimentsAPIImpl$MockitoMock$1659246964 - Saving experiment with id: 513409e4-8807-4516-a592-f7b3f555836b, and status:ARCHIVED
+21:02:44.810  INFO  junit.MainBaseSuite - Checking indexer status...
+21:02:44.810  INFO  junit.MainBaseSuite - Indexer is not empty, waiting for it to finish
+21:02:45.813  INFO  junit.MainBaseSuite - Indexer Complete=true
+21:02:47.425  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 836a5acd-e9ed-41c2-8417-89d3f956bad2, and status:DRAFT
+21:02:47.444  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 836a5acd-e9ed-41c2-8417-89d3f956bad2, and status:DRAFT
+21:02:47.472  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 836a5acd-e9ed-41c2-8417-89d3f956bad2, and status:DRAFT
+21:02:47.479  INFO  junit.MainBaseSuite - Checking indexer status...
+21:02:49.466  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 5b8de23b-356a-432c-b404-17ad5fbd5f71, and status:DRAFT
+21:02:49.481  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 5b8de23b-356a-432c-b404-17ad5fbd5f71, and status:DRAFT
+21:02:49.495  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 5b8de23b-356a-432c-b404-17ad5fbd5f71, and status:DRAFT
+21:02:49.501  INFO  junit.MainBaseSuite - Checking indexer status...
+21:02:50.917  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 86a6038e-c92e-44c4-b12f-5da9e49eef4a, and status:DRAFT
+21:02:50.931  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 86a6038e-c92e-44c4-b12f-5da9e49eef4a, and status:DRAFT
+21:02:50.960  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 86a6038e-c92e-44c4-b12f-5da9e49eef4a, and status:DRAFT
+21:02:50.991  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 86a6038e-c92e-44c4-b12f-5da9e49eef4a, and status:RUNNING
+21:02:51.138  ERROR bayesian.BayesianAPIImpl - Cannot calculate probability with zero interactions for input: BayesianInput{type=AB, control=VariantBayesianInput{variant=DEFAULT, successes=0, failures=0}, variantPairs=[VariantBayesianInput{variant=dotexperiment-86a6038ec9-variant-1, successes=0, failures=0}], priors=[BayesianPriors{alpha=1.0, beta=1.0}]}
+com.dotmarketing.exception.DotDataException: Variant successes and failures cannot be zero
+	at com.dotcms.analytics.bayesian.BayesianAPIImpl.validateInput(BayesianAPIImpl.java:651) ~[main/:?]
+	at com.dotcms.analytics.bayesian.BayesianAPIImpl.noopFallback(BayesianAPIImpl.java:673) ~[main/:?]
+	at com.dotcms.analytics.bayesian.BayesianAPIImpl.doBayesian(BayesianAPIImpl.java:56) ~[main/:?]
+	at com.dotcms.experiments.business.ExperimentsAPIImpl.calcBayesian(ExperimentsAPIImpl.java:956) ~[main/:?]
+	at com.dotcms.experiments.business.ExperimentsAPIImpl.getResults(ExperimentsAPIImpl.java:926) ~[main/:?]
+	at com.dotcms.experiments.business.ExperimentAPIImpIntegrationTest.pageNotReachButExperimentPageWasView(ExperimentAPIImpIntegrationTest.java:1250) ~[integrationTest/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:38) ~[integrationTest/:?]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:14) ~[integrationTest/:?]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.MainBaseSuite$DotRunner.run(MainBaseSuite.java:60) ~[integrationTest/:?]
+	at org.junit.runners.Suite.runChild(Suite.java:128) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.Suite.runChild(Suite.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[?:?]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[?:?]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[?:?]
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[?:?]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[?:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:?]
+21:02:51.162  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 86a6038e-c92e-44c4-b12f-5da9e49eef4a, and status:ENDED
+21:02:51.178  INFO  junit.MainBaseSuite - Checking indexer status...
+21:02:51.694  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 61e1fff2-75f8-45d7-88ac-be0656fba599, and status:DRAFT
+21:02:51.714  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 61e1fff2-75f8-45d7-88ac-be0656fba599, and status:DRAFT
+21:02:51.730  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 61e1fff2-75f8-45d7-88ac-be0656fba599, and status:DRAFT
+21:02:51.747  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 61e1fff2-75f8-45d7-88ac-be0656fba599, and status:DRAFT
+21:02:51.753  INFO  junit.MainBaseSuite - Checking indexer status...
+21:02:51.754  INFO  junit.MainBaseSuite - Indexer is not empty, waiting for it to finish
+21:02:52.759  INFO  junit.MainBaseSuite - Indexer Complete=true
+21:02:53.983  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 65598ccf-ad83-4e95-b241-32424253b905, and status:DRAFT
+21:02:54.002  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 65598ccf-ad83-4e95-b241-32424253b905, and status:DRAFT
+21:02:54.022  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 65598ccf-ad83-4e95-b241-32424253b905, and status:DRAFT
+21:02:54.112  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 65598ccf-ad83-4e95-b241-32424253b905, and status:RUNNING
+21:02:54.542  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 65598ccf-ad83-4e95-b241-32424253b905, and status:ENDED
+21:02:54.548  INFO  junit.MainBaseSuite - Checking indexer status...
+21:02:55.953  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 38c2c4e5-fe2d-4168-bf8c-dc20020a621e, and status:DRAFT
+21:02:55.969  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 38c2c4e5-fe2d-4168-bf8c-dc20020a621e, and status:DRAFT
+21:02:55.986  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 38c2c4e5-fe2d-4168-bf8c-dc20020a621e, and status:DRAFT
+21:02:56.006  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 38c2c4e5-fe2d-4168-bf8c-dc20020a621e, and status:RUNNING
+21:02:56.169  ERROR bayesian.BayesianAPIImpl - Cannot calculate probability with zero interactions for input: BayesianInput{type=AB, control=VariantBayesianInput{variant=DEFAULT, successes=0, failures=0}, variantPairs=[VariantBayesianInput{variant=dotexperiment-38c2c4e5fe-variant-1, successes=1, failures=0}], priors=[BayesianPriors{alpha=1.0, beta=1.0}]}
+com.dotmarketing.exception.DotDataException: Variant successes and failures cannot be zero
+	at com.dotcms.analytics.bayesian.BayesianAPIImpl.validateInput(BayesianAPIImpl.java:651) ~[main/:?]
+	at com.dotcms.analytics.bayesian.BayesianAPIImpl.noopFallback(BayesianAPIImpl.java:673) ~[main/:?]
+	at com.dotcms.analytics.bayesian.BayesianAPIImpl.doBayesian(BayesianAPIImpl.java:56) ~[main/:?]
+	at com.dotcms.experiments.business.ExperimentsAPIImpl.calcBayesian(ExperimentsAPIImpl.java:956) ~[main/:?]
+	at com.dotcms.experiments.business.ExperimentsAPIImpl.getResults(ExperimentsAPIImpl.java:926) ~[main/:?]
+	at com.dotcms.experiments.business.ExperimentAPIImpIntegrationTest.pageReachDirectReferer(ExperimentAPIImpIntegrationTest.java:587) ~[integrationTest/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:38) ~[integrationTest/:?]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:14) ~[integrationTest/:?]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.MainBaseSuite$DotRunner.run(MainBaseSuite.java:60) ~[integrationTest/:?]
+	at org.junit.runners.Suite.runChild(Suite.java:128) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.Suite.runChild(Suite.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[?:?]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[?:?]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[?:?]
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[?:?]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[?:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:?]
+21:02:56.191  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 38c2c4e5-fe2d-4168-bf8c-dc20020a621e, and status:ENDED
+21:02:56.195  INFO  junit.MainBaseSuite - Checking indexer status...
+21:02:56.849  INFO  business.ExperimentsAPIImpl - Saving experiment with id: bff348f6-987d-4e5d-a4f3-28d6a8362765, and status:DRAFT
+21:02:56.862  INFO  business.ExperimentsAPIImpl - Saving experiment with id: bff348f6-987d-4e5d-a4f3-28d6a8362765, and status:DRAFT
+21:02:56.876  INFO  business.ExperimentsAPIImpl - Saving experiment with id: bff348f6-987d-4e5d-a4f3-28d6a8362765, and status:DRAFT
+21:02:56.891  INFO  business.ExperimentsAPIImpl - Saving experiment with id: bff348f6-987d-4e5d-a4f3-28d6a8362765, and status:RUNNING
+21:02:57.005  ERROR bayesian.BayesianAPIImpl - Cannot calculate probability with zero interactions for input: BayesianInput{type=AB, control=VariantBayesianInput{variant=DEFAULT, successes=0, failures=0}, variantPairs=[VariantBayesianInput{variant=dotexperiment-bff348f698-variant-1, successes=0, failures=0}], priors=[BayesianPriors{alpha=1.0, beta=1.0}]}
+com.dotmarketing.exception.DotDataException: Variant successes and failures cannot be zero
+	at com.dotcms.analytics.bayesian.BayesianAPIImpl.validateInput(BayesianAPIImpl.java:651) ~[main/:?]
+	at com.dotcms.analytics.bayesian.BayesianAPIImpl.noopFallback(BayesianAPIImpl.java:673) ~[main/:?]
+	at com.dotcms.analytics.bayesian.BayesianAPIImpl.doBayesian(BayesianAPIImpl.java:56) ~[main/:?]
+	at com.dotcms.experiments.business.ExperimentsAPIImpl.calcBayesian(ExperimentsAPIImpl.java:956) ~[main/:?]
+	at com.dotcms.experiments.business.ExperimentsAPIImpl.getResults(ExperimentsAPIImpl.java:926) ~[main/:?]
+	at com.dotcms.experiments.business.ExperimentAPIImpIntegrationTest.notBounceRateSession(ExperimentAPIImpIntegrationTest.java:1711) ~[integrationTest/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:38) ~[integrationTest/:?]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:14) ~[integrationTest/:?]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.MainBaseSuite$DotRunner.run(MainBaseSuite.java:60) ~[integrationTest/:?]
+	at org.junit.runners.Suite.runChild(Suite.java:128) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.Suite.runChild(Suite.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[?:?]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[?:?]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[?:?]
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[?:?]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[?:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:?]
+21:02:57.018  INFO  business.ExperimentsAPIImpl - Saving experiment with id: bff348f6-987d-4e5d-a4f3-28d6a8362765, and status:ENDED
+21:02:57.025  ERROR dotcms.IntegrationTestBase - Test notBounceRateSession has open connection after
+21:02:57.026  INFO  junit.MainBaseSuite - Checking indexer status...
+21:02:57.026  INFO  junit.MainBaseSuite - Indexer is not empty, waiting for it to finish
+21:02:58.028  INFO  junit.MainBaseSuite - Indexer Complete=true
+21:02:59.033  INFO  business.ExperimentsAPIImpl - Saving experiment with id: cc14fecf-484e-4ea9-a7e3-cee91f95d145, and status:DRAFT
+21:02:59.106  INFO  business.ExperimentsAPIImpl - Saving experiment with id: cc14fecf-484e-4ea9-a7e3-cee91f95d145, and status:DRAFT
+21:02:59.124  INFO  business.ExperimentsAPIImpl - Saving experiment with id: cc14fecf-484e-4ea9-a7e3-cee91f95d145, and status:DRAFT
+21:02:59.158  INFO  business.ExperimentsAPIImpl - Saving experiment with id: cc14fecf-484e-4ea9-a7e3-cee91f95d145, and status:RUNNING
+21:02:59.329  INFO  business.ExperimentsAPIImpl - Saving experiment with id: cc14fecf-484e-4ea9-a7e3-cee91f95d145, and status:ENDED
+21:02:59.392  INFO  junit.MainBaseSuite - Checking indexer status...
+21:03:00.580  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 47a5c13a-6b01-4522-8ffe-02f040af31e6, and status:DRAFT
+21:03:00.593  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 47a5c13a-6b01-4522-8ffe-02f040af31e6, and status:DRAFT
+21:03:00.606  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 47a5c13a-6b01-4522-8ffe-02f040af31e6, and status:DRAFT
+21:03:00.842  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 47a5c13a-6b01-4522-8ffe-02f040af31e6, and status:RUNNING
+21:03:00.867  INFO  business.ESContentletAPIImpl - The contentlet: 3c44b2bf25c96088fb48f9763de915b3 hasn't action id set using the default action: b9d89c80-3d88-4311-8365-187323c96436
+21:03:00.867  INFO  business.ESContentletAPIImpl - The action: b9d89c80-3d88-4311-8365-187323c96436 has a publish contentlet actionlet so firing a workflow and skipping the current publish for the contentlet: 3c44b2bf25c96088fb48f9763de915b3
+21:03:00.913  INFO  business.ESContentletAPIImpl - A Workflow has been run instead of a simple publish: 3c44b2bf25c96088fb48f9763de915b3
+21:03:00.918  INFO  business.ESContentletAPIImpl - The contentlet: 612e98687a935e11178d3f220fb89bfe hasn't action id set using the default action: b9d89c80-3d88-4311-8365-187323c96436
+21:03:00.918  INFO  business.ESContentletAPIImpl - The action: b9d89c80-3d88-4311-8365-187323c96436 has a publish contentlet actionlet so firing a workflow and skipping the current publish for the contentlet: 612e98687a935e11178d3f220fb89bfe
+21:03:00.952  INFO  business.ESContentletAPIImpl - A Workflow has been run instead of a simple publish: 612e98687a935e11178d3f220fb89bfe
+21:03:01.077  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 47a5c13a-6b01-4522-8ffe-02f040af31e6, and status:ENDED
+21:03:01.081  ERROR dotcms.IntegrationTestBase - Test testStartExperiment_shouldPublishContent has open connection after
+21:03:01.081  INFO  junit.MainBaseSuite - Checking indexer status...
+21:03:01.081  INFO  junit.MainBaseSuite - Indexer is not empty, waiting for it to finish
+21:03:02.087  INFO  junit.MainBaseSuite - Indexer Complete=true
+21:03:03.128  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 9be33466-7e24-4c92-9ded-e7af40fb97eb, and status:DRAFT
+21:03:03.168  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 9be33466-7e24-4c92-9ded-e7af40fb97eb, and status:DRAFT
+21:03:03.190  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 9be33466-7e24-4c92-9ded-e7af40fb97eb, and status:DRAFT
+21:03:03.204  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 9be33466-7e24-4c92-9ded-e7af40fb97eb, and status:RUNNING
+21:03:03.344  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 9be33466-7e24-4c92-9ded-e7af40fb97eb, and status:ENDED
+21:03:03.351  INFO  junit.MainBaseSuite - Checking indexer status...
+21:03:03.756  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 09df2c4b-ad6f-4418-848b-399d2bd4c48f, and status:DRAFT
+21:03:03.770  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 09df2c4b-ad6f-4418-848b-399d2bd4c48f, and status:DRAFT
+21:03:03.784  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 09df2c4b-ad6f-4418-848b-399d2bd4c48f, and status:DRAFT
+21:03:03.799  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 09df2c4b-ad6f-4418-848b-399d2bd4c48f, and status:DRAFT
+21:03:03.805  INFO  junit.MainBaseSuite - Checking indexer status...
+21:03:03.805  INFO  junit.MainBaseSuite - Indexer is not empty, waiting for it to finish
+21:03:05.951  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 3ea701f7-3c9a-4182-9e2f-f8bfc79398a2, and status:DRAFT
+21:03:05.966  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 3ea701f7-3c9a-4182-9e2f-f8bfc79398a2, and status:DRAFT
+21:03:05.982  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 3ea701f7-3c9a-4182-9e2f-f8bfc79398a2, and status:DRAFT
+21:03:06.001  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 3ea701f7-3c9a-4182-9e2f-f8bfc79398a2, and status:RUNNING
+21:03:06.189  ERROR bayesian.BayesianAPIImpl - Cannot calculate probability with zero interactions for input: BayesianInput{type=AB, control=VariantBayesianInput{variant=DEFAULT, successes=0, failures=0}, variantPairs=[VariantBayesianInput{variant=dotexperiment-3ea701f73c-variant-1, successes=0, failures=0}], priors=[BayesianPriors{alpha=1.0, beta=1.0}]}
+com.dotmarketing.exception.DotDataException: Variant successes and failures cannot be zero
+	at com.dotcms.analytics.bayesian.BayesianAPIImpl.validateInput(BayesianAPIImpl.java:651) ~[main/:?]
+	at com.dotcms.analytics.bayesian.BayesianAPIImpl.noopFallback(BayesianAPIImpl.java:673) ~[main/:?]
+	at com.dotcms.analytics.bayesian.BayesianAPIImpl.doBayesian(BayesianAPIImpl.java:56) ~[main/:?]
+	at com.dotcms.experiments.business.ExperimentsAPIImpl.calcBayesian(ExperimentsAPIImpl.java:956) ~[main/:?]
+	at com.dotcms.experiments.business.ExperimentsAPIImpl.getResults(ExperimentsAPIImpl.java:926) ~[main/:?]
+	at com.dotcms.experiments.business.ExperimentAPIImpIntegrationTest.getSplitTrafficInsideExperimentResults(ExperimentAPIImpIntegrationTest.java:508) ~[integrationTest/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:38) ~[integrationTest/:?]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:14) ~[integrationTest/:?]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.MainBaseSuite$DotRunner.run(MainBaseSuite.java:60) ~[integrationTest/:?]
+	at org.junit.runners.Suite.runChild(Suite.java:128) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.Suite.runChild(Suite.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[?:?]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[?:?]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[?:?]
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[?:?]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[?:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:?]
+21:03:06.211  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 3ea701f7-3c9a-4182-9e2f-f8bfc79398a2, and status:ENDED
+21:03:06.223  INFO  junit.MainBaseSuite - Checking indexer status...
+21:03:06.223  INFO  junit.MainBaseSuite - Indexer is not empty, waiting for it to finish
+21:03:07.226  INFO  junit.MainBaseSuite - Indexer Complete=true
+21:03:07.887  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 536ca8ef-2cc1-402e-9bb1-d302886a5996, and status:DRAFT
+21:03:07.901  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 536ca8ef-2cc1-402e-9bb1-d302886a5996, and status:DRAFT
+21:03:07.916  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 536ca8ef-2cc1-402e-9bb1-d302886a5996, and status:DRAFT
+21:03:07.933  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 536ca8ef-2cc1-402e-9bb1-d302886a5996, and status:DRAFT
+21:03:07.939  INFO  junit.MainBaseSuite - Checking indexer status...
+21:03:07.939  INFO  junit.MainBaseSuite - Indexer is not empty, waiting for it to finish
+21:03:10.228  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 5a725857-ede3-4587-b1bc-cab4ee75030a, and status:DRAFT
+21:03:10.241  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 5a725857-ede3-4587-b1bc-cab4ee75030a, and status:DRAFT
+21:03:10.257  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 5a725857-ede3-4587-b1bc-cab4ee75030a, and status:DRAFT
+21:03:10.281  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 5a725857-ede3-4587-b1bc-cab4ee75030a, and status:RUNNING
+21:03:10.410  ERROR bayesian.BayesianAPIImpl - Cannot calculate probability with zero interactions for input: BayesianInput{type=AB, control=VariantBayesianInput{variant=DEFAULT, successes=0, failures=0}, variantPairs=[VariantBayesianInput{variant=dotexperiment-5a725857ed-variant-1, successes=0, failures=0}], priors=[BayesianPriors{alpha=1.0, beta=1.0}]}
+com.dotmarketing.exception.DotDataException: Variant successes and failures cannot be zero
+	at com.dotcms.analytics.bayesian.BayesianAPIImpl.validateInput(BayesianAPIImpl.java:651) ~[main/:?]
+	at com.dotcms.analytics.bayesian.BayesianAPIImpl.noopFallback(BayesianAPIImpl.java:673) ~[main/:?]
+	at com.dotcms.analytics.bayesian.BayesianAPIImpl.doBayesian(BayesianAPIImpl.java:56) ~[main/:?]
+	at com.dotcms.experiments.business.ExperimentsAPIImpl.calcBayesian(ExperimentsAPIImpl.java:956) ~[main/:?]
+	at com.dotcms.experiments.business.ExperimentsAPIImpl.getResults(ExperimentsAPIImpl.java:926) ~[main/:?]
+	at com.dotcms.experiments.business.ExperimentAPIImpIntegrationTest.pageReachButExperimentPageWasNotView(ExperimentAPIImpIntegrationTest.java:1341) ~[integrationTest/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:38) ~[integrationTest/:?]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:14) ~[integrationTest/:?]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.MainBaseSuite$DotRunner.run(MainBaseSuite.java:60) ~[integrationTest/:?]
+	at org.junit.runners.Suite.runChild(Suite.java:128) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.Suite.runChild(Suite.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[?:?]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[?:?]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[?:?]
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[?:?]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[?:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:?]
+21:03:10.422  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 5a725857-ede3-4587-b1bc-cab4ee75030a, and status:ENDED
+21:03:10.426  INFO  junit.MainBaseSuite - Checking indexer status...
+21:03:11.088  INFO  business.ExperimentsAPIImpl - Saving experiment with id: c8c1c26f-c9ae-47fe-99fe-813b0e081c13, and status:DRAFT
+21:03:11.110  INFO  business.ExperimentsAPIImpl - Saving experiment with id: c8c1c26f-c9ae-47fe-99fe-813b0e081c13, and status:DRAFT
+21:03:11.130  INFO  business.ExperimentsAPIImpl - Saving experiment with id: c8c1c26f-c9ae-47fe-99fe-813b0e081c13, and status:DRAFT
+21:03:11.158  INFO  business.ExperimentsAPIImpl - Saving experiment with id: c8c1c26f-c9ae-47fe-99fe-813b0e081c13, and status:RUNNING
+21:03:11.400  INFO  business.ExperimentsAPIImpl - Saving experiment with id: c8c1c26f-c9ae-47fe-99fe-813b0e081c13, and status:ENDED
+21:03:11.409  INFO  junit.MainBaseSuite - Checking indexer status...
+21:03:12.046  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 59b75f19-03b4-4c73-a188-65533f88090a, and status:DRAFT
+21:03:12.059  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 59b75f19-03b4-4c73-a188-65533f88090a, and status:DRAFT
+21:03:12.073  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 59b75f19-03b4-4c73-a188-65533f88090a, and status:DRAFT
+21:03:12.092  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 59b75f19-03b4-4c73-a188-65533f88090a, and status:RUNNING
+21:03:12.225  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 59b75f19-03b4-4c73-a188-65533f88090a, and status:ENDED
+21:03:12.228  INFO  junit.MainBaseSuite - Checking indexer status...
+21:03:12.229  INFO  junit.MainBaseSuite - Indexer is not empty, waiting for it to finish
+21:03:13.232  INFO  junit.MainBaseSuite - Indexer Complete=true
+21:03:14.114  INFO  business.ExperimentsAPIImpl - Saving experiment with id: a5fe124d-ea8d-487b-8aba-0a3f814d0244, and status:DRAFT
+21:03:14.127  INFO  business.ExperimentsAPIImpl - Saving experiment with id: a5fe124d-ea8d-487b-8aba-0a3f814d0244, and status:DRAFT
+21:03:14.142  INFO  business.ExperimentsAPIImpl - Saving experiment with id: a5fe124d-ea8d-487b-8aba-0a3f814d0244, and status:DRAFT
+21:03:14.158  INFO  business.ExperimentsAPIImpl - Saving experiment with id: a5fe124d-ea8d-487b-8aba-0a3f814d0244, and status:RUNNING
+21:03:14.280  ERROR bayesian.BayesianAPIImpl - Cannot calculate probability with zero interactions for input: BayesianInput{type=AB, control=VariantBayesianInput{variant=DEFAULT, successes=0, failures=0}, variantPairs=[VariantBayesianInput{variant=dotexperiment-a5fe124dea-variant-1, successes=1, failures=0}], priors=[BayesianPriors{alpha=1.0, beta=1.0}]}
+com.dotmarketing.exception.DotDataException: Variant successes and failures cannot be zero
+	at com.dotcms.analytics.bayesian.BayesianAPIImpl.validateInput(BayesianAPIImpl.java:651) ~[main/:?]
+	at com.dotcms.analytics.bayesian.BayesianAPIImpl.noopFallback(BayesianAPIImpl.java:673) ~[main/:?]
+	at com.dotcms.analytics.bayesian.BayesianAPIImpl.doBayesian(BayesianAPIImpl.java:56) ~[main/:?]
+	at com.dotcms.experiments.business.ExperimentsAPIImpl.calcBayesian(ExperimentsAPIImpl.java:956) ~[main/:?]
+	at com.dotcms.experiments.business.ExperimentsAPIImpl.getResults(ExperimentsAPIImpl.java:926) ~[main/:?]
+	at com.dotcms.experiments.business.ExperimentAPIImpIntegrationTest.notBounceRate(ExperimentAPIImpIntegrationTest.java:1615) ~[integrationTest/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:38) ~[integrationTest/:?]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:14) ~[integrationTest/:?]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.MainBaseSuite$DotRunner.run(MainBaseSuite.java:60) ~[integrationTest/:?]
+	at org.junit.runners.Suite.runChild(Suite.java:128) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.Suite.runChild(Suite.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[?:?]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[?:?]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[?:?]
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[?:?]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[?:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:?]
+21:03:14.304  INFO  business.ExperimentsAPIImpl - Saving experiment with id: a5fe124d-ea8d-487b-8aba-0a3f814d0244, and status:ENDED
+21:03:14.352  ERROR dotcms.IntegrationTestBase - Test notBounceRate has open connection after
+21:03:14.352  INFO  junit.MainBaseSuite - Checking indexer status...
+21:03:14.353  INFO  junit.MainBaseSuite - Indexer is not empty, waiting for it to finish
+21:03:15.361  INFO  junit.MainBaseSuite - Indexer Complete=true
+21:03:16.852  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 2795d916-4408-47cc-a116-fdef13719bbd, and status:DRAFT
+21:03:16.871  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 2795d916-4408-47cc-a116-fdef13719bbd, and status:DRAFT
+21:03:16.886  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 2795d916-4408-47cc-a116-fdef13719bbd, and status:DRAFT
+21:03:18.855  INFO  business.ExperimentsAPIImpl - Saving experiment with id: ef9a2646-ab62-4354-88d0-dc37c1423692, and status:DRAFT
+21:03:18.869  INFO  business.ExperimentsAPIImpl - Saving experiment with id: ef9a2646-ab62-4354-88d0-dc37c1423692, and status:DRAFT
+21:03:18.883  INFO  business.ExperimentsAPIImpl - Saving experiment with id: ef9a2646-ab62-4354-88d0-dc37c1423692, and status:DRAFT
+21:03:18.898  INFO  business.ExperimentsAPIImpl - Saving experiment with id: ef9a2646-ab62-4354-88d0-dc37c1423692, and status:RUNNING
+21:03:20.895  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 8161d898-5ba6-4ee9-b306-212a8f608eb0, and status:DRAFT
+21:03:20.909  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 8161d898-5ba6-4ee9-b306-212a8f608eb0, and status:DRAFT
+21:03:20.932  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 8161d898-5ba6-4ee9-b306-212a8f608eb0, and status:DRAFT
+21:03:20.959  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 8161d898-5ba6-4ee9-b306-212a8f608eb0, and status:RUNNING
+21:03:20.997  INFO  business.ExperimentsAPIImpl - Saving experiment with id: 8161d898-5ba6-4ee9-b306-212a8f608eb0, and status:ENDED
+21:03:21.018  INFO  business.ExperimentsAPIImpl - Saving experiment with id: ef9a2646-ab62-4354-88d0-dc37c1423692, and status:ENDED
+21:03:21.022  ERROR dotcms.IntegrationTestBase - Test getRunningExperiment has open connection after
+21:03:21.022  INFO  junit.MainBaseSuite - Checking indexer status...
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

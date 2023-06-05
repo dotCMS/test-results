@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.dotcms.publisher.endpoint.bean.PublishingEndPointTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2023-06-05T21:11:18" hostname="fv-az306-998" time="0.675">
+  <properties/>
+  <testcase name="validatePublishingEndPoint_whenStaticPublishWithWritePermission_returnOK" classname="com.dotcms.publisher.endpoint.bean.PublishingEndPointTest" time="0.002"/>
+  <testcase name="validatePublishingEndPoint_whenAWSS3PublishWithoutValidCredentials_returnException" classname="com.dotcms.publisher.endpoint.bean.PublishingEndPointTest" time="0.659"/>
+  <testcase name="validatePublishingEndPoint_whenAWSS3PublishWithoutBucketID_returnException" classname="com.dotcms.publisher.endpoint.bean.PublishingEndPointTest" time="0.011"/>
+  <testcase name="validatePublishingEndPoint_whenAWSS3PublishWithoutProperties_returnException" classname="com.dotcms.publisher.endpoint.bean.PublishingEndPointTest" time="0.002"/>
+  <system-out><![CDATA[21:11:18.842  INFO  junit.MainBaseSuite - Checking indexer status...
+21:11:19.489  WARN  impl.AWSS3PublishingEndPoint - The AWS Access Key Id you provided does not exist in our records. (Service: Amazon S3; Status Code: 403; Error Code: InvalidAccessKeyId; Request ID: PM7BQR1NF9DAY6MJ; S3 Extended Request ID: Z7wPSs0A6/ErCH1gC5o8Q9otbUvMC4VZXhfiayYEO4guyNEgyumFf+fMxmNzhH30HxZdxTa1484=; Proxy: null)
+com.dotcms.enterprise.publishing.staticpublishing.EndPointPublisherConnectionException: The AWS Access Key Id you provided does not exist in our records. (Service: Amazon S3; Status Code: 403; Error Code: InvalidAccessKeyId; Request ID: PM7BQR1NF9DAY6MJ; S3 Extended Request ID: Z7wPSs0A6/ErCH1gC5o8Q9otbUvMC4VZXhfiayYEO4guyNEgyumFf+fMxmNzhH30HxZdxTa1484=; Proxy: null)
+	at com.dotcms.enterprise.publishing.staticpublishing.AWSS3EndPointPublisher.checkConnectSuccessfully(AWSS3EndPointPublisher.java:153) ~[main/:?]
+	at com.dotcms.publisher.endpoint.bean.impl.AWSS3PublishingEndPoint.validatePublishingEndPoint(AWSS3PublishingEndPoint.java:105) ~[main/:?]
+	at com.dotcms.publisher.endpoint.bean.PublishingEndPointTest.validatePublishingEndPoint_whenAWSS3PublishWithoutValidCredentials_returnException(PublishingEndPointTest.java:82) ~[integrationTest/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[?:?]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[?:?]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[?:?]
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[?:?]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[?:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:?]
+Caused by: com.amazonaws.services.s3.model.AmazonS3Exception: The AWS Access Key Id you provided does not exist in our records. (Service: Amazon S3; Status Code: 403; Error Code: InvalidAccessKeyId; Request ID: PM7BQR1NF9DAY6MJ; S3 Extended Request ID: Z7wPSs0A6/ErCH1gC5o8Q9otbUvMC4VZXhfiayYEO4guyNEgyumFf+fMxmNzhH30HxZdxTa1484=; Proxy: null)
+	at com.amazonaws.http.AmazonHttpClient$RequestExecutor.handleErrorResponse(AmazonHttpClient.java:1879) ~[aws-java-sdk-core-1.12.429.jar:?]
+	at com.amazonaws.http.AmazonHttpClient$RequestExecutor.handleServiceErrorResponse(AmazonHttpClient.java:1418) ~[aws-java-sdk-core-1.12.429.jar:?]
+	at com.amazonaws.http.AmazonHttpClient$RequestExecutor.executeOneRequest(AmazonHttpClient.java:1387) ~[aws-java-sdk-core-1.12.429.jar:?]
+	at com.amazonaws.http.AmazonHttpClient$RequestExecutor.executeHelper(AmazonHttpClient.java:1157) ~[aws-java-sdk-core-1.12.429.jar:?]
+	at com.amazonaws.http.AmazonHttpClient$RequestExecutor.doExecute(AmazonHttpClient.java:814) ~[aws-java-sdk-core-1.12.429.jar:?]
+	at com.amazonaws.http.AmazonHttpClient$RequestExecutor.executeWithTimer(AmazonHttpClient.java:781) ~[aws-java-sdk-core-1.12.429.jar:?]
+	at com.amazonaws.http.AmazonHttpClient$RequestExecutor.execute(AmazonHttpClient.java:755) ~[aws-java-sdk-core-1.12.429.jar:?]
+	at com.amazonaws.http.AmazonHttpClient$RequestExecutor.access$500(AmazonHttpClient.java:715) ~[aws-java-sdk-core-1.12.429.jar:?]
+	at com.amazonaws.http.AmazonHttpClient$RequestExecutionBuilderImpl.execute(AmazonHttpClient.java:697) ~[aws-java-sdk-core-1.12.429.jar:?]
+	at com.amazonaws.http.AmazonHttpClient.execute(AmazonHttpClient.java:561) ~[aws-java-sdk-core-1.12.429.jar:?]
+	at com.amazonaws.http.AmazonHttpClient.execute(AmazonHttpClient.java:541) ~[aws-java-sdk-core-1.12.429.jar:?]
+	at com.amazonaws.services.s3.AmazonS3Client.invoke(AmazonS3Client.java:5456) ~[aws-java-sdk-s3-1.12.429.jar:?]
+	at com.amazonaws.services.s3.AmazonS3Client.invoke(AmazonS3Client.java:5403) ~[aws-java-sdk-s3-1.12.429.jar:?]
+	at com.amazonaws.services.s3.AmazonS3Client.invoke(AmazonS3Client.java:5397) ~[aws-java-sdk-s3-1.12.429.jar:?]
+	at com.amazonaws.services.s3.AmazonS3Client.listBuckets(AmazonS3Client.java:1026) ~[aws-java-sdk-s3-1.12.429.jar:?]
+	at com.amazonaws.services.s3.AmazonS3Client.listBuckets(AmazonS3Client.java:1032) ~[aws-java-sdk-s3-1.12.429.jar:?]
+	at com.dotcms.enterprise.publishing.storage.AWSS3Storage.listBuckets(AWSS3Storage.java:168) ~[main/:?]
+	at com.dotcms.enterprise.publishing.staticpublishing.AWSS3EndPointPublisher.checkConnectSuccessfully(AWSS3EndPointPublisher.java:150) ~[main/:?]
+	... 60 more
+21:11:19.502  INFO  junit.MainBaseSuite - Checking indexer status...
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

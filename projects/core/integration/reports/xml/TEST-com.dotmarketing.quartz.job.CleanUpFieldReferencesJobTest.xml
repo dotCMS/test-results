@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.dotmarketing.quartz.job.CleanUpFieldReferencesJobTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2023-06-05T22:11:43" hostname="fv-az306-998" time="3.821">
+  <properties/>
+  <testcase name="testCleanUpFieldJob[0: TestCase{name='checkboxFieldVarName', fieldValue=CA, values='Canada|CA\r\nMexico|MX\r\nUSA|US', fieldType=class com.dotcms.contenttype.model.field.CheckboxField, isJsonFields=false}]" classname="com.dotmarketing.quartz.job.CleanUpFieldReferencesJobTest" time="1.192"/>
+  <testcase name="testCleanUpFieldJob[1: TestCase{name='dateTimeFieldVarName', fieldValue=Sun Jun 04 20:56:40 UTC 2023, values='null', fieldType=class com.dotcms.contenttype.model.field.DateTimeField, isJsonFields=false}]" classname="com.dotmarketing.quartz.job.CleanUpFieldReferencesJobTest" time="0.25"/>
+  <testcase name="testCleanUpFieldJob[2: TestCase{name='checkboxFieldVarName', fieldValue=CA, values='Canada|CA\r\nMexico|MX\r\nUSA|US', fieldType=class com.dotcms.contenttype.model.field.CheckboxField, isJsonFields=true}]" classname="com.dotmarketing.quartz.job.CleanUpFieldReferencesJobTest" time="1.195"/>
+  <testcase name="testCleanUpFieldJob[3: TestCase{name='dateTimeFieldVarName', fieldValue=null, values='null', fieldType=class com.dotcms.contenttype.model.field.DateTimeField, isJsonFields=true}]" classname="com.dotmarketing.quartz.job.CleanUpFieldReferencesJobTest" time="1.184"/>
+  <system-out><![CDATA[22:11:43.120  INFO  junit.MainBaseSuite - Indexer Complete=true
+22:11:43.120  INFO  util.Config - Setting property: SYSTEM_EXIT_ON_STARTUP_FAILURE to false
+22:11:43.120  INFO  util.Config - Setting property: persist.contentlet.as.json to false
+22:11:43.172  INFO  job.CleanUpFieldReferencesJob - CleanUpFieldReferencesJob ::: started for field `checkboxFieldVarName`.
+22:11:43.182  INFO  job.CleanUpFieldReferencesJob - CleanUpFieldReferencesJob ::: finished for field `checkboxFieldVarName`.
+22:11:43.183  INFO  util.Config - Setting property: persist.contentlet.as.json to true
+22:11:43.195  INFO  business.ContentTypeDestroyAPIImpl - Relocated from (500) to (1000) out of (1) contentlets..
+22:11:43.195  INFO  business.ContentTypeFactoryImpl - ::: Relocated 1 contentlets for ContentType [TestContentType1686003103120] to [TestContentType1686003103120_disposed_1686003103184] :::
+22:11:43.201  INFO  business.WorkflowFactoryImpl - Deleting the schemes associated to the content type: a443be315c939744b431f33bd69309d4
+22:11:43.208  INFO  business.ContentTypeDestroyAPIImpl - There are (1) contents of type (testContentType1686003103120). Will remove them sequentially using (100) batchSize 
+22:11:43.210  INFO  business.ContentTypeDestroyAPIImpl -  For (testContentType1686003103120) Destroying (1) contentlets for identifier (7c93991b64894d605a42e8426bed9855) 
+22:11:43.213  INFO  business.ESContentletAPIImpl - UserId : system : destroy : User trying to destroy the following contents: [7c93991b64894d605a42e8426bed9855]
+22:11:43.298  INFO  business.ContentTypeDestroyAPIImpl -  :: for (testContentType1686003103120) allCount is (1) with leftovers (0) :: 
+22:11:43.298  INFO  business.ContentTypeDestroyAPIImpl - Destroying Content-Type with inode: [f977a29c9f4ac66c1b135e0fcefbd601] and var: [TestContentType1686003103120_disposed_1686003103184].
+22:11:43.300  INFO  business.WorkflowFactoryImpl - Deleting the schemes associated to the content type: f977a29c9f4ac66c1b135e0fcefbd601
+22:11:43.308  INFO  business.ContentTypeDestroyAPIImpl -  I'm done destroying (1) pieces of Content of type (TestContentType1686003103120_disposed_1686003103184). it took me : [00:00:00] 
+22:11:43.308  ERROR dotcms.IntegrationTestBase - Test testCleanUpFieldJob[0: TestCase{name='checkboxFieldVarName', fieldValue=CA, values='Canada|CA\r\nMexico|MX\r\nUSA|US', fieldType=class com.dotcms.contenttype.model.field.CheckboxField, isJsonFields=false}] has open connection after
+22:11:43.308  INFO  junit.MainBaseSuite - Checking indexer status...
+22:11:43.308  INFO  junit.MainBaseSuite - Indexer is not empty, waiting for it to finish
+22:11:44.311  INFO  junit.MainBaseSuite - Indexer Complete=true
+22:11:44.311  INFO  util.Config - Setting property: persist.contentlet.as.json to false
+22:11:44.366  INFO  job.CleanUpFieldReferencesJob - CleanUpFieldReferencesJob ::: started for field `dateTimeFieldVarName`.
+22:11:44.375  INFO  job.CleanUpFieldReferencesJob - CleanUpFieldReferencesJob ::: finished for field `dateTimeFieldVarName`.
+22:11:44.377  INFO  util.Config - Setting property: persist.contentlet.as.json to true
+22:11:44.389  INFO  business.ContentTypeDestroyAPIImpl - Relocated from (500) to (1000) out of (1) contentlets..
+22:11:44.390  INFO  business.ContentTypeFactoryImpl - ::: Relocated 1 contentlets for ContentType [TestContentType1686003104311] to [TestContentType1686003104311_disposed_1686003104377] :::
+22:11:44.394  INFO  business.WorkflowFactoryImpl - Deleting the schemes associated to the content type: f3aef01ff550c3d957f1f16f1d850954
+22:11:44.401  INFO  business.ContentTypeDestroyAPIImpl - There are (1) contents of type (testContentType1686003104311). Will remove them sequentially using (100) batchSize 
+22:11:44.403  INFO  business.ContentTypeDestroyAPIImpl -  For (testContentType1686003104311) Destroying (1) contentlets for identifier (9c4dc5665f99860698b1210e6c357ae6) 
+22:11:44.406  INFO  business.ESContentletAPIImpl - UserId : system : destroy : User trying to destroy the following contents: [9c4dc5665f99860698b1210e6c357ae6]
+22:11:44.550  INFO  business.ContentTypeDestroyAPIImpl -  :: for (testContentType1686003104311) allCount is (1) with leftovers (0) :: 
+22:11:44.550  INFO  business.ContentTypeDestroyAPIImpl - Destroying Content-Type with inode: [86a0048cff25b2a738ea83cc1a5e720e] and var: [TestContentType1686003104311_disposed_1686003104377].
+22:11:44.553  INFO  business.WorkflowFactoryImpl - Deleting the schemes associated to the content type: 86a0048cff25b2a738ea83cc1a5e720e
+22:11:44.560  INFO  business.ContentTypeDestroyAPIImpl -  I'm done destroying (1) pieces of Content of type (TestContentType1686003104311_disposed_1686003104377). it took me : [00:00:00] 
+22:11:44.561  ERROR dotcms.IntegrationTestBase - Test testCleanUpFieldJob[1: TestCase{name='dateTimeFieldVarName', fieldValue=Sun Jun 04 20:56:40 UTC 2023, values='null', fieldType=class com.dotcms.contenttype.model.field.DateTimeField, isJsonFields=false}] has open connection after
+22:11:44.561  INFO  junit.MainBaseSuite - Checking indexer status...
+22:11:44.562  INFO  util.Config - Setting property: persist.contentlet.as.json to true
+22:11:44.620  INFO  job.CleanUpFieldReferencesJob - CleanUpFieldReferencesJob ::: started for field `checkboxFieldVarName`.
+22:11:44.634  INFO  job.CleanUpFieldReferencesJob - CleanUpFieldReferencesJob ::: finished for field `checkboxFieldVarName`.
+22:11:44.636  INFO  util.Config - Setting property: persist.contentlet.as.json to true
+22:11:44.649  INFO  business.ContentTypeDestroyAPIImpl - Relocated from (500) to (1000) out of (1) contentlets..
+22:11:44.649  INFO  business.ContentTypeFactoryImpl - ::: Relocated 1 contentlets for ContentType [TestContentType1686003104562] to [TestContentType1686003104562_disposed_1686003104637] :::
+22:11:44.654  INFO  business.WorkflowFactoryImpl - Deleting the schemes associated to the content type: 6e852f97ce34ce5fc9b7f1da84c09288
+22:11:44.661  INFO  business.ContentTypeDestroyAPIImpl - There are (1) contents of type (testContentType1686003104562). Will remove them sequentially using (100) batchSize 
+22:11:44.663  INFO  business.ContentTypeDestroyAPIImpl -  For (testContentType1686003104562) Destroying (1) contentlets for identifier (961b6d9b1b8b3fb30dca0a3d14408fd1) 
+22:11:44.666  INFO  business.ESContentletAPIImpl - UserId : system : destroy : User trying to destroy the following contents: [961b6d9b1b8b3fb30dca0a3d14408fd1]
+22:11:44.743  INFO  business.ContentTypeDestroyAPIImpl -  :: for (testContentType1686003104562) allCount is (1) with leftovers (0) :: 
+22:11:44.743  INFO  business.ContentTypeDestroyAPIImpl - Destroying Content-Type with inode: [28a62c9ddcb3413332dcb8c0bd03bb06] and var: [TestContentType1686003104562_disposed_1686003104637].
+22:11:44.746  INFO  business.WorkflowFactoryImpl - Deleting the schemes associated to the content type: 28a62c9ddcb3413332dcb8c0bd03bb06
+22:11:44.753  INFO  business.ContentTypeDestroyAPIImpl -  I'm done destroying (1) pieces of Content of type (TestContentType1686003104562_disposed_1686003104637). it took me : [00:00:00] 
+22:11:44.753  ERROR dotcms.IntegrationTestBase - Test testCleanUpFieldJob[2: TestCase{name='checkboxFieldVarName', fieldValue=CA, values='Canada|CA\r\nMexico|MX\r\nUSA|US', fieldType=class com.dotcms.contenttype.model.field.CheckboxField, isJsonFields=true}] has open connection after
+22:11:44.754  INFO  junit.MainBaseSuite - Checking indexer status...
+22:11:44.754  INFO  junit.MainBaseSuite - Indexer is not empty, waiting for it to finish
+22:11:45.756  INFO  junit.MainBaseSuite - Indexer Complete=true
+22:11:45.756  INFO  util.Config - Setting property: persist.contentlet.as.json to true
+22:11:45.817  INFO  job.CleanUpFieldReferencesJob - CleanUpFieldReferencesJob ::: started for field `dateTimeFieldVarName`.
+22:11:45.826  INFO  job.CleanUpFieldReferencesJob - CleanUpFieldReferencesJob ::: finished for field `dateTimeFieldVarName`.
+22:11:45.828  INFO  util.Config - Setting property: persist.contentlet.as.json to true
+22:11:45.838  INFO  business.ContentTypeDestroyAPIImpl - Relocated from (500) to (1000) out of (1) contentlets..
+22:11:45.838  INFO  business.ContentTypeFactoryImpl - ::: Relocated 1 contentlets for ContentType [TestContentType1686003105756] to [TestContentType1686003105756_disposed_1686003105828] :::
+22:11:45.843  INFO  business.WorkflowFactoryImpl - Deleting the schemes associated to the content type: 4b08b5c3c83b7a259dbf91fda0ef1d52
+22:11:45.848  INFO  business.ContentTypeDestroyAPIImpl - There are (1) contents of type (testContentType1686003105756). Will remove them sequentially using (100) batchSize 
+22:11:45.850  INFO  business.ContentTypeDestroyAPIImpl -  For (testContentType1686003105756) Destroying (1) contentlets for identifier (bd5cd3b2fb4c2772900740761cc3aefa) 
+22:11:45.853  INFO  business.ESContentletAPIImpl - UserId : system : destroy : User trying to destroy the following contents: [bd5cd3b2fb4c2772900740761cc3aefa]
+22:11:45.929  INFO  business.ContentTypeDestroyAPIImpl -  :: for (testContentType1686003105756) allCount is (1) with leftovers (0) :: 
+22:11:45.929  INFO  business.ContentTypeDestroyAPIImpl - Destroying Content-Type with inode: [34043a23c32ada24fe55d7930fd1ca68] and var: [TestContentType1686003105756_disposed_1686003105828].
+22:11:45.931  INFO  business.WorkflowFactoryImpl - Deleting the schemes associated to the content type: 34043a23c32ada24fe55d7930fd1ca68
+22:11:45.938  INFO  business.ContentTypeDestroyAPIImpl -  I'm done destroying (1) pieces of Content of type (TestContentType1686003105756_disposed_1686003105828). it took me : [00:00:00] 
+22:11:45.939  ERROR dotcms.IntegrationTestBase - Test testCleanUpFieldJob[3: TestCase{name='dateTimeFieldVarName', fieldValue=null, values='null', fieldType=class com.dotcms.contenttype.model.field.DateTimeField, isJsonFields=true}] has open connection after
+22:11:45.939  INFO  junit.MainBaseSuite - Checking indexer status...
+22:11:45.939  INFO  junit.MainBaseSuite - Indexer is not empty, waiting for it to finish
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

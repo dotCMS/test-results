@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.dotmarketing.filters.FiltersTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2023-06-05T22:04:19" hostname="fv-az306-998" time="55.532">
+  <properties/>
+  <testcase name="shouldRedirect401" classname="com.dotmarketing.filters.FiltersTest" time="0.054"/>
+  <testcase name="vanityUrlsShouldPassParams" classname="com.dotmarketing.filters.FiltersTest" time="7.577"/>
+  <testcase name="shouldWorkVanityUrl" classname="com.dotmarketing.filters.FiltersTest" time="19.779"/>
+  <testcase name="redirectHomePageTest" classname="com.dotmarketing.filters.FiltersTest" time="8.294"/>
+  <testcase name="shouldForwardToImage" classname="com.dotmarketing.filters.FiltersTest" time="0.005"/>
+  <testcase name="shouldRedirectToFolderIndex" classname="com.dotmarketing.filters.FiltersTest" time="0.053"/>
+  <testcase name="Test_VanityURL_Forward_Redirect_Params" classname="com.dotmarketing.filters.FiltersTest" time="12.29"/>
+  <testcase name="vanityRedirectURLMAP" classname="com.dotmarketing.filters.FiltersTest" time="7.473"/>
+  <testcase name="shouldReturnStrutsPage" classname="com.dotmarketing.filters.FiltersTest" time="0.006"/>
+  <system-out><![CDATA[22:04:19.599  INFO  servlet.VelocityServlet - Initializing VelocityServlet @ Test worker
+22:04:19.603  INFO  license.ServerDetector - 
+22:04:19.604  INFO  license.ServerDetector - 
+22:04:19.605  INFO  license.ServerDetector - 
+22:04:19.605  INFO  license.ServerDetector - 
+22:04:19.606  INFO  license.ServerDetector - 
+22:04:19.606  INFO  license.ServerDetector - 
+22:04:19.607  INFO  license.ServerDetector - 
+22:04:19.607  INFO  license.ServerDetector - 
+22:04:19.608  INFO  license.ServerDetector - 
+22:04:19.608  INFO  license.ServerDetector - 
+22:04:19.615  INFO  filters.FiltersTest$MockResponseWrapper - The requested page/file is unauthorized
+22:04:19.616  INFO  filters.FiltersTest - looking for 401, got;401
+22:04:19.617  INFO  junit.MainBaseSuite - Checking indexer status...
+22:04:22.073  INFO  business.ESContentletAPIImpl - The contentlet: test link1 hasn't action id set using the default action: ceca71a0-deee-4999-bd47-b01baa1bcfc8
+22:04:22.073  INFO  business.ESContentletAPIImpl - The action: ceca71a0-deee-4999-bd47-b01baa1bcfc8 has a save contentlet actionlet so firing a workflow and skipping the current checkin for the contentlet: test link1
+22:04:22.078  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:ceca71a0-deee-4999-bd47-b01baa1bcfc8. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:04:22.148  INFO  business.ESContentletAPIImpl - A Workflow has been ran instead of checkin the contentlet: 63d65ab619ac22207bbd82ed4f6f3469
+22:04:22.619  INFO  business.ESContentletAPIImpl - The contentlet: 63d65ab619ac22207bbd82ed4f6f3469 hasn't action id set using the default action: b9d89c80-3d88-4311-8365-187323c96436
+22:04:22.619  INFO  business.ESContentletAPIImpl - The action: b9d89c80-3d88-4311-8365-187323c96436 has a publish contentlet actionlet so firing a workflow and skipping the current publish for the contentlet: 63d65ab619ac22207bbd82ed4f6f3469
+22:04:22.623  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:b9d89c80-3d88-4311-8365-187323c96436. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:04:22.679  INFO  business.ESContentletAPIImpl - A Workflow has been run instead of a simple publish: 63d65ab619ac22207bbd82ed4f6f3469
+22:04:25.891  INFO  business.ESContentletAPIImpl - The contentlet: test link2 hasn't action id set using the default action: ceca71a0-deee-4999-bd47-b01baa1bcfc8
+22:04:25.891  INFO  business.ESContentletAPIImpl - The action: ceca71a0-deee-4999-bd47-b01baa1bcfc8 has a save contentlet actionlet so firing a workflow and skipping the current checkin for the contentlet: test link2
+22:04:25.962  INFO  business.ESContentletAPIImpl - A Workflow has been ran instead of checkin the contentlet: 87bbcfc414cfd7f51ec5f4d0da31e0ce
+22:04:26.450  INFO  business.ESContentletAPIImpl - The contentlet: 87bbcfc414cfd7f51ec5f4d0da31e0ce hasn't action id set using the default action: b9d89c80-3d88-4311-8365-187323c96436
+22:04:26.450  INFO  business.ESContentletAPIImpl - The action: b9d89c80-3d88-4311-8365-187323c96436 has a publish contentlet actionlet so firing a workflow and skipping the current publish for the contentlet: 87bbcfc414cfd7f51ec5f4d0da31e0ce
+22:04:26.479  INFO  business.ESContentletAPIImpl - A Workflow has been run instead of a simple publish: 87bbcfc414cfd7f51ec5f4d0da31e0ce
+22:04:27.180  INFO  filters.FiltersTest - /b989f85f5b1 should forward to /about-us/index
+22:04:27.192  INFO  filters.FiltersTest - /b989f85f5b2 should forward to /about-us/index
+22:04:27.194  INFO  junit.MainBaseSuite - Checking indexer status...
+22:04:29.565  INFO  business.ESContentletAPIImpl - The contentlet: test link1 hasn't action id set using the default action: ceca71a0-deee-4999-bd47-b01baa1bcfc8
+22:04:29.565  INFO  business.ESContentletAPIImpl - The action: ceca71a0-deee-4999-bd47-b01baa1bcfc8 has a save contentlet actionlet so firing a workflow and skipping the current checkin for the contentlet: test link1
+22:04:29.614  INFO  business.ESContentletAPIImpl - A Workflow has been ran instead of checkin the contentlet: 019a6eed4c53adad19b148f8f7101b8a
+22:04:29.957  INFO  business.ESContentletAPIImpl - The contentlet: 019a6eed4c53adad19b148f8f7101b8a hasn't action id set using the default action: b9d89c80-3d88-4311-8365-187323c96436
+22:04:29.957  INFO  business.ESContentletAPIImpl - The action: b9d89c80-3d88-4311-8365-187323c96436 has a publish contentlet actionlet so firing a workflow and skipping the current publish for the contentlet: 019a6eed4c53adad19b148f8f7101b8a
+22:04:29.998  INFO  business.ESContentletAPIImpl - A Workflow has been run instead of a simple publish: 019a6eed4c53adad19b148f8f7101b8a
+22:04:33.603  INFO  business.ESContentletAPIImpl - The contentlet: test link2 hasn't action id set using the default action: ceca71a0-deee-4999-bd47-b01baa1bcfc8
+22:04:33.603  INFO  business.ESContentletAPIImpl - The action: ceca71a0-deee-4999-bd47-b01baa1bcfc8 has a save contentlet actionlet so firing a workflow and skipping the current checkin for the contentlet: test link2
+22:04:33.698  INFO  business.ESContentletAPIImpl - A Workflow has been ran instead of checkin the contentlet: e0ad173bd251f0ae6d62b409318053c0
+22:04:34.100  INFO  business.ESContentletAPIImpl - The contentlet: e0ad173bd251f0ae6d62b409318053c0 hasn't action id set using the default action: b9d89c80-3d88-4311-8365-187323c96436
+22:04:34.101  INFO  business.ESContentletAPIImpl - The action: b9d89c80-3d88-4311-8365-187323c96436 has a publish contentlet actionlet so firing a workflow and skipping the current publish for the contentlet: e0ad173bd251f0ae6d62b409318053c0
+22:04:34.132  INFO  business.ESContentletAPIImpl - A Workflow has been run instead of a simple publish: e0ad173bd251f0ae6d62b409318053c0
+22:04:37.587  INFO  business.ESContentletAPIImpl - The contentlet: test link3 hasn't action id set using the default action: ceca71a0-deee-4999-bd47-b01baa1bcfc8
+22:04:37.587  INFO  business.ESContentletAPIImpl - The action: ceca71a0-deee-4999-bd47-b01baa1bcfc8 has a save contentlet actionlet so firing a workflow and skipping the current checkin for the contentlet: test link3
+22:04:37.661  INFO  business.ESContentletAPIImpl - A Workflow has been ran instead of checkin the contentlet: 3ffde9ba8933a87978adc0efaf24cac7
+22:04:38.016  INFO  business.ESContentletAPIImpl - The contentlet: 3ffde9ba8933a87978adc0efaf24cac7 hasn't action id set using the default action: b9d89c80-3d88-4311-8365-187323c96436
+22:04:38.016  INFO  business.ESContentletAPIImpl - The action: b9d89c80-3d88-4311-8365-187323c96436 has a publish contentlet actionlet so firing a workflow and skipping the current publish for the contentlet: 3ffde9ba8933a87978adc0efaf24cac7
+22:04:38.048  INFO  business.ESContentletAPIImpl - A Workflow has been run instead of a simple publish: 3ffde9ba8933a87978adc0efaf24cac7
+22:04:41.578  INFO  business.ESContentletAPIImpl - The contentlet: test link4 hasn't action id set using the default action: ceca71a0-deee-4999-bd47-b01baa1bcfc8
+22:04:41.578  INFO  business.ESContentletAPIImpl - The action: ceca71a0-deee-4999-bd47-b01baa1bcfc8 has a save contentlet actionlet so firing a workflow and skipping the current checkin for the contentlet: test link4
+22:04:41.622  INFO  business.ESContentletAPIImpl - A Workflow has been ran instead of checkin the contentlet: 8115eae7407b5c73f8d1f15c1135d789
+22:04:42.019  INFO  business.ESContentletAPIImpl - The contentlet: 8115eae7407b5c73f8d1f15c1135d789 hasn't action id set using the default action: b9d89c80-3d88-4311-8365-187323c96436
+22:04:42.019  INFO  business.ESContentletAPIImpl - The action: b9d89c80-3d88-4311-8365-187323c96436 has a publish contentlet actionlet so firing a workflow and skipping the current publish for the contentlet: 8115eae7407b5c73f8d1f15c1135d789
+22:04:42.047  INFO  business.ESContentletAPIImpl - A Workflow has been run instead of a simple publish: 8115eae7407b5c73f8d1f15c1135d789
+22:04:45.548  INFO  business.ESContentletAPIImpl - The contentlet: test link5 hasn't action id set using the default action: ceca71a0-deee-4999-bd47-b01baa1bcfc8
+22:04:45.548  INFO  business.ESContentletAPIImpl - The action: ceca71a0-deee-4999-bd47-b01baa1bcfc8 has a save contentlet actionlet so firing a workflow and skipping the current checkin for the contentlet: test link5
+22:04:45.643  INFO  business.ESContentletAPIImpl - A Workflow has been ran instead of checkin the contentlet: af507fd04a4574f2563252dfbe2e1be6
+22:04:46.109  INFO  business.ESContentletAPIImpl - The contentlet: af507fd04a4574f2563252dfbe2e1be6 hasn't action id set using the default action: b9d89c80-3d88-4311-8365-187323c96436
+22:04:46.109  INFO  business.ESContentletAPIImpl - The action: b9d89c80-3d88-4311-8365-187323c96436 has a publish contentlet actionlet so firing a workflow and skipping the current publish for the contentlet: af507fd04a4574f2563252dfbe2e1be6
+22:04:46.148  INFO  business.ESContentletAPIImpl - A Workflow has been run instead of a simple publish: af507fd04a4574f2563252dfbe2e1be6
+22:04:46.942  INFO  filters.FiltersTest - /a9e55f1c341 should forward to /about-us/index
+22:04:46.962  INFO  filters.FiltersTest - /a9e55f1c342 should forward to /about-us/index
+22:04:46.967  INFO  filters.FiltersTest - /a9e55f1c343 should redirect to http://demo.dotcms.com/about-us/index
+22:04:46.969  INFO  filters.FiltersTest - /a9e55f1c344 should redirect to http://demo.dotcms.com/about-us/index
+22:04:46.970  INFO  filters.FiltersTest - /forbidden should 302 Redirect to /products/index
+22:04:46.972  INFO  junit.MainBaseSuite - Checking indexer status...
+22:04:49.459  INFO  business.ESContentletAPIImpl - The contentlet: cmsHomePage hasn't action id set using the default action: ceca71a0-deee-4999-bd47-b01baa1bcfc8
+22:04:49.459  INFO  business.ESContentletAPIImpl - The action: ceca71a0-deee-4999-bd47-b01baa1bcfc8 has a save contentlet actionlet so firing a workflow and skipping the current checkin for the contentlet: cmsHomePage
+22:04:49.533  INFO  business.ESContentletAPIImpl - A Workflow has been ran instead of checkin the contentlet: e78ef4f62f3fb1c8b53adf7a5f1c28f1
+22:04:49.944  INFO  business.ESContentletAPIImpl - The contentlet: e78ef4f62f3fb1c8b53adf7a5f1c28f1 hasn't action id set using the default action: b9d89c80-3d88-4311-8365-187323c96436
+22:04:49.944  INFO  business.ESContentletAPIImpl - The action: b9d89c80-3d88-4311-8365-187323c96436 has a publish contentlet actionlet so firing a workflow and skipping the current publish for the contentlet: e78ef4f62f3fb1c8b53adf7a5f1c28f1
+22:04:49.986  INFO  business.ESContentletAPIImpl - A Workflow has been run instead of a simple publish: e78ef4f62f3fb1c8b53adf7a5f1c28f1
+22:04:50.875  INFO  filters.FiltersTest - /cmsHomePage should forward to /about-us/index
+22:04:50.882  INFO  filters.FiltersTest - looking for 200, got:200
+22:04:50.882  INFO  filters.FiltersTest - looking for /about-us/index, got:/about-us/index
+22:04:51.024  INFO  business.ESContentletAPIImpl - UserId : system : delete : User trying to delete the following contents: [e78ef4f62f3fb1c8b53adf7a5f1c28f1]
+22:04:51.026  INFO  business.ESContentletAPIImpl - UserId : system : destroy : User trying to destroy the following contents: [e78ef4f62f3fb1c8b53adf7a5f1c28f1]
+22:04:54.013  INFO  business.ESContentletAPIImpl - The contentlet: cmsHomePage Host hasn't action id set using the default action: ceca71a0-deee-4999-bd47-b01baa1bcfc8
+22:04:54.013  INFO  business.ESContentletAPIImpl - The action: ceca71a0-deee-4999-bd47-b01baa1bcfc8 has a save contentlet actionlet so firing a workflow and skipping the current checkin for the contentlet: cmsHomePage Host
+22:04:54.064  INFO  business.ESContentletAPIImpl - A Workflow has been ran instead of checkin the contentlet: 3b30f0ee46cd6dbcbf54249f18a1242c
+22:04:54.419  INFO  business.ESContentletAPIImpl - The contentlet: 3b30f0ee46cd6dbcbf54249f18a1242c hasn't action id set using the default action: b9d89c80-3d88-4311-8365-187323c96436
+22:04:54.419  INFO  business.ESContentletAPIImpl - The action: b9d89c80-3d88-4311-8365-187323c96436 has a publish contentlet actionlet so firing a workflow and skipping the current publish for the contentlet: 3b30f0ee46cd6dbcbf54249f18a1242c
+22:04:54.463  INFO  business.ESContentletAPIImpl - A Workflow has been run instead of a simple publish: 3b30f0ee46cd6dbcbf54249f18a1242c
+22:04:55.258  INFO  filters.FiltersTest - demo.dotcms.com:/cmsHomePage should forward to /about-us/index
+22:04:55.267  INFO  filters.FiltersTest - looking for 200, got:200
+22:04:55.267  INFO  filters.FiltersTest - looking for /about-usindex, got:/about-us/index
+22:04:55.267  INFO  junit.MainBaseSuite - Checking indexer status...
+22:04:55.268  INFO  filters.FiltersTest - /images/404.jpg should give us a 200
+22:04:55.273  INFO  filters.FiltersTest - looking for 200, got;200
+22:04:55.273  INFO  junit.MainBaseSuite - Checking indexer status...
+22:04:55.273  INFO  filters.FiltersTest - /products should redirect to /products/
+22:04:55.275  INFO  filters.FiltersTest - /home/ should forward to /products/index
+22:04:55.281  INFO  servlet.VelocityServlet - Initializing VelocityServlet @ Test worker
+22:04:55.306  ERROR factories.MultiTreeAPIImpl - An error occurred when retrieving empty Containers from page with ID '346e5f10097cb69cdcc2fbd943b24441' in liveMode 'true': null
+java.lang.NullPointerException: null
+	at com.dotmarketing.factories.MultiTreeAPIImpl.doesPageContentsHaveContainer(MultiTreeAPIImpl.java:1161) ~[main/:?]
+	at com.dotmarketing.factories.MultiTreeAPIImpl.addEmptyContainers(MultiTreeAPIImpl.java:1136) ~[main/:?]
+	at com.dotmarketing.factories.MultiTreeAPIImpl.getPageMultiTrees(MultiTreeAPIImpl.java:1064) ~[main/:?]
+	at com.dotcms.rendering.velocity.services.PageRenderUtil.populateContainers(PageRenderUtil.java:269) ~[main/:?]
+	at com.dotcms.rendering.velocity.services.PageRenderUtil.<init>(PageRenderUtil.java:150) ~[main/:?]
+	at com.dotcms.rendering.velocity.services.PageRenderUtil.<init>(PageRenderUtil.java:166) ~[main/:?]
+	at com.dotcms.rendering.velocity.services.PageLoader.addWidgetPreExecuteCodeAndPageInfo(PageLoader.java:198) ~[main/:?]
+	at com.dotcms.rendering.velocity.services.PageLoader.buildStream(PageLoader.java:116) ~[main/:?]
+	at com.dotcms.rendering.velocity.services.PageLoader.writeObject(PageLoader.java:209) ~[main/:?]
+	at com.dotcms.rendering.velocity.services.DotResourceLoader.getResourceStream(DotResourceLoader.java:60) ~[main/:?]
+	at org.apache.velocity.Template.process(Template.java:106) ~[main/:?]
+	at org.apache.velocity.runtime.resource.ResourceManagerImpl.loadResource(ResourceManagerImpl.java:452) ~[main/:?]
+	at org.apache.velocity.runtime.resource.ResourceManagerImpl.getResource(ResourceManagerImpl.java:357) ~[main/:?]
+	at org.apache.velocity.runtime.RuntimeInstance.getTemplate(RuntimeInstance.java:1510) ~[main/:?]
+	at org.apache.velocity.runtime.RuntimeInstance.getTemplate(RuntimeInstance.java:1490) ~[main/:?]
+	at org.apache.velocity.app.VelocityEngine.getTemplate(VelocityEngine.java:372) ~[main/:?]
+	at com.dotcms.rendering.velocity.servlet.VelocityModeHandler.getTemplate(VelocityModeHandler.java:156) ~[main/:?]
+	at com.dotcms.rendering.velocity.servlet.VelocityLiveMode.serve(VelocityLiveMode.java:195) ~[main/:?]
+	at com.dotcms.rendering.velocity.servlet.VelocityModeHandler.eval(VelocityModeHandler.java:106) ~[main/:?]
+	at com.dotmarketing.portlets.htmlpageasset.business.render.page.HTMLPageAssetRenderedBuilder.getPageHTML(HTMLPageAssetRenderedBuilder.java:226) ~[main/:?]
+	at com.dotmarketing.portlets.htmlpageasset.business.render.HTMLPageAssetRenderedAPIImpl.getPageHtml(HTMLPageAssetRenderedAPIImpl.java:292) ~[main/:?]
+	at com.dotcms.rendering.velocity.servlet.VelocityServlet.service(VelocityServlet.java:134) ~[main/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790) ~[javax.servlet-api-3.1.0.jar:3.1.0]
+	at com.dotmarketing.filters.FiltersTest$2.forward(FiltersTest.java:571) ~[integrationTest/:?]
+	at com.dotmarketing.filters.CMSFilter.doFilterInternal(CMSFilter.java:165) ~[main/:?]
+	at com.dotmarketing.filters.CMSFilter.doFilter(CMSFilter.java:61) ~[main/:?]
+	at com.dotmarketing.filters.FiltersTest.shouldRedirectToFolderIndex(FiltersTest.java:718) ~[integrationTest/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:38) ~[integrationTest/:?]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:14) ~[integrationTest/:?]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.MainBaseSuite$DotRunner.run(MainBaseSuite.java:60) ~[integrationTest/:?]
+	at org.junit.runners.Suite.runChild(Suite.java:128) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.Suite.runChild(Suite.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[?:?]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[?:?]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[?:?]
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[?:?]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[?:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:?]
+22:04:55.324  WARN  services.DotResourceLoader - filePath: /LIVE/ee3f6c35cba99bda51d858753cd8253b/dotParser_1.container, msg:Cannot find container for : VelocityResourceKey [path=/LIVE/ee3f6c35cba99bda51d858753cd8253b/dotParser_1.container, language=1, id1=ee3f6c35cba99bda51d858753cd8253b, id2=dotParser_1, type=CONTAINER, mode=LIVE] @ Test worker
+com.dotmarketing.business.DotStateException: Cannot find container for : VelocityResourceKey [path=/LIVE/ee3f6c35cba99bda51d858753cd8253b/dotParser_1.container, language=1, id1=ee3f6c35cba99bda51d858753cd8253b, id2=dotParser_1, type=CONTAINER, mode=LIVE]
+	at com.dotcms.rendering.velocity.services.ContainerLoader.writeObject(ContainerLoader.java:60) ~[main/:?]
+	at com.dotcms.rendering.velocity.services.DotResourceLoader.getResourceStream(DotResourceLoader.java:42) ~[main/:?]
+	at org.apache.velocity.Template.process(Template.java:106) ~[main/:?]
+	at org.apache.velocity.runtime.resource.ResourceManagerImpl.loadResource(ResourceManagerImpl.java:452) ~[main/:?]
+	at org.apache.velocity.runtime.resource.ResourceManagerImpl.getResource(ResourceManagerImpl.java:357) ~[main/:?]
+	at org.apache.velocity.runtime.RuntimeInstance.getTemplate(RuntimeInstance.java:1510) ~[main/:?]
+	at com.dotcms.rendering.velocity.directive.DotDirective.loadTemplate(DotDirective.java:48) ~[main/:?]
+	at com.dotcms.rendering.velocity.directive.DotDirective.render(DotDirective.java:100) ~[main/:?]
+	at org.apache.velocity.runtime.parser.node.ASTDirective.render(ASTDirective.java:214) ~[main/:?]
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:339) ~[main/:?]
+	at org.apache.velocity.runtime.directive.Parse.render(Parse.java:264) ~[main/:?]
+	at org.apache.velocity.runtime.parser.node.ASTDirective.render(ASTDirective.java:214) ~[main/:?]
+	at org.apache.velocity.runtime.parser.node.ASTBlock.render(ASTBlock.java:72) ~[main/:?]
+	at org.apache.velocity.runtime.parser.node.ASTIfStatement.render(ASTIfStatement.java:87) ~[main/:?]
+	at org.apache.velocity.runtime.parser.node.SimpleNode.render(SimpleNode.java:339) ~[main/:?]
+	at org.apache.velocity.Template.merge(Template.java:390) ~[main/:?]
+	at org.apache.velocity.Template.merge(Template.java:286) ~[main/:?]
+	at com.dotcms.rendering.velocity.servlet.VelocityLiveMode.serve(VelocityLiveMode.java:195) ~[main/:?]
+	at com.dotcms.rendering.velocity.servlet.VelocityModeHandler.eval(VelocityModeHandler.java:106) ~[main/:?]
+	at com.dotmarketing.portlets.htmlpageasset.business.render.page.HTMLPageAssetRenderedBuilder.getPageHTML(HTMLPageAssetRenderedBuilder.java:226) ~[main/:?]
+	at com.dotmarketing.portlets.htmlpageasset.business.render.HTMLPageAssetRenderedAPIImpl.getPageHtml(HTMLPageAssetRenderedAPIImpl.java:292) ~[main/:?]
+	at com.dotcms.rendering.velocity.servlet.VelocityServlet.service(VelocityServlet.java:134) ~[main/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790) ~[javax.servlet-api-3.1.0.jar:3.1.0]
+	at com.dotmarketing.filters.FiltersTest$2.forward(FiltersTest.java:571) ~[integrationTest/:?]
+	at com.dotmarketing.filters.CMSFilter.doFilterInternal(CMSFilter.java:165) ~[main/:?]
+	at com.dotmarketing.filters.CMSFilter.doFilter(CMSFilter.java:61) ~[main/:?]
+	at com.dotmarketing.filters.FiltersTest.shouldRedirectToFolderIndex(FiltersTest.java:718) ~[integrationTest/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:38) ~[integrationTest/:?]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:14) ~[integrationTest/:?]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.MainBaseSuite$DotRunner.run(MainBaseSuite.java:60) ~[integrationTest/:?]
+	at org.junit.runners.Suite.runChild(Suite.java:128) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.Suite.runChild(Suite.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[?:?]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[?:?]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[?:?]
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[?:?]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[?:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:?]
+22:04:55.324  INFO  services.DotResourceCache - velocityMiss:VelocityResourceKey [path=/LIVE/ee3f6c35cba99bda51d858753cd8253b/dotParser_1.container, language=1, id1=ee3f6c35cba99bda51d858753cd8253b, id2=dotParser_1, type=CONTAINER, mode=LIVE] @ Test worker
+22:04:55.325  WARN  resource.ResourceManagerImpl - ResourceManager : unable to find resource '/LIVE/ee3f6c35cba99bda51d858753cd8253b/dotParser_1.container' in any resource loader. @ Test worker
+22:04:55.325  WARN  directive.ParseContainer - parseContainer: cannot find template '/LIVE/ee3f6c35cba99bda51d858753cd8253b/dotParser_1.container', called at LIVE/fd464ce5f346d393c0c1b0d1af0bb06e.templatelayout[line 1, column 1] @ Test worker
+22:04:55.325  INFO  filters.FiltersTest - looking for /products/index , got;/products/index
+22:04:55.325  INFO  filters.FiltersTest - looking for 200, got;200
+22:04:55.325  INFO  junit.MainBaseSuite - Checking indexer status...
+22:04:58.280  INFO  business.ESContentletAPIImpl - The contentlet: Fwd hasn't action id set using the default action: ceca71a0-deee-4999-bd47-b01baa1bcfc8
+22:04:58.280  INFO  business.ESContentletAPIImpl - The action: ceca71a0-deee-4999-bd47-b01baa1bcfc8 has a save contentlet actionlet so firing a workflow and skipping the current checkin for the contentlet: Fwd
+22:04:58.330  INFO  business.ESContentletAPIImpl - A Workflow has been ran instead of checkin the contentlet: 2b8d528c1aa5571dd45f5eed85a49693
+22:04:58.728  INFO  business.ESContentletAPIImpl - The contentlet: 2b8d528c1aa5571dd45f5eed85a49693 hasn't action id set using the default action: b9d89c80-3d88-4311-8365-187323c96436
+22:04:58.728  INFO  business.ESContentletAPIImpl - The action: b9d89c80-3d88-4311-8365-187323c96436 has a publish contentlet actionlet so firing a workflow and skipping the current publish for the contentlet: 2b8d528c1aa5571dd45f5eed85a49693
+22:04:58.780  INFO  business.ESContentletAPIImpl - A Workflow has been run instead of a simple publish: 2b8d528c1aa5571dd45f5eed85a49693
+22:04:59.565  INFO  filters.FiltersTest - /992490f7c71 should forward to /about-us/index
+22:05:02.519  INFO  business.ESContentletAPIImpl - The contentlet: Fwd hasn't action id set using the default action: ceca71a0-deee-4999-bd47-b01baa1bcfc8
+22:05:02.519  INFO  business.ESContentletAPIImpl - The action: ceca71a0-deee-4999-bd47-b01baa1bcfc8 has a save contentlet actionlet so firing a workflow and skipping the current checkin for the contentlet: Fwd
+22:05:02.555  INFO  business.ESContentletAPIImpl - A Workflow has been ran instead of checkin the contentlet: 387277d49ee31a14c7d7ff66abc1d833
+22:05:02.918  INFO  business.ESContentletAPIImpl - The contentlet: 387277d49ee31a14c7d7ff66abc1d833 hasn't action id set using the default action: b9d89c80-3d88-4311-8365-187323c96436
+22:05:02.918  INFO  business.ESContentletAPIImpl - The action: b9d89c80-3d88-4311-8365-187323c96436 has a publish contentlet actionlet so firing a workflow and skipping the current publish for the contentlet: 387277d49ee31a14c7d7ff66abc1d833
+22:05:02.946  INFO  business.ESContentletAPIImpl - A Workflow has been run instead of a simple publish: 387277d49ee31a14c7d7ff66abc1d833
+22:05:03.750  INFO  filters.FiltersTest - /cb2d59ae451 should forward to /about-us/index
+22:05:06.300  INFO  business.ESContentletAPIImpl - The contentlet: Fwd hasn't action id set using the default action: ceca71a0-deee-4999-bd47-b01baa1bcfc8
+22:05:06.301  INFO  business.ESContentletAPIImpl - The action: ceca71a0-deee-4999-bd47-b01baa1bcfc8 has a save contentlet actionlet so firing a workflow and skipping the current checkin for the contentlet: Fwd
+22:05:06.375  INFO  business.ESContentletAPIImpl - A Workflow has been ran instead of checkin the contentlet: b39c6c23b977d77557d92a597ce0f37e
+22:05:06.849  INFO  business.ESContentletAPIImpl - The contentlet: b39c6c23b977d77557d92a597ce0f37e hasn't action id set using the default action: b9d89c80-3d88-4311-8365-187323c96436
+22:05:06.849  INFO  business.ESContentletAPIImpl - The action: b9d89c80-3d88-4311-8365-187323c96436 has a publish contentlet actionlet so firing a workflow and skipping the current publish for the contentlet: b39c6c23b977d77557d92a597ce0f37e
+22:05:06.878  INFO  business.ESContentletAPIImpl - A Workflow has been run instead of a simple publish: b39c6c23b977d77557d92a597ce0f37e
+22:05:07.609  INFO  filters.FiltersTest - /5a5617277c1 should forward to /about-us/index
+22:05:07.616  INFO  junit.MainBaseSuite - Checking indexer status...
+22:05:12.678  INFO  business.ESContentletAPIImpl - The contentlet: urlmap hasn't action id set using the default action: ceca71a0-deee-4999-bd47-b01baa1bcfc8
+22:05:12.678  INFO  business.ESContentletAPIImpl - The action: ceca71a0-deee-4999-bd47-b01baa1bcfc8 has a save contentlet actionlet so firing a workflow and skipping the current checkin for the contentlet: urlmap
+22:05:12.727  INFO  business.ESContentletAPIImpl - A Workflow has been ran instead of checkin the contentlet: 2ae1d5ef24c6c8f320fc180197fce206
+22:05:13.106  INFO  business.ESContentletAPIImpl - The contentlet: 2ae1d5ef24c6c8f320fc180197fce206 hasn't action id set using the default action: b9d89c80-3d88-4311-8365-187323c96436
+22:05:13.106  INFO  business.ESContentletAPIImpl - The action: b9d89c80-3d88-4311-8365-187323c96436 has a publish contentlet actionlet so firing a workflow and skipping the current publish for the contentlet: 2ae1d5ef24c6c8f320fc180197fce206
+22:05:13.142  INFO  business.ESContentletAPIImpl - A Workflow has been run instead of a simple publish: 2ae1d5ef24c6c8f320fc180197fce206
+22:05:13.850  INFO  filters.FiltersTest - /urlnews should forward to /testpattern1686002707616/news-content-url-title1686002710060
+22:05:13.857  INFO  filters.FiltersTest - looking for 200, got:200
+22:05:13.857  INFO  filters.FiltersTest - looking for /testpattern1686002707616/news-content-url-title1686002710060, got:/testpattern1686002707616/news-content-url-title1686002710060
+22:05:13.859  INFO  business.ESContentletAPIImpl - UserId : system : destroy : User trying to destroy the following contents: [2ae1d5ef24c6c8f320fc180197fce206]
+22:05:14.083  INFO  junit.MainBaseSuite - Checking indexer status...
+22:05:14.084  INFO  junit.MainBaseSuite - Indexer is not empty, waiting for it to finish
+22:05:15.089  INFO  junit.MainBaseSuite - Indexer Complete=true
+22:05:15.089  INFO  filters.FiltersTest - /dotCMS/login should forward to /application/login/index
+22:05:15.095  INFO  filters.FiltersTest - looking for 200, got;200
+22:05:15.095  INFO  junit.MainBaseSuite - Checking indexer status...
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

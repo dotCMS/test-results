@@ -1,0 +1,959 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.dotmarketing.business.PermissionAPITest" tests="28" skipped="0" failures="0" errors="0" timestamp="2023-06-05T22:06:40" hostname="fv-az306-998" time="35.372">
+  <properties/>
+  <testcase name="testGetUsersDeleted" classname="com.dotmarketing.business.PermissionAPITest" time="0.823"/>
+  <testcase name="test_doesUserHavePermissions_checkSameAssetIdThatPermissionsWereGiven_returnTrue" classname="com.dotmarketing.business.PermissionAPITest" time="0.907"/>
+  <testcase name="Test_Inherited_Permissions" classname="com.dotmarketing.business.PermissionAPITest" time="5.019"/>
+  <testcase name="permissionIndividually" classname="com.dotmarketing.business.PermissionAPITest" time="0.001"/>
+  <testcase name="removePermissions" classname="com.dotmarketing.business.PermissionAPITest" time="2.083"/>
+  <testcase name="doesUserHavePermission_another_lang" classname="com.dotmarketing.business.PermissionAPITest" time="1.871"/>
+  <testcase name="testGetUsersCountWithoutFilter" classname="com.dotmarketing.business.PermissionAPITest" time="0.019"/>
+  <testcase name="testGetUsersWithoutFilter" classname="com.dotmarketing.business.PermissionAPITest" time="0.012"/>
+  <testcase name="Test_Remove_All_Permissions_Then_Verify_Cache_Is_Null" classname="com.dotmarketing.business.PermissionAPITest" time="0.169"/>
+  <testcase name="doesUserHavePermission" classname="com.dotmarketing.business.PermissionAPITest" time="1.042"/>
+  <testcase name="testGetUsersCountWithFilter" classname="com.dotmarketing.business.PermissionAPITest" time="0.022"/>
+  <testcase name="doesRoleHavePermission" classname="com.dotmarketing.business.PermissionAPITest" time="1.047"/>
+  <testcase name="save" classname="com.dotmarketing.business.PermissionAPITest" time="0.087"/>
+  <testcase name="issue1073" classname="com.dotmarketing.business.PermissionAPITest" time="0.244"/>
+  <testcase name="testGetUsersCountDeleted" classname="com.dotmarketing.business.PermissionAPITest" time="0.016"/>
+  <testcase name="getPermissions" classname="com.dotmarketing.business.PermissionAPITest" time="0.093"/>
+  <testcase name="testAnonymousUserCannotReadNonLiveContent" classname="com.dotmarketing.business.PermissionAPITest" time="5.475"/>
+  <testcase name="testPermissionIndividuallyByRole" classname="com.dotmarketing.business.PermissionAPITest" time="2.857"/>
+  <testcase name="issue560" classname="com.dotmarketing.business.PermissionAPITest" time="3.257"/>
+  <testcase name="issue781" classname="com.dotmarketing.business.PermissionAPITest" time="1.62"/>
+  <testcase name="issue847" classname="com.dotmarketing.business.PermissionAPITest" time="2.431"/>
+  <testcase name="issue886" classname="com.dotmarketing.business.PermissionAPITest" time="3.384"/>
+  <testcase name="getUsersWithPermission" classname="com.dotmarketing.business.PermissionAPITest" time="0.067"/>
+  <testcase name="test_doesUserHavePermissions_checkDiffAssetIdThatPermissionsWereGiven_returnFalse" classname="com.dotmarketing.business.PermissionAPITest" time="0.963"/>
+  <testcase name="test_templateLayout_parentPermissionableIsHost" classname="com.dotmarketing.business.PermissionAPITest" time="1.658"/>
+  <testcase name="testGetUsersWithFilter" classname="com.dotmarketing.business.PermissionAPITest" time="0.036"/>
+  <testcase name="copyPermissions" classname="com.dotmarketing.business.PermissionAPITest" time="0.129"/>
+  <testcase name="getRolesWithPermission" classname="com.dotmarketing.business.PermissionAPITest" time="0.034"/>
+  <system-out><![CDATA[22:06:40.830  INFO  business.RoleFactoryImpl - save : Role saved Id :60f14d04-6523-4100-b1e1-ab6ffe88510b
+22:06:40.831  WARN  business.UserHelper - Error loading user with id deleteduser
+22:06:41.625  WARN  util.LocaleUtil - en is not a valid language id
+22:06:41.642  INFO  business.FolderAPIImpl - UserId : system : delete : Deleting folder with name f11 
+22:06:41.644  INFO  business.ESContentletAPIImpl - No contents passed to delete so returning
+22:06:41.649  INFO  junit.MainBaseSuite - Checking indexer status...
+22:06:41.652  WARN  business.UserHelper - Error loading user with id 21431bb0-6bb8-4b8e-8893-e4d3157b3675
+22:06:42.433  WARN  util.LocaleUtil - en is not a valid language id
+22:06:42.555  INFO  junit.MainBaseSuite - Checking indexer status...
+22:06:42.871  INFO  business.RoleFactoryImpl - save : Role saved Id :46af3594-6b1c-4f2f-9f2e-72b12df22adf
+22:06:46.571  INFO  junit.MainBaseSuite - Checking indexer status...
+22:06:46.572  INFO  junit.MainBaseSuite - Indexer is not empty, waiting for it to finish
+22:06:47.574  INFO  junit.MainBaseSuite - Indexer Complete=true
+22:06:47.574  INFO  junit.MainBaseSuite - Checking indexer status...
+22:06:48.659  INFO  business.RoleFactoryImpl - save : Role saved Id :ecc36565-b1a1-4132-8d66-a4304de3f034
+22:06:49.658  INFO  junit.MainBaseSuite - Checking indexer status...
+22:06:49.663  INFO  business.RoleFactoryImpl - save : Role saved Id :454ef9aa-7cde-49c1-aec5-175d330936e8
+22:06:49.664  WARN  business.UserHelper - Error loading user with id useruser
+22:06:50.460  WARN  util.LocaleUtil - en is not a valid language id
+22:06:50.527  WARN  business.PermissionBitAPIImpl - User 'useruser' cannot verify READ permissions on Contentlet '988a6f25e96b1bfc731c73b776a72f96' because it is not live.
+22:06:50.528  WARN  business.PermissionBitAPIImpl - User 'useruser' cannot verify READ permissions on Contentlet '988a6f25e96b1bfc731c73b776a72f96' because it is not live.
+22:06:50.528  ERROR dotcms.IntegrationTestBase - Test doesUserHavePermission_another_lang has open connection after
+22:06:50.528  INFO  junit.MainBaseSuite - Checking indexer status...
+22:06:50.528  INFO  junit.MainBaseSuite - Indexer is not empty, waiting for it to finish
+22:06:51.542  INFO  business.FolderAPIImpl - UserId : system : delete : Deleting folder with name f11 
+22:06:51.545  INFO  business.ESContentletAPIImpl - No contents passed to delete so returning
+22:06:51.549  INFO  junit.MainBaseSuite - Checking indexer status...
+22:06:51.557  INFO  business.FolderAPIImpl - UserId : system : delete : Deleting folder with name f11 
+22:06:51.557  INFO  business.ESContentletAPIImpl - No contents passed to delete so returning
+22:06:51.562  INFO  junit.MainBaseSuite - Checking indexer status...
+22:06:51.724  INFO  business.RoleFactoryImpl - save : Role saved Id :be1e6189-58ba-4a68-b64c-f9044909b2d9
+22:06:51.730  ERROR dotcms.IntegrationTestBase - Test Test_Remove_All_Permissions_Then_Verify_Cache_Is_Null has open connection after
+22:06:51.730  INFO  junit.MainBaseSuite - Checking indexer status...
+22:06:51.770  WARN  business.PermissionBitAPIImpl - Permissionable object is null
+22:06:51.771  WARN  business.PermissionBitAPIImpl - Permissionable object is null
+22:06:51.771  ERROR business.PermissionBitAPIImpl - Permissionable object is null
+22:06:51.771  INFO  junit.MainBaseSuite - Checking indexer status...
+22:06:51.771  INFO  junit.MainBaseSuite - Indexer is not empty, waiting for it to finish
+22:06:52.773  INFO  junit.MainBaseSuite - Indexer Complete=true
+22:06:52.783  INFO  business.FolderAPIImpl - UserId : system : delete : Deleting folder with name f11 
+22:06:52.789  INFO  business.ESContentletAPIImpl - No contents passed to delete so returning
+22:06:52.795  INFO  junit.MainBaseSuite - Checking indexer status...
+22:06:52.799  INFO  business.RoleFactoryImpl - save : Role saved Id :f93e957f-b7e2-467e-b3ea-d92121b45035
+22:06:52.839  INFO  junit.MainBaseSuite - Checking indexer status...
+22:06:52.840  INFO  junit.MainBaseSuite - Indexer is not empty, waiting for it to finish
+22:06:53.842  INFO  junit.MainBaseSuite - Indexer Complete=true
+22:06:53.847  INFO  business.RoleFactoryImpl - save : Role saved Id :6dcb1062-966a-44d6-9615-cc59a82c15fc
+22:06:53.930  INFO  junit.MainBaseSuite - Checking indexer status...
+22:06:54.160  INFO  business.PermissionBitFactoryImpl - Starting cascade role permissions for permissionable 55b20d0ceb486a145e5f899bc77c0e73 for role f93e957f-b7e2-467e-b3ea-d92121b45035
+22:06:54.173  INFO  business.PermissionBitFactoryImpl - Ending cascade role permissions for permissionable 55b20d0ceb486a145e5f899bc77c0e73 for role f93e957f-b7e2-467e-b3ea-d92121b45035
+22:06:54.173  INFO  junit.MainBaseSuite - Checking indexer status...
+22:06:54.183  INFO  business.FolderAPIImpl - UserId : system : delete : Deleting folder with name f11 
+22:06:54.185  INFO  business.ESContentletAPIImpl - No contents passed to delete so returning
+22:06:54.190  INFO  junit.MainBaseSuite - Checking indexer status...
+22:06:54.194  INFO  business.RoleFactoryImpl - save : Role saved Id :beb7ab46-dcd1-4dd5-a5ae-63104f0f27e8
+22:06:54.283  INFO  junit.MainBaseSuite - Checking indexer status...
+22:06:56.036  ERROR tika.TikaUtils - Failure retrieving OSGI Service [interface com.dotcms.tika.TikaServiceBuilder] in bundle [com.dotcms.tika]
+java.lang.IllegalStateException: [com.dotcms.tika] OSGI bundle NOT FOUND.
+	at org.apache.felix.framework.OSGISystem.getService(OSGISystem.java:228) ~[main/:?]
+	at com.dotcms.tika.TikaUtils.<init>(TikaUtils.java:63) ~[main/:?]
+	at com.dotcms.storage.MetadataGeneratorImpl.tikaBasedMetadata(MetadataGeneratorImpl.java:49) ~[main/:?]
+	at com.dotcms.storage.FileStorageAPIImpl.generateFullMetaData(FileStorageAPIImpl.java:151) ~[main/:?]
+	at com.dotcms.storage.FileStorageAPIImpl.generateMetaData(FileStorageAPIImpl.java:238) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.generateFullMetadata(FileMetadataAPIImpl.java:198) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.internalGenerateContentletMetadata(FileMetadataAPIImpl.java:91) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.generateContentletMetadata(FileMetadataAPIImpl.java:275) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.generateContentletMetadata(FileMetadataAPIImpl.java:260) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESMappingAPIImpl.writeMetadata(ESMappingAPIImpl.java:522) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESMappingAPIImpl.toMap(ESMappingAPIImpl.java:487) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.lambda$addBulkRequest$4c66ed82$1(ContentletIndexAPIImpl.java:806) ~[main/:?]
+	at io.vavr.control.Try.of(Try.java:75) ~[vavr-0.10.3.jar:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.addBulkRequest(ContentletIndexAPIImpl.java:805) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.appendBulkRequest(ContentletIndexAPIImpl.java:767) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.createBulkRequest(ContentletIndexAPIImpl.java:635) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.indexContentListNow(ContentletIndexAPIImpl.java:576) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.addContentToIndex(ContentletIndexAPIImpl.java:570) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.lambda$addContentToIndex$2(ContentletIndexAPIImpl.java:528) ~[main/:?]
+	at com.dotmarketing.db.HibernateUtil$DotSyncRunnable.run(HibernateUtil.java:1016) ~[main/:?]
+	at com.dotmarketing.db.DotRunnableThread.internalRunner(DotRunnableThread.java:99) ~[main/:?]
+	at com.dotmarketing.db.LocalTransaction.wrap(LocalTransaction.java:165) ~[main/:?]
+	at com.dotmarketing.db.DotRunnableThread.run(DotRunnableThread.java:53) ~[main/:?]
+	at com.dotmarketing.db.HibernateUtil.finalizeCommitListeners(HibernateUtil.java:1165) ~[main/:?]
+	at com.dotmarketing.db.HibernateUtil.commitTransaction(HibernateUtil.java:1257) ~[main/:?]
+	at com.dotcms.business.bytebuddy.WrapInTransactionAdvice.exit(WrapInTransactionAdvice.java:63) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:5082) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:10007) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:4867) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.ContentletAPIInterceptor.checkin(ContentletAPIInterceptor.java:266) ~[main/:?]
+	at com.dotcms.datagen.ContentletDataGen.checkin(ContentletDataGen.java:327) ~[integrationTest/:?]
+	at com.dotcms.datagen.ContentletDataGen.persist(ContentletDataGen.java:233) ~[integrationTest/:?]
+	at com.dotcms.datagen.ContentletDataGen.nextPersisted(ContentletDataGen.java:219) ~[integrationTest/:?]
+	at com.dotcms.datagen.TestDataUtils.getDocumentLikeContent(TestDataUtils.java:1489) ~[integrationTest/:?]
+	at com.dotmarketing.business.PermissionAPITest.testAnonymousUserCannotReadNonLiveContent(PermissionAPITest.java:1131) ~[integrationTest/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:38) ~[integrationTest/:?]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:14) ~[integrationTest/:?]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.MainBaseSuite$DotRunner.run(MainBaseSuite.java:60) ~[integrationTest/:?]
+	at org.junit.runners.Suite.runChild(Suite.java:128) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.Suite.runChild(Suite.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[?:?]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[?:?]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[?:?]
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[?:?]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[?:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:?]
+22:06:56.036  ERROR tika.TikaUtils - Unable to get file Meta Data, OSGI Framework not initialized
+22:06:56.281  WARN  business.PermissionBitAPIImpl - User 'anonymous' cannot verify READ permissions on Contentlet '4aaef3ca4c7a410dbe6102087b8e7e42' because it is not live.
+22:06:56.729  INFO  business.ESContentletAPIImpl - UserId : system : destroy : User trying to destroy the following contents: [4aaef3ca4c7a410dbe6102087b8e7e42]
+22:06:58.755  ERROR dotcms.IntegrationTestBase - Test testAnonymousUserCannotReadNonLiveContent has open connection after
+22:06:58.755  INFO  junit.MainBaseSuite - Checking indexer status...
+22:06:58.755  INFO  junit.MainBaseSuite - Indexer is not empty, waiting for it to finish
+22:06:59.758  INFO  junit.MainBaseSuite - Indexer Complete=true
+22:07:00.806  INFO  business.RoleFactoryImpl - save : Role saved Id :872c8c90-dda7-48ff-a76f-16a760037f68
+22:07:00.876  INFO  business.PermissionBitAPIImpl - UserId : system : assign Permissions Action : Assigning permissions to :e02a1194c1b7183ccdb779777629f7c1
+22:07:00.880  INFO  business.RoleFactoryImpl - save : Role saved Id :f0e88ecc-dc09-4d42-b9eb-ed54f7af4340
+22:07:00.883  INFO  business.PermissionBitAPIImpl - UserId : system : assign Permissions Action : Assigning permissions to :e02a1194c1b7183ccdb779777629f7c1
+22:07:00.890  INFO  business.RoleFactoryImpl - save : Role saved Id :b8eeddcd-49b5-43f6-a08f-24f8aec93b74
+22:07:00.966  INFO  business.PermissionBitAPIImpl - UserId : system : assign Permissions Action : Assigning permissions to :96c95a23a94475db0c4fdc0c56ad23d6
+22:07:00.971  INFO  business.RoleFactoryImpl - save : Role saved Id :f0e88ecc-dc09-4d42-b9eb-ed54f7af4340
+22:07:00.975  INFO  business.RoleFactoryImpl - delete : Role deleted Id :f0e88ecc-dc09-4d42-b9eb-ed54f7af4340
+22:07:00.980  INFO  business.RoleFactoryImpl - save : Role saved Id :b8eeddcd-49b5-43f6-a08f-24f8aec93b74
+22:07:00.982  INFO  business.RoleFactoryImpl - delete : Role deleted Id :b8eeddcd-49b5-43f6-a08f-24f8aec93b74
+22:07:00.987  INFO  business.RoleFactoryImpl - save : Role saved Id :872c8c90-dda7-48ff-a76f-16a760037f68
+22:07:00.990  INFO  business.RoleFactoryImpl - delete : Role deleted Id :872c8c90-dda7-48ff-a76f-16a760037f68
+22:07:01.457  INFO  business.HostAPIImpl - Deleting Site: test1686002819758.dotcms.com
+22:07:01.460  INFO  business.FolderAPIImpl - UserId : system : delete : Deleting folder with name testName1686002820884 
+22:07:01.469  INFO  business.ESContentletAPIImpl - No contents passed to delete so returning
+22:07:01.510  INFO  business.ESContentletAPIImpl - UserId : system : delete : User trying to delete the following contents: [e02a1194c1b7183ccdb779777629f7c1]
+22:07:01.514  INFO  business.ESContentletAPIImpl - UserId : system : destroy : User trying to destroy the following contents: [e02a1194c1b7183ccdb779777629f7c1]
+22:07:01.608  INFO  apps.AppsAPIImpl -  Removing secrets under site `test1686002819758.dotcms.com` 
+22:07:01.613  INFO  junit.MainBaseSuite - Checking indexer status...
+22:07:01.613  INFO  junit.MainBaseSuite - Indexer is not empty, waiting for it to finish
+22:07:02.615  INFO  junit.MainBaseSuite - Indexer Complete=true
+22:07:02.616  INFO  util.Config - Setting property: site.key.dns.validation to false
+22:07:02.686  INFO  business.RoleFactoryImpl - save : Role saved Id :4d20f238-343f-4301-825a-e1359cc63709
+22:07:02.690  INFO  business.RoleFactoryImpl - save : Role saved Id :02269032-0e24-4cdc-8c26-ffa3ecf2f3e8
+22:07:03.780  WARN  cache.FieldsCache - addField no longer implemented
+22:07:03.821  INFO  ajax.RoleAjax - Applying role permissions for role 4d20f238-343f-4301-825a-e1359cc63709 and folder/host id 6a79c4d672e06caa7946591749a427d2
+22:07:04.050  INFO  business.PermissionBitAPIImpl - UserId : system : assign Permissions Action : Assigning permissions to :6a79c4d672e06caa7946591749a427d2
+22:07:04.051  INFO  ajax.RoleAjax - Done applying role permissions for role 4d20f238-343f-4301-825a-e1359cc63709 and folder/host id 6a79c4d672e06caa7946591749a427d2
+22:07:04.093  INFO  ajax.RoleAjax - Applying role permissions for role 02269032-0e24-4cdc-8c26-ffa3ecf2f3e8 and folder/host id 6a79c4d672e06caa7946591749a427d2
+22:07:04.295  INFO  business.PermissionBitAPIImpl - UserId : system : assign Permissions Action : Assigning permissions to :6a79c4d672e06caa7946591749a427d2
+22:07:04.296  INFO  ajax.RoleAjax - Done applying role permissions for role 02269032-0e24-4cdc-8c26-ffa3ecf2f3e8 and folder/host id 6a79c4d672e06caa7946591749a427d2
+22:07:04.297  INFO  util.Config - Setting property: site.key.dns.validation to false
+22:07:04.300  INFO  business.ESContentletAPIImpl - UserId : system : destroy : User trying to destroy the following contents: [91d28919a14ba836e688083c0ffed9a6]
+22:07:04.353  INFO  business.ContentTypeDestroyAPIImpl - Relocated from (500) to (1000) out of (0) contentlets..
+22:07:04.354  INFO  business.ContentTypeFactoryImpl - ::: Relocated 0 contentlets for ContentType [issue5601686002823438] to [issue5601686002823438_disposed_1686002824343] :::
+22:07:04.359  INFO  business.WorkflowFactoryImpl - Deleting the schemes associated to the content type: 90d2541397118b6182674a0413353ead
+22:07:04.366  INFO  business.ContentTypeDestroyAPIImpl - There are (0) contents of type (issue560). Will remove them sequentially using (100) batchSize 
+22:07:04.368  INFO  business.ContentTypeDestroyAPIImpl -  :: for (issue560) allCount is (0) with leftovers (0) :: 
+22:07:04.368  INFO  business.ContentTypeDestroyAPIImpl - Destroying Content-Type with inode: [f709f7d3a56a39b38f30749c070f7036] and var: [issue5601686002823438_disposed_1686002824343].
+22:07:04.371  INFO  business.WorkflowFactoryImpl - Deleting the schemes associated to the content type: f709f7d3a56a39b38f30749c070f7036
+22:07:04.381  INFO  business.ContentTypeDestroyAPIImpl -  I'm done destroying (0) pieces of Content of type (issue5601686002823438_disposed_1686002824343). it took me : [00:00:00] 
+22:07:04.791  INFO  business.HostAPIImpl - Deleting Site: issue560_1686002822616.demo.dotcms.com
+22:07:04.794  INFO  business.FolderAPIImpl - UserId : system : delete : Deleting folder with name a 
+22:07:04.796  INFO  business.ESContentletAPIImpl - No contents passed to delete so returning
+22:07:04.818  INFO  business.ESContentletAPIImpl - UserId : system : delete : User trying to delete the following contents: [5b9d91159ec058a83811ad9c66687154]
+22:07:04.820  INFO  business.ESContentletAPIImpl - UserId : system : destroy : User trying to destroy the following contents: [5b9d91159ec058a83811ad9c66687154]
+22:07:04.866  INFO  apps.AppsAPIImpl -  Removing secrets under site `issue560_1686002822616.demo.dotcms.com` 
+22:07:04.869  ERROR dotcms.IntegrationTestBase - Test issue560 has open connection after
+22:07:04.870  WARN  dotcms.IntegrationTestBase - Modified Config overrides after:site.key.dns.validation=false
+22:07:04.870  INFO  junit.MainBaseSuite - Checking indexer status...
+22:07:04.870  INFO  junit.MainBaseSuite - Indexer is not empty, waiting for it to finish
+22:07:05.873  INFO  junit.MainBaseSuite - Indexer Complete=true
+22:07:05.945  INFO  ajax.RoleAjax - Applying role permissions for role 6dcb1062-966a-44d6-9615-cc59a82c15fc and folder/host id b32bea43bf99d8d251294737472d565a
+22:07:06.013  INFO  business.PermissionBitAPIImpl - UserId : system : assign Permissions Action : Assigning permissions to :b32bea43bf99d8d251294737472d565a
+22:07:06.015  INFO  ajax.RoleAjax - Done applying role permissions for role 6dcb1062-966a-44d6-9615-cc59a82c15fc and folder/host id b32bea43bf99d8d251294737472d565a
+22:07:06.379  INFO  business.HostAPIImpl - Deleting Site: issue781.demo.dotcms.com
+22:07:06.382  INFO  business.FolderAPIImpl - UserId : system : delete : Deleting folder with name f1 
+22:07:06.384  INFO  business.ESContentletAPIImpl - No contents passed to delete so returning
+22:07:06.388  INFO  business.FolderAPIImpl - UserId : system : delete : Deleting folder with name f2 
+22:07:06.390  INFO  business.ESContentletAPIImpl - No contents passed to delete so returning
+22:07:06.394  INFO  business.FolderAPIImpl - UserId : system : delete : Deleting folder with name f3 
+22:07:06.395  INFO  business.ESContentletAPIImpl - No contents passed to delete so returning
+22:07:06.399  INFO  business.FolderAPIImpl - UserId : system : delete : Deleting folder with name f4 
+22:07:06.401  INFO  business.ESContentletAPIImpl - No contents passed to delete so returning
+22:07:06.421  INFO  business.ESContentletAPIImpl - UserId : system : delete : User trying to delete the following contents: [b32bea43bf99d8d251294737472d565a]
+22:07:06.423  INFO  business.ESContentletAPIImpl - UserId : system : destroy : User trying to destroy the following contents: [b32bea43bf99d8d251294737472d565a]
+22:07:06.474  INFO  apps.AppsAPIImpl -  Removing secrets under site `issue781.demo.dotcms.com` 
+22:07:06.491  INFO  junit.MainBaseSuite - Checking indexer status...
+22:07:06.491  INFO  junit.MainBaseSuite - Indexer is not empty, waiting for it to finish
+22:07:07.493  INFO  junit.MainBaseSuite - Indexer Complete=true
+22:07:07.894  WARN  cache.FieldsCache - addField no longer implemented
+22:07:07.904  WARN  cache.FieldsCache - addField no longer implemented
+22:07:09.812  INFO  business.HostAPIImpl - Deleting Site: issue847.demo.dotcms.com
+22:07:09.819  INFO  business.ESContentletAPIImpl - UserId : system : destroy : User trying to destroy the following contents: [765cd793385db1cd171e5373aacdd3ee]
+22:07:09.860  INFO  business.FolderAPIImpl - UserId : system : delete : Deleting folder with name hh1 
+22:07:09.861  INFO  business.FolderAPIImpl - UserId : system : delete : Deleting folder with name hh2 
+22:07:09.863  INFO  business.ESContentletAPIImpl - No contents passed to delete so returning
+22:07:09.869  INFO  business.ESContentletAPIImpl - No contents passed to delete so returning
+22:07:09.896  INFO  business.ESContentletAPIImpl - UserId : system : delete : User trying to delete the following contents: [c144ffc7465f2526eb8d38ca939d0788]
+22:07:09.897  INFO  business.ESContentletAPIImpl - UserId : system : destroy : User trying to destroy the following contents: [c144ffc7465f2526eb8d38ca939d0788]
+22:07:09.912  ERROR db.DotConnect - getResult(): unable to execute query.  Bad SQL? : SELECT cvi.working_inode
+  FROM contentlet_version_info cvi join contentlet c on (c.inode = cvi.working_inode) 
+  WHERE c.contentlet_as_json @> '{ "fields":{"isDefault":{ "value":true }} }' 
+  and c.structure_inode = ? [855a2d72-f2f3-4169-8b04-ac5157c4380c] ERROR: current transaction is aborted, commands ignored until end of transaction block
+org.postgresql.util.PSQLException: ERROR: current transaction is aborted, commands ignored until end of transaction block
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2676) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2366) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:356) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:496) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:413) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:190) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.jdbc.PgPreparedStatement.executeQuery(PgPreparedStatement.java:134) ~[postgresql-42.5.1.jar:42.5.1]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeQuery(ProxyPreparedStatement.java:52) ~[HikariCP-3.4.2.jar:?]
+	at com.dotmarketing.common.db.DotConnect.executeQuery(DotConnect.java:652) ~[main/:?]
+	at com.dotmarketing.common.db.DotConnect.executeQuery(DotConnect.java:566) ~[main/:?]
+	at com.dotmarketing.common.db.DotConnect.getResult(DotConnect.java:289) ~[main/:?]
+	at com.dotmarketing.common.db.DotConnect.getString(DotConnect.java:339) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.HostFactoryImpl.lambda$findDefaultHost$b79cdffb$1(HostFactoryImpl.java:616) ~[main/:?]
+	at io.vavr.control.Try.of(Try.java:75) ~[vavr-0.10.3.jar:?]
+	at com.dotmarketing.portlets.contentlet.business.HostFactoryImpl.findDefaultHost(HostFactoryImpl.java:616) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.HostAPIImpl.getOrCreateDefaultHost(HostAPIImpl.java:688) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.HostAPIImpl.findDefaultHost(HostAPIImpl.java:100) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.HostAPIImpl.findByName(HostAPIImpl.java:199) ~[main/:?]
+	at com.dotmarketing.util.ActivityLogger.getHostName(ActivityLogger.java:39) ~[main/:?]
+	at com.dotmarketing.util.ActivityLogger.logInfo(ActivityLogger.java:20) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.logContentletActivity(ESContentletAPIImpl.java:9959) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.logContentletActivity(ESContentletAPIImpl.java:9927) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.delete(ESContentletAPIImpl.java:2430) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.ContentletAPIInterceptor.delete(ContentletAPIInterceptor.java:444) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.HostFactoryImpl.deleteHost(HostFactoryImpl.java:549) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.HostFactoryImpl.innerDeleteHost(HostFactoryImpl.java:393) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.HostFactoryImpl$1DeleteHostThread.call(HostFactoryImpl.java:569) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.HostFactoryImpl.delete(HostFactoryImpl.java:580) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.HostAPIImpl.delete(HostAPIImpl.java:604) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.HostAPIImpl.delete(HostAPIImpl.java:585) ~[main/:?]
+	at com.dotmarketing.business.PermissionAPITest.issue847(PermissionAPITest.java:596) ~[integrationTest/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:38) ~[integrationTest/:?]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:14) ~[integrationTest/:?]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.MainBaseSuite$DotRunner.run(MainBaseSuite.java:60) ~[integrationTest/:?]
+	at org.junit.runners.Suite.runChild(Suite.java:128) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.Suite.runChild(Suite.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[?:?]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[?:?]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[?:?]
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[?:?]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[?:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:?]
+Caused by: org.postgresql.util.PSQLException: ERROR: update or delete on table "identifier" violates foreign key constraint "fk_structure_host" on table "structure"
+  Detail: Key (id)=(c144ffc7465f2526eb8d38ca939d0788) is still referenced from table "structure".
+  Where: SQL statement "DELETE from identifier where id = OLD.identifier"
+PL/pgSQL function content_versions_check() line 8 at SQL statement
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2676) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2366) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:356) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:496) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:413) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:190) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.jdbc.PgPreparedStatement.execute(PgPreparedStatement.java:177) ~[postgresql-42.5.1.jar:42.5.1]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44) ~[HikariCP-3.4.2.jar:?]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java) ~[HikariCP-3.4.2.jar:?]
+	at com.dotmarketing.common.db.DotConnect.executeQuery(DotConnect.java:643) ~[main/:?]
+	at com.dotmarketing.common.db.DotConnect.executeQuery(DotConnect.java:566) ~[main/:?]
+	at com.dotmarketing.common.db.DotConnect.loadResult(DotConnect.java:274) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentFactoryImpl.delete(ESContentFactoryImpl.java:649) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentFactoryImpl.delete(ESContentFactoryImpl.java:623) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentFactoryImpl.delete(ESContentFactoryImpl.java:569) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.destroyContentlets(ESContentletAPIImpl.java:2813) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.deleteContentlet(ESContentletAPIImpl.java:3041) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.deleteContentlets(ESContentletAPIImpl.java:3004) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.delete(ESContentletAPIImpl.java:2511) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.delete(ESContentletAPIImpl.java:2424) ~[main/:?]
+	... 67 more
+22:07:09.912  WARN  business.HostAPIImpl - An Error occurred while fetching the default host. 
+22:07:09.912  WARN  business.HostAPIImpl - org.postgresql.util.PSQLException: ERROR: current transaction is aborted, commands ignored until end of transaction block
+22:07:09.915  WARN  business.HostAPIImpl - com.dotmarketing.common.db.DotConnect.getResult(DotConnect.java:293)
+22:07:09.916  ERROR db.DotConnect - getResult(): unable to execute query.  Bad SQL? : select working_inode from contentlet_version_info join contentlet on (contentlet.inode = contentlet_version_info.working_inode)  where bool1 = ? and structure_inode =? [true, 855a2d72-f2f3-4169-8b04-ac5157c4380c] ERROR: current transaction is aborted, commands ignored until end of transaction block
+org.postgresql.util.PSQLException: ERROR: current transaction is aborted, commands ignored until end of transaction block
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2676) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2366) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:356) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:496) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:413) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:190) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.jdbc.PgPreparedStatement.executeQuery(PgPreparedStatement.java:134) ~[postgresql-42.5.1.jar:42.5.1]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeQuery(ProxyPreparedStatement.java:52) ~[HikariCP-3.4.2.jar:?]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeQuery(HikariProxyPreparedStatement.java) ~[HikariCP-3.4.2.jar:?]
+	at com.dotmarketing.common.db.DotConnect.executeQuery(DotConnect.java:652) ~[main/:?]
+	at com.dotmarketing.common.db.DotConnect.executeQuery(DotConnect.java:566) ~[main/:?]
+	at com.dotmarketing.common.db.DotConnect.getResult(DotConnect.java:289) ~[main/:?]
+	at com.dotmarketing.common.db.DotConnect.getString(DotConnect.java:339) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.HostFactoryImpl.findDefaultHost(HostFactoryImpl.java:626) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.HostAPIImpl.getOrCreateDefaultHost(HostAPIImpl.java:688) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.HostAPIImpl.findDefaultHost(HostAPIImpl.java:100) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.HostAPIImpl.findByName(HostAPIImpl.java:199) ~[main/:?]
+	at com.dotmarketing.util.ActivityLogger.getHostName(ActivityLogger.java:39) ~[main/:?]
+	at com.dotmarketing.util.ActivityLogger.logInfo(ActivityLogger.java:20) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.logContentletActivity(ESContentletAPIImpl.java:9959) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.logContentletActivity(ESContentletAPIImpl.java:9927) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.delete(ESContentletAPIImpl.java:2430) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.ContentletAPIInterceptor.delete(ContentletAPIInterceptor.java:444) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.HostFactoryImpl.deleteHost(HostFactoryImpl.java:549) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.HostFactoryImpl.innerDeleteHost(HostFactoryImpl.java:393) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.HostFactoryImpl$1DeleteHostThread.call(HostFactoryImpl.java:569) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.HostFactoryImpl.delete(HostFactoryImpl.java:580) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.HostAPIImpl.delete(HostAPIImpl.java:604) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.HostAPIImpl.delete(HostAPIImpl.java:585) ~[main/:?]
+	at com.dotmarketing.business.PermissionAPITest.issue847(PermissionAPITest.java:596) ~[integrationTest/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:38) ~[integrationTest/:?]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:14) ~[integrationTest/:?]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.MainBaseSuite$DotRunner.run(MainBaseSuite.java:60) ~[integrationTest/:?]
+	at org.junit.runners.Suite.runChild(Suite.java:128) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.Suite.runChild(Suite.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[?:?]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[?:?]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[?:?]
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[?:?]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[?:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:?]
+Caused by: org.postgresql.util.PSQLException: ERROR: update or delete on table "identifier" violates foreign key constraint "fk_structure_host" on table "structure"
+  Detail: Key (id)=(c144ffc7465f2526eb8d38ca939d0788) is still referenced from table "structure".
+  Where: SQL statement "DELETE from identifier where id = OLD.identifier"
+PL/pgSQL function content_versions_check() line 8 at SQL statement
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2676) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2366) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:356) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:496) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:413) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:190) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.jdbc.PgPreparedStatement.execute(PgPreparedStatement.java:177) ~[postgresql-42.5.1.jar:42.5.1]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44) ~[HikariCP-3.4.2.jar:?]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java) ~[HikariCP-3.4.2.jar:?]
+	at com.dotmarketing.common.db.DotConnect.executeQuery(DotConnect.java:643) ~[main/:?]
+	at com.dotmarketing.common.db.DotConnect.executeQuery(DotConnect.java:566) ~[main/:?]
+	at com.dotmarketing.common.db.DotConnect.loadResult(DotConnect.java:274) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentFactoryImpl.delete(ESContentFactoryImpl.java:649) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentFactoryImpl.delete(ESContentFactoryImpl.java:623) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentFactoryImpl.delete(ESContentFactoryImpl.java:569) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.destroyContentlets(ESContentletAPIImpl.java:2813) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.deleteContentlet(ESContentletAPIImpl.java:3041) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.deleteContentlets(ESContentletAPIImpl.java:3004) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.delete(ESContentletAPIImpl.java:2511) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.delete(ESContentletAPIImpl.java:2424) ~[main/:?]
+	... 67 more
+22:07:09.916  ERROR business.HostAPIImpl - An error occurred when User 'system' tried to delete Site 'issue847.demo.dotcms.com': ERROR: update or delete on table "identifier" violates foreign key constraint "fk_structure_host" on table "structure"
+  Detail: Key (id)=(c144ffc7465f2526eb8d38ca939d0788) is still referenced from table "structure".
+  Where: SQL statement "DELETE from identifier where id = OLD.identifier"
+PL/pgSQL function content_versions_check() line 8 at SQL statement{
+  "SQL": ["delete from contentlet where inode=?"],
+  "maxRows": [-1],
+  "offest": [0],
+  "params": "73a00f6f-f453-400e-a4ee-c6246339fd54"
+}
+com.dotmarketing.exception.DotDataException: ERROR: update or delete on table "identifier" violates foreign key constraint "fk_structure_host" on table "structure"
+  Detail: Key (id)=(c144ffc7465f2526eb8d38ca939d0788) is still referenced from table "structure".
+  Where: SQL statement "DELETE from identifier where id = OLD.identifier"
+PL/pgSQL function content_versions_check() line 8 at SQL statement{
+  "SQL": ["delete from contentlet where inode=?"],
+  "maxRows": [-1],
+  "offest": [0],
+  "params": "73a00f6f-f453-400e-a4ee-c6246339fd54"
+}
+	at com.dotmarketing.common.db.DotConnect.loadResult(DotConnect.java:276) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentFactoryImpl.delete(ESContentFactoryImpl.java:649) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentFactoryImpl.delete(ESContentFactoryImpl.java:623) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentFactoryImpl.delete(ESContentFactoryImpl.java:569) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.destroyContentlets(ESContentletAPIImpl.java:2813) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.deleteContentlet(ESContentletAPIImpl.java:3041) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.deleteContentlets(ESContentletAPIImpl.java:3004) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.delete(ESContentletAPIImpl.java:2511) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.delete(ESContentletAPIImpl.java:2424) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.ContentletAPIInterceptor.delete(ContentletAPIInterceptor.java:444) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.HostFactoryImpl.deleteHost(HostFactoryImpl.java:549) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.HostFactoryImpl.innerDeleteHost(HostFactoryImpl.java:393) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.HostFactoryImpl$1DeleteHostThread.call(HostFactoryImpl.java:569) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.HostFactoryImpl.delete(HostFactoryImpl.java:580) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.HostAPIImpl.delete(HostAPIImpl.java:604) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.HostAPIImpl.delete(HostAPIImpl.java:585) ~[main/:?]
+	at com.dotmarketing.business.PermissionAPITest.issue847(PermissionAPITest.java:596) ~[integrationTest/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:38) ~[integrationTest/:?]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:14) ~[integrationTest/:?]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.MainBaseSuite$DotRunner.run(MainBaseSuite.java:60) ~[integrationTest/:?]
+	at org.junit.runners.Suite.runChild(Suite.java:128) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.Suite.runChild(Suite.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[?:?]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[?:?]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[?:?]
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[?:?]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[?:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:?]
+Caused by: org.postgresql.util.PSQLException: ERROR: update or delete on table "identifier" violates foreign key constraint "fk_structure_host" on table "structure"
+  Detail: Key (id)=(c144ffc7465f2526eb8d38ca939d0788) is still referenced from table "structure".
+  Where: SQL statement "DELETE from identifier where id = OLD.identifier"
+PL/pgSQL function content_versions_check() line 8 at SQL statement
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2676) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2366) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:356) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:496) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:413) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:190) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.jdbc.PgPreparedStatement.execute(PgPreparedStatement.java:177) ~[postgresql-42.5.1.jar:42.5.1]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44) ~[HikariCP-3.4.2.jar:?]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java) ~[HikariCP-3.4.2.jar:?]
+	at com.dotmarketing.common.db.DotConnect.executeQuery(DotConnect.java:643) ~[main/:?]
+	at com.dotmarketing.common.db.DotConnect.executeQuery(DotConnect.java:566) ~[main/:?]
+	at com.dotmarketing.common.db.DotConnect.loadResult(DotConnect.java:274) ~[main/:?]
+	... 75 more
+22:07:09.920  ERROR business.PermissionAPITest - An error occurred when User 'system' tried to delete Site 'issue847.demo.dotcms.com': ERROR: update or delete on table "identifier" violates foreign key constraint "fk_structure_host" on table "structure"
+  Detail: Key (id)=(c144ffc7465f2526eb8d38ca939d0788) is still referenced from table "structure".
+  Where: SQL statement "DELETE from identifier where id = OLD.identifier"
+PL/pgSQL function content_versions_check() line 8 at SQL statement{
+  "SQL": ["delete from contentlet where inode=?"],
+  "maxRows": [-1],
+  "offest": [0],
+  "params": "73a00f6f-f453-400e-a4ee-c6246339fd54"
+}
+22:07:09.920  INFO  junit.MainBaseSuite - Checking indexer status...
+22:07:11.543  INFO  business.ESContentletAPIImpl - The contentlet: testfileasset.txt hasn't action id set using the default action: ceca71a0-deee-4999-bd47-b01baa1bcfc8
+22:07:11.544  INFO  business.ESContentletAPIImpl - The action: ceca71a0-deee-4999-bd47-b01baa1bcfc8 has a save contentlet actionlet so firing a workflow and skipping the current checkin for the contentlet: testfileasset.txt
+22:07:11.552  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:ceca71a0-deee-4999-bd47-b01baa1bcfc8. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:07:11.575  INFO  business.ESContentletAPIImpl - A Workflow has been ran instead of checkin the contentlet: d13c3ae946c793f891785bc688e20a66
+22:07:11.581  ERROR tika.TikaUtils - Failure retrieving OSGI Service [interface com.dotcms.tika.TikaServiceBuilder] in bundle [com.dotcms.tika]
+java.lang.IllegalStateException: [com.dotcms.tika] OSGI bundle NOT FOUND.
+	at org.apache.felix.framework.OSGISystem.getService(OSGISystem.java:228) ~[main/:?]
+	at com.dotcms.tika.TikaUtils.<init>(TikaUtils.java:63) ~[main/:?]
+	at com.dotcms.storage.MetadataGeneratorImpl.tikaBasedMetadata(MetadataGeneratorImpl.java:49) ~[main/:?]
+	at com.dotcms.storage.FileStorageAPIImpl.generateFullMetaData(FileStorageAPIImpl.java:151) ~[main/:?]
+	at com.dotcms.storage.FileStorageAPIImpl.generateMetaData(FileStorageAPIImpl.java:238) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.generateFullMetadata(FileMetadataAPIImpl.java:198) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.internalGenerateContentletMetadata(FileMetadataAPIImpl.java:91) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.generateContentletMetadata(FileMetadataAPIImpl.java:275) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.generateContentletMetadata(FileMetadataAPIImpl.java:260) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESMappingAPIImpl.writeMetadata(ESMappingAPIImpl.java:522) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESMappingAPIImpl.toMap(ESMappingAPIImpl.java:487) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.lambda$addBulkRequest$4c66ed82$1(ContentletIndexAPIImpl.java:806) ~[main/:?]
+	at io.vavr.control.Try.of(Try.java:75) ~[vavr-0.10.3.jar:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.addBulkRequest(ContentletIndexAPIImpl.java:805) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.appendBulkRequest(ContentletIndexAPIImpl.java:767) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.createBulkRequest(ContentletIndexAPIImpl.java:635) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.indexContentListNow(ContentletIndexAPIImpl.java:576) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.addContentToIndex(ContentletIndexAPIImpl.java:570) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.lambda$addContentToIndex$2(ContentletIndexAPIImpl.java:528) ~[main/:?]
+	at com.dotmarketing.db.HibernateUtil$DotSyncRunnable.run(HibernateUtil.java:1016) ~[main/:?]
+	at com.dotmarketing.db.DotRunnableThread.internalRunner(DotRunnableThread.java:99) ~[main/:?]
+	at com.dotmarketing.db.LocalTransaction.wrap(LocalTransaction.java:165) ~[main/:?]
+	at com.dotmarketing.db.DotRunnableThread.run(DotRunnableThread.java:53) ~[main/:?]
+	at com.dotmarketing.db.HibernateUtil.finalizeCommitListeners(HibernateUtil.java:1165) ~[main/:?]
+	at com.dotmarketing.db.HibernateUtil.commitTransaction(HibernateUtil.java:1257) ~[main/:?]
+	at com.dotcms.business.bytebuddy.WrapInTransactionAdvice.exit(WrapInTransactionAdvice.java:63) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:5082) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:10007) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:4867) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.ContentletAPIInterceptor.checkin(ContentletAPIInterceptor.java:266) ~[main/:?]
+	at com.dotmarketing.business.PermissionAPITest.issue886(PermissionAPITest.java:651) ~[integrationTest/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:38) ~[integrationTest/:?]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:14) ~[integrationTest/:?]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.MainBaseSuite$DotRunner.run(MainBaseSuite.java:60) ~[integrationTest/:?]
+	at org.junit.runners.Suite.runChild(Suite.java:128) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.Suite.runChild(Suite.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[?:?]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[?:?]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[?:?]
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[?:?]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[?:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:?]
+22:07:11.586  ERROR tika.TikaUtils - Unable to get file Meta Data, OSGI Framework not initialized
+22:07:11.631  INFO  business.ESContentletAPIImpl - The contentlet: testfileasset.txt hasn't action id set using the default action: ceca71a0-deee-4999-bd47-b01baa1bcfc8
+22:07:11.631  INFO  business.ESContentletAPIImpl - The action: ceca71a0-deee-4999-bd47-b01baa1bcfc8 has a save contentlet actionlet so firing a workflow and skipping the current checkin for the contentlet: testfileasset.txt
+22:07:11.663  INFO  business.ESContentletAPIImpl - A Workflow has been ran instead of checkin the contentlet: d54bc8fa31af148fa72b630a4a3c9b6f
+22:07:11.669  ERROR tika.TikaUtils - Failure retrieving OSGI Service [interface com.dotcms.tika.TikaServiceBuilder] in bundle [com.dotcms.tika]
+java.lang.IllegalStateException: [com.dotcms.tika] OSGI bundle NOT FOUND.
+	at org.apache.felix.framework.OSGISystem.getService(OSGISystem.java:228) ~[main/:?]
+	at com.dotcms.tika.TikaUtils.<init>(TikaUtils.java:63) ~[main/:?]
+	at com.dotcms.storage.MetadataGeneratorImpl.tikaBasedMetadata(MetadataGeneratorImpl.java:49) ~[main/:?]
+	at com.dotcms.storage.FileStorageAPIImpl.generateFullMetaData(FileStorageAPIImpl.java:151) ~[main/:?]
+	at com.dotcms.storage.FileStorageAPIImpl.generateMetaData(FileStorageAPIImpl.java:238) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.generateFullMetadata(FileMetadataAPIImpl.java:198) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.internalGenerateContentletMetadata(FileMetadataAPIImpl.java:91) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.generateContentletMetadata(FileMetadataAPIImpl.java:275) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.generateContentletMetadata(FileMetadataAPIImpl.java:260) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESMappingAPIImpl.writeMetadata(ESMappingAPIImpl.java:522) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESMappingAPIImpl.toMap(ESMappingAPIImpl.java:487) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.lambda$addBulkRequest$4c66ed82$1(ContentletIndexAPIImpl.java:806) ~[main/:?]
+	at io.vavr.control.Try.of(Try.java:75) ~[vavr-0.10.3.jar:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.addBulkRequest(ContentletIndexAPIImpl.java:805) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.appendBulkRequest(ContentletIndexAPIImpl.java:767) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.createBulkRequest(ContentletIndexAPIImpl.java:635) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.indexContentListNow(ContentletIndexAPIImpl.java:576) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.addContentToIndex(ContentletIndexAPIImpl.java:570) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.lambda$addContentToIndex$2(ContentletIndexAPIImpl.java:528) ~[main/:?]
+	at com.dotmarketing.db.HibernateUtil$DotSyncRunnable.run(HibernateUtil.java:1016) ~[main/:?]
+	at com.dotmarketing.db.DotRunnableThread.internalRunner(DotRunnableThread.java:99) ~[main/:?]
+	at com.dotmarketing.db.LocalTransaction.wrap(LocalTransaction.java:165) ~[main/:?]
+	at com.dotmarketing.db.DotRunnableThread.run(DotRunnableThread.java:53) ~[main/:?]
+	at com.dotmarketing.db.HibernateUtil.finalizeCommitListeners(HibernateUtil.java:1165) ~[main/:?]
+	at com.dotmarketing.db.HibernateUtil.commitTransaction(HibernateUtil.java:1257) ~[main/:?]
+	at com.dotcms.business.bytebuddy.WrapInTransactionAdvice.exit(WrapInTransactionAdvice.java:63) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:5082) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:10007) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:4867) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.ContentletAPIInterceptor.checkin(ContentletAPIInterceptor.java:266) ~[main/:?]
+	at com.dotmarketing.business.PermissionAPITest.issue886(PermissionAPITest.java:663) ~[integrationTest/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:38) ~[integrationTest/:?]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:14) ~[integrationTest/:?]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.MainBaseSuite$DotRunner.run(MainBaseSuite.java:60) ~[integrationTest/:?]
+	at org.junit.runners.Suite.runChild(Suite.java:128) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.Suite.runChild(Suite.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[?:?]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[?:?]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[?:?]
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[?:?]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[?:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:?]
+22:07:11.676  ERROR tika.TikaUtils - Unable to get file Meta Data, OSGI Framework not initialized
+22:07:11.738  INFO  business.ESContentletAPIImpl - The contentlet: testfileasset.txt hasn't action id set using the default action: ceca71a0-deee-4999-bd47-b01baa1bcfc8
+22:07:11.738  INFO  business.ESContentletAPIImpl - The action: ceca71a0-deee-4999-bd47-b01baa1bcfc8 has a save contentlet actionlet so firing a workflow and skipping the current checkin for the contentlet: testfileasset.txt
+22:07:11.771  INFO  business.ESContentletAPIImpl - A Workflow has been ran instead of checkin the contentlet: 011ca01f1296e23c7c5f2964d30ab169
+22:07:11.776  ERROR tika.TikaUtils - Failure retrieving OSGI Service [interface com.dotcms.tika.TikaServiceBuilder] in bundle [com.dotcms.tika]
+java.lang.IllegalStateException: [com.dotcms.tika] OSGI bundle NOT FOUND.
+	at org.apache.felix.framework.OSGISystem.getService(OSGISystem.java:228) ~[main/:?]
+	at com.dotcms.tika.TikaUtils.<init>(TikaUtils.java:63) ~[main/:?]
+	at com.dotcms.storage.MetadataGeneratorImpl.tikaBasedMetadata(MetadataGeneratorImpl.java:49) ~[main/:?]
+	at com.dotcms.storage.FileStorageAPIImpl.generateFullMetaData(FileStorageAPIImpl.java:151) ~[main/:?]
+	at com.dotcms.storage.FileStorageAPIImpl.generateMetaData(FileStorageAPIImpl.java:238) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.generateFullMetadata(FileMetadataAPIImpl.java:198) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.internalGenerateContentletMetadata(FileMetadataAPIImpl.java:91) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.generateContentletMetadata(FileMetadataAPIImpl.java:275) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.generateContentletMetadata(FileMetadataAPIImpl.java:260) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESMappingAPIImpl.writeMetadata(ESMappingAPIImpl.java:522) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESMappingAPIImpl.toMap(ESMappingAPIImpl.java:487) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.lambda$addBulkRequest$4c66ed82$1(ContentletIndexAPIImpl.java:806) ~[main/:?]
+	at io.vavr.control.Try.of(Try.java:75) ~[vavr-0.10.3.jar:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.addBulkRequest(ContentletIndexAPIImpl.java:805) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.appendBulkRequest(ContentletIndexAPIImpl.java:767) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.createBulkRequest(ContentletIndexAPIImpl.java:635) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.indexContentListNow(ContentletIndexAPIImpl.java:576) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.addContentToIndex(ContentletIndexAPIImpl.java:570) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.lambda$addContentToIndex$2(ContentletIndexAPIImpl.java:528) ~[main/:?]
+	at com.dotmarketing.db.HibernateUtil$DotSyncRunnable.run(HibernateUtil.java:1016) ~[main/:?]
+	at com.dotmarketing.db.DotRunnableThread.internalRunner(DotRunnableThread.java:99) ~[main/:?]
+	at com.dotmarketing.db.LocalTransaction.wrap(LocalTransaction.java:165) ~[main/:?]
+	at com.dotmarketing.db.DotRunnableThread.run(DotRunnableThread.java:53) ~[main/:?]
+	at com.dotmarketing.db.HibernateUtil.finalizeCommitListeners(HibernateUtil.java:1165) ~[main/:?]
+	at com.dotmarketing.db.HibernateUtil.commitTransaction(HibernateUtil.java:1257) ~[main/:?]
+	at com.dotcms.business.bytebuddy.WrapInTransactionAdvice.exit(WrapInTransactionAdvice.java:63) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:5082) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:10007) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:4867) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.ContentletAPIInterceptor.checkin(ContentletAPIInterceptor.java:266) ~[main/:?]
+	at com.dotmarketing.business.PermissionAPITest.issue886(PermissionAPITest.java:675) ~[integrationTest/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:38) ~[integrationTest/:?]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:14) ~[integrationTest/:?]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.MainBaseSuite$DotRunner.run(MainBaseSuite.java:60) ~[integrationTest/:?]
+	at org.junit.runners.Suite.runChild(Suite.java:128) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.Suite.runChild(Suite.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[?:?]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[?:?]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[?:?]
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[?:?]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[?:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:?]
+22:07:11.776  ERROR tika.TikaUtils - Unable to get file Meta Data, OSGI Framework not initialized
+22:07:12.254  INFO  business.HostAPIImpl - Deleting Site: issue886.demo.dotcms.com
+22:07:12.321  INFO  business.ESContentletAPIImpl - UserId : system : destroy : User trying to destroy the following contents: [a9c83e472875eb470487fb479620e73b, d54bc8fa31af148fa72b630a4a3c9b6f, 011ca01f1296e23c7c5f2964d30ab169, fa79e1afc195a2696ce1236f3f721eeb, 8c40ce0a3499204601e8e6c4b95036ed, d13c3ae946c793f891785bc688e20a66]
+22:07:12.904  INFO  business.FolderAPIImpl - UserId : system : delete : Deleting folder with name ax 
+22:07:12.904  INFO  business.FolderAPIImpl - UserId : system : delete : Deleting folder with name b 
+22:07:12.907  INFO  business.FolderAPIImpl - UserId : system : delete : Deleting folder with name c 
+22:07:12.909  INFO  business.ESContentletAPIImpl - No contents passed to delete so returning
+22:07:12.916  INFO  business.ESContentletAPIImpl - No contents passed to delete so returning
+22:07:12.922  INFO  business.ESContentletAPIImpl - No contents passed to delete so returning
+22:07:12.944  INFO  business.ESContentletAPIImpl - UserId : system : delete : User trying to delete the following contents: [a73cb0ccb8437b2565c114340a94b870]
+22:07:12.945  INFO  business.ESContentletAPIImpl - UserId : system : destroy : User trying to destroy the following contents: [a73cb0ccb8437b2565c114340a94b870]
+22:07:12.988  INFO  apps.AppsAPIImpl -  Removing secrets under site `issue886.demo.dotcms.com` 
+22:07:13.308  INFO  junit.MainBaseSuite - Checking indexer status...
+22:07:13.315  INFO  business.RoleFactoryImpl - save : Role saved Id :9d703f0c-f9b7-4fa9-8f38-b4d5ed53f4be
+22:07:13.376  INFO  junit.MainBaseSuite - Checking indexer status...
+22:07:13.380  WARN  business.UserHelper - Error loading user with id 4f29d6d3-cad0-46cb-b591-b39f7c991b9e
+22:07:14.305  WARN  util.LocaleUtil - en is not a valid language id
+22:07:14.339  INFO  junit.MainBaseSuite - Checking indexer status...
+22:07:14.427  INFO  business.RoleFactoryImpl - save : Role saved Id :0f2ec1a2-544c-4022-9a27-05c47d504cf5
+22:07:14.428  INFO  ajax.RoleAjax - Applying role permissions for role 0f2ec1a2-544c-4022-9a27-05c47d504cf5 and folder/host id 87cef7806fbb665c501f8a68a9f40f4d
+22:07:14.457  INFO  business.PermissionBitAPIImpl - UserId : system : assign Permissions Action : Assigning permissions to :87cef7806fbb665c501f8a68a9f40f4d
+22:07:14.460  INFO  ajax.RoleAjax - Done applying role permissions for role 0f2ec1a2-544c-4022-9a27-05c47d504cf5 and folder/host id 87cef7806fbb665c501f8a68a9f40f4d
+22:07:14.876  INFO  business.HostAPIImpl - Deleting Site: issue1112.demo.dotcms.com
+22:07:14.880  INFO  business.FolderAPIImpl - UserId : system : delete : Deleting folder with name testName1686002834416 
+22:07:14.882  INFO  business.ESContentletAPIImpl - No contents passed to delete so returning
+22:07:14.914  INFO  business.ESContentletAPIImpl - UserId : system : delete : User trying to delete the following contents: [87cef7806fbb665c501f8a68a9f40f4d]
+22:07:14.916  INFO  business.ESContentletAPIImpl - UserId : system : destroy : User trying to destroy the following contents: [87cef7806fbb665c501f8a68a9f40f4d]
+22:07:14.973  INFO  apps.AppsAPIImpl -  Removing secrets under site `issue1112.demo.dotcms.com` 
+22:07:14.990  INFO  junit.MainBaseSuite - Checking indexer status...
+22:07:14.994  INFO  junit.MainBaseSuite - Indexer is not empty, waiting for it to finish
+22:07:15.998  INFO  junit.MainBaseSuite - Indexer Complete=true
+22:07:16.021  INFO  business.FolderAPIImpl - UserId : system : delete : Deleting folder with name f11 
+22:07:16.024  INFO  business.ESContentletAPIImpl - No contents passed to delete so returning
+22:07:16.033  INFO  junit.MainBaseSuite - Checking indexer status...
+22:07:16.042  INFO  business.RoleFactoryImpl - save : Role saved Id :9c46be55-ab48-4c48-aa60-63289f605887
+22:07:16.163  INFO  junit.MainBaseSuite - Checking indexer status...
+22:07:16.167  INFO  business.RoleFactoryImpl - save : Role saved Id :4010d99e-1a2c-466c-8249-f2583c925218
+22:07:16.198  INFO  junit.MainBaseSuite - Checking indexer status...
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

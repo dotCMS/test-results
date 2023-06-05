@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.dotcms.contenttype.business.RelationshipAPITest" tests="6" skipped="0" failures="0" errors="0" timestamp="2023-06-05T21:25:06" hostname="fv-az306-998" time="14.382">
+  <properties/>
+  <testcase name="testSave_RelationshipWithModifiedRelationTypeValue_ShouldThrowException" classname="com.dotcms.contenttype.business.RelationshipAPITest" time="0.002"/>
+  <testcase name="testconvertRelationshipToRelationshipField_Success" classname="com.dotcms.contenttype.business.RelationshipAPITest" time="4.531"/>
+  <testcase name="testconvertRelationshipToRelationshipField_SelfRelated_Success" classname="com.dotcms.contenttype.business.RelationshipAPITest" time="3.731"/>
+  <testcase name="testDbRelatedContentWhenSelfJoinRelationship" classname="com.dotcms.contenttype.business.RelationshipAPITest" time="2.661"/>
+  <testcase name="testDbRelatedContentWhenNonSelfJoinRelationship" classname="com.dotcms.contenttype.business.RelationshipAPITest" time="3.455"/>
+  <testcase name="testSave_RelationshipWithNonUniqueRelationTypeValue_ShouldThrowException" classname="com.dotcms.contenttype.business.RelationshipAPITest" time="0.002"/>
+  <system-out><![CDATA[21:25:06.434  INFO  junit.MainBaseSuite - Checking indexer status...
+21:25:09.367  INFO  business.ContentTypeDestroyAPIImpl - Relocated from (500) to (1000) out of (1) contentlets..
+21:25:09.367  INFO  business.ContentTypeFactoryImpl - ::: Relocated 1 contentlets for ContentType [ParentContentType1686000306435] to [ParentContentType1686000306435_disposed_1686000309354] :::
+21:25:09.375  INFO  business.WorkflowFactoryImpl - Deleting the schemes associated to the content type: e3403b15f674946737f52bfaf108d245
+21:25:09.420  INFO  quartz.DotStatefulJob - New Task for job `CleanUpFieldReferencesJob` scheduled for execution `09 25 21 5 6 ? 2023`.
+21:25:09.443  INFO  job.CleanUpFieldReferencesJob - CleanUpFieldReferencesJob ::: started for field `parentcontenttype1686000306435`.
+21:25:09.455  INFO  job.CleanUpFieldReferencesJob - CleanUpFieldReferencesJob ::: finished for field `parentcontenttype1686000306435`.
+21:25:09.481  INFO  quartz.DotStatefulJob - New Task for job `CleanUpFieldReferencesJob` scheduled for execution `09 25 21 5 6 ? 2023`.
+21:25:09.490  INFO  business.ContentTypeDestroyAPIImpl - There are (1) contents of type (parentContentType1686000306435). Will remove them sequentially using (100) batchSize 
+21:25:09.492  INFO  business.ContentTypeDestroyAPIImpl -  For (parentContentType1686000306435) Destroying (1) contentlets for identifier (42bb33bba5ba3bc213f5f6e1f5122866) 
+21:25:09.501  INFO  job.CleanUpFieldReferencesJob - CleanUpFieldReferencesJob ::: started for field `childcontenttype1686000306439s`.
+21:25:09.503  ERROR job.CleanUpFieldReferencesJob - Error cleaning up field references. Field velocity var: childcontenttype1686000306439s
+com.dotcms.contenttype.exception.NotFoundInDbException: Content Type with id:'e3403b15f674946737f52bfaf108d245' not found
+	at com.dotcms.contenttype.business.ContentTypeFactoryImpl.dbById(ContentTypeFactoryImpl.java:343) ~[main/:?]
+	at com.dotcms.contenttype.business.ContentTypeFactoryImpl.find(ContentTypeFactoryImpl.java:114) ~[main/:?]
+	at com.dotcms.contenttype.business.ContentTypeAPIImpl.find(ContentTypeAPIImpl.java:375) ~[main/:?]
+	at com.dotmarketing.quartz.job.CleanUpFieldReferencesJob.run(CleanUpFieldReferencesJob.java:74) ~[main/:?]
+	at com.dotmarketing.quartz.DotJob.execute(DotJob.java:42) ~[main/:?]
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:223) ~[dot.quartz-all-1.8.6_2.jar:?]
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:549) ~[dot.quartz-all-1.8.6_2.jar:?]
+21:25:09.503  INFO  job.CleanUpFieldReferencesJob - CleanUpFieldReferencesJob ::: finished for field `childcontenttype1686000306439s`.
+21:25:09.506  INFO  business.ESContentletAPIImpl - UserId : system : destroy : User trying to destroy the following contents: [42bb33bba5ba3bc213f5f6e1f5122866]
+21:25:09.570  INFO  business.ContentTypeDestroyAPIImpl -  :: for (parentContentType1686000306435) allCount is (1) with leftovers (0) :: 
+21:25:09.570  INFO  business.ContentTypeDestroyAPIImpl - Destroying Content-Type with inode: [8008d0133084a5ff55793126a6fe6689] and var: [ParentContentType1686000306435_disposed_1686000309354].
+21:25:09.573  INFO  business.WorkflowFactoryImpl - Deleting the schemes associated to the content type: 8008d0133084a5ff55793126a6fe6689
+21:25:09.585  INFO  business.ContentTypeDestroyAPIImpl -  I'm done destroying (1) pieces of Content of type (ParentContentType1686000306435_disposed_1686000309354). it took me : [00:00:00] 
+21:25:09.597  INFO  business.ContentTypeDestroyAPIImpl - Relocated from (500) to (1000) out of (2) contentlets..
+21:25:09.597  INFO  business.ContentTypeFactoryImpl - ::: Relocated 2 contentlets for ContentType [ChildContentType1686000306439] to [ChildContentType1686000306439_disposed_1686000309586] :::
+21:25:09.602  INFO  business.WorkflowFactoryImpl - Deleting the schemes associated to the content type: 34855f2aa5daf9007b14de24a0d6a397
+21:25:09.606  INFO  business.ContentTypeDestroyAPIImpl - There are (2) contents of type (childContentType1686000306439). Will remove them sequentially using (100) batchSize 
+21:25:09.608  INFO  business.ContentTypeDestroyAPIImpl -  For (childContentType1686000306439) Destroying (1) contentlets for identifier (09488c4fde3c568ed9e4af8406f5b335) 
+21:25:09.611  INFO  business.ESContentletAPIImpl - UserId : system : destroy : User trying to destroy the following contents: [09488c4fde3c568ed9e4af8406f5b335]
+21:25:09.741  INFO  business.ContentTypeDestroyAPIImpl -  For (childContentType1686000306439) Destroying (1) contentlets for identifier (2ed9a327429695294b90289286051d63) 
+21:25:09.745  INFO  business.ESContentletAPIImpl - UserId : system : destroy : User trying to destroy the following contents: [2ed9a327429695294b90289286051d63]
+21:25:09.933  INFO  business.ContentTypeDestroyAPIImpl -  :: for (childContentType1686000306439) allCount is (2) with leftovers (0) :: 
+21:25:09.933  INFO  business.ContentTypeDestroyAPIImpl - Destroying Content-Type with inode: [5191eba0be6eff4f93437acf71132da5] and var: [ChildContentType1686000306439_disposed_1686000309586].
+21:25:09.935  INFO  business.WorkflowFactoryImpl - Deleting the schemes associated to the content type: 5191eba0be6eff4f93437acf71132da5
+21:25:09.946  INFO  business.ContentTypeDestroyAPIImpl -  I'm done destroying (2) pieces of Content of type (ChildContentType1686000306439_disposed_1686000309586). it took me : [00:00:00] 
+21:25:09.947  ERROR dotcms.IntegrationTestBase - Test testconvertRelationshipToRelationshipField_Success has open connection after
+21:25:09.947  INFO  junit.MainBaseSuite - Checking indexer status...
+21:25:09.956  INFO  junit.MainBaseSuite - Indexer is not empty, waiting for it to finish
+21:25:10.965  INFO  junit.MainBaseSuite - Indexer Complete=true
+21:25:13.387  INFO  business.ContentTypeDestroyAPIImpl - Relocated from (500) to (1000) out of (2) contentlets..
+21:25:13.387  INFO  business.ContentTypeFactoryImpl - ::: Relocated 2 contentlets for ContentType [ContentType1686000310965] to [ContentType1686000310965_disposed_1686000313375] :::
+21:25:13.396  INFO  business.WorkflowFactoryImpl - Deleting the schemes associated to the content type: 45017a306cbbe2f2250a0ad86c2882d4
+21:25:13.440  INFO  quartz.DotStatefulJob - New Task for job `CleanUpFieldReferencesJob` scheduled for execution `13 25 21 5 6 ? 2023`.
+21:25:13.459  INFO  job.CleanUpFieldReferencesJob - CleanUpFieldReferencesJob ::: started for field `contenttype1686000310965parent`.
+21:25:13.466  INFO  job.CleanUpFieldReferencesJob - CleanUpFieldReferencesJob ::: finished for field `contenttype1686000310965parent`.
+21:25:13.490  INFO  quartz.DotStatefulJob - New Task for job `CleanUpFieldReferencesJob` scheduled for execution `13 25 21 5 6 ? 2023`.
+21:25:13.500  INFO  business.ContentTypeDestroyAPIImpl - There are (2) contents of type (ContentType1686000310965). Will remove them sequentially using (100) batchSize 
+21:25:13.502  INFO  business.ContentTypeDestroyAPIImpl -  For (ContentType1686000310965) Destroying (1) contentlets for identifier (117556922a9cbe5b1efb62e1db0c7f85) 
+21:25:13.510  INFO  job.CleanUpFieldReferencesJob - CleanUpFieldReferencesJob ::: started for field `contenttype1686000310965children`.
+21:25:13.511  ERROR job.CleanUpFieldReferencesJob - Error cleaning up field references. Field velocity var: contenttype1686000310965children
+com.dotcms.contenttype.exception.NotFoundInDbException: Content Type with id:'45017a306cbbe2f2250a0ad86c2882d4' not found
+	at com.dotcms.contenttype.business.ContentTypeFactoryImpl.dbById(ContentTypeFactoryImpl.java:343) ~[main/:?]
+	at com.dotcms.contenttype.business.ContentTypeFactoryImpl.find(ContentTypeFactoryImpl.java:114) ~[main/:?]
+	at com.dotcms.contenttype.business.ContentTypeAPIImpl.find(ContentTypeAPIImpl.java:375) ~[main/:?]
+	at com.dotmarketing.quartz.job.CleanUpFieldReferencesJob.run(CleanUpFieldReferencesJob.java:74) ~[main/:?]
+	at com.dotmarketing.quartz.DotJob.execute(DotJob.java:42) ~[main/:?]
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:223) ~[dot.quartz-all-1.8.6_2.jar:?]
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:549) ~[dot.quartz-all-1.8.6_2.jar:?]
+21:25:13.511  INFO  job.CleanUpFieldReferencesJob - CleanUpFieldReferencesJob ::: finished for field `contenttype1686000310965children`.
+21:25:13.515  INFO  business.ESContentletAPIImpl - UserId : system : destroy : User trying to destroy the following contents: [117556922a9cbe5b1efb62e1db0c7f85]
+21:25:13.636  INFO  business.ContentTypeDestroyAPIImpl -  For (ContentType1686000310965) Destroying (1) contentlets for identifier (b36a4527647bd9f505945d2dcf0f01b6) 
+21:25:13.639  INFO  business.ESContentletAPIImpl - UserId : system : destroy : User trying to destroy the following contents: [b36a4527647bd9f505945d2dcf0f01b6]
+21:25:13.684  INFO  business.ContentTypeDestroyAPIImpl -  :: for (ContentType1686000310965) allCount is (2) with leftovers (0) :: 
+21:25:13.684  INFO  business.ContentTypeDestroyAPIImpl - Destroying Content-Type with inode: [91c94c8264ab0584f634acc5f462681e] and var: [ContentType1686000310965_disposed_1686000313375].
+21:25:13.686  INFO  business.WorkflowFactoryImpl - Deleting the schemes associated to the content type: 91c94c8264ab0584f634acc5f462681e
+21:25:13.692  INFO  business.ContentTypeDestroyAPIImpl -  I'm done destroying (2) pieces of Content of type (ContentType1686000310965_disposed_1686000313375). it took me : [00:00:00] 
+21:25:13.692  ERROR dotcms.IntegrationTestBase - Test testconvertRelationshipToRelationshipField_SelfRelated_Success has open connection after
+21:25:13.692  INFO  junit.MainBaseSuite - Checking indexer status...
+21:25:13.694  INFO  junit.MainBaseSuite - Indexer is not empty, waiting for it to finish
+21:25:14.696  INFO  junit.MainBaseSuite - Indexer Complete=true
+21:25:16.282  INFO  business.ESContentletAPIImpl - The contentlet: blogContentParent hasn't action id set using the default action: ceca71a0-deee-4999-bd47-b01baa1bcfc8
+21:25:16.282  INFO  business.ESContentletAPIImpl - The action: ceca71a0-deee-4999-bd47-b01baa1bcfc8 has a save contentlet actionlet so firing a workflow and skipping the current checkin for the contentlet: blogContentParent
+21:25:16.318  INFO  business.ESContentletAPIImpl - A Workflow has been ran instead of checkin the contentlet: 376e7c614919ffd3f610aee03f960aaf
+21:25:16.354  ERROR dotcms.IntegrationTestBase - Test testDbRelatedContentWhenSelfJoinRelationship has open connection after
+21:25:16.354  INFO  junit.MainBaseSuite - Checking indexer status...
+21:25:16.355  INFO  junit.MainBaseSuite - Indexer is not empty, waiting for it to finish
+21:25:17.357  INFO  junit.MainBaseSuite - Indexer Complete=true
+21:25:19.747  INFO  business.ESContentletAPIImpl - The contentlet: blogContentParent hasn't action id set using the default action: ceca71a0-deee-4999-bd47-b01baa1bcfc8
+21:25:19.747  INFO  business.ESContentletAPIImpl - The action: ceca71a0-deee-4999-bd47-b01baa1bcfc8 has a save contentlet actionlet so firing a workflow and skipping the current checkin for the contentlet: blogContentParent
+21:25:19.778  INFO  business.ESContentletAPIImpl - A Workflow has been ran instead of checkin the contentlet: 5aed4a241ad47a0971dd528e52e82ee0
+21:25:19.809  ERROR dotcms.IntegrationTestBase - Test testDbRelatedContentWhenNonSelfJoinRelationship has open connection after
+21:25:19.809  INFO  junit.MainBaseSuite - Checking indexer status...
+21:25:19.809  INFO  junit.MainBaseSuite - Indexer is not empty, waiting for it to finish
+21:25:20.812  INFO  junit.MainBaseSuite - Indexer Complete=true
+21:25:20.814  INFO  junit.MainBaseSuite - Checking indexer status...
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

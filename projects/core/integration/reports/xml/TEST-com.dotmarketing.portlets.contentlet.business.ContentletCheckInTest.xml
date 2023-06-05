@@ -1,0 +1,1397 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.dotmarketing.portlets.contentlet.business.ContentletCheckInTest" tests="11" skipped="0" failures="0" errors="0" timestamp="2023-06-05T21:51:37" hostname="fv-az306-998" time="13.689">
+  <properties/>
+  <testcase name="test_checkinContentlet_RelationshipToItself_throwsDotContentletValidationException" classname="com.dotmarketing.portlets.contentlet.business.ContentletCheckInTest" time="1.778"/>
+  <testcase name="test_checkinContentlet_RelationshipManyToManyCardinality_Success" classname="com.dotmarketing.portlets.contentlet.business.ContentletCheckInTest" time="1.844"/>
+  <testcase name="test_checkinContentlet_relationshipOneToOneCardinality_fails_whenRelatedChildBelongsToAnotherRelationship" classname="com.dotmarketing.portlets.contentlet.business.ContentletCheckInTest" time="1.799"/>
+  <testcase name="publish_content_anonymously" classname="com.dotmarketing.portlets.contentlet.business.ContentletCheckInTest" time="0.174"/>
+  <testcase name="test_checkinContentlet_RelationshipOneToManyCardinality_Success" classname="com.dotmarketing.portlets.contentlet.business.ContentletCheckInTest" time="1.663"/>
+  <testcase name="test_checkinContentlet_relationshipOneToOneCardinality_fails_whenRelatedParentBelongsToAnotherRelationship" classname="com.dotmarketing.portlets.contentlet.business.ContentletCheckInTest" time="1.755"/>
+  <testcase name="test_checkinContentlet_RelationshipOneToManyCardinality_throwsDotContentletValidationException" classname="com.dotmarketing.portlets.contentlet.business.ContentletCheckInTest" time="1.132"/>
+  <testcase name="test_checkinContentlet_RelationshipOneToOneCardinality_Success" classname="com.dotmarketing.portlets.contentlet.business.ContentletCheckInTest" time="0.481"/>
+  <testcase name="test_checkinContentlet_relationshipOneToOneCardinality_fails_whenRelatingMoreThanOneContentlet" classname="com.dotmarketing.portlets.contentlet.business.ContentletCheckInTest" time="1.665"/>
+  <testcase name="checkin_content_anonymously" classname="com.dotmarketing.portlets.contentlet.business.ContentletCheckInTest" time="0.055"/>
+  <testcase name="checkinInvalidFileContent" classname="com.dotmarketing.portlets.contentlet.business.ContentletCheckInTest" time="1.343"/>
+  <system-out><![CDATA[21:51:38.229  ERROR business.ESContentletAPIImpl - Cannot relate content [e170697d47068c556c1651e4655a7081] to itself
+21:51:38.233  WARN  business.ESContentletAPIImpl - Contentlet [e170697d47068c556c1651e4655a7081] has invalid/missing relationships
+List of non valid relationships
+BADRELCON: ParentContentType.invalidRelationship, 
+
+
+21:51:38.233  WARN  business.ESContentletAPIImpl - Contentlet [e170697d47068c556c1651e4655a7081] has invalid/missing relationships
+List of non valid relationships
+BADRELCON: ParentContentType.invalidRelationship, 
+
+
+21:51:38.233  WARN  business.ESContentletAPIImpl - com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.validateRelationships(ESContentletAPIImpl.java:8264)
+21:51:38.233  WARN  business.ESContentletAPIImpl - Contentlet [e170697d47068c556c1651e4655a7081] has invalid/missing relationships
+List of non valid relationships
+BADRELCON: ParentContentType.invalidRelationship, 
+
+
+com.dotmarketing.portlets.contentlet.business.DotContentletValidationException: Contentlet [e170697d47068c556c1651e4655a7081] has invalid/missing relationships
+List of non valid relationships
+BADRELCON: ParentContentType.invalidRelationship, 
+
+
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.validateRelationships(ESContentletAPIImpl.java:8264) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.validateContentlet(ESContentletAPIImpl.java:8239) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.ContentletAPIInterceptor.validateContentlet(ContentletAPIInterceptor.java:2064) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.internalCheckin(ESContentletAPIImpl.java:5419) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.lambda$checkin$59(ESContentletAPIImpl.java:5032) ~[main/:?]
+	at com.dotcms.concurrent.lock.StripedLockImpl.tryLock(StripedLockImpl.java:100) ~[main/:?]
+	at com.dotcms.concurrent.lock.StripedLockImpl.tryLock(StripedLockImpl.java:55) ~[main/:?]
+	at com.dotcms.concurrent.lock.IdentifierStripedLock.tryLock(IdentifierStripedLock.java:16) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:5031) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:4927) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.ContentletAPIInterceptor.checkin(ContentletAPIInterceptor.java:149) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.ContentletCheckInTest.test_checkinContentlet_RelationshipToItself_throwsDotContentletValidationException(ContentletCheckInTest.java:869) ~[integrationTest/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:19) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.ExternalResource$1.evaluate(ExternalResource.java:54) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:38) ~[integrationTest/:?]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:14) ~[integrationTest/:?]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.MainBaseSuite$DotRunner.run(MainBaseSuite.java:60) ~[integrationTest/:?]
+	at org.junit.runners.Suite.runChild(Suite.java:128) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.Suite.runChild(Suite.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[?:?]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[?:?]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[?:?]
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[?:?]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[?:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:?]
+21:51:38.259  INFO  business.ContentTypeDestroyAPIImpl - Relocated from (500) to (1000) out of (2) contentlets..
+21:51:38.260  INFO  business.ContentTypeFactoryImpl - ::: Relocated 2 contentlets for ContentType [ParentContentType] to [ParentContentType_disposed_1686001898248] :::
+21:51:38.265  INFO  business.WorkflowFactoryImpl - Deleting the schemes associated to the content type: 1f41ee0d4bef4e76f676c38c8ccbb663
+21:51:38.330  INFO  quartz.DotStatefulJob - New Task for job `CleanUpFieldReferencesJob` scheduled for execution `38 51 21 5 6 ? 2023`.
+21:51:38.380  INFO  job.CleanUpFieldReferencesJob - CleanUpFieldReferencesJob ::: started for field `validRelationship`.
+21:51:38.384  INFO  job.CleanUpFieldReferencesJob - CleanUpFieldReferencesJob ::: finished for field `validRelationship`.
+21:51:38.400  INFO  quartz.DotStatefulJob - New Task for job `CleanUpFieldReferencesJob` scheduled for execution `38 51 21 5 6 ? 2023`.
+21:51:38.414  INFO  business.ContentTypeDestroyAPIImpl - There are (2) contents of type (parentContentType). Will remove them sequentially using (100) batchSize 
+21:51:38.416  INFO  business.ContentTypeDestroyAPIImpl -  For (parentContentType) Destroying (1) contentlets for identifier (e170697d47068c556c1651e4655a7081) 
+21:51:38.420  INFO  business.ESContentletAPIImpl - UserId : system : destroy : User trying to destroy the following contents: [e170697d47068c556c1651e4655a7081]
+21:51:38.444  INFO  job.CleanUpFieldReferencesJob - CleanUpFieldReferencesJob ::: started for field `invalidRelationship`.
+21:51:38.445  ERROR job.CleanUpFieldReferencesJob - Error cleaning up field references. Field velocity var: invalidRelationship
+com.dotcms.contenttype.exception.NotFoundInDbException: Content Type with id:'1f41ee0d4bef4e76f676c38c8ccbb663' not found
+	at com.dotcms.contenttype.business.ContentTypeFactoryImpl.dbById(ContentTypeFactoryImpl.java:343) ~[main/:?]
+	at com.dotcms.contenttype.business.ContentTypeFactoryImpl.find(ContentTypeFactoryImpl.java:114) ~[main/:?]
+	at com.dotcms.contenttype.business.ContentTypeAPIImpl.find(ContentTypeAPIImpl.java:375) ~[main/:?]
+	at com.dotmarketing.quartz.job.CleanUpFieldReferencesJob.run(CleanUpFieldReferencesJob.java:74) ~[main/:?]
+	at com.dotmarketing.quartz.DotJob.execute(DotJob.java:42) ~[main/:?]
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:223) ~[dot.quartz-all-1.8.6_2.jar:?]
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:549) ~[dot.quartz-all-1.8.6_2.jar:?]
+21:51:38.447  INFO  job.CleanUpFieldReferencesJob - CleanUpFieldReferencesJob ::: finished for field `invalidRelationship`.
+21:51:38.477  INFO  business.ContentTypeDestroyAPIImpl -  For (parentContentType) Destroying (1) contentlets for identifier (805e6d19a9583922f486d42c1c4e0f6c) 
+21:51:38.480  INFO  business.ESContentletAPIImpl - UserId : system : destroy : User trying to destroy the following contents: [805e6d19a9583922f486d42c1c4e0f6c]
+21:51:38.515  INFO  business.ContentTypeDestroyAPIImpl -  :: for (parentContentType) allCount is (2) with leftovers (0) :: 
+21:51:38.515  INFO  business.ContentTypeDestroyAPIImpl - Destroying Content-Type with inode: [532c1de164f9ff6bac0d4b4c61d3c96e] and var: [ParentContentType_disposed_1686001898248].
+21:51:38.517  INFO  business.WorkflowFactoryImpl - Deleting the schemes associated to the content type: 532c1de164f9ff6bac0d4b4c61d3c96e
+21:51:38.523  INFO  business.ContentTypeDestroyAPIImpl -  I'm done destroying (2) pieces of Content of type (ParentContentType_disposed_1686001898248). it took me : [00:00:00] 
+21:51:38.523  ERROR dotcms.IntegrationTestBase - Test test_checkinContentlet_RelationshipToItself_throwsDotContentletValidationException has open connection after
+21:51:38.523  INFO  junit.MainBaseSuite - Checking indexer status...
+21:51:38.524  INFO  junit.MainBaseSuite - Indexer is not empty, waiting for it to finish
+21:51:39.526  INFO  junit.MainBaseSuite - Indexer Complete=true
+21:51:39.916  INFO  business.ContentTypeDestroyAPIImpl - Relocated from (500) to (1000) out of (2) contentlets..
+21:51:39.916  INFO  business.ContentTypeFactoryImpl - ::: Relocated 2 contentlets for ContentType [ParentContentType] to [ParentContentType_disposed_1686001899906] :::
+21:51:39.921  INFO  business.WorkflowFactoryImpl - Deleting the schemes associated to the content type: 1f41ee0d4bef4e76f676c38c8ccbb663
+21:51:39.972  INFO  quartz.DotStatefulJob - New Task for job `CleanUpFieldReferencesJob` scheduled for execution `39 51 21 5 6 ? 2023`.
+21:51:39.979  INFO  business.ContentTypeDestroyAPIImpl - There are (2) contents of type (parentContentType). Will remove them sequentially using (100) batchSize 
+21:51:39.981  INFO  business.ContentTypeDestroyAPIImpl -  For (parentContentType) Destroying (1) contentlets for identifier (a1c87d08cb1a1ef6c42360eb2c8eead8) 
+21:51:39.984  INFO  business.ESContentletAPIImpl - UserId : system : destroy : User trying to destroy the following contents: [a1c87d08cb1a1ef6c42360eb2c8eead8]
+21:51:40.018  INFO  job.CleanUpFieldReferencesJob - CleanUpFieldReferencesJob ::: started for field `relationship`.
+21:51:40.019  ERROR job.CleanUpFieldReferencesJob - Error cleaning up field references. Field velocity var: relationship
+com.dotcms.contenttype.exception.NotFoundInDbException: Content Type with id:'1f41ee0d4bef4e76f676c38c8ccbb663' not found
+	at com.dotcms.contenttype.business.ContentTypeFactoryImpl.dbById(ContentTypeFactoryImpl.java:343) ~[main/:?]
+	at com.dotcms.contenttype.business.ContentTypeFactoryImpl.find(ContentTypeFactoryImpl.java:114) ~[main/:?]
+	at com.dotcms.contenttype.business.ContentTypeAPIImpl.find(ContentTypeAPIImpl.java:375) ~[main/:?]
+	at com.dotmarketing.quartz.job.CleanUpFieldReferencesJob.run(CleanUpFieldReferencesJob.java:74) ~[main/:?]
+	at com.dotmarketing.quartz.DotJob.execute(DotJob.java:42) ~[main/:?]
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:223) ~[dot.quartz-all-1.8.6_2.jar:?]
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:549) ~[dot.quartz-all-1.8.6_2.jar:?]
+21:51:40.019  INFO  job.CleanUpFieldReferencesJob - CleanUpFieldReferencesJob ::: finished for field `relationship`.
+21:51:40.052  INFO  business.ContentTypeDestroyAPIImpl -  For (parentContentType) Destroying (1) contentlets for identifier (1b138e57081f5830506e9c9d8168de60) 
+21:51:40.055  INFO  business.ESContentletAPIImpl - UserId : system : destroy : User trying to destroy the following contents: [1b138e57081f5830506e9c9d8168de60]
+21:51:40.088  INFO  business.ContentTypeDestroyAPIImpl -  :: for (parentContentType) allCount is (2) with leftovers (0) :: 
+21:51:40.088  INFO  business.ContentTypeDestroyAPIImpl - Destroying Content-Type with inode: [f2c0d9b64b5ef1a3b05314e91cb5c49b] and var: [ParentContentType_disposed_1686001899906].
+21:51:40.091  INFO  business.WorkflowFactoryImpl - Deleting the schemes associated to the content type: f2c0d9b64b5ef1a3b05314e91cb5c49b
+21:51:40.097  INFO  business.ContentTypeDestroyAPIImpl -  I'm done destroying (2) pieces of Content of type (ParentContentType_disposed_1686001899906). it took me : [00:00:00] 
+21:51:40.108  INFO  business.ContentTypeDestroyAPIImpl - Relocated from (500) to (1000) out of (2) contentlets..
+21:51:40.109  INFO  business.ContentTypeFactoryImpl - ::: Relocated 2 contentlets for ContentType [ChildContentType] to [ChildContentType_disposed_1686001900098] :::
+21:51:40.113  INFO  business.WorkflowFactoryImpl - Deleting the schemes associated to the content type: 4159be5c06f829f058e4b5420eb3f61f
+21:51:40.118  INFO  business.ContentTypeDestroyAPIImpl - There are (2) contents of type (childContentType). Will remove them sequentially using (100) batchSize 
+21:51:40.120  INFO  business.ContentTypeDestroyAPIImpl -  For (childContentType) Destroying (1) contentlets for identifier (1ee9e74816462562fc3865d3d7f402bf) 
+21:51:40.123  INFO  business.ESContentletAPIImpl - UserId : system : destroy : User trying to destroy the following contents: [1ee9e74816462562fc3865d3d7f402bf]
+21:51:40.226  INFO  business.ContentTypeDestroyAPIImpl -  For (childContentType) Destroying (1) contentlets for identifier (b64bb3779573a368d3222880bb86580d) 
+21:51:40.229  INFO  business.ESContentletAPIImpl - UserId : system : destroy : User trying to destroy the following contents: [b64bb3779573a368d3222880bb86580d]
+21:51:40.357  INFO  business.ContentTypeDestroyAPIImpl -  :: for (childContentType) allCount is (2) with leftovers (0) :: 
+21:51:40.357  INFO  business.ContentTypeDestroyAPIImpl - Destroying Content-Type with inode: [c91e6583b38e5de66bf2113782887c8d] and var: [ChildContentType_disposed_1686001900098].
+21:51:40.360  INFO  business.WorkflowFactoryImpl - Deleting the schemes associated to the content type: c91e6583b38e5de66bf2113782887c8d
+21:51:40.367  INFO  business.ContentTypeDestroyAPIImpl -  I'm done destroying (2) pieces of Content of type (ChildContentType_disposed_1686001900098). it took me : [00:00:00] 
+21:51:40.367  ERROR dotcms.IntegrationTestBase - Test test_checkinContentlet_RelationshipManyToManyCardinality_Success has open connection after
+21:51:40.367  INFO  junit.MainBaseSuite - Checking indexer status...
+21:51:40.367  INFO  junit.MainBaseSuite - Indexer is not empty, waiting for it to finish
+21:51:41.369  INFO  junit.MainBaseSuite - Indexer Complete=true
+21:51:41.802  ERROR business.ESContentletAPIImpl - Error in related Contentlet [a57afd1c3d87aabe19340cb38c3f06e5]: Relationship [ParentContentType.invalidRelationship] has been defined as One to One
+21:51:41.803  WARN  business.ESContentletAPIImpl - Contentlet [Unknown/New] has invalid/missing relationships
+List of non valid relationships
+BADCAR: ParentContentType.invalidRelationship, 
+
+
+21:51:41.803  WARN  business.ESContentletAPIImpl - Contentlet [Unknown/New] has invalid/missing relationships
+List of non valid relationships
+BADCAR: ParentContentType.invalidRelationship, 
+
+
+21:51:41.803  WARN  business.ESContentletAPIImpl - com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.validateRelationships(ESContentletAPIImpl.java:8264)
+21:51:41.803  WARN  business.ESContentletAPIImpl - Contentlet [Unknown/New] has invalid/missing relationships
+List of non valid relationships
+BADCAR: ParentContentType.invalidRelationship, 
+
+
+com.dotmarketing.portlets.contentlet.business.DotContentletValidationException: Contentlet [Unknown/New] has invalid/missing relationships
+List of non valid relationships
+BADCAR: ParentContentType.invalidRelationship, 
+
+
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.validateRelationships(ESContentletAPIImpl.java:8264) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.validateContentlet(ESContentletAPIImpl.java:8239) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.ContentletAPIInterceptor.validateContentlet(ContentletAPIInterceptor.java:2064) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.internalCheckin(ESContentletAPIImpl.java:5419) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.lambda$checkin$59(ESContentletAPIImpl.java:5032) ~[main/:?]
+	at com.dotcms.concurrent.lock.StripedLockImpl.tryLock(StripedLockImpl.java:100) ~[main/:?]
+	at com.dotcms.concurrent.lock.StripedLockImpl.tryLock(StripedLockImpl.java:55) ~[main/:?]
+	at com.dotcms.concurrent.lock.IdentifierStripedLock.tryLock(IdentifierStripedLock.java:16) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:5031) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:4927) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.ContentletAPIInterceptor.checkin(ContentletAPIInterceptor.java:149) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.ContentletCheckInTest.test_checkinContentlet_relationshipOneToOneCardinality_fails_whenRelatedChildBelongsToAnotherRelationship(ContentletCheckInTest.java:522) ~[integrationTest/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:19) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.ExternalResource$1.evaluate(ExternalResource.java:54) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:38) ~[integrationTest/:?]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:14) ~[integrationTest/:?]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.MainBaseSuite$DotRunner.run(MainBaseSuite.java:60) ~[integrationTest/:?]
+	at org.junit.runners.Suite.runChild(Suite.java:128) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.Suite.runChild(Suite.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[?:?]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[?:?]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[?:?]
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[?:?]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[?:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:?]
+21:51:41.815  INFO  business.ContentTypeDestroyAPIImpl - Relocated from (500) to (1000) out of (1) contentlets..
+21:51:41.815  INFO  business.ContentTypeFactoryImpl - ::: Relocated 1 contentlets for ContentType [ParentContentType] to [ParentContentType_disposed_1686001901805] :::
+21:51:41.820  INFO  business.WorkflowFactoryImpl - Deleting the schemes associated to the content type: 1f41ee0d4bef4e76f676c38c8ccbb663
+21:51:41.879  INFO  quartz.DotStatefulJob - New Task for job `CleanUpFieldReferencesJob` scheduled for execution `41 51 21 5 6 ? 2023`.
+21:51:41.923  INFO  job.CleanUpFieldReferencesJob - CleanUpFieldReferencesJob ::: started for field `invalidRelationship`.
+21:51:41.927  INFO  job.CleanUpFieldReferencesJob - CleanUpFieldReferencesJob ::: finished for field `invalidRelationship`.
+21:51:41.957  INFO  quartz.DotStatefulJob - New Task for job `CleanUpFieldReferencesJob` scheduled for execution `41 51 21 5 6 ? 2023`.
+21:51:41.972  INFO  business.ContentTypeDestroyAPIImpl - There are (1) contents of type (parentContentType). Will remove them sequentially using (100) batchSize 
+21:51:41.974  INFO  business.ContentTypeDestroyAPIImpl -  For (parentContentType) Destroying (1) contentlets for identifier (a57afd1c3d87aabe19340cb38c3f06e5) 
+21:51:41.978  INFO  business.ESContentletAPIImpl - UserId : system : destroy : User trying to destroy the following contents: [a57afd1c3d87aabe19340cb38c3f06e5]
+21:51:41.991  INFO  job.CleanUpFieldReferencesJob - CleanUpFieldReferencesJob ::: started for field `validRelationship`.
+21:51:41.991  ERROR job.CleanUpFieldReferencesJob - Error cleaning up field references. Field velocity var: validRelationship
+com.dotcms.contenttype.exception.NotFoundInDbException: Content Type with id:'1f41ee0d4bef4e76f676c38c8ccbb663' not found
+	at com.dotcms.contenttype.business.ContentTypeFactoryImpl.dbById(ContentTypeFactoryImpl.java:343) ~[main/:?]
+	at com.dotcms.contenttype.business.ContentTypeFactoryImpl.find(ContentTypeFactoryImpl.java:114) ~[main/:?]
+	at com.dotcms.contenttype.business.ContentTypeAPIImpl.find(ContentTypeAPIImpl.java:375) ~[main/:?]
+	at com.dotmarketing.quartz.job.CleanUpFieldReferencesJob.run(CleanUpFieldReferencesJob.java:74) ~[main/:?]
+	at com.dotmarketing.quartz.DotJob.execute(DotJob.java:42) ~[main/:?]
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:223) ~[dot.quartz-all-1.8.6_2.jar:?]
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:549) ~[dot.quartz-all-1.8.6_2.jar:?]
+21:51:41.992  INFO  job.CleanUpFieldReferencesJob - CleanUpFieldReferencesJob ::: finished for field `validRelationship`.
+21:51:42.024  INFO  business.ContentTypeDestroyAPIImpl -  :: for (parentContentType) allCount is (1) with leftovers (0) :: 
+21:51:42.024  INFO  business.ContentTypeDestroyAPIImpl - Destroying Content-Type with inode: [9ff1a389fb7dbfa691e9b8ed30e2cb29] and var: [ParentContentType_disposed_1686001901805].
+21:51:42.027  INFO  business.WorkflowFactoryImpl - Deleting the schemes associated to the content type: 9ff1a389fb7dbfa691e9b8ed30e2cb29
+21:51:42.033  INFO  business.ContentTypeDestroyAPIImpl -  I'm done destroying (1) pieces of Content of type (ParentContentType_disposed_1686001901805). it took me : [00:00:00] 
+21:51:42.043  INFO  business.ContentTypeDestroyAPIImpl - Relocated from (500) to (1000) out of (3) contentlets..
+21:51:42.044  INFO  business.ContentTypeFactoryImpl - ::: Relocated 3 contentlets for ContentType [ChildContentType] to [ChildContentType_disposed_1686001902034] :::
+21:51:42.048  INFO  business.WorkflowFactoryImpl - Deleting the schemes associated to the content type: 4159be5c06f829f058e4b5420eb3f61f
+21:51:42.053  INFO  business.ContentTypeDestroyAPIImpl - There are (3) contents of type (childContentType). Will remove them sequentially using (100) batchSize 
+21:51:42.055  INFO  business.ContentTypeDestroyAPIImpl -  For (childContentType) Destroying (1) contentlets for identifier (73973604f26bb39b60f98d84283ec539) 
+21:51:42.057  INFO  business.ESContentletAPIImpl - UserId : system : destroy : User trying to destroy the following contents: [73973604f26bb39b60f98d84283ec539]
+21:51:42.092  INFO  business.ContentTypeDestroyAPIImpl -  For (childContentType) Destroying (1) contentlets for identifier (d99f061a3366479c8fa22122345167be) 
+21:51:42.095  INFO  business.ESContentletAPIImpl - UserId : system : destroy : User trying to destroy the following contents: [d99f061a3366479c8fa22122345167be]
+21:51:42.123  INFO  business.ContentTypeDestroyAPIImpl -  For (childContentType) Destroying (1) contentlets for identifier (cdad160acc9ef36b394804f3c8e2e718) 
+21:51:42.126  INFO  business.ESContentletAPIImpl - UserId : system : destroy : User trying to destroy the following contents: [cdad160acc9ef36b394804f3c8e2e718]
+21:51:42.157  INFO  business.ContentTypeDestroyAPIImpl -  :: for (childContentType) allCount is (3) with leftovers (0) :: 
+21:51:42.157  INFO  business.ContentTypeDestroyAPIImpl - Destroying Content-Type with inode: [aa6c98d74c9a7fbc4ea3f62f23512e1b] and var: [ChildContentType_disposed_1686001902034].
+21:51:42.159  INFO  business.WorkflowFactoryImpl - Deleting the schemes associated to the content type: aa6c98d74c9a7fbc4ea3f62f23512e1b
+21:51:42.165  INFO  business.ContentTypeDestroyAPIImpl -  I'm done destroying (3) pieces of Content of type (ChildContentType_disposed_1686001902034). it took me : [00:00:00] 
+21:51:42.165  ERROR dotcms.IntegrationTestBase - Test test_checkinContentlet_relationshipOneToOneCardinality_fails_whenRelatedChildBelongsToAnotherRelationship has open connection after
+21:51:42.165  INFO  junit.MainBaseSuite - Checking indexer status...
+21:51:42.165  INFO  junit.MainBaseSuite - Indexer is not empty, waiting for it to finish
+21:51:43.169  INFO  junit.MainBaseSuite - Indexer Complete=true
+21:51:43.170  INFO  util.Config - Setting property: CONTENT_APIS_ALLOW_ANONYMOUS to WRITE
+21:51:43.343  ERROR dotcms.IntegrationTestBase - Test publish_content_anonymously has open connection after
+21:51:43.343  INFO  junit.MainBaseSuite - Checking indexer status...
+21:51:43.597  INFO  business.ContentTypeDestroyAPIImpl - Relocated from (500) to (1000) out of (1) contentlets..
+21:51:43.597  INFO  business.ContentTypeFactoryImpl - ::: Relocated 1 contentlets for ContentType [ParentContentType] to [ParentContentType_disposed_1686001903586] :::
+21:51:43.601  INFO  business.WorkflowFactoryImpl - Deleting the schemes associated to the content type: 1f41ee0d4bef4e76f676c38c8ccbb663
+21:51:43.651  INFO  quartz.DotStatefulJob - New Task for job `CleanUpFieldReferencesJob` scheduled for execution `43 51 21 5 6 ? 2023`.
+21:51:43.675  INFO  business.ContentTypeDestroyAPIImpl - There are (1) contents of type (parentContentType). Will remove them sequentially using (100) batchSize 
+21:51:43.676  INFO  business.ContentTypeDestroyAPIImpl -  For (parentContentType) Destroying (1) contentlets for identifier (9da1fe16bcfc8ea17f8cee3aebc11948) 
+21:51:43.678  INFO  business.ESContentletAPIImpl - UserId : system : destroy : User trying to destroy the following contents: [9da1fe16bcfc8ea17f8cee3aebc11948]
+21:51:43.694  INFO  job.CleanUpFieldReferencesJob - CleanUpFieldReferencesJob ::: started for field `relationship`.
+21:51:43.694  ERROR job.CleanUpFieldReferencesJob - Error cleaning up field references. Field velocity var: relationship
+com.dotcms.contenttype.exception.NotFoundInDbException: Content Type with id:'1f41ee0d4bef4e76f676c38c8ccbb663' not found
+	at com.dotcms.contenttype.business.ContentTypeFactoryImpl.dbById(ContentTypeFactoryImpl.java:343) ~[main/:?]
+	at com.dotcms.contenttype.business.ContentTypeFactoryImpl.find(ContentTypeFactoryImpl.java:114) ~[main/:?]
+	at com.dotcms.contenttype.business.ContentTypeAPIImpl.find(ContentTypeAPIImpl.java:375) ~[main/:?]
+	at com.dotmarketing.quartz.job.CleanUpFieldReferencesJob.run(CleanUpFieldReferencesJob.java:74) ~[main/:?]
+	at com.dotmarketing.quartz.DotJob.execute(DotJob.java:42) ~[main/:?]
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:223) ~[dot.quartz-all-1.8.6_2.jar:?]
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:549) ~[dot.quartz-all-1.8.6_2.jar:?]
+21:51:43.694  INFO  job.CleanUpFieldReferencesJob - CleanUpFieldReferencesJob ::: finished for field `relationship`.
+21:51:43.716  INFO  business.ContentTypeDestroyAPIImpl -  :: for (parentContentType) allCount is (1) with leftovers (0) :: 
+21:51:43.716  INFO  business.ContentTypeDestroyAPIImpl - Destroying Content-Type with inode: [9bf3465eee7c8dd1df9f02c5f3bf770b] and var: [ParentContentType_disposed_1686001903586].
+21:51:43.719  INFO  business.WorkflowFactoryImpl - Deleting the schemes associated to the content type: 9bf3465eee7c8dd1df9f02c5f3bf770b
+21:51:43.725  INFO  business.ContentTypeDestroyAPIImpl -  I'm done destroying (1) pieces of Content of type (ParentContentType_disposed_1686001903586). it took me : [00:00:00] 
+21:51:43.735  INFO  business.ContentTypeDestroyAPIImpl - Relocated from (500) to (1000) out of (2) contentlets..
+21:51:43.735  INFO  business.ContentTypeFactoryImpl - ::: Relocated 2 contentlets for ContentType [ChildContentType] to [ChildContentType_disposed_1686001903726] :::
+21:51:43.739  INFO  business.WorkflowFactoryImpl - Deleting the schemes associated to the content type: 4159be5c06f829f058e4b5420eb3f61f
+21:51:43.744  INFO  business.ContentTypeDestroyAPIImpl - There are (2) contents of type (childContentType). Will remove them sequentially using (100) batchSize 
+21:51:43.745  INFO  business.ContentTypeDestroyAPIImpl -  For (childContentType) Destroying (1) contentlets for identifier (8484c023c2d97e4b595d7da56c4ec575) 
+21:51:43.747  INFO  business.ESContentletAPIImpl - UserId : system : destroy : User trying to destroy the following contents: [8484c023c2d97e4b595d7da56c4ec575]
+21:51:43.882  INFO  business.ContentTypeDestroyAPIImpl -  For (childContentType) Destroying (1) contentlets for identifier (d35426570bb77597ced0046abf4448ba) 
+21:51:43.884  INFO  business.ESContentletAPIImpl - UserId : system : destroy : User trying to destroy the following contents: [d35426570bb77597ced0046abf4448ba]
+21:51:43.994  INFO  business.ContentTypeDestroyAPIImpl -  :: for (childContentType) allCount is (2) with leftovers (0) :: 
+21:51:43.994  INFO  business.ContentTypeDestroyAPIImpl - Destroying Content-Type with inode: [f9003ab00d54f456eaaed9161dfd0c99] and var: [ChildContentType_disposed_1686001903726].
+21:51:43.996  INFO  business.WorkflowFactoryImpl - Deleting the schemes associated to the content type: f9003ab00d54f456eaaed9161dfd0c99
+21:51:44.003  INFO  business.ContentTypeDestroyAPIImpl -  I'm done destroying (2) pieces of Content of type (ChildContentType_disposed_1686001903726). it took me : [00:00:00] 
+21:51:44.003  ERROR dotcms.IntegrationTestBase - Test test_checkinContentlet_RelationshipOneToManyCardinality_Success has open connection after
+21:51:44.004  INFO  junit.MainBaseSuite - Checking indexer status...
+21:51:44.004  INFO  junit.MainBaseSuite - Indexer is not empty, waiting for it to finish
+21:51:45.006  INFO  junit.MainBaseSuite - Indexer Complete=true
+21:51:45.401  ERROR business.ESContentletAPIImpl - Error in related Contentlet [68a5283b0e983f231d9f937d494224c6]: Relationship [ParentContentType.invalidRelationship] has been defined as One to One
+21:51:45.401  WARN  business.ESContentletAPIImpl - Contentlet [Unknown/New] has invalid/missing relationships
+List of non valid relationships
+BADCAR: ParentContentType.invalidRelationship, 
+
+
+21:51:45.401  WARN  business.ESContentletAPIImpl - Contentlet [Unknown/New] has invalid/missing relationships
+List of non valid relationships
+BADCAR: ParentContentType.invalidRelationship, 
+
+
+21:51:45.402  WARN  business.ESContentletAPIImpl - com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.validateRelationships(ESContentletAPIImpl.java:8264)
+21:51:45.402  WARN  business.ESContentletAPIImpl - Contentlet [Unknown/New] has invalid/missing relationships
+List of non valid relationships
+BADCAR: ParentContentType.invalidRelationship, 
+
+
+com.dotmarketing.portlets.contentlet.business.DotContentletValidationException: Contentlet [Unknown/New] has invalid/missing relationships
+List of non valid relationships
+BADCAR: ParentContentType.invalidRelationship, 
+
+
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.validateRelationships(ESContentletAPIImpl.java:8264) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.validateContentlet(ESContentletAPIImpl.java:8239) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.ContentletAPIInterceptor.validateContentlet(ContentletAPIInterceptor.java:2064) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.internalCheckin(ESContentletAPIImpl.java:5419) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.lambda$checkin$59(ESContentletAPIImpl.java:5032) ~[main/:?]
+	at com.dotcms.concurrent.lock.StripedLockImpl.tryLock(StripedLockImpl.java:100) ~[main/:?]
+	at com.dotcms.concurrent.lock.StripedLockImpl.tryLock(StripedLockImpl.java:55) ~[main/:?]
+	at com.dotcms.concurrent.lock.IdentifierStripedLock.tryLock(IdentifierStripedLock.java:16) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:5031) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:4927) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.ContentletAPIInterceptor.checkin(ContentletAPIInterceptor.java:149) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.ContentletCheckInTest.test_checkinContentlet_relationshipOneToOneCardinality_fails_whenRelatedParentBelongsToAnotherRelationship(ContentletCheckInTest.java:420) ~[integrationTest/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:19) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.ExternalResource$1.evaluate(ExternalResource.java:54) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:38) ~[integrationTest/:?]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:14) ~[integrationTest/:?]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.MainBaseSuite$DotRunner.run(MainBaseSuite.java:60) ~[integrationTest/:?]
+	at org.junit.runners.Suite.runChild(Suite.java:128) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.Suite.runChild(Suite.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[?:?]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[?:?]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[?:?]
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[?:?]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[?:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:?]
+21:51:45.414  INFO  business.ContentTypeDestroyAPIImpl - Relocated from (500) to (1000) out of (2) contentlets..
+21:51:45.414  INFO  business.ContentTypeFactoryImpl - ::: Relocated 2 contentlets for ContentType [ParentContentType] to [ParentContentType_disposed_1686001905403] :::
+21:51:45.419  INFO  business.WorkflowFactoryImpl - Deleting the schemes associated to the content type: 1f41ee0d4bef4e76f676c38c8ccbb663
+21:51:45.481  INFO  quartz.DotStatefulJob - New Task for job `CleanUpFieldReferencesJob` scheduled for execution `45 51 21 5 6 ? 2023`.
+21:51:45.512  INFO  job.CleanUpFieldReferencesJob - CleanUpFieldReferencesJob ::: started for field `invalidRelationship`.
+21:51:45.514  INFO  job.CleanUpFieldReferencesJob - CleanUpFieldReferencesJob ::: finished for field `invalidRelationship`.
+21:51:45.542  INFO  quartz.DotStatefulJob - New Task for job `CleanUpFieldReferencesJob` scheduled for execution `45 51 21 5 6 ? 2023`.
+21:51:45.548  INFO  business.ContentTypeDestroyAPIImpl - There are (2) contents of type (parentContentType). Will remove them sequentially using (100) batchSize 
+21:51:45.550  INFO  business.ContentTypeDestroyAPIImpl -  For (parentContentType) Destroying (1) contentlets for identifier (d8d3af77c0006dd1aaa65425c544a1ae) 
+21:51:45.556  INFO  business.ESContentletAPIImpl - UserId : system : destroy : User trying to destroy the following contents: [d8d3af77c0006dd1aaa65425c544a1ae]
+21:51:45.592  INFO  job.CleanUpFieldReferencesJob - CleanUpFieldReferencesJob ::: started for field `validRelationship`.
+21:51:45.593  ERROR job.CleanUpFieldReferencesJob - Error cleaning up field references. Field velocity var: validRelationship
+com.dotcms.contenttype.exception.NotFoundInDbException: Content Type with id:'1f41ee0d4bef4e76f676c38c8ccbb663' not found
+	at com.dotcms.contenttype.business.ContentTypeFactoryImpl.dbById(ContentTypeFactoryImpl.java:343) ~[main/:?]
+	at com.dotcms.contenttype.business.ContentTypeFactoryImpl.find(ContentTypeFactoryImpl.java:114) ~[main/:?]
+	at com.dotcms.contenttype.business.ContentTypeAPIImpl.find(ContentTypeAPIImpl.java:375) ~[main/:?]
+	at com.dotmarketing.quartz.job.CleanUpFieldReferencesJob.run(CleanUpFieldReferencesJob.java:74) ~[main/:?]
+	at com.dotmarketing.quartz.DotJob.execute(DotJob.java:42) ~[main/:?]
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:223) ~[dot.quartz-all-1.8.6_2.jar:?]
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:549) ~[dot.quartz-all-1.8.6_2.jar:?]
+21:51:45.596  INFO  job.CleanUpFieldReferencesJob - CleanUpFieldReferencesJob ::: finished for field `validRelationship`.
+21:51:45.605  INFO  business.ContentTypeDestroyAPIImpl -  For (parentContentType) Destroying (1) contentlets for identifier (48fd19ef2080d9d3c1672d49bd0023b4) 
+21:51:45.608  INFO  business.ESContentletAPIImpl - UserId : system : destroy : User trying to destroy the following contents: [48fd19ef2080d9d3c1672d49bd0023b4]
+21:51:45.647  INFO  business.ContentTypeDestroyAPIImpl -  :: for (parentContentType) allCount is (2) with leftovers (0) :: 
+21:51:45.647  INFO  business.ContentTypeDestroyAPIImpl - Destroying Content-Type with inode: [1abd1dad165607488ccb15942b0dafb7] and var: [ParentContentType_disposed_1686001905403].
+21:51:45.649  INFO  business.WorkflowFactoryImpl - Deleting the schemes associated to the content type: 1abd1dad165607488ccb15942b0dafb7
+21:51:45.656  INFO  business.ContentTypeDestroyAPIImpl -  I'm done destroying (2) pieces of Content of type (ParentContentType_disposed_1686001905403). it took me : [00:00:00] 
+21:51:45.666  INFO  business.ContentTypeDestroyAPIImpl - Relocated from (500) to (1000) out of (2) contentlets..
+21:51:45.666  INFO  business.ContentTypeFactoryImpl - ::: Relocated 2 contentlets for ContentType [ChildContentType] to [ChildContentType_disposed_1686001905656] :::
+21:51:45.670  INFO  business.WorkflowFactoryImpl - Deleting the schemes associated to the content type: 4159be5c06f829f058e4b5420eb3f61f
+21:51:45.675  INFO  business.ContentTypeDestroyAPIImpl - There are (2) contents of type (childContentType). Will remove them sequentially using (100) batchSize 
+21:51:45.676  INFO  business.ContentTypeDestroyAPIImpl -  For (childContentType) Destroying (1) contentlets for identifier (68a5283b0e983f231d9f937d494224c6) 
+21:51:45.679  INFO  business.ESContentletAPIImpl - UserId : system : destroy : User trying to destroy the following contents: [68a5283b0e983f231d9f937d494224c6]
+21:51:45.714  INFO  business.ContentTypeDestroyAPIImpl -  For (childContentType) Destroying (1) contentlets for identifier (29fae218da34190d8bcd1b316540401c) 
+21:51:45.717  INFO  business.ESContentletAPIImpl - UserId : system : destroy : User trying to destroy the following contents: [29fae218da34190d8bcd1b316540401c]
+21:51:45.749  INFO  business.ContentTypeDestroyAPIImpl -  :: for (childContentType) allCount is (2) with leftovers (0) :: 
+21:51:45.749  INFO  business.ContentTypeDestroyAPIImpl - Destroying Content-Type with inode: [76dadabc99e3d5ef0730039bfe06035e] and var: [ChildContentType_disposed_1686001905656].
+21:51:45.752  INFO  business.WorkflowFactoryImpl - Deleting the schemes associated to the content type: 76dadabc99e3d5ef0730039bfe06035e
+21:51:45.758  INFO  business.ContentTypeDestroyAPIImpl -  I'm done destroying (2) pieces of Content of type (ChildContentType_disposed_1686001905656). it took me : [00:00:00] 
+21:51:45.758  ERROR dotcms.IntegrationTestBase - Test test_checkinContentlet_relationshipOneToOneCardinality_fails_whenRelatedParentBelongsToAnotherRelationship has open connection after
+21:51:45.758  INFO  junit.MainBaseSuite - Checking indexer status...
+21:51:45.759  INFO  junit.MainBaseSuite - Indexer is not empty, waiting for it to finish
+21:51:46.761  INFO  junit.MainBaseSuite - Indexer Complete=true
+21:51:47.206  ERROR business.ESContentletAPIImpl - ERROR! Parent content [Unknown/New] cannot be related to child content [00134a4b4b06d0bcce7ac3c4216cbe4c] because it is already related to parent content [b6f2d096dc74f3862fa5a5b67660f8a0]
+21:51:47.208  ERROR business.ESContentletAPIImpl - ERROR! Parent content [Unknown/New] cannot be related to child content [ab052a1a09599909723e9c07fb265caf] because it is already related to parent content [b6f2d096dc74f3862fa5a5b67660f8a0]
+21:51:47.208  WARN  business.ESContentletAPIImpl - Contentlet [Unknown/New] has invalid/missing relationships
+List of non valid relationships
+BADCAR: ParentContentType.invalidRelationship, 
+
+
+21:51:47.208  WARN  business.ESContentletAPIImpl - Contentlet [Unknown/New] has invalid/missing relationships
+List of non valid relationships
+BADCAR: ParentContentType.invalidRelationship, 
+
+
+21:51:47.208  WARN  business.ESContentletAPIImpl - com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.validateRelationships(ESContentletAPIImpl.java:8264)
+21:51:47.208  WARN  business.ESContentletAPIImpl - Contentlet [Unknown/New] has invalid/missing relationships
+List of non valid relationships
+BADCAR: ParentContentType.invalidRelationship, 
+
+
+com.dotmarketing.portlets.contentlet.business.DotContentletValidationException: Contentlet [Unknown/New] has invalid/missing relationships
+List of non valid relationships
+BADCAR: ParentContentType.invalidRelationship, 
+
+
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.validateRelationships(ESContentletAPIImpl.java:8264) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.validateContentlet(ESContentletAPIImpl.java:8239) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.ContentletAPIInterceptor.validateContentlet(ContentletAPIInterceptor.java:2064) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.internalCheckin(ESContentletAPIImpl.java:5419) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.lambda$checkin$59(ESContentletAPIImpl.java:5032) ~[main/:?]
+	at com.dotcms.concurrent.lock.StripedLockImpl.tryLock(StripedLockImpl.java:100) ~[main/:?]
+	at com.dotcms.concurrent.lock.StripedLockImpl.tryLock(StripedLockImpl.java:55) ~[main/:?]
+	at com.dotcms.concurrent.lock.IdentifierStripedLock.tryLock(IdentifierStripedLock.java:16) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:5031) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:4927) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.ContentletAPIInterceptor.checkin(ContentletAPIInterceptor.java:149) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.ContentletCheckInTest.test_checkinContentlet_RelationshipOneToManyCardinality_throwsDotContentletValidationException(ContentletCheckInTest.java:708) ~[integrationTest/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:19) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.ExternalResource$1.evaluate(ExternalResource.java:54) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:38) ~[integrationTest/:?]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:14) ~[integrationTest/:?]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.MainBaseSuite$DotRunner.run(MainBaseSuite.java:60) ~[integrationTest/:?]
+	at org.junit.runners.Suite.runChild(Suite.java:128) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.Suite.runChild(Suite.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[?:?]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[?:?]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[?:?]
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[?:?]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[?:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:?]
+21:51:47.219  INFO  business.ContentTypeDestroyAPIImpl - Relocated from (500) to (1000) out of (1) contentlets..
+21:51:47.220  INFO  business.ContentTypeFactoryImpl - ::: Relocated 1 contentlets for ContentType [ParentContentType] to [ParentContentType_disposed_1686001907210] :::
+21:51:47.225  INFO  business.WorkflowFactoryImpl - Deleting the schemes associated to the content type: 1f41ee0d4bef4e76f676c38c8ccbb663
+21:51:47.287  INFO  quartz.DotStatefulJob - New Task for job `CleanUpFieldReferencesJob` scheduled for execution `47 51 21 5 6 ? 2023`.
+21:51:47.322  INFO  job.CleanUpFieldReferencesJob - CleanUpFieldReferencesJob ::: started for field `validRelationship`.
+21:51:47.326  INFO  job.CleanUpFieldReferencesJob - CleanUpFieldReferencesJob ::: finished for field `validRelationship`.
+21:51:47.372  INFO  quartz.DotStatefulJob - New Task for job `CleanUpFieldReferencesJob` scheduled for execution `47 51 21 5 6 ? 2023`.
+21:51:47.385  INFO  business.ContentTypeDestroyAPIImpl - There are (1) contents of type (parentContentType). Will remove them sequentially using (100) batchSize 
+21:51:47.386  INFO  business.ContentTypeDestroyAPIImpl -  For (parentContentType) Destroying (1) contentlets for identifier (b6f2d096dc74f3862fa5a5b67660f8a0) 
+21:51:47.388  INFO  business.ESContentletAPIImpl - UserId : system : destroy : User trying to destroy the following contents: [b6f2d096dc74f3862fa5a5b67660f8a0]
+21:51:47.402  INFO  job.CleanUpFieldReferencesJob - CleanUpFieldReferencesJob ::: started for field `invalidRelationship`.
+21:51:47.402  ERROR job.CleanUpFieldReferencesJob - Error cleaning up field references. Field velocity var: invalidRelationship
+com.dotcms.contenttype.exception.NotFoundInDbException: Content Type with id:'1f41ee0d4bef4e76f676c38c8ccbb663' not found
+	at com.dotcms.contenttype.business.ContentTypeFactoryImpl.dbById(ContentTypeFactoryImpl.java:343) ~[main/:?]
+	at com.dotcms.contenttype.business.ContentTypeFactoryImpl.find(ContentTypeFactoryImpl.java:114) ~[main/:?]
+	at com.dotcms.contenttype.business.ContentTypeAPIImpl.find(ContentTypeAPIImpl.java:375) ~[main/:?]
+	at com.dotmarketing.quartz.job.CleanUpFieldReferencesJob.run(CleanUpFieldReferencesJob.java:74) ~[main/:?]
+	at com.dotmarketing.quartz.DotJob.execute(DotJob.java:42) ~[main/:?]
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:223) ~[dot.quartz-all-1.8.6_2.jar:?]
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:549) ~[dot.quartz-all-1.8.6_2.jar:?]
+21:51:47.402  INFO  job.CleanUpFieldReferencesJob - CleanUpFieldReferencesJob ::: finished for field `invalidRelationship`.
+21:51:47.436  INFO  business.ContentTypeDestroyAPIImpl -  :: for (parentContentType) allCount is (1) with leftovers (0) :: 
+21:51:47.436  INFO  business.ContentTypeDestroyAPIImpl - Destroying Content-Type with inode: [738020d9c02cf18e202e8b2823c14909] and var: [ParentContentType_disposed_1686001907210].
+21:51:47.438  INFO  business.WorkflowFactoryImpl - Deleting the schemes associated to the content type: 738020d9c02cf18e202e8b2823c14909
+21:51:47.446  INFO  business.ContentTypeDestroyAPIImpl -  I'm done destroying (1) pieces of Content of type (ParentContentType_disposed_1686001907210). it took me : [00:00:00] 
+21:51:47.457  INFO  business.ContentTypeDestroyAPIImpl - Relocated from (500) to (1000) out of (4) contentlets..
+21:51:47.457  INFO  business.ContentTypeFactoryImpl - ::: Relocated 4 contentlets for ContentType [ChildContentType] to [ChildContentType_disposed_1686001907447] :::
+21:51:47.461  INFO  business.WorkflowFactoryImpl - Deleting the schemes associated to the content type: 4159be5c06f829f058e4b5420eb3f61f
+21:51:47.466  INFO  business.ContentTypeDestroyAPIImpl - There are (4) contents of type (childContentType). Will remove them sequentially using (100) batchSize 
+21:51:47.468  INFO  business.ContentTypeDestroyAPIImpl -  For (childContentType) Destroying (1) contentlets for identifier (00134a4b4b06d0bcce7ac3c4216cbe4c) 
+21:51:47.471  INFO  business.ESContentletAPIImpl - UserId : system : destroy : User trying to destroy the following contents: [00134a4b4b06d0bcce7ac3c4216cbe4c]
+21:51:47.597  INFO  business.ContentTypeDestroyAPIImpl -  For (childContentType) Destroying (1) contentlets for identifier (a74aa54938212af4794a6c3ee0983f95) 
+21:51:47.600  INFO  business.ESContentletAPIImpl - UserId : system : destroy : User trying to destroy the following contents: [a74aa54938212af4794a6c3ee0983f95]
+21:51:47.720  INFO  business.ContentTypeDestroyAPIImpl -  For (childContentType) Destroying (1) contentlets for identifier (3f864ae40b4b54018a114d8f80431164) 
+21:51:47.722  INFO  business.ESContentletAPIImpl - UserId : system : destroy : User trying to destroy the following contents: [3f864ae40b4b54018a114d8f80431164]
+21:51:47.752  INFO  business.ContentTypeDestroyAPIImpl -  For (childContentType) Destroying (1) contentlets for identifier (ab052a1a09599909723e9c07fb265caf) 
+21:51:47.754  INFO  business.ESContentletAPIImpl - UserId : system : destroy : User trying to destroy the following contents: [ab052a1a09599909723e9c07fb265caf]
+21:51:47.884  INFO  business.ContentTypeDestroyAPIImpl -  :: for (childContentType) allCount is (4) with leftovers (0) :: 
+21:51:47.884  INFO  business.ContentTypeDestroyAPIImpl - Destroying Content-Type with inode: [3bd44ae4f612b0db789d02c8a5ee15ae] and var: [ChildContentType_disposed_1686001907447].
+21:51:47.887  INFO  business.WorkflowFactoryImpl - Deleting the schemes associated to the content type: 3bd44ae4f612b0db789d02c8a5ee15ae
+21:51:47.893  INFO  business.ContentTypeDestroyAPIImpl -  I'm done destroying (4) pieces of Content of type (ChildContentType_disposed_1686001907447). it took me : [00:00:00] 
+21:51:47.893  ERROR dotcms.IntegrationTestBase - Test test_checkinContentlet_RelationshipOneToManyCardinality_throwsDotContentletValidationException has open connection after
+21:51:47.893  INFO  junit.MainBaseSuite - Checking indexer status...
+21:51:48.110  INFO  business.ContentTypeDestroyAPIImpl - Relocated from (500) to (1000) out of (1) contentlets..
+21:51:48.111  INFO  business.ContentTypeFactoryImpl - ::: Relocated 1 contentlets for ContentType [ParentContentType] to [ParentContentType_disposed_1686001908100] :::
+21:51:48.115  INFO  business.WorkflowFactoryImpl - Deleting the schemes associated to the content type: 1f41ee0d4bef4e76f676c38c8ccbb663
+21:51:48.166  INFO  quartz.DotStatefulJob - New Task for job `CleanUpFieldReferencesJob` scheduled for execution `48 51 21 5 6 ? 2023`.
+21:51:48.175  INFO  business.ContentTypeDestroyAPIImpl - There are (1) contents of type (parentContentType). Will remove them sequentially using (100) batchSize 
+21:51:48.176  INFO  business.ContentTypeDestroyAPIImpl -  For (parentContentType) Destroying (1) contentlets for identifier (643817e752c0d9609b546823c4645552) 
+21:51:48.181  INFO  business.ESContentletAPIImpl - UserId : system : destroy : User trying to destroy the following contents: [643817e752c0d9609b546823c4645552]
+21:51:48.207  INFO  job.CleanUpFieldReferencesJob - CleanUpFieldReferencesJob ::: started for field `relationship`.
+21:51:48.208  ERROR job.CleanUpFieldReferencesJob - Error cleaning up field references. Field velocity var: relationship
+com.dotcms.contenttype.exception.NotFoundInDbException: Content Type with id:'1f41ee0d4bef4e76f676c38c8ccbb663' not found
+	at com.dotcms.contenttype.business.ContentTypeFactoryImpl.dbById(ContentTypeFactoryImpl.java:343) ~[main/:?]
+	at com.dotcms.contenttype.business.ContentTypeFactoryImpl.find(ContentTypeFactoryImpl.java:114) ~[main/:?]
+	at com.dotcms.contenttype.business.ContentTypeAPIImpl.find(ContentTypeAPIImpl.java:375) ~[main/:?]
+	at com.dotmarketing.quartz.job.CleanUpFieldReferencesJob.run(CleanUpFieldReferencesJob.java:74) ~[main/:?]
+	at com.dotmarketing.quartz.DotJob.execute(DotJob.java:42) ~[main/:?]
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:223) ~[dot.quartz-all-1.8.6_2.jar:?]
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:549) ~[dot.quartz-all-1.8.6_2.jar:?]
+21:51:48.213  INFO  job.CleanUpFieldReferencesJob - CleanUpFieldReferencesJob ::: finished for field `relationship`.
+21:51:48.237  INFO  business.ContentTypeDestroyAPIImpl -  :: for (parentContentType) allCount is (1) with leftovers (0) :: 
+21:51:48.237  INFO  business.ContentTypeDestroyAPIImpl - Destroying Content-Type with inode: [a6421e161f655e3fc30796f3b7be3f87] and var: [ParentContentType_disposed_1686001908100].
+21:51:48.239  INFO  business.WorkflowFactoryImpl - Deleting the schemes associated to the content type: a6421e161f655e3fc30796f3b7be3f87
+21:51:48.245  INFO  business.ContentTypeDestroyAPIImpl -  I'm done destroying (1) pieces of Content of type (ParentContentType_disposed_1686001908100). it took me : [00:00:00] 
+21:51:48.256  INFO  business.ContentTypeDestroyAPIImpl - Relocated from (500) to (1000) out of (1) contentlets..
+21:51:48.257  INFO  business.ContentTypeFactoryImpl - ::: Relocated 1 contentlets for ContentType [ChildContentType] to [ChildContentType_disposed_1686001908246] :::
+21:51:48.261  INFO  business.WorkflowFactoryImpl - Deleting the schemes associated to the content type: 4159be5c06f829f058e4b5420eb3f61f
+21:51:48.267  INFO  business.ContentTypeDestroyAPIImpl - There are (1) contents of type (childContentType). Will remove them sequentially using (100) batchSize 
+21:51:48.268  INFO  business.ContentTypeDestroyAPIImpl -  For (childContentType) Destroying (1) contentlets for identifier (cfbf9afa9851cd68321c3d2c58304ff5) 
+21:51:48.271  INFO  business.ESContentletAPIImpl - UserId : system : destroy : User trying to destroy the following contents: [cfbf9afa9851cd68321c3d2c58304ff5]
+21:51:48.362  INFO  business.ContentTypeDestroyAPIImpl -  :: for (childContentType) allCount is (1) with leftovers (0) :: 
+21:51:48.362  INFO  business.ContentTypeDestroyAPIImpl - Destroying Content-Type with inode: [871f6b7447ce22b0053e0133a7f32318] and var: [ChildContentType_disposed_1686001908246].
+21:51:48.367  INFO  business.WorkflowFactoryImpl - Deleting the schemes associated to the content type: 871f6b7447ce22b0053e0133a7f32318
+21:51:48.373  INFO  business.ContentTypeDestroyAPIImpl -  I'm done destroying (1) pieces of Content of type (ChildContentType_disposed_1686001908246). it took me : [00:00:00] 
+21:51:48.373  ERROR dotcms.IntegrationTestBase - Test test_checkinContentlet_RelationshipOneToOneCardinality_Success has open connection after
+21:51:48.374  INFO  junit.MainBaseSuite - Checking indexer status...
+21:51:48.693  ERROR business.ESContentletAPIImpl - Error in Contentlet []: Relationship [ParentContentType.invalidRelationship] has been defined as One to One
+21:51:48.694  WARN  business.ESContentletAPIImpl - Contentlet [Unknown/New] has invalid/missing relationships
+List of non valid relationships
+BADCAR: ParentContentType.invalidRelationship, 
+
+
+21:51:48.694  WARN  business.ESContentletAPIImpl - Contentlet [Unknown/New] has invalid/missing relationships
+List of non valid relationships
+BADCAR: ParentContentType.invalidRelationship, 
+
+
+21:51:48.694  WARN  business.ESContentletAPIImpl - com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.validateRelationships(ESContentletAPIImpl.java:8264)
+21:51:48.694  WARN  business.ESContentletAPIImpl - Contentlet [Unknown/New] has invalid/missing relationships
+List of non valid relationships
+BADCAR: ParentContentType.invalidRelationship, 
+
+
+com.dotmarketing.portlets.contentlet.business.DotContentletValidationException: Contentlet [Unknown/New] has invalid/missing relationships
+List of non valid relationships
+BADCAR: ParentContentType.invalidRelationship, 
+
+
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.validateRelationships(ESContentletAPIImpl.java:8264) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.validateContentlet(ESContentletAPIImpl.java:8239) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.ContentletAPIInterceptor.validateContentlet(ContentletAPIInterceptor.java:2064) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.internalCheckin(ESContentletAPIImpl.java:5419) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.lambda$checkin$59(ESContentletAPIImpl.java:5032) ~[main/:?]
+	at com.dotcms.concurrent.lock.StripedLockImpl.tryLock(StripedLockImpl.java:100) ~[main/:?]
+	at com.dotcms.concurrent.lock.StripedLockImpl.tryLock(StripedLockImpl.java:55) ~[main/:?]
+	at com.dotcms.concurrent.lock.IdentifierStripedLock.tryLock(IdentifierStripedLock.java:16) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:5031) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:4927) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.ContentletAPIInterceptor.checkin(ContentletAPIInterceptor.java:149) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.ContentletCheckInTest.test_checkinContentlet_relationshipOneToOneCardinality_fails_whenRelatingMoreThanOneContentlet(ContentletCheckInTest.java:318) ~[integrationTest/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:19) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.ExternalResource$1.evaluate(ExternalResource.java:54) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:38) ~[integrationTest/:?]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:14) ~[integrationTest/:?]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.MainBaseSuite$DotRunner.run(MainBaseSuite.java:60) ~[integrationTest/:?]
+	at org.junit.runners.Suite.runChild(Suite.java:128) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.Suite.runChild(Suite.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[?:?]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[?:?]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[?:?]
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[?:?]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[?:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:?]
+21:51:48.704  INFO  business.ContentTypeDestroyAPIImpl - Relocated from (500) to (1000) out of (0) contentlets..
+21:51:48.704  INFO  business.ContentTypeFactoryImpl - ::: Relocated 0 contentlets for ContentType [ParentContentType] to [ParentContentType_disposed_1686001908695] :::
+21:51:48.710  INFO  business.WorkflowFactoryImpl - Deleting the schemes associated to the content type: 1f41ee0d4bef4e76f676c38c8ccbb663
+21:51:48.762  INFO  quartz.DotStatefulJob - New Task for job `CleanUpFieldReferencesJob` scheduled for execution `48 51 21 5 6 ? 2023`.
+21:51:48.791  INFO  job.CleanUpFieldReferencesJob - CleanUpFieldReferencesJob ::: started for field `invalidRelationship`.
+21:51:48.793  INFO  job.CleanUpFieldReferencesJob - CleanUpFieldReferencesJob ::: finished for field `invalidRelationship`.
+21:51:48.822  INFO  quartz.DotStatefulJob - New Task for job `CleanUpFieldReferencesJob` scheduled for execution `48 51 21 5 6 ? 2023`.
+21:51:48.836  INFO  business.ContentTypeDestroyAPIImpl - There are (0) contents of type (parentContentType). Will remove them sequentially using (100) batchSize 
+21:51:48.837  INFO  business.ContentTypeDestroyAPIImpl -  :: for (parentContentType) allCount is (0) with leftovers (0) :: 
+21:51:48.837  INFO  business.ContentTypeDestroyAPIImpl - Destroying Content-Type with inode: [8b1d00da09e662ddb263f7371c888187] and var: [ParentContentType_disposed_1686001908695].
+21:51:48.839  INFO  business.WorkflowFactoryImpl - Deleting the schemes associated to the content type: 8b1d00da09e662ddb263f7371c888187
+21:51:48.848  INFO  job.CleanUpFieldReferencesJob - CleanUpFieldReferencesJob ::: started for field `validRelationship`.
+21:51:48.849  ERROR job.CleanUpFieldReferencesJob - Error cleaning up field references. Field velocity var: validRelationship
+com.dotcms.contenttype.exception.NotFoundInDbException: Content Type with id:'1f41ee0d4bef4e76f676c38c8ccbb663' not found
+	at com.dotcms.contenttype.business.ContentTypeFactoryImpl.dbById(ContentTypeFactoryImpl.java:343) ~[main/:?]
+	at com.dotcms.contenttype.business.ContentTypeFactoryImpl.find(ContentTypeFactoryImpl.java:114) ~[main/:?]
+	at com.dotcms.contenttype.business.ContentTypeAPIImpl.find(ContentTypeAPIImpl.java:375) ~[main/:?]
+	at com.dotmarketing.quartz.job.CleanUpFieldReferencesJob.run(CleanUpFieldReferencesJob.java:74) ~[main/:?]
+	at com.dotmarketing.quartz.DotJob.execute(DotJob.java:42) ~[main/:?]
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:223) ~[dot.quartz-all-1.8.6_2.jar:?]
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:549) ~[dot.quartz-all-1.8.6_2.jar:?]
+21:51:48.849  INFO  job.CleanUpFieldReferencesJob - CleanUpFieldReferencesJob ::: finished for field `validRelationship`.
+21:51:48.857  INFO  business.ContentTypeDestroyAPIImpl -  I'm done destroying (0) pieces of Content of type (ParentContentType_disposed_1686001908695). it took me : [00:00:00] 
+21:51:48.878  INFO  business.ContentTypeDestroyAPIImpl - Relocated from (500) to (1000) out of (3) contentlets..
+21:51:48.878  INFO  business.ContentTypeFactoryImpl - ::: Relocated 3 contentlets for ContentType [ChildContentType] to [ChildContentType_disposed_1686001908857] :::
+21:51:48.887  INFO  business.WorkflowFactoryImpl - Deleting the schemes associated to the content type: 4159be5c06f829f058e4b5420eb3f61f
+21:51:48.892  INFO  business.ContentTypeDestroyAPIImpl - There are (3) contents of type (childContentType). Will remove them sequentially using (100) batchSize 
+21:51:48.894  INFO  business.ContentTypeDestroyAPIImpl -  For (childContentType) Destroying (1) contentlets for identifier (43d605ddfb6fdc53e2092a1d1d884be8) 
+21:51:48.896  INFO  business.ESContentletAPIImpl - UserId : system : destroy : User trying to destroy the following contents: [43d605ddfb6fdc53e2092a1d1d884be8]
+21:51:48.952  INFO  business.ContentTypeDestroyAPIImpl -  For (childContentType) Destroying (1) contentlets for identifier (d44cad5c255a83322e7c97affb4e02bb) 
+21:51:48.954  INFO  business.ESContentletAPIImpl - UserId : system : destroy : User trying to destroy the following contents: [d44cad5c255a83322e7c97affb4e02bb]
+21:51:48.989  INFO  business.ContentTypeDestroyAPIImpl -  For (childContentType) Destroying (1) contentlets for identifier (1a96fbee9741fa0de4c17443663e5756) 
+21:51:48.991  INFO  business.ESContentletAPIImpl - UserId : system : destroy : User trying to destroy the following contents: [1a96fbee9741fa0de4c17443663e5756]
+21:51:49.027  INFO  business.ContentTypeDestroyAPIImpl -  :: for (childContentType) allCount is (3) with leftovers (0) :: 
+21:51:49.027  INFO  business.ContentTypeDestroyAPIImpl - Destroying Content-Type with inode: [5692c89efea61bd20a31fe649755c009] and var: [ChildContentType_disposed_1686001908857].
+21:51:49.029  INFO  business.WorkflowFactoryImpl - Deleting the schemes associated to the content type: 5692c89efea61bd20a31fe649755c009
+21:51:49.035  INFO  business.ContentTypeDestroyAPIImpl -  I'm done destroying (3) pieces of Content of type (ChildContentType_disposed_1686001908857). it took me : [00:00:00] 
+21:51:49.035  ERROR dotcms.IntegrationTestBase - Test test_checkinContentlet_relationshipOneToOneCardinality_fails_whenRelatingMoreThanOneContentlet has open connection after
+21:51:49.035  INFO  junit.MainBaseSuite - Checking indexer status...
+21:51:49.036  INFO  junit.MainBaseSuite - Indexer is not empty, waiting for it to finish
+21:51:50.039  INFO  junit.MainBaseSuite - Indexer Complete=true
+21:51:50.039  INFO  util.Config - Setting property: CONTENT_APIS_ALLOW_ANONYMOUS to WRITE
+21:51:50.094  ERROR dotcms.IntegrationTestBase - Test checkin_content_anonymously has open connection after
+21:51:50.094  INFO  junit.MainBaseSuite - Checking indexer status...
+21:51:50.122  INFO  business.ESContentletAPIImpl - The contentlet: a2d45d71f213338672554216946336.txt hasn't action id set using the default action: ceca71a0-deee-4999-bd47-b01baa1bcfc8
+21:51:50.122  INFO  business.ESContentletAPIImpl - The action: ceca71a0-deee-4999-bd47-b01baa1bcfc8 has a save contentlet actionlet so firing a workflow and skipping the current checkin for the contentlet: a2d45d71f213338672554216946336.txt
+21:51:50.140  ERROR business.FileAsset - No value present
+java.util.NoSuchElementException: No value present
+	at java.util.Optional.get(Optional.java:148) ~[?:?]
+	at com.dotmarketing.business.VersionableAPIImpl.isLive(VersionableAPIImpl.java:291) ~[main/:?]
+	at com.dotmarketing.portlets.fileassets.business.FileAsset.isLive(FileAsset.java:260) ~[main/:?]
+	at com.dotmarketing.portlets.fileassets.business.FileAsset.getMap(FileAsset.java:291) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentFactoryImpl.setUpContentletAsJson(ESContentFactoryImpl.java:2152) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentFactoryImpl.save(ESContentFactoryImpl.java:2129) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentFactoryImpl.save(ESContentFactoryImpl.java:2121) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.internalCheckin(ESContentletAPIImpl.java:5544) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.lambda$checkin$59(ESContentletAPIImpl.java:5032) ~[main/:?]
+	at com.dotcms.concurrent.lock.StripedLockImpl.tryLock(StripedLockImpl.java:100) ~[main/:?]
+	at com.dotcms.concurrent.lock.StripedLockImpl.tryLock(StripedLockImpl.java:55) ~[main/:?]
+	at com.dotcms.concurrent.lock.IdentifierStripedLock.tryLock(IdentifierStripedLock.java:16) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:5031) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:4927) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.saveDraft(ESContentletAPIImpl.java:9647) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.ContentletAPIInterceptor.saveDraft(ContentletAPIInterceptor.java:2562) ~[main/:?]
+	at com.dotmarketing.portlets.workflows.actionlet.SaveContentAsDraftActionlet.executeAction(SaveContentAsDraftActionlet.java:120) ~[main/:?]
+	at com.dotmarketing.portlets.workflows.business.WorkflowAPIImpl.fireWorkflowPostCheckin(WorkflowAPIImpl.java:2410) ~[main/:?]
+	at com.dotmarketing.portlets.workflows.business.WorkflowAPIImpl.lambda$fireContentWorkflow$73(WorkflowAPIImpl.java:3368) ~[main/:?]
+	at com.dotcms.util.ThreadContextUtil.wrapVoidNoReindex(ThreadContextUtil.java:85) ~[main/:?]
+	at com.dotmarketing.portlets.workflows.business.WorkflowAPIImpl.fireContentWorkflow(WorkflowAPIImpl.java:3368) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.validateWorkflowStateOrRunAsWorkflow(ESContentletAPIImpl.java:5258) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:5017) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:10007) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:4867) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.ContentletAPIInterceptor.checkin(ContentletAPIInterceptor.java:266) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.ContentletCheckInTest.checkinInvalidFileContent(ContentletCheckInTest.java:155) ~[integrationTest/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.ExternalResource$1.evaluate(ExternalResource.java:54) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:38) ~[integrationTest/:?]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:14) ~[integrationTest/:?]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.MainBaseSuite$DotRunner.run(MainBaseSuite.java:60) ~[integrationTest/:?]
+	at org.junit.runners.Suite.runChild(Suite.java:128) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.Suite.runChild(Suite.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[?:?]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[?:?]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[?:?]
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[?:?]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[?:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:?]
+21:51:50.142  ERROR tika.TikaUtils - Failure retrieving OSGI Service [interface com.dotcms.tika.TikaServiceBuilder] in bundle [com.dotcms.tika]
+java.lang.IllegalStateException: [com.dotcms.tika] OSGI bundle NOT FOUND.
+	at org.apache.felix.framework.OSGISystem.getService(OSGISystem.java:228) ~[main/:?]
+	at com.dotcms.tika.TikaUtils.<init>(TikaUtils.java:63) ~[main/:?]
+	at com.dotcms.storage.MetadataGeneratorImpl.tikaBasedMetadata(MetadataGeneratorImpl.java:49) ~[main/:?]
+	at com.dotcms.storage.FileStorageAPIImpl.generateFullMetaData(FileStorageAPIImpl.java:151) ~[main/:?]
+	at com.dotcms.storage.FileStorageAPIImpl.generateMetaData(FileStorageAPIImpl.java:238) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.generateFullMetadata(FileMetadataAPIImpl.java:198) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.internalGenerateContentletMetadata(FileMetadataAPIImpl.java:91) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.generateContentletMetadata(FileMetadataAPIImpl.java:275) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.generateContentletMetadata(FileMetadataAPIImpl.java:260) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.lambda$internalGetGenerateMetadata$e381c563$1(FileMetadataAPIImpl.java:350) ~[main/:?]
+	at io.vavr.control.Try.of(Try.java:75) ~[vavr-0.10.3.jar:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.internalGetGenerateMetadata(FileMetadataAPIImpl.java:350) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.getOrGenerateMetadata(FileMetadataAPIImpl.java:300) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.model.Contentlet.getBinaryMetadata(Contentlet.java:1267) ~[main/:?]
+	at com.dotmarketing.portlets.fileassets.business.FileAsset.getMetadata(FileAsset.java:63) ~[main/:?]
+	at com.dotmarketing.portlets.fileassets.business.FileAsset.lambda$getUnderlyingFileName$a7afb001$1(FileAsset.java:130) ~[main/:?]
+	at io.vavr.control.Try.of(Try.java:75) ~[vavr-0.10.3.jar:?]
+	at com.dotmarketing.portlets.fileassets.business.FileAsset.getUnderlyingFileName(FileAsset.java:130) ~[main/:?]
+	at com.dotmarketing.portlets.fileassets.business.FileAsset.getExtension(FileAsset.java:280) ~[main/:?]
+	at com.dotmarketing.portlets.fileassets.business.FileAsset.getMap(FileAsset.java:298) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentFactoryImpl.setUpContentletAsJson(ESContentFactoryImpl.java:2152) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentFactoryImpl.save(ESContentFactoryImpl.java:2129) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentFactoryImpl.save(ESContentFactoryImpl.java:2121) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.internalCheckin(ESContentletAPIImpl.java:5544) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.lambda$checkin$59(ESContentletAPIImpl.java:5032) ~[main/:?]
+	at com.dotcms.concurrent.lock.StripedLockImpl.tryLock(StripedLockImpl.java:100) ~[main/:?]
+	at com.dotcms.concurrent.lock.StripedLockImpl.tryLock(StripedLockImpl.java:55) ~[main/:?]
+	at com.dotcms.concurrent.lock.IdentifierStripedLock.tryLock(IdentifierStripedLock.java:16) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:5031) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:4927) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.saveDraft(ESContentletAPIImpl.java:9647) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.ContentletAPIInterceptor.saveDraft(ContentletAPIInterceptor.java:2562) ~[main/:?]
+	at com.dotmarketing.portlets.workflows.actionlet.SaveContentAsDraftActionlet.executeAction(SaveContentAsDraftActionlet.java:120) ~[main/:?]
+	at com.dotmarketing.portlets.workflows.business.WorkflowAPIImpl.fireWorkflowPostCheckin(WorkflowAPIImpl.java:2410) ~[main/:?]
+	at com.dotmarketing.portlets.workflows.business.WorkflowAPIImpl.lambda$fireContentWorkflow$73(WorkflowAPIImpl.java:3368) ~[main/:?]
+	at com.dotcms.util.ThreadContextUtil.wrapVoidNoReindex(ThreadContextUtil.java:85) ~[main/:?]
+	at com.dotmarketing.portlets.workflows.business.WorkflowAPIImpl.fireContentWorkflow(WorkflowAPIImpl.java:3368) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.validateWorkflowStateOrRunAsWorkflow(ESContentletAPIImpl.java:5258) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:5017) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:10007) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:4867) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.ContentletAPIInterceptor.checkin(ContentletAPIInterceptor.java:266) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.ContentletCheckInTest.checkinInvalidFileContent(ContentletCheckInTest.java:155) ~[integrationTest/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.ExternalResource$1.evaluate(ExternalResource.java:54) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:38) ~[integrationTest/:?]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:14) ~[integrationTest/:?]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.MainBaseSuite$DotRunner.run(MainBaseSuite.java:60) ~[integrationTest/:?]
+	at org.junit.runners.Suite.runChild(Suite.java:128) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.Suite.runChild(Suite.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[?:?]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[?:?]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[?:?]
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[?:?]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[?:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:?]
+21:51:50.142  ERROR tika.TikaUtils - Unable to get file Meta Data, OSGI Framework not initialized
+21:51:50.144  ERROR business.FileAsset - No value present
+java.util.NoSuchElementException: No value present
+	at java.util.Optional.get(Optional.java:148) ~[?:?]
+	at com.dotmarketing.business.VersionableAPIImpl.isLive(VersionableAPIImpl.java:291) ~[main/:?]
+	at com.dotmarketing.portlets.fileassets.business.FileAsset.isLive(FileAsset.java:260) ~[main/:?]
+	at com.dotmarketing.portlets.fileassets.business.FileAsset.getMap(FileAsset.java:291) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentFactoryImpl.getParamsToSaveUpdateContent(ESContentFactoryImpl.java:2247) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentFactoryImpl.upsertContentlet(ESContentFactoryImpl.java:2196) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentFactoryImpl.save(ESContentFactoryImpl.java:2130) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentFactoryImpl.save(ESContentFactoryImpl.java:2121) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.internalCheckin(ESContentletAPIImpl.java:5544) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.lambda$checkin$59(ESContentletAPIImpl.java:5032) ~[main/:?]
+	at com.dotcms.concurrent.lock.StripedLockImpl.tryLock(StripedLockImpl.java:100) ~[main/:?]
+	at com.dotcms.concurrent.lock.StripedLockImpl.tryLock(StripedLockImpl.java:55) ~[main/:?]
+	at com.dotcms.concurrent.lock.IdentifierStripedLock.tryLock(IdentifierStripedLock.java:16) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:5031) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:4927) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.saveDraft(ESContentletAPIImpl.java:9647) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.ContentletAPIInterceptor.saveDraft(ContentletAPIInterceptor.java:2562) ~[main/:?]
+	at com.dotmarketing.portlets.workflows.actionlet.SaveContentAsDraftActionlet.executeAction(SaveContentAsDraftActionlet.java:120) ~[main/:?]
+	at com.dotmarketing.portlets.workflows.business.WorkflowAPIImpl.fireWorkflowPostCheckin(WorkflowAPIImpl.java:2410) ~[main/:?]
+	at com.dotmarketing.portlets.workflows.business.WorkflowAPIImpl.lambda$fireContentWorkflow$73(WorkflowAPIImpl.java:3368) ~[main/:?]
+	at com.dotcms.util.ThreadContextUtil.wrapVoidNoReindex(ThreadContextUtil.java:85) ~[main/:?]
+	at com.dotmarketing.portlets.workflows.business.WorkflowAPIImpl.fireContentWorkflow(WorkflowAPIImpl.java:3368) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.validateWorkflowStateOrRunAsWorkflow(ESContentletAPIImpl.java:5258) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:5017) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:10007) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:4867) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.ContentletAPIInterceptor.checkin(ContentletAPIInterceptor.java:266) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.ContentletCheckInTest.checkinInvalidFileContent(ContentletCheckInTest.java:155) ~[integrationTest/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.ExternalResource$1.evaluate(ExternalResource.java:54) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:38) ~[integrationTest/:?]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:14) ~[integrationTest/:?]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.MainBaseSuite$DotRunner.run(MainBaseSuite.java:60) ~[integrationTest/:?]
+	at org.junit.runners.Suite.runChild(Suite.java:128) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.Suite.runChild(Suite.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[?:?]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[?:?]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[?:?]
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[?:?]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[?:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:?]
+21:51:50.146  ERROR business.FileAsset - No value present
+java.util.NoSuchElementException: No value present
+	at java.util.Optional.get(Optional.java:148) ~[?:?]
+	at com.dotmarketing.business.VersionableAPIImpl.isLive(VersionableAPIImpl.java:291) ~[main/:?]
+	at com.dotmarketing.portlets.fileassets.business.FileAsset.isLive(FileAsset.java:260) ~[main/:?]
+	at com.dotmarketing.portlets.fileassets.business.FileAsset.getMap(FileAsset.java:291) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentFactoryImpl.save(ESContentFactoryImpl.java:2141) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentFactoryImpl.save(ESContentFactoryImpl.java:2121) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.internalCheckin(ESContentletAPIImpl.java:5544) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.lambda$checkin$59(ESContentletAPIImpl.java:5032) ~[main/:?]
+	at com.dotcms.concurrent.lock.StripedLockImpl.tryLock(StripedLockImpl.java:100) ~[main/:?]
+	at com.dotcms.concurrent.lock.StripedLockImpl.tryLock(StripedLockImpl.java:55) ~[main/:?]
+	at com.dotcms.concurrent.lock.IdentifierStripedLock.tryLock(IdentifierStripedLock.java:16) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:5031) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:4927) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.saveDraft(ESContentletAPIImpl.java:9647) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.ContentletAPIInterceptor.saveDraft(ContentletAPIInterceptor.java:2562) ~[main/:?]
+	at com.dotmarketing.portlets.workflows.actionlet.SaveContentAsDraftActionlet.executeAction(SaveContentAsDraftActionlet.java:120) ~[main/:?]
+	at com.dotmarketing.portlets.workflows.business.WorkflowAPIImpl.fireWorkflowPostCheckin(WorkflowAPIImpl.java:2410) ~[main/:?]
+	at com.dotmarketing.portlets.workflows.business.WorkflowAPIImpl.lambda$fireContentWorkflow$73(WorkflowAPIImpl.java:3368) ~[main/:?]
+	at com.dotcms.util.ThreadContextUtil.wrapVoidNoReindex(ThreadContextUtil.java:85) ~[main/:?]
+	at com.dotmarketing.portlets.workflows.business.WorkflowAPIImpl.fireContentWorkflow(WorkflowAPIImpl.java:3368) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.validateWorkflowStateOrRunAsWorkflow(ESContentletAPIImpl.java:5258) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:5017) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:10007) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:4867) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.ContentletAPIInterceptor.checkin(ContentletAPIInterceptor.java:266) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.ContentletCheckInTest.checkinInvalidFileContent(ContentletCheckInTest.java:155) ~[integrationTest/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.ExternalResource$1.evaluate(ExternalResource.java:54) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:38) ~[integrationTest/:?]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:14) ~[integrationTest/:?]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.MainBaseSuite$DotRunner.run(MainBaseSuite.java:60) ~[integrationTest/:?]
+	at org.junit.runners.Suite.runChild(Suite.java:128) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.Suite.runChild(Suite.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[?:?]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[?:?]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[?:?]
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[?:?]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[?:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:?]
+21:51:50.158  INFO  business.ESContentletAPIImpl - A Workflow has been ran instead of checkin the contentlet: c55748df8b72e74331f75a419dbfa7f9
+21:51:50.202  INFO  business.ESContentletAPIImpl - The contentlet: test.fail.txt hasn't action id set using the default action: ceca71a0-deee-4999-bd47-b01baa1bcfc8
+21:51:50.202  INFO  business.ESContentletAPIImpl - The action: ceca71a0-deee-4999-bd47-b01baa1bcfc8 has a save contentlet actionlet so firing a workflow and skipping the current checkin for the contentlet: test.fail.txt
+21:51:50.253  ERROR tika.TikaUtils - Failure retrieving OSGI Service [interface com.dotcms.tika.TikaServiceBuilder] in bundle [com.dotcms.tika]
+java.lang.IllegalStateException: [com.dotcms.tika] OSGI bundle NOT FOUND.
+	at org.apache.felix.framework.OSGISystem.getService(OSGISystem.java:228) ~[main/:?]
+	at com.dotcms.tika.TikaUtils.<init>(TikaUtils.java:63) ~[main/:?]
+	at com.dotcms.storage.MetadataGeneratorImpl.tikaBasedMetadata(MetadataGeneratorImpl.java:49) ~[main/:?]
+	at com.dotcms.storage.FileStorageAPIImpl.generateFullMetaData(FileStorageAPIImpl.java:151) ~[main/:?]
+	at com.dotcms.storage.FileStorageAPIImpl.generateMetaData(FileStorageAPIImpl.java:238) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.generateFullMetadata(FileMetadataAPIImpl.java:198) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.internalGenerateContentletMetadata(FileMetadataAPIImpl.java:91) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.generateContentletMetadata(FileMetadataAPIImpl.java:275) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.generateContentletMetadata(FileMetadataAPIImpl.java:260) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.lambda$internalGetGenerateMetadata$e381c563$1(FileMetadataAPIImpl.java:350) ~[main/:?]
+	at io.vavr.control.Try.of(Try.java:75) ~[vavr-0.10.3.jar:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.internalGetGenerateMetadata(FileMetadataAPIImpl.java:350) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.getOrGenerateMetadata(FileMetadataAPIImpl.java:300) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.model.Contentlet.getBinaryMetadata(Contentlet.java:1267) ~[main/:?]
+	at com.dotmarketing.portlets.fileassets.business.FileAsset.getMetadata(FileAsset.java:63) ~[main/:?]
+	at com.dotmarketing.portlets.fileassets.business.FileAsset.lambda$getUnderlyingFileName$a7afb001$1(FileAsset.java:130) ~[main/:?]
+	at io.vavr.control.Try.of(Try.java:75) ~[vavr-0.10.3.jar:?]
+	at com.dotmarketing.portlets.fileassets.business.FileAsset.getUnderlyingFileName(FileAsset.java:130) ~[main/:?]
+	at com.dotmarketing.portlets.fileassets.business.FileAsset.getExtension(FileAsset.java:280) ~[main/:?]
+	at com.dotmarketing.portlets.fileassets.business.FileAsset.getMap(FileAsset.java:298) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentFactoryImpl.save(ESContentFactoryImpl.java:2141) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentFactoryImpl.save(ESContentFactoryImpl.java:2121) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.internalCheckin(ESContentletAPIImpl.java:5544) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.lambda$checkin$59(ESContentletAPIImpl.java:5032) ~[main/:?]
+	at com.dotcms.concurrent.lock.StripedLockImpl.tryLock(StripedLockImpl.java:100) ~[main/:?]
+	at com.dotcms.concurrent.lock.StripedLockImpl.tryLock(StripedLockImpl.java:55) ~[main/:?]
+	at com.dotcms.concurrent.lock.IdentifierStripedLock.tryLock(IdentifierStripedLock.java:16) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:5031) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:4927) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.saveDraft(ESContentletAPIImpl.java:9647) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.ContentletAPIInterceptor.saveDraft(ContentletAPIInterceptor.java:2562) ~[main/:?]
+	at com.dotmarketing.portlets.workflows.actionlet.SaveContentAsDraftActionlet.executeAction(SaveContentAsDraftActionlet.java:120) ~[main/:?]
+	at com.dotmarketing.portlets.workflows.business.WorkflowAPIImpl.fireWorkflowPostCheckin(WorkflowAPIImpl.java:2410) ~[main/:?]
+	at com.dotmarketing.portlets.workflows.business.WorkflowAPIImpl.lambda$fireContentWorkflow$73(WorkflowAPIImpl.java:3368) ~[main/:?]
+	at com.dotcms.util.ThreadContextUtil.wrapVoidNoReindex(ThreadContextUtil.java:85) ~[main/:?]
+	at com.dotmarketing.portlets.workflows.business.WorkflowAPIImpl.fireContentWorkflow(WorkflowAPIImpl.java:3368) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.validateWorkflowStateOrRunAsWorkflow(ESContentletAPIImpl.java:5258) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:5017) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:10007) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:4867) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.ContentletAPIInterceptor.checkin(ContentletAPIInterceptor.java:266) ~[main/:?]
+	at com.dotmarketing.portlets.fileassets.business.FileAssetAPIImpl.renameFile(FileAssetAPIImpl.java:459) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.ContentletCheckInTest.checkinInvalidFileContent(ContentletCheckInTest.java:165) ~[integrationTest/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.ExternalResource$1.evaluate(ExternalResource.java:54) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:38) ~[integrationTest/:?]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:14) ~[integrationTest/:?]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.MainBaseSuite$DotRunner.run(MainBaseSuite.java:60) ~[integrationTest/:?]
+	at org.junit.runners.Suite.runChild(Suite.java:128) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.Suite.runChild(Suite.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[?:?]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[?:?]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[?:?]
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[?:?]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[?:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:?]
+21:51:50.255  ERROR tika.TikaUtils - Unable to get file Meta Data, OSGI Framework not initialized
+21:51:50.279  INFO  business.ESContentletAPIImpl - A Workflow has been ran instead of checkin the contentlet: c55748df8b72e74331f75a419dbfa7f9
+21:51:50.289  ERROR tika.TikaUtils - Failure retrieving OSGI Service [interface com.dotcms.tika.TikaServiceBuilder] in bundle [com.dotcms.tika]
+java.lang.IllegalStateException: [com.dotcms.tika] OSGI bundle NOT FOUND.
+	at org.apache.felix.framework.OSGISystem.getService(OSGISystem.java:228) ~[main/:?]
+	at com.dotcms.tika.TikaUtils.<init>(TikaUtils.java:63) ~[main/:?]
+	at com.dotcms.storage.MetadataGeneratorImpl.tikaBasedMetadata(MetadataGeneratorImpl.java:49) ~[main/:?]
+	at com.dotcms.storage.FileStorageAPIImpl.generateFullMetaData(FileStorageAPIImpl.java:151) ~[main/:?]
+	at com.dotcms.storage.FileStorageAPIImpl.generateMetaData(FileStorageAPIImpl.java:238) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.generateFullMetadata(FileMetadataAPIImpl.java:198) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.internalGenerateContentletMetadata(FileMetadataAPIImpl.java:91) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.generateContentletMetadata(FileMetadataAPIImpl.java:275) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.generateContentletMetadata(FileMetadataAPIImpl.java:260) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESMappingAPIImpl.writeMetadata(ESMappingAPIImpl.java:522) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESMappingAPIImpl.toMap(ESMappingAPIImpl.java:487) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.lambda$addBulkRequest$4c66ed82$1(ContentletIndexAPIImpl.java:806) ~[main/:?]
+	at io.vavr.control.Try.of(Try.java:75) ~[vavr-0.10.3.jar:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.addBulkRequest(ContentletIndexAPIImpl.java:805) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.appendBulkRequest(ContentletIndexAPIImpl.java:767) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.createBulkRequest(ContentletIndexAPIImpl.java:635) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.indexContentListNow(ContentletIndexAPIImpl.java:576) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.addContentToIndex(ContentletIndexAPIImpl.java:570) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.lambda$addContentToIndex$2(ContentletIndexAPIImpl.java:528) ~[main/:?]
+	at com.dotmarketing.db.HibernateUtil$DotSyncRunnable.run(HibernateUtil.java:1016) ~[main/:?]
+	at com.dotmarketing.db.DotRunnableThread.internalRunner(DotRunnableThread.java:99) ~[main/:?]
+	at com.dotmarketing.db.LocalTransaction.wrap(LocalTransaction.java:165) ~[main/:?]
+	at com.dotmarketing.db.DotRunnableThread.run(DotRunnableThread.java:53) ~[main/:?]
+	at com.dotmarketing.db.HibernateUtil.finalizeCommitListeners(HibernateUtil.java:1165) ~[main/:?]
+	at com.dotmarketing.db.HibernateUtil.commitTransaction(HibernateUtil.java:1257) ~[main/:?]
+	at com.dotcms.business.bytebuddy.WrapInTransactionAdvice.exit(WrapInTransactionAdvice.java:63) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:5082) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:10007) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:4867) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.ContentletAPIInterceptor.checkin(ContentletAPIInterceptor.java:266) ~[main/:?]
+	at com.dotmarketing.portlets.fileassets.business.FileAssetAPIImpl.renameFile(FileAssetAPIImpl.java:459) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.ContentletCheckInTest.checkinInvalidFileContent(ContentletCheckInTest.java:165) ~[integrationTest/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.ExternalResource$1.evaluate(ExternalResource.java:54) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:38) ~[integrationTest/:?]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:14) ~[integrationTest/:?]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.MainBaseSuite$DotRunner.run(MainBaseSuite.java:60) ~[integrationTest/:?]
+	at org.junit.runners.Suite.runChild(Suite.java:128) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.Suite.runChild(Suite.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[?:?]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[?:?]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[?:?]
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[?:?]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[?:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:?]
+21:51:50.289  ERROR tika.TikaUtils - Unable to get file Meta Data, OSGI Framework not initialized
+21:51:50.319  INFO  business.FolderAPIImpl - UserId : system : delete : Deleting folder with name 0767a81b99 
+21:51:50.329  INFO  business.ESContentletAPIImpl - UserId : system : destroy : User trying to destroy the following contents: [c55748df8b72e74331f75a419dbfa7f9]
+21:51:50.434  INFO  junit.MainBaseSuite - Checking indexer status...
+21:51:50.434  INFO  junit.MainBaseSuite - Indexer is not empty, waiting for it to finish
+21:51:51.437  INFO  junit.MainBaseSuite - Indexer Complete=true
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

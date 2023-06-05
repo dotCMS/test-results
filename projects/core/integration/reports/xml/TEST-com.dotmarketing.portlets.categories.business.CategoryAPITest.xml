@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.dotmarketing.portlets.categories.business.CategoryAPITest" tests="20" skipped="0" failures="0" errors="0" timestamp="2023-06-05T22:03:41" hostname="fv-az306-998" time="31.015">
+  <properties/>
+  <testcase name="test_isParent_givenGrandChildCategoryBelongsToParentCategory_returnTrue" classname="com.dotmarketing.portlets.categories.business.CategoryAPITest" time="0.026"/>
+  <testcase name="verifyCache" classname="com.dotmarketing.portlets.categories.business.CategoryAPITest" time="0.032"/>
+  <testcase name="test_save_createTopLevelCategory_asLimitedUser_withoutPermissions_throwDotSecurityException" classname="com.dotmarketing.portlets.categories.business.CategoryAPITest" time="0.794"/>
+  <testcase name="testSortChildren" classname="com.dotmarketing.portlets.categories.business.CategoryAPITest" time="0.042"/>
+  <testcase name="test_save_createSubCategory_asAdmin_success" classname="com.dotmarketing.portlets.categories.business.CategoryAPITest" time="0.012"/>
+  <testcase name="test_save_createTopLevelCategory_asAdmin_success" classname="com.dotmarketing.portlets.categories.business.CategoryAPITest" time="0.004"/>
+  <testcase name="test_save_createTopLevelCategory_asLimitedUser_success" classname="com.dotmarketing.portlets.categories.business.CategoryAPITest" time="12.561"/>
+  <testcase name="test_save_createSubCategory_asLimitedUser_withoutPermissions_throwDotSecurityException" classname="com.dotmarketing.portlets.categories.business.CategoryAPITest" time="0.817"/>
+  <testcase name="testDuplicatedCategories" classname="com.dotmarketing.portlets.categories.business.CategoryAPITest" time="0.01"/>
+  <testcase name="getParents" classname="com.dotmarketing.portlets.categories.business.CategoryAPITest" time="2.981"/>
+  <testcase name="test_Find_Categories_Within_ContentType" classname="com.dotmarketing.portlets.categories.business.CategoryAPITest" time="0.834"/>
+  <testcase name="test_isParent_givenGrandChildCategoryThatNoBelongsToParentCategory_returnFalse" classname="com.dotmarketing.portlets.categories.business.CategoryAPITest" time="0.057"/>
+  <testcase name="test_save_createTopLevelCategory_asLimitedUser_fail" classname="com.dotmarketing.portlets.categories.business.CategoryAPITest" time="10.342"/>
+  <testcase name="findTopLevelCategories" classname="com.dotmarketing.portlets.categories.business.CategoryAPITest" time="0.027"/>
+  <testcase name="test_save_editCategory_asLimitedUser_success" classname="com.dotmarketing.portlets.categories.business.CategoryAPITest" time="0.801"/>
+  <testcase name="checkUniqueKey_severalCases_Success" classname="com.dotmarketing.portlets.categories.business.CategoryAPITest" time="0.02"/>
+  <testcase name="test_save_createSubCategory_asLimitedUser_success" classname="com.dotmarketing.portlets.categories.business.CategoryAPITest" time="0.801"/>
+  <testcase name="getCategoryTreeUp_hierarchyLevelThree_Success" classname="com.dotmarketing.portlets.categories.business.CategoryAPITest" time="0.025"/>
+  <testcase name="test_save_editCategory_asLimitedUser_withoutPermissions_throwDotSecurityException" classname="com.dotmarketing.portlets.categories.business.CategoryAPITest" time="0.801"/>
+  <testcase name="findChildren" classname="com.dotmarketing.portlets.categories.business.CategoryAPITest" time="0.02"/>
+  <system-out><![CDATA[22:03:41.581  INFO  junit.MainBaseSuite - Checking indexer status...
+22:03:41.613  INFO  junit.MainBaseSuite - Checking indexer status...
+22:03:41.614  WARN  business.UserHelper - Error loading user with id 584ab9e8-21e2-4d52-a675-8430ca34e2aa
+22:03:42.395  WARN  util.LocaleUtil - en is not a valid language id
+22:03:42.406  ERROR business.CategoryAPIImpl - User '584ab9e8-21e2-4d52-a675-8430ca34e2aa' doesn't have ADD CHILDREN and PUBLISH permissions to save Category '' at the top level.
+22:03:42.407  INFO  junit.MainBaseSuite - Checking indexer status...
+22:03:42.447  INFO  junit.MainBaseSuite - Checking indexer status...
+22:03:42.461  INFO  junit.MainBaseSuite - Checking indexer status...
+22:03:42.465  INFO  junit.MainBaseSuite - Checking indexer status...
+22:03:42.467  WARN  business.UserHelper - Error loading user with id 2983abf7-d5ba-4dc3-b5a1-1f0d43b0775d
+22:03:43.248  WARN  util.LocaleUtil - en is not a valid language id
+22:03:44.006  INFO  junit.MainBaseSuite - Checking indexer status...
+22:03:44.007  INFO  junit.MainBaseSuite - Indexer is not empty, waiting for it to finish
+22:03:53.078  WARN  util.KeyValueFieldUtil - Error parsing json: messed-up-json. Trying to parse with the JS replacement due to container or key/value data...
+22:03:53.078  ERROR util.KeyValueFieldUtil - Unable to parse JSON: messed-up-json. Please review the content and check for potential JS replacements. Returning exception
+com.dotmarketing.exception.DotRuntimeException: Unrecognized token 'messed': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (String)"messed-up-json"; line: 1, column: 7]
+	at io.vavr.control.Try.getOrElseThrow(Try.java:748) ~[vavr-0.10.3.jar:?]
+	at com.dotcms.util.marshal.JacksonMarshalUtilsImpl.unmarshal(JacksonMarshalUtilsImpl.java:65) ~[main/:?]
+	at com.dotcms.contenttype.util.KeyValueFieldUtil.JSONValueToHashMap(KeyValueFieldUtil.java:31) ~[main/:?]
+	at com.dotmarketing.portlets.structure.model.KeyValueFieldUtil.JSONValueToHashMap(KeyValueFieldUtil.java:14) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.transform.ContentletTransformer.getObjectValue(ContentletTransformer.java:351) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.transform.ContentletTransformer.populateFields(ContentletTransformer.java:311) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.transform.ContentletTransformer.transform(ContentletTransformer.java:114) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.transform.ContentletTransformer.<init>(ContentletTransformer.java:63) ~[main/:?]
+	at com.dotcms.util.transform.TransformerLocator.createContentletTransformer(TransformerLocator.java:137) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentFactoryImpl.findInDb(ESContentFactoryImpl.java:841) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.findInDb(ESContentletAPIImpl.java:573) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.ContentletAPIInterceptor.findInDb(ContentletAPIInterceptor.java:2918) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.appendBulkRequest(ContentletIndexAPIImpl.java:723) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.appendToBulkProcessor(ContentletIndexAPIImpl.java:759) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.appendToBulkProcessor(ContentletIndexAPIImpl.java:685) ~[main/:?]
+	at com.dotmarketing.common.reindex.ReindexThread.runReindexLoop(ReindexThread.java:227) ~[main/:?]
+	at com.dotmarketing.common.reindex.ReindexThread.lambda$new$1(ReindexThread.java:159) ~[main/:?]
+	at java.lang.Thread.run(Thread.java:829) ~[?:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) ~[?:?]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[?:?]
+	at java.lang.Thread.run(Thread.java:829) [?:?]
+Caused by: com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'messed': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (String)"messed-up-json"; line: 1, column: 7]
+	at com.fasterxml.jackson.core.JsonParser._constructError(JsonParser.java:2391) ~[jackson-core-2.13.4.jar:2.13.4]
+	at com.fasterxml.jackson.core.base.ParserMinimalBase._reportError(ParserMinimalBase.java:745) ~[jackson-core-2.13.4.jar:2.13.4]
+	at com.fasterxml.jackson.core.json.ReaderBasedJsonParser._reportInvalidToken(ReaderBasedJsonParser.java:2961) ~[jackson-core-2.13.4.jar:2.13.4]
+	at com.fasterxml.jackson.core.json.ReaderBasedJsonParser._handleOddValue(ReaderBasedJsonParser.java:2002) ~[jackson-core-2.13.4.jar:2.13.4]
+	at com.fasterxml.jackson.core.json.ReaderBasedJsonParser.nextToken(ReaderBasedJsonParser.java:802) ~[jackson-core-2.13.4.jar:2.13.4]
+	at com.fasterxml.jackson.databind.ObjectMapper._initForReading(ObjectMapper.java:4761) ~[jackson-databind-2.13.4.jar:2.13.4]
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4667) ~[jackson-databind-2.13.4.jar:2.13.4]
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3629) ~[jackson-databind-2.13.4.jar:2.13.4]
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3612) ~[jackson-databind-2.13.4.jar:2.13.4]
+	at com.dotcms.util.marshal.JacksonMarshalUtilsImpl.lambda$unmarshal$a21c04d4$1(JacksonMarshalUtilsImpl.java:65) ~[main/:?]
+	at io.vavr.control.Try.of(Try.java:75) ~[vavr-0.10.3.jar:?]
+	... 22 more
+22:03:53.078  WARN  transform.ContentletTransformer - Failed to convert keyValue field `keyValueField` to an actual json. An Empty will be returned instead. 
+22:03:53.149  ERROR tika.TikaUtils - Failure retrieving OSGI Service [interface com.dotcms.tika.TikaServiceBuilder] in bundle [com.dotcms.tika]
+java.lang.IllegalStateException: [com.dotcms.tika] OSGI bundle NOT FOUND.
+	at org.apache.felix.framework.OSGISystem.getService(OSGISystem.java:228) ~[main/:?]
+	at com.dotcms.tika.TikaUtils.<init>(TikaUtils.java:63) ~[main/:?]
+	at com.dotcms.storage.MetadataGeneratorImpl.tikaBasedMetadata(MetadataGeneratorImpl.java:49) ~[main/:?]
+	at com.dotcms.storage.FileStorageAPIImpl.generateFullMetaData(FileStorageAPIImpl.java:151) ~[main/:?]
+	at com.dotcms.storage.FileStorageAPIImpl.generateMetaData(FileStorageAPIImpl.java:238) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.generateFullMetadata(FileMetadataAPIImpl.java:198) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.internalGenerateContentletMetadata(FileMetadataAPIImpl.java:91) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.generateContentletMetadata(FileMetadataAPIImpl.java:275) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.generateContentletMetadata(FileMetadataAPIImpl.java:260) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESMappingAPIImpl.writeMetadata(ESMappingAPIImpl.java:522) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESMappingAPIImpl.toMap(ESMappingAPIImpl.java:487) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.lambda$addBulkRequest$4c66ed82$2(ContentletIndexAPIImpl.java:822) ~[main/:?]
+	at io.vavr.control.Try.of(Try.java:75) ~[vavr-0.10.3.jar:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.addBulkRequest(ContentletIndexAPIImpl.java:821) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.appendBulkRequest(ContentletIndexAPIImpl.java:743) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.appendToBulkProcessor(ContentletIndexAPIImpl.java:759) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.appendToBulkProcessor(ContentletIndexAPIImpl.java:685) ~[main/:?]
+	at com.dotmarketing.common.reindex.ReindexThread.runReindexLoop(ReindexThread.java:227) ~[main/:?]
+	at com.dotmarketing.common.reindex.ReindexThread.lambda$new$1(ReindexThread.java:159) ~[main/:?]
+	at java.lang.Thread.run(Thread.java:829) ~[?:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) ~[?:?]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[?:?]
+	at java.lang.Thread.run(Thread.java:829) [?:?]
+22:03:53.149  ERROR tika.TikaUtils - Unable to get file Meta Data, OSGI Framework not initialized
+22:03:53.151  ERROR tika.TikaUtils - Failure retrieving OSGI Service [interface com.dotcms.tika.TikaServiceBuilder] in bundle [com.dotcms.tika]
+java.lang.IllegalStateException: [com.dotcms.tika] OSGI bundle NOT FOUND.
+	at org.apache.felix.framework.OSGISystem.getService(OSGISystem.java:228) ~[main/:?]
+	at com.dotcms.tika.TikaUtils.<init>(TikaUtils.java:63) ~[main/:?]
+	at com.dotcms.storage.MetadataGeneratorImpl.tikaBasedMetadata(MetadataGeneratorImpl.java:49) ~[main/:?]
+	at com.dotcms.storage.FileStorageAPIImpl.generateFullMetaData(FileStorageAPIImpl.java:151) ~[main/:?]
+	at com.dotcms.storage.FileStorageAPIImpl.generateMetaData(FileStorageAPIImpl.java:238) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.generateFullMetadata(FileMetadataAPIImpl.java:198) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.internalGenerateContentletMetadata(FileMetadataAPIImpl.java:91) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.generateContentletMetadata(FileMetadataAPIImpl.java:275) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.generateContentletMetadata(FileMetadataAPIImpl.java:260) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESMappingAPIImpl.writeMetadata(ESMappingAPIImpl.java:522) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESMappingAPIImpl.toMap(ESMappingAPIImpl.java:487) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.lambda$addBulkRequest$4c66ed82$1(ContentletIndexAPIImpl.java:806) ~[main/:?]
+	at io.vavr.control.Try.of(Try.java:75) ~[vavr-0.10.3.jar:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.addBulkRequest(ContentletIndexAPIImpl.java:805) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.appendBulkRequest(ContentletIndexAPIImpl.java:743) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.appendToBulkProcessor(ContentletIndexAPIImpl.java:759) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.appendToBulkProcessor(ContentletIndexAPIImpl.java:685) ~[main/:?]
+	at com.dotmarketing.common.reindex.ReindexThread.runReindexLoop(ReindexThread.java:227) ~[main/:?]
+	at com.dotmarketing.common.reindex.ReindexThread.lambda$new$1(ReindexThread.java:159) ~[main/:?]
+	at java.lang.Thread.run(Thread.java:829) ~[?:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) ~[?:?]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[?:?]
+	at java.lang.Thread.run(Thread.java:829) [?:?]
+22:03:53.152  ERROR tika.TikaUtils - Unable to get file Meta Data, OSGI Framework not initialized
+22:03:54.024  WARN  datagen.TestWorkflowUtils - Reindex Queue is not empty after 120 seconds
+22:03:55.026  INFO  junit.MainBaseSuite - Indexer Complete=true
+22:03:55.028  WARN  business.UserHelper - Error loading user with id 1322ef65-7cf0-4937-9e84-8f93aa30f46a
+22:03:55.828  WARN  util.LocaleUtil - en is not a valid language id
+22:03:55.842  ERROR business.CategoryAPIImpl - User '1322ef65-7cf0-4937-9e84-8f93aa30f46a' doesn't have EDIT permissions to save child Category '' under parent Category '9d1cdc247ca9e16e46b75b11e2786130'.
+22:03:55.843  INFO  junit.MainBaseSuite - Checking indexer status...
+22:03:55.854  INFO  junit.MainBaseSuite - Checking indexer status...
+22:03:57.708  INFO  business.ESContentletAPIImpl - UserId : system : destroy : User trying to destroy the following contents: [ea001afb3da83d73997c0867bf2c5dd9]
+22:03:57.796  INFO  business.ContentTypeDestroyAPIImpl - Relocated from (500) to (1000) out of (0) contentlets..
+22:03:57.797  INFO  business.ContentTypeFactoryImpl - ::: Relocated 0 contentlets for ContentType [junit_test_categories_structure_1686002635870] to [junit_test_categories_structure_1686002635870_disposed_1686002637777] :::
+22:03:57.805  INFO  business.WorkflowFactoryImpl - Deleting the schemes associated to the content type: 4fe149d8691d644198d24a8f057570ea
+22:03:57.812  INFO  business.ContentTypeDestroyAPIImpl - There are (0) contents of type (JUnit Test Categories Structure_1686002635870). Will remove them sequentially using (100) batchSize 
+22:03:57.814  INFO  business.ContentTypeDestroyAPIImpl -  :: for (JUnit Test Categories Structure_1686002635870) allCount is (0) with leftovers (0) :: 
+22:03:57.814  INFO  business.ContentTypeDestroyAPIImpl - Destroying Content-Type with inode: [f329e75455d5a4a7317ec9e6d984e038] and var: [junit_test_categories_structure_1686002635870_disposed_1686002637777].
+22:03:57.816  INFO  business.WorkflowFactoryImpl - Deleting the schemes associated to the content type: f329e75455d5a4a7317ec9e6d984e038
+22:03:57.821  ERROR util.ContentTypeUtil - An error occurred when retrieving the action URL of Content Type [f329e75455d5a4a7317ec9e6d984e038] for user [system]: null
+java.lang.NullPointerException: null
+22:03:57.823  INFO  business.ContentTypeDestroyAPIImpl -  I'm done destroying (0) pieces of Content of type (junit_test_categories_structure_1686002635870_disposed_1686002637777). it took me : [00:00:00] 
+22:03:57.831  ERROR dotcms.IntegrationTestBase - Test getParents has open connection after
+22:03:57.832  INFO  junit.MainBaseSuite - Checking indexer status...
+22:03:57.832  INFO  junit.MainBaseSuite - Indexer is not empty, waiting for it to finish
+22:03:58.835  INFO  junit.MainBaseSuite - Indexer Complete=true
+22:03:59.646  INFO  business.ContentTypeDestroyAPIImpl - Relocated from (500) to (1000) out of (0) contentlets..
+22:03:59.646  INFO  business.ContentTypeFactoryImpl - ::: Relocated 0 contentlets for ContentType [TestCat1686002638862] to [TestCat1686002638862_disposed_1686002639639] :::
+22:03:59.653  INFO  business.WorkflowFactoryImpl - Deleting the schemes associated to the content type: a4957b9e319ec41b44d873aee5c3c862
+22:03:59.659  INFO  business.ContentTypeDestroyAPIImpl - There are (0) contents of type (TestCat1686002638862). Will remove them sequentially using (100) batchSize 
+22:03:59.660  INFO  business.ContentTypeDestroyAPIImpl -  :: for (TestCat1686002638862) allCount is (0) with leftovers (0) :: 
+22:03:59.660  INFO  business.ContentTypeDestroyAPIImpl - Destroying Content-Type with inode: [a9d9d2811c19e9965d408ed9a0c74272] and var: [TestCat1686002638862_disposed_1686002639639].
+22:03:59.663  INFO  business.WorkflowFactoryImpl - Deleting the schemes associated to the content type: a9d9d2811c19e9965d408ed9a0c74272
+22:03:59.667  ERROR util.ContentTypeUtil - An error occurred when retrieving the action URL of Content Type [a9d9d2811c19e9965d408ed9a0c74272] for user [system]: null
+java.lang.NullPointerException: null
+22:03:59.669  INFO  business.ContentTypeDestroyAPIImpl -  I'm done destroying (0) pieces of Content of type (TestCat1686002638862_disposed_1686002639639). it took me : [00:00:00] 
+22:03:59.669  ERROR dotcms.IntegrationTestBase - Test test_Find_Categories_Within_ContentType has open connection after
+22:03:59.670  INFO  junit.MainBaseSuite - Checking indexer status...
+22:03:59.727  INFO  junit.MainBaseSuite - Checking indexer status...
+22:03:59.732  WARN  business.UserHelper - Error loading user with id cfdf5133-b889-485a-96a0-1412f9183d28
+22:04:00.515  WARN  util.LocaleUtil - en is not a valid language id
+22:04:01.060  ERROR business.CategoryAPIImpl - User 'cfdf5133-b889-485a-96a0-1412f9183d28' doesn't have ADD CHILDREN and PUBLISH permissions to save Category '' at the top level.
+22:04:01.061  INFO  junit.MainBaseSuite - Checking indexer status...
+22:04:01.061  INFO  junit.MainBaseSuite - Indexer is not empty, waiting for it to finish
+22:04:08.966  WARN  util.KeyValueFieldUtil - Error parsing json: messed-up-json. Trying to parse with the JS replacement due to container or key/value data...
+22:04:08.966  ERROR util.KeyValueFieldUtil - Unable to parse JSON: messed-up-json. Please review the content and check for potential JS replacements. Returning exception
+com.dotmarketing.exception.DotRuntimeException: Unrecognized token 'messed': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (String)"messed-up-json"; line: 1, column: 7]
+	at io.vavr.control.Try.getOrElseThrow(Try.java:748) ~[vavr-0.10.3.jar:?]
+	at com.dotcms.util.marshal.JacksonMarshalUtilsImpl.unmarshal(JacksonMarshalUtilsImpl.java:65) ~[main/:?]
+	at com.dotcms.contenttype.util.KeyValueFieldUtil.JSONValueToHashMap(KeyValueFieldUtil.java:31) ~[main/:?]
+	at com.dotmarketing.portlets.structure.model.KeyValueFieldUtil.JSONValueToHashMap(KeyValueFieldUtil.java:14) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.transform.ContentletTransformer.getObjectValue(ContentletTransformer.java:351) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.transform.ContentletTransformer.populateFields(ContentletTransformer.java:311) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.transform.ContentletTransformer.transform(ContentletTransformer.java:114) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.transform.ContentletTransformer.<init>(ContentletTransformer.java:63) ~[main/:?]
+	at com.dotcms.util.transform.TransformerLocator.createContentletTransformer(TransformerLocator.java:137) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentFactoryImpl.findInDb(ESContentFactoryImpl.java:841) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.findInDb(ESContentletAPIImpl.java:573) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.ContentletAPIInterceptor.findInDb(ContentletAPIInterceptor.java:2918) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.appendBulkRequest(ContentletIndexAPIImpl.java:723) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.appendToBulkProcessor(ContentletIndexAPIImpl.java:759) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.appendToBulkProcessor(ContentletIndexAPIImpl.java:685) ~[main/:?]
+	at com.dotmarketing.common.reindex.ReindexThread.runReindexLoop(ReindexThread.java:227) ~[main/:?]
+	at com.dotmarketing.common.reindex.ReindexThread.lambda$new$1(ReindexThread.java:159) ~[main/:?]
+	at java.lang.Thread.run(Thread.java:829) ~[?:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) ~[?:?]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[?:?]
+	at java.lang.Thread.run(Thread.java:829) [?:?]
+Caused by: com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'messed': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: (String)"messed-up-json"; line: 1, column: 7]
+	at com.fasterxml.jackson.core.JsonParser._constructError(JsonParser.java:2391) ~[jackson-core-2.13.4.jar:2.13.4]
+	at com.fasterxml.jackson.core.base.ParserMinimalBase._reportError(ParserMinimalBase.java:745) ~[jackson-core-2.13.4.jar:2.13.4]
+	at com.fasterxml.jackson.core.json.ReaderBasedJsonParser._reportInvalidToken(ReaderBasedJsonParser.java:2961) ~[jackson-core-2.13.4.jar:2.13.4]
+	at com.fasterxml.jackson.core.json.ReaderBasedJsonParser._handleOddValue(ReaderBasedJsonParser.java:2002) ~[jackson-core-2.13.4.jar:2.13.4]
+	at com.fasterxml.jackson.core.json.ReaderBasedJsonParser.nextToken(ReaderBasedJsonParser.java:802) ~[jackson-core-2.13.4.jar:2.13.4]
+	at com.fasterxml.jackson.databind.ObjectMapper._initForReading(ObjectMapper.java:4761) ~[jackson-databind-2.13.4.jar:2.13.4]
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4667) ~[jackson-databind-2.13.4.jar:2.13.4]
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3629) ~[jackson-databind-2.13.4.jar:2.13.4]
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3612) ~[jackson-databind-2.13.4.jar:2.13.4]
+	at com.dotcms.util.marshal.JacksonMarshalUtilsImpl.lambda$unmarshal$a21c04d4$1(JacksonMarshalUtilsImpl.java:65) ~[main/:?]
+	at io.vavr.control.Try.of(Try.java:75) ~[vavr-0.10.3.jar:?]
+	... 22 more
+22:04:08.966  WARN  transform.ContentletTransformer - Failed to convert keyValue field `keyValueField` to an actual json. An Empty will be returned instead. 
+22:04:09.044  ERROR tika.TikaUtils - Failure retrieving OSGI Service [interface com.dotcms.tika.TikaServiceBuilder] in bundle [com.dotcms.tika]
+java.lang.IllegalStateException: [com.dotcms.tika] OSGI bundle NOT FOUND.
+	at org.apache.felix.framework.OSGISystem.getService(OSGISystem.java:228) ~[main/:?]
+	at com.dotcms.tika.TikaUtils.<init>(TikaUtils.java:63) ~[main/:?]
+	at com.dotcms.storage.MetadataGeneratorImpl.tikaBasedMetadata(MetadataGeneratorImpl.java:49) ~[main/:?]
+	at com.dotcms.storage.FileStorageAPIImpl.generateFullMetaData(FileStorageAPIImpl.java:151) ~[main/:?]
+	at com.dotcms.storage.FileStorageAPIImpl.generateMetaData(FileStorageAPIImpl.java:238) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.generateFullMetadata(FileMetadataAPIImpl.java:198) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.internalGenerateContentletMetadata(FileMetadataAPIImpl.java:91) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.generateContentletMetadata(FileMetadataAPIImpl.java:275) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.generateContentletMetadata(FileMetadataAPIImpl.java:260) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESMappingAPIImpl.writeMetadata(ESMappingAPIImpl.java:522) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESMappingAPIImpl.toMap(ESMappingAPIImpl.java:487) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.lambda$addBulkRequest$4c66ed82$2(ContentletIndexAPIImpl.java:822) ~[main/:?]
+	at io.vavr.control.Try.of(Try.java:75) ~[vavr-0.10.3.jar:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.addBulkRequest(ContentletIndexAPIImpl.java:821) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.appendBulkRequest(ContentletIndexAPIImpl.java:743) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.appendToBulkProcessor(ContentletIndexAPIImpl.java:759) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.appendToBulkProcessor(ContentletIndexAPIImpl.java:685) ~[main/:?]
+	at com.dotmarketing.common.reindex.ReindexThread.runReindexLoop(ReindexThread.java:227) ~[main/:?]
+	at com.dotmarketing.common.reindex.ReindexThread.lambda$new$1(ReindexThread.java:159) ~[main/:?]
+	at java.lang.Thread.run(Thread.java:829) ~[?:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) ~[?:?]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[?:?]
+	at java.lang.Thread.run(Thread.java:829) [?:?]
+22:04:09.044  ERROR tika.TikaUtils - Unable to get file Meta Data, OSGI Framework not initialized
+22:04:09.050  ERROR tika.TikaUtils - Failure retrieving OSGI Service [interface com.dotcms.tika.TikaServiceBuilder] in bundle [com.dotcms.tika]
+java.lang.IllegalStateException: [com.dotcms.tika] OSGI bundle NOT FOUND.
+	at org.apache.felix.framework.OSGISystem.getService(OSGISystem.java:228) ~[main/:?]
+	at com.dotcms.tika.TikaUtils.<init>(TikaUtils.java:63) ~[main/:?]
+	at com.dotcms.storage.MetadataGeneratorImpl.tikaBasedMetadata(MetadataGeneratorImpl.java:49) ~[main/:?]
+	at com.dotcms.storage.FileStorageAPIImpl.generateFullMetaData(FileStorageAPIImpl.java:151) ~[main/:?]
+	at com.dotcms.storage.FileStorageAPIImpl.generateMetaData(FileStorageAPIImpl.java:238) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.generateFullMetadata(FileMetadataAPIImpl.java:198) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.internalGenerateContentletMetadata(FileMetadataAPIImpl.java:91) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.generateContentletMetadata(FileMetadataAPIImpl.java:275) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.generateContentletMetadata(FileMetadataAPIImpl.java:260) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESMappingAPIImpl.writeMetadata(ESMappingAPIImpl.java:522) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESMappingAPIImpl.toMap(ESMappingAPIImpl.java:487) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.lambda$addBulkRequest$4c66ed82$1(ContentletIndexAPIImpl.java:806) ~[main/:?]
+	at io.vavr.control.Try.of(Try.java:75) ~[vavr-0.10.3.jar:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.addBulkRequest(ContentletIndexAPIImpl.java:805) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.appendBulkRequest(ContentletIndexAPIImpl.java:743) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.appendToBulkProcessor(ContentletIndexAPIImpl.java:759) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.appendToBulkProcessor(ContentletIndexAPIImpl.java:685) ~[main/:?]
+	at com.dotmarketing.common.reindex.ReindexThread.runReindexLoop(ReindexThread.java:227) ~[main/:?]
+	at com.dotmarketing.common.reindex.ReindexThread.lambda$new$1(ReindexThread.java:159) ~[main/:?]
+	at java.lang.Thread.run(Thread.java:829) ~[?:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) ~[?:?]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[?:?]
+	at java.lang.Thread.run(Thread.java:829) [?:?]
+22:04:09.050  ERROR tika.TikaUtils - Unable to get file Meta Data, OSGI Framework not initialized
+22:04:10.072  INFO  junit.MainBaseSuite - Indexer Complete=true
+22:04:10.100  INFO  junit.MainBaseSuite - Checking indexer status...
+22:04:10.101  WARN  business.UserHelper - Error loading user with id e9975221-f6f5-480d-acb8-76d280a49b62
+22:04:10.886  WARN  util.LocaleUtil - en is not a valid language id
+22:04:10.901  INFO  junit.MainBaseSuite - Checking indexer status...
+22:04:10.922  INFO  junit.MainBaseSuite - Checking indexer status...
+22:04:10.923  WARN  business.UserHelper - Error loading user with id ed8659a8-7e56-4c79-abd3-86d166cfe98a
+22:04:11.703  WARN  util.LocaleUtil - en is not a valid language id
+22:04:11.723  INFO  junit.MainBaseSuite - Checking indexer status...
+22:04:11.748  INFO  junit.MainBaseSuite - Checking indexer status...
+22:04:11.750  WARN  business.UserHelper - Error loading user with id bbeca253-685c-45e9-9a50-47636327e44c
+22:04:12.534  WARN  util.LocaleUtil - en is not a valid language id
+22:04:12.548  ERROR business.CategoryAPIImpl - User 'bbeca253-685c-45e9-9a50-47636327e44c' doesn't have EDIT permissions to save Category '3255c0e0b15c78fa53eaa8f35b74697d'
+22:04:12.549  INFO  junit.MainBaseSuite - Checking indexer status...
+22:04:12.564  INFO  util.StdOutErrLog - com.dotmarketing.portlets.categories.model.Category@5a0941bb[categoryName=Bikes-1686002652550,description=<null>,key=Bikes-1-2,sortOrder=1,active=true,keywords=Bikes,categoryVelocityVarName=bikes]
+
+22:04:12.569  INFO  junit.MainBaseSuite - Checking indexer status...
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

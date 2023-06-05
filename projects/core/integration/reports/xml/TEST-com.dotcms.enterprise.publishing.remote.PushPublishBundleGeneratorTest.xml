@@ -1,0 +1,1240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.dotcms.enterprise.publishing.remote.PushPublishBundleGeneratorTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2023-06-05T21:06:24" hostname="fv-az306-998" time="14.89">
+  <properties/>
+  <testcase name="Test_GenerateBundle_PageWithTemplateDeleted_PageSuccessfullyAddedToBundle" classname="com.dotcms.enterprise.publishing.remote.PushPublishBundleGeneratorTest" time="1.339"/>
+  <testcase name="testGenerateBundleWithFilter_DependenciesFalse_TemplateContainerFolderContenttypeContentlet_NotAdded" classname="com.dotcms.enterprise.publishing.remote.PushPublishBundleGeneratorTest" time="1.45"/>
+  <testcase name="testGenerateBundleWithFilter_ExcludeDependencyQuery_ContentFromChildContentType_NotAdded" classname="com.dotcms.enterprise.publishing.remote.PushPublishBundleGeneratorTest" time="2.585"/>
+  <testcase name="testGenerateBundleWithFilter_RelationshipsFalse_ChildcontentletChildcontentyypeRelationship_NotAdded" classname="com.dotcms.enterprise.publishing.remote.PushPublishBundleGeneratorTest" time="2.449"/>
+  <testcase name="Test_GenerateBundle_FileAssetZeroBytes_ContentAllowZeroLengthFilesSetToTrue_Success" classname="com.dotcms.enterprise.publishing.remote.PushPublishBundleGeneratorTest" time="0.918"/>
+  <testcase name="Test_GenerateBundle_FileAssetZeroBytes_ContentAllowZeroLengthFilesSetToFalse_DotBundleException" classname="com.dotcms.enterprise.publishing.remote.PushPublishBundleGeneratorTest" time="0.992"/>
+  <testcase name="testGenerateBundleWithFilter_ExcludeClasses_TemplateContainer_NotAdded" classname="com.dotcms.enterprise.publishing.remote.PushPublishBundleGeneratorTest" time="0.126"/>
+  <testcase name="testGenerateBundle_FilterDependenciesAndForcePushFalse_ContentExplicitlyAddedMustBePushedRegardlessPushDate" classname="com.dotcms.enterprise.publishing.remote.PushPublishBundleGeneratorTest" time="1.457"/>
+  <testcase name="testGenerateBundleWithFilter_ExcludeDependencyClasses_ContentTypeWorkflow_NotAdded" classname="com.dotcms.enterprise.publishing.remote.PushPublishBundleGeneratorTest" time="1.644"/>
+  <testcase name="testGenerateBundleWithFilter_ExcludeQuery_BaseTypeWidget_NotAdded" classname="com.dotcms.enterprise.publishing.remote.PushPublishBundleGeneratorTest" time="1.93"/>
+  <system-out><![CDATA[21:06:24.508  INFO  util.PushPublishLogger - class com.dotcms.publisher.business.PublisherAPIImpl : [BundleID: 01H26P3TKSH0P2GMSTHK1JHGEH] Asset added to Push Publish Queue. Action: Added by Browsing, Asset Type: contentlet, Asset Id: e097e337e88f98a865e8caaffeb4f32a, User: system
+21:06:24.513  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: DependencyBundler
+21:06:24.539  WARN  dependencies.DependencyManager - Unable to find Page. Identifier: e097e337e88f98a865e8caaffeb4f32a, Live: true, Lang: 1
+21:06:24.539  WARN  dependencies.DependencyManager - Unable to find Page. Identifier: e097e337e88f98a865e8caaffeb4f32a, Live: true, Lang: 1
+21:06:24.539  WARN  dependencies.DependencyManager - com.dotmarketing.portlets.htmlpageasset.business.HTMLPageAssetAPIImpl.findPageInDefaultLanguageDifferentThanProvided(HTMLPageAssetAPIImpl.java:908)
+21:06:24.540  ERROR factories.MultiTreeAPIImpl - An error occurred when retrieving empty Containers from page with ID 'e097e337e88f98a865e8caaffeb4f32a' in liveMode 'false': null
+java.lang.NullPointerException: null
+	at com.dotmarketing.factories.MultiTreeAPIImpl.addEmptyContainers(MultiTreeAPIImpl.java:1109) ~[main/:?]
+	at com.dotmarketing.factories.MultiTreeAPIImpl.getPageMultiTrees(MultiTreeAPIImpl.java:1064) ~[main/:?]
+	at com.dotmarketing.factories.MultiTreeAPIImpl.getPageMultiTrees(MultiTreeAPIImpl.java:995) ~[main/:?]
+	at com.dotcms.publisher.util.dependencies.PushPublishigDependencyProvider.getContentletsByPage(PushPublishigDependencyProvider.java:244) ~[main/:?]
+	at com.dotcms.publisher.util.dependencies.PushPublishigDependencyProcesor.processHTMLPagesDependency(PushPublishigDependencyProcesor.java:770) ~[main/:?]
+	at com.dotcms.publisher.util.dependencies.PushPublishigDependencyProcesor.processContentDependency(PushPublishigDependencyProcesor.java:442) ~[main/:?]
+	at com.dotcms.publisher.util.dependencies.PushPublishigDependencyProcesor.lambda$new$6(PushPublishigDependencyProcesor.java:126) ~[main/:?]
+	at com.dotcms.publisher.util.dependencies.ConcurrentDependencyProcessor$DependencyRunnable.run(ConcurrentDependencyProcessor.java:219) ~[main/:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) ~[?:?]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[?:?]
+	at java.lang.Thread.run(Thread.java:829) [?:?]
+21:06:24.560  INFO  dependencies.ConcurrentDependencyProcessor - DependencyProcessor Finished
+21:06:24.561  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: DependencyBundler
+21:06:24.561  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: HostBundler
+21:06:24.570  INFO  bundler.HostBundler - Searching for ContentletVersionInfo. Identifier: 8a7d5e23-da1e-420a-b4f0-471e7da8ea2d. Language:1
+21:06:24.576  INFO  bundler.HostBundler - Searching for ContentletVersionInfo. Identifier: c644c51b89754ed2af5ce1ef39427ff0. Language:1
+21:06:24.580  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: HostBundler
+21:06:24.580  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: ContentBundler
+21:06:24.621  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: ContentBundler
+21:06:24.621  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: FolderBundler
+21:06:24.622  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: FolderBundler
+21:06:24.622  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: TemplateBundler
+21:06:24.622  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: TemplateBundler
+21:06:24.622  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: ContainerBundler
+21:06:24.622  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: ContainerBundler
+21:06:24.622  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: RuleBundler
+21:06:24.622  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: RuleBundler
+21:06:24.622  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: LinkBundler
+21:06:24.622  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: LinkBundler
+21:06:24.622  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: ContentTypeBundler
+21:06:24.634  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: ContentTypeBundler
+21:06:24.636  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: RelationshipBundler
+21:06:24.636  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: RelationshipBundler
+21:06:24.636  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: LanguageVariablesBundler
+21:06:24.639  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: LanguageVariablesBundler
+21:06:24.639  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: WorkflowBundler
+21:06:24.667  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: WorkflowBundler
+21:06:24.667  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: LanguageBundler
+21:06:24.668  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: LanguageBundler
+21:06:24.671  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: BundleXMLAsc
+21:06:24.671  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: BundleXMLAsc
+21:06:24.671  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: CategoryBundler
+21:06:24.671  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: CategoryBundler
+21:06:24.671  ERROR dotcms.IntegrationTestBase - Test Test_GenerateBundle_PageWithTemplateDeleted_PageSuccessfullyAddedToBundle has open connection after
+21:06:24.671  INFO  junit.MainBaseSuite - Checking indexer status...
+21:06:24.672  INFO  junit.MainBaseSuite - Indexer is not empty, waiting for it to finish
+21:06:25.678  INFO  junit.MainBaseSuite - Indexer Complete=true
+21:06:26.963  INFO  util.PushPublishLogger - class com.dotcms.publisher.business.PublisherAPIImpl : [BundleID: 01H26P3X0HNKET5C0N40NN1SCV] Asset added to Push Publish Queue. Action: Added by Browsing, Asset Type: contentlet, Asset Id: 2b68b758cb60cb738bd19a96b3bd142f, User: system
+21:06:26.966  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: DependencyBundler
+21:06:27.013  INFO  dependencies.ConcurrentDependencyProcessor - DependencyProcessor Finished
+21:06:27.013  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: DependencyBundler
+21:06:27.013  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: HostBundler
+21:06:27.027  INFO  bundler.HostBundler - Searching for ContentletVersionInfo. Identifier: 8a7d5e23-da1e-420a-b4f0-471e7da8ea2d. Language:1
+21:06:27.030  INFO  bundler.HostBundler - Searching for ContentletVersionInfo. Identifier: c644c51b89754ed2af5ce1ef39427ff0. Language:1
+21:06:27.034  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: HostBundler
+21:06:27.034  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: ContentBundler
+21:06:27.047  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: ContentBundler
+21:06:27.047  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: FolderBundler
+21:06:27.048  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: FolderBundler
+21:06:27.048  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: TemplateBundler
+21:06:27.048  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: TemplateBundler
+21:06:27.048  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: ContainerBundler
+21:06:27.049  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: ContainerBundler
+21:06:27.049  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: RuleBundler
+21:06:27.049  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: RuleBundler
+21:06:27.049  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: LinkBundler
+21:06:27.049  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: LinkBundler
+21:06:27.049  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: ContentTypeBundler
+21:06:27.073  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: ContentTypeBundler
+21:06:27.074  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: RelationshipBundler
+21:06:27.074  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: RelationshipBundler
+21:06:27.074  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: LanguageVariablesBundler
+21:06:27.076  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: LanguageVariablesBundler
+21:06:27.076  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: WorkflowBundler
+21:06:27.098  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: WorkflowBundler
+21:06:27.099  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: LanguageBundler
+21:06:27.099  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: LanguageBundler
+21:06:27.099  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: BundleXMLAsc
+21:06:27.099  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: BundleXMLAsc
+21:06:27.100  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: CategoryBundler
+21:06:27.100  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: CategoryBundler
+21:06:27.103  INFO  util.PushPublishLogger - class com.dotcms.publisher.business.PublisherAPIImpl : [BundleID: 01H26P3X4W9R3BTRVJSVNBN69H] Asset added to Push Publish Queue. Action: Added by Browsing, Asset Type: contentlet, Asset Id: 2b68b758cb60cb738bd19a96b3bd142f, User: system
+21:06:27.106  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: DependencyBundler
+21:06:27.113  INFO  dependencies.ConcurrentDependencyProcessor - DependencyProcessor Finished
+21:06:27.113  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: DependencyBundler
+21:06:27.113  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: HostBundler
+21:06:27.113  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: HostBundler
+21:06:27.114  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: ContentBundler
+21:06:27.124  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: ContentBundler
+21:06:27.124  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: FolderBundler
+21:06:27.124  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: FolderBundler
+21:06:27.125  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: TemplateBundler
+21:06:27.125  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: TemplateBundler
+21:06:27.125  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: ContainerBundler
+21:06:27.125  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: ContainerBundler
+21:06:27.125  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: RuleBundler
+21:06:27.125  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: RuleBundler
+21:06:27.125  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: LinkBundler
+21:06:27.125  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: LinkBundler
+21:06:27.125  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: ContentTypeBundler
+21:06:27.125  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: ContentTypeBundler
+21:06:27.125  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: RelationshipBundler
+21:06:27.125  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: RelationshipBundler
+21:06:27.125  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: LanguageVariablesBundler
+21:06:27.127  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: LanguageVariablesBundler
+21:06:27.128  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: WorkflowBundler
+21:06:27.128  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: WorkflowBundler
+21:06:27.128  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: LanguageBundler
+21:06:27.128  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: LanguageBundler
+21:06:27.128  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: BundleXMLAsc
+21:06:27.128  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: BundleXMLAsc
+21:06:27.128  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: CategoryBundler
+21:06:27.128  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: CategoryBundler
+21:06:27.128  ERROR dotcms.IntegrationTestBase - Test testGenerateBundleWithFilter_DependenciesFalse_TemplateContainerFolderContenttypeContentlet_NotAdded has open connection after
+21:06:27.128  INFO  junit.MainBaseSuite - Checking indexer status...
+21:06:28.426  INFO  business.ESContentletAPIImpl - The contentlet: wikiContent hasn't action id set using the default action: ceca71a0-deee-4999-bd47-b01baa1bcfc8
+21:06:28.426  INFO  business.ESContentletAPIImpl - The action: ceca71a0-deee-4999-bd47-b01baa1bcfc8 has a save contentlet actionlet so firing a workflow and skipping the current checkin for the contentlet: wikiContent
+21:06:28.459  INFO  business.ESContentletAPIImpl - A Workflow has been ran instead of checkin the contentlet: ca1dd571288e83c289ecf989a940c57b
+21:06:28.500  INFO  util.PushPublishLogger - class com.dotcms.publisher.business.PublisherAPIImpl : [BundleID: 01H26P3YGHJ444E3C67KP4V6S6] Asset added to Push Publish Queue. Action: Added by Browsing, Asset Type: contentlet, Asset Id: ca1dd571288e83c289ecf989a940c57b, User: system
+21:06:28.503  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: DependencyBundler
+21:06:28.552  INFO  dependencies.ConcurrentDependencyProcessor - DependencyProcessor Finished
+21:06:28.552  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: DependencyBundler
+21:06:28.552  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: HostBundler
+21:06:28.566  INFO  bundler.HostBundler - Searching for ContentletVersionInfo. Identifier: 8a7d5e23-da1e-420a-b4f0-471e7da8ea2d. Language:1
+21:06:28.569  INFO  bundler.HostBundler - Searching for ContentletVersionInfo. Identifier: c644c51b89754ed2af5ce1ef39427ff0. Language:1
+21:06:28.572  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: HostBundler
+21:06:28.572  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: ContentBundler
+21:06:28.593  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: ContentBundler
+21:06:28.593  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: FolderBundler
+21:06:28.593  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: FolderBundler
+21:06:28.593  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: TemplateBundler
+21:06:28.593  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: TemplateBundler
+21:06:28.593  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: ContainerBundler
+21:06:28.593  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: ContainerBundler
+21:06:28.593  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: RuleBundler
+21:06:28.593  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: RuleBundler
+21:06:28.593  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: LinkBundler
+21:06:28.593  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: LinkBundler
+21:06:28.593  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: ContentTypeBundler
+21:06:28.605  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: ContentTypeBundler
+21:06:28.605  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: RelationshipBundler
+21:06:28.605  INFO  util.PushPublishLogger - class com.dotcms.enterprise.publishing.remote.bundler.RelationshipBundler : Relationship INODE: 75e8846d-41da-490e-94be-af33368190c8
+21:06:28.605  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: RelationshipBundler
+21:06:28.605  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: LanguageVariablesBundler
+21:06:28.607  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: LanguageVariablesBundler
+21:06:28.607  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: WorkflowBundler
+21:06:28.621  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: WorkflowBundler
+21:06:28.621  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: LanguageBundler
+21:06:28.622  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: LanguageBundler
+21:06:28.622  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: BundleXMLAsc
+21:06:28.622  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: BundleXMLAsc
+21:06:28.622  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: CategoryBundler
+21:06:28.622  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: CategoryBundler
+21:06:28.626  INFO  util.PushPublishLogger - class com.dotcms.publisher.business.PublisherAPIImpl : [BundleID: 01H26P3YMFJZN312JF5CBN9DMV] Asset added to Push Publish Queue. Action: Added by Browsing, Asset Type: contentlet, Asset Id: ca1dd571288e83c289ecf989a940c57b, User: system
+21:06:28.628  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: DependencyBundler
+21:06:28.663  INFO  dependencies.ConcurrentDependencyProcessor - DependencyProcessor Finished
+21:06:28.663  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: DependencyBundler
+21:06:28.663  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: HostBundler
+21:06:28.665  INFO  bundler.HostBundler - Searching for ContentletVersionInfo. Identifier: 8a7d5e23-da1e-420a-b4f0-471e7da8ea2d. Language:1
+21:06:28.667  INFO  bundler.HostBundler - Searching for ContentletVersionInfo. Identifier: c644c51b89754ed2af5ce1ef39427ff0. Language:1
+21:06:28.670  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: HostBundler
+21:06:28.670  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: ContentBundler
+21:06:28.682  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: ContentBundler
+21:06:28.682  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: FolderBundler
+21:06:28.682  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: FolderBundler
+21:06:28.682  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: TemplateBundler
+21:06:28.682  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: TemplateBundler
+21:06:28.682  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: ContainerBundler
+21:06:28.682  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: ContainerBundler
+21:06:28.682  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: RuleBundler
+21:06:28.682  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: RuleBundler
+21:06:28.682  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: LinkBundler
+21:06:28.682  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: LinkBundler
+21:06:28.682  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: ContentTypeBundler
+21:06:28.691  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: ContentTypeBundler
+21:06:28.691  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: RelationshipBundler
+21:06:28.691  INFO  util.PushPublishLogger - class com.dotcms.enterprise.publishing.remote.bundler.RelationshipBundler : Relationship INODE: 75e8846d-41da-490e-94be-af33368190c8
+21:06:28.691  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: RelationshipBundler
+21:06:28.692  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: LanguageVariablesBundler
+21:06:28.693  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: LanguageVariablesBundler
+21:06:28.693  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: WorkflowBundler
+21:06:28.709  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: WorkflowBundler
+21:06:28.709  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: LanguageBundler
+21:06:28.709  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: LanguageBundler
+21:06:28.709  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: BundleXMLAsc
+21:06:28.709  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: BundleXMLAsc
+21:06:28.709  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: CategoryBundler
+21:06:28.710  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: CategoryBundler
+21:06:28.710  ERROR dotcms.IntegrationTestBase - Test testGenerateBundleWithFilter_ExcludeDependencyQuery_ContentFromChildContentType_NotAdded has open connection after
+21:06:28.710  INFO  junit.MainBaseSuite - Checking indexer status...
+21:06:28.711  INFO  junit.MainBaseSuite - Indexer is not empty, waiting for it to finish
+21:06:29.713  INFO  junit.MainBaseSuite - Indexer Complete=true
+21:06:30.893  INFO  business.ESContentletAPIImpl - The contentlet: wikiContent hasn't action id set using the default action: ceca71a0-deee-4999-bd47-b01baa1bcfc8
+21:06:30.893  INFO  business.ESContentletAPIImpl - The action: ceca71a0-deee-4999-bd47-b01baa1bcfc8 has a save contentlet actionlet so firing a workflow and skipping the current checkin for the contentlet: wikiContent
+21:06:30.941  INFO  business.ESContentletAPIImpl - A Workflow has been ran instead of checkin the contentlet: 26500d26e370cb860c484bfb864d8fd7
+21:06:30.989  INFO  util.PushPublishLogger - class com.dotcms.publisher.business.PublisherAPIImpl : [BundleID: 01H26P40YA7K26E7KT4DRDKJWN] Asset added to Push Publish Queue. Action: Added by Browsing, Asset Type: contentlet, Asset Id: 26500d26e370cb860c484bfb864d8fd7, User: system
+21:06:30.991  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: DependencyBundler
+21:06:31.024  INFO  dependencies.ConcurrentDependencyProcessor - DependencyProcessor Finished
+21:06:31.024  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: DependencyBundler
+21:06:31.024  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: HostBundler
+21:06:31.032  INFO  bundler.HostBundler - Searching for ContentletVersionInfo. Identifier: 8a7d5e23-da1e-420a-b4f0-471e7da8ea2d. Language:1
+21:06:31.034  INFO  bundler.HostBundler - Searching for ContentletVersionInfo. Identifier: c644c51b89754ed2af5ce1ef39427ff0. Language:1
+21:06:31.037  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: HostBundler
+21:06:31.037  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: ContentBundler
+21:06:31.062  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: ContentBundler
+21:06:31.062  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: FolderBundler
+21:06:31.062  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: FolderBundler
+21:06:31.062  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: TemplateBundler
+21:06:31.062  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: TemplateBundler
+21:06:31.062  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: ContainerBundler
+21:06:31.062  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: ContainerBundler
+21:06:31.062  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: RuleBundler
+21:06:31.062  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: RuleBundler
+21:06:31.062  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: LinkBundler
+21:06:31.062  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: LinkBundler
+21:06:31.062  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: ContentTypeBundler
+21:06:31.073  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: ContentTypeBundler
+21:06:31.073  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: RelationshipBundler
+21:06:31.073  INFO  util.PushPublishLogger - class com.dotcms.enterprise.publishing.remote.bundler.RelationshipBundler : Relationship INODE: 7ee92318-7a5d-46f6-97fc-3f0d8aeeacb7
+21:06:31.073  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: RelationshipBundler
+21:06:31.073  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: LanguageVariablesBundler
+21:06:31.074  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: LanguageVariablesBundler
+21:06:31.074  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: WorkflowBundler
+21:06:31.089  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: WorkflowBundler
+21:06:31.089  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: LanguageBundler
+21:06:31.090  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: LanguageBundler
+21:06:31.090  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: BundleXMLAsc
+21:06:31.090  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: BundleXMLAsc
+21:06:31.090  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: CategoryBundler
+21:06:31.090  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: CategoryBundler
+21:06:31.093  INFO  util.PushPublishLogger - class com.dotcms.publisher.business.PublisherAPIImpl : [BundleID: 01H26P411K1ZRN1J870RM578EY] Asset added to Push Publish Queue. Action: Added by Browsing, Asset Type: contentlet, Asset Id: 26500d26e370cb860c484bfb864d8fd7, User: system
+21:06:31.095  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: DependencyBundler
+21:06:31.113  INFO  dependencies.ConcurrentDependencyProcessor - DependencyProcessor Finished
+21:06:31.113  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: DependencyBundler
+21:06:31.113  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: HostBundler
+21:06:31.114  INFO  bundler.HostBundler - Searching for ContentletVersionInfo. Identifier: 8a7d5e23-da1e-420a-b4f0-471e7da8ea2d. Language:1
+21:06:31.116  INFO  bundler.HostBundler - Searching for ContentletVersionInfo. Identifier: c644c51b89754ed2af5ce1ef39427ff0. Language:1
+21:06:31.118  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: HostBundler
+21:06:31.118  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: ContentBundler
+21:06:31.125  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: ContentBundler
+21:06:31.125  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: FolderBundler
+21:06:31.125  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: FolderBundler
+21:06:31.125  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: TemplateBundler
+21:06:31.125  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: TemplateBundler
+21:06:31.126  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: ContainerBundler
+21:06:31.126  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: ContainerBundler
+21:06:31.126  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: RuleBundler
+21:06:31.126  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: RuleBundler
+21:06:31.126  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: LinkBundler
+21:06:31.126  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: LinkBundler
+21:06:31.126  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: ContentTypeBundler
+21:06:31.138  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: ContentTypeBundler
+21:06:31.138  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: RelationshipBundler
+21:06:31.138  INFO  util.PushPublishLogger - class com.dotcms.enterprise.publishing.remote.bundler.RelationshipBundler : Relationship INODE: 7ee92318-7a5d-46f6-97fc-3f0d8aeeacb7
+21:06:31.138  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: RelationshipBundler
+21:06:31.138  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: LanguageVariablesBundler
+21:06:31.139  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: LanguageVariablesBundler
+21:06:31.140  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: WorkflowBundler
+21:06:31.157  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: WorkflowBundler
+21:06:31.158  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: LanguageBundler
+21:06:31.158  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: LanguageBundler
+21:06:31.158  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: BundleXMLAsc
+21:06:31.158  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: BundleXMLAsc
+21:06:31.158  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: CategoryBundler
+21:06:31.159  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: CategoryBundler
+21:06:31.159  ERROR dotcms.IntegrationTestBase - Test testGenerateBundleWithFilter_RelationshipsFalse_ChildcontentletChildcontentyypeRelationship_NotAdded has open connection after
+21:06:31.160  INFO  junit.MainBaseSuite - Checking indexer status...
+21:06:31.160  INFO  junit.MainBaseSuite - Indexer is not empty, waiting for it to finish
+21:06:32.163  INFO  junit.MainBaseSuite - Indexer Complete=true
+21:06:32.163  INFO  util.Config - Setting property: CONTENT_ALLOW_ZERO_LENGTH_FILES to true
+21:06:32.171  ERROR tika.TikaUtils - Failure retrieving OSGI Service [interface com.dotcms.tika.TikaServiceBuilder] in bundle [com.dotcms.tika]
+java.lang.IllegalStateException: [com.dotcms.tika] OSGI bundle NOT FOUND.
+	at org.apache.felix.framework.OSGISystem.getService(OSGISystem.java:228) ~[main/:?]
+	at com.dotcms.tika.TikaUtils.<init>(TikaUtils.java:63) ~[main/:?]
+	at com.dotcms.util.MimeTypeUtils.getMimeType(MimeTypeUtils.java:40) ~[main/:?]
+	at com.dotcms.storage.MetadataGeneratorImpl.standAloneMetadata(MetadataGeneratorImpl.java:76) ~[main/:?]
+	at com.dotcms.storage.FileStorageAPIImpl.generateBasicMetaData(FileStorageAPIImpl.java:113) ~[main/:?]
+	at com.dotcms.storage.FileStorageAPIImpl.generateMetaData(FileStorageAPIImpl.java:240) ~[main/:?]
+	at com.dotcms.content.model.hydration.MetadataDelegate.getMetadataMap(MetadataDelegate.java:164) ~[main/:?]
+	at com.dotcms.content.model.hydration.MetadataDelegate.getMetadataMap(MetadataDelegate.java:79) ~[main/:?]
+	at com.dotcms.content.model.hydration.MetadataDelegate.hydrate(MetadataDelegate.java:58) ~[main/:?]
+	at com.dotcms.content.business.json.ContentletJsonAPIImpl.hydrateThenGetFieldValue(ContentletJsonAPIImpl.java:456) ~[main/:?]
+	at com.dotcms.content.business.json.ContentletJsonAPIImpl.toImmutable(ContentletJsonAPIImpl.java:187) ~[main/:?]
+	at com.dotcms.content.business.json.ContentletJsonAPIImpl.toJson(ContentletJsonAPIImpl.java:137) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentFactoryImpl.setUpContentletAsJson(ESContentFactoryImpl.java:2160) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentFactoryImpl.save(ESContentFactoryImpl.java:2129) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentFactoryImpl.save(ESContentFactoryImpl.java:2121) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.internalCheckin(ESContentletAPIImpl.java:5544) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.lambda$checkin$59(ESContentletAPIImpl.java:5032) ~[main/:?]
+	at com.dotcms.concurrent.lock.StripedLockImpl.tryLock(StripedLockImpl.java:100) ~[main/:?]
+	at com.dotcms.concurrent.lock.StripedLockImpl.tryLock(StripedLockImpl.java:55) ~[main/:?]
+	at com.dotcms.concurrent.lock.IdentifierStripedLock.tryLock(IdentifierStripedLock.java:16) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:5031) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:10007) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:4867) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.ContentletAPIInterceptor.checkin(ContentletAPIInterceptor.java:266) ~[main/:?]
+	at com.dotcms.datagen.ContentletDataGen.checkin(ContentletDataGen.java:327) ~[integrationTest/:?]
+	at com.dotcms.datagen.ContentletDataGen.persist(ContentletDataGen.java:233) ~[integrationTest/:?]
+	at com.dotcms.datagen.ContentletDataGen.nextPersisted(ContentletDataGen.java:219) ~[integrationTest/:?]
+	at com.dotcms.enterprise.publishing.remote.PushPublishBundleGeneratorTest.Test_GenerateBundle_FileAssetZeroBytes_ContentAllowZeroLengthFilesSetToTrue_Success(PushPublishBundleGeneratorTest.java:634) ~[integrationTest/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:38) ~[integrationTest/:?]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:14) ~[integrationTest/:?]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.MainBaseSuite$DotRunner.run(MainBaseSuite.java:60) ~[integrationTest/:?]
+	at org.junit.runners.Suite.runChild(Suite.java:128) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.Suite.runChild(Suite.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[?:?]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[?:?]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[?:?]
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[?:?]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[?:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:?]
+21:06:32.171  ERROR tika.TikaUtils - Unable to get file media type, OSGI Framework not initialized
+21:06:32.192  ERROR tika.TikaUtils - Failure retrieving OSGI Service [interface com.dotcms.tika.TikaServiceBuilder] in bundle [com.dotcms.tika]
+java.lang.IllegalStateException: [com.dotcms.tika] OSGI bundle NOT FOUND.
+	at org.apache.felix.framework.OSGISystem.getService(OSGISystem.java:228) ~[main/:?]
+	at com.dotcms.tika.TikaUtils.<init>(TikaUtils.java:63) ~[main/:?]
+	at com.dotcms.storage.MetadataGeneratorImpl.tikaBasedMetadata(MetadataGeneratorImpl.java:49) ~[main/:?]
+	at com.dotcms.storage.FileStorageAPIImpl.generateFullMetaData(FileStorageAPIImpl.java:151) ~[main/:?]
+	at com.dotcms.storage.FileStorageAPIImpl.generateMetaData(FileStorageAPIImpl.java:238) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.generateFullMetadata(FileMetadataAPIImpl.java:198) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.internalGenerateContentletMetadata(FileMetadataAPIImpl.java:91) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.generateContentletMetadata(FileMetadataAPIImpl.java:275) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.generateContentletMetadata(FileMetadataAPIImpl.java:260) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESMappingAPIImpl.writeMetadata(ESMappingAPIImpl.java:522) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESMappingAPIImpl.toMap(ESMappingAPIImpl.java:487) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.lambda$addBulkRequest$4c66ed82$1(ContentletIndexAPIImpl.java:806) ~[main/:?]
+	at io.vavr.control.Try.of(Try.java:75) ~[vavr-0.10.3.jar:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.addBulkRequest(ContentletIndexAPIImpl.java:805) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.appendBulkRequest(ContentletIndexAPIImpl.java:767) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.createBulkRequest(ContentletIndexAPIImpl.java:635) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.indexContentListNow(ContentletIndexAPIImpl.java:576) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.addContentToIndex(ContentletIndexAPIImpl.java:570) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.lambda$addContentToIndex$2(ContentletIndexAPIImpl.java:528) ~[main/:?]
+	at com.dotmarketing.db.HibernateUtil$DotSyncRunnable.run(HibernateUtil.java:1016) ~[main/:?]
+	at com.dotmarketing.db.DotRunnableThread.internalRunner(DotRunnableThread.java:99) ~[main/:?]
+	at com.dotmarketing.db.LocalTransaction.wrap(LocalTransaction.java:165) ~[main/:?]
+	at com.dotmarketing.db.DotRunnableThread.run(DotRunnableThread.java:53) ~[main/:?]
+	at com.dotmarketing.db.HibernateUtil.finalizeCommitListeners(HibernateUtil.java:1165) ~[main/:?]
+	at com.dotmarketing.db.HibernateUtil.commitTransaction(HibernateUtil.java:1257) ~[main/:?]
+	at com.dotcms.business.bytebuddy.WrapInTransactionAdvice.exit(WrapInTransactionAdvice.java:63) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:5082) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:10007) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:4867) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.ContentletAPIInterceptor.checkin(ContentletAPIInterceptor.java:266) ~[main/:?]
+	at com.dotcms.datagen.ContentletDataGen.checkin(ContentletDataGen.java:327) ~[integrationTest/:?]
+	at com.dotcms.datagen.ContentletDataGen.persist(ContentletDataGen.java:233) ~[integrationTest/:?]
+	at com.dotcms.datagen.ContentletDataGen.nextPersisted(ContentletDataGen.java:219) ~[integrationTest/:?]
+	at com.dotcms.enterprise.publishing.remote.PushPublishBundleGeneratorTest.Test_GenerateBundle_FileAssetZeroBytes_ContentAllowZeroLengthFilesSetToTrue_Success(PushPublishBundleGeneratorTest.java:634) ~[integrationTest/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:38) ~[integrationTest/:?]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:14) ~[integrationTest/:?]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.MainBaseSuite$DotRunner.run(MainBaseSuite.java:60) ~[integrationTest/:?]
+	at org.junit.runners.Suite.runChild(Suite.java:128) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.Suite.runChild(Suite.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[?:?]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[?:?]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[?:?]
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[?:?]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[?:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:?]
+21:06:32.192  ERROR tika.TikaUtils - Unable to get file Meta Data, OSGI Framework not initialized
+21:06:32.193  ERROR tika.TikaUtils - Failure retrieving OSGI Service [interface com.dotcms.tika.TikaServiceBuilder] in bundle [com.dotcms.tika]
+java.lang.IllegalStateException: [com.dotcms.tika] OSGI bundle NOT FOUND.
+	at org.apache.felix.framework.OSGISystem.getService(OSGISystem.java:228) ~[main/:?]
+	at com.dotcms.tika.TikaUtils.<init>(TikaUtils.java:63) ~[main/:?]
+	at com.dotcms.util.MimeTypeUtils.getMimeType(MimeTypeUtils.java:40) ~[main/:?]
+	at com.dotcms.storage.MetadataGeneratorImpl.standAloneMetadata(MetadataGeneratorImpl.java:76) ~[main/:?]
+	at com.dotcms.storage.FileStorageAPIImpl.generateBasicMetaData(FileStorageAPIImpl.java:113) ~[main/:?]
+	at com.dotcms.storage.FileStorageAPIImpl.generateFullMetaData(FileStorageAPIImpl.java:161) ~[main/:?]
+	at com.dotcms.storage.FileStorageAPIImpl.generateMetaData(FileStorageAPIImpl.java:238) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.generateFullMetadata(FileMetadataAPIImpl.java:198) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.internalGenerateContentletMetadata(FileMetadataAPIImpl.java:91) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.generateContentletMetadata(FileMetadataAPIImpl.java:275) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.generateContentletMetadata(FileMetadataAPIImpl.java:260) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESMappingAPIImpl.writeMetadata(ESMappingAPIImpl.java:522) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESMappingAPIImpl.toMap(ESMappingAPIImpl.java:487) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.lambda$addBulkRequest$4c66ed82$1(ContentletIndexAPIImpl.java:806) ~[main/:?]
+	at io.vavr.control.Try.of(Try.java:75) ~[vavr-0.10.3.jar:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.addBulkRequest(ContentletIndexAPIImpl.java:805) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.appendBulkRequest(ContentletIndexAPIImpl.java:767) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.createBulkRequest(ContentletIndexAPIImpl.java:635) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.indexContentListNow(ContentletIndexAPIImpl.java:576) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.addContentToIndex(ContentletIndexAPIImpl.java:570) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.lambda$addContentToIndex$2(ContentletIndexAPIImpl.java:528) ~[main/:?]
+	at com.dotmarketing.db.HibernateUtil$DotSyncRunnable.run(HibernateUtil.java:1016) ~[main/:?]
+	at com.dotmarketing.db.DotRunnableThread.internalRunner(DotRunnableThread.java:99) ~[main/:?]
+	at com.dotmarketing.db.LocalTransaction.wrap(LocalTransaction.java:165) ~[main/:?]
+	at com.dotmarketing.db.DotRunnableThread.run(DotRunnableThread.java:53) ~[main/:?]
+	at com.dotmarketing.db.HibernateUtil.finalizeCommitListeners(HibernateUtil.java:1165) ~[main/:?]
+	at com.dotmarketing.db.HibernateUtil.commitTransaction(HibernateUtil.java:1257) ~[main/:?]
+	at com.dotcms.business.bytebuddy.WrapInTransactionAdvice.exit(WrapInTransactionAdvice.java:63) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:5082) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:10007) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:4867) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.ContentletAPIInterceptor.checkin(ContentletAPIInterceptor.java:266) ~[main/:?]
+	at com.dotcms.datagen.ContentletDataGen.checkin(ContentletDataGen.java:327) ~[integrationTest/:?]
+	at com.dotcms.datagen.ContentletDataGen.persist(ContentletDataGen.java:233) ~[integrationTest/:?]
+	at com.dotcms.datagen.ContentletDataGen.nextPersisted(ContentletDataGen.java:219) ~[integrationTest/:?]
+	at com.dotcms.enterprise.publishing.remote.PushPublishBundleGeneratorTest.Test_GenerateBundle_FileAssetZeroBytes_ContentAllowZeroLengthFilesSetToTrue_Success(PushPublishBundleGeneratorTest.java:634) ~[integrationTest/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:38) ~[integrationTest/:?]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:14) ~[integrationTest/:?]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.MainBaseSuite$DotRunner.run(MainBaseSuite.java:60) ~[integrationTest/:?]
+	at org.junit.runners.Suite.runChild(Suite.java:128) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.Suite.runChild(Suite.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[?:?]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[?:?]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[?:?]
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[?:?]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[?:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:?]
+21:06:32.193  ERROR tika.TikaUtils - Unable to get file media type, OSGI Framework not initialized
+21:06:32.987  INFO  util.PushPublishLogger - class com.dotcms.publisher.business.PublisherAPIImpl : [BundleID: 01H26P42WSQEZVJ9K1R30A079F] Asset added to Push Publish Queue. Action: Added by Browsing, Asset Type: contentlet, Asset Id: 6c426a619b06aa00dbe9dfedb142328c, User: system
+21:06:32.990  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: DependencyBundler
+21:06:33.022  INFO  dependencies.ConcurrentDependencyProcessor - DependencyProcessor Finished
+21:06:33.022  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: DependencyBundler
+21:06:33.022  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: HostBundler
+21:06:33.031  INFO  bundler.HostBundler - Searching for ContentletVersionInfo. Identifier: 8a7d5e23-da1e-420a-b4f0-471e7da8ea2d. Language:1
+21:06:33.033  INFO  bundler.HostBundler - Searching for ContentletVersionInfo. Identifier: c644c51b89754ed2af5ce1ef39427ff0. Language:1
+21:06:33.035  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: HostBundler
+21:06:33.035  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: ContentBundler
+21:06:33.048  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: ContentBundler
+21:06:33.048  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: FolderBundler
+21:06:33.049  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: FolderBundler
+21:06:33.049  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: TemplateBundler
+21:06:33.049  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: TemplateBundler
+21:06:33.049  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: ContainerBundler
+21:06:33.049  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: ContainerBundler
+21:06:33.049  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: RuleBundler
+21:06:33.049  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: RuleBundler
+21:06:33.049  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: LinkBundler
+21:06:33.049  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: LinkBundler
+21:06:33.049  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: ContentTypeBundler
+21:06:33.056  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: ContentTypeBundler
+21:06:33.056  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: RelationshipBundler
+21:06:33.056  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: RelationshipBundler
+21:06:33.056  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: LanguageVariablesBundler
+21:06:33.057  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: LanguageVariablesBundler
+21:06:33.057  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: WorkflowBundler
+21:06:33.079  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: WorkflowBundler
+21:06:33.079  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: LanguageBundler
+21:06:33.080  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: LanguageBundler
+21:06:33.080  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: BundleXMLAsc
+21:06:33.080  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: BundleXMLAsc
+21:06:33.080  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: CategoryBundler
+21:06:33.080  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: CategoryBundler
+21:06:33.080  INFO  util.Config - Setting property: CONTENT_ALLOW_ZERO_LENGTH_FILES to true
+21:06:33.080  ERROR dotcms.IntegrationTestBase - Test Test_GenerateBundle_FileAssetZeroBytes_ContentAllowZeroLengthFilesSetToTrue_Success has open connection after
+21:06:33.080  WARN  dotcms.IntegrationTestBase - Modified Config overrides after:CONTENT_ALLOW_ZERO_LENGTH_FILES=true
+21:06:33.080  INFO  junit.MainBaseSuite - Checking indexer status...
+21:06:33.089  ERROR tika.TikaUtils - Failure retrieving OSGI Service [interface com.dotcms.tika.TikaServiceBuilder] in bundle [com.dotcms.tika]
+java.lang.IllegalStateException: [com.dotcms.tika] OSGI bundle NOT FOUND.
+	at org.apache.felix.framework.OSGISystem.getService(OSGISystem.java:228) ~[main/:?]
+	at com.dotcms.tika.TikaUtils.<init>(TikaUtils.java:63) ~[main/:?]
+	at com.dotcms.util.MimeTypeUtils.getMimeType(MimeTypeUtils.java:40) ~[main/:?]
+	at com.dotcms.storage.MetadataGeneratorImpl.standAloneMetadata(MetadataGeneratorImpl.java:76) ~[main/:?]
+	at com.dotcms.storage.FileStorageAPIImpl.generateBasicMetaData(FileStorageAPIImpl.java:113) ~[main/:?]
+	at com.dotcms.storage.FileStorageAPIImpl.generateMetaData(FileStorageAPIImpl.java:240) ~[main/:?]
+	at com.dotcms.content.model.hydration.MetadataDelegate.getMetadataMap(MetadataDelegate.java:164) ~[main/:?]
+	at com.dotcms.content.model.hydration.MetadataDelegate.getMetadataMap(MetadataDelegate.java:79) ~[main/:?]
+	at com.dotcms.content.model.hydration.MetadataDelegate.hydrate(MetadataDelegate.java:58) ~[main/:?]
+	at com.dotcms.content.business.json.ContentletJsonAPIImpl.hydrateThenGetFieldValue(ContentletJsonAPIImpl.java:456) ~[main/:?]
+	at com.dotcms.content.business.json.ContentletJsonAPIImpl.toImmutable(ContentletJsonAPIImpl.java:187) ~[main/:?]
+	at com.dotcms.content.business.json.ContentletJsonAPIImpl.toJson(ContentletJsonAPIImpl.java:137) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentFactoryImpl.setUpContentletAsJson(ESContentFactoryImpl.java:2160) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentFactoryImpl.save(ESContentFactoryImpl.java:2129) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentFactoryImpl.save(ESContentFactoryImpl.java:2121) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.internalCheckin(ESContentletAPIImpl.java:5544) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.lambda$checkin$59(ESContentletAPIImpl.java:5032) ~[main/:?]
+	at com.dotcms.concurrent.lock.StripedLockImpl.tryLock(StripedLockImpl.java:100) ~[main/:?]
+	at com.dotcms.concurrent.lock.StripedLockImpl.tryLock(StripedLockImpl.java:55) ~[main/:?]
+	at com.dotcms.concurrent.lock.IdentifierStripedLock.tryLock(IdentifierStripedLock.java:16) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:5031) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:10007) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:4867) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.ContentletAPIInterceptor.checkin(ContentletAPIInterceptor.java:266) ~[main/:?]
+	at com.dotcms.datagen.ContentletDataGen.checkin(ContentletDataGen.java:327) ~[integrationTest/:?]
+	at com.dotcms.datagen.ContentletDataGen.persist(ContentletDataGen.java:233) ~[integrationTest/:?]
+	at com.dotcms.datagen.ContentletDataGen.nextPersisted(ContentletDataGen.java:219) ~[integrationTest/:?]
+	at com.dotcms.enterprise.publishing.remote.PushPublishBundleGeneratorTest.Test_GenerateBundle_FileAssetZeroBytes_ContentAllowZeroLengthFilesSetToFalse_DotBundleException(PushPublishBundleGeneratorTest.java:672) ~[integrationTest/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:19) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:38) ~[integrationTest/:?]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:14) ~[integrationTest/:?]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.MainBaseSuite$DotRunner.run(MainBaseSuite.java:60) ~[integrationTest/:?]
+	at org.junit.runners.Suite.runChild(Suite.java:128) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.Suite.runChild(Suite.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[?:?]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[?:?]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[?:?]
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[?:?]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[?:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:?]
+21:06:33.089  ERROR tika.TikaUtils - Unable to get file media type, OSGI Framework not initialized
+21:06:33.109  ERROR tika.TikaUtils - Failure retrieving OSGI Service [interface com.dotcms.tika.TikaServiceBuilder] in bundle [com.dotcms.tika]
+java.lang.IllegalStateException: [com.dotcms.tika] OSGI bundle NOT FOUND.
+	at org.apache.felix.framework.OSGISystem.getService(OSGISystem.java:228) ~[main/:?]
+	at com.dotcms.tika.TikaUtils.<init>(TikaUtils.java:63) ~[main/:?]
+	at com.dotcms.storage.MetadataGeneratorImpl.tikaBasedMetadata(MetadataGeneratorImpl.java:49) ~[main/:?]
+	at com.dotcms.storage.FileStorageAPIImpl.generateFullMetaData(FileStorageAPIImpl.java:151) ~[main/:?]
+	at com.dotcms.storage.FileStorageAPIImpl.generateMetaData(FileStorageAPIImpl.java:238) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.generateFullMetadata(FileMetadataAPIImpl.java:198) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.internalGenerateContentletMetadata(FileMetadataAPIImpl.java:91) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.generateContentletMetadata(FileMetadataAPIImpl.java:275) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.generateContentletMetadata(FileMetadataAPIImpl.java:260) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESMappingAPIImpl.writeMetadata(ESMappingAPIImpl.java:522) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESMappingAPIImpl.toMap(ESMappingAPIImpl.java:487) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.lambda$addBulkRequest$4c66ed82$1(ContentletIndexAPIImpl.java:806) ~[main/:?]
+	at io.vavr.control.Try.of(Try.java:75) ~[vavr-0.10.3.jar:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.addBulkRequest(ContentletIndexAPIImpl.java:805) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.appendBulkRequest(ContentletIndexAPIImpl.java:767) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.createBulkRequest(ContentletIndexAPIImpl.java:635) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.indexContentListNow(ContentletIndexAPIImpl.java:576) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.addContentToIndex(ContentletIndexAPIImpl.java:570) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.lambda$addContentToIndex$2(ContentletIndexAPIImpl.java:528) ~[main/:?]
+	at com.dotmarketing.db.HibernateUtil$DotSyncRunnable.run(HibernateUtil.java:1016) ~[main/:?]
+	at com.dotmarketing.db.DotRunnableThread.internalRunner(DotRunnableThread.java:99) ~[main/:?]
+	at com.dotmarketing.db.LocalTransaction.wrap(LocalTransaction.java:165) ~[main/:?]
+	at com.dotmarketing.db.DotRunnableThread.run(DotRunnableThread.java:53) ~[main/:?]
+	at com.dotmarketing.db.HibernateUtil.finalizeCommitListeners(HibernateUtil.java:1165) ~[main/:?]
+	at com.dotmarketing.db.HibernateUtil.commitTransaction(HibernateUtil.java:1257) ~[main/:?]
+	at com.dotcms.business.bytebuddy.WrapInTransactionAdvice.exit(WrapInTransactionAdvice.java:63) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:5082) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:10007) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:4867) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.ContentletAPIInterceptor.checkin(ContentletAPIInterceptor.java:266) ~[main/:?]
+	at com.dotcms.datagen.ContentletDataGen.checkin(ContentletDataGen.java:327) ~[integrationTest/:?]
+	at com.dotcms.datagen.ContentletDataGen.persist(ContentletDataGen.java:233) ~[integrationTest/:?]
+	at com.dotcms.datagen.ContentletDataGen.nextPersisted(ContentletDataGen.java:219) ~[integrationTest/:?]
+	at com.dotcms.enterprise.publishing.remote.PushPublishBundleGeneratorTest.Test_GenerateBundle_FileAssetZeroBytes_ContentAllowZeroLengthFilesSetToFalse_DotBundleException(PushPublishBundleGeneratorTest.java:672) ~[integrationTest/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:19) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:38) ~[integrationTest/:?]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:14) ~[integrationTest/:?]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.MainBaseSuite$DotRunner.run(MainBaseSuite.java:60) ~[integrationTest/:?]
+	at org.junit.runners.Suite.runChild(Suite.java:128) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.Suite.runChild(Suite.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[?:?]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[?:?]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[?:?]
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[?:?]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[?:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:?]
+21:06:33.109  ERROR tika.TikaUtils - Unable to get file Meta Data, OSGI Framework not initialized
+21:06:33.109  ERROR tika.TikaUtils - Failure retrieving OSGI Service [interface com.dotcms.tika.TikaServiceBuilder] in bundle [com.dotcms.tika]
+java.lang.IllegalStateException: [com.dotcms.tika] OSGI bundle NOT FOUND.
+	at org.apache.felix.framework.OSGISystem.getService(OSGISystem.java:228) ~[main/:?]
+	at com.dotcms.tika.TikaUtils.<init>(TikaUtils.java:63) ~[main/:?]
+	at com.dotcms.util.MimeTypeUtils.getMimeType(MimeTypeUtils.java:40) ~[main/:?]
+	at com.dotcms.storage.MetadataGeneratorImpl.standAloneMetadata(MetadataGeneratorImpl.java:76) ~[main/:?]
+	at com.dotcms.storage.FileStorageAPIImpl.generateBasicMetaData(FileStorageAPIImpl.java:113) ~[main/:?]
+	at com.dotcms.storage.FileStorageAPIImpl.generateFullMetaData(FileStorageAPIImpl.java:161) ~[main/:?]
+	at com.dotcms.storage.FileStorageAPIImpl.generateMetaData(FileStorageAPIImpl.java:238) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.generateFullMetadata(FileMetadataAPIImpl.java:198) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.internalGenerateContentletMetadata(FileMetadataAPIImpl.java:91) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.generateContentletMetadata(FileMetadataAPIImpl.java:275) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.generateContentletMetadata(FileMetadataAPIImpl.java:260) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESMappingAPIImpl.writeMetadata(ESMappingAPIImpl.java:522) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESMappingAPIImpl.toMap(ESMappingAPIImpl.java:487) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.lambda$addBulkRequest$4c66ed82$1(ContentletIndexAPIImpl.java:806) ~[main/:?]
+	at io.vavr.control.Try.of(Try.java:75) ~[vavr-0.10.3.jar:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.addBulkRequest(ContentletIndexAPIImpl.java:805) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.appendBulkRequest(ContentletIndexAPIImpl.java:767) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.createBulkRequest(ContentletIndexAPIImpl.java:635) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.indexContentListNow(ContentletIndexAPIImpl.java:576) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.addContentToIndex(ContentletIndexAPIImpl.java:570) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.lambda$addContentToIndex$2(ContentletIndexAPIImpl.java:528) ~[main/:?]
+	at com.dotmarketing.db.HibernateUtil$DotSyncRunnable.run(HibernateUtil.java:1016) ~[main/:?]
+	at com.dotmarketing.db.DotRunnableThread.internalRunner(DotRunnableThread.java:99) ~[main/:?]
+	at com.dotmarketing.db.LocalTransaction.wrap(LocalTransaction.java:165) ~[main/:?]
+	at com.dotmarketing.db.DotRunnableThread.run(DotRunnableThread.java:53) ~[main/:?]
+	at com.dotmarketing.db.HibernateUtil.finalizeCommitListeners(HibernateUtil.java:1165) ~[main/:?]
+	at com.dotmarketing.db.HibernateUtil.commitTransaction(HibernateUtil.java:1257) ~[main/:?]
+	at com.dotcms.business.bytebuddy.WrapInTransactionAdvice.exit(WrapInTransactionAdvice.java:63) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:5082) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:10007) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:4867) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.ContentletAPIInterceptor.checkin(ContentletAPIInterceptor.java:266) ~[main/:?]
+	at com.dotcms.datagen.ContentletDataGen.checkin(ContentletDataGen.java:327) ~[integrationTest/:?]
+	at com.dotcms.datagen.ContentletDataGen.persist(ContentletDataGen.java:233) ~[integrationTest/:?]
+	at com.dotcms.datagen.ContentletDataGen.nextPersisted(ContentletDataGen.java:219) ~[integrationTest/:?]
+	at com.dotcms.enterprise.publishing.remote.PushPublishBundleGeneratorTest.Test_GenerateBundle_FileAssetZeroBytes_ContentAllowZeroLengthFilesSetToFalse_DotBundleException(PushPublishBundleGeneratorTest.java:672) ~[integrationTest/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:19) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:38) ~[integrationTest/:?]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:14) ~[integrationTest/:?]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.MainBaseSuite$DotRunner.run(MainBaseSuite.java:60) ~[integrationTest/:?]
+	at org.junit.runners.Suite.runChild(Suite.java:128) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.Suite.runChild(Suite.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[?:?]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[?:?]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[?:?]
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[?:?]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[?:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:?]
+21:06:33.109  ERROR tika.TikaUtils - Unable to get file media type, OSGI Framework not initialized
+21:06:34.003  INFO  util.Config - Setting property: CONTENT_ALLOW_ZERO_LENGTH_FILES to false
+21:06:34.006  INFO  util.PushPublishLogger - class com.dotcms.publisher.business.PublisherAPIImpl : [BundleID: 01H26P43WKW9DTTX1C84TEY5ZM] Asset added to Push Publish Queue. Action: Added by Browsing, Asset Type: contentlet, Asset Id: 056492607e19cfd51eb42bf4cd4a0428, User: system
+21:06:34.008  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: DependencyBundler
+21:06:34.032  INFO  dependencies.ConcurrentDependencyProcessor - DependencyProcessor Finished
+21:06:34.032  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: DependencyBundler
+21:06:34.032  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: HostBundler
+21:06:34.041  INFO  bundler.HostBundler - Searching for ContentletVersionInfo. Identifier: 8a7d5e23-da1e-420a-b4f0-471e7da8ea2d. Language:1
+21:06:34.043  INFO  bundler.HostBundler - Searching for ContentletVersionInfo. Identifier: c644c51b89754ed2af5ce1ef39427ff0. Language:1
+21:06:34.054  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: HostBundler
+21:06:34.054  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: ContentBundler
+21:06:34.070  ERROR lang.Class - java.io.IOException: Source file is 0 length, failing /home/runner/work/core/custom/assets/8/8/88ced431-08cf-4928-817c-dfded31927d1/fileAsset/testing-file3581824102291985171.vtl
+java.util.concurrent.ExecutionException: java.io.IOException: Source file is 0 length, failing /home/runner/work/core/custom/assets/8/8/88ced431-08cf-4928-817c-dfded31927d1/fileAsset/testing-file3581824102291985171.vtl
+	at java.util.concurrent.FutureTask.report(FutureTask.java:122) ~[?:?]
+	at java.util.concurrent.FutureTask.get(FutureTask.java:191) ~[?:?]
+	at com.dotcms.concurrent.DotSubmitter.waitForAll(DotSubmitter.java:114) ~[main/:?]
+	at com.dotcms.enterprise.publishing.remote.bundler.ContentBundler.generate(ContentBundler.java:251) ~[main/:?]
+	at com.dotcms.enterprise.publishing.remote.PushPublishBundleGeneratorTest.generateBundle(PushPublishBundleGeneratorTest.java:209) ~[integrationTest/:?]
+	at com.dotcms.enterprise.publishing.remote.PushPublishBundleGeneratorTest.Test_GenerateBundle_FileAssetZeroBytes_ContentAllowZeroLengthFilesSetToFalse_DotBundleException(PushPublishBundleGeneratorTest.java:685) ~[integrationTest/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:19) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:38) ~[integrationTest/:?]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:14) ~[integrationTest/:?]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.MainBaseSuite$DotRunner.run(MainBaseSuite.java:60) ~[integrationTest/:?]
+	at org.junit.runners.Suite.runChild(Suite.java:128) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.Suite.runChild(Suite.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[?:?]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[?:?]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[?:?]
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[?:?]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[?:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:?]
+Caused by: java.io.IOException: Source file is 0 length, failing /home/runner/work/core/custom/assets/8/8/88ced431-08cf-4928-817c-dfded31927d1/fileAsset/testing-file3581824102291985171.vtl
+	at com.liferay.util.FileUtil.validateEmptyFile(FileUtil.java:181) ~[main/:?]
+	at com.dotcms.publishing.output.BundleOutput.copyFile(BundleOutput.java:58) ~[main/:?]
+	at com.dotcms.enterprise.publishing.remote.bundler.ContentBundler.writeFileToDisk(ContentBundler.java:465) ~[main/:?]
+	at com.dotcms.enterprise.publishing.remote.bundler.ContentBundler$ContentBundlerCallable.call(ContentBundler.java:624) ~[main/:?]
+	at com.dotcms.enterprise.publishing.remote.bundler.ContentBundler$ContentBundlerCallable.call(ContentBundler.java:597) ~[main/:?]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[?:?]
+	at java.lang.Thread.run(Thread.java:829) [?:?]
+21:06:34.071  INFO  util.Config - Setting property: CONTENT_ALLOW_ZERO_LENGTH_FILES to true
+21:06:34.071  INFO  junit.MainBaseSuite - Checking indexer status...
+21:06:34.097  INFO  util.PushPublishLogger - class com.dotcms.publisher.business.PublisherAPIImpl : [BundleID: 01H26P43ZGA26DQCZA7N8DSS5G] Asset added to Push Publish Queue. Action: Added by Browsing, Asset Type: template, Asset Id: 02658124270e4a4ce18e5dc524354c32, User: system
+21:06:34.098  INFO  util.PushPublishLogger - class com.dotcms.publisher.business.PublisherAPIImpl : [BundleID: 01H26P43ZGA26DQCZA7N8DSS5G] Asset added to Push Publish Queue. Action: Added by Browsing, Asset Type: containers, Asset Id: f18b498863c15af25c2ddd51f4e47bae, User: system
+21:06:34.100  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: DependencyBundler
+21:06:34.119  INFO  dependencies.ConcurrentDependencyProcessor - DependencyProcessor Finished
+21:06:34.119  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: DependencyBundler
+21:06:34.119  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: HostBundler
+21:06:34.121  INFO  bundler.HostBundler - Searching for ContentletVersionInfo. Identifier: 8a7d5e23-da1e-420a-b4f0-471e7da8ea2d. Language:1
+21:06:34.123  INFO  bundler.HostBundler - Searching for ContentletVersionInfo. Identifier: c644c51b89754ed2af5ce1ef39427ff0. Language:1
+21:06:34.126  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: HostBundler
+21:06:34.126  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: ContentBundler
+21:06:34.130  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: ContentBundler
+21:06:34.130  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: FolderBundler
+21:06:34.130  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: FolderBundler
+21:06:34.130  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: TemplateBundler
+21:06:34.130  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: TemplateBundler
+21:06:34.130  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: ContainerBundler
+21:06:34.131  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: ContainerBundler
+21:06:34.131  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: RuleBundler
+21:06:34.131  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: RuleBundler
+21:06:34.131  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: LinkBundler
+21:06:34.131  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: LinkBundler
+21:06:34.131  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: ContentTypeBundler
+21:06:34.140  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: ContentTypeBundler
+21:06:34.140  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: RelationshipBundler
+21:06:34.140  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: RelationshipBundler
+21:06:34.140  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: LanguageVariablesBundler
+21:06:34.141  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: LanguageVariablesBundler
+21:06:34.141  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: WorkflowBundler
+21:06:34.156  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: WorkflowBundler
+21:06:34.156  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: LanguageBundler
+21:06:34.157  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: LanguageBundler
+21:06:34.157  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: BundleXMLAsc
+21:06:34.157  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: BundleXMLAsc
+21:06:34.157  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: CategoryBundler
+21:06:34.157  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: CategoryBundler
+21:06:34.158  INFO  util.PushPublishLogger - class com.dotcms.publisher.business.PublisherAPIImpl : [BundleID: 01H26P441D41ZFJA5T75TKY4CF] Asset added to Push Publish Queue. Action: Added by Browsing, Asset Type: template, Asset Id: 02658124270e4a4ce18e5dc524354c32, User: system
+21:06:34.159  INFO  util.PushPublishLogger - class com.dotcms.publisher.business.PublisherAPIImpl : [BundleID: 01H26P441D41ZFJA5T75TKY4CF] Asset added to Push Publish Queue. Action: Added by Browsing, Asset Type: containers, Asset Id: f18b498863c15af25c2ddd51f4e47bae, User: system
+21:06:34.161  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: DependencyBundler
+21:06:34.167  INFO  dependencies.ConcurrentDependencyProcessor - DependencyProcessor Finished
+21:06:34.167  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: DependencyBundler
+21:06:34.167  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: HostBundler
+21:06:34.168  INFO  bundler.HostBundler - Searching for ContentletVersionInfo. Identifier: c644c51b89754ed2af5ce1ef39427ff0. Language:1
+21:06:34.171  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: HostBundler
+21:06:34.171  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: ContentBundler
+21:06:34.174  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: ContentBundler
+21:06:34.174  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: FolderBundler
+21:06:34.175  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: FolderBundler
+21:06:34.175  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: TemplateBundler
+21:06:34.175  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: TemplateBundler
+21:06:34.175  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: ContainerBundler
+21:06:34.175  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: ContainerBundler
+21:06:34.175  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: RuleBundler
+21:06:34.175  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: RuleBundler
+21:06:34.175  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: LinkBundler
+21:06:34.175  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: LinkBundler
+21:06:34.175  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: ContentTypeBundler
+21:06:34.176  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: ContentTypeBundler
+21:06:34.176  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: RelationshipBundler
+21:06:34.176  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: RelationshipBundler
+21:06:34.176  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: LanguageVariablesBundler
+21:06:34.177  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: LanguageVariablesBundler
+21:06:34.177  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: WorkflowBundler
+21:06:34.198  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: WorkflowBundler
+21:06:34.198  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: LanguageBundler
+21:06:34.198  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: LanguageBundler
+21:06:34.198  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: BundleXMLAsc
+21:06:34.198  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: BundleXMLAsc
+21:06:34.198  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: CategoryBundler
+21:06:34.198  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: CategoryBundler
+21:06:34.198  ERROR dotcms.IntegrationTestBase - Test testGenerateBundleWithFilter_ExcludeClasses_TemplateContainer_NotAdded has open connection after
+21:06:34.198  INFO  junit.MainBaseSuite - Checking indexer status...
+21:06:34.628  INFO  util.PushPublishLogger - class com.dotcms.publisher.business.PublisherAPIImpl : [BundleID: 01H26P44G2G4SG0FXQ1W7H1YPF] Asset added to Push Publish Queue. Action: Added by Browsing, Asset Type: contentlet, Asset Id: 605b4abce8b961c685d88cad3f5cbbc8, User: system
+21:06:34.632  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: DependencyBundler
+21:06:34.642  INFO  dependencies.ConcurrentDependencyProcessor - DependencyProcessor Finished
+21:06:34.642  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: DependencyBundler
+21:06:34.642  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: HostBundler
+21:06:34.642  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: HostBundler
+21:06:34.642  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: ContentBundler
+21:06:34.648  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: ContentBundler
+21:06:34.648  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: FolderBundler
+21:06:34.648  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: FolderBundler
+21:06:34.648  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: TemplateBundler
+21:06:34.648  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: TemplateBundler
+21:06:34.648  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: ContainerBundler
+21:06:34.648  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: ContainerBundler
+21:06:34.648  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: RuleBundler
+21:06:34.648  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: RuleBundler
+21:06:34.648  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: LinkBundler
+21:06:34.648  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: LinkBundler
+21:06:34.648  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: ContentTypeBundler
+21:06:34.648  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: ContentTypeBundler
+21:06:34.648  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: RelationshipBundler
+21:06:34.648  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: RelationshipBundler
+21:06:34.648  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: LanguageVariablesBundler
+21:06:34.649  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: LanguageVariablesBundler
+21:06:34.649  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: WorkflowBundler
+21:06:34.649  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: WorkflowBundler
+21:06:34.649  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: LanguageBundler
+21:06:34.649  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: LanguageBundler
+21:06:34.649  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: BundleXMLAsc
+21:06:34.649  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: BundleXMLAsc
+21:06:34.649  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: CategoryBundler
+21:06:34.649  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: CategoryBundler
+21:06:34.649  ERROR dotcms.IntegrationTestBase - Test testGenerateBundle_FilterDependenciesAndForcePushFalse_ContentExplicitlyAddedMustBePushedRegardlessPushDate has open connection after
+21:06:34.649  INFO  junit.MainBaseSuite - Checking indexer status...
+21:06:34.650  INFO  junit.MainBaseSuite - Indexer is not empty, waiting for it to finish
+21:06:35.656  INFO  junit.MainBaseSuite - Indexer Complete=true
+21:06:36.173  INFO  util.PushPublishLogger - class com.dotcms.publisher.business.PublisherAPIImpl : [BundleID: 01H26P460BJMK9FJGEZ0M5BWJY] Asset added to Push Publish Queue. Action: Added by Browsing, Asset Type: contentlet, Asset Id: 16e3fb4ee930b039ca96e6cc8d4a63f6, User: system
+21:06:36.178  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: DependencyBundler
+21:06:36.205  INFO  dependencies.ConcurrentDependencyProcessor - DependencyProcessor Finished
+21:06:36.205  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: DependencyBundler
+21:06:36.205  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: HostBundler
+21:06:36.213  INFO  bundler.HostBundler - Searching for ContentletVersionInfo. Identifier: 8a7d5e23-da1e-420a-b4f0-471e7da8ea2d. Language:1
+21:06:36.216  INFO  bundler.HostBundler - Searching for ContentletVersionInfo. Identifier: c644c51b89754ed2af5ce1ef39427ff0. Language:1
+21:06:36.218  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: HostBundler
+21:06:36.218  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: ContentBundler
+21:06:36.232  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: ContentBundler
+21:06:36.232  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: FolderBundler
+21:06:36.232  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: FolderBundler
+21:06:36.232  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: TemplateBundler
+21:06:36.232  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: TemplateBundler
+21:06:36.232  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: ContainerBundler
+21:06:36.232  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: ContainerBundler
+21:06:36.233  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: RuleBundler
+21:06:36.233  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: RuleBundler
+21:06:36.233  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: LinkBundler
+21:06:36.233  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: LinkBundler
+21:06:36.233  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: ContentTypeBundler
+21:06:36.238  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: ContentTypeBundler
+21:06:36.238  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: RelationshipBundler
+21:06:36.238  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: RelationshipBundler
+21:06:36.238  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: LanguageVariablesBundler
+21:06:36.239  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: LanguageVariablesBundler
+21:06:36.239  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: WorkflowBundler
+21:06:36.256  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: WorkflowBundler
+21:06:36.256  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: LanguageBundler
+21:06:36.256  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: LanguageBundler
+21:06:36.256  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: BundleXMLAsc
+21:06:36.256  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: BundleXMLAsc
+21:06:36.256  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: CategoryBundler
+21:06:36.256  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: CategoryBundler
+21:06:36.259  INFO  util.PushPublishLogger - class com.dotcms.publisher.business.PublisherAPIImpl : [BundleID: 01H26P4631GE2YGK6XQ43GKKH6] Asset added to Push Publish Queue. Action: Added by Browsing, Asset Type: contentlet, Asset Id: 16e3fb4ee930b039ca96e6cc8d4a63f6, User: system
+21:06:36.262  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: DependencyBundler
+21:06:36.267  INFO  dependencies.ConcurrentDependencyProcessor - DependencyProcessor Finished
+21:06:36.267  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: DependencyBundler
+21:06:36.267  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: HostBundler
+21:06:36.269  INFO  bundler.HostBundler - Searching for ContentletVersionInfo. Identifier: 8a7d5e23-da1e-420a-b4f0-471e7da8ea2d. Language:1
+21:06:36.271  INFO  bundler.HostBundler - Searching for ContentletVersionInfo. Identifier: c644c51b89754ed2af5ce1ef39427ff0. Language:1
+21:06:36.274  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: HostBundler
+21:06:36.274  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: ContentBundler
+21:06:36.293  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: ContentBundler
+21:06:36.293  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: FolderBundler
+21:06:36.293  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: FolderBundler
+21:06:36.293  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: TemplateBundler
+21:06:36.293  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: TemplateBundler
+21:06:36.293  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: ContainerBundler
+21:06:36.293  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: ContainerBundler
+21:06:36.293  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: RuleBundler
+21:06:36.293  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: RuleBundler
+21:06:36.293  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: LinkBundler
+21:06:36.293  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: LinkBundler
+21:06:36.293  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: ContentTypeBundler
+21:06:36.293  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: ContentTypeBundler
+21:06:36.293  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: RelationshipBundler
+21:06:36.293  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: RelationshipBundler
+21:06:36.293  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: LanguageVariablesBundler
+21:06:36.295  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: LanguageVariablesBundler
+21:06:36.295  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: WorkflowBundler
+21:06:36.295  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: WorkflowBundler
+21:06:36.295  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: LanguageBundler
+21:06:36.295  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: LanguageBundler
+21:06:36.295  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: BundleXMLAsc
+21:06:36.295  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: BundleXMLAsc
+21:06:36.295  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: CategoryBundler
+21:06:36.295  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: CategoryBundler
+21:06:36.295  ERROR dotcms.IntegrationTestBase - Test testGenerateBundleWithFilter_ExcludeDependencyClasses_ContentTypeWorkflow_NotAdded has open connection after
+21:06:36.295  INFO  junit.MainBaseSuite - Checking indexer status...
+21:06:36.296  INFO  junit.MainBaseSuite - Indexer is not empty, waiting for it to finish
+21:06:37.299  INFO  junit.MainBaseSuite - Indexer Complete=true
+21:06:38.062  INFO  util.PushPublishLogger - class com.dotcms.publisher.business.PublisherAPIImpl : [BundleID: 01H26P47VC7V7NXV3MQZC3K6YF] Asset added to Push Publish Queue. Action: Added by Browsing, Asset Type: contentlet, Asset Id: cdea56d013f0d7b9cd5a90fe3838ddd1, User: system
+21:06:38.064  INFO  util.PushPublishLogger - class com.dotcms.publisher.business.PublisherAPIImpl : [BundleID: 01H26P47VC7V7NXV3MQZC3K6YF] Asset added to Push Publish Queue. Action: Added by Browsing, Asset Type: contentlet, Asset Id: 2a3dae8c92e396648af03514c04b3cd6, User: system
+21:06:38.066  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: DependencyBundler
+21:06:38.099  INFO  dependencies.ConcurrentDependencyProcessor - DependencyProcessor Finished
+21:06:38.099  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: DependencyBundler
+21:06:38.099  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: HostBundler
+21:06:38.108  INFO  bundler.HostBundler - Searching for ContentletVersionInfo. Identifier: 8a7d5e23-da1e-420a-b4f0-471e7da8ea2d. Language:1
+21:06:38.111  INFO  bundler.HostBundler - Searching for ContentletVersionInfo. Identifier: c644c51b89754ed2af5ce1ef39427ff0. Language:1
+21:06:38.113  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: HostBundler
+21:06:38.113  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: ContentBundler
+21:06:38.135  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: ContentBundler
+21:06:38.135  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: FolderBundler
+21:06:38.135  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: FolderBundler
+21:06:38.135  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: TemplateBundler
+21:06:38.135  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: TemplateBundler
+21:06:38.135  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: ContainerBundler
+21:06:38.135  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: ContainerBundler
+21:06:38.135  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: RuleBundler
+21:06:38.135  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: RuleBundler
+21:06:38.135  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: LinkBundler
+21:06:38.136  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: LinkBundler
+21:06:38.136  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: ContentTypeBundler
+21:06:38.148  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: ContentTypeBundler
+21:06:38.149  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: RelationshipBundler
+21:06:38.149  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: RelationshipBundler
+21:06:38.150  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: LanguageVariablesBundler
+21:06:38.151  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: LanguageVariablesBundler
+21:06:38.151  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: WorkflowBundler
+21:06:38.166  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: WorkflowBundler
+21:06:38.166  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: LanguageBundler
+21:06:38.166  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: LanguageBundler
+21:06:38.166  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: BundleXMLAsc
+21:06:38.166  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: BundleXMLAsc
+21:06:38.166  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: CategoryBundler
+21:06:38.166  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: CategoryBundler
+21:06:38.168  INFO  util.PushPublishLogger - class com.dotcms.publisher.business.PublisherAPIImpl : [BundleID: 01H26P47YQ1CF9YKWYQ601B1MB] Asset added to Push Publish Queue. Action: Added by Browsing, Asset Type: contentlet, Asset Id: cdea56d013f0d7b9cd5a90fe3838ddd1, User: system
+21:06:38.170  INFO  util.PushPublishLogger - class com.dotcms.publisher.business.PublisherAPIImpl : [BundleID: 01H26P47YQ1CF9YKWYQ601B1MB] Asset added to Push Publish Queue. Action: Added by Browsing, Asset Type: contentlet, Asset Id: 2a3dae8c92e396648af03514c04b3cd6, User: system
+21:06:38.172  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: DependencyBundler
+21:06:38.184  INFO  dependencies.ConcurrentDependencyProcessor - DependencyProcessor Finished
+21:06:38.184  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: DependencyBundler
+21:06:38.184  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: HostBundler
+21:06:38.186  INFO  bundler.HostBundler - Searching for ContentletVersionInfo. Identifier: 8a7d5e23-da1e-420a-b4f0-471e7da8ea2d. Language:1
+21:06:38.188  INFO  bundler.HostBundler - Searching for ContentletVersionInfo. Identifier: c644c51b89754ed2af5ce1ef39427ff0. Language:1
+21:06:38.190  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: HostBundler
+21:06:38.190  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: ContentBundler
+21:06:38.196  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: ContentBundler
+21:06:38.196  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: FolderBundler
+21:06:38.196  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: FolderBundler
+21:06:38.196  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: TemplateBundler
+21:06:38.196  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: TemplateBundler
+21:06:38.196  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: ContainerBundler
+21:06:38.196  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: ContainerBundler
+21:06:38.196  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: RuleBundler
+21:06:38.196  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: RuleBundler
+21:06:38.196  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: LinkBundler
+21:06:38.196  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: LinkBundler
+21:06:38.196  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: ContentTypeBundler
+21:06:38.206  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: ContentTypeBundler
+21:06:38.206  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: RelationshipBundler
+21:06:38.206  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: RelationshipBundler
+21:06:38.206  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: LanguageVariablesBundler
+21:06:38.207  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: LanguageVariablesBundler
+21:06:38.207  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: WorkflowBundler
+21:06:38.226  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: WorkflowBundler
+21:06:38.226  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: LanguageBundler
+21:06:38.227  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: LanguageBundler
+21:06:38.227  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: BundleXMLAsc
+21:06:38.227  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: BundleXMLAsc
+21:06:38.227  INFO  remote.PushPublishBundleGeneratorTest - Start of Bundler: CategoryBundler
+21:06:38.227  INFO  remote.PushPublishBundleGeneratorTest - End of Bundler: CategoryBundler
+21:06:38.227  ERROR dotcms.IntegrationTestBase - Test testGenerateBundleWithFilter_ExcludeQuery_BaseTypeWidget_NotAdded has open connection after
+21:06:38.227  INFO  junit.MainBaseSuite - Checking indexer status...
+21:06:38.227  INFO  junit.MainBaseSuite - Indexer is not empty, waiting for it to finish
+21:06:39.230  INFO  junit.MainBaseSuite - Indexer Complete=true
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

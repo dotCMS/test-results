@@ -1,0 +1,767 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.dotcms.rest.BundleResourceTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2023-06-05T22:20:42" hostname="fv-az306-998" time="18.016">
+  <properties/>
+  <testcase name="shouldCleanRelationshipCache" classname="com.dotcms.rest.BundleResourceTest" time="4.813"/>
+  <testcase name="test_generateBundle_success" classname="com.dotcms.rest.BundleResourceTest" time="0.798"/>
+  <testcase name="test_downloadBundle_success" classname="com.dotcms.rest.BundleResourceTest" time="0.8"/>
+  <testcase name="test_downloadBundle_fileNotGenerated_return404" classname="com.dotcms.rest.BundleResourceTest" time="0.786"/>
+  <testcase name="test_deleteAll" classname="com.dotcms.rest.BundleResourceTest" time="10.819"/>
+  <system-out><![CDATA[22:20:42.373  INFO  util.PushPublishLogger - class com.dotcms.publisher.business.PublishAuditStatus : Status Update: Pending.
+22:20:42.376  INFO  rest.PushPublisherJob - Started bundle publish process
+22:20:42.376  INFO  util.PushPublishLogger - class com.dotcms.rest.PushPublisherJob : [BundleID: test_file.tar.gz] Started bundle publish process
+22:20:42.425  INFO  util.PushPublishLogger - class com.dotcms.enterprise.publishing.remote.handler.ContentHandler : [BundleID: test_file.tar.gz] Host publish success, ID: 48190c8c-42c4-46af-8d1a-0cd5db894797, Inode: 0c3418eb-4c27-4d71-937d-bf231399312a, Name: demo.dotcms.com
+22:20:42.937  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:4da13a42-5d59-480c-ad8f-94a3adf809fe. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:20:42.944  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:963f6a04-5320-42e7-ab74-6d876d199946. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:20:42.951  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:777f1c6b-c877-4a37-ba4b-10627316c2cc. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:20:42.957  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:1e0f1c6b-b67f-4c99-983d-db2b4bfa88b2. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:20:42.963  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:b9d89c80-3d88-4311-8365-187323c96436. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:20:42.968  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:ceca71a0-deee-4999-bd47-b01baa1bcfc8. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:20:42.974  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:c92f9aa1-9503-4567-ac30-d3242b54d02d. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:20:42.979  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:38efc763-d78f-4e4b-b092-59cd8c579b93. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:20:43.107  INFO  helper.SystemActionMappingsHandlerMerger - The mapping for systemAction: NEW, workflowAction: Optional[WorkflowAction [id=ceca71a0-deee-4999-bd47-b01baa1bcfc8, name=Save, stepId=null, nextStep=ee24a4cb-2d15-4c98-b1bd-6327126451f3]], and scheme: d61a59e1-a49c-46f2-a929-db2b4bfa88b2 has been saved
+22:20:43.109  INFO  helper.SystemActionMappingsHandlerMerger - The mapping for systemAction: EDIT, workflowAction: Optional[WorkflowAction [id=ceca71a0-deee-4999-bd47-b01baa1bcfc8, name=Save, stepId=null, nextStep=ee24a4cb-2d15-4c98-b1bd-6327126451f3]], and scheme: d61a59e1-a49c-46f2-a929-db2b4bfa88b2 has been saved
+22:20:43.111  INFO  helper.SystemActionMappingsHandlerMerger - The mapping for systemAction: UNPUBLISH, workflowAction: Optional[WorkflowAction [id=38efc763-d78f-4e4b-b092-59cd8c579b93, name=Unpublish, stepId=null, nextStep=ee24a4cb-2d15-4c98-b1bd-6327126451f3]], and scheme: d61a59e1-a49c-46f2-a929-db2b4bfa88b2 has been saved
+22:20:43.112  INFO  helper.SystemActionMappingsHandlerMerger - The mapping for systemAction: UNARCHIVE, workflowAction: Optional[WorkflowAction [id=c92f9aa1-9503-4567-ac30-d3242b54d02d, name=Unarchive, stepId=null, nextStep=ee24a4cb-2d15-4c98-b1bd-6327126451f3]], and scheme: d61a59e1-a49c-46f2-a929-db2b4bfa88b2 has been saved
+22:20:43.114  INFO  helper.SystemActionMappingsHandlerMerger - The mapping for systemAction: PUBLISH, workflowAction: Optional[WorkflowAction [id=b9d89c80-3d88-4311-8365-187323c96436, name=Publish, stepId=null, nextStep=dc3c9cd0-8467-404b-bf95-cb7df3fbc293]], and scheme: d61a59e1-a49c-46f2-a929-db2b4bfa88b2 has been saved
+22:20:43.115  INFO  helper.SystemActionMappingsHandlerMerger - The mapping for systemAction: ARCHIVE, workflowAction: Optional[WorkflowAction [id=4da13a42-5d59-480c-ad8f-94a3adf809fe, name=Archive, stepId=null, nextStep=d6b095b6-b65f-4bdb-bbfd-701d663dfee2]], and scheme: d61a59e1-a49c-46f2-a929-db2b4bfa88b2 has been saved
+22:20:43.117  INFO  helper.SystemActionMappingsHandlerMerger - The mapping for systemAction: DESTROY, workflowAction: Optional[WorkflowAction [id=1e0f1c6b-b67f-4c99-983d-db2b4bfa88b2, name=Destroy, stepId=null, nextStep=d6b095b6-b65f-4bdb-bbfd-701d663dfee2]], and scheme: d61a59e1-a49c-46f2-a929-db2b4bfa88b2 has been saved
+22:20:43.119  INFO  helper.SystemActionMappingsHandlerMerger - The mapping for systemAction: DELETE, workflowAction: Optional[WorkflowAction [id=777f1c6b-c877-4a37-ba4b-10627316c2cc, name=Delete, stepId=null, nextStep=d6b095b6-b65f-4bdb-bbfd-701d663dfee2]], and scheme: d61a59e1-a49c-46f2-a929-db2b4bfa88b2 has been saved
+22:20:43.119  INFO  util.PushPublishLogger - class com.dotcms.enterprise.publishing.remote.handler.WorkflowHandler : [BundleID: test_file.tar.gz] Workflow publish success, ID: d61a59e1-a49c-46f2-a929-db2b4bfa88b2, Name: System Workflow
+22:20:43.198  INFO  util.PushPublishLogger - class com.dotcms.enterprise.publishing.remote.handler.ContentTypeHandler : [BundleID: test_file.tar.gz] Content Type publish success, ID: ea76fa9a-5c02-44a6-a523-afa74ccc39f4, Name: type_test
+22:20:43.207  INFO  util.PushPublishLogger - class com.dotcms.enterprise.publishing.remote.handler.RelationshipHandler : [BundleID: test_file.tar.gz] Relationship publish (new) success, ID: d2118ccd-f74e-4c3d-a2e2-daac223f0b3d, Name: relationField2 relationField1
+22:20:43.212  INFO  util.PushPublishLogger - class com.dotcms.enterprise.publishing.remote.handler.LanguageVariablesHandler : [BundleID: test_file.tar.gz] Language File publish success, Name: cms_language_en.properties
+22:20:43.213  INFO  util.PushPublishLogger - class com.dotcms.enterprise.publishing.remote.handler.LanguageVariablesHandler : [BundleID: test_file.tar.gz] Language File publish success, Name: cms_language_en_US.properties
+22:20:43.213  INFO  util.PushPublishLogger - class com.dotcms.enterprise.publishing.remote.handler.LanguageVariablesHandler : [BundleID: test_file.tar.gz] Language File publish success, Name: cms_language_es.properties
+22:20:43.213  INFO  util.PushPublishLogger - class com.dotcms.enterprise.publishing.remote.handler.LanguageVariablesHandler : [BundleID: test_file.tar.gz] Language File publish success, Name: cms_language_es_ES.properties
+22:20:43.213  INFO  util.PushPublishLogger - class com.dotcms.enterprise.publishing.remote.handler.LanguageVariablesHandler : [BundleID: test_file.tar.gz] Language File publish success, Name: cms_language_fr.properties
+22:20:43.213  INFO  util.PushPublishLogger - class com.dotcms.enterprise.publishing.remote.handler.LanguageVariablesHandler : [BundleID: test_file.tar.gz] Language File publish success, Name: cms_language_fr_FR.properties
+22:20:43.214  INFO  util.PushPublishLogger - class com.dotcms.enterprise.publishing.remote.handler.LanguageVariablesHandler : [BundleID: test_file.tar.gz] Language File publish success, Name: cms_language_zh.properties
+22:20:43.214  INFO  util.PushPublishLogger - class com.dotcms.enterprise.publishing.remote.handler.LanguageVariablesHandler : [BundleID: test_file.tar.gz] Language File publish success, Name: cms_language_zh_CN.properties
+22:20:43.235  INFO  util.PushPublishLogger - class com.dotcms.enterprise.publishing.remote.handler.ContentHandler : [BundleID: test_file.tar.gz] Content publish success, ID: 8c66b23e-daa0-40e4-9991-d1a60e72d2f4, Inode: a1102c05-d78c-4a04-b823-64cc08b34229, Name: 8c66b23e-daa0-40e4-9991-d1a60e72d2f4
+22:20:43.251  INFO  util.PushPublishLogger - class com.dotcms.enterprise.publishing.remote.handler.ContentHandler : [BundleID: test_file.tar.gz] Content publish success, ID: f5eabf02-fd96-437b-84c8-ed3552446e8c, Inode: 2d64cd5a-9205-4498-bf2e-c66f12bcf449, Name: f5eabf02-fd96-437b-84c8-ed3552446e8c
+22:20:43.298  INFO  util.PushPublishLogger - class com.dotcms.enterprise.publishing.remote.handler.ContentWorkflowHandler : [BundleID: test_file.tar.gz] Content Workflow publish success, ID: 8c66b23e-daa0-40e4-9991-d1a60e72d2f4
+22:20:43.300  INFO  util.PushPublishLogger - class com.dotcms.enterprise.publishing.remote.handler.ContentWorkflowHandler : [BundleID: test_file.tar.gz] Content Workflow publish success, ID: f5eabf02-fd96-437b-84c8-ed3552446e8c
+22:20:44.754  INFO  util.PushPublishLogger - class com.dotcms.rest.PushPublisherJob : [BundleID: test_file.tar.gz] Finished bundle publish process
+22:20:44.754  INFO  rest.PushPublisherJob - Finished bundle publish process
+22:20:44.770  INFO  util.PushPublishLogger - class com.dotcms.publisher.business.PublishAuditStatus : Status Update: Pending.
+22:20:44.771  INFO  rest.PushPublisherJob - Started bundle publish process
+22:20:44.771  INFO  util.PushPublishLogger - class com.dotcms.rest.PushPublisherJob : [BundleID: test_file.tar.gz] Started bundle publish process
+22:20:44.903  INFO  util.PushPublishLogger - class com.dotcms.enterprise.publishing.remote.handler.ContentHandler : [BundleID: test_file.tar.gz] Host publish success, ID: 48190c8c-42c4-46af-8d1a-0cd5db894797, Inode: 0c3418eb-4c27-4d71-937d-bf231399312a, Name: demo.dotcms.com
+22:20:45.374  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:4da13a42-5d59-480c-ad8f-94a3adf809fe. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:20:45.380  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:963f6a04-5320-42e7-ab74-6d876d199946. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:20:45.385  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:777f1c6b-c877-4a37-ba4b-10627316c2cc. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:20:45.391  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:1e0f1c6b-b67f-4c99-983d-db2b4bfa88b2. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:20:45.397  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:b9d89c80-3d88-4311-8365-187323c96436. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:20:45.402  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:ceca71a0-deee-4999-bd47-b01baa1bcfc8. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:20:45.407  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:c92f9aa1-9503-4567-ac30-d3242b54d02d. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:20:45.413  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:38efc763-d78f-4e4b-b092-59cd8c579b93. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:20:45.528  INFO  helper.SystemActionMappingsHandlerMerger - The mapping for systemAction: NEW, workflowAction: Optional[WorkflowAction [id=ceca71a0-deee-4999-bd47-b01baa1bcfc8, name=Save, stepId=null, nextStep=ee24a4cb-2d15-4c98-b1bd-6327126451f3]], and scheme: d61a59e1-a49c-46f2-a929-db2b4bfa88b2 has been saved
+22:20:45.529  INFO  helper.SystemActionMappingsHandlerMerger - The mapping for systemAction: EDIT, workflowAction: Optional[WorkflowAction [id=ceca71a0-deee-4999-bd47-b01baa1bcfc8, name=Save, stepId=null, nextStep=ee24a4cb-2d15-4c98-b1bd-6327126451f3]], and scheme: d61a59e1-a49c-46f2-a929-db2b4bfa88b2 has been saved
+22:20:45.531  INFO  helper.SystemActionMappingsHandlerMerger - The mapping for systemAction: UNPUBLISH, workflowAction: Optional[WorkflowAction [id=38efc763-d78f-4e4b-b092-59cd8c579b93, name=Unpublish, stepId=null, nextStep=ee24a4cb-2d15-4c98-b1bd-6327126451f3]], and scheme: d61a59e1-a49c-46f2-a929-db2b4bfa88b2 has been saved
+22:20:45.533  INFO  helper.SystemActionMappingsHandlerMerger - The mapping for systemAction: UNARCHIVE, workflowAction: Optional[WorkflowAction [id=c92f9aa1-9503-4567-ac30-d3242b54d02d, name=Unarchive, stepId=null, nextStep=ee24a4cb-2d15-4c98-b1bd-6327126451f3]], and scheme: d61a59e1-a49c-46f2-a929-db2b4bfa88b2 has been saved
+22:20:45.534  INFO  helper.SystemActionMappingsHandlerMerger - The mapping for systemAction: PUBLISH, workflowAction: Optional[WorkflowAction [id=b9d89c80-3d88-4311-8365-187323c96436, name=Publish, stepId=null, nextStep=dc3c9cd0-8467-404b-bf95-cb7df3fbc293]], and scheme: d61a59e1-a49c-46f2-a929-db2b4bfa88b2 has been saved
+22:20:45.536  INFO  helper.SystemActionMappingsHandlerMerger - The mapping for systemAction: ARCHIVE, workflowAction: Optional[WorkflowAction [id=4da13a42-5d59-480c-ad8f-94a3adf809fe, name=Archive, stepId=null, nextStep=d6b095b6-b65f-4bdb-bbfd-701d663dfee2]], and scheme: d61a59e1-a49c-46f2-a929-db2b4bfa88b2 has been saved
+22:20:45.537  INFO  helper.SystemActionMappingsHandlerMerger - The mapping for systemAction: DESTROY, workflowAction: Optional[WorkflowAction [id=1e0f1c6b-b67f-4c99-983d-db2b4bfa88b2, name=Destroy, stepId=null, nextStep=d6b095b6-b65f-4bdb-bbfd-701d663dfee2]], and scheme: d61a59e1-a49c-46f2-a929-db2b4bfa88b2 has been saved
+22:20:45.539  INFO  helper.SystemActionMappingsHandlerMerger - The mapping for systemAction: DELETE, workflowAction: Optional[WorkflowAction [id=777f1c6b-c877-4a37-ba4b-10627316c2cc, name=Delete, stepId=null, nextStep=d6b095b6-b65f-4bdb-bbfd-701d663dfee2]], and scheme: d61a59e1-a49c-46f2-a929-db2b4bfa88b2 has been saved
+22:20:45.539  INFO  util.PushPublishLogger - class com.dotcms.enterprise.publishing.remote.handler.WorkflowHandler : [BundleID: test_file.tar.gz] Workflow publish success, ID: d61a59e1-a49c-46f2-a929-db2b4bfa88b2, Name: System Workflow
+22:20:45.576  INFO  util.PushPublishLogger - class com.dotcms.enterprise.publishing.remote.handler.ContentTypeHandler : [BundleID: test_file.tar.gz] Content Type publish success, ID: ea76fa9a-5c02-44a6-a523-afa74ccc39f4, Name: type_test
+22:20:45.585  INFO  util.PushPublishLogger - class com.dotcms.enterprise.publishing.remote.handler.RelationshipHandler : [BundleID: test_file.tar.gz] Relationship publish (update) success, ID: d2118ccd-f74e-4c3d-a2e2-daac223f0b3d, Name: relationField2 relationField1
+22:20:45.588  INFO  util.PushPublishLogger - class com.dotcms.enterprise.publishing.remote.handler.LanguageVariablesHandler : [BundleID: test_file.tar.gz] Language File publish success, Name: cms_language_en.properties
+22:20:45.588  INFO  util.PushPublishLogger - class com.dotcms.enterprise.publishing.remote.handler.LanguageVariablesHandler : [BundleID: test_file.tar.gz] Language File publish success, Name: cms_language_en_US.properties
+22:20:45.588  INFO  util.PushPublishLogger - class com.dotcms.enterprise.publishing.remote.handler.LanguageVariablesHandler : [BundleID: test_file.tar.gz] Language File publish success, Name: cms_language_es.properties
+22:20:45.588  INFO  util.PushPublishLogger - class com.dotcms.enterprise.publishing.remote.handler.LanguageVariablesHandler : [BundleID: test_file.tar.gz] Language File publish success, Name: cms_language_es_ES.properties
+22:20:45.589  INFO  util.PushPublishLogger - class com.dotcms.enterprise.publishing.remote.handler.LanguageVariablesHandler : [BundleID: test_file.tar.gz] Language File publish success, Name: cms_language_fr.properties
+22:20:45.589  INFO  util.PushPublishLogger - class com.dotcms.enterprise.publishing.remote.handler.LanguageVariablesHandler : [BundleID: test_file.tar.gz] Language File publish success, Name: cms_language_fr_FR.properties
+22:20:45.589  INFO  util.PushPublishLogger - class com.dotcms.enterprise.publishing.remote.handler.LanguageVariablesHandler : [BundleID: test_file.tar.gz] Language File publish success, Name: cms_language_zh.properties
+22:20:45.589  INFO  util.PushPublishLogger - class com.dotcms.enterprise.publishing.remote.handler.LanguageVariablesHandler : [BundleID: test_file.tar.gz] Language File publish success, Name: cms_language_zh_CN.properties
+22:20:45.617  INFO  util.PushPublishLogger - class com.dotcms.enterprise.publishing.remote.handler.ContentHandler : [BundleID: test_file.tar.gz] Content publish success, ID: f5eabf02-fd96-437b-84c8-ed3552446e8c, Inode: 54ee2995-28f0-427a-9dd4-cb58295089aa, Name: f5eabf02-fd96-437b-84c8-ed3552446e8c
+22:20:45.626  INFO  business.ESContentletAPIImpl - The contentlet: f5eabf02-fd96-437b-84c8-ed3552446e8c hasn't action id set using the default action: 38efc763-d78f-4e4b-b092-59cd8c579b93
+22:20:45.626  INFO  business.ESContentletAPIImpl - The action: 38efc763-d78f-4e4b-b092-59cd8c579b93 has an unpublish contentlet actionlet so firing a workflow and skipping the current publish for the contentlet: f5eabf02-fd96-437b-84c8-ed3552446e8c
+22:20:45.652  INFO  business.ESContentletAPIImpl - A Workflow has been ran instead of unpublish the contentlet: f5eabf02-fd96-437b-84c8-ed3552446e8c
+22:20:45.661  INFO  util.PushPublishLogger - class com.dotcms.enterprise.publishing.remote.handler.ContentWorkflowHandler : [BundleID: test_file.tar.gz] Content Workflow publish success, ID: f5eabf02-fd96-437b-84c8-ed3552446e8c
+22:20:46.180  INFO  util.PushPublishLogger - class com.dotcms.rest.PushPublisherJob : [BundleID: test_file.tar.gz] Finished bundle publish process
+22:20:46.180  INFO  rest.PushPublisherJob - Finished bundle publish process
+22:20:46.180  INFO  junit.MainBaseSuite - Checking indexer status...
+22:20:46.180  INFO  junit.MainBaseSuite - Indexer is not empty, waiting for it to finish
+22:20:47.182  INFO  junit.MainBaseSuite - Indexer Complete=true
+22:20:47.964  WARN  util.LocaleUtil - en is not a valid language id
+22:20:47.978  INFO  junit.MainBaseSuite - Checking indexer status...
+
+22:20:47.979  INFO  util.StdOutErrLog - [class com.dotcms.publishing.GenerateBundlePublisher]
+22:20:47.979  INFO  util.PushPublishLogger - class com.dotcms.publishing.PublisherAPIImpl : [BundleID: c2ef9659-73c6-4699-a40a-27771c1946bc] Started Publishing Task
+22:20:47.981  INFO  publishing.PublisherAPIImpl - Start of Bundler: DependencyBundler
+
+22:20:47.988  INFO  util.StdOutErrLog - [class com.dotcms.publishing.GenerateBundlePublisher]
+22:20:47.988  INFO  util.PushPublishLogger - class com.dotcms.publishing.PublisherAPIImpl : [BundleID: f0552962-81a4-4585-8d8e-15cc7a149ec0] Started Publishing Task
+22:20:47.989  INFO  publishing.PublisherAPIImpl - Start of Bundler: DependencyBundler
+22:20:47.992  INFO  dependencies.ConcurrentDependencyProcessor - DependencyProcessor Finished
+22:20:47.992  INFO  publishing.PublisherAPIImpl - End of Bundler: DependencyBundler
+22:20:47.992  INFO  publishing.PublisherAPIImpl - Start of Bundler: BundleXMLAsc
+22:20:47.992  INFO  publishing.PublisherAPIImpl - End of Bundler: BundleXMLAsc
+22:20:47.992  INFO  publishing.PublisherAPIImpl - Start of Bundler: CategoryBundler
+22:20:47.992  INFO  publishing.PublisherAPIImpl - End of Bundler: CategoryBundler
+22:20:47.995  INFO  publishing.GenerateBundlePublisher - Bundling Complete: /home/runner/work/core/custom/assets/bundles/c2ef9659-73c6-4699-a40a-27771c1946bc
+22:20:47.995  INFO  util.PushPublishLogger - class com.dotcms.publishing.PublisherAPIImpl : [BundleID: c2ef9659-73c6-4699-a40a-27771c1946bc] Completed Publishing Task
+22:20:47.997  INFO  dependencies.ConcurrentDependencyProcessor - DependencyProcessor Finished
+22:20:47.997  INFO  publishing.PublisherAPIImpl - End of Bundler: DependencyBundler
+22:20:47.997  INFO  publishing.PublisherAPIImpl - Start of Bundler: BundleXMLAsc
+22:20:47.997  INFO  publishing.PublisherAPIImpl - End of Bundler: BundleXMLAsc
+22:20:47.997  INFO  publishing.PublisherAPIImpl - Start of Bundler: CategoryBundler
+22:20:47.997  INFO  publishing.PublisherAPIImpl - End of Bundler: CategoryBundler
+22:20:47.997  INFO  publishing.GenerateBundlePublisher - Bundling Complete: /home/runner/work/core/custom/assets/bundles/f0552962-81a4-4585-8d8e-15cc7a149ec0
+22:20:47.997  INFO  util.PushPublishLogger - class com.dotcms.publishing.PublisherAPIImpl : [BundleID: f0552962-81a4-4585-8d8e-15cc7a149ec0] Completed Publishing Task
+22:20:48.773  WARN  util.LocaleUtil - en is not a valid language id
+22:20:48.780  INFO  junit.MainBaseSuite - Checking indexer status...
+22:20:49.559  WARN  util.LocaleUtil - en is not a valid language id
+22:20:49.566  ERROR rest.BundleResource - The bundle has not been generated for the provided bundle ID: fd2fc55d-2aec-4bd2-8995-3c11b4c78364
+22:20:49.566  INFO  junit.MainBaseSuite - Checking indexer status...
+22:20:49.567  INFO  util.PushPublishLogger - class com.dotcms.publisher.business.PublishAuditStatus : Status Update: Pending.
+22:20:49.569  INFO  util.PushPublishLogger - class com.dotcms.publisher.business.PublishAuditStatus : Status Update: Pending.
+22:20:49.570  INFO  util.PushPublishLogger - class com.dotcms.publisher.business.PublishAuditStatus : Status Update: Pending.
+22:20:49.572  INFO  util.PushPublishLogger - class com.dotcms.publisher.business.PublishAuditStatus : Status Update: Pending.
+22:20:49.573  INFO  util.PushPublishLogger - class com.dotcms.publisher.business.PublishAuditStatus : Status Update: Pending.
+22:20:49.575  INFO  util.PushPublishLogger - class com.dotcms.publisher.business.PublishAuditStatus : Status Update: Pending.
+22:20:49.576  INFO  util.PushPublishLogger - class com.dotcms.publisher.business.PublishAuditStatus : Status Update: Pending.
+22:20:49.578  INFO  util.PushPublishLogger - class com.dotcms.publisher.business.PublishAuditStatus : Status Update: Pending.
+22:20:49.579  INFO  util.PushPublishLogger - class com.dotcms.publisher.business.PublishAuditStatus : Status Update: Pending.
+22:20:49.580  INFO  util.PushPublishLogger - class com.dotcms.publisher.business.PublishAuditStatus : Status Update: Pending.
+22:20:49.582  INFO  util.PushPublishLogger - class com.dotcms.publisher.business.PublishAuditStatus : Status Update: Pending.
+22:20:49.583  INFO  util.PushPublishLogger - class com.dotcms.publisher.business.PublishAuditStatus : Status Update: Pending.
+22:20:49.584  INFO  util.PushPublishLogger - class com.dotcms.publisher.business.PublishAuditStatus : Status Update: Pending.
+22:20:49.585  INFO  util.PushPublishLogger - class com.dotcms.publisher.business.PublishAuditStatus : Status Update: Pending.
+22:20:49.586  INFO  util.PushPublishLogger - class com.dotcms.publisher.business.PublishAuditStatus : Status Update: Pending.
+22:20:49.587  INFO  util.PushPublishLogger - class com.dotcms.publisher.business.PublishAuditStatus : Status Update: Pending.
+22:20:49.588  INFO  util.PushPublishLogger - class com.dotcms.publisher.business.PublishAuditStatus : Status Update: Pending.
+22:20:49.590  INFO  util.PushPublishLogger - class com.dotcms.publisher.business.PublishAuditStatus : Status Update: Pending.
+22:20:50.368  WARN  util.LocaleUtil - en is not a valid language id
+22:20:50.373  INFO  rest.BundleResource - Deleting all bundles by the user: dotcms.org.1
+22:20:50.375  INFO  business.BundleAPIImpl - Deleting all bundles with statuses: [BUNDLE_REQUESTED, BUNDLING, SENDING_TO_ENDPOINTS, FAILED_TO_SEND_TO_ALL_GROUPS, FAILED_TO_SEND_TO_SOME_GROUPS, FAILED_TO_BUNDLE, FAILED_TO_SENT, FAILED_TO_PUBLISH, SUCCESS, BUNDLE_SENT_SUCCESSFULLY, RECEIVED_BUNDLE, PUBLISHING_BUNDLE, WAITING_FOR_PUBLISHING, BUNDLE_SAVED_SUCCESSFULLY, INVALID_TOKEN, LICENSE_REQUIRED, SUCCESS_WITH_WARNINGS, FAILED_INTEGRITY_CHECK]by the user: dotcms.org.1
+22:20:50.380  INFO  business.BundleAPIImpl - Removing bundle: 01H26P1G9R63EK9W3DZKDDAPJQ and dependencies by: dotcms.org.1
+22:20:50.380  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26P1G9R63EK9W3DZKDDAPJQ
+22:20:50.380  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26P1G9R63EK9W3DZKDDAPJQ
+22:20:50.380  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26P1G9R63EK9W3DZKDDAPJQ
+22:20:50.380  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26P1G9R63EK9W3DZKDDAPJQ
+22:20:50.381  INFO  business.BundleAPIImpl - Removing bundle: 01H26P1G9R63EK9W3DZKDDAPJQ
+22:20:50.406  INFO  business.BundleAPIImpl - Removing bundle: 01H26P1HB08TE7TC9DF098CDN5 and dependencies by: dotcms.org.1
+22:20:50.406  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26P1HB08TE7TC9DF098CDN5
+22:20:50.406  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26P1HB08TE7TC9DF098CDN5
+22:20:50.407  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26P1HB08TE7TC9DF098CDN5
+22:20:50.408  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26P1HB08TE7TC9DF098CDN5
+22:20:50.408  INFO  business.BundleAPIImpl - Removing bundle: 01H26P1HB08TE7TC9DF098CDN5
+22:20:50.409  INFO  business.BundleAPIImpl - Removing bundle: 01H26P1HDE47N1VQF8AQDDRW4C and dependencies by: dotcms.org.1
+22:20:50.409  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26P1HDE47N1VQF8AQDDRW4C
+22:20:50.409  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26P1HDE47N1VQF8AQDDRW4C
+22:20:50.409  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26P1HDE47N1VQF8AQDDRW4C
+22:20:50.409  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26P1HDE47N1VQF8AQDDRW4C
+22:20:50.409  INFO  business.BundleAPIImpl - Removing bundle: 01H26P1HDE47N1VQF8AQDDRW4C
+22:20:50.410  INFO  business.BundleAPIImpl - Removing bundle: 01H26P1JHW2KMKWY10QE8BEDD0 and dependencies by: dotcms.org.1
+22:20:50.410  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26P1JHW2KMKWY10QE8BEDD0
+22:20:50.410  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26P1JHW2KMKWY10QE8BEDD0
+22:20:50.410  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26P1JHW2KMKWY10QE8BEDD0
+22:20:50.411  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26P1JHW2KMKWY10QE8BEDD0
+22:20:50.411  INFO  business.BundleAPIImpl - Removing bundle: 01H26P1JHW2KMKWY10QE8BEDD0
+22:20:50.412  INFO  business.BundleAPIImpl - Removing bundle: 01H26SVVAKK5FG6GWNQR20MHG8 and dependencies by: dotcms.org.1
+22:20:50.412  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26SVVAKK5FG6GWNQR20MHG8
+22:20:50.412  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26SVVAKK5FG6GWNQR20MHG8
+22:20:50.412  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26SVVAKK5FG6GWNQR20MHG8
+22:20:50.412  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26SVVAKK5FG6GWNQR20MHG8
+22:20:50.412  INFO  business.BundleAPIImpl - Removing bundle: 01H26SVVAKK5FG6GWNQR20MHG8
+22:20:50.413  INFO  business.BundleAPIImpl - Removing bundle: 01H26SVWJ24E3GF5PRPH69XPQ8 and dependencies by: dotcms.org.1
+22:20:50.413  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26SVWJ24E3GF5PRPH69XPQ8
+22:20:50.413  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26SVWJ24E3GF5PRPH69XPQ8
+22:20:50.413  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26SVWJ24E3GF5PRPH69XPQ8
+22:20:50.413  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26SVWJ24E3GF5PRPH69XPQ8
+22:20:50.413  INFO  business.BundleAPIImpl - Removing bundle: 01H26SVWJ24E3GF5PRPH69XPQ8
+22:20:50.414  INFO  business.BundleAPIImpl - Removing bundle: 01H26P1KB6TKGE9P14K25SYGXY and dependencies by: dotcms.org.1
+22:20:50.414  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26P1KB6TKGE9P14K25SYGXY
+22:20:50.414  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26P1KB6TKGE9P14K25SYGXY
+22:20:50.414  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26P1KB6TKGE9P14K25SYGXY
+22:20:50.414  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26P1KB6TKGE9P14K25SYGXY
+22:20:50.414  INFO  business.BundleAPIImpl - Removing bundle: 01H26P1KB6TKGE9P14K25SYGXY
+22:20:50.415  INFO  business.BundleAPIImpl - Removing bundle: 01H26P1M6Z0S9R858Q0ZN1Y4QR and dependencies by: dotcms.org.1
+22:20:50.415  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26P1M6Z0S9R858Q0ZN1Y4QR
+22:20:50.415  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26P1M6Z0S9R858Q0ZN1Y4QR
+22:20:50.415  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26P1M6Z0S9R858Q0ZN1Y4QR
+22:20:50.415  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26P1M6Z0S9R858Q0ZN1Y4QR
+22:20:50.416  INFO  business.BundleAPIImpl - Removing bundle: 01H26P1M6Z0S9R858Q0ZN1Y4QR
+22:20:50.416  INFO  business.BundleAPIImpl - Removing bundle: 01H26P1NB90H334Y60DQ002G5E and dependencies by: dotcms.org.1
+22:20:50.416  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26P1NB90H334Y60DQ002G5E
+22:20:50.416  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26P1NB90H334Y60DQ002G5E
+22:20:50.416  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26P1NB90H334Y60DQ002G5E
+22:20:50.417  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26P1NB90H334Y60DQ002G5E
+22:20:50.417  INFO  business.BundleAPIImpl - Removing bundle: 01H26P1NB90H334Y60DQ002G5E
+22:20:50.417  INFO  business.BundleAPIImpl - Removing bundle: 01H26P2DVETJ3NQTNF7XJH40E5 and dependencies by: dotcms.org.1
+22:20:50.417  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26P2DVETJ3NQTNF7XJH40E5
+22:20:50.417  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26P2DVETJ3NQTNF7XJH40E5
+22:20:50.418  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26P2DVETJ3NQTNF7XJH40E5
+22:20:50.418  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26P2DVETJ3NQTNF7XJH40E5
+22:20:50.418  INFO  business.BundleAPIImpl - Removing bundle: 01H26P2DVETJ3NQTNF7XJH40E5
+22:20:50.418  INFO  business.BundleAPIImpl - Removing bundle: 01H26P2DXPWDS65JMMT8HHXPAQ and dependencies by: dotcms.org.1
+22:20:50.418  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26P2DXPWDS65JMMT8HHXPAQ
+22:20:50.418  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26P2DXPWDS65JMMT8HHXPAQ
+22:20:50.419  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26P2DXPWDS65JMMT8HHXPAQ
+22:20:50.419  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26P2DXPWDS65JMMT8HHXPAQ
+22:20:50.419  INFO  business.BundleAPIImpl - Removing bundle: 01H26P2DXPWDS65JMMT8HHXPAQ
+22:20:50.445  INFO  business.BundleAPIImpl - Removing bundle: 01H26P2E260W47G917GBYXKKYP and dependencies by: dotcms.org.1
+22:20:50.445  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26P2E260W47G917GBYXKKYP
+22:20:50.445  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26P2E260W47G917GBYXKKYP
+22:20:50.445  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26P2E260W47G917GBYXKKYP
+22:20:50.445  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26P2E260W47G917GBYXKKYP
+22:20:50.445  INFO  business.BundleAPIImpl - Removing bundle: 01H26P2E260W47G917GBYXKKYP
+22:20:50.445  INFO  business.BundleAPIImpl - Removing bundle: 01H26P1P854C9P30JZGE2HV3DE and dependencies by: dotcms.org.1
+22:20:50.446  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26P1P854C9P30JZGE2HV3DE
+22:20:50.446  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26P1P854C9P30JZGE2HV3DE
+22:20:50.446  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26P1P854C9P30JZGE2HV3DE
+22:20:50.446  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26P1P854C9P30JZGE2HV3DE
+22:20:50.446  INFO  business.BundleAPIImpl - Removing bundle: 01H26P1P854C9P30JZGE2HV3DE
+22:20:50.447  INFO  business.BundleAPIImpl - Removing bundle: 01H26P1Q4JM6EXTJGVAVNP13YR and dependencies by: dotcms.org.1
+22:20:50.447  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26P1Q4JM6EXTJGVAVNP13YR
+22:20:50.447  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26P1Q4JM6EXTJGVAVNP13YR
+22:20:50.447  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26P1Q4JM6EXTJGVAVNP13YR
+22:20:50.447  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26P1Q4JM6EXTJGVAVNP13YR
+22:20:50.447  INFO  business.BundleAPIImpl - Removing bundle: 01H26P1Q4JM6EXTJGVAVNP13YR
+22:20:50.447  INFO  business.BundleAPIImpl - Removing bundle: 01H26P1QSA4G0AGFDDJ9DANDM7 and dependencies by: dotcms.org.1
+22:20:50.448  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26P1QSA4G0AGFDDJ9DANDM7
+22:20:50.448  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26P1QSA4G0AGFDDJ9DANDM7
+22:20:50.448  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26P1QSA4G0AGFDDJ9DANDM7
+22:20:50.448  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26P1QSA4G0AGFDDJ9DANDM7
+22:20:50.448  INFO  business.BundleAPIImpl - Removing bundle: 01H26P1QSA4G0AGFDDJ9DANDM7
+22:20:50.449  INFO  business.BundleAPIImpl - Removing bundle: 01H26P1RECMPTY4V3KTYWFNKF4 and dependencies by: dotcms.org.1
+22:20:50.449  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26P1RECMPTY4V3KTYWFNKF4
+22:20:50.449  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26P1RECMPTY4V3KTYWFNKF4
+22:20:50.449  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26P1RECMPTY4V3KTYWFNKF4
+22:20:50.449  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26P1RECMPTY4V3KTYWFNKF4
+22:20:50.449  INFO  business.BundleAPIImpl - Removing bundle: 01H26P1RECMPTY4V3KTYWFNKF4
+22:20:50.449  INFO  business.BundleAPIImpl - Removing bundle: 01H26P1RZ5DP7QR4QGQCY1D45F and dependencies by: dotcms.org.1
+22:20:50.449  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26P1RZ5DP7QR4QGQCY1D45F
+22:20:50.449  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26P1RZ5DP7QR4QGQCY1D45F
+22:20:50.450  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26P1RZ5DP7QR4QGQCY1D45F
+22:20:50.450  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26P1RZ5DP7QR4QGQCY1D45F
+22:20:50.450  INFO  business.BundleAPIImpl - Removing bundle: 01H26P1RZ5DP7QR4QGQCY1D45F
+22:20:50.451  INFO  business.BundleAPIImpl - Removing bundle: 01H26P1RZRNKMAWHHSX76838Z4 and dependencies by: dotcms.org.1
+22:20:50.451  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26P1RZRNKMAWHHSX76838Z4
+22:20:50.451  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26P1RZRNKMAWHHSX76838Z4
+22:20:50.451  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26P1RZRNKMAWHHSX76838Z4
+22:20:50.451  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26P1RZRNKMAWHHSX76838Z4
+22:20:50.451  INFO  business.BundleAPIImpl - Removing bundle: 01H26P1RZRNKMAWHHSX76838Z4
+22:20:50.451  INFO  business.BundleAPIImpl - Removing bundle: 01H26P1SGTT3C28Q71FR8GXXRM and dependencies by: dotcms.org.1
+22:20:50.451  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26P1SGTT3C28Q71FR8GXXRM
+22:20:50.451  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26P1SGTT3C28Q71FR8GXXRM
+22:20:50.452  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26P1SGTT3C28Q71FR8GXXRM
+22:20:50.452  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26P1SGTT3C28Q71FR8GXXRM
+22:20:50.452  INFO  business.BundleAPIImpl - Removing bundle: 01H26P1SGTT3C28Q71FR8GXXRM
+22:20:50.452  INFO  business.BundleAPIImpl - Removing bundle: 01H26P1TD485Y7Y0QAHN7CRAMW and dependencies by: dotcms.org.1
+22:20:50.453  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26P1TD485Y7Y0QAHN7CRAMW
+22:20:50.453  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26P1TD485Y7Y0QAHN7CRAMW
+22:20:50.453  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26P1TD485Y7Y0QAHN7CRAMW
+22:20:50.453  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26P1TD485Y7Y0QAHN7CRAMW
+22:20:50.453  INFO  business.BundleAPIImpl - Removing bundle: 01H26P1TD485Y7Y0QAHN7CRAMW
+22:20:50.453  INFO  business.BundleAPIImpl - Removing bundle: 01H26P1V0VEM889NY477T0EPZG and dependencies by: dotcms.org.1
+22:20:50.454  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26P1V0VEM889NY477T0EPZG
+22:20:50.454  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26P1V0VEM889NY477T0EPZG
+22:20:50.454  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26P1V0VEM889NY477T0EPZG
+22:20:50.454  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26P1V0VEM889NY477T0EPZG
+22:20:50.454  INFO  business.BundleAPIImpl - Removing bundle: 01H26P1V0VEM889NY477T0EPZG
+22:20:50.480  INFO  business.BundleAPIImpl - Removing bundle: 01H26P1VQSQTNNV5EZ4Q88ZZJE and dependencies by: dotcms.org.1
+22:20:50.480  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26P1VQSQTNNV5EZ4Q88ZZJE
+22:20:50.480  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26P1VQSQTNNV5EZ4Q88ZZJE
+22:20:50.480  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26P1VQSQTNNV5EZ4Q88ZZJE
+22:20:50.480  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26P1VQSQTNNV5EZ4Q88ZZJE
+22:20:50.480  INFO  business.BundleAPIImpl - Removing bundle: 01H26P1VQSQTNNV5EZ4Q88ZZJE
+22:20:50.481  INFO  business.BundleAPIImpl - Removing bundle: 01H26P1W8701C1P64GGN9ETA1W and dependencies by: dotcms.org.1
+22:20:50.481  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26P1W8701C1P64GGN9ETA1W
+22:20:50.481  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26P1W8701C1P64GGN9ETA1W
+22:20:50.481  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26P1W8701C1P64GGN9ETA1W
+22:20:50.481  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26P1W8701C1P64GGN9ETA1W
+22:20:50.481  INFO  business.BundleAPIImpl - Removing bundle: 01H26P1W8701C1P64GGN9ETA1W
+22:20:50.482  INFO  business.BundleAPIImpl - Removing bundle: 01H26P1WVYZ4EZ7RQRF6HBHBZ7 and dependencies by: dotcms.org.1
+22:20:50.482  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26P1WVYZ4EZ7RQRF6HBHBZ7
+22:20:50.482  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26P1WVYZ4EZ7RQRF6HBHBZ7
+22:20:50.482  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26P1WVYZ4EZ7RQRF6HBHBZ7
+22:20:50.482  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26P1WVYZ4EZ7RQRF6HBHBZ7
+22:20:50.482  INFO  business.BundleAPIImpl - Removing bundle: 01H26P1WVYZ4EZ7RQRF6HBHBZ7
+22:20:50.483  INFO  business.BundleAPIImpl - Removing bundle: 01H26P1X9QHHH3CH967R7W2ED4 and dependencies by: dotcms.org.1
+22:20:50.483  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26P1X9QHHH3CH967R7W2ED4
+22:20:50.483  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26P1X9QHHH3CH967R7W2ED4
+22:20:50.483  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26P1X9QHHH3CH967R7W2ED4
+22:20:50.483  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26P1X9QHHH3CH967R7W2ED4
+22:20:50.483  INFO  business.BundleAPIImpl - Removing bundle: 01H26P1X9QHHH3CH967R7W2ED4
+22:20:50.484  INFO  business.BundleAPIImpl - Removing bundle: 01H26P1XDGJ36TWG7N3CB0SFPW and dependencies by: dotcms.org.1
+22:20:50.484  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26P1XDGJ36TWG7N3CB0SFPW
+22:20:50.484  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26P1XDGJ36TWG7N3CB0SFPW
+22:20:50.484  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26P1XDGJ36TWG7N3CB0SFPW
+22:20:50.484  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26P1XDGJ36TWG7N3CB0SFPW
+22:20:50.484  INFO  business.BundleAPIImpl - Removing bundle: 01H26P1XDGJ36TWG7N3CB0SFPW
+22:20:50.485  INFO  business.BundleAPIImpl - Removing bundle: 01H26P1XN8231K8RBNCVJ2WV6X and dependencies by: dotcms.org.1
+22:20:50.485  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26P1XN8231K8RBNCVJ2WV6X
+22:20:50.485  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26P1XN8231K8RBNCVJ2WV6X
+22:20:50.485  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26P1XN8231K8RBNCVJ2WV6X
+22:20:50.485  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26P1XN8231K8RBNCVJ2WV6X
+22:20:50.485  INFO  business.BundleAPIImpl - Removing bundle: 01H26P1XN8231K8RBNCVJ2WV6X
+22:20:50.486  INFO  business.BundleAPIImpl - Removing bundle: 01H26P1Y33HNS6HEGSAF9PHH46 and dependencies by: dotcms.org.1
+22:20:50.486  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26P1Y33HNS6HEGSAF9PHH46
+22:20:50.486  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26P1Y33HNS6HEGSAF9PHH46
+22:20:50.486  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26P1Y33HNS6HEGSAF9PHH46
+22:20:50.486  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26P1Y33HNS6HEGSAF9PHH46
+22:20:50.486  INFO  business.BundleAPIImpl - Removing bundle: 01H26P1Y33HNS6HEGSAF9PHH46
+22:20:50.487  INFO  business.BundleAPIImpl - Removing bundle: 01H26P1YHRX7HWYZKDD2PPX9S6 and dependencies by: dotcms.org.1
+22:20:50.487  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26P1YHRX7HWYZKDD2PPX9S6
+22:20:50.487  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26P1YHRX7HWYZKDD2PPX9S6
+22:20:50.487  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26P1YHRX7HWYZKDD2PPX9S6
+22:20:50.487  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26P1YHRX7HWYZKDD2PPX9S6
+22:20:50.487  INFO  business.BundleAPIImpl - Removing bundle: 01H26P1YHRX7HWYZKDD2PPX9S6
+22:20:50.487  INFO  business.BundleAPIImpl - Removing bundle: 01H26P1YVQWTHJ4RR18NBG2QPN and dependencies by: dotcms.org.1
+22:20:50.487  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26P1YVQWTHJ4RR18NBG2QPN
+22:20:50.487  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26P1YVQWTHJ4RR18NBG2QPN
+22:20:50.488  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26P1YVQWTHJ4RR18NBG2QPN
+22:20:50.488  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26P1YVQWTHJ4RR18NBG2QPN
+22:20:50.488  INFO  business.BundleAPIImpl - Removing bundle: 01H26P1YVQWTHJ4RR18NBG2QPN
+22:20:50.488  INFO  business.BundleAPIImpl - Removing bundle: 01H26P1ZAYCVQYKVPTEHJQNSD8 and dependencies by: dotcms.org.1
+22:20:50.488  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26P1ZAYCVQYKVPTEHJQNSD8
+22:20:50.488  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26P1ZAYCVQYKVPTEHJQNSD8
+22:20:50.489  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26P1ZAYCVQYKVPTEHJQNSD8
+22:20:50.489  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26P1ZAYCVQYKVPTEHJQNSD8
+22:20:50.489  INFO  business.BundleAPIImpl - Removing bundle: 01H26P1ZAYCVQYKVPTEHJQNSD8
+22:20:50.514  INFO  business.BundleAPIImpl - Removing bundle: 01H26P1ZWQT8G6D7MKQEKNGFD2 and dependencies by: dotcms.org.1
+22:20:50.514  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26P1ZWQT8G6D7MKQEKNGFD2
+22:20:50.514  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26P1ZWQT8G6D7MKQEKNGFD2
+22:20:50.515  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26P1ZWQT8G6D7MKQEKNGFD2
+22:20:50.515  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26P1ZWQT8G6D7MKQEKNGFD2
+22:20:50.515  INFO  business.BundleAPIImpl - Removing bundle: 01H26P1ZWQT8G6D7MKQEKNGFD2
+22:20:50.516  INFO  business.BundleAPIImpl - Removing bundle: 01H26P1ZX83PMBFG8AN6877JMA and dependencies by: dotcms.org.1
+22:20:50.516  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26P1ZX83PMBFG8AN6877JMA
+22:20:50.516  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26P1ZX83PMBFG8AN6877JMA
+22:20:50.516  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26P1ZX83PMBFG8AN6877JMA
+22:20:50.516  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26P1ZX83PMBFG8AN6877JMA
+22:20:50.516  INFO  business.BundleAPIImpl - Removing bundle: 01H26P1ZX83PMBFG8AN6877JMA
+22:20:50.517  INFO  business.BundleAPIImpl - Removing bundle: 01H26P20ADR59P9A438F0RCZQB and dependencies by: dotcms.org.1
+22:20:50.517  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26P20ADR59P9A438F0RCZQB
+22:20:50.517  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26P20ADR59P9A438F0RCZQB
+22:20:50.517  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26P20ADR59P9A438F0RCZQB
+22:20:50.517  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26P20ADR59P9A438F0RCZQB
+22:20:50.517  INFO  business.BundleAPIImpl - Removing bundle: 01H26P20ADR59P9A438F0RCZQB
+22:20:50.518  INFO  business.BundleAPIImpl - Removing bundle: 01H26P20R3QP44WVTEFWA5NVW5 and dependencies by: dotcms.org.1
+22:20:50.518  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26P20R3QP44WVTEFWA5NVW5
+22:20:50.518  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26P20R3QP44WVTEFWA5NVW5
+22:20:50.518  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26P20R3QP44WVTEFWA5NVW5
+22:20:50.518  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26P20R3QP44WVTEFWA5NVW5
+22:20:50.518  INFO  business.BundleAPIImpl - Removing bundle: 01H26P20R3QP44WVTEFWA5NVW5
+22:20:50.518  INFO  business.BundleAPIImpl - Removing bundle: 01H26P21AH45GN5BP7T2V9SERZ and dependencies by: dotcms.org.1
+22:20:50.518  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26P21AH45GN5BP7T2V9SERZ
+22:20:50.518  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26P21AH45GN5BP7T2V9SERZ
+22:20:50.519  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26P21AH45GN5BP7T2V9SERZ
+22:20:50.519  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26P21AH45GN5BP7T2V9SERZ
+22:20:50.519  INFO  business.BundleAPIImpl - Removing bundle: 01H26P21AH45GN5BP7T2V9SERZ
+22:20:50.519  INFO  business.BundleAPIImpl - Removing bundle: 01H26P21S7ZBN16NBGG1E94WW9 and dependencies by: dotcms.org.1
+22:20:50.519  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26P21S7ZBN16NBGG1E94WW9
+22:20:50.519  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26P21S7ZBN16NBGG1E94WW9
+22:20:50.520  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26P21S7ZBN16NBGG1E94WW9
+22:20:50.520  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26P21S7ZBN16NBGG1E94WW9
+22:20:50.520  INFO  business.BundleAPIImpl - Removing bundle: 01H26P21S7ZBN16NBGG1E94WW9
+22:20:50.520  INFO  business.BundleAPIImpl - Removing bundle: 01H26P2274SS5GHTJAF3VREF7B and dependencies by: dotcms.org.1
+22:20:50.520  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26P2274SS5GHTJAF3VREF7B
+22:20:50.521  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26P2274SS5GHTJAF3VREF7B
+22:20:50.521  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26P2274SS5GHTJAF3VREF7B
+22:20:50.521  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26P2274SS5GHTJAF3VREF7B
+22:20:50.521  INFO  business.BundleAPIImpl - Removing bundle: 01H26P2274SS5GHTJAF3VREF7B
+22:20:50.522  INFO  business.BundleAPIImpl - Removing bundle: 01H26P228QKHQ7JD0D8PCA21WP and dependencies by: dotcms.org.1
+22:20:50.522  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26P228QKHQ7JD0D8PCA21WP
+22:20:50.522  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26P228QKHQ7JD0D8PCA21WP
+22:20:50.522  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26P228QKHQ7JD0D8PCA21WP
+22:20:50.522  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26P228QKHQ7JD0D8PCA21WP
+22:20:50.522  INFO  business.BundleAPIImpl - Removing bundle: 01H26P228QKHQ7JD0D8PCA21WP
+22:20:50.523  INFO  business.BundleAPIImpl - Removing bundle: 01H26P8WPF252Q7RXZFP6342F6 and dependencies by: dotcms.org.1
+22:20:50.523  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26P8WPF252Q7RXZFP6342F6
+22:20:50.523  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26P8WPF252Q7RXZFP6342F6
+22:20:50.523  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26P8WPF252Q7RXZFP6342F6
+22:20:50.523  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26P8WPF252Q7RXZFP6342F6
+22:20:50.523  INFO  business.BundleAPIImpl - Removing bundle: 01H26P8WPF252Q7RXZFP6342F6
+22:20:50.524  INFO  business.BundleAPIImpl - Removing bundle: 01H26P22D1F1ABE3FS738DJWSR and dependencies by: dotcms.org.1
+22:20:50.524  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26P22D1F1ABE3FS738DJWSR
+22:20:50.524  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26P22D1F1ABE3FS738DJWSR
+22:20:50.524  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26P22D1F1ABE3FS738DJWSR
+22:20:50.524  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26P22D1F1ABE3FS738DJWSR
+22:20:50.524  INFO  business.BundleAPIImpl - Removing bundle: 01H26P22D1F1ABE3FS738DJWSR
+22:20:50.550  INFO  business.BundleAPIImpl - Removing bundle: 01H26P8XRJZWHMWX22J1HS34TW and dependencies by: dotcms.org.1
+22:20:50.550  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26P8XRJZWHMWX22J1HS34TW
+22:20:50.550  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26P8XRJZWHMWX22J1HS34TW
+22:20:50.550  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26P8XRJZWHMWX22J1HS34TW
+22:20:50.550  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26P8XRJZWHMWX22J1HS34TW
+22:20:50.550  INFO  business.BundleAPIImpl - Removing bundle: 01H26P8XRJZWHMWX22J1HS34TW
+22:20:50.551  INFO  business.BundleAPIImpl - Removing bundle: 01H26P22WTV3RXFYZY0GAVYGCM and dependencies by: dotcms.org.1
+22:20:50.551  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26P22WTV3RXFYZY0GAVYGCM
+22:20:50.551  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26P22WTV3RXFYZY0GAVYGCM
+22:20:50.551  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26P22WTV3RXFYZY0GAVYGCM
+22:20:50.551  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26P22WTV3RXFYZY0GAVYGCM
+22:20:50.551  INFO  business.BundleAPIImpl - Removing bundle: 01H26P22WTV3RXFYZY0GAVYGCM
+22:20:50.552  INFO  business.BundleAPIImpl - Removing bundle: 01H26P2387VFX1S6JR3NS5ND5P and dependencies by: dotcms.org.1
+22:20:50.552  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26P2387VFX1S6JR3NS5ND5P
+22:20:50.552  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26P2387VFX1S6JR3NS5ND5P
+22:20:50.552  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26P2387VFX1S6JR3NS5ND5P
+22:20:50.552  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26P2387VFX1S6JR3NS5ND5P
+22:20:50.552  INFO  business.BundleAPIImpl - Removing bundle: 01H26P2387VFX1S6JR3NS5ND5P
+22:20:50.552  INFO  business.BundleAPIImpl - Removing bundle: 01H26P23BYH52CTB4CG71C01D8 and dependencies by: dotcms.org.1
+22:20:50.552  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26P23BYH52CTB4CG71C01D8
+22:20:50.552  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26P23BYH52CTB4CG71C01D8
+22:20:50.553  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26P23BYH52CTB4CG71C01D8
+22:20:50.553  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26P23BYH52CTB4CG71C01D8
+22:20:50.553  INFO  business.BundleAPIImpl - Removing bundle: 01H26P23BYH52CTB4CG71C01D8
+22:20:50.553  INFO  business.BundleAPIImpl - Removing bundle: 01H26P23M6F5SEDGT5WXHZW63Q and dependencies by: dotcms.org.1
+22:20:50.553  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26P23M6F5SEDGT5WXHZW63Q
+22:20:50.553  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26P23M6F5SEDGT5WXHZW63Q
+22:20:50.553  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26P23M6F5SEDGT5WXHZW63Q
+22:20:50.554  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26P23M6F5SEDGT5WXHZW63Q
+22:20:50.554  INFO  business.BundleAPIImpl - Removing bundle: 01H26P23M6F5SEDGT5WXHZW63Q
+22:20:50.554  INFO  business.BundleAPIImpl - Removing bundle: 01H26P23W3B4375AJ22QWQ9ET4 and dependencies by: dotcms.org.1
+22:20:50.554  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26P23W3B4375AJ22QWQ9ET4
+22:20:50.554  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26P23W3B4375AJ22QWQ9ET4
+22:20:50.554  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26P23W3B4375AJ22QWQ9ET4
+22:20:50.555  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26P23W3B4375AJ22QWQ9ET4
+22:20:50.555  INFO  business.BundleAPIImpl - Removing bundle: 01H26P23W3B4375AJ22QWQ9ET4
+22:20:50.555  INFO  business.BundleAPIImpl - Removing bundle: 01H26P24440WBK06YVBVSBBVCF and dependencies by: dotcms.org.1
+22:20:50.555  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26P24440WBK06YVBVSBBVCF
+22:20:50.555  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26P24440WBK06YVBVSBBVCF
+22:20:50.555  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26P24440WBK06YVBVSBBVCF
+22:20:50.556  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26P24440WBK06YVBVSBBVCF
+22:20:50.556  INFO  business.BundleAPIImpl - Removing bundle: 01H26P24440WBK06YVBVSBBVCF
+22:20:50.556  INFO  business.BundleAPIImpl - Removing bundle: 01H26P24AADGW94HG96MHR7558 and dependencies by: dotcms.org.1
+22:20:50.556  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26P24AADGW94HG96MHR7558
+22:20:50.556  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26P24AADGW94HG96MHR7558
+22:20:50.556  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26P24AADGW94HG96MHR7558
+22:20:50.557  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26P24AADGW94HG96MHR7558
+22:20:50.557  INFO  business.BundleAPIImpl - Removing bundle: 01H26P24AADGW94HG96MHR7558
+22:20:50.557  INFO  business.BundleAPIImpl - Removing bundle: 01H26P24QM4HZ57EA0NYW03M20 and dependencies by: dotcms.org.1
+22:20:50.557  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26P24QM4HZ57EA0NYW03M20
+22:20:50.557  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26P24QM4HZ57EA0NYW03M20
+22:20:50.558  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26P24QM4HZ57EA0NYW03M20
+22:20:50.558  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26P24QM4HZ57EA0NYW03M20
+22:20:50.558  INFO  business.BundleAPIImpl - Removing bundle: 01H26P24QM4HZ57EA0NYW03M20
+22:20:50.558  INFO  business.BundleAPIImpl - Removing bundle: 01H26P25A0HA783GV8FBT7G6PM and dependencies by: dotcms.org.1
+22:20:50.558  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26P25A0HA783GV8FBT7G6PM
+22:20:50.558  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26P25A0HA783GV8FBT7G6PM
+22:20:50.558  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26P25A0HA783GV8FBT7G6PM
+22:20:50.559  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26P25A0HA783GV8FBT7G6PM
+22:20:50.559  INFO  business.BundleAPIImpl - Removing bundle: 01H26P25A0HA783GV8FBT7G6PM
+22:20:50.584  INFO  business.BundleAPIImpl - Removing bundle: 01H26P25ACZAM35Y9XGSDYE71X and dependencies by: dotcms.org.1
+22:20:50.584  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26P25ACZAM35Y9XGSDYE71X
+22:20:50.584  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26P25ACZAM35Y9XGSDYE71X
+22:20:50.584  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26P25ACZAM35Y9XGSDYE71X
+22:20:50.585  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26P25ACZAM35Y9XGSDYE71X
+22:20:50.585  INFO  business.BundleAPIImpl - Removing bundle: 01H26P25ACZAM35Y9XGSDYE71X
+22:20:50.585  INFO  business.BundleAPIImpl - Removing bundle: 01H26P25N7180M16JPCH8JAS63 and dependencies by: dotcms.org.1
+22:20:50.585  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26P25N7180M16JPCH8JAS63
+22:20:50.585  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26P25N7180M16JPCH8JAS63
+22:20:50.585  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26P25N7180M16JPCH8JAS63
+22:20:50.586  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26P25N7180M16JPCH8JAS63
+22:20:50.586  INFO  business.BundleAPIImpl - Removing bundle: 01H26P25N7180M16JPCH8JAS63
+22:20:50.586  INFO  business.BundleAPIImpl - Removing bundle: 01H26P25ZEW9FXS2S0ABXPWPGF and dependencies by: dotcms.org.1
+22:20:50.586  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26P25ZEW9FXS2S0ABXPWPGF
+22:20:50.586  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26P25ZEW9FXS2S0ABXPWPGF
+22:20:50.586  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26P25ZEW9FXS2S0ABXPWPGF
+22:20:50.587  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26P25ZEW9FXS2S0ABXPWPGF
+22:20:50.587  INFO  business.BundleAPIImpl - Removing bundle: 01H26P25ZEW9FXS2S0ABXPWPGF
+22:20:50.587  INFO  business.BundleAPIImpl - Removing bundle: 01H26P26B323Y4PV83VR0XMWE5 and dependencies by: dotcms.org.1
+22:20:50.587  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26P26B323Y4PV83VR0XMWE5
+22:20:50.587  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26P26B323Y4PV83VR0XMWE5
+22:20:50.587  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26P26B323Y4PV83VR0XMWE5
+22:20:50.588  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26P26B323Y4PV83VR0XMWE5
+22:20:50.588  INFO  business.BundleAPIImpl - Removing bundle: 01H26P26B323Y4PV83VR0XMWE5
+22:20:50.588  INFO  business.BundleAPIImpl - Removing bundle: 01H26P26TAY82XS8NSW29TYCKT and dependencies by: dotcms.org.1
+22:20:50.588  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26P26TAY82XS8NSW29TYCKT
+22:20:50.588  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26P26TAY82XS8NSW29TYCKT
+22:20:50.588  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26P26TAY82XS8NSW29TYCKT
+22:20:50.588  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26P26TAY82XS8NSW29TYCKT
+22:20:50.589  INFO  business.BundleAPIImpl - Removing bundle: 01H26P26TAY82XS8NSW29TYCKT
+22:20:50.589  INFO  business.BundleAPIImpl - Removing bundle: 01H26P2771TDBBYM9MHD4AB0VF and dependencies by: dotcms.org.1
+22:20:50.589  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26P2771TDBBYM9MHD4AB0VF
+22:20:50.589  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26P2771TDBBYM9MHD4AB0VF
+22:20:50.589  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26P2771TDBBYM9MHD4AB0VF
+22:20:50.589  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26P2771TDBBYM9MHD4AB0VF
+22:20:50.590  INFO  business.BundleAPIImpl - Removing bundle: 01H26P2771TDBBYM9MHD4AB0VF
+22:20:50.590  INFO  business.BundleAPIImpl - Removing bundle: 01H26P27J3YJ2Q3BAA3E1HNJAM and dependencies by: dotcms.org.1
+22:20:50.590  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26P27J3YJ2Q3BAA3E1HNJAM
+22:20:50.590  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26P27J3YJ2Q3BAA3E1HNJAM
+22:20:50.590  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26P27J3YJ2Q3BAA3E1HNJAM
+22:20:50.590  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26P27J3YJ2Q3BAA3E1HNJAM
+22:20:50.590  INFO  business.BundleAPIImpl - Removing bundle: 01H26P27J3YJ2Q3BAA3E1HNJAM
+22:20:50.591  INFO  business.BundleAPIImpl - Removing bundle: 01H26P27X05535MW9Y1JBSPKSF and dependencies by: dotcms.org.1
+22:20:50.591  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26P27X05535MW9Y1JBSPKSF
+22:20:50.591  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26P27X05535MW9Y1JBSPKSF
+22:20:50.591  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26P27X05535MW9Y1JBSPKSF
+22:20:50.591  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26P27X05535MW9Y1JBSPKSF
+22:20:50.591  INFO  business.BundleAPIImpl - Removing bundle: 01H26P27X05535MW9Y1JBSPKSF
+22:20:50.592  INFO  business.BundleAPIImpl - Removing bundle: 01H26P2814P723ZES12KPSCZ3Q and dependencies by: dotcms.org.1
+22:20:50.592  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26P2814P723ZES12KPSCZ3Q
+22:20:50.592  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26P2814P723ZES12KPSCZ3Q
+22:20:50.592  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26P2814P723ZES12KPSCZ3Q
+22:20:50.592  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26P2814P723ZES12KPSCZ3Q
+22:20:50.592  INFO  business.BundleAPIImpl - Removing bundle: 01H26P2814P723ZES12KPSCZ3Q
+22:20:50.593  INFO  business.BundleAPIImpl - Removing bundle: 01H26P285D5JH23HG68DJ3RDRT and dependencies by: dotcms.org.1
+22:20:50.593  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26P285D5JH23HG68DJ3RDRT
+22:20:50.593  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26P285D5JH23HG68DJ3RDRT
+22:20:50.593  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26P285D5JH23HG68DJ3RDRT
+22:20:50.593  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26P285D5JH23HG68DJ3RDRT
+22:20:50.593  INFO  business.BundleAPIImpl - Removing bundle: 01H26P285D5JH23HG68DJ3RDRT
+22:20:50.619  INFO  business.BundleAPIImpl - Removing bundle: 01H26P28DREEZQANKG92VC11CF and dependencies by: dotcms.org.1
+22:20:50.619  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26P28DREEZQANKG92VC11CF
+22:20:50.619  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26P28DREEZQANKG92VC11CF
+22:20:50.619  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26P28DREEZQANKG92VC11CF
+22:20:50.619  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26P28DREEZQANKG92VC11CF
+22:20:50.619  INFO  business.BundleAPIImpl - Removing bundle: 01H26P28DREEZQANKG92VC11CF
+22:20:50.620  INFO  business.BundleAPIImpl - Removing bundle: 01H26P28P0XW0PGW3G24PE6NBK and dependencies by: dotcms.org.1
+22:20:50.620  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26P28P0XW0PGW3G24PE6NBK
+22:20:50.620  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26P28P0XW0PGW3G24PE6NBK
+22:20:50.620  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26P28P0XW0PGW3G24PE6NBK
+22:20:50.620  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26P28P0XW0PGW3G24PE6NBK
+22:20:50.620  INFO  business.BundleAPIImpl - Removing bundle: 01H26P28P0XW0PGW3G24PE6NBK
+22:20:50.621  INFO  business.BundleAPIImpl - Removing bundle: 01H26P28WW6S6MQFB2YYE0S8QZ and dependencies by: dotcms.org.1
+22:20:50.621  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26P28WW6S6MQFB2YYE0S8QZ
+22:20:50.621  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26P28WW6S6MQFB2YYE0S8QZ
+22:20:50.621  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26P28WW6S6MQFB2YYE0S8QZ
+22:20:50.621  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26P28WW6S6MQFB2YYE0S8QZ
+22:20:50.621  INFO  business.BundleAPIImpl - Removing bundle: 01H26P28WW6S6MQFB2YYE0S8QZ
+22:20:50.622  INFO  business.BundleAPIImpl - Removing bundle: 01H26P296520NBE3AF0BTYCK6W and dependencies by: dotcms.org.1
+22:20:50.622  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26P296520NBE3AF0BTYCK6W
+22:20:50.622  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26P296520NBE3AF0BTYCK6W
+22:20:50.622  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26P296520NBE3AF0BTYCK6W
+22:20:50.622  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26P296520NBE3AF0BTYCK6W
+22:20:50.622  INFO  business.BundleAPIImpl - Removing bundle: 01H26P296520NBE3AF0BTYCK6W
+22:20:50.623  INFO  business.BundleAPIImpl - Removing bundle: 01H26P29G9J2SSK7WARH1B7HAE and dependencies by: dotcms.org.1
+22:20:50.623  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26P29G9J2SSK7WARH1B7HAE
+22:20:50.623  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26P29G9J2SSK7WARH1B7HAE
+22:20:50.623  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26P29G9J2SSK7WARH1B7HAE
+22:20:50.623  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26P29G9J2SSK7WARH1B7HAE
+22:20:50.623  INFO  business.BundleAPIImpl - Removing bundle: 01H26P29G9J2SSK7WARH1B7HAE
+22:20:50.624  INFO  business.BundleAPIImpl - Removing bundle: 01H26P29GJE9P10A0K7VR70CBQ and dependencies by: dotcms.org.1
+22:20:50.624  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26P29GJE9P10A0K7VR70CBQ
+22:20:50.624  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26P29GJE9P10A0K7VR70CBQ
+22:20:50.624  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26P29GJE9P10A0K7VR70CBQ
+22:20:50.624  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26P29GJE9P10A0K7VR70CBQ
+22:20:50.624  INFO  business.BundleAPIImpl - Removing bundle: 01H26P29GJE9P10A0K7VR70CBQ
+22:20:50.625  INFO  business.BundleAPIImpl - Removing bundle: 01H26P29XCR1V187VT7A2FVY3M and dependencies by: dotcms.org.1
+22:20:50.625  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26P29XCR1V187VT7A2FVY3M
+22:20:50.625  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26P29XCR1V187VT7A2FVY3M
+22:20:50.625  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26P29XCR1V187VT7A2FVY3M
+22:20:50.625  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26P29XCR1V187VT7A2FVY3M
+22:20:50.625  INFO  business.BundleAPIImpl - Removing bundle: 01H26P29XCR1V187VT7A2FVY3M
+22:20:50.626  INFO  business.BundleAPIImpl - Removing bundle: 01H26P2AB7SNMQNJBT0080THA6 and dependencies by: dotcms.org.1
+22:20:50.626  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26P2AB7SNMQNJBT0080THA6
+22:20:50.626  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26P2AB7SNMQNJBT0080THA6
+22:20:50.626  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26P2AB7SNMQNJBT0080THA6
+22:20:50.626  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26P2AB7SNMQNJBT0080THA6
+22:20:50.626  INFO  business.BundleAPIImpl - Removing bundle: 01H26P2AB7SNMQNJBT0080THA6
+22:20:50.627  INFO  business.BundleAPIImpl - Removing bundle: 01H26P2AP7SK1NMB8P0E6PTTHP and dependencies by: dotcms.org.1
+22:20:50.627  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26P2AP7SK1NMB8P0E6PTTHP
+22:20:50.627  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26P2AP7SK1NMB8P0E6PTTHP
+22:20:50.627  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26P2AP7SK1NMB8P0E6PTTHP
+22:20:50.627  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26P2AP7SK1NMB8P0E6PTTHP
+22:20:50.627  INFO  business.BundleAPIImpl - Removing bundle: 01H26P2AP7SK1NMB8P0E6PTTHP
+22:20:50.628  INFO  business.BundleAPIImpl - Removing bundle: 01H26P2B0V1QGT8H7GXN8TN592 and dependencies by: dotcms.org.1
+22:20:50.628  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26P2B0V1QGT8H7GXN8TN592
+22:20:50.628  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26P2B0V1QGT8H7GXN8TN592
+22:20:50.628  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26P2B0V1QGT8H7GXN8TN592
+22:20:50.628  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26P2B0V1QGT8H7GXN8TN592
+22:20:50.628  INFO  business.BundleAPIImpl - Removing bundle: 01H26P2B0V1QGT8H7GXN8TN592
+22:20:50.654  INFO  business.BundleAPIImpl - Removing bundle: 01H26P2BN1A7PR4F9RTMZE8ZZS and dependencies by: dotcms.org.1
+22:20:50.654  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26P2BN1A7PR4F9RTMZE8ZZS
+22:20:50.654  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26P2BN1A7PR4F9RTMZE8ZZS
+22:20:50.654  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26P2BN1A7PR4F9RTMZE8ZZS
+22:20:50.655  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26P2BN1A7PR4F9RTMZE8ZZS
+22:20:50.655  INFO  business.BundleAPIImpl - Removing bundle: 01H26P2BN1A7PR4F9RTMZE8ZZS
+22:20:50.655  INFO  business.BundleAPIImpl - Removing bundle: 01H26P2CQPX653H7HXKTFG3XAQ and dependencies by: dotcms.org.1
+22:20:50.655  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26P2CQPX653H7HXKTFG3XAQ
+22:20:50.655  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26P2CQPX653H7HXKTFG3XAQ
+22:20:50.656  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26P2CQPX653H7HXKTFG3XAQ
+22:20:50.656  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26P2CQPX653H7HXKTFG3XAQ
+22:20:50.656  INFO  business.BundleAPIImpl - Removing bundle: 01H26P2CQPX653H7HXKTFG3XAQ
+22:20:50.656  INFO  business.BundleAPIImpl - Removing bundle: 01H26P2CYA2FBG497JCZ0ZEBHN and dependencies by: dotcms.org.1
+22:20:50.656  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26P2CYA2FBG497JCZ0ZEBHN
+22:20:50.656  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26P2CYA2FBG497JCZ0ZEBHN
+22:20:50.656  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26P2CYA2FBG497JCZ0ZEBHN
+22:20:50.657  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26P2CYA2FBG497JCZ0ZEBHN
+22:20:50.657  INFO  business.BundleAPIImpl - Removing bundle: 01H26P2CYA2FBG497JCZ0ZEBHN
+22:20:50.657  INFO  business.BundleAPIImpl - Removing bundle: 01H26P2D2JVMJWB6JVBDFKMYAT and dependencies by: dotcms.org.1
+22:20:50.657  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26P2D2JVMJWB6JVBDFKMYAT
+22:20:50.657  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26P2D2JVMJWB6JVBDFKMYAT
+22:20:50.657  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26P2D2JVMJWB6JVBDFKMYAT
+22:20:50.658  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26P2D2JVMJWB6JVBDFKMYAT
+22:20:50.658  INFO  business.BundleAPIImpl - Removing bundle: 01H26P2D2JVMJWB6JVBDFKMYAT
+22:20:50.658  INFO  business.BundleAPIImpl - Removing bundle: 01H26P2D9BC2NEA46ZR5RXM3MK and dependencies by: dotcms.org.1
+22:20:50.658  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26P2D9BC2NEA46ZR5RXM3MK
+22:20:50.658  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26P2D9BC2NEA46ZR5RXM3MK
+22:20:50.658  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26P2D9BC2NEA46ZR5RXM3MK
+22:20:50.658  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26P2D9BC2NEA46ZR5RXM3MK
+22:20:50.659  INFO  business.BundleAPIImpl - Removing bundle: 01H26P2D9BC2NEA46ZR5RXM3MK
+22:20:50.659  INFO  business.BundleAPIImpl - Removing bundle: 01H26P2DFJ83686JFK88G28FTJ and dependencies by: dotcms.org.1
+22:20:50.659  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26P2DFJ83686JFK88G28FTJ
+22:20:50.659  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26P2DFJ83686JFK88G28FTJ
+22:20:50.659  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26P2DFJ83686JFK88G28FTJ
+22:20:50.659  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26P2DFJ83686JFK88G28FTJ
+22:20:50.660  INFO  business.BundleAPIImpl - Removing bundle: 01H26P2DFJ83686JFK88G28FTJ
+22:20:50.660  INFO  business.BundleAPIImpl - Removing bundle: 01H26P2DMSETVF9RBCAS4N26V5 and dependencies by: dotcms.org.1
+22:20:50.660  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26P2DMSETVF9RBCAS4N26V5
+22:20:50.660  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26P2DMSETVF9RBCAS4N26V5
+22:20:50.660  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26P2DMSETVF9RBCAS4N26V5
+22:20:50.660  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26P2DMSETVF9RBCAS4N26V5
+22:20:50.660  INFO  business.BundleAPIImpl - Removing bundle: 01H26P2DMSETVF9RBCAS4N26V5
+22:20:50.661  INFO  business.BundleAPIImpl - Removing bundle: 01H26P2DRQ41JMWTGRPC9KJM35 and dependencies by: dotcms.org.1
+22:20:50.661  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26P2DRQ41JMWTGRPC9KJM35
+22:20:50.661  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26P2DRQ41JMWTGRPC9KJM35
+22:20:50.661  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26P2DRQ41JMWTGRPC9KJM35
+22:20:50.661  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26P2DRQ41JMWTGRPC9KJM35
+22:20:50.661  INFO  business.BundleAPIImpl - Removing bundle: 01H26P2DRQ41JMWTGRPC9KJM35
+22:20:50.662  INFO  business.BundleAPIImpl - Removing bundle: 01H26P8THRFKBQJP8YEYTV7VGY and dependencies by: dotcms.org.1
+22:20:50.662  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26P8THRFKBQJP8YEYTV7VGY
+22:20:50.662  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26P8THRFKBQJP8YEYTV7VGY
+22:20:50.662  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26P8THRFKBQJP8YEYTV7VGY
+22:20:50.662  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26P8THRFKBQJP8YEYTV7VGY
+22:20:50.662  INFO  business.BundleAPIImpl - Removing bundle: 01H26P8THRFKBQJP8YEYTV7VGY
+22:20:50.663  INFO  business.BundleAPIImpl - Removing bundle: 01H26P8VKVR34FZGC8P55KSYAS and dependencies by: dotcms.org.1
+22:20:50.663  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26P8VKVR34FZGC8P55KSYAS
+22:20:50.663  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26P8VKVR34FZGC8P55KSYAS
+22:20:50.663  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26P8VKVR34FZGC8P55KSYAS
+22:20:50.663  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26P8VKVR34FZGC8P55KSYAS
+22:20:50.663  INFO  business.BundleAPIImpl - Removing bundle: 01H26P8VKVR34FZGC8P55KSYAS
+22:20:50.689  INFO  business.BundleAPIImpl - Removing bundle: 01H26PCQB0VFM8QG81BAZQ9QDD and dependencies by: dotcms.org.1
+22:20:50.689  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26PCQB0VFM8QG81BAZQ9QDD
+22:20:50.689  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26PCQB0VFM8QG81BAZQ9QDD
+22:20:50.689  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26PCQB0VFM8QG81BAZQ9QDD
+22:20:50.689  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26PCQB0VFM8QG81BAZQ9QDD
+22:20:50.689  INFO  business.BundleAPIImpl - Removing bundle: 01H26PCQB0VFM8QG81BAZQ9QDD
+22:20:50.690  INFO  business.BundleAPIImpl - Removing bundle: 01H26PCR60FX91RP2BP1THGS3Y and dependencies by: dotcms.org.1
+22:20:50.690  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26PCR60FX91RP2BP1THGS3Y
+22:20:50.690  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26PCR60FX91RP2BP1THGS3Y
+22:20:50.690  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26PCR60FX91RP2BP1THGS3Y
+22:20:50.690  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26PCR60FX91RP2BP1THGS3Y
+22:20:50.690  INFO  business.BundleAPIImpl - Removing bundle: 01H26PCR60FX91RP2BP1THGS3Y
+22:20:50.691  INFO  business.BundleAPIImpl - Removing bundle: 01H26PCRVJH5V64QQN0VXQSTXR and dependencies by: dotcms.org.1
+22:20:50.691  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26PCRVJH5V64QQN0VXQSTXR
+22:20:50.691  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26PCRVJH5V64QQN0VXQSTXR
+22:20:50.691  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26PCRVJH5V64QQN0VXQSTXR
+22:20:50.691  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26PCRVJH5V64QQN0VXQSTXR
+22:20:50.692  INFO  business.BundleAPIImpl - Removing bundle: 01H26PCRVJH5V64QQN0VXQSTXR
+22:20:50.692  INFO  business.BundleAPIImpl - Removing bundle: 01H26SVXR46VBB1254A2EN4DB1 and dependencies by: dotcms.org.1
+22:20:50.692  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 01H26SVXR46VBB1254A2EN4DB1
+22:20:50.692  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 01H26SVXR46VBB1254A2EN4DB1
+22:20:50.692  INFO  business.BundleAPIImpl - Removing all assets from bundle: 01H26SVXR46VBB1254A2EN4DB1
+22:20:50.692  INFO  business.BundleAPIImpl - Removing environments from bundle: 01H26SVXR46VBB1254A2EN4DB1
+22:20:50.693  INFO  business.BundleAPIImpl - Removing bundle: 01H26SVXR46VBB1254A2EN4DB1
+22:20:50.693  INFO  business.BundleAPIImpl - Removing bundle: test_file and dependencies by: dotcms.org.1
+22:20:50.693  INFO  business.BundleAPIImpl - Removing audit status for a bundle: test_file
+22:20:50.693  INFO  business.PublishAuditAPIImpl - Deleting the bundle: test_file
+22:20:50.693  INFO  business.BundleAPIImpl - Removing all assets from bundle: test_file
+22:20:50.694  INFO  business.BundleAPIImpl - Removing environments from bundle: test_file
+22:20:50.694  INFO  business.BundleAPIImpl - Removing bundle: test_file
+22:20:50.694  INFO  business.BundleAPIImpl - Removing bundle: ac2862b1-0009-46b0-a186-2c6fa59d9c2b and dependencies by: dotcms.org.1
+22:20:50.694  INFO  business.BundleAPIImpl - Removing audit status for a bundle: ac2862b1-0009-46b0-a186-2c6fa59d9c2b
+22:20:50.694  INFO  business.PublishAuditAPIImpl - Deleting the bundle: ac2862b1-0009-46b0-a186-2c6fa59d9c2b
+22:20:50.694  INFO  business.BundleAPIImpl - Removing all assets from bundle: ac2862b1-0009-46b0-a186-2c6fa59d9c2b
+22:20:50.695  INFO  business.BundleAPIImpl - Removing environments from bundle: ac2862b1-0009-46b0-a186-2c6fa59d9c2b
+22:20:50.695  INFO  business.BundleAPIImpl - Removing bundle: ac2862b1-0009-46b0-a186-2c6fa59d9c2b
+22:20:50.695  INFO  business.BundleAPIImpl - Removing bundle: a36a77d9-d577-481e-b1b5-8524af5b27b3 and dependencies by: dotcms.org.1
+22:20:50.695  INFO  business.BundleAPIImpl - Removing audit status for a bundle: a36a77d9-d577-481e-b1b5-8524af5b27b3
+22:20:50.695  INFO  business.PublishAuditAPIImpl - Deleting the bundle: a36a77d9-d577-481e-b1b5-8524af5b27b3
+22:20:50.696  INFO  business.BundleAPIImpl - Removing all assets from bundle: a36a77d9-d577-481e-b1b5-8524af5b27b3
+22:20:50.696  INFO  business.BundleAPIImpl - Removing environments from bundle: a36a77d9-d577-481e-b1b5-8524af5b27b3
+22:20:50.696  INFO  business.BundleAPIImpl - Removing bundle: a36a77d9-d577-481e-b1b5-8524af5b27b3
+22:20:50.696  INFO  business.BundleAPIImpl - Removing bundle: 0194f7bf-1b69-4a0b-8592-29b4aa6d9c77 and dependencies by: dotcms.org.1
+22:20:50.696  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 0194f7bf-1b69-4a0b-8592-29b4aa6d9c77
+22:20:50.696  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 0194f7bf-1b69-4a0b-8592-29b4aa6d9c77
+22:20:50.696  INFO  business.BundleAPIImpl - Removing all assets from bundle: 0194f7bf-1b69-4a0b-8592-29b4aa6d9c77
+22:20:50.697  INFO  business.BundleAPIImpl - Removing environments from bundle: 0194f7bf-1b69-4a0b-8592-29b4aa6d9c77
+22:20:50.697  INFO  business.BundleAPIImpl - Removing bundle: 0194f7bf-1b69-4a0b-8592-29b4aa6d9c77
+22:20:50.697  INFO  business.BundleAPIImpl - Removing bundle: 58798828-a1e6-4526-a139-1dd64fce9233 and dependencies by: dotcms.org.1
+22:20:50.697  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 58798828-a1e6-4526-a139-1dd64fce9233
+22:20:50.697  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 58798828-a1e6-4526-a139-1dd64fce9233
+22:20:50.697  INFO  business.BundleAPIImpl - Removing all assets from bundle: 58798828-a1e6-4526-a139-1dd64fce9233
+22:20:50.698  INFO  business.BundleAPIImpl - Removing environments from bundle: 58798828-a1e6-4526-a139-1dd64fce9233
+22:20:50.698  INFO  business.BundleAPIImpl - Removing bundle: 58798828-a1e6-4526-a139-1dd64fce9233
+22:20:50.698  INFO  business.BundleAPIImpl - Removing bundle: 77304d75-b09d-4145-b569-37a90ee92b48 and dependencies by: dotcms.org.1
+22:20:50.698  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 77304d75-b09d-4145-b569-37a90ee92b48
+22:20:50.698  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 77304d75-b09d-4145-b569-37a90ee92b48
+22:20:50.698  INFO  business.BundleAPIImpl - Removing all assets from bundle: 77304d75-b09d-4145-b569-37a90ee92b48
+22:20:50.698  INFO  business.BundleAPIImpl - Removing environments from bundle: 77304d75-b09d-4145-b569-37a90ee92b48
+22:20:50.699  INFO  business.BundleAPIImpl - Removing bundle: 77304d75-b09d-4145-b569-37a90ee92b48
+22:20:50.724  INFO  business.BundleAPIImpl - Removing bundle: be7fdbdd-362b-4061-8966-5480310d3063 and dependencies by: dotcms.org.1
+22:20:50.724  INFO  business.BundleAPIImpl - Removing audit status for a bundle: be7fdbdd-362b-4061-8966-5480310d3063
+22:20:50.724  INFO  business.PublishAuditAPIImpl - Deleting the bundle: be7fdbdd-362b-4061-8966-5480310d3063
+22:20:50.725  INFO  business.BundleAPIImpl - Removing all assets from bundle: be7fdbdd-362b-4061-8966-5480310d3063
+22:20:50.725  INFO  business.BundleAPIImpl - Removing environments from bundle: be7fdbdd-362b-4061-8966-5480310d3063
+22:20:50.725  INFO  business.BundleAPIImpl - Removing bundle: be7fdbdd-362b-4061-8966-5480310d3063
+22:20:50.725  INFO  business.BundleAPIImpl - Removing bundle: 73fb0653-aa0b-46c1-b950-680acd55426a and dependencies by: dotcms.org.1
+22:20:50.725  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 73fb0653-aa0b-46c1-b950-680acd55426a
+22:20:50.725  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 73fb0653-aa0b-46c1-b950-680acd55426a
+22:20:50.726  INFO  business.BundleAPIImpl - Removing all assets from bundle: 73fb0653-aa0b-46c1-b950-680acd55426a
+22:20:50.726  INFO  business.BundleAPIImpl - Removing environments from bundle: 73fb0653-aa0b-46c1-b950-680acd55426a
+22:20:50.726  INFO  business.BundleAPIImpl - Removing bundle: 73fb0653-aa0b-46c1-b950-680acd55426a
+22:20:50.726  INFO  business.BundleAPIImpl - Removing bundle: da07d77f-805f-48a2-8e5d-ef4303a7aef1 and dependencies by: dotcms.org.1
+22:20:50.726  INFO  business.BundleAPIImpl - Removing audit status for a bundle: da07d77f-805f-48a2-8e5d-ef4303a7aef1
+22:20:50.726  INFO  business.PublishAuditAPIImpl - Deleting the bundle: da07d77f-805f-48a2-8e5d-ef4303a7aef1
+22:20:50.727  INFO  business.BundleAPIImpl - Removing all assets from bundle: da07d77f-805f-48a2-8e5d-ef4303a7aef1
+22:20:50.727  INFO  business.BundleAPIImpl - Removing environments from bundle: da07d77f-805f-48a2-8e5d-ef4303a7aef1
+22:20:50.727  INFO  business.BundleAPIImpl - Removing bundle: da07d77f-805f-48a2-8e5d-ef4303a7aef1
+22:20:50.727  INFO  business.BundleAPIImpl - Removing bundle: f0cb5973-03d4-44a2-a2b7-2febd4346075 and dependencies by: dotcms.org.1
+22:20:50.727  INFO  business.BundleAPIImpl - Removing audit status for a bundle: f0cb5973-03d4-44a2-a2b7-2febd4346075
+22:20:50.727  INFO  business.PublishAuditAPIImpl - Deleting the bundle: f0cb5973-03d4-44a2-a2b7-2febd4346075
+22:20:50.728  INFO  business.BundleAPIImpl - Removing all assets from bundle: f0cb5973-03d4-44a2-a2b7-2febd4346075
+22:20:50.728  INFO  business.BundleAPIImpl - Removing environments from bundle: f0cb5973-03d4-44a2-a2b7-2febd4346075
+22:20:50.728  INFO  business.BundleAPIImpl - Removing bundle: f0cb5973-03d4-44a2-a2b7-2febd4346075
+22:20:50.728  INFO  business.BundleAPIImpl - Removing bundle: d5cd3d71-36a8-44e0-b880-342d7b287c85 and dependencies by: dotcms.org.1
+22:20:50.728  INFO  business.BundleAPIImpl - Removing audit status for a bundle: d5cd3d71-36a8-44e0-b880-342d7b287c85
+22:20:50.728  INFO  business.PublishAuditAPIImpl - Deleting the bundle: d5cd3d71-36a8-44e0-b880-342d7b287c85
+22:20:50.729  INFO  business.BundleAPIImpl - Removing all assets from bundle: d5cd3d71-36a8-44e0-b880-342d7b287c85
+22:20:50.729  INFO  business.BundleAPIImpl - Removing environments from bundle: d5cd3d71-36a8-44e0-b880-342d7b287c85
+22:20:50.729  INFO  business.BundleAPIImpl - Removing bundle: d5cd3d71-36a8-44e0-b880-342d7b287c85
+22:20:50.729  INFO  business.BundleAPIImpl - Removing bundle: 7d30220c-bfdd-4597-9195-019e749128d8 and dependencies by: dotcms.org.1
+22:20:50.729  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 7d30220c-bfdd-4597-9195-019e749128d8
+22:20:50.729  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 7d30220c-bfdd-4597-9195-019e749128d8
+22:20:50.730  INFO  business.BundleAPIImpl - Removing all assets from bundle: 7d30220c-bfdd-4597-9195-019e749128d8
+22:20:50.730  INFO  business.BundleAPIImpl - Removing environments from bundle: 7d30220c-bfdd-4597-9195-019e749128d8
+22:20:50.730  INFO  business.BundleAPIImpl - Removing bundle: 7d30220c-bfdd-4597-9195-019e749128d8
+22:20:50.730  INFO  business.BundleAPIImpl - Removing bundle: 7811a8a9-0031-4286-a6ca-25037d0590f2 and dependencies by: dotcms.org.1
+22:20:50.730  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 7811a8a9-0031-4286-a6ca-25037d0590f2
+22:20:50.730  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 7811a8a9-0031-4286-a6ca-25037d0590f2
+22:20:50.730  INFO  business.BundleAPIImpl - Removing all assets from bundle: 7811a8a9-0031-4286-a6ca-25037d0590f2
+22:20:50.731  INFO  business.BundleAPIImpl - Removing environments from bundle: 7811a8a9-0031-4286-a6ca-25037d0590f2
+22:20:50.731  INFO  business.BundleAPIImpl - Removing bundle: 7811a8a9-0031-4286-a6ca-25037d0590f2
+22:20:50.731  INFO  business.BundleAPIImpl - Removing bundle: b5be0f54-0ed6-4d60-aeb5-a1ca553ea891 and dependencies by: dotcms.org.1
+22:20:50.731  INFO  business.BundleAPIImpl - Removing audit status for a bundle: b5be0f54-0ed6-4d60-aeb5-a1ca553ea891
+22:20:50.731  INFO  business.PublishAuditAPIImpl - Deleting the bundle: b5be0f54-0ed6-4d60-aeb5-a1ca553ea891
+22:20:50.731  INFO  business.BundleAPIImpl - Removing all assets from bundle: b5be0f54-0ed6-4d60-aeb5-a1ca553ea891
+22:20:50.732  INFO  business.BundleAPIImpl - Removing environments from bundle: b5be0f54-0ed6-4d60-aeb5-a1ca553ea891
+22:20:50.732  INFO  business.BundleAPIImpl - Removing bundle: b5be0f54-0ed6-4d60-aeb5-a1ca553ea891
+22:20:50.732  INFO  business.BundleAPIImpl - Removing bundle: 1be91ccb-8bb2-4011-8040-d5daa104fa50 and dependencies by: dotcms.org.1
+22:20:50.732  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 1be91ccb-8bb2-4011-8040-d5daa104fa50
+22:20:50.732  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 1be91ccb-8bb2-4011-8040-d5daa104fa50
+22:20:50.732  INFO  business.BundleAPIImpl - Removing all assets from bundle: 1be91ccb-8bb2-4011-8040-d5daa104fa50
+22:20:50.732  INFO  business.BundleAPIImpl - Removing environments from bundle: 1be91ccb-8bb2-4011-8040-d5daa104fa50
+22:20:50.732  INFO  business.BundleAPIImpl - Removing bundle: 1be91ccb-8bb2-4011-8040-d5daa104fa50
+22:20:50.733  INFO  business.BundleAPIImpl - Removing bundle: b97a4eb0-71ca-47c5-a10b-164c8ffa4cf3 and dependencies by: dotcms.org.1
+22:20:50.733  INFO  business.BundleAPIImpl - Removing audit status for a bundle: b97a4eb0-71ca-47c5-a10b-164c8ffa4cf3
+22:20:50.733  INFO  business.PublishAuditAPIImpl - Deleting the bundle: b97a4eb0-71ca-47c5-a10b-164c8ffa4cf3
+22:20:50.733  INFO  business.BundleAPIImpl - Removing all assets from bundle: b97a4eb0-71ca-47c5-a10b-164c8ffa4cf3
+22:20:50.733  INFO  business.BundleAPIImpl - Removing environments from bundle: b97a4eb0-71ca-47c5-a10b-164c8ffa4cf3
+22:20:50.733  INFO  business.BundleAPIImpl - Removing bundle: b97a4eb0-71ca-47c5-a10b-164c8ffa4cf3
+22:20:50.759  INFO  business.BundleAPIImpl - Removing bundle: c482a27c-ca41-4fc6-829e-920e52ede1e4 and dependencies by: dotcms.org.1
+22:20:50.759  INFO  business.BundleAPIImpl - Removing audit status for a bundle: c482a27c-ca41-4fc6-829e-920e52ede1e4
+22:20:50.759  INFO  business.PublishAuditAPIImpl - Deleting the bundle: c482a27c-ca41-4fc6-829e-920e52ede1e4
+22:20:50.759  INFO  business.BundleAPIImpl - Removing all assets from bundle: c482a27c-ca41-4fc6-829e-920e52ede1e4
+22:20:50.759  INFO  business.BundleAPIImpl - Removing environments from bundle: c482a27c-ca41-4fc6-829e-920e52ede1e4
+22:20:50.759  INFO  business.BundleAPIImpl - Removing bundle: c482a27c-ca41-4fc6-829e-920e52ede1e4
+22:20:50.760  INFO  business.BundleAPIImpl - Removing bundle: 72d0b60c-48f9-4b40-8b43-dbee44c8d14d and dependencies by: dotcms.org.1
+22:20:50.760  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 72d0b60c-48f9-4b40-8b43-dbee44c8d14d
+22:20:50.760  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 72d0b60c-48f9-4b40-8b43-dbee44c8d14d
+22:20:50.760  INFO  business.BundleAPIImpl - Removing all assets from bundle: 72d0b60c-48f9-4b40-8b43-dbee44c8d14d
+22:20:50.760  INFO  business.BundleAPIImpl - Removing environments from bundle: 72d0b60c-48f9-4b40-8b43-dbee44c8d14d
+22:20:50.760  INFO  business.BundleAPIImpl - Removing bundle: 72d0b60c-48f9-4b40-8b43-dbee44c8d14d
+22:20:50.761  INFO  business.BundleAPIImpl - Removing bundle: 940fc7e2-2065-4ce2-bdda-98e12f007ea4 and dependencies by: dotcms.org.1
+22:20:50.761  INFO  business.BundleAPIImpl - Removing audit status for a bundle: 940fc7e2-2065-4ce2-bdda-98e12f007ea4
+22:20:50.761  INFO  business.PublishAuditAPIImpl - Deleting the bundle: 940fc7e2-2065-4ce2-bdda-98e12f007ea4
+22:20:50.761  INFO  business.BundleAPIImpl - Removing all assets from bundle: 940fc7e2-2065-4ce2-bdda-98e12f007ea4
+22:20:50.761  INFO  business.BundleAPIImpl - Removing environments from bundle: 940fc7e2-2065-4ce2-bdda-98e12f007ea4
+22:20:50.761  INFO  business.BundleAPIImpl - Removing bundle: 940fc7e2-2065-4ce2-bdda-98e12f007ea4
+22:20:50.762  INFO  business.BundleAPIImpl - Deleted 104 bundles, failed 0 bundles
+22:21:00.384  INFO  junit.MainBaseSuite - Checking indexer status...
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

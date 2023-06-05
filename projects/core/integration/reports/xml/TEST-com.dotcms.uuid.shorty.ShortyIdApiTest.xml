@@ -1,0 +1,751 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.dotcms.uuid.shorty.ShortyIdApiTest" tests="11" skipped="0" failures="0" errors="0" timestamp="2023-06-05T21:39:27" hostname="fv-az306-998" time="28.862">
+  <properties/>
+  <testcase name="test404Cache" classname="com.dotcms.uuid.shorty.ShortyIdApiTest" time="2.222"/>
+  <testcase name="test404CacheWhenDBDown" classname="com.dotcms.uuid.shorty.ShortyIdApiTest" time="10.758"/>
+  <testcase name="testShortyLookup" classname="com.dotcms.uuid.shorty.ShortyIdApiTest" time="1.117"/>
+  <testcase name="testUuidIfy" classname="com.dotcms.uuid.shorty.ShortyIdApiTest" time="0.973"/>
+  <testcase name="testLongerShorties" classname="com.dotcms.uuid.shorty.ShortyIdApiTest" time="1.989"/>
+  <testcase name="testShortify" classname="com.dotcms.uuid.shorty.ShortyIdApiTest" time="1.925"/>
+  <testcase name="testContentlet404CacheInvalidation" classname="com.dotcms.uuid.shorty.ShortyIdApiTest" time="2.029"/>
+  <testcase name="testTempShorties" classname="com.dotcms.uuid.shorty.ShortyIdApiTest" time="1.911"/>
+  <testcase name="testShortyCache" classname="com.dotcms.uuid.shorty.ShortyIdApiTest" time="2.083"/>
+  <testcase name="testValidShorty" classname="com.dotcms.uuid.shorty.ShortyIdApiTest" time="1.929"/>
+  <testcase name="testIdentifier404CacheInvalidation" classname="com.dotcms.uuid.shorty.ShortyIdApiTest" time="1.924"/>
+  <system-out><![CDATA[21:39:28.532  INFO  timedcache.TimedCacheProvider - ===== Initializing [Timed Cache Provider].
+21:39:28.532  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : default: 1000
+21:39:28.532  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : adminconfigpool: 100
+21:39:28.532  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : companypool: 10
+21:39:28.532  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : contentletcache: 5000
+21:39:28.532  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : csscache: 2500
+21:39:28.532  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : fileassetmetadatacache: 200
+21:39:28.532  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : identifiercache: 50000
+21:39:28.532  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : indiciescache: 8
+21:39:28.532  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : logmappercache: 10
+21:39:28.532  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : navcache: 1000
+21:39:28.532  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : parentpermissionablecache: 10000
+21:39:28.532  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : permissioncache: 50000
+21:39:28.532  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : portletpool: 100
+21:39:28.532  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : publishingendpointcache: 100
+21:39:28.532  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : pushedassetscache: 5000
+21:39:28.532  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : structurecache: 500
+21:39:28.532  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : templatecache: 500
+21:39:28.532  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : translatedquerycache: 5000
+21:39:28.532  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : versioncache: 50000
+21:39:28.532  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : versioninfocache: 50000
+21:39:28.532  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : workflowactioncache: 10000
+21:39:28.532  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : workflowtaskcache: 10000
+21:39:28.532  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : shorty: 25000
+21:39:28.532  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : identifier404cache: 5000
+21:39:28.532  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : velocitycache: 1000
+21:39:28.532  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : vanityurlcache: 1000
+21:39:28.532  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : cachedvanityurlgroup: 1000
+21:39:28.532  INFO  h22.H22Cache - Start Full Cache Flush in h22
+21:39:28.532  INFO  h22.H22Cache - Building new H22 Cache, db:0
+21:39:28.533  INFO  h22.H22HikariPool - H22 on disk cache:jdbc:h2:/home/runner/work/core/custom/dotsecure/h22cache/0/2023-06-05_21-39-28/cache;MVCC=TRUE;DB_CLOSE_ON_EXIT=FALSE
+21:39:28.533  INFO  hikari.HikariDataSource - HikariPool-15 - Starting...
+21:39:28.565  INFO  pool.PoolBase - HikariPool-15 - Driver does not support get/set network timeout for connections. (Receiver class org.h2.jdbc.JdbcConnection does not define or inherit an implementation of the resolved method 'abstract int getNetworkTimeout()' of interface java.sql.Connection.)
+21:39:28.565  INFO  hikari.HikariDataSource - HikariPool-15 - Start completed.
+21:39:28.568  INFO  hikari.HikariDataSource - HikariPool-13 - Shutdown initiated...
+21:39:28.634  INFO  hikari.HikariDataSource - HikariPool-13 - Shutdown completed.
+21:39:28.634  INFO  h22.H22Cache - Building new H22 Cache, db:1
+21:39:28.634  INFO  h22.H22HikariPool - H22 on disk cache:jdbc:h2:/home/runner/work/core/custom/dotsecure/h22cache/1/2023-06-05_21-39-28/cache;MVCC=TRUE;DB_CLOSE_ON_EXIT=FALSE
+21:39:28.634  INFO  hikari.HikariDataSource - HikariPool-16 - Starting...
+21:39:28.665  INFO  pool.PoolBase - HikariPool-16 - Driver does not support get/set network timeout for connections. (Receiver class org.h2.jdbc.JdbcConnection does not define or inherit an implementation of the resolved method 'abstract int getNetworkTimeout()' of interface java.sql.Connection.)
+21:39:28.665  INFO  hikari.HikariDataSource - HikariPool-16 - Start completed.
+21:39:28.667  INFO  hikari.HikariDataSource - HikariPool-14 - Shutdown initiated...
+21:39:28.737  INFO  hikari.HikariDataSource - HikariPool-14 - Shutdown completed.
+21:39:28.737  INFO  h22.H22Cache - End Full Cache Flush in h22 : 204ms
+21:39:28.750  INFO  junit.MainBaseSuite - Checking indexer status...
+21:39:28.750  INFO  junit.MainBaseSuite - Indexer is not empty, waiting for it to finish
+21:39:29.753  INFO  junit.MainBaseSuite - Indexer Complete=true
+21:39:36.741  ERROR quartz.DotJobStore - ClusterManager: Error managing cluster: Failed to obtain DB connection from data source 'NonTxDataSource.dotCMSQuartz': java.sql.SQLTransientConnectionException: jdbc/dotCMSPool - Connection is not available, request timed out after 3000ms.
+org.quartz.JobPersistenceException: Failed to obtain DB connection from data source 'NonTxDataSource.dotCMSQuartz': java.sql.SQLTransientConnectionException: jdbc/dotCMSPool - Connection is not available, request timed out after 3000ms.
+	at org.quartz.impl.jdbcjobstore.JobStoreCMT.getNonManagedTXConnection(JobStoreCMT.java:165) ~[dot.quartz-all-1.8.6_2.jar:?]
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport.doCheckin(JobStoreSupport.java:3208) ~[dot.quartz-all-1.8.6_2.jar:?]
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport$ClusterManager.manage(JobStoreSupport.java:3847) ~[dot.quartz-all-1.8.6_2.jar:?]
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport$ClusterManager.run(JobStoreSupport.java:3883) ~[dot.quartz-all-1.8.6_2.jar:?]
+Caused by: java.sql.SQLTransientConnectionException: jdbc/dotCMSPool - Connection is not available, request timed out after 3000ms.
+	at com.zaxxer.hikari.pool.HikariPool.createTimeoutException(HikariPool.java:689) ~[HikariCP-3.4.2.jar:?]
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:196) ~[HikariCP-3.4.2.jar:?]
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:161) ~[HikariCP-3.4.2.jar:?]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:100) ~[HikariCP-3.4.2.jar:?]
+	at com.dotmarketing.quartz.DotJobStore$2.getConnection(DotJobStore.java:80) ~[main/:?]
+	at org.quartz.utils.DBConnectionManager.getConnection(DBConnectionManager.java:109) ~[dot.quartz-all-1.8.6_2.jar:?]
+	at org.quartz.impl.jdbcjobstore.JobStoreCMT.getNonManagedTXConnection(JobStoreCMT.java:162) ~[dot.quartz-all-1.8.6_2.jar:?]
+	... 3 more
+21:39:37.490  ERROR db.DbConnectionFactory - ---------- DBConnectionFactory: error : java.sql.SQLTransientConnectionException: jdbc/dotCMSPool - Connection is not available, request timed out after 3000ms.
+21:39:40.491  ERROR db.DbConnectionFactory - ---------- DBConnectionFactory: error : java.sql.SQLTransientConnectionException: jdbc/dotCMSPool - Connection is not available, request timed out after 3000ms.
+21:39:40.510  INFO  junit.MainBaseSuite - Checking indexer status...
+
+21:39:41.589  INFO  util.StdOutErrLog - 98a66255-bccb-43d0-91a5-028057885f75 == 98a66255-bccb-43d0-91a5-028057885f75
+
+21:39:41.589  INFO  util.StdOutErrLog - INODE == INODE
+
+21:39:41.589  INFO  util.StdOutErrLog - CONTAINER == CONTAINER
+
+21:39:41.591  INFO  util.StdOutErrLog - fbf97ad1176b6a7c87a9bb5e67845a6b == fbf97ad1176b6a7c87a9bb5e67845a6b
+
+21:39:41.591  INFO  util.StdOutErrLog - IDENTIFIER == IDENTIFIER
+
+21:39:41.591  INFO  util.StdOutErrLog - CONTAINER == CONTAINER
+
+21:39:41.593  INFO  util.StdOutErrLog - e1f61ded93c32f0e1c50c4e3a6afb3c1 == e1f61ded93c32f0e1c50c4e3a6afb3c1
+
+21:39:41.593  INFO  util.StdOutErrLog - IDENTIFIER == IDENTIFIER
+
+21:39:41.593  INFO  util.StdOutErrLog - CONTENTLET == CONTENTLET
+
+21:39:41.594  INFO  util.StdOutErrLog - 8a7d5e23-da1e-420a-b4f0-471e7da8ea2d == 8a7d5e23-da1e-420a-b4f0-471e7da8ea2d
+
+
+21:39:41.594  INFO  util.StdOutErrLog - IDENTIFIER == IDENTIFIER
+21:39:41.594  INFO  util.StdOutErrLog - CONTENTLET == CONTENTLET
+21:39:41.596  INFO  util.StdOutErrLog - 1b407535-67e3-4f21-ad00-8ef5ef492d64 == 1b407535-67e3-4f21-ad00-8ef5ef492d64
+
+21:39:41.596  INFO  util.StdOutErrLog - INODE == INODE
+
+21:39:41.596  INFO  util.StdOutErrLog - CONTENTLET == CONTENTLET
+
+21:39:41.597  INFO  util.StdOutErrLog - 3fbda471-5081-4886-999c-f014456e15b4 == 3fbda471-5081-4886-999c-f014456e15b4
+
+21:39:41.598  INFO  util.StdOutErrLog - INODE == INODE
+
+21:39:41.598  INFO  util.StdOutErrLog - CONTENTLET == CONTENTLET
+
+21:39:41.599  INFO  util.StdOutErrLog - d20d4c75-8c94-4f27-b5dc-baef16800ccb == d20d4c75-8c94-4f27-b5dc-baef16800ccb
+
+21:39:41.599  INFO  util.StdOutErrLog - INODE == INODE
+
+21:39:41.599  INFO  util.StdOutErrLog - LINKS == LINKS
+
+21:39:41.601  INFO  util.StdOutErrLog - 167be9f01285798f2f7562988c758a02 == 167be9f01285798f2f7562988c758a02
+
+21:39:41.601  INFO  util.StdOutErrLog - IDENTIFIER == IDENTIFIER
+
+21:39:41.601  INFO  util.StdOutErrLog - LINKS == LINKS
+
+21:39:41.603  INFO  util.StdOutErrLog - 8b199a84c8160c689db6e25ca6fc111d == 8b199a84c8160c689db6e25ca6fc111d
+
+21:39:41.603  INFO  util.StdOutErrLog - IDENTIFIER == IDENTIFIER
+
+21:39:41.603  INFO  util.StdOutErrLog - TEMPLATES == TEMPLATES
+
+21:39:41.604  INFO  util.StdOutErrLog - 57e15f2d-2ff2-4422-b6db-9e587970fd8e == 57e15f2d-2ff2-4422-b6db-9e587970fd8e
+
+21:39:41.604  INFO  util.StdOutErrLog - INODE == INODE
+
+21:39:41.605  INFO  util.StdOutErrLog - TEMPLATES == TEMPLATES
+
+21:39:41.605  INFO  util.StdOutErrLog - 98a66255-bccb-43d0-91a5-028057885f75 == 98a66255-bccb-43d0-91a5-028057885f75
+
+21:39:41.605  INFO  util.StdOutErrLog - INODE == INODE
+
+21:39:41.605  INFO  util.StdOutErrLog - CONTAINER == CONTAINER
+
+21:39:41.605  INFO  util.StdOutErrLog - fbf97ad1176b6a7c87a9bb5e67845a6b == fbf97ad1176b6a7c87a9bb5e67845a6b
+
+21:39:41.605  INFO  util.StdOutErrLog - IDENTIFIER == IDENTIFIER
+
+21:39:41.605  INFO  util.StdOutErrLog - CONTAINER == CONTAINER
+
+21:39:41.605  INFO  util.StdOutErrLog - e1f61ded93c32f0e1c50c4e3a6afb3c1 == e1f61ded93c32f0e1c50c4e3a6afb3c1
+
+21:39:41.605  INFO  util.StdOutErrLog - IDENTIFIER == IDENTIFIER
+
+21:39:41.605  INFO  util.StdOutErrLog - CONTENTLET == CONTENTLET
+
+21:39:41.605  INFO  util.StdOutErrLog - 8a7d5e23-da1e-420a-b4f0-471e7da8ea2d == 8a7d5e23-da1e-420a-b4f0-471e7da8ea2d
+
+21:39:41.606  INFO  util.StdOutErrLog - IDENTIFIER == IDENTIFIER
+
+21:39:41.606  INFO  util.StdOutErrLog - CONTENTLET == CONTENTLET
+
+21:39:41.606  INFO  util.StdOutErrLog - 1b407535-67e3-4f21-ad00-8ef5ef492d64 == 1b407535-67e3-4f21-ad00-8ef5ef492d64
+
+21:39:41.606  INFO  util.StdOutErrLog - INODE == INODE
+
+21:39:41.606  INFO  util.StdOutErrLog - CONTENTLET == CONTENTLET
+
+21:39:41.606  INFO  util.StdOutErrLog - 3fbda471-5081-4886-999c-f014456e15b4 == 3fbda471-5081-4886-999c-f014456e15b4
+
+21:39:41.606  INFO  util.StdOutErrLog - INODE == INODE
+
+21:39:41.606  INFO  util.StdOutErrLog - CONTENTLET == CONTENTLET
+
+21:39:41.606  INFO  util.StdOutErrLog - d20d4c75-8c94-4f27-b5dc-baef16800ccb == d20d4c75-8c94-4f27-b5dc-baef16800ccb
+
+21:39:41.606  INFO  util.StdOutErrLog - INODE == INODE
+
+21:39:41.606  INFO  util.StdOutErrLog - LINKS == LINKS
+
+21:39:41.606  INFO  util.StdOutErrLog - 167be9f01285798f2f7562988c758a02 == 167be9f01285798f2f7562988c758a02
+
+21:39:41.607  INFO  util.StdOutErrLog - IDENTIFIER == IDENTIFIER
+
+21:39:41.607  INFO  util.StdOutErrLog - LINKS == LINKS
+
+21:39:41.607  INFO  util.StdOutErrLog - 8b199a84c8160c689db6e25ca6fc111d == 8b199a84c8160c689db6e25ca6fc111d
+
+21:39:41.607  INFO  util.StdOutErrLog - IDENTIFIER == IDENTIFIER
+
+21:39:41.607  INFO  util.StdOutErrLog - TEMPLATES == TEMPLATES
+
+21:39:41.607  INFO  util.StdOutErrLog - 57e15f2d-2ff2-4422-b6db-9e587970fd8e == 57e15f2d-2ff2-4422-b6db-9e587970fd8e
+
+21:39:41.607  INFO  util.StdOutErrLog - INODE == INODE
+
+21:39:41.607  INFO  util.StdOutErrLog - TEMPLATES == TEMPLATES
+
+21:39:41.607  INFO  util.StdOutErrLog - 98a66255-bccb-43d0-91a5-028057885f75 == 98a66255-bccb-43d0-91a5-028057885f75
+
+21:39:41.607  INFO  util.StdOutErrLog - INODE == INODE
+
+21:39:41.607  INFO  util.StdOutErrLog - CONTAINER == CONTAINER
+
+21:39:41.608  INFO  util.StdOutErrLog - fbf97ad1176b6a7c87a9bb5e67845a6b == fbf97ad1176b6a7c87a9bb5e67845a6b
+
+21:39:41.608  INFO  util.StdOutErrLog - IDENTIFIER == IDENTIFIER
+
+21:39:41.608  INFO  util.StdOutErrLog - CONTAINER == CONTAINER
+
+21:39:41.608  INFO  util.StdOutErrLog - e1f61ded93c32f0e1c50c4e3a6afb3c1 == e1f61ded93c32f0e1c50c4e3a6afb3c1
+
+21:39:41.608  INFO  util.StdOutErrLog - IDENTIFIER == IDENTIFIER
+
+21:39:41.608  INFO  util.StdOutErrLog - CONTENTLET == CONTENTLET
+
+21:39:41.608  INFO  util.StdOutErrLog - 8a7d5e23-da1e-420a-b4f0-471e7da8ea2d == 8a7d5e23-da1e-420a-b4f0-471e7da8ea2d
+
+21:39:41.608  INFO  util.StdOutErrLog - IDENTIFIER == IDENTIFIER
+
+21:39:41.608  INFO  util.StdOutErrLog - CONTENTLET == CONTENTLET
+
+21:39:41.608  INFO  util.StdOutErrLog - 1b407535-67e3-4f21-ad00-8ef5ef492d64 == 1b407535-67e3-4f21-ad00-8ef5ef492d64
+
+21:39:41.608  INFO  util.StdOutErrLog - INODE == INODE
+
+21:39:41.608  INFO  util.StdOutErrLog - CONTENTLET == CONTENTLET
+
+21:39:41.609  INFO  util.StdOutErrLog - 3fbda471-5081-4886-999c-f014456e15b4 == 3fbda471-5081-4886-999c-f014456e15b4
+
+21:39:41.609  INFO  util.StdOutErrLog - INODE == INODE
+
+21:39:41.609  INFO  util.StdOutErrLog - CONTENTLET == CONTENTLET
+
+21:39:41.609  INFO  util.StdOutErrLog - d20d4c75-8c94-4f27-b5dc-baef16800ccb == d20d4c75-8c94-4f27-b5dc-baef16800ccb
+
+21:39:41.609  INFO  util.StdOutErrLog - INODE == INODE
+
+21:39:41.609  INFO  util.StdOutErrLog - LINKS == LINKS
+
+21:39:41.609  INFO  util.StdOutErrLog - 167be9f01285798f2f7562988c758a02 == 167be9f01285798f2f7562988c758a02
+
+21:39:41.609  INFO  util.StdOutErrLog - IDENTIFIER == IDENTIFIER
+
+21:39:41.609  INFO  util.StdOutErrLog - LINKS == LINKS
+
+21:39:41.609  INFO  util.StdOutErrLog - 8b199a84c8160c689db6e25ca6fc111d == 8b199a84c8160c689db6e25ca6fc111d
+
+21:39:41.609  INFO  util.StdOutErrLog - IDENTIFIER == IDENTIFIER
+
+21:39:41.610  INFO  util.StdOutErrLog - TEMPLATES == TEMPLATES
+
+21:39:41.610  INFO  util.StdOutErrLog - 57e15f2d-2ff2-4422-b6db-9e587970fd8e == 57e15f2d-2ff2-4422-b6db-9e587970fd8e
+
+21:39:41.610  INFO  util.StdOutErrLog - INODE == INODE
+
+21:39:41.610  INFO  util.StdOutErrLog - TEMPLATES == TEMPLATES
+
+21:39:41.610  INFO  util.StdOutErrLog - 98a66255-bccb-43d0-91a5-028057885f75 == 98a66255-bccb-43d0-91a5-028057885f75
+
+21:39:41.610  INFO  util.StdOutErrLog - INODE == INODE
+
+21:39:41.610  INFO  util.StdOutErrLog - CONTAINER == CONTAINER
+
+21:39:41.610  INFO  util.StdOutErrLog - fbf97ad1176b6a7c87a9bb5e67845a6b == fbf97ad1176b6a7c87a9bb5e67845a6b
+
+21:39:41.610  INFO  util.StdOutErrLog - IDENTIFIER == IDENTIFIER
+
+21:39:41.610  INFO  util.StdOutErrLog - CONTAINER == CONTAINER
+
+21:39:41.610  INFO  util.StdOutErrLog - e1f61ded93c32f0e1c50c4e3a6afb3c1 == e1f61ded93c32f0e1c50c4e3a6afb3c1
+
+21:39:41.610  INFO  util.StdOutErrLog - IDENTIFIER == IDENTIFIER
+
+21:39:41.611  INFO  util.StdOutErrLog - CONTENTLET == CONTENTLET
+
+21:39:41.611  INFO  util.StdOutErrLog - 8a7d5e23-da1e-420a-b4f0-471e7da8ea2d == 8a7d5e23-da1e-420a-b4f0-471e7da8ea2d
+
+21:39:41.611  INFO  util.StdOutErrLog - IDENTIFIER == IDENTIFIER
+
+21:39:41.611  INFO  util.StdOutErrLog - CONTENTLET == CONTENTLET
+
+21:39:41.611  INFO  util.StdOutErrLog - 1b407535-67e3-4f21-ad00-8ef5ef492d64 == 1b407535-67e3-4f21-ad00-8ef5ef492d64
+
+21:39:41.611  INFO  util.StdOutErrLog - INODE == INODE
+
+21:39:41.611  INFO  util.StdOutErrLog - CONTENTLET == CONTENTLET
+
+21:39:41.611  INFO  util.StdOutErrLog - 3fbda471-5081-4886-999c-f014456e15b4 == 3fbda471-5081-4886-999c-f014456e15b4
+
+21:39:41.611  INFO  util.StdOutErrLog - INODE == INODE
+
+21:39:41.611  INFO  util.StdOutErrLog - CONTENTLET == CONTENTLET
+
+21:39:41.611  INFO  util.StdOutErrLog - d20d4c75-8c94-4f27-b5dc-baef16800ccb == d20d4c75-8c94-4f27-b5dc-baef16800ccb
+
+21:39:41.611  INFO  util.StdOutErrLog - INODE == INODE
+
+21:39:41.612  INFO  util.StdOutErrLog - LINKS == LINKS
+
+21:39:41.612  INFO  util.StdOutErrLog - 167be9f01285798f2f7562988c758a02 == 167be9f01285798f2f7562988c758a02
+
+21:39:41.612  INFO  util.StdOutErrLog - IDENTIFIER == IDENTIFIER
+
+21:39:41.612  INFO  util.StdOutErrLog - LINKS == LINKS
+
+21:39:41.612  INFO  util.StdOutErrLog - 8b199a84c8160c689db6e25ca6fc111d == 8b199a84c8160c689db6e25ca6fc111d
+
+21:39:41.612  INFO  util.StdOutErrLog - IDENTIFIER == IDENTIFIER
+
+21:39:41.612  INFO  util.StdOutErrLog - TEMPLATES == TEMPLATES
+
+21:39:41.612  INFO  util.StdOutErrLog - 57e15f2d-2ff2-4422-b6db-9e587970fd8e == 57e15f2d-2ff2-4422-b6db-9e587970fd8e
+
+21:39:41.612  INFO  util.StdOutErrLog - INODE == INODE
+
+21:39:41.612  INFO  util.StdOutErrLog - TEMPLATES == TEMPLATES
+
+21:39:41.612  INFO  util.StdOutErrLog - 98a66255-bccb-43d0-91a5-028057885f75 == 98a66255-bccb-43d0-91a5-028057885f75
+
+21:39:41.612  INFO  util.StdOutErrLog - INODE == INODE
+
+21:39:41.613  INFO  util.StdOutErrLog - CONTAINER == CONTAINER
+
+21:39:41.613  INFO  util.StdOutErrLog - fbf97ad1176b6a7c87a9bb5e67845a6b == fbf97ad1176b6a7c87a9bb5e67845a6b
+
+21:39:41.613  INFO  util.StdOutErrLog - IDENTIFIER == IDENTIFIER
+
+21:39:41.613  INFO  util.StdOutErrLog - CONTAINER == CONTAINER
+
+21:39:41.613  INFO  util.StdOutErrLog - e1f61ded93c32f0e1c50c4e3a6afb3c1 == e1f61ded93c32f0e1c50c4e3a6afb3c1
+
+21:39:41.613  INFO  util.StdOutErrLog - IDENTIFIER == IDENTIFIER
+
+21:39:41.613  INFO  util.StdOutErrLog - CONTENTLET == CONTENTLET
+
+21:39:41.613  INFO  util.StdOutErrLog - 8a7d5e23-da1e-420a-b4f0-471e7da8ea2d == 8a7d5e23-da1e-420a-b4f0-471e7da8ea2d
+
+21:39:41.613  INFO  util.StdOutErrLog - IDENTIFIER == IDENTIFIER
+
+21:39:41.613  INFO  util.StdOutErrLog - CONTENTLET == CONTENTLET
+
+21:39:41.614  INFO  util.StdOutErrLog - 1b407535-67e3-4f21-ad00-8ef5ef492d64 == 1b407535-67e3-4f21-ad00-8ef5ef492d64
+
+21:39:41.614  INFO  util.StdOutErrLog - INODE == INODE
+
+21:39:41.614  INFO  util.StdOutErrLog - CONTENTLET == CONTENTLET
+
+21:39:41.614  INFO  util.StdOutErrLog - 3fbda471-5081-4886-999c-f014456e15b4 == 3fbda471-5081-4886-999c-f014456e15b4
+
+21:39:41.614  INFO  util.StdOutErrLog - INODE == INODE
+
+21:39:41.614  INFO  util.StdOutErrLog - CONTENTLET == CONTENTLET
+
+21:39:41.614  INFO  util.StdOutErrLog - d20d4c75-8c94-4f27-b5dc-baef16800ccb == d20d4c75-8c94-4f27-b5dc-baef16800ccb
+
+21:39:41.614  INFO  util.StdOutErrLog - INODE == INODE
+
+21:39:41.614  INFO  util.StdOutErrLog - LINKS == LINKS
+
+21:39:41.614  INFO  util.StdOutErrLog - 167be9f01285798f2f7562988c758a02 == 167be9f01285798f2f7562988c758a02
+
+21:39:41.614  INFO  util.StdOutErrLog - IDENTIFIER == IDENTIFIER
+
+21:39:41.614  INFO  util.StdOutErrLog - LINKS == LINKS
+
+21:39:41.615  INFO  util.StdOutErrLog - 8b199a84c8160c689db6e25ca6fc111d == 8b199a84c8160c689db6e25ca6fc111d
+
+21:39:41.615  INFO  util.StdOutErrLog - IDENTIFIER == IDENTIFIER
+
+21:39:41.615  INFO  util.StdOutErrLog - TEMPLATES == TEMPLATES
+
+21:39:41.615  INFO  util.StdOutErrLog - 57e15f2d-2ff2-4422-b6db-9e587970fd8e == 57e15f2d-2ff2-4422-b6db-9e587970fd8e
+
+21:39:41.615  INFO  util.StdOutErrLog - INODE == INODE
+
+21:39:41.615  INFO  util.StdOutErrLog - TEMPLATES == TEMPLATES
+
+21:39:41.615  INFO  util.StdOutErrLog - 98a66255-bccb-43d0-91a5-028057885f75 == 98a66255-bccb-43d0-91a5-028057885f75
+
+21:39:41.615  INFO  util.StdOutErrLog - INODE == INODE
+
+21:39:41.615  INFO  util.StdOutErrLog - CONTAINER == CONTAINER
+
+21:39:41.615  INFO  util.StdOutErrLog - fbf97ad1176b6a7c87a9bb5e67845a6b == fbf97ad1176b6a7c87a9bb5e67845a6b
+
+21:39:41.615  INFO  util.StdOutErrLog - IDENTIFIER == IDENTIFIER
+
+21:39:41.615  INFO  util.StdOutErrLog - CONTAINER == CONTAINER
+
+21:39:41.616  INFO  util.StdOutErrLog - e1f61ded93c32f0e1c50c4e3a6afb3c1 == e1f61ded93c32f0e1c50c4e3a6afb3c1
+
+21:39:41.616  INFO  util.StdOutErrLog - IDENTIFIER == IDENTIFIER
+
+21:39:41.616  INFO  util.StdOutErrLog - CONTENTLET == CONTENTLET
+
+21:39:41.616  INFO  util.StdOutErrLog - 8a7d5e23-da1e-420a-b4f0-471e7da8ea2d == 8a7d5e23-da1e-420a-b4f0-471e7da8ea2d
+
+21:39:41.616  INFO  util.StdOutErrLog - IDENTIFIER == IDENTIFIER
+
+21:39:41.616  INFO  util.StdOutErrLog - CONTENTLET == CONTENTLET
+
+21:39:41.616  INFO  util.StdOutErrLog - 1b407535-67e3-4f21-ad00-8ef5ef492d64 == 1b407535-67e3-4f21-ad00-8ef5ef492d64
+
+21:39:41.616  INFO  util.StdOutErrLog - INODE == INODE
+
+21:39:41.616  INFO  util.StdOutErrLog - CONTENTLET == CONTENTLET
+
+21:39:41.616  INFO  util.StdOutErrLog - 3fbda471-5081-4886-999c-f014456e15b4 == 3fbda471-5081-4886-999c-f014456e15b4
+
+21:39:41.616  INFO  util.StdOutErrLog - INODE == INODE
+
+21:39:41.616  INFO  util.StdOutErrLog - CONTENTLET == CONTENTLET
+
+21:39:41.617  INFO  util.StdOutErrLog - d20d4c75-8c94-4f27-b5dc-baef16800ccb == d20d4c75-8c94-4f27-b5dc-baef16800ccb
+
+21:39:41.617  INFO  util.StdOutErrLog - INODE == INODE
+
+21:39:41.617  INFO  util.StdOutErrLog - LINKS == LINKS
+
+21:39:41.617  INFO  util.StdOutErrLog - 167be9f01285798f2f7562988c758a02 == 167be9f01285798f2f7562988c758a02
+
+21:39:41.617  INFO  util.StdOutErrLog - IDENTIFIER == IDENTIFIER
+
+21:39:41.617  INFO  util.StdOutErrLog - LINKS == LINKS
+
+21:39:41.617  INFO  util.StdOutErrLog - 8b199a84c8160c689db6e25ca6fc111d == 8b199a84c8160c689db6e25ca6fc111d
+
+21:39:41.617  INFO  util.StdOutErrLog - IDENTIFIER == IDENTIFIER
+
+21:39:41.617  INFO  util.StdOutErrLog - TEMPLATES == TEMPLATES
+
+21:39:41.617  INFO  util.StdOutErrLog - 57e15f2d-2ff2-4422-b6db-9e587970fd8e == 57e15f2d-2ff2-4422-b6db-9e587970fd8e
+
+21:39:41.617  INFO  util.StdOutErrLog - INODE == INODE
+
+21:39:41.618  INFO  util.StdOutErrLog - TEMPLATES == TEMPLATES
+
+21:39:41.618  INFO  util.StdOutErrLog - 98a66255-bccb-43d0-91a5-028057885f75 == 98a66255-bccb-43d0-91a5-028057885f75
+
+21:39:41.618  INFO  util.StdOutErrLog - INODE == INODE
+
+21:39:41.618  INFO  util.StdOutErrLog - CONTAINER == CONTAINER
+
+21:39:41.618  INFO  util.StdOutErrLog - fbf97ad1176b6a7c87a9bb5e67845a6b == fbf97ad1176b6a7c87a9bb5e67845a6b
+
+21:39:41.618  INFO  util.StdOutErrLog - IDENTIFIER == IDENTIFIER
+
+21:39:41.618  INFO  util.StdOutErrLog - CONTAINER == CONTAINER
+
+21:39:41.618  INFO  util.StdOutErrLog - e1f61ded93c32f0e1c50c4e3a6afb3c1 == e1f61ded93c32f0e1c50c4e3a6afb3c1
+
+21:39:41.618  INFO  util.StdOutErrLog - IDENTIFIER == IDENTIFIER
+
+21:39:41.618  INFO  util.StdOutErrLog - CONTENTLET == CONTENTLET
+
+21:39:41.618  INFO  util.StdOutErrLog - 8a7d5e23-da1e-420a-b4f0-471e7da8ea2d == 8a7d5e23-da1e-420a-b4f0-471e7da8ea2d
+
+21:39:41.618  INFO  util.StdOutErrLog - IDENTIFIER == IDENTIFIER
+
+21:39:41.619  INFO  util.StdOutErrLog - CONTENTLET == CONTENTLET
+
+21:39:41.619  INFO  util.StdOutErrLog - 1b407535-67e3-4f21-ad00-8ef5ef492d64 == 1b407535-67e3-4f21-ad00-8ef5ef492d64
+
+21:39:41.619  INFO  util.StdOutErrLog - INODE == INODE
+
+21:39:41.619  INFO  util.StdOutErrLog - CONTENTLET == CONTENTLET
+
+21:39:41.619  INFO  util.StdOutErrLog - 3fbda471-5081-4886-999c-f014456e15b4 == 3fbda471-5081-4886-999c-f014456e15b4
+
+21:39:41.619  INFO  util.StdOutErrLog - INODE == INODE
+
+21:39:41.619  INFO  util.StdOutErrLog - CONTENTLET == CONTENTLET
+
+21:39:41.619  INFO  util.StdOutErrLog - d20d4c75-8c94-4f27-b5dc-baef16800ccb == d20d4c75-8c94-4f27-b5dc-baef16800ccb
+
+21:39:41.619  INFO  util.StdOutErrLog - INODE == INODE
+
+21:39:41.619  INFO  util.StdOutErrLog - LINKS == LINKS
+
+21:39:41.619  INFO  util.StdOutErrLog - 167be9f01285798f2f7562988c758a02 == 167be9f01285798f2f7562988c758a02
+
+21:39:41.620  INFO  util.StdOutErrLog - IDENTIFIER == IDENTIFIER
+
+21:39:41.620  INFO  util.StdOutErrLog - LINKS == LINKS
+
+21:39:41.620  INFO  util.StdOutErrLog - 8b199a84c8160c689db6e25ca6fc111d == 8b199a84c8160c689db6e25ca6fc111d
+
+21:39:41.620  INFO  util.StdOutErrLog - IDENTIFIER == IDENTIFIER
+
+21:39:41.620  INFO  util.StdOutErrLog - TEMPLATES == TEMPLATES
+
+21:39:41.620  INFO  util.StdOutErrLog - 57e15f2d-2ff2-4422-b6db-9e587970fd8e == 57e15f2d-2ff2-4422-b6db-9e587970fd8e
+
+21:39:41.620  INFO  util.StdOutErrLog - INODE == INODE
+
+21:39:41.620  INFO  util.StdOutErrLog - TEMPLATES == TEMPLATES
+
+21:39:41.620  INFO  util.StdOutErrLog - 98a66255-bccb-43d0-91a5-028057885f75 == 98a66255-bccb-43d0-91a5-028057885f75
+
+21:39:41.620  INFO  util.StdOutErrLog - INODE == INODE
+
+21:39:41.620  INFO  util.StdOutErrLog - CONTAINER == CONTAINER
+
+21:39:41.620  INFO  util.StdOutErrLog - fbf97ad1176b6a7c87a9bb5e67845a6b == fbf97ad1176b6a7c87a9bb5e67845a6b
+
+21:39:41.621  INFO  util.StdOutErrLog - IDENTIFIER == IDENTIFIER
+
+21:39:41.621  INFO  util.StdOutErrLog - CONTAINER == CONTAINER
+
+21:39:41.621  INFO  util.StdOutErrLog - e1f61ded93c32f0e1c50c4e3a6afb3c1 == e1f61ded93c32f0e1c50c4e3a6afb3c1
+
+21:39:41.621  INFO  util.StdOutErrLog - IDENTIFIER == IDENTIFIER
+
+21:39:41.621  INFO  util.StdOutErrLog - CONTENTLET == CONTENTLET
+
+21:39:41.621  INFO  util.StdOutErrLog - 8a7d5e23-da1e-420a-b4f0-471e7da8ea2d == 8a7d5e23-da1e-420a-b4f0-471e7da8ea2d
+
+21:39:41.621  INFO  util.StdOutErrLog - IDENTIFIER == IDENTIFIER
+
+21:39:41.621  INFO  util.StdOutErrLog - CONTENTLET == CONTENTLET
+
+21:39:41.621  INFO  util.StdOutErrLog - 1b407535-67e3-4f21-ad00-8ef5ef492d64 == 1b407535-67e3-4f21-ad00-8ef5ef492d64
+
+21:39:41.621  INFO  util.StdOutErrLog - INODE == INODE
+
+21:39:41.621  INFO  util.StdOutErrLog - CONTENTLET == CONTENTLET
+
+21:39:41.621  INFO  util.StdOutErrLog - 3fbda471-5081-4886-999c-f014456e15b4 == 3fbda471-5081-4886-999c-f014456e15b4
+
+21:39:41.622  INFO  util.StdOutErrLog - INODE == INODE
+
+21:39:41.622  INFO  util.StdOutErrLog - CONTENTLET == CONTENTLET
+
+21:39:41.622  INFO  util.StdOutErrLog - d20d4c75-8c94-4f27-b5dc-baef16800ccb == d20d4c75-8c94-4f27-b5dc-baef16800ccb
+
+21:39:41.622  INFO  util.StdOutErrLog - INODE == INODE
+
+21:39:41.622  INFO  util.StdOutErrLog - LINKS == LINKS
+
+21:39:41.622  INFO  util.StdOutErrLog - 167be9f01285798f2f7562988c758a02 == 167be9f01285798f2f7562988c758a02
+
+21:39:41.622  INFO  util.StdOutErrLog - IDENTIFIER == IDENTIFIER
+
+21:39:41.622  INFO  util.StdOutErrLog - LINKS == LINKS
+
+21:39:41.622  INFO  util.StdOutErrLog - 8b199a84c8160c689db6e25ca6fc111d == 8b199a84c8160c689db6e25ca6fc111d
+
+21:39:41.622  INFO  util.StdOutErrLog - IDENTIFIER == IDENTIFIER
+
+21:39:41.622  INFO  util.StdOutErrLog - TEMPLATES == TEMPLATES
+
+21:39:41.623  INFO  util.StdOutErrLog - 57e15f2d-2ff2-4422-b6db-9e587970fd8e == 57e15f2d-2ff2-4422-b6db-9e587970fd8e
+
+21:39:41.623  INFO  util.StdOutErrLog - INODE == INODE
+
+21:39:41.623  INFO  util.StdOutErrLog - TEMPLATES == TEMPLATES
+
+21:39:41.623  INFO  util.StdOutErrLog - 98a66255-bccb-43d0-91a5-028057885f75 == 98a66255-bccb-43d0-91a5-028057885f75
+
+21:39:41.623  INFO  util.StdOutErrLog - INODE == INODE
+
+21:39:41.623  INFO  util.StdOutErrLog - CONTAINER == CONTAINER
+
+21:39:41.623  INFO  util.StdOutErrLog - fbf97ad1176b6a7c87a9bb5e67845a6b == fbf97ad1176b6a7c87a9bb5e67845a6b
+
+21:39:41.623  INFO  util.StdOutErrLog - IDENTIFIER == IDENTIFIER
+
+21:39:41.623  INFO  util.StdOutErrLog - CONTAINER == CONTAINER
+
+21:39:41.623  INFO  util.StdOutErrLog - e1f61ded93c32f0e1c50c4e3a6afb3c1 == e1f61ded93c32f0e1c50c4e3a6afb3c1
+
+21:39:41.623  INFO  util.StdOutErrLog - IDENTIFIER == IDENTIFIER
+
+21:39:41.623  INFO  util.StdOutErrLog - CONTENTLET == CONTENTLET
+
+21:39:41.624  INFO  util.StdOutErrLog - 8a7d5e23-da1e-420a-b4f0-471e7da8ea2d == 8a7d5e23-da1e-420a-b4f0-471e7da8ea2d
+
+21:39:41.624  INFO  util.StdOutErrLog - IDENTIFIER == IDENTIFIER
+
+21:39:41.624  INFO  util.StdOutErrLog - CONTENTLET == CONTENTLET
+
+21:39:41.624  INFO  util.StdOutErrLog - 1b407535-67e3-4f21-ad00-8ef5ef492d64 == 1b407535-67e3-4f21-ad00-8ef5ef492d64
+
+21:39:41.624  INFO  util.StdOutErrLog - INODE == INODE
+
+21:39:41.624  INFO  util.StdOutErrLog - CONTENTLET == CONTENTLET
+
+21:39:41.624  INFO  util.StdOutErrLog - 3fbda471-5081-4886-999c-f014456e15b4 == 3fbda471-5081-4886-999c-f014456e15b4
+
+21:39:41.624  INFO  util.StdOutErrLog - INODE == INODE
+
+21:39:41.624  INFO  util.StdOutErrLog - CONTENTLET == CONTENTLET
+
+21:39:41.624  INFO  util.StdOutErrLog - d20d4c75-8c94-4f27-b5dc-baef16800ccb == d20d4c75-8c94-4f27-b5dc-baef16800ccb
+
+21:39:41.624  INFO  util.StdOutErrLog - INODE == INODE
+
+21:39:41.624  INFO  util.StdOutErrLog - LINKS == LINKS
+
+21:39:41.625  INFO  util.StdOutErrLog - 167be9f01285798f2f7562988c758a02 == 167be9f01285798f2f7562988c758a02
+
+21:39:41.625  INFO  util.StdOutErrLog - IDENTIFIER == IDENTIFIER
+
+21:39:41.625  INFO  util.StdOutErrLog - LINKS == LINKS
+
+21:39:41.625  INFO  util.StdOutErrLog - 8b199a84c8160c689db6e25ca6fc111d == 8b199a84c8160c689db6e25ca6fc111d
+
+21:39:41.625  INFO  util.StdOutErrLog - IDENTIFIER == IDENTIFIER
+
+21:39:41.625  INFO  util.StdOutErrLog - TEMPLATES == TEMPLATES
+
+21:39:41.625  INFO  util.StdOutErrLog - 57e15f2d-2ff2-4422-b6db-9e587970fd8e == 57e15f2d-2ff2-4422-b6db-9e587970fd8e
+
+21:39:41.625  INFO  util.StdOutErrLog - INODE == INODE
+
+21:39:41.625  INFO  util.StdOutErrLog - TEMPLATES == TEMPLATES
+
+21:39:41.625  INFO  util.StdOutErrLog - 98a66255-bccb-43d0-91a5-028057885f75 == 98a66255-bccb-43d0-91a5-028057885f75
+
+21:39:41.625  INFO  util.StdOutErrLog - INODE == INODE
+
+21:39:41.626  INFO  util.StdOutErrLog - CONTAINER == CONTAINER
+
+21:39:41.626  INFO  util.StdOutErrLog - fbf97ad1176b6a7c87a9bb5e67845a6b == fbf97ad1176b6a7c87a9bb5e67845a6b
+
+21:39:41.626  INFO  util.StdOutErrLog - IDENTIFIER == IDENTIFIER
+
+21:39:41.626  INFO  util.StdOutErrLog - CONTAINER == CONTAINER
+
+21:39:41.626  INFO  util.StdOutErrLog - e1f61ded93c32f0e1c50c4e3a6afb3c1 == e1f61ded93c32f0e1c50c4e3a6afb3c1
+
+21:39:41.626  INFO  util.StdOutErrLog - IDENTIFIER == IDENTIFIER
+
+21:39:41.626  INFO  util.StdOutErrLog - CONTENTLET == CONTENTLET
+
+21:39:41.626  INFO  util.StdOutErrLog - 8a7d5e23-da1e-420a-b4f0-471e7da8ea2d == 8a7d5e23-da1e-420a-b4f0-471e7da8ea2d
+
+21:39:41.626  INFO  util.StdOutErrLog - IDENTIFIER == IDENTIFIER
+
+21:39:41.626  INFO  util.StdOutErrLog - CONTENTLET == CONTENTLET
+
+21:39:41.626  INFO  util.StdOutErrLog - 1b407535-67e3-4f21-ad00-8ef5ef492d64 == 1b407535-67e3-4f21-ad00-8ef5ef492d64
+
+21:39:41.626  INFO  util.StdOutErrLog - INODE == INODE
+
+21:39:41.627  INFO  util.StdOutErrLog - CONTENTLET == CONTENTLET
+
+21:39:41.627  INFO  util.StdOutErrLog - 3fbda471-5081-4886-999c-f014456e15b4 == 3fbda471-5081-4886-999c-f014456e15b4
+
+21:39:41.627  INFO  util.StdOutErrLog - INODE == INODE
+
+21:39:41.627  INFO  util.StdOutErrLog - CONTENTLET == CONTENTLET
+
+21:39:41.627  INFO  util.StdOutErrLog - d20d4c75-8c94-4f27-b5dc-baef16800ccb == d20d4c75-8c94-4f27-b5dc-baef16800ccb
+
+21:39:41.627  INFO  util.StdOutErrLog - INODE == INODE
+
+21:39:41.627  INFO  util.StdOutErrLog - LINKS == LINKS
+
+21:39:41.627  INFO  util.StdOutErrLog - 167be9f01285798f2f7562988c758a02 == 167be9f01285798f2f7562988c758a02
+
+21:39:41.627  INFO  util.StdOutErrLog - IDENTIFIER == IDENTIFIER
+
+21:39:41.627  INFO  util.StdOutErrLog - LINKS == LINKS
+
+21:39:41.627  INFO  util.StdOutErrLog - 8b199a84c8160c689db6e25ca6fc111d == 8b199a84c8160c689db6e25ca6fc111d
+
+21:39:41.628  INFO  util.StdOutErrLog - IDENTIFIER == IDENTIFIER
+
+21:39:41.628  INFO  util.StdOutErrLog - TEMPLATES == TEMPLATES
+
+21:39:41.628  INFO  util.StdOutErrLog - 57e15f2d-2ff2-4422-b6db-9e587970fd8e == 57e15f2d-2ff2-4422-b6db-9e587970fd8e
+
+21:39:41.628  INFO  util.StdOutErrLog - INODE == INODE
+
+21:39:41.628  INFO  util.StdOutErrLog - TEMPLATES == TEMPLATES
+
+21:39:41.628  INFO  junit.MainBaseSuite - Checking indexer status...
+21:39:42.602  INFO  junit.MainBaseSuite - Checking indexer status...
+21:39:43.588  INFO  junit.MainBaseSuite - Checking indexer status...
+21:39:43.588  INFO  junit.MainBaseSuite - Indexer is not empty, waiting for it to finish
+21:39:44.591  INFO  junit.MainBaseSuite - Indexer Complete=true
+21:39:45.513  INFO  junit.MainBaseSuite - Checking indexer status...
+21:39:45.513  INFO  junit.MainBaseSuite - Indexer is not empty, waiting for it to finish
+21:39:46.516  INFO  junit.MainBaseSuite - Indexer Complete=true
+21:39:47.542  INFO  junit.MainBaseSuite - Checking indexer status...
+21:39:47.542  INFO  junit.MainBaseSuite - Indexer is not empty, waiting for it to finish
+21:39:48.545  INFO  junit.MainBaseSuite - Indexer Complete=true
+21:39:49.452  WARN  temp.TempFileAPI - request does not have enough params to create a valid fingerprint
+21:39:49.452  INFO  temp.TempFileAPI - Unique browser fingerprint: 127.0.0.1 , false , 127.0.0.1 , 5ccb3175-c251-4c4e-8390-70ac16f4d7c3
+21:39:49.453  INFO  junit.MainBaseSuite - Checking indexer status...
+21:39:49.454  INFO  junit.MainBaseSuite - Indexer is not empty, waiting for it to finish
+21:39:50.456  INFO  junit.MainBaseSuite - Indexer Complete=true
+21:39:51.395  INFO  timedcache.TimedCacheProvider - ===== Initializing [Timed Cache Provider].
+21:39:51.395  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : default: 1000
+21:39:51.395  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : adminconfigpool: 100
+21:39:51.395  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : companypool: 10
+21:39:51.395  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : contentletcache: 5000
+21:39:51.395  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : csscache: 2500
+21:39:51.395  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : fileassetmetadatacache: 200
+21:39:51.395  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : identifiercache: 50000
+21:39:51.395  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : indiciescache: 8
+21:39:51.395  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : logmappercache: 10
+21:39:51.395  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : navcache: 1000
+21:39:51.395  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : parentpermissionablecache: 10000
+21:39:51.395  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : permissioncache: 50000
+21:39:51.395  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : portletpool: 100
+21:39:51.395  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : publishingendpointcache: 100
+21:39:51.395  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : pushedassetscache: 5000
+21:39:51.395  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : structurecache: 500
+21:39:51.395  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : templatecache: 500
+21:39:51.395  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : translatedquerycache: 5000
+21:39:51.395  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : versioncache: 50000
+21:39:51.395  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : versioninfocache: 50000
+21:39:51.395  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : workflowactioncache: 10000
+21:39:51.395  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : workflowtaskcache: 10000
+21:39:51.395  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : shorty: 25000
+21:39:51.395  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : identifier404cache: 5000
+21:39:51.395  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : velocitycache: 1000
+21:39:51.395  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : vanityurlcache: 1000
+21:39:51.395  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : cachedvanityurlgroup: 1000
+21:39:51.395  INFO  h22.H22Cache - Start Full Cache Flush in h22
+21:39:51.395  INFO  h22.H22Cache - Building new H22 Cache, db:0
+21:39:51.395  INFO  h22.H22HikariPool - H22 on disk cache:jdbc:h2:/home/runner/work/core/custom/dotsecure/h22cache/0/2023-06-05_21-39-51/cache;MVCC=TRUE;DB_CLOSE_ON_EXIT=FALSE
+21:39:51.395  INFO  hikari.HikariDataSource - HikariPool-17 - Starting...
+21:39:51.426  INFO  pool.PoolBase - HikariPool-17 - Driver does not support get/set network timeout for connections. (Receiver class org.h2.jdbc.JdbcConnection does not define or inherit an implementation of the resolved method 'abstract int getNetworkTimeout()' of interface java.sql.Connection.)
+21:39:51.426  INFO  hikari.HikariDataSource - HikariPool-17 - Start completed.
+21:39:51.428  INFO  hikari.HikariDataSource - HikariPool-15 - Shutdown initiated...
+21:39:51.454  INFO  hikari.HikariDataSource - HikariPool-15 - Shutdown completed.
+21:39:51.455  INFO  h22.H22Cache - Building new H22 Cache, db:1
+21:39:51.455  INFO  h22.H22HikariPool - H22 on disk cache:jdbc:h2:/home/runner/work/core/custom/dotsecure/h22cache/1/2023-06-05_21-39-51/cache;MVCC=TRUE;DB_CLOSE_ON_EXIT=FALSE
+21:39:51.455  INFO  hikari.HikariDataSource - HikariPool-18 - Starting...
+21:39:51.489  INFO  pool.PoolBase - HikariPool-18 - Driver does not support get/set network timeout for connections. (Receiver class org.h2.jdbc.JdbcConnection does not define or inherit an implementation of the resolved method 'abstract int getNetworkTimeout()' of interface java.sql.Connection.)
+21:39:51.495  INFO  hikari.HikariDataSource - HikariPool-18 - Start completed.
+21:39:51.497  INFO  hikari.HikariDataSource - HikariPool-16 - Shutdown initiated...
+21:39:51.516  INFO  hikari.HikariDataSource - HikariPool-16 - Shutdown completed.
+21:39:51.516  INFO  h22.H22Cache - End Full Cache Flush in h22 : 120ms
+21:39:51.536  INFO  junit.MainBaseSuite - Checking indexer status...
+21:39:51.537  INFO  junit.MainBaseSuite - Indexer is not empty, waiting for it to finish
+21:39:52.539  INFO  junit.MainBaseSuite - Indexer Complete=true
+21:39:53.466  INFO  junit.MainBaseSuite - Checking indexer status...
+21:39:53.467  INFO  junit.MainBaseSuite - Indexer is not empty, waiting for it to finish
+21:39:54.469  INFO  junit.MainBaseSuite - Indexer Complete=true
+21:39:55.389  INFO  junit.MainBaseSuite - Checking indexer status...
+21:39:55.390  INFO  junit.MainBaseSuite - Indexer is not empty, waiting for it to finish
+21:39:56.392  INFO  junit.MainBaseSuite - Indexer Complete=true
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.dotcms.util.pagination.ContentTypesPaginatorTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2023-06-05T21:08:14" hostname="fv-az306-998" time="1.067">
+  <properties/>
+  <testcase name="getPaginatedAllowedContentTypesOrderedByName" classname="com.dotcms.util.pagination.ContentTypesPaginatorTest" time="0.076"/>
+  <testcase name="test_getItems_WhenFilterEqualsToBaseType_ReturnsAllRelatedContentTypes" classname="com.dotcms.util.pagination.ContentTypesPaginatorTest" time="0.019"/>
+  <testcase name="getAllAllowedContentTypesOrderedByName" classname="com.dotcms.util.pagination.ContentTypesPaginatorTest" time="0.05"/>
+  <testcase name="test_getItems_WhenFilterContainsContentTypeName_ReturnsTheContentTypeThatMatches[0: com.dotcms.util.pagination.ContentTypesPaginatorTest$TestCase@732ce9d8]" classname="com.dotcms.util.pagination.ContentTypesPaginatorTest" time="0.176"/>
+  <testcase name="test_getItems_WhenFilterContainsContentTypeName_ReturnsTheContentTypeThatMatches[1: com.dotcms.util.pagination.ContentTypesPaginatorTest$TestCase@6647984c]" classname="com.dotcms.util.pagination.ContentTypesPaginatorTest" time="0.132"/>
+  <testcase name="whenTheIndicesAreDeactivateShouldReturnNAInEntries" classname="com.dotcms.util.pagination.ContentTypesPaginatorTest" time="0.496"/>
+  <testcase name="test_getItems_WhenFilterEqualsToBaseType_ReturnsAllChildrenContentTypes" classname="com.dotcms.util.pagination.ContentTypesPaginatorTest" time="0.017"/>
+  <testcase name="getFilteredPaginatedAllowedContentTypesOrderedByName" classname="com.dotcms.util.pagination.ContentTypesPaginatorTest" time="0.02"/>
+  <testcase name="getFilteredAllowedContentTypesOrderedByName" classname="com.dotcms.util.pagination.ContentTypesPaginatorTest" time="0.014"/>
+  <testcase name="test_getItems_WhenNoFilter_ReturnsAllContentTypes" classname="com.dotcms.util.pagination.ContentTypesPaginatorTest" time="0.065"/>
+  <system-out><![CDATA[21:08:14.882  INFO  junit.MainBaseSuite - Checking indexer status...
+21:08:14.901  INFO  junit.MainBaseSuite - Checking indexer status...
+21:08:14.952  INFO  junit.MainBaseSuite - Checking indexer status...
+21:08:15.097  INFO  business.ContentTypeDestroyAPIImpl - Relocated from (500) to (1000) out of (0) contentlets..
+21:08:15.097  INFO  business.ContentTypeFactoryImpl - ::: Relocated 0 contentlets for ContentType [velocityVarNameTesting1685999294953] to [velocityVarNameTesting1685999294953_disposed_1685999295037] :::
+21:08:15.107  INFO  business.WorkflowFactoryImpl - Deleting the schemes associated to the content type: 5e89f2195408661c69e265ce1467038d
+21:08:15.113  INFO  business.ContentTypeDestroyAPIImpl - There are (0) contents of type (FORMTesting1685999294953). Will remove them sequentially using (100) batchSize 
+21:08:15.114  INFO  business.ContentTypeDestroyAPIImpl -  :: for (FORMTesting1685999294953) allCount is (0) with leftovers (0) :: 
+21:08:15.115  INFO  business.ContentTypeDestroyAPIImpl - Destroying Content-Type with inode: [189021db7d899585bd2f748c13fef79d] and var: [velocityVarNameTesting1685999294953_disposed_1685999295037].
+21:08:15.121  INFO  business.WorkflowFactoryImpl - Deleting the schemes associated to the content type: 189021db7d899585bd2f748c13fef79d
+21:08:15.128  INFO  business.ContentTypeDestroyAPIImpl -  I'm done destroying (0) pieces of Content of type (velocityVarNameTesting1685999294953_disposed_1685999295037). it took me : [00:00:00] 
+21:08:15.128  INFO  junit.MainBaseSuite - Checking indexer status...
+21:08:15.234  INFO  business.ContentTypeDestroyAPIImpl - Relocated from (500) to (1000) out of (0) contentlets..
+21:08:15.234  INFO  business.ContentTypeFactoryImpl - ::: Relocated 0 contentlets for ContentType [velocityVarNameTesting1685999295129] to [velocityVarNameTesting1685999295129_disposed_1685999295187] :::
+21:08:15.241  INFO  business.WorkflowFactoryImpl - Deleting the schemes associated to the content type: b7a263072a8cfe95295bc3fe24f00e43
+21:08:15.246  INFO  business.ContentTypeDestroyAPIImpl - There are (0) contents of type (FORMTesting1685999295129). Will remove them sequentially using (100) batchSize 
+21:08:15.247  INFO  business.ContentTypeDestroyAPIImpl -  :: for (FORMTesting1685999295129) allCount is (0) with leftovers (0) :: 
+21:08:15.247  INFO  business.ContentTypeDestroyAPIImpl - Destroying Content-Type with inode: [04452527f0bb244e647fa695ae6104fd] and var: [velocityVarNameTesting1685999295129_disposed_1685999295187].
+21:08:15.253  INFO  business.WorkflowFactoryImpl - Deleting the schemes associated to the content type: 04452527f0bb244e647fa695ae6104fd
+21:08:15.258  INFO  business.ContentTypeDestroyAPIImpl -  I'm done destroying (0) pieces of Content of type (velocityVarNameTesting1685999295129_disposed_1685999295187). it took me : [00:00:00] 
+21:08:15.258  INFO  junit.MainBaseSuite - Checking indexer status...
+21:08:15.655  WARN  field.JsonFieldTransformer - Unable to find category with id 'testValue1685998635989' for field named Topic. 
+21:08:15.671  WARN  field.JsonFieldTransformer - Unable to find category with id 'testValue1685998627969' for field named Topic. 
+21:08:15.750  ERROR pagination.ContentTypesPaginator - Error trying to retrieve total entries by Content Type: index must not be null
+com.dotmarketing.business.DotStateException: index must not be null
+	at com.dotcms.contenttype.business.ContentTypeAPIImpl.getEntriesByContentTypes(ContentTypeAPIImpl.java:722) ~[main/:?]
+	at com.dotcms.util.pagination.ContentTypesPaginator.setEntriesAttribute(ContentTypesPaginator.java:135) ~[main/:?]
+	at com.dotcms.util.pagination.ContentTypesPaginator.getItems(ContentTypesPaginator.java:102) ~[main/:?]
+	at com.dotcms.util.pagination.PaginatorOrdered.getItems(PaginatorOrdered.java:47) ~[main/:?]
+	at com.dotcms.util.pagination.PaginatorOrdered.getItems(PaginatorOrdered.java:42) ~[main/:?]
+	at com.dotcms.util.pagination.ContentTypesPaginatorTest.whenTheIndicesAreDeactivateShouldReturnNAInEntries(ContentTypesPaginatorTest.java:161) ~[integrationTest/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:38) ~[integrationTest/:?]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:14) ~[integrationTest/:?]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.MainBaseSuite$DotRunner.run(MainBaseSuite.java:60) ~[integrationTest/:?]
+	at org.junit.runners.Suite.runChild(Suite.java:128) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.Suite.runChild(Suite.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[?:?]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[?:?]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[?:?]
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[?:?]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[?:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:?]
+Caused by: java.lang.NullPointerException: index must not be null
+	at java.util.Objects.requireNonNull(Objects.java:246) ~[?:?]
+	at org.elasticsearch.action.search.SearchRequest.validateIndices(SearchRequest.java:351) ~[elasticsearch-7.10.2.jar:7.10.2]
+	at org.elasticsearch.action.search.SearchRequest.indices(SearchRequest.java:343) ~[elasticsearch-7.10.2.jar:7.10.2]
+	at org.elasticsearch.action.search.SearchRequest.<init>(SearchRequest.java:134) ~[elasticsearch-7.10.2.jar:7.10.2]
+	at org.elasticsearch.action.search.SearchRequest.<init>(SearchRequest.java:123) ~[elasticsearch-7.10.2.jar:7.10.2]
+	at com.dotcms.enterprise.priv.ESSearchAPIImpl.esSearchRaw(ESSearchAPIImpl.java:268) ~[main/:?]
+	at com.dotcms.enterprise.priv.ESSearchAPIImpl.esSearchRaw(ESSearchAPIImpl.java:154) ~[main/:?]
+	at com.dotcms.enterprise.priv.ESSearchProxy.esSearchRaw(ESSearchProxy.java:100) ~[main/:?]
+	at com.dotcms.contenttype.business.ContentTypeAPIImpl.getEntriesByContentTypes(ContentTypeAPIImpl.java:705) ~[main/:?]
+	... 60 more
+21:08:15.758  INFO  junit.MainBaseSuite - Checking indexer status...
+21:08:15.775  INFO  junit.MainBaseSuite - Checking indexer status...
+21:08:15.795  INFO  junit.MainBaseSuite - Checking indexer status...
+21:08:15.809  INFO  junit.MainBaseSuite - Checking indexer status...
+21:08:15.836  WARN  field.JsonFieldTransformer - Unable to find category with id 'testValue1685998635989' for field named Topic. 
+21:08:15.838  WARN  field.JsonFieldTransformer - Unable to find category with id 'testValue1685998627969' for field named Topic. 
+21:08:15.875  INFO  junit.MainBaseSuite - Checking indexer status...
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

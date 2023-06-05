@@ -1,0 +1,869 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.dotcms.rest.api.v1.template.TemplateResourceTest" tests="32" skipped="0" failures="0" errors="0" timestamp="2023-06-05T22:23:28" hostname="fv-az306-998" time="59.993">
+  <properties/>
+  <testcase name="test_deleteTemplate_pageStillReferencingTemplate_failedToDelete" classname="com.dotcms.rest.api.v1.template.TemplateResourceTest" time="3.512"/>
+  <testcase name="test_deleteTemplates_OneTemplateIdDoesNotExist_OneTemplateIdExists" classname="com.dotcms.rest.api.v1.template.TemplateResourceTest" time="1.906"/>
+  <testcase name="test_archiveTemplate_templateIsWorking_success" classname="com.dotcms.rest.api.v1.template.TemplateResourceTest" time="1.185"/>
+  <testcase name="test_publishTemplate_LimitedUserWithoutPublishPermissions_failedToPublish" classname="com.dotcms.rest.api.v1.template.TemplateResourceTest" time="1.867"/>
+  <testcase name="test_unarchiveTemplate_templateIsLive_failedToUnArchived" classname="com.dotcms.rest.api.v1.template.TemplateResourceTest" time="1.183"/>
+  <testcase name="test_unpublishTemplate_OneTemplateIdDoesNotExist_OneTemplateIdExists" classname="com.dotcms.rest.api.v1.template.TemplateResourceTest" time="1.049"/>
+  <testcase name="test_publishTemplate_success" classname="com.dotcms.rest.api.v1.template.TemplateResourceTest" time="0.971"/>
+  <testcase name="test_unarchiveTemplate_LimitedUserWithoutEditPermissions_failedToUnarchive" classname="com.dotcms.rest.api.v1.template.TemplateResourceTest" time="2.719"/>
+  <testcase name="test_archiveTemplate_LimitedUserWithoutEditPermissions_failedToArchived" classname="com.dotcms.rest.api.v1.template.TemplateResourceTest" time="2.158"/>
+  <testcase name="test_unpublishTemplate_templateIsArchived_failedToUnpublish" classname="com.dotcms.rest.api.v1.template.TemplateResourceTest" time="2.029"/>
+  <testcase name="test_deleteTemplate_templateIsArchived_success" classname="com.dotcms.rest.api.v1.template.TemplateResourceTest" time="2.019"/>
+  <testcase name="test_unpublishTemplate_success" classname="com.dotcms.rest.api.v1.template.TemplateResourceTest" time="1.27"/>
+  <testcase name="test_unpublishTemplate_LimitedUserWithoutEditPermissions_failedToPublish" classname="com.dotcms.rest.api.v1.template.TemplateResourceTest" time="1.78"/>
+  <testcase name="test_listTemplate_filterByHost_usingCurrentHost" classname="com.dotcms.rest.api.v1.template.TemplateResourceTest" time="2.262"/>
+  <testcase name="test_unpublishTemplate_templateIsAlreadyUnpublished_success" classname="com.dotcms.rest.api.v1.template.TemplateResourceTest" time="1.764"/>
+  <testcase name="test_unarchiveTemplate_templateIsWorking_failedToUnarchive" classname="com.dotcms.rest.api.v1.template.TemplateResourceTest" time="1.244"/>
+  <testcase name="test_copyTemplate_success" classname="com.dotcms.rest.api.v1.template.TemplateResourceTest" time="1.002"/>
+  <testcase name="test_copyTemplate_IdDoesNotBelongToAnyTemplate_failedToCopy" classname="com.dotcms.rest.api.v1.template.TemplateResourceTest" time="0.782"/>
+  <testcase name="test_listTemplate_filterByHost" classname="com.dotcms.rest.api.v1.template.TemplateResourceTest" time="2.238"/>
+  <testcase name="test_archiveTemplate_templateIsAlreadyArchived_success" classname="com.dotcms.rest.api.v1.template.TemplateResourceTest" time="1.808"/>
+  <testcase name="test_archiveTemplates_OneTemplateIdDoesNotExist_OneTemplateIdExists" classname="com.dotcms.rest.api.v1.template.TemplateResourceTest" time="1.266"/>
+  <testcase name="test_listTemplate_limitedUserNoREADPermissionsOverOneTemplate" classname="com.dotcms.rest.api.v1.template.TemplateResourceTest" time="3.104"/>
+  <testcase name="test_deleteTemplate_LimitedUserWithoutEditPermissions_failedToDelete" classname="com.dotcms.rest.api.v1.template.TemplateResourceTest" time="3.438"/>
+  <testcase name="test_publishTemplate_OneTemplateIdDoesNotExist_OneTemplateIdExists" classname="com.dotcms.rest.api.v1.template.TemplateResourceTest" time="1.459"/>
+  <testcase name="test_unarchiveTemplates_OneTemplateIdDoesNotExist_OneTemplateIdExists" classname="com.dotcms.rest.api.v1.template.TemplateResourceTest" time="1.843"/>
+  <testcase name="test_publishTemplate_templateIsAlreadyPublished_success" classname="com.dotcms.rest.api.v1.template.TemplateResourceTest" time="1.985"/>
+  <testcase name="test_copyTemplate_LimitedUserWithoutReadPermissions_failedToCopy" classname="com.dotcms.rest.api.v1.template.TemplateResourceTest" time="2.095"/>
+  <testcase name="legacyUUIDTemplate" classname="com.dotcms.rest.api.v1.template.TemplateResourceTest" time="3.825"/>
+  <testcase name="test_archiveTemplate_templateIsLive_failedToArchive" classname="com.dotcms.rest.api.v1.template.TemplateResourceTest" time="1.432"/>
+  <testcase name="test_publishTemplate_templateIsArchived_failedToPublish" classname="com.dotcms.rest.api.v1.template.TemplateResourceTest" time="1.777"/>
+  <testcase name="test_deleteTemplate_templateIsLive_failedToDelete" classname="com.dotcms.rest.api.v1.template.TemplateResourceTest" time="1.235"/>
+  <testcase name="test_unarchiveTemplate_templateIsArchived_success" classname="com.dotcms.rest.api.v1.template.TemplateResourceTest" time="1.784"/>
+  <system-out><![CDATA[22:23:31.086  WARN  util.LocaleUtil - en is not a valid language id
+22:23:31.885  WARN  util.LocaleUtil - en is not a valid language id
+22:23:31.898  ERROR business.TemplateAPIImpl - The Template: Template1686003808390 can not be deleted. Because it has pages referencing to it: {Template1686003808390=test1686003808391.dotcms.com:/test-page-url-1686003810125}
+22:23:31.900  INFO  junit.MainBaseSuite - Checking indexer status...
+22:23:32.963  WARN  util.LocaleUtil - en is not a valid language id
+22:23:33.787  WARN  util.LocaleUtil - en is not a valid language id
+22:23:33.807  ERROR template.TemplateResource - Template with Id: bdc31ab3-cc34-4617-8eea-9d081d9c9fe6 does not exist
+22:23:33.807  INFO  junit.MainBaseSuite - Checking indexer status...
+22:23:34.976  WARN  util.LocaleUtil - en is not a valid language id
+22:23:34.992  INFO  junit.MainBaseSuite - Checking indexer status...
+22:23:35.248  WARN  business.UserHelper - Error loading user with id 2b931eb0-e6f8-4d15-8dde-554e66ebceb7
+22:23:36.042  WARN  util.LocaleUtil - en is not a valid language id
+22:23:36.056  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:74b47ff021ba87bcd22c7a1cb5306e84. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:23:36.840  WARN  util.LocaleUtil - en is not a valid language id
+22:23:36.859  ERROR business.TemplateAPIImpl - The user: 2b931eb0-e6f8-4d15-8dde-554e66ebceb7 does not have Permissions to Publish the Template
+22:23:36.859  INFO  junit.MainBaseSuite - Checking indexer status...
+22:23:38.029  WARN  util.LocaleUtil - en is not a valid language id
+22:23:38.042  ERROR business.TemplateAPIImpl - The Template: Template1686003816859 can not be unarchive. Because it is not archived
+22:23:38.042  INFO  junit.MainBaseSuite - Checking indexer status...
+22:23:39.077  WARN  util.LocaleUtil - en is not a valid language id
+22:23:39.091  ERROR template.TemplateResource - Template with Id: fc337da2-372a-4881-b821-83604674c661 does not exist
+22:23:39.091  INFO  junit.MainBaseSuite - Checking indexer status...
+22:23:40.047  WARN  util.LocaleUtil - en is not a valid language id
+22:23:40.062  INFO  junit.MainBaseSuite - Checking indexer status...
+22:23:41.136  WARN  util.LocaleUtil - en is not a valid language id
+22:23:41.153  WARN  business.UserHelper - Error loading user with id f75fa3c7-fe86-4e5a-9905-d9e4cefab4de
+22:23:41.977  WARN  util.LocaleUtil - en is not a valid language id
+22:23:41.990  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:78b05e55013b13d9608871f05e81a5ff. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:23:42.774  WARN  util.LocaleUtil - en is not a valid language id
+22:23:42.780  ERROR business.TemplateAPIImpl - The user: f75fa3c7-fe86-4e5a-9905-d9e4cefab4de does not have Permissions to Edit the Template
+22:23:42.780  INFO  junit.MainBaseSuite - Checking indexer status...
+22:23:43.359  WARN  business.UserHelper - Error loading user with id 46c898ba-9f8c-40c9-b763-89afac034448
+22:23:44.135  WARN  util.LocaleUtil - en is not a valid language id
+22:23:44.148  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:a593865e4d3d86210affb3f9b0a4d9fc. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:23:44.926  WARN  util.LocaleUtil - en is not a valid language id
+22:23:44.939  ERROR business.TemplateAPIImpl - The user: 46c898ba-9f8c-40c9-b763-89afac034448 does not have Permissions to Edit the Template
+22:23:44.939  INFO  junit.MainBaseSuite - Checking indexer status...
+22:23:46.168  WARN  util.LocaleUtil - en is not a valid language id
+22:23:46.962  WARN  util.LocaleUtil - en is not a valid language id
+22:23:46.967  ERROR business.TemplateAPIImpl - The Template: Template1686003824939 can not be unpublish. Because it is archived
+22:23:46.967  INFO  junit.MainBaseSuite - Checking indexer status...
+22:23:48.180  WARN  util.LocaleUtil - en is not a valid language id
+22:23:48.969  WARN  util.LocaleUtil - en is not a valid language id
+22:23:48.987  INFO  junit.MainBaseSuite - Checking indexer status...
+22:23:50.243  WARN  util.LocaleUtil - en is not a valid language id
+22:23:50.257  INFO  junit.MainBaseSuite - Checking indexer status...
+22:23:50.442  WARN  business.UserHelper - Error loading user with id 3576bab2-3724-4b6f-b0fc-f785ca45a73b
+22:23:51.218  WARN  util.LocaleUtil - en is not a valid language id
+22:23:51.240  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:fcdc5ba5d9c2b53538c6643e021e731f. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:23:52.021  WARN  util.LocaleUtil - en is not a valid language id
+22:23:52.037  ERROR business.TemplateAPIImpl - The user: 3576bab2-3724-4b6f-b0fc-f785ca45a73b does not have Permissions to Edit the Template
+22:23:52.037  INFO  junit.MainBaseSuite - Checking indexer status...
+22:23:54.258  WARN  util.LocaleUtil - en is not a valid language id
+22:23:54.299  INFO  junit.MainBaseSuite - Checking indexer status...
+22:23:55.262  WARN  util.LocaleUtil - en is not a valid language id
+22:23:56.054  WARN  util.LocaleUtil - en is not a valid language id
+22:23:56.064  INFO  junit.MainBaseSuite - Checking indexer status...
+22:23:57.296  WARN  util.LocaleUtil - en is not a valid language id
+22:23:57.308  ERROR business.TemplateAPIImpl - The Template: Template1686003836065 can not be unarchive. Because it is not archived
+22:23:57.308  INFO  junit.MainBaseSuite - Checking indexer status...
+22:23:58.281  WARN  util.LocaleUtil - en is not a valid language id
+22:23:58.308  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:e78348e4a88a24d7093dd95b1373eaa0. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:23:58.310  INFO  junit.MainBaseSuite - Checking indexer status...
+22:23:59.087  WARN  util.LocaleUtil - en is not a valid language id
+22:23:59.092  INFO  junit.MainBaseSuite - Checking indexer status...
+22:24:01.305  WARN  util.LocaleUtil - en is not a valid language id
+22:24:01.329  INFO  junit.MainBaseSuite - Checking indexer status...
+22:24:02.332  WARN  util.LocaleUtil - en is not a valid language id
+22:24:03.129  WARN  util.LocaleUtil - en is not a valid language id
+22:24:03.138  INFO  junit.MainBaseSuite - Checking indexer status...
+22:24:04.386  WARN  util.LocaleUtil - en is not a valid language id
+22:24:04.403  ERROR template.TemplateResource - Template with Id: 8bdda2f0-22b2-4ac8-a406-d927eec33995 does not exist
+22:24:04.403  INFO  junit.MainBaseSuite - Checking indexer status...
+22:24:05.349  WARN  util.LocaleUtil - en is not a valid language id
+22:24:05.375  WARN  business.UserHelper - Error loading user with id a1407f2c-2094-4bcf-9369-085e96bfd4a4
+22:24:06.151  WARN  util.LocaleUtil - en is not a valid language id
+22:24:06.163  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:ce6b903c-d229-496b-9c27-289720a1d1c5. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:06.943  WARN  util.LocaleUtil - en is not a valid language id
+22:24:06.948  ERROR business.HostAPIImpl - User 'testFirstName1686003845374 testLastName1686003845374 [ID: a1407f2c-2094-4bcf-9369-085e96bfd4a4][email:testemailaddress@1686003845374.com]' does not have READ permissions on Site 'test1686003844405.dotcms.com'
+22:24:07.013  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:fc218ef366a584054de4ece363ffa370. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.016  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:a98bfbc126f71b5d9620ce010d6537c3. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.017  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:8b6a94568f5d29d352c00c96527edf50. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.019  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:aa02a7ad9887f1ca6e57a5f900b5e6d1. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.021  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:f4d62acd9fb9a20571a4744b3e351990. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.022  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:20a1370856ef586abf06cf546700d9d1. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.025  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:01040fb8c20ced050687fa226d724728. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.025  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:4453c0767aff3dbeed4732ba6503da06. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.027  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:b4a8911a2d111cfe8ae1da1444d37be2. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.029  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:7842a078f6d8b43c86ae96e2e377ad96. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.031  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:0b25f2a0500c9a3a0a53b7d213a1683d. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.033  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:550a9a56d56e9cc77d0597ffb82c948b. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.034  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:026045b492e9eab669d7103731f99b22. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.034  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:e711a084fe09346bb702744e55779b92. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.035  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:d9e714e832c59075c5524cb6b82e1750. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.036  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:f45dd9d0312b5e59b7755c9eacf37424. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.037  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:3f7f0d6b90c385fb4a515a414807c0f3. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.038  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:6eb4df6141e3136d7af680c5975589ee. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.039  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:4ac6f5267633de9645f40292e86eca57. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.040  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:59a330761cd019fa5b82fb1a5df21998. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.041  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:2b15cb973c72ff208d65cdab8885fee1. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.042  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:743bfec18106ee6b497e69f9344fd024. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.043  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:854727c73802f388c73c45b36b13f432. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.044  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:0d9d783749277ed2f63e4caa25698e6a. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.045  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:d8696d707fbc7df4e3139cda9bab4a8d. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.046  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:ece0b2e18858d75d1e2b841604fe89e1. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.047  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:36b93387eaab9c269b3c1d9e3cbc48c1. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.047  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:d0ce907003526506f8cf7022b30c3653. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.048  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:965d443c86e1ac460392d989cfbc83f5. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.049  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:2134a94b21ebfc1694b174fb985eb4ac. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.050  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:8d3a0c5a91098e90b1679f2f636630dc. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.051  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:4dc2af54e8b3cc6fd98c27a3cd855253. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.053  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:30c52cb22ce8696d7a50d8d212415ff7. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.053  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:20783dbbdbdb9b1327b4f9eacc744b78. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.054  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:f3479367-dfa6-42da-aa65-5d3083b08fd0. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.055  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:ca51c92c-d369-4b94-9a5f-40743d2f5494. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.055  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:49abd3e0a6aacf25a84a6de599b3dd3c. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.056  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:99395e5b54d56708d16f6d21ee6a57c7. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.057  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:c2d7e199b031995b2c1df8669979f4cc. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.058  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:c8f4b4615c5bfa901d5b331b1b796fd9. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.058  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:78a05dedc0e0ab52361b05465605a46a. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.059  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:70dd0fa2862feb7680e25005f9541814. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.061  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:3c0c8dde889e65889110c59c8d9b2709. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.061  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:a84267fd6ad65fbb2c4609f0091d0062. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.062  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:e336fb8564d557da8e05931dc4cae009. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.063  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:34b0bbcfb920658605374f942dcfd8ad. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.064  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:934433d1f1b236f0192f5196c6eb9e93. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.064  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:1e255f6049f175f3b21a5c4809df7c3d. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.070  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:e197310950968624756b7af07dab0028. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.070  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:cc8f3cdd50b77dcb44d2f7a7b92132fe. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.071  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:9dcc20f2a5cd95d56361c6a5921f1e73. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.071  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:8c250244875955060f55f778a02626da. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.072  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:2f92247403757b7442d6e144da161c5e. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.073  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:c626e64d30f2a2560df08cd280b6335c. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.073  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:ced92ddc91ddad6396299c7d40206431. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.075  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:a190e289e0e118bed955fbfe320aae25. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.075  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:62ec5bd61f3a7d8aa5127b47d13a982e. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.076  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:d9e9457a1448217f1c2ab40905a58d8c. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.077  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:d00224cd4b6a31fd90f28a9832f92da2. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.077  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:7aaec15cd8cb3a2e779ad33527f60fd7. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.079  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:1dd72cac584c1308f3adaf583fe30638. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.080  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:fe90739fbb7013e32e45cafe6a0fbe90. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.081  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:5d40718cb57396c807cb3adfeb521412. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.083  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:e529f9fe16fbfde6e8205fb58b1162ed. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.084  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:5b3d401417f6727ad7fc3faff6bb0f49. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.084  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:a95454238aa24613a9cb5ca50771e699. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.085  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:81e8ca9c008e86cb64c7361811b71155. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.086  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:a1f84660ad75905bb5db8259b31de2f1. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.086  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:901d48cf8dfe130aa1f4d56eb59e03c5. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.087  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:e1fbd4573ae62b740500181009c5f416. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.088  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:2864e3bb03442b4ac03d7157439e0a4d. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.089  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:8f7e14ae4225656b44d6677db23dc530. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.089  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:6530252edea37c981ee9c824ec38da02. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.090  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:ac4cb0f14432255367d47c40353bb02f. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.091  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:4c17ca57bc0c207385e3c8c4e4dcb9a9. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.092  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:ac970423039692af4ea44491ff5477ef. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.092  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:88dee2fae1af10e602184d77b08646dc. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.093  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:0f8903eb5b023eb05939bd8dbba2b1ad. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.094  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:347e854fb230510e178a7ac04ee5cb62. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.094  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:fb760de0900cc9c19aed3cb67b7bb78f. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.095  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:994250ec6d7f8cdaa4a966850d497770. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.096  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:539e2671bdc6c37e7686643691121052. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.097  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:172d9ff908ffd4e63bbbe558df666f98. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.098  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:752c67af0ded4d6d627607fd071087fc. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.099  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:1a611c80ba5874979e90fd593d7654ba. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.100  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:dfafe1ed0e6a238aba28552bc2b3c765. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.100  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:fd464ce5f346d393c0c1b0d1af0bb06e. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.101  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:1e7fc2567df053afe866328a8dd4a833. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.102  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:e563a699205deca7b4d8ebbd346e5e08. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.103  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:b18f26355e5bca92309d8a48da72447c. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.104  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:5360756f8e2778f108254eb900443fdf. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.104  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:ab634322295720cc6aaeec3e5413e691. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.105  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:5e05931b1d60ffef2ebbde3a05689724. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.106  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:bb74288495dead7629ab77fb39c2c62d. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.107  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:0325ea3d65407827532b9d454f0dd431. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.107  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:7d921c1097111b5ad4920b91597105a7. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.108  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:70ab123b7445b9b2fba481522fc60b3e. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.109  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:8cb968d43ea135abeb7e334077f27720. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.110  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:f6362588a8faafce418a2ff8b27bb88d. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.110  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:9dcac0ce4bba4c504f1e3c7357273cc8. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.111  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:93d60bde144240b8b85a41da2510b3f7. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.112  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:8108888b06d996c8fca801037a204110. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.113  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:1f55693681669c0d91f4350c699c5cad. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.115  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:4943475434996536db4888e84bffa932. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.115  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:8ef11bc890adbe5a5c62e4e66d794d82. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.117  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:98da0e2400b07008ba4e7c9b6540dd2d. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.118  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:8a46ba51026a26d955a4cf2c029665e0. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.119  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:70b9c2ae7fa21fb523d3c6c344b6e81a. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.121  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:a626bc38e0435c3352c7e30c7eab3bf5. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.122  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:872512b0d8a9e553ad744918a534b41e. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.122  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:d62a6a570e9da1ff1bef6efd4da87497. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.124  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:8f793ff569373399357d8178f1b478d7. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.125  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:55e898a8dcf72743184953eb059ddbd7. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.126  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:a26c4f257b73e7f058755915718a8070. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.127  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:7194cd67c06b8adc776676db3c42a9da. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.128  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:6f937648fbae74ed10293e272eb9dd96. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.129  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:3f893e78cbbc97379325e052c9e99e51. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.130  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:95e3d1dfea19a64e4b1aea2778cc986a. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.131  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:6ceae05fa6314572fbecd89ab116f3df. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.132  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:97177470cf2a9686499774a39f0aa3e1. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.134  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:25d3eaaee1f79e18c8e6cfc80dbfbff5. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.134  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:02c5b243ebe0f68dfb9c30ba614b8d89. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.136  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:406904497053e485b57b5635c823a057. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.137  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:b8ab7adebf3494695d3d18b7923d383b. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.138  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:4b81e3c135e995e5cf23f5ae28b1f63a. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.139  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:821f7b7c9c7b37fbce73b34f10c654b4. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.140  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:d27257e65f21fb13c29f8a727ba5a6d7. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.141  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:a521fcc0504a7586daa2b4ae81c0d6f4. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.143  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:842249ec582c015f772e88fb76cde29e. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.144  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:bfdbdd8c43d8bd14611cb6ed2e0c54f8. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.144  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:989426873d9bbc7e3bbc98557bd03258. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.145  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:6355261e2e4e32035ca913ca97184910. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.146  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:f9be022f3e63241f07b0643aa90d6908. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.147  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:c7454e35c44158671a24038abaf984a8. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.148  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:823fcc95009d46fe422c3e15ade2c547. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.149  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:c7a0ab09a5016b8a3fcde6b668910b8a. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.150  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:2bb1cb4798f3f0fc8bcc91c7c2c0d83a. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.151  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:d5cf7c2e557cfe1d1e2e24eb0e1d0373. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.152  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:f7f4aa01c53ff8de4a944b12680be011. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.153  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:ad63a7843f1b3cd63f6fa235735715e7. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.154  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:951e9a2f2719f08b30819e0f09806b19. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.155  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:c3ca8f575d6669e8209e6d929e0deb9e. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.159  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:68a30daff8605254e0ea5e627c4be115. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.161  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:efb2d5a09cc0b0fd0fa311f681b3a1ac. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.162  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:92f7e87b1a99cd3f77ba1d4e26f0f0e1. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.163  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:2ba89bfb38a785c1eb85621139c0b86d. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.163  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:13a6b3f95e5e5ab51d3329e3c29d21a3. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.164  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:36445503a1b64ae6b793d3d7ce5fe3ae. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.165  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:6a5d90e75935c6af7fd0a1891417cc92. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.166  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:4b1c640f076eec1c83de0796b8435203. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.167  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:b26f7b6bbe936f97f6d84bfdd5f96d2b. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.168  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:e07c7e4adeac30f9175dc70f80c1d8d5. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.169  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:1c9bff3f1011105be77941ae5d863c6c. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.170  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:c733a3228fe0d83b034139d0b5453973. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.171  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:b99be3f453d403fd8f19363c3925c4de. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.172  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:eb0e3a7c6b24d44e1f836ad0695982c6. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.173  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:a032277109c05684db7be2d261b9f48d. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.174  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:5e4ffbaea842c6107578bcf18939cd1d. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.174  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:cbc6b08eaf5f632510d9c15d8c14060e. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.175  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:9e09c0dc3202e1a3cb388455b3df327f. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.176  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:fb8baf2b5fbf52867b7ed05db9832c46. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.177  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:ae5aebf1dd64aa4ce3f6f4dc596f6796. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.178  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:753f5b5711a5686f145230c2646852e6. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.179  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:59404a07523f2f5bc484400e5e6ca867. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.180  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:302f9cf9a055ef2ee999356626a8d622. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.181  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:5534d0d84f440404d5dee806f79de4de. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.182  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:5acf8dd74374d394ecc3bb404f7251f7. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.183  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:8bbd78dafd2125542bc861cedc918234. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.184  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:7a1576b06878c1199c7060c2bfce0a92. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.185  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:20628f723831e538c7a8441565c06779. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.185  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:d331e9d1cb4258c602f113e1ecab5154. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.186  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:06e78fb1df495786da84eca75bca4e83. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.187  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:a1a2a7658c76bc8f2b2ff7f0301ff6c7. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.188  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:50675e5f49d9fc9272eb2795564c5c63. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.189  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:e4dc67beec30f37a999b9e12430d83dc. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.190  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:8e1fa4c64de68e22426fbe2652ffa0b3. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.191  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:2b20495b9e09425da178b3ef2ea05221. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.192  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:96a6792d8d4053ab8c5f559d7e4422eb. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.193  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:898fea2b37752dfb9c2175055a305e42. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.194  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:790fab3b7d1671128172413ce59f6874. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.194  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:ae90b870b5d1612f70242a70c9c89cca. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.195  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:c61ecf6863c76d3c2b7d5c837eb3d8c0. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.196  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:406ce34f0c865fb6c4a7daf25d8dea15. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.197  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:494de6c60de5b708d7bb1d518769ee43. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.198  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:4b9a8a8a16e2d88181dc61e1e373d2b1. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.199  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:d73a3b7874fb234e50391dd66a1b9c12. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.200  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:a781dd4cc07ae76730d6d2bb8293ce44. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.201  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:eb9571bd6961c054b7ee99c2fd462f47. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.202  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:0a7388df57edcad2b5588b57787eda0b. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.202  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:861959292dbd1203ba517556b16053bf. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.203  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:3d2596ae619dd55622cef6055ce94e6d. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.204  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:805cec221011e3831145e9e7aa15b6c0. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.205  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:142f29a9d7ed2973dde0923e1c94b14f. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.206  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:e061586c0b97eeb1f5e43887cf6010e6. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.207  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:49e579f38864f3c941ea4cca555244c9. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.208  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:8bc798d6181722110b1296bbb331b10c. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.209  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:85a883c93154631c373abf7fe8703fcc. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.209  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:edd51f332d2395e2017d5ef40044ca6f. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.210  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:6fc4eb43b892810ee7c3184c46c2efc6. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.211  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:adff643c6a49d862291814f97643d2f2. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.212  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:21185353ef0ceaabe36a210efc683f95. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.213  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:96d2e99adab704ac2f63c75e1595116c. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.214  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:522d3f4b63cc7601f9bb145df7e8c04a. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.215  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:3b30676720278d01d1422cf517780918. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.216  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:30dc263fab18d6b49edc7d764cdb5ba6. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.217  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:865552ca76487054fd407711ddd26b26. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.218  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:5180d0c438387b17cb157f40272da773. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.218  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:77620ed5f2759ef95f6faa3698443b1f. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.219  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:5484d85b72daefee599f94f513e183e1. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.220  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:ad28dac1d965c7e0d0d671716b9bf4ab. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.221  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:d60e53d8f862e0670d5c8b82e4c808f3. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.222  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:050896416d51716ed815a46f378d703d. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.224  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:896d3ac4364d28e9664e8f5aa47b66a6. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.224  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:7d96712a07ba6a6569b29d3a14e2112b. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.226  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:841c76708bd2a7395972dff6ca41765f. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.227  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:3d37424a208ed642b601ecb1b4720faa. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.228  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:f34d8c6da8a858a660a577a822d9012c. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.229  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:5a65cbec9f94ccd006611b7fab6c1bd4. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.230  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:c8447ef4e69a3cf695e45bead85ba608. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.230  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:d57baab75fc0c68aac563aac4216de9d. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.231  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:a361d2f1241a8196795db54d7e7b8487. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.232  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:8e4fc3abc974489d5a2988ca886be573. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.233  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:050ce09b023b0f11cf9b457ce2bce7fe. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.234  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:9632a73962e32cfcc1284a2fd7bac366. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.235  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:884ef4c72764abe12090461d34b8f265. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.236  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:45bb0c453845363e82d543b81ba5da0d. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.237  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:1c808f77483d6e13ead873395972f009. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.238  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:56f0f15f200b07619c1524b0c6f11aa4. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.239  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:1c0070f52bcd78162cc9bbc4e7c047be. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.240  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:3b1da1ee84d64db4431d69700249446f. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.240  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:7911ea7018cd30c6283a26ff364b7863. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.241  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:0d8e3e0563befef061df35aa806aafc2. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.242  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:85f577f1a1a0e922307de13aec83d373. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.243  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:a33a9f5fd7203738cc3d2fbf96af0e63. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.244  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:74b45a4279613a20a4edb3501a41975e. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.245  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:cc590491b9d69df75ce4a688e7b6090b. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.246  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:f4027cc7-611f-4582-b0cc-88f73aa4628b. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.247  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:0be8e9ded842b8fd54043407579bbbce. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.248  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:cda14347-73c4-41fe-ac8f-a4b39846abd8. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.248  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:4d93f47f86f095ea2d3768b601ce88f6. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.249  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:2fa0d4a0-20b7-4e70-97d8-7b7da2d25b1f. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.250  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:c3ce60d6b8a7cec1d15edf8f6738009a. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.251  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:b8cc9b9220f662f0e05d4672b61a3d59. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.252  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:e9f3d1e6f54f2a3273ddeeb25b7710c2. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.253  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:c41d2978-9235-414b-8dc0-008525cc162c. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.254  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:ec5dacc5-bc7d-40c3-896a-b970987fbbbd. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.255  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:914186ef3d16414c6fee5f4ce39d9368. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.256  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:cb32ed8cfc8a9f0b2c9317bbc890193c. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.257  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:831bda3c-afc6-4cec-a0de-7cf47d71cf7b. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.258  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:cb108779c57a2792547cc8793b529289. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.259  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:383d8af727ad3a1579d0e449eb50ed74. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.260  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:3e6026d87630b74d681db0839e9451de. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.261  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:ec2f288ae2756ab0e56d74318018a02b. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.262  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:10d2f6f639ba6e78f2aba1f8fccd55fd. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.263  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:9f987cfd0f8de0cc49f6e33e5a0d764e. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.264  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:22d5d24f7bdc79effa8969a26c7cca74. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.265  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:34ca29fdaa199db7c423b5e6c7e195a3. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.266  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:8de4f882a0ffa30954dea6d4041ec2f9. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.267  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:c651ceda4b9dc93040d2d81a6689206c. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.268  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:7db91d774ed88e128e585f848f60c96f. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.268  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:ccafab26bb4c8b55f210b41c03c35142. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.269  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:d8a23c7f5b55b6b645b5912c8a7c35a9. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.270  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:d592379acf5ee72c12a602db0119f6e2. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.271  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:66de109d1facd657a0eabce6ea6c284d. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.272  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:f79a9c6110261ee63c1cb9b0df6f8fb2. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.273  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:c151f3f291ecf10aacca97a9203eaff0. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.273  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:0ae6c4d995a9cd022c65a632a081f902. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.274  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:99bb57982f99b83f413637b05a1b1d79. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.275  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:f82a3af606084b3ec32da76bd7f804da. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.276  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:c1a3a1f57129442ca36786b32be45b5a. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.276  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:2e43ee4a5f49777f73038b67b43d6fdc. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.277  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:5f260093ae3836ad60b0c3548e6d563f. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.278  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:c9fd8a083ac8ea87e4f3ba4939abd4b8. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.278  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:f35106db107cacce8ccbca6e6e4eb91f. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.279  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:fa0bff936628a4898ede858be333f894. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.280  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:cf685a0909bbb45af0a45d6188537402. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.281  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:93a191039e6c44b204bde99d891455da. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.281  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:1382c9e4bbc87fe7e0af4b6038859067. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.282  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:45f518bfaba72fdef1337251560e0257. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.283  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:31dcfb5935ae91a9e4fdb9290b7cd855. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.283  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:7833ab9e632849fff5b371e47bd0cd82. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.284  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:798a0fa2906a5296ab567c32373ceb71. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.285  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:82d5b7a0a04b8e81e61ad80d7f14c4d7. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.285  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:b5cc44fccec3f1c27dd58e658a2e4f46. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.286  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:bd21f41643e81c0c025417e38c7ef447. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.287  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:e96d8b6d15d6ed6dcec65af91ccd3996. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.288  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:02658124270e4a4ce18e5dc524354c32. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.288  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:e672d6c5f42e337f491e02a27a446133. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.289  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:85b35373454ad6ea2b8fc11738eab6ba. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.290  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:442d39c56f17f40f02622de54d9f22e5. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.290  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:93c28aed7e372ac0e3fbab49a4e8963a. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.291  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:23c2de800b04c108df691c23d12b413d. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.292  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:78c519c288de10f5744e9ff467de1b0d. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.292  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:c7213d9f16f8b9dbaa7eedc0ba420ee1. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.293  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:232f489bce16c92e60047f84c5ca6324. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.294  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:66182f25837046c71275adba5a4685d2. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.295  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:40938cf368e0fe095f0b4b99a4ca7b0c. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.297  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:4ff51db5aeabe38d12e5863848669bbc. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.298  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:0dd6d07d272c150d5c3cd9b7d39c1359. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.300  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:4c22421549bc5ec810862fe3d6d3386c. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.301  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:7b103c12b24be987232db201027880fa. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.302  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:946e4ea71626922c78ef8a4ccd074a75. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.304  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:1f31ca654ee8088eadd9e480a53cd3a6. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.305  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:e58e757446b45a4ce7198a80014776b1. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.306  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:1bade92399d2fb5ba5b482a242788729. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.307  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:50b901c763b0d69894ef423e97a621ba. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.308  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:5afcb38bea38f0764e8a498ed5e19a54. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.308  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:f803d2c7fdd4a9b9e66201ba6d61b01d. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.309  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:b6723d8abf1052f6f90fb92bf2cc9cf2. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.310  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:24225ecbe7cbd136ead6d076c513e6ae. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.310  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:7434042bf02a733fec673a5da803b464. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.312  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:fcedcae76ee6f8ca68d35ce8b6e6d155. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.313  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:75f09d7a63960f3069af3ae30448c292. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.314  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:bf159a573b3efd166918bfd6df208a14. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.315  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:5ac52d9d15e4b8ae9c9754e69b568ec4. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.316  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:09f4d0f332f89295e0a2fc116cf2c6bb. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.317  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:6c67c338c458103108eb181f293cdfae. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.318  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:0826dae9c33e24c5c1bcda27ee750cf8. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.319  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:4e0d3bd01c6ef0f43c8ad69865ed3f91. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.319  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:5015843ebd938bc2da9dd6aa861b455a. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.320  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:797147dbf0480c72a77ec488d050e119. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.321  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:49e2c7d57c87a0e6a9df922cb270b7a9. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.321  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:eac6952da9b9cc5e3808173430fa74f1. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.322  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:43d3571121e50852d72892a10225b4e0. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.323  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:3e4ca96c3a6806a3f6639b967c8b8763. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.324  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:b5b1e704fa3446977f8121c4c2f4abbf. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.326  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:7958c087707865ccd3087083d89a08b4. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.327  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:da3d9583c2a62324fff3d414c7aac9e3. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.328  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:7992675b26e3c5ce22d5593fdc3d5a2a. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.330  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:d9201f6746c1698c27dac4a7fe1e72f5. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.331  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:e21ef4be6812ba4c6c5625879da53b1d. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.332  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:a2c2419ea4e10e588319f579b44cf4be. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.334  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:b368fe1519299982c0e472dbfe72baf5. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.334  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:88a5416a17d02dc6e07af1ec44a6d29e. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.336  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:c817710559fabe92f4ec6e6da4432b1a. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.337  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:94d456e60d6059627e1e203c2a8beabb. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.338  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:be8aa470027098e38b812a3a2ddeabf6. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.339  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:74f07ec9952d5ebaaf61de5d2f2123d2. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.341  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:b857c496f6f1e25b662047ea16c9df6c. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.342  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:3d9870e13bee8d9ecb23b5af92da87a8. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.343  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:ebcf17ee0f0d63a165fd70c102667288. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.343  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:41331be0bc538ed2bbcab1f44a17f55a. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.345  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:6f9de991143add2d7ccb5628195df0d1. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.346  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:84b354f1d3fbd512647c1a0ddf4bb826. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.347  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:74e2ec2fc694709566573253b2450678. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.349  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:2124e6492a82e0409ba4589579a6bc75. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.350  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:0987b75321c92bd0409c0d761768e1a0. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.351  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:32cb34fbed6734ac2313dbbddfe5ae14. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.353  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:de18cbff34a624e8e70aab9dda8521fc. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.354  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:6cf5bacc4e0af5366c5d569fa8e38b0d. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.355  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:8defcb5809ef54cae75222b048e15a23. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.356  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:e4c0e54e331cd0073f5679af5712af7f. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.357  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:a71b8044e79aca9ea30d974cf95b46de. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.358  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:7db5deec4686f439900aac5ae8c7f616. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.359  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:aeb61857524db889baed48b3c5d9bbbd. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.360  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:6a93a8730a63bab855a5393c90fd6c04. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.361  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:cb845c10bfa66197ef0ea23df5a432c9. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.362  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:d9815d7b42171b5948a9b08b3ba838ae. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.363  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:3df015633b9ab759af3048d21dee85dd. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.364  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:e3197c1a70940228382a8f27bac53db8. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.366  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:6b3bf2fce3b25739d99683b2ed0665bb. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.366  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:ee62e6df7b4ec18fa5e9bd00b1536fdf. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.367  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:daa457448f19cd41c1488b39e8a1f328. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.368  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:5013617508d0edaf09984112db632efd. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.368  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:0548acdf827786f54d58af4a18c66e86. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.369  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:56481b4e3bc8a661d182a5d2f67b398f. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.370  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:5d5e45f2a647646dcc19022991c5f7d9. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.370  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:fe0ab16f6f303f9b54b0f9afc1dd7dda. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.371  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:2e7070d5b3c089ab8d9e58744d1bc913. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.372  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:f4e95d3b5455b0585f2e04af87585bd3. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.373  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:c1c001e25a1b0671a589abbca41680c7. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.373  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:3eb95c08fdef5445efa2b63b56a08392. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.374  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:44584255911b004d243c2b8d4fbb72b2. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.375  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:e0a9ff288540fb5edf3ac58d16276463. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.375  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:dfae76c7dd3946658a644559a4835802. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.376  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:18b0d5105603952250e43e9c7f904dc0. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.378  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:3e5606c0-44ad-4d05-b9af-a4a54bed0029. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.378  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:49627304784aecba5abae1ef42d00f39. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.381  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:773195a0d8bb0a62b88b9a90c57084e0. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.382  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:7eb495823d7e82cabccf32b1e0b292dd. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.383  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:6123b9089462212f1819f3bea2c414d4. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.383  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:de2a456d3d0d4938fce47012e09d0163. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.385  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:680724fec0ffee47ad494452cae4116e. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.385  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:38831f3effc349aadf357cd64030be87. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.386  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:8efed2f24072753261631a710dbf02aa. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.387  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:95b5bd451ede82dc05653ec42758932e. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.388  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:9e1a617719005773da794c940cefb8c7. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.388  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:8717413c-6aec-49e3-afcd-9eea3b77e303. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.389  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:c9bcac3b70f485e2a9171ae86d97e005. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.390  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:246b8dfa-1c9c-46a8-b0b2-ca6a389a3e54. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.391  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:248e5d0b77042dedc6755caa04b9721b. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.392  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:ce31992690070f4a30b9fbd14d94177a. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.393  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:beb819aa3b91f569ce29348307b09f9f. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.395  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:3a6b1cc3c286e1e31cc112d6080b0d14. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.396  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:9187b97d65b4a22409ddfa71231b0897. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.398  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:aad2a37654de9b53d03e60a916adeb2a. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.401  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:a0b5d813262e8a4d6b8e9d6798e5446d. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.403  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:dc5b01b867e83c0db847600e96c3b830. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.404  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:fe8c5cf71d41babbd0a2ffb073645cee. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.406  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:a305f09fc63fde9bd9c9a8682d204edb. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.407  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:86876c41bf44a011611ce533283fdf76. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.409  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:d95656248614040997b434d08805cfde. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.410  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:a54ab3da6bf578a7d066c87b90f3a90b. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.411  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:e2f53927cf9adba57a0d50cefb48bb0d. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.413  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:e0efda7ae197200e7adc511882bd6894. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.413  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:8719f4c30efedb3b9a0712237b4a58b8. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.414  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:44d0ef7be73b0232456f88139447e884. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.415  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:4fd2ba909fb8bacb6121f9acfcc65ad3. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.416  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:abf3642c8199fd93184d4b43d9806ed8. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.417  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:ffe384d533f06b0e51d0690ddf420690. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.418  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:c5b0ef774329e51736607d3208463b1b. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.419  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:5f6540a179e9f303fa16754bb3c1450a. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.420  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:91d5ea01fafec32c045389f2c98448b0. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.423  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:d6b27973976fd1a900371aadbe0c90e1. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.425  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:25314d95f1e657f6951bfa239b2ebfce. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.426  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:f569a379facdc4031099ae7e44c0bef4. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.428  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:9e537feb2947b5989be9905b4dd3f207. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.428  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:744f76fac7083e4ce99b634a91125c8a. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.430  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:ec1547744ffc22c84c804e70cd595e3e. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.431  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:1678f73ecb6b14ab21a170c882a19902. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.433  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:2edf3cbe0d950968bec9ab77b9e77f30. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.434  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:832a9ab4e5842d2f2b740dac94967351. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.435  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:8b199a84c8160c689db6e25ca6fc111d. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.436  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:1cde5443666ecd5e366c55ebf377c8f1. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.438  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:b1268854eed296ce3db87db07cfdd7dc. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.439  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:2e3ef928c5a5b0f561f4796241ec9b8a. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.452  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:fa5c7e879f02fcb1e0b07fddc68bfc83. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.453  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:2438770a1b16951aecfdf4fc20b35d9e. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.455  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:48a739b0f22aabced119957ff46e9248. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.456  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:11a45d2996c330f243f9d776449f1f14. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.458  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:8474631341d0e5b6a17c3cd1e1846659. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.459  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:29aadd26236fef3e1e5edcd462721063. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.461  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:d344b0e299fcd0dd442f9c0171c3a30b. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.462  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:3349bb531e9ba27146e650c4aa0242d1. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.464  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:7bd6f47ff53e1786a9195f150d887ccd. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.465  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:7451bf8de0a079455808a91fe411dd28. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.466  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:SYSTEM_TEMPLATE. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:07.507  INFO  junit.MainBaseSuite - Checking indexer status...
+22:24:09.354  WARN  util.LocaleUtil - en is not a valid language id
+22:24:09.371  WARN  business.UserHelper - Error loading user with id 27f64894-edde-44c4-8e1c-27a465247d1f
+22:24:10.145  WARN  util.LocaleUtil - en is not a valid language id
+22:24:10.158  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:e7bd51542f189c1ad62197f90090dbe0. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:10.939  WARN  util.LocaleUtil - en is not a valid language id
+22:24:10.945  ERROR business.TemplateAPIImpl - The user: 27f64894-edde-44c4-8e1c-27a465247d1f does not have Permissions to Edit the Template
+22:24:10.945  INFO  junit.MainBaseSuite - Checking indexer status...
+22:24:12.384  WARN  util.LocaleUtil - en is not a valid language id
+22:24:12.405  ERROR template.TemplateResource - Template with Id: 40b4356e-9b73-4860-98c0-28bf76bab472 does not exist
+22:24:12.405  INFO  junit.MainBaseSuite - Checking indexer status...
+22:24:13.443  WARN  util.LocaleUtil - en is not a valid language id
+22:24:14.238  WARN  util.LocaleUtil - en is not a valid language id
+22:24:14.247  ERROR template.TemplateResource - Template with Id: b89218bf-b405-4174-aa0e-6dad362e40ad does not exist
+22:24:14.247  INFO  junit.MainBaseSuite - Checking indexer status...
+22:24:15.434  WARN  util.LocaleUtil - en is not a valid language id
+22:24:16.224  WARN  util.LocaleUtil - en is not a valid language id
+22:24:16.233  INFO  junit.MainBaseSuite - Checking indexer status...
+22:24:16.713  WARN  business.UserHelper - Error loading user with id ab11e376-0a0b-48f1-882c-87e226c87630
+22:24:17.505  WARN  util.LocaleUtil - en is not a valid language id
+22:24:18.308  WARN  util.LocaleUtil - en is not a valid language id
+22:24:18.328  WARN  business.PermissionCacheImpl -  !!! Putting an empty list of permissions in the cache for asset:0e8d2efb33d524768afaabd728f3dff9. Every asset should have at least 1 permission (or inherited permission) associated with it
+22:24:18.328  ERROR business.TemplateAPIImpl - User does not have access to template:c4d2e1cd-0973-4522-ab05-5b12efad8f5e
+22:24:18.328  INFO  junit.MainBaseSuite - Checking indexer status...
+22:24:19.712  ERROR tika.TikaUtils - Failure retrieving OSGI Service [interface com.dotcms.tika.TikaServiceBuilder] in bundle [com.dotcms.tika]
+java.lang.IllegalStateException: [com.dotcms.tika] OSGI bundle NOT FOUND.
+	at org.apache.felix.framework.OSGISystem.getService(OSGISystem.java:228) ~[main/:?]
+	at com.dotcms.tika.TikaUtils.<init>(TikaUtils.java:63) ~[main/:?]
+	at com.dotcms.util.MimeTypeUtils.getMimeType(MimeTypeUtils.java:40) ~[main/:?]
+	at com.dotcms.storage.MetadataGeneratorImpl.standAloneMetadata(MetadataGeneratorImpl.java:76) ~[main/:?]
+	at com.dotcms.storage.FileStorageAPIImpl.generateBasicMetaData(FileStorageAPIImpl.java:113) ~[main/:?]
+	at com.dotcms.storage.FileStorageAPIImpl.generateMetaData(FileStorageAPIImpl.java:240) ~[main/:?]
+	at com.dotcms.content.model.hydration.MetadataDelegate.getMetadataMap(MetadataDelegate.java:164) ~[main/:?]
+	at com.dotcms.content.model.hydration.MetadataDelegate.getMetadataMap(MetadataDelegate.java:79) ~[main/:?]
+	at com.dotcms.content.model.hydration.MetadataDelegate.hydrate(MetadataDelegate.java:58) ~[main/:?]
+	at com.dotcms.content.business.json.ContentletJsonAPIImpl.hydrateThenGetFieldValue(ContentletJsonAPIImpl.java:456) ~[main/:?]
+	at com.dotcms.content.business.json.ContentletJsonAPIImpl.toImmutable(ContentletJsonAPIImpl.java:187) ~[main/:?]
+	at com.dotcms.content.business.json.ContentletJsonAPIImpl.toJson(ContentletJsonAPIImpl.java:137) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentFactoryImpl.setUpContentletAsJson(ESContentFactoryImpl.java:2160) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentFactoryImpl.save(ESContentFactoryImpl.java:2129) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentFactoryImpl.save(ESContentFactoryImpl.java:2121) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.internalCheckin(ESContentletAPIImpl.java:5544) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.lambda$checkin$59(ESContentletAPIImpl.java:5032) ~[main/:?]
+	at com.dotcms.concurrent.lock.StripedLockImpl.tryLock(StripedLockImpl.java:100) ~[main/:?]
+	at com.dotcms.concurrent.lock.StripedLockImpl.tryLock(StripedLockImpl.java:55) ~[main/:?]
+	at com.dotcms.concurrent.lock.IdentifierStripedLock.tryLock(IdentifierStripedLock.java:16) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:5031) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:10007) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:4867) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.ContentletAPIInterceptor.checkin(ContentletAPIInterceptor.java:266) ~[main/:?]
+	at com.dotcms.datagen.ContentletDataGen.checkin(ContentletDataGen.java:327) ~[integrationTest/:?]
+	at com.dotcms.datagen.ContentletDataGen.persist(ContentletDataGen.java:233) ~[integrationTest/:?]
+	at com.dotcms.datagen.ThemeDataGen.persist(ThemeDataGen.java:130) ~[integrationTest/:?]
+	at com.dotcms.datagen.ThemeDataGen.nextPersisted(ThemeDataGen.java:143) ~[integrationTest/:?]
+	at com.dotcms.rest.api.v1.template.TemplateResourceTest.legacyUUIDTemplate(TemplateResourceTest.java:1185) ~[integrationTest/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:38) ~[integrationTest/:?]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:14) ~[integrationTest/:?]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.MainBaseSuite$DotRunner.run(MainBaseSuite.java:60) ~[integrationTest/:?]
+	at org.junit.runners.Suite.runChild(Suite.java:128) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.Suite.runChild(Suite.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[?:?]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[?:?]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[?:?]
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[?:?]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[?:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:?]
+22:24:19.712  ERROR tika.TikaUtils - Unable to get file media type, OSGI Framework not initialized
+22:24:19.741  ERROR tika.TikaUtils - Failure retrieving OSGI Service [interface com.dotcms.tika.TikaServiceBuilder] in bundle [com.dotcms.tika]
+java.lang.IllegalStateException: [com.dotcms.tika] OSGI bundle NOT FOUND.
+	at org.apache.felix.framework.OSGISystem.getService(OSGISystem.java:228) ~[main/:?]
+	at com.dotcms.tika.TikaUtils.<init>(TikaUtils.java:63) ~[main/:?]
+	at com.dotcms.storage.MetadataGeneratorImpl.tikaBasedMetadata(MetadataGeneratorImpl.java:49) ~[main/:?]
+	at com.dotcms.storage.FileStorageAPIImpl.generateFullMetaData(FileStorageAPIImpl.java:151) ~[main/:?]
+	at com.dotcms.storage.FileStorageAPIImpl.generateMetaData(FileStorageAPIImpl.java:238) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.generateFullMetadata(FileMetadataAPIImpl.java:198) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.internalGenerateContentletMetadata(FileMetadataAPIImpl.java:91) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.generateContentletMetadata(FileMetadataAPIImpl.java:275) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.generateContentletMetadata(FileMetadataAPIImpl.java:260) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESMappingAPIImpl.writeMetadata(ESMappingAPIImpl.java:522) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESMappingAPIImpl.toMap(ESMappingAPIImpl.java:487) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.lambda$addBulkRequest$4c66ed82$1(ContentletIndexAPIImpl.java:806) ~[main/:?]
+	at io.vavr.control.Try.of(Try.java:75) ~[vavr-0.10.3.jar:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.addBulkRequest(ContentletIndexAPIImpl.java:805) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.appendBulkRequest(ContentletIndexAPIImpl.java:767) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.createBulkRequest(ContentletIndexAPIImpl.java:635) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.indexContentListNow(ContentletIndexAPIImpl.java:576) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.addContentToIndex(ContentletIndexAPIImpl.java:570) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.lambda$addContentToIndex$2(ContentletIndexAPIImpl.java:528) ~[main/:?]
+	at com.dotmarketing.db.HibernateUtil$DotSyncRunnable.run(HibernateUtil.java:1016) ~[main/:?]
+	at com.dotmarketing.db.DotRunnableThread.internalRunner(DotRunnableThread.java:99) ~[main/:?]
+	at com.dotmarketing.db.LocalTransaction.wrap(LocalTransaction.java:165) ~[main/:?]
+	at com.dotmarketing.db.DotRunnableThread.run(DotRunnableThread.java:53) ~[main/:?]
+	at com.dotmarketing.db.HibernateUtil.finalizeCommitListeners(HibernateUtil.java:1165) ~[main/:?]
+	at com.dotmarketing.db.HibernateUtil.commitTransaction(HibernateUtil.java:1257) ~[main/:?]
+	at com.dotcms.business.bytebuddy.WrapInTransactionAdvice.exit(WrapInTransactionAdvice.java:63) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:5082) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:10007) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:4867) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.ContentletAPIInterceptor.checkin(ContentletAPIInterceptor.java:266) ~[main/:?]
+	at com.dotcms.datagen.ContentletDataGen.checkin(ContentletDataGen.java:327) ~[integrationTest/:?]
+	at com.dotcms.datagen.ContentletDataGen.persist(ContentletDataGen.java:233) ~[integrationTest/:?]
+	at com.dotcms.datagen.ThemeDataGen.persist(ThemeDataGen.java:130) ~[integrationTest/:?]
+	at com.dotcms.datagen.ThemeDataGen.nextPersisted(ThemeDataGen.java:143) ~[integrationTest/:?]
+	at com.dotcms.rest.api.v1.template.TemplateResourceTest.legacyUUIDTemplate(TemplateResourceTest.java:1185) ~[integrationTest/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:38) ~[integrationTest/:?]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:14) ~[integrationTest/:?]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.MainBaseSuite$DotRunner.run(MainBaseSuite.java:60) ~[integrationTest/:?]
+	at org.junit.runners.Suite.runChild(Suite.java:128) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.Suite.runChild(Suite.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[?:?]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[?:?]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[?:?]
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[?:?]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[?:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:?]
+22:24:19.741  ERROR tika.TikaUtils - Unable to get file Meta Data, OSGI Framework not initialized
+22:24:19.741  ERROR tika.TikaUtils - Failure retrieving OSGI Service [interface com.dotcms.tika.TikaServiceBuilder] in bundle [com.dotcms.tika]
+java.lang.IllegalStateException: [com.dotcms.tika] OSGI bundle NOT FOUND.
+	at org.apache.felix.framework.OSGISystem.getService(OSGISystem.java:228) ~[main/:?]
+	at com.dotcms.tika.TikaUtils.<init>(TikaUtils.java:63) ~[main/:?]
+	at com.dotcms.util.MimeTypeUtils.getMimeType(MimeTypeUtils.java:40) ~[main/:?]
+	at com.dotcms.storage.MetadataGeneratorImpl.standAloneMetadata(MetadataGeneratorImpl.java:76) ~[main/:?]
+	at com.dotcms.storage.FileStorageAPIImpl.generateBasicMetaData(FileStorageAPIImpl.java:113) ~[main/:?]
+	at com.dotcms.storage.FileStorageAPIImpl.generateFullMetaData(FileStorageAPIImpl.java:161) ~[main/:?]
+	at com.dotcms.storage.FileStorageAPIImpl.generateMetaData(FileStorageAPIImpl.java:238) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.generateFullMetadata(FileMetadataAPIImpl.java:198) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.internalGenerateContentletMetadata(FileMetadataAPIImpl.java:91) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.generateContentletMetadata(FileMetadataAPIImpl.java:275) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.generateContentletMetadata(FileMetadataAPIImpl.java:260) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESMappingAPIImpl.writeMetadata(ESMappingAPIImpl.java:522) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESMappingAPIImpl.toMap(ESMappingAPIImpl.java:487) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.lambda$addBulkRequest$4c66ed82$1(ContentletIndexAPIImpl.java:806) ~[main/:?]
+	at io.vavr.control.Try.of(Try.java:75) ~[vavr-0.10.3.jar:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.addBulkRequest(ContentletIndexAPIImpl.java:805) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.appendBulkRequest(ContentletIndexAPIImpl.java:767) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.createBulkRequest(ContentletIndexAPIImpl.java:635) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.indexContentListNow(ContentletIndexAPIImpl.java:576) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.addContentToIndex(ContentletIndexAPIImpl.java:570) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.lambda$addContentToIndex$2(ContentletIndexAPIImpl.java:528) ~[main/:?]
+	at com.dotmarketing.db.HibernateUtil$DotSyncRunnable.run(HibernateUtil.java:1016) ~[main/:?]
+	at com.dotmarketing.db.DotRunnableThread.internalRunner(DotRunnableThread.java:99) ~[main/:?]
+	at com.dotmarketing.db.LocalTransaction.wrap(LocalTransaction.java:165) ~[main/:?]
+	at com.dotmarketing.db.DotRunnableThread.run(DotRunnableThread.java:53) ~[main/:?]
+	at com.dotmarketing.db.HibernateUtil.finalizeCommitListeners(HibernateUtil.java:1165) ~[main/:?]
+	at com.dotmarketing.db.HibernateUtil.commitTransaction(HibernateUtil.java:1257) ~[main/:?]
+	at com.dotcms.business.bytebuddy.WrapInTransactionAdvice.exit(WrapInTransactionAdvice.java:63) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:5082) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:10007) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:4867) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.ContentletAPIInterceptor.checkin(ContentletAPIInterceptor.java:266) ~[main/:?]
+	at com.dotcms.datagen.ContentletDataGen.checkin(ContentletDataGen.java:327) ~[integrationTest/:?]
+	at com.dotcms.datagen.ContentletDataGen.persist(ContentletDataGen.java:233) ~[integrationTest/:?]
+	at com.dotcms.datagen.ThemeDataGen.persist(ThemeDataGen.java:130) ~[integrationTest/:?]
+	at com.dotcms.datagen.ThemeDataGen.nextPersisted(ThemeDataGen.java:143) ~[integrationTest/:?]
+	at com.dotcms.rest.api.v1.template.TemplateResourceTest.legacyUUIDTemplate(TemplateResourceTest.java:1185) ~[integrationTest/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:38) ~[integrationTest/:?]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:14) ~[integrationTest/:?]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.MainBaseSuite$DotRunner.run(MainBaseSuite.java:60) ~[integrationTest/:?]
+	at org.junit.runners.Suite.runChild(Suite.java:128) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.Suite.runChild(Suite.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[?:?]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[?:?]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[?:?]
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[?:?]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[?:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:?]
+22:24:19.741  ERROR tika.TikaUtils - Unable to get file media type, OSGI Framework not initialized
+22:24:22.121  INFO  util.StdOutErrLog - SECOND TIME------------------------
+
+22:24:22.154  INFO  junit.MainBaseSuite - Checking indexer status...
+22:24:23.575  WARN  util.LocaleUtil - en is not a valid language id
+22:24:23.587  ERROR business.TemplateAPIImpl - The Template: Template1686003862154 can not be archive. Because it is live.
+22:24:23.587  INFO  junit.MainBaseSuite - Checking indexer status...
+22:24:24.540  WARN  util.LocaleUtil - en is not a valid language id
+22:24:25.357  WARN  util.LocaleUtil - en is not a valid language id
+22:24:25.362  ERROR business.TemplateAPIImpl - The Template: Template1686003863587 can not be publish. Because it is archived
+22:24:25.362  INFO  junit.MainBaseSuite - Checking indexer status...
+22:24:26.582  WARN  util.LocaleUtil - en is not a valid language id
+22:24:26.597  ERROR business.TemplateAPIImpl - The template: 0a3cb88d476734eda94646e40b64ccdb must be archived before it can be deleted
+22:24:26.597  INFO  junit.MainBaseSuite - Checking indexer status...
+22:24:27.568  WARN  util.LocaleUtil - en is not a valid language id
+22:24:28.374  WARN  util.LocaleUtil - en is not a valid language id
+22:24:28.382  INFO  junit.MainBaseSuite - Checking indexer status...
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

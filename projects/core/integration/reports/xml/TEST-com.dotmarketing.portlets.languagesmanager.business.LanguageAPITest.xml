@@ -1,0 +1,653 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.dotmarketing.portlets.languagesmanager.business.LanguageAPITest" tests="11" skipped="0" failures="0" errors="0" timestamp="2023-06-05T21:49:44" hostname="fv-az306-998" time="86.77">
+  <properties/>
+  <testcase name="getStringKey_KeyExistsPropertiesFileAndAsAContent_returnsLanguageVariableContent" classname="com.dotmarketing.portlets.languagesmanager.business.LanguageAPITest" time="1.239"/>
+  <testcase name="test_saveLanguage_InvalidLanguage_ShouldThrowException[0: &lt;null&gt;]" classname="com.dotmarketing.portlets.languagesmanager.business.LanguageAPITest" time="0.001"/>
+  <testcase name="test_saveLanguage_InvalidLanguage_ShouldThrowException[1: ]" classname="com.dotmarketing.portlets.languagesmanager.business.LanguageAPITest" time="0.0"/>
+  <testcase name="test_saveLanguage_InvalidLanguage_ShouldThrowException[2: it]" classname="com.dotmarketing.portlets.languagesmanager.business.LanguageAPITest" time="0.0"/>
+  <testcase name="test_saveLanguage_InvalidLanguage_ShouldThrowException[3: -it]" classname="com.dotmarketing.portlets.languagesmanager.business.LanguageAPITest" time="0.0"/>
+  <testcase name="getStringsAsMap_returnMap" classname="com.dotmarketing.portlets.languagesmanager.business.LanguageAPITest" time="1.161"/>
+  <testcase name="languageCache" classname="com.dotmarketing.portlets.languagesmanager.business.LanguageAPITest" time="0.012"/>
+  <testcase name="getStringKey_returnLanguageVariableContent" classname="com.dotmarketing.portlets.languagesmanager.business.LanguageAPITest" time="1.264"/>
+  <testcase name="test_deleteLanguage_WithExistingContent_ShouldFail" classname="com.dotmarketing.portlets.languagesmanager.business.LanguageAPITest" time="1.064"/>
+  <testcase name="Create_Content_Under_Default_Lang_Make_New_Default_Language_And_Test_Assets_Lang_Transfer" classname="com.dotmarketing.portlets.languagesmanager.business.LanguageAPITest" time="81.306"/>
+  <testcase name="getStringKey_returnKey" classname="com.dotmarketing.portlets.languagesmanager.business.LanguageAPITest" time="0.721"/>
+  <system-out><![CDATA[21:49:44.794  INFO  business.ESContentletAPIImpl - UserId : system : destroy : User trying to destroy the following contents: [13e6315d385936e141e6c90397751561]
+21:49:44.927  INFO  junit.MainBaseSuite - Checking indexer status...
+21:49:44.931  INFO  junit.MainBaseSuite - Indexer is not empty, waiting for it to finish
+21:49:45.938  INFO  junit.MainBaseSuite - Indexer Complete=true
+21:49:45.939  INFO  junit.MainBaseSuite - Checking indexer status...
+21:49:45.939  INFO  junit.MainBaseSuite - Checking indexer status...
+21:49:45.940  INFO  junit.MainBaseSuite - Checking indexer status...
+21:49:45.940  INFO  junit.MainBaseSuite - Checking indexer status...
+21:49:46.099  INFO  junit.MainBaseSuite - Checking indexer status...
+21:49:46.099  INFO  junit.MainBaseSuite - Indexer is not empty, waiting for it to finish
+21:49:47.101  INFO  junit.MainBaseSuite - Indexer Complete=true
+21:49:47.113  INFO  junit.MainBaseSuite - Checking indexer status...
+21:49:47.208  INFO  business.ESContentletAPIImpl - UserId : system : destroy : User trying to destroy the following contents: [9b644ad072a5b9a6b468eaf447826371]
+21:49:47.375  INFO  junit.MainBaseSuite - Checking indexer status...
+21:49:47.376  INFO  junit.MainBaseSuite - Indexer is not empty, waiting for it to finish
+21:49:48.378  INFO  junit.MainBaseSuite - Indexer Complete=true
+21:49:48.438  ERROR db.DotConnect - ERROR: update or delete on table "language" violates foreign key constraint "fk_contentlet_version_info_lang" on table "contentlet_version_info"
+  Detail: Key (id)=(4618667) is still referenced from table "contentlet_version_info".
+org.postgresql.util.PSQLException: ERROR: update or delete on table "language" violates foreign key constraint "fk_contentlet_version_info_lang" on table "contentlet_version_info"
+  Detail: Key (id)=(4618667) is still referenced from table "contentlet_version_info".
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2676) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2366) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:356) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:496) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:413) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:190) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.jdbc.PgPreparedStatement.executeUpdate(PgPreparedStatement.java:152) ~[postgresql-42.5.1.jar:42.5.1]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61) ~[HikariCP-3.4.2.jar:?]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java) ~[HikariCP-3.4.2.jar:?]
+	at com.dotmarketing.common.db.DotConnect.executeUpdate(DotConnect.java:1283) ~[main/:?]
+	at com.dotmarketing.common.db.DotConnect.executeUpdate(DotConnect.java:1231) ~[main/:?]
+	at com.dotmarketing.common.db.DotConnect.executeUpdate(DotConnect.java:1214) ~[main/:?]
+	at com.dotmarketing.portlets.languagesmanager.business.LanguageFactoryImpl.deleteLanguageById(LanguageFactoryImpl.java:797) ~[main/:?]
+	at com.dotmarketing.portlets.languagesmanager.business.LanguageFactoryImpl.deleteLanguage(LanguageFactoryImpl.java:91) ~[main/:?]
+	at com.dotmarketing.portlets.languagesmanager.business.LanguageAPIImpl.deleteLanguage(LanguageAPIImpl.java:82) ~[main/:?]
+	at com.dotmarketing.portlets.languagesmanager.business.LanguageAPITest.test_deleteLanguage_WithExistingContent_ShouldFail(LanguageAPITest.java:259) ~[integrationTest/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:19) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:38) ~[integrationTest/:?]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:14) ~[integrationTest/:?]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.MainBaseSuite$DotRunner.run(MainBaseSuite.java:60) ~[integrationTest/:?]
+	at org.junit.runners.Suite.runChild(Suite.java:128) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.Suite.runChild(Suite.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[?:?]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[?:?]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[?:?]
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[?:?]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[?:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:?]
+21:49:48.440  ERROR db.DotConnect - ERROR: update or delete on table "language" violates foreign key constraint "fk_contentlet_version_info_lang" on table "contentlet_version_info"
+  Detail: Key (id)=(4618667) is still referenced from table "contentlet_version_info".
+org.postgresql.util.PSQLException: ERROR: update or delete on table "language" violates foreign key constraint "fk_contentlet_version_info_lang" on table "contentlet_version_info"
+  Detail: Key (id)=(4618667) is still referenced from table "contentlet_version_info".
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2676) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2366) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:356) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:496) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:413) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:190) ~[postgresql-42.5.1.jar:42.5.1]
+	at org.postgresql.jdbc.PgPreparedStatement.executeUpdate(PgPreparedStatement.java:152) ~[postgresql-42.5.1.jar:42.5.1]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61) ~[HikariCP-3.4.2.jar:?]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java) ~[HikariCP-3.4.2.jar:?]
+	at com.dotmarketing.common.db.DotConnect.executeUpdate(DotConnect.java:1283) ~[main/:?]
+	at com.dotmarketing.common.db.DotConnect.executeUpdate(DotConnect.java:1231) ~[main/:?]
+	at com.dotmarketing.common.db.DotConnect.executeUpdate(DotConnect.java:1214) ~[main/:?]
+	at com.dotmarketing.portlets.languagesmanager.business.LanguageFactoryImpl.deleteLanguageById(LanguageFactoryImpl.java:797) ~[main/:?]
+	at com.dotmarketing.portlets.languagesmanager.business.LanguageFactoryImpl.deleteLanguage(LanguageFactoryImpl.java:91) ~[main/:?]
+	at com.dotmarketing.portlets.languagesmanager.business.LanguageAPIImpl.deleteLanguage(LanguageAPIImpl.java:82) ~[main/:?]
+	at com.dotmarketing.portlets.languagesmanager.business.LanguageAPITest.test_deleteLanguage_WithExistingContent_ShouldFail(LanguageAPITest.java:271) ~[integrationTest/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:19) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:38) ~[integrationTest/:?]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:14) ~[integrationTest/:?]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.MainBaseSuite$DotRunner.run(MainBaseSuite.java:60) ~[integrationTest/:?]
+	at org.junit.runners.Suite.runChild(Suite.java:128) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.Suite.runChild(Suite.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[?:?]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[?:?]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[?:?]
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[?:?]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[?:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:?]
+21:49:48.441  INFO  junit.MainBaseSuite - Checking indexer status...
+21:49:48.441  INFO  junit.MainBaseSuite - Indexer is not empty, waiting for it to finish
+21:49:49.443  INFO  junit.MainBaseSuite - Indexer Complete=true
+21:49:49.791  INFO  timedcache.TimedCacheProvider - ===== Initializing [Timed Cache Provider].
+21:49:49.791  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : default: 1000
+21:49:49.791  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : adminconfigpool: 100
+21:49:49.791  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : companypool: 10
+21:49:49.791  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : contentletcache: 5000
+21:49:49.791  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : csscache: 2500
+21:49:49.791  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : fileassetmetadatacache: 200
+21:49:49.791  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : identifiercache: 50000
+21:49:49.791  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : indiciescache: 8
+21:49:49.791  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : logmappercache: 10
+21:49:49.791  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : navcache: 1000
+21:49:49.791  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : parentpermissionablecache: 10000
+21:49:49.791  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : permissioncache: 50000
+21:49:49.791  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : portletpool: 100
+21:49:49.791  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : publishingendpointcache: 100
+21:49:49.791  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : pushedassetscache: 5000
+21:49:49.791  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : structurecache: 500
+21:49:49.791  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : templatecache: 500
+21:49:49.791  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : translatedquerycache: 5000
+21:49:49.791  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : versioncache: 50000
+21:49:49.791  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : versioninfocache: 50000
+21:49:49.791  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : workflowactioncache: 10000
+21:49:49.791  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : workflowtaskcache: 10000
+21:49:49.791  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : shorty: 25000
+21:49:49.791  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : identifier404cache: 5000
+21:49:49.791  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : velocitycache: 1000
+21:49:49.791  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : vanityurlcache: 1000
+21:49:49.791  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : cachedvanityurlgroup: 1000
+21:49:49.791  INFO  h22.H22Cache - Start Full Cache Flush in h22
+21:49:49.791  INFO  h22.H22Cache - Building new H22 Cache, db:0
+21:49:49.791  INFO  h22.H22HikariPool - H22 on disk cache:jdbc:h2:/home/runner/work/core/custom/dotsecure/h22cache/0/2023-06-05_21-49-49/cache;MVCC=TRUE;DB_CLOSE_ON_EXIT=FALSE
+21:49:49.791  INFO  hikari.HikariDataSource - HikariPool-19 - Starting...
+21:49:49.822  INFO  pool.PoolBase - HikariPool-19 - Driver does not support get/set network timeout for connections. (Receiver class org.h2.jdbc.JdbcConnection does not define or inherit an implementation of the resolved method 'abstract int getNetworkTimeout()' of interface java.sql.Connection.)
+21:49:49.824  INFO  hikari.HikariDataSource - HikariPool-19 - Start completed.
+21:49:49.826  INFO  hikari.HikariDataSource - HikariPool-17 - Shutdown initiated...
+21:49:49.879  INFO  hikari.HikariDataSource - HikariPool-17 - Shutdown completed.
+21:49:49.883  INFO  h22.H22Cache - Building new H22 Cache, db:1
+21:49:49.883  INFO  h22.H22HikariPool - H22 on disk cache:jdbc:h2:/home/runner/work/core/custom/dotsecure/h22cache/1/2023-06-05_21-49-49/cache;MVCC=TRUE;DB_CLOSE_ON_EXIT=FALSE
+21:49:49.883  INFO  hikari.HikariDataSource - HikariPool-20 - Starting...
+21:49:49.918  INFO  pool.PoolBase - HikariPool-20 - Driver does not support get/set network timeout for connections. (Receiver class org.h2.jdbc.JdbcConnection does not define or inherit an implementation of the resolved method 'abstract int getNetworkTimeout()' of interface java.sql.Connection.)
+21:49:49.918  INFO  hikari.HikariDataSource - HikariPool-20 - Start completed.
+21:49:49.925  INFO  hikari.HikariDataSource - HikariPool-18 - Shutdown initiated...
+21:49:49.974  INFO  hikari.HikariDataSource - HikariPool-18 - Shutdown completed.
+21:49:49.974  INFO  h22.H22Cache - End Full Cache Flush in h22 : 182ms
+21:49:49.978  INFO  business.ESIndexAPI - createIndex : Trying to create index: cluster_b963af59f8.working_20230605214949 with shards: 0
+21:49:49.978  WARN  business.ESIndexAPI - Unable to parse shards from config
+21:49:49.978  WARN  business.ESIndexAPI - null
+21:49:49.978  WARN  business.ESIndexAPI - java.base/java.lang.Integer.parseInt(Integer.java:614)
+21:49:50.039  INFO  business.ESIndexAPI - createIndex : Index created: cluster_b963af59f8.working_20230605214949 with shards: 1
+21:49:50.053  INFO  business.ESIndexAPI - createIndex : Trying to create index: cluster_b963af59f8.live_20230605214949 with shards: 0
+21:49:50.053  WARN  business.ESIndexAPI - Unable to parse shards from config
+21:49:50.053  WARN  business.ESIndexAPI - null
+21:49:50.053  WARN  business.ESIndexAPI - java.base/java.lang.Integer.parseInt(Integer.java:614)
+21:49:50.120  INFO  business.ESIndexAPI - createIndex : Index created: cluster_b963af59f8.live_20230605214949 with shards: 1
+21:50:20.240  INFO  business.ESIndexAPI - Optimizing [cluster_b963af59f8.working_20230605214949, cluster_b963af59f8.live_20230605214949] :2/2 shards optimized
+21:50:49.444  WARN  pool.ProxyLeakTask - Connection leak detection triggered for org.postgresql.jdbc.PgConnection@38b721f0 on thread Test worker, stack trace follows
+java.lang.Exception: Apparent connection leak detected
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:100) ~[HikariCP-3.4.2.jar:?]
+	at com.dotmarketing.db.DbConnectionFactory.getConnection(DbConnectionFactory.java:223) ~[main/:?]
+	at com.dotmarketing.common.db.DotConnect.executeQuery(DotConnect.java:565) ~[main/:?]
+	at com.dotmarketing.common.db.DotConnect.getResult(DotConnect.java:289) ~[main/:?]
+	at com.dotmarketing.common.db.DotConnect.getInt(DotConnect.java:87) ~[main/:?]
+	at com.dotmarketing.portlets.languagesmanager.business.LanguageDataGen.uniqueLangAndCountry(LanguageDataGen.java:44) ~[integrationTest/:?]
+	at com.dotmarketing.portlets.languagesmanager.business.LanguageDataGen.next(LanguageDataGen.java:17) ~[integrationTest/:?]
+	at com.dotmarketing.portlets.languagesmanager.business.LanguageDataGen.next(LanguageDataGen.java:13) ~[integrationTest/:?]
+	at com.dotcms.datagen.DataGen.nextPersisted(DataGen.java:25) ~[integrationTest/:?]
+	at com.dotmarketing.portlets.languagesmanager.business.LanguageAPITest.Create_Content_Under_Default_Lang_Make_New_Default_Language_And_Test_Assets_Lang_Transfer(LanguageAPITest.java:291) ~[integrationTest/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:38) ~[integrationTest/:?]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:14) ~[integrationTest/:?]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.MainBaseSuite$DotRunner.run(MainBaseSuite.java:60) ~[integrationTest/:?]
+	at org.junit.runners.Suite.runChild(Suite.java:128) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.Suite.runChild(Suite.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[?:?]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[?:?]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[?:?]
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[?:?]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[?:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:?]
+21:50:50.196  INFO  timedcache.TimedCacheProvider - ===== Initializing [Timed Cache Provider].
+21:50:50.196  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : default: 1000
+21:50:50.196  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : adminconfigpool: 100
+21:50:50.196  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : companypool: 10
+21:50:50.196  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : contentletcache: 5000
+21:50:50.196  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : csscache: 2500
+21:50:50.196  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : fileassetmetadatacache: 200
+21:50:50.196  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : identifiercache: 50000
+21:50:50.196  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : indiciescache: 8
+21:50:50.196  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : logmappercache: 10
+21:50:50.196  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : navcache: 1000
+21:50:50.196  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : parentpermissionablecache: 10000
+21:50:50.196  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : permissioncache: 50000
+21:50:50.196  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : portletpool: 100
+21:50:50.196  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : publishingendpointcache: 100
+21:50:50.196  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : pushedassetscache: 5000
+21:50:50.196  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : structurecache: 500
+21:50:50.196  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : templatecache: 500
+21:50:50.197  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : translatedquerycache: 5000
+21:50:50.197  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : versioncache: 50000
+21:50:50.197  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : versioninfocache: 50000
+21:50:50.197  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : workflowactioncache: 10000
+21:50:50.197  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : workflowtaskcache: 10000
+21:50:50.197  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : shorty: 25000
+21:50:50.197  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : identifier404cache: 5000
+21:50:50.197  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : velocitycache: 1000
+21:50:50.197  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : vanityurlcache: 1000
+21:50:50.197  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : cachedvanityurlgroup: 1000
+21:50:50.197  INFO  h22.H22Cache - Start Full Cache Flush in h22
+21:50:50.197  INFO  h22.H22Cache - Building new H22 Cache, db:0
+21:50:50.197  INFO  h22.H22HikariPool - H22 on disk cache:jdbc:h2:/home/runner/work/core/custom/dotsecure/h22cache/0/2023-06-05_21-50-50/cache;MVCC=TRUE;DB_CLOSE_ON_EXIT=FALSE
+21:50:50.197  INFO  hikari.HikariDataSource - HikariPool-21 - Starting...
+21:50:50.229  INFO  pool.PoolBase - HikariPool-21 - Driver does not support get/set network timeout for connections. (Receiver class org.h2.jdbc.JdbcConnection does not define or inherit an implementation of the resolved method 'abstract int getNetworkTimeout()' of interface java.sql.Connection.)
+21:50:50.229  INFO  hikari.HikariDataSource - HikariPool-21 - Start completed.
+21:50:50.231  INFO  hikari.HikariDataSource - HikariPool-19 - Shutdown initiated...
+21:50:50.271  INFO  hikari.HikariDataSource - HikariPool-19 - Shutdown completed.
+21:50:50.273  INFO  h22.H22Cache - Building new H22 Cache, db:1
+21:50:50.274  INFO  h22.H22HikariPool - H22 on disk cache:jdbc:h2:/home/runner/work/core/custom/dotsecure/h22cache/1/2023-06-05_21-50-50/cache;MVCC=TRUE;DB_CLOSE_ON_EXIT=FALSE
+21:50:50.275  INFO  hikari.HikariDataSource - HikariPool-22 - Starting...
+21:50:50.307  INFO  pool.PoolBase - HikariPool-22 - Driver does not support get/set network timeout for connections. (Receiver class org.h2.jdbc.JdbcConnection does not define or inherit an implementation of the resolved method 'abstract int getNetworkTimeout()' of interface java.sql.Connection.)
+21:50:50.307  INFO  hikari.HikariDataSource - HikariPool-22 - Start completed.
+21:50:50.309  INFO  hikari.HikariDataSource - HikariPool-20 - Shutdown initiated...
+21:50:50.328  INFO  hikari.HikariDataSource - HikariPool-20 - Shutdown completed.
+21:50:50.329  INFO  h22.H22Cache - End Full Cache Flush in h22 : 131ms
+21:50:50.329  INFO  timedcache.TimedCacheProvider - ===== Initializing [Timed Cache Provider].
+21:50:50.330  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : default: 1000
+21:50:50.330  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : adminconfigpool: 100
+21:50:50.330  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : companypool: 10
+21:50:50.330  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : contentletcache: 5000
+21:50:50.330  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : csscache: 2500
+21:50:50.330  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : fileassetmetadatacache: 200
+21:50:50.330  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : identifiercache: 50000
+21:50:50.330  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : indiciescache: 8
+21:50:50.330  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : logmappercache: 10
+21:50:50.330  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : navcache: 1000
+21:50:50.330  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : parentpermissionablecache: 10000
+21:50:50.330  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : permissioncache: 50000
+21:50:50.330  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : portletpool: 100
+21:50:50.330  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : publishingendpointcache: 100
+21:50:50.330  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : pushedassetscache: 5000
+21:50:50.330  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : structurecache: 500
+21:50:50.330  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : templatecache: 500
+21:50:50.330  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : translatedquerycache: 5000
+21:50:50.330  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : versioncache: 50000
+21:50:50.330  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : versioninfocache: 50000
+21:50:50.330  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : workflowactioncache: 10000
+21:50:50.330  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : workflowtaskcache: 10000
+21:50:50.330  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : shorty: 25000
+21:50:50.330  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : identifier404cache: 5000
+21:50:50.330  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : velocitycache: 1000
+21:50:50.330  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : vanityurlcache: 1000
+21:50:50.330  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : cachedvanityurlgroup: 1000
+21:50:50.330  INFO  h22.H22Cache - Start Full Cache Flush in h22
+21:50:50.330  INFO  h22.H22Cache - Building new H22 Cache, db:0
+21:50:50.330  INFO  h22.H22HikariPool - H22 on disk cache:jdbc:h2:/home/runner/work/core/custom/dotsecure/h22cache/0/2023-06-05_21-50-50/cache;MVCC=TRUE;DB_CLOSE_ON_EXIT=FALSE
+21:50:50.330  INFO  hikari.HikariDataSource - HikariPool-23 - Starting...
+21:50:50.331  INFO  pool.PoolBase - HikariPool-23 - Driver does not support get/set network timeout for connections. (Receiver class org.h2.jdbc.JdbcConnection does not define or inherit an implementation of the resolved method 'abstract int getNetworkTimeout()' of interface java.sql.Connection.)
+21:50:50.331  INFO  hikari.HikariDataSource - HikariPool-23 - Start completed.
+21:50:50.332  INFO  hikari.HikariDataSource - HikariPool-21 - Shutdown initiated...
+21:50:50.347  INFO  hikari.HikariDataSource - HikariPool-21 - Shutdown completed.
+21:50:50.347  INFO  h22.H22Cache - Building new H22 Cache, db:1
+21:50:50.347  INFO  h22.H22HikariPool - H22 on disk cache:jdbc:h2:/home/runner/work/core/custom/dotsecure/h22cache/1/2023-06-05_21-50-50/cache;MVCC=TRUE;DB_CLOSE_ON_EXIT=FALSE
+21:50:50.348  INFO  hikari.HikariDataSource - HikariPool-24 - Starting...
+21:50:50.348  INFO  pool.PoolBase - HikariPool-24 - Driver does not support get/set network timeout for connections. (Receiver class org.h2.jdbc.JdbcConnection does not define or inherit an implementation of the resolved method 'abstract int getNetworkTimeout()' of interface java.sql.Connection.)
+21:50:50.348  INFO  hikari.HikariDataSource - HikariPool-24 - Start completed.
+21:50:50.350  INFO  hikari.HikariDataSource - HikariPool-22 - Shutdown initiated...
+21:50:50.359  INFO  hikari.HikariDataSource - HikariPool-22 - Shutdown completed.
+21:50:50.363  INFO  h22.H22Cache - End Full Cache Flush in h22 : 32ms
+21:50:50.389  WARN  business.HostAPIImpl - Unable to find ContentletVersionInfo for Site 'd17ad8e7daf3e50c61c63e0c0391810f' using default language [1]. Fall back to first entry found.
+21:50:50.430  WARN  business.HostAPIImpl - Unable to find ContentletVersionInfo for Site '192f37b74788b39a2a688e525f57e7a0' using default language [1]. Fall back to first entry found.
+21:50:50.464  WARN  business.HostAPIImpl - Unable to find ContentletVersionInfo for Site '15016ff6b20b5cb2a6b3d6c35808b4bc' using default language [1]. Fall back to first entry found.
+21:50:50.616  INFO  timedcache.TimedCacheProvider - ===== Initializing [Timed Cache Provider].
+21:50:50.616  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : default: 1000
+21:50:50.616  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : adminconfigpool: 100
+21:50:50.616  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : companypool: 10
+21:50:50.616  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : contentletcache: 5000
+21:50:50.616  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : csscache: 2500
+21:50:50.616  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : fileassetmetadatacache: 200
+21:50:50.616  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : identifiercache: 50000
+21:50:50.616  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : indiciescache: 8
+21:50:50.616  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : logmappercache: 10
+21:50:50.616  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : navcache: 1000
+21:50:50.616  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : parentpermissionablecache: 10000
+21:50:50.616  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : permissioncache: 50000
+21:50:50.616  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : portletpool: 100
+21:50:50.616  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : publishingendpointcache: 100
+21:50:50.616  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : pushedassetscache: 5000
+21:50:50.616  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : structurecache: 500
+21:50:50.616  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : templatecache: 500
+21:50:50.616  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : translatedquerycache: 5000
+21:50:50.616  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : versioncache: 50000
+21:50:50.616  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : versioninfocache: 50000
+21:50:50.616  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : workflowactioncache: 10000
+21:50:50.616  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : workflowtaskcache: 10000
+21:50:50.616  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : shorty: 25000
+21:50:50.616  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : identifier404cache: 5000
+21:50:50.616  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : velocitycache: 1000
+21:50:50.616  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : vanityurlcache: 1000
+21:50:50.616  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : cachedvanityurlgroup: 1000
+21:50:50.616  INFO  h22.H22Cache - Start Full Cache Flush in h22
+21:50:50.616  INFO  h22.H22Cache - Building new H22 Cache, db:0
+21:50:50.616  INFO  h22.H22HikariPool - H22 on disk cache:jdbc:h2:/home/runner/work/core/custom/dotsecure/h22cache/0/2023-06-05_21-50-50/cache;MVCC=TRUE;DB_CLOSE_ON_EXIT=FALSE
+21:50:50.617  INFO  hikari.HikariDataSource - HikariPool-25 - Starting...
+21:50:50.617  INFO  pool.PoolBase - HikariPool-25 - Driver does not support get/set network timeout for connections. (Receiver class org.h2.jdbc.JdbcConnection does not define or inherit an implementation of the resolved method 'abstract int getNetworkTimeout()' of interface java.sql.Connection.)
+21:50:50.623  INFO  hikari.HikariDataSource - HikariPool-25 - Start completed.
+21:50:50.623  INFO  hikari.HikariDataSource - HikariPool-23 - Shutdown initiated...
+21:50:50.634  INFO  hikari.HikariDataSource - HikariPool-23 - Shutdown completed.
+21:50:50.635  INFO  h22.H22Cache - Building new H22 Cache, db:1
+21:50:50.635  INFO  h22.H22HikariPool - H22 on disk cache:jdbc:h2:/home/runner/work/core/custom/dotsecure/h22cache/1/2023-06-05_21-50-50/cache;MVCC=TRUE;DB_CLOSE_ON_EXIT=FALSE
+21:50:50.635  INFO  hikari.HikariDataSource - HikariPool-26 - Starting...
+21:50:50.635  INFO  pool.PoolBase - HikariPool-26 - Driver does not support get/set network timeout for connections. (Receiver class org.h2.jdbc.JdbcConnection does not define or inherit an implementation of the resolved method 'abstract int getNetworkTimeout()' of interface java.sql.Connection.)
+21:50:50.636  INFO  hikari.HikariDataSource - HikariPool-26 - Start completed.
+21:50:50.636  INFO  hikari.HikariDataSource - HikariPool-24 - Shutdown initiated...
+21:50:50.639  INFO  hikari.HikariDataSource - HikariPool-24 - Shutdown completed.
+21:50:50.639  INFO  h22.H22Cache - End Full Cache Flush in h22 : 22ms
+21:50:50.640  INFO  timedcache.TimedCacheProvider - ===== Initializing [Timed Cache Provider].
+21:50:50.640  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : default: 1000
+21:50:50.640  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : adminconfigpool: 100
+21:50:50.640  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : companypool: 10
+21:50:50.640  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : contentletcache: 5000
+21:50:50.640  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : csscache: 2500
+21:50:50.641  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : fileassetmetadatacache: 200
+21:50:50.641  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : identifiercache: 50000
+21:50:50.641  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : indiciescache: 8
+21:50:50.641  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : logmappercache: 10
+21:50:50.641  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : navcache: 1000
+21:50:50.641  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : parentpermissionablecache: 10000
+21:50:50.641  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : permissioncache: 50000
+21:50:50.641  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : portletpool: 100
+21:50:50.641  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : publishingendpointcache: 100
+21:50:50.641  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : pushedassetscache: 5000
+21:50:50.641  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : structurecache: 500
+21:50:50.641  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : templatecache: 500
+21:50:50.641  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : translatedquerycache: 5000
+21:50:50.641  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : versioncache: 50000
+21:50:50.641  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : versioninfocache: 50000
+21:50:50.641  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : workflowactioncache: 10000
+21:50:50.641  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : workflowtaskcache: 10000
+21:50:50.641  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : shorty: 25000
+21:50:50.641  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : identifier404cache: 5000
+21:50:50.641  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : velocitycache: 1000
+21:50:50.641  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : vanityurlcache: 1000
+21:50:50.641  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : cachedvanityurlgroup: 1000
+21:50:50.641  INFO  h22.H22Cache - Start Full Cache Flush in h22
+21:50:50.641  INFO  h22.H22Cache - Building new H22 Cache, db:0
+21:50:50.641  INFO  h22.H22HikariPool - H22 on disk cache:jdbc:h2:/home/runner/work/core/custom/dotsecure/h22cache/0/2023-06-05_21-50-50/cache;MVCC=TRUE;DB_CLOSE_ON_EXIT=FALSE
+21:50:50.641  INFO  hikari.HikariDataSource - HikariPool-27 - Starting...
+21:50:50.641  INFO  pool.PoolBase - HikariPool-27 - Driver does not support get/set network timeout for connections. (Receiver class org.h2.jdbc.JdbcConnection does not define or inherit an implementation of the resolved method 'abstract int getNetworkTimeout()' of interface java.sql.Connection.)
+21:50:50.642  INFO  hikari.HikariDataSource - HikariPool-27 - Start completed.
+21:50:50.642  INFO  hikari.HikariDataSource - HikariPool-25 - Shutdown initiated...
+21:50:50.644  INFO  hikari.HikariDataSource - HikariPool-25 - Shutdown completed.
+21:50:50.644  INFO  h22.H22Cache - Building new H22 Cache, db:1
+21:50:50.644  INFO  h22.H22HikariPool - H22 on disk cache:jdbc:h2:/home/runner/work/core/custom/dotsecure/h22cache/1/2023-06-05_21-50-50/cache;MVCC=TRUE;DB_CLOSE_ON_EXIT=FALSE
+21:50:50.644  INFO  hikari.HikariDataSource - HikariPool-28 - Starting...
+21:50:50.651  INFO  pool.PoolBase - HikariPool-28 - Driver does not support get/set network timeout for connections. (Receiver class org.h2.jdbc.JdbcConnection does not define or inherit an implementation of the resolved method 'abstract int getNetworkTimeout()' of interface java.sql.Connection.)
+21:50:50.654  INFO  hikari.HikariDataSource - HikariPool-28 - Start completed.
+21:50:50.656  INFO  hikari.HikariDataSource - HikariPool-26 - Shutdown initiated...
+21:50:50.663  INFO  hikari.HikariDataSource - HikariPool-26 - Shutdown completed.
+21:50:50.665  INFO  h22.H22Cache - End Full Cache Flush in h22 : 23ms
+21:50:50.665  INFO  timedcache.TimedCacheProvider - ===== Initializing [Timed Cache Provider].
+21:50:50.665  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : default: 1000
+21:50:50.665  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : adminconfigpool: 100
+21:50:50.665  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : companypool: 10
+21:50:50.665  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : contentletcache: 5000
+21:50:50.665  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : csscache: 2500
+21:50:50.665  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : fileassetmetadatacache: 200
+21:50:50.665  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : identifiercache: 50000
+21:50:50.665  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : indiciescache: 8
+21:50:50.665  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : logmappercache: 10
+21:50:50.665  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : navcache: 1000
+21:50:50.665  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : parentpermissionablecache: 10000
+21:50:50.665  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : permissioncache: 50000
+21:50:50.665  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : portletpool: 100
+21:50:50.665  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : publishingendpointcache: 100
+21:50:50.665  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : pushedassetscache: 5000
+21:50:50.665  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : structurecache: 500
+21:50:50.665  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : templatecache: 500
+21:50:50.665  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : translatedquerycache: 5000
+21:50:50.665  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : versioncache: 50000
+21:50:50.665  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : versioninfocache: 50000
+21:50:50.665  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : workflowactioncache: 10000
+21:50:50.665  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : workflowtaskcache: 10000
+21:50:50.665  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : shorty: 25000
+21:50:50.665  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : identifier404cache: 5000
+21:50:50.665  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : velocitycache: 1000
+21:50:50.665  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : vanityurlcache: 1000
+21:50:50.665  INFO  timedcache.TimedCacheProvider - ***	 Cache Config Memory : cachedvanityurlgroup: 1000
+21:50:50.665  INFO  h22.H22Cache - Start Full Cache Flush in h22
+21:50:50.665  INFO  h22.H22Cache - Building new H22 Cache, db:0
+21:50:50.665  INFO  h22.H22HikariPool - H22 on disk cache:jdbc:h2:/home/runner/work/core/custom/dotsecure/h22cache/0/2023-06-05_21-50-50/cache;MVCC=TRUE;DB_CLOSE_ON_EXIT=FALSE
+21:50:50.666  INFO  hikari.HikariDataSource - HikariPool-29 - Starting...
+21:50:50.666  INFO  pool.PoolBase - HikariPool-29 - Driver does not support get/set network timeout for connections. (Receiver class org.h2.jdbc.JdbcConnection does not define or inherit an implementation of the resolved method 'abstract int getNetworkTimeout()' of interface java.sql.Connection.)
+21:50:50.666  INFO  hikari.HikariDataSource - HikariPool-29 - Start completed.
+21:50:50.667  INFO  hikari.HikariDataSource - HikariPool-27 - Shutdown initiated...
+21:50:50.672  INFO  hikari.HikariDataSource - HikariPool-27 - Shutdown completed.
+21:50:50.679  INFO  h22.H22Cache - Building new H22 Cache, db:1
+21:50:50.679  INFO  h22.H22HikariPool - H22 on disk cache:jdbc:h2:/home/runner/work/core/custom/dotsecure/h22cache/1/2023-06-05_21-50-50/cache;MVCC=TRUE;DB_CLOSE_ON_EXIT=FALSE
+21:50:50.679  INFO  hikari.HikariDataSource - HikariPool-30 - Starting...
+21:50:50.680  INFO  pool.PoolBase - HikariPool-30 - Driver does not support get/set network timeout for connections. (Receiver class org.h2.jdbc.JdbcConnection does not define or inherit an implementation of the resolved method 'abstract int getNetworkTimeout()' of interface java.sql.Connection.)
+21:50:50.687  INFO  hikari.HikariDataSource - HikariPool-30 - Start completed.
+21:50:50.687  INFO  hikari.HikariDataSource - HikariPool-28 - Shutdown initiated...
+21:50:50.691  INFO  hikari.HikariDataSource - HikariPool-28 - Shutdown completed.
+21:50:50.692  INFO  h22.H22Cache - End Full Cache Flush in h22 : 26ms
+21:50:50.692  INFO  pool.ProxyLeakTask - Previously reported leaked connection org.postgresql.jdbc.PgConnection@38b721f0 on thread Test worker was returned to the pool (unleaked)
+21:50:50.692  INFO  junit.MainBaseSuite - Checking indexer status...
+21:50:50.699  INFO  junit.MainBaseSuite - Indexer is not empty, waiting for it to finish
+21:50:51.307  ERROR tika.TikaUtils - Failure retrieving OSGI Service [interface com.dotcms.tika.TikaServiceBuilder] in bundle [com.dotcms.tika]
+java.lang.IllegalStateException: [com.dotcms.tika] OSGI bundle NOT FOUND.
+	at org.apache.felix.framework.OSGISystem.getService(OSGISystem.java:228) ~[main/:?]
+	at com.dotcms.tika.TikaUtils.<init>(TikaUtils.java:63) ~[main/:?]
+	at com.dotcms.storage.MetadataGeneratorImpl.tikaBasedMetadata(MetadataGeneratorImpl.java:49) ~[main/:?]
+	at com.dotcms.storage.FileStorageAPIImpl.generateFullMetaData(FileStorageAPIImpl.java:151) ~[main/:?]
+	at com.dotcms.storage.FileStorageAPIImpl.generateMetaData(FileStorageAPIImpl.java:238) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.generateFullMetadata(FileMetadataAPIImpl.java:198) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.internalGenerateContentletMetadata(FileMetadataAPIImpl.java:91) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.generateContentletMetadata(FileMetadataAPIImpl.java:275) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.generateContentletMetadata(FileMetadataAPIImpl.java:260) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESMappingAPIImpl.writeMetadata(ESMappingAPIImpl.java:522) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESMappingAPIImpl.toMap(ESMappingAPIImpl.java:487) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.lambda$addBulkRequest$4c66ed82$1(ContentletIndexAPIImpl.java:806) ~[main/:?]
+	at io.vavr.control.Try.of(Try.java:75) ~[vavr-0.10.3.jar:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.addBulkRequest(ContentletIndexAPIImpl.java:805) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.appendBulkRequest(ContentletIndexAPIImpl.java:743) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.appendToBulkProcessor(ContentletIndexAPIImpl.java:759) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.appendToBulkProcessor(ContentletIndexAPIImpl.java:685) ~[main/:?]
+	at com.dotmarketing.common.reindex.ReindexThread.runReindexLoop(ReindexThread.java:227) ~[main/:?]
+	at com.dotmarketing.common.reindex.ReindexThread.lambda$new$1(ReindexThread.java:159) ~[main/:?]
+	at java.lang.Thread.run(Thread.java:829) ~[?:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) ~[?:?]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[?:?]
+	at java.lang.Thread.run(Thread.java:829) [?:?]
+21:50:51.307  ERROR tika.TikaUtils - Unable to get file Meta Data, OSGI Framework not initialized
+21:50:53.838  ERROR tika.TikaUtils - Failure retrieving OSGI Service [interface com.dotcms.tika.TikaServiceBuilder] in bundle [com.dotcms.tika]
+java.lang.IllegalStateException: [com.dotcms.tika] OSGI bundle NOT FOUND.
+	at org.apache.felix.framework.OSGISystem.getService(OSGISystem.java:228) ~[main/:?]
+	at com.dotcms.tika.TikaUtils.<init>(TikaUtils.java:63) ~[main/:?]
+	at com.dotcms.storage.MetadataGeneratorImpl.tikaBasedMetadata(MetadataGeneratorImpl.java:49) ~[main/:?]
+	at com.dotcms.storage.FileStorageAPIImpl.generateFullMetaData(FileStorageAPIImpl.java:151) ~[main/:?]
+	at com.dotcms.storage.FileStorageAPIImpl.generateMetaData(FileStorageAPIImpl.java:238) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.generateFullMetadata(FileMetadataAPIImpl.java:198) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.internalGenerateContentletMetadata(FileMetadataAPIImpl.java:91) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.generateContentletMetadata(FileMetadataAPIImpl.java:275) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.generateContentletMetadata(FileMetadataAPIImpl.java:260) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESMappingAPIImpl.writeMetadata(ESMappingAPIImpl.java:522) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESMappingAPIImpl.toMap(ESMappingAPIImpl.java:487) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.lambda$addBulkRequest$4c66ed82$1(ContentletIndexAPIImpl.java:806) ~[main/:?]
+	at io.vavr.control.Try.of(Try.java:75) ~[vavr-0.10.3.jar:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.addBulkRequest(ContentletIndexAPIImpl.java:805) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.appendBulkRequest(ContentletIndexAPIImpl.java:743) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.appendToBulkProcessor(ContentletIndexAPIImpl.java:759) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.appendToBulkProcessor(ContentletIndexAPIImpl.java:685) ~[main/:?]
+	at com.dotmarketing.common.reindex.ReindexThread.runReindexLoop(ReindexThread.java:227) ~[main/:?]
+	at com.dotmarketing.common.reindex.ReindexThread.lambda$new$1(ReindexThread.java:159) ~[main/:?]
+	at java.lang.Thread.run(Thread.java:829) ~[?:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) ~[?:?]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[?:?]
+	at java.lang.Thread.run(Thread.java:829) [?:?]
+21:50:53.838  ERROR tika.TikaUtils - Unable to get file Meta Data, OSGI Framework not initialized
+21:50:58.346  ERROR tika.TikaUtils - Failure retrieving OSGI Service [interface com.dotcms.tika.TikaServiceBuilder] in bundle [com.dotcms.tika]
+java.lang.IllegalStateException: [com.dotcms.tika] OSGI bundle NOT FOUND.
+	at org.apache.felix.framework.OSGISystem.getService(OSGISystem.java:228) ~[main/:?]
+	at com.dotcms.tika.TikaUtils.<init>(TikaUtils.java:63) ~[main/:?]
+	at com.dotcms.storage.MetadataGeneratorImpl.tikaBasedMetadata(MetadataGeneratorImpl.java:49) ~[main/:?]
+	at com.dotcms.storage.FileStorageAPIImpl.generateFullMetaData(FileStorageAPIImpl.java:151) ~[main/:?]
+	at com.dotcms.storage.FileStorageAPIImpl.generateMetaData(FileStorageAPIImpl.java:238) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.generateFullMetadata(FileMetadataAPIImpl.java:198) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.internalGenerateContentletMetadata(FileMetadataAPIImpl.java:91) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.generateContentletMetadata(FileMetadataAPIImpl.java:275) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.generateContentletMetadata(FileMetadataAPIImpl.java:260) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESMappingAPIImpl.writeMetadata(ESMappingAPIImpl.java:522) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESMappingAPIImpl.toMap(ESMappingAPIImpl.java:487) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.lambda$addBulkRequest$4c66ed82$1(ContentletIndexAPIImpl.java:806) ~[main/:?]
+	at io.vavr.control.Try.of(Try.java:75) ~[vavr-0.10.3.jar:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.addBulkRequest(ContentletIndexAPIImpl.java:805) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.appendBulkRequest(ContentletIndexAPIImpl.java:743) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.appendToBulkProcessor(ContentletIndexAPIImpl.java:759) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.appendToBulkProcessor(ContentletIndexAPIImpl.java:685) ~[main/:?]
+	at com.dotmarketing.common.reindex.ReindexThread.runReindexLoop(ReindexThread.java:227) ~[main/:?]
+	at com.dotmarketing.common.reindex.ReindexThread.lambda$new$1(ReindexThread.java:159) ~[main/:?]
+	at java.lang.Thread.run(Thread.java:829) ~[?:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) ~[?:?]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[?:?]
+	at java.lang.Thread.run(Thread.java:829) [?:?]
+21:50:58.346  ERROR tika.TikaUtils - Unable to get file Meta Data, OSGI Framework not initialized
+21:51:00.727  WARN  datagen.TestWorkflowUtils - Reindex Queue is not empty after 120 seconds
+21:51:04.511  ERROR tika.TikaUtils - Failure retrieving OSGI Service [interface com.dotcms.tika.TikaServiceBuilder] in bundle [com.dotcms.tika]
+java.lang.IllegalStateException: [com.dotcms.tika] OSGI bundle NOT FOUND.
+	at org.apache.felix.framework.OSGISystem.getService(OSGISystem.java:228) ~[main/:?]
+	at com.dotcms.tika.TikaUtils.<init>(TikaUtils.java:63) ~[main/:?]
+	at com.dotcms.storage.MetadataGeneratorImpl.tikaBasedMetadata(MetadataGeneratorImpl.java:49) ~[main/:?]
+	at com.dotcms.storage.FileStorageAPIImpl.generateFullMetaData(FileStorageAPIImpl.java:151) ~[main/:?]
+	at com.dotcms.storage.FileStorageAPIImpl.generateMetaData(FileStorageAPIImpl.java:238) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.generateFullMetadata(FileMetadataAPIImpl.java:198) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.internalGenerateContentletMetadata(FileMetadataAPIImpl.java:91) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.generateContentletMetadata(FileMetadataAPIImpl.java:275) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.generateContentletMetadata(FileMetadataAPIImpl.java:260) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESMappingAPIImpl.writeMetadata(ESMappingAPIImpl.java:522) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESMappingAPIImpl.toMap(ESMappingAPIImpl.java:487) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.lambda$addBulkRequest$4c66ed82$1(ContentletIndexAPIImpl.java:806) ~[main/:?]
+	at io.vavr.control.Try.of(Try.java:75) ~[vavr-0.10.3.jar:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.addBulkRequest(ContentletIndexAPIImpl.java:805) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.appendBulkRequest(ContentletIndexAPIImpl.java:743) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.appendToBulkProcessor(ContentletIndexAPIImpl.java:759) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.appendToBulkProcessor(ContentletIndexAPIImpl.java:685) ~[main/:?]
+	at com.dotmarketing.common.reindex.ReindexThread.runReindexLoop(ReindexThread.java:227) ~[main/:?]
+	at com.dotmarketing.common.reindex.ReindexThread.lambda$new$1(ReindexThread.java:159) ~[main/:?]
+	at java.lang.Thread.run(Thread.java:829) ~[?:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) ~[?:?]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[?:?]
+	at java.lang.Thread.run(Thread.java:829) [?:?]
+21:51:04.511  ERROR tika.TikaUtils - Unable to get file Meta Data, OSGI Framework not initialized
+21:51:10.744  WARN  datagen.TestWorkflowUtils - Reindex Queue is not empty after 120 seconds
+21:51:10.744  INFO  junit.MainBaseSuite - Indexer Complete=false
+21:51:10.744  INFO  junit.MainBaseSuite - Cleaning queue
+21:51:11.469  INFO  junit.MainBaseSuite - Checking indexer status...
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
