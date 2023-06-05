@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.dotcms.regex.TimeLimitedMatcherFactoryTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2023-06-05T15:48:12" hostname="fv-az398-917" time="36.051">
+  <properties/>
+  <testcase name="test_no_matcher_regex" classname="com.dotcms.regex.TimeLimitedMatcherFactoryTest" time="0.001"/>
+  <testcase name="test_regex_timeout" classname="com.dotcms.regex.TimeLimitedMatcherFactoryTest" time="2.011"/>
+  <testcase name="test_regex_quarantine" classname="com.dotcms.regex.TimeLimitedMatcherFactoryTest" time="34.039"/>
+  <system-out><![CDATA[
+ testing   : ([a-z0-9\-]*)*?$
+ ------------------------------ 
+ string    : /aaaaaaaaaaaaaaaaaaaaaaaa
+ regex took: 0
+ matches   : false
+ string    : a
+ regex took: 0
+ matches   : true
+ string    : /aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa a
+ regex took: 0
+ matches   : false
+ string    : /aaaaaaaaaaaaaaaaaaaaaaaa!
+ regex took: 0
+ matches   : false
+ string    : https://www.dotcms.com/aaaaaaaaaaaaaaaaaaaaaa.html
+ regex took: 0
+ matches   : false
+ string    : /aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa !
+ matches   : false
+ string    : abababababababababababab a
+ matches   : false
+ string    : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab
+ regex took: 0
+ matches   : false
+
+ testing   : ^((ab)*)+$
+ ------------------------------ 
+ string    : /aaaaaaaaaaaaaaaaaaaaaaaa
+ regex took: 0
+ matches   : false
+ string    : a
+ regex took: 0
+ matches   : false
+ string    : /aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa a
+ regex took: 0
+ matches   : false
+ string    : /aaaaaaaaaaaaaaaaaaaaaaaa!
+ regex took: 0
+ matches   : false
+ string    : https://www.dotcms.com/aaaaaaaaaaaaaaaaaaaaaa.html
+ regex took: 0
+ matches   : false
+ string    : /aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa !
+ regex took: 0
+ matches   : false
+ string    : abababababababababababab a
+ regex took: 0
+ matches   : false
+ string    : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab
+ regex took: 0
+ matches   : false
+
+ testing   : (a|aa)+
+ ------------------------------ 
+ string    : /aaaaaaaaaaaaaaaaaaaaaaaa
+ regex took: 0
+ matches   : false
+ string    : a
+ regex took: 0
+ matches   : true
+ string    : /aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa a
+ regex took: 0
+ matches   : false
+ string    : /aaaaaaaaaaaaaaaaaaaaaaaa!
+ regex took: 0
+ matches   : false
+ string    : https://www.dotcms.com/aaaaaaaaaaaaaaaaaaaaaa.html
+ regex took: 0
+ matches   : false
+ string    : /aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa !
+ regex took: 0
+ matches   : false
+ string    : abababababababababababab a
+ regex took: 0
+ matches   : false
+ string    : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab
+ regex took: 0
+ matches   : false
+
+ testing   : ^(([a-z])+.)+[A-Z]([a-z])+$
+ ------------------------------ 
+ string    : /aaaaaaaaaaaaaaaaaaaaaaaa
+ regex took: 0
+ matches   : false
+ string    : a
+ regex took: 0
+ matches   : false
+ string    : /aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa a
+ regex took: 0
+ matches   : false
+ string    : /aaaaaaaaaaaaaaaaaaaaaaaa!
+ regex took: 0
+ matches   : false
+ string    : https://www.dotcms.com/aaaaaaaaaaaaaaaaaaaaaa.html
+ regex took: 0
+ matches   : false
+ string    : /aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa !
+ regex took: 0
+ matches   : false
+ string    : abababababababababababab a
+ regex took: 0
+ matches   : false
+ string    : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab
+ regex took: 0
+ matches   : false
+
+ testing   : ^((((https?|ftps?|gopher|telnet|nntp)://)|(mailto:|news:))(%[0-9A-Fa-f]{2}|[-()_.!~*';/?:@&=+$,A-Za-z0-9])+)([).!';/?:,][[:blank:|:blank:]])?$
+ ------------------------------ 
+ string    : /aaaaaaaaaaaaaaaaaaaaaaaa
+ regex took: 0
+ matches   : false
+ string    : a
+ regex took: 0
+ matches   : false
+ string    : /aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa a
+ regex took: 0
+ matches   : false
+ string    : /aaaaaaaaaaaaaaaaaaaaaaaa!
+ regex took: 0
+ matches   : false
+ string    : https://www.dotcms.com/aaaaaaaaaaaaaaaaaaaaaa.html
+ regex took: 0
+ matches   : true
+ string    : /aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa !
+ regex took: 0
+ matches   : false
+ string    : abababababababababababab a
+ regex took: 0
+ matches   : false
+ string    : aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab
+ regex took: 0
+ matches   : false
+]]></system-out>
+  <system-err><![CDATA[ regex took: 4
+ FAILED : abababababababababababab a
+ regex took: 2005
+]]></system-err>
+</testsuite>
