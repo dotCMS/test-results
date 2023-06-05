@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.dotcms.uuid.shorty.ShortyIdApiTest" tests="11" skipped="0" failures="0" errors="0" timestamp="2023-06-05T15:51:58" hostname="fv-az168-726" time="32.379">
+  <properties/>
+  <testcase name="test404Cache" classname="com.dotcms.uuid.shorty.ShortyIdApiTest" time="2.563"/>
+  <testcase name="test404CacheWhenDBDown" classname="com.dotcms.uuid.shorty.ShortyIdApiTest" time="11.174"/>
+  <testcase name="testShortyLookup" classname="com.dotcms.uuid.shorty.ShortyIdApiTest" time="1.415"/>
+  <testcase name="testUuidIfy" classname="com.dotcms.uuid.shorty.ShortyIdApiTest" time="2.262"/>
+  <testcase name="testLongerShorties" classname="com.dotcms.uuid.shorty.ShortyIdApiTest" time="2.288"/>
+  <testcase name="testShortify" classname="com.dotcms.uuid.shorty.ShortyIdApiTest" time="2.193"/>
+  <testcase name="testContentlet404CacheInvalidation" classname="com.dotcms.uuid.shorty.ShortyIdApiTest" time="2.27"/>
+  <testcase name="testTempShorties" classname="com.dotcms.uuid.shorty.ShortyIdApiTest" time="2.181"/>
+  <testcase name="testShortyCache" classname="com.dotcms.uuid.shorty.ShortyIdApiTest" time="1.336"/>
+  <testcase name="testValidShorty" classname="com.dotcms.uuid.shorty.ShortyIdApiTest" time="2.328"/>
+  <testcase name="testIdentifier404CacheInvalidation" classname="com.dotcms.uuid.shorty.ShortyIdApiTest" time="2.368"/>
+  <system-out><![CDATA[15:52:09.320 [Test worker] ERROR com.dotmarketing.db.DbConnectionFactory - ---------- DBConnectionFactory: error : java.sql.SQLTransientConnectionException: jdbc/dotCMSPool - Connection is not available, request timed out after 3000ms.
+15:52:10.538 [QuartzScheduler_dotCMSQuartz-44d5f041-24c9-4091-8d2a-227f2a785bf3_ClusterManager] ERROR com.dotmarketing.quartz.DotJobStore - ClusterManager: Error managing cluster: Failed to obtain DB connection from data source 'NonTxDataSource.dotCMSQuartz': java.sql.SQLTransientConnectionException: jdbc/dotCMSPool - Connection is not available, request timed out after 3000ms.
+org.quartz.JobPersistenceException: Failed to obtain DB connection from data source 'NonTxDataSource.dotCMSQuartz': java.sql.SQLTransientConnectionException: jdbc/dotCMSPool - Connection is not available, request timed out after 3000ms.
+	at org.quartz.impl.jdbcjobstore.JobStoreCMT.getNonManagedTXConnection(JobStoreCMT.java:165) ~[dot.quartz-all-1.8.6_2.jar:?]
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport.doCheckin(JobStoreSupport.java:3208) ~[dot.quartz-all-1.8.6_2.jar:?]
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport$ClusterManager.manage(JobStoreSupport.java:3847) ~[dot.quartz-all-1.8.6_2.jar:?]
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport$ClusterManager.run(JobStoreSupport.java:3883) ~[dot.quartz-all-1.8.6_2.jar:?]
+Caused by: java.sql.SQLTransientConnectionException: jdbc/dotCMSPool - Connection is not available, request timed out after 3000ms.
+	at com.zaxxer.hikari.pool.HikariPool.createTimeoutException(HikariPool.java:689) ~[HikariCP-3.4.2.jar:?]
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:196) ~[HikariCP-3.4.2.jar:?]
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:161) ~[HikariCP-3.4.2.jar:?]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:100) ~[HikariCP-3.4.2.jar:?]
+	at com.dotmarketing.quartz.DotJobStore$2.getConnection(DotJobStore.java:80) ~[main/:?]
+	at org.quartz.utils.DBConnectionManager.getConnection(DBConnectionManager.java:109) ~[dot.quartz-all-1.8.6_2.jar:?]
+	at org.quartz.impl.jdbcjobstore.JobStoreCMT.getNonManagedTXConnection(JobStoreCMT.java:162) ~[dot.quartz-all-1.8.6_2.jar:?]
+	... 3 more
+15:52:11.277 [dotCMSQuartz_QuartzSchedulerThread] ERROR org.quartz.core.ErrorLogger - An error occured while scanning for the next trigger to fire.
+org.quartz.JobPersistenceException: Failed to obtain DB connection from data source 'NonTxDataSource.dotCMSQuartz': java.sql.SQLTransientConnectionException: jdbc/dotCMSPool - Connection is not available, request timed out after 3000ms.
+	at org.quartz.impl.jdbcjobstore.JobStoreCMT.getNonManagedTXConnection(JobStoreCMT.java:165) ~[dot.quartz-all-1.8.6_2.jar:?]
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport.executeInNonManagedTXLock(JobStoreSupport.java:3785) ~[dot.quartz-all-1.8.6_2.jar:?]
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport.acquireNextTrigger(JobStoreSupport.java:2753) ~[dot.quartz-all-1.8.6_2.jar:?]
+	at org.quartz.core.QuartzSchedulerThread.run(QuartzSchedulerThread.java:263) ~[dot.quartz-all-1.8.6_2.jar:?]
+Caused by: java.sql.SQLTransientConnectionException: jdbc/dotCMSPool - Connection is not available, request timed out after 3000ms.
+	at com.zaxxer.hikari.pool.HikariPool.createTimeoutException(HikariPool.java:689) ~[HikariCP-3.4.2.jar:?]
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:196) ~[HikariCP-3.4.2.jar:?]
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:161) ~[HikariCP-3.4.2.jar:?]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:100) ~[HikariCP-3.4.2.jar:?]
+	at com.dotmarketing.quartz.DotJobStore$2.getConnection(DotJobStore.java:80) ~[main/:?]
+	at org.quartz.utils.DBConnectionManager.getConnection(DBConnectionManager.java:109) ~[dot.quartz-all-1.8.6_2.jar:?]
+	at org.quartz.impl.jdbcjobstore.JobStoreCMT.getNonManagedTXConnection(JobStoreCMT.java:162) ~[dot.quartz-all-1.8.6_2.jar:?]
+	... 3 more
+15:52:12.321 [Test worker] ERROR com.dotmarketing.db.DbConnectionFactory - ---------- DBConnectionFactory: error : java.sql.SQLTransientConnectionException: jdbc/dotCMSPool - Connection is not available, request timed out after 3000ms.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

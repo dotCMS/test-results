@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - Class com.dotmarketing.quartz.job.CleanUpFieldReferencesJobTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>Class com.dotmarketing.quartz.job.CleanUpFieldReferencesJobTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/com.dotmarketing.quartz.job.html">com.dotmarketing.quartz.job</a> &gt; CleanUpFieldReferencesJobTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">4</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">4.161s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">testCleanUpFieldJob[0: TestCase{name='checkboxFieldVarName', fieldValue=CA, values='Canada|CA\r\nMexico|MX\r\nUSA|US', fieldType=class com.dotcms.contenttype.model.field.CheckboxField, isJsonFields=false}]</td>
+<td class="success">1.280s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testCleanUpFieldJob[1: TestCase{name='dateTimeFieldVarName', fieldValue=Sun Jun 04 15:03:42 UTC 2023, values='null', fieldType=class com.dotcms.contenttype.model.field.DateTimeField, isJsonFields=false}]</td>
+<td class="success">0.283s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testCleanUpFieldJob[2: TestCase{name='checkboxFieldVarName', fieldValue=CA, values='Canada|CA\r\nMexico|MX\r\nUSA|US', fieldType=class com.dotcms.contenttype.model.field.CheckboxField, isJsonFields=true}]</td>
+<td class="success">1.237s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testCleanUpFieldJob[3: TestCase{name='dateTimeFieldVarName', fieldValue=null, values='null', fieldType=class com.dotcms.contenttype.model.field.DateTimeField, isJsonFields=true}]</td>
+<td class="success">1.361s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>16:31:55.086 [Test worker] ERROR com.dotcms.IntegrationTestBase - Test testCleanUpFieldJob[0: TestCase{name='checkboxFieldVarName', fieldValue=CA, values='Canada|CA\r\nMexico|MX\r\nUSA|US', fieldType=class com.dotcms.contenttype.model.field.CheckboxField, isJsonFields=false}] has open connection after
+16:31:56.331 [dot-ReindexThreadSubmitter-0] ERROR com.dotmarketing.portlets.contentlet.transform.ContentletTransformer - Unable to populate contentlet from table columns for ID='7c6da07e7851c6bc12020950972536ba', Inode='71b97530-345b-4a1c-acf5-bf8f32745654', Content-Type '7e4e29928edfab4be678ee21a28c35c4': Contentlet's identifier not found in db. Contentlet's inode: 71b97530-345b-4a1c-acf5-bf8f32745654. Contentlet's identifier: 7c6da07e7851c6bc12020950972536ba
+com.dotmarketing.business.DotStateException: Contentlet's identifier not found in db. Contentlet's inode: 71b97530-345b-4a1c-acf5-bf8f32745654. Contentlet's identifier: 7c6da07e7851c6bc12020950972536ba
+	at com.dotmarketing.portlets.contentlet.transform.ContentletTransformer.populateFolderAndHost(ContentletTransformer.java:164) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.transform.ContentletTransformer.transform(ContentletTransformer.java:118) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.transform.ContentletTransformer.&lt;init&gt;(ContentletTransformer.java:63) ~[main/:?]
+	at com.dotcms.util.transform.TransformerLocator.createContentletTransformer(TransformerLocator.java:137) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentFactoryImpl.findInDb(ESContentFactoryImpl.java:841) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.findInDb(ESContentletAPIImpl.java:573) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.ContentletAPIInterceptor.findInDb(ContentletAPIInterceptor.java:2918) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.appendBulkRequest(ContentletIndexAPIImpl.java:723) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.appendToBulkProcessor(ContentletIndexAPIImpl.java:759) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.appendToBulkProcessor(ContentletIndexAPIImpl.java:685) ~[main/:?]
+	at com.dotmarketing.common.reindex.ReindexThread.runReindexLoop(ReindexThread.java:227) ~[main/:?]
+	at com.dotmarketing.common.reindex.ReindexThread.lambda$new$1(ReindexThread.java:159) ~[main/:?]
+	at java.lang.Thread.run(Thread.java:829) ~[?:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) ~[?:?]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[?:?]
+	at java.lang.Thread.run(Thread.java:829) [?:?]
+16:31:56.377 [Test worker] ERROR com.dotcms.IntegrationTestBase - Test testCleanUpFieldJob[1: TestCase{name='dateTimeFieldVarName', fieldValue=Sun Jun 04 15:03:42 UTC 2023, values='null', fieldType=class com.dotcms.contenttype.model.field.DateTimeField, isJsonFields=false}] has open connection after
+16:31:56.610 [Test worker] ERROR com.dotcms.IntegrationTestBase - Test testCleanUpFieldJob[2: TestCase{name='checkboxFieldVarName', fieldValue=CA, values='Canada|CA\r\nMexico|MX\r\nUSA|US', fieldType=class com.dotcms.contenttype.model.field.CheckboxField, isJsonFields=true}] has open connection after
+16:31:57.968 [Test worker] ERROR com.dotcms.IntegrationTestBase - Test testCleanUpFieldJob[3: TestCase{name='dateTimeFieldVarName', fieldValue=null, values='null', fieldType=class com.dotcms.contenttype.model.field.DateTimeField, isJsonFields=true}] has open connection after
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 7.3.3</a> at Jun 5, 2023, 4:57:48 PM</p>
+</div>
+</div>
+</body>
+</html>

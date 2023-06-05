@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - Class com.dotcms.uuid.shorty.ShortyIdApiTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>Class com.dotcms.uuid.shorty.ShortyIdApiTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/com.dotcms.uuid.shorty.html">com.dotcms.uuid.shorty</a> &gt; ShortyIdApiTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">11</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">32.378s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">test404Cache</td>
+<td class="success">2.563s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">test404CacheWhenDBDown</td>
+<td class="success">11.174s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testContentlet404CacheInvalidation</td>
+<td class="success">2.270s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testIdentifier404CacheInvalidation</td>
+<td class="success">2.368s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testLongerShorties</td>
+<td class="success">2.288s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testShortify</td>
+<td class="success">2.193s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testShortyCache</td>
+<td class="success">1.336s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testShortyLookup</td>
+<td class="success">1.415s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testTempShorties</td>
+<td class="success">2.181s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testUuidIfy</td>
+<td class="success">2.262s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testValidShorty</td>
+<td class="success">2.328s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>15:52:09.320 [Test worker] ERROR com.dotmarketing.db.DbConnectionFactory - ---------- DBConnectionFactory: error : java.sql.SQLTransientConnectionException: jdbc/dotCMSPool - Connection is not available, request timed out after 3000ms.
+15:52:10.538 [QuartzScheduler_dotCMSQuartz-44d5f041-24c9-4091-8d2a-227f2a785bf3_ClusterManager] ERROR com.dotmarketing.quartz.DotJobStore - ClusterManager: Error managing cluster: Failed to obtain DB connection from data source 'NonTxDataSource.dotCMSQuartz': java.sql.SQLTransientConnectionException: jdbc/dotCMSPool - Connection is not available, request timed out after 3000ms.
+org.quartz.JobPersistenceException: Failed to obtain DB connection from data source 'NonTxDataSource.dotCMSQuartz': java.sql.SQLTransientConnectionException: jdbc/dotCMSPool - Connection is not available, request timed out after 3000ms.
+	at org.quartz.impl.jdbcjobstore.JobStoreCMT.getNonManagedTXConnection(JobStoreCMT.java:165) ~[dot.quartz-all-1.8.6_2.jar:?]
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport.doCheckin(JobStoreSupport.java:3208) ~[dot.quartz-all-1.8.6_2.jar:?]
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport$ClusterManager.manage(JobStoreSupport.java:3847) ~[dot.quartz-all-1.8.6_2.jar:?]
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport$ClusterManager.run(JobStoreSupport.java:3883) ~[dot.quartz-all-1.8.6_2.jar:?]
+Caused by: java.sql.SQLTransientConnectionException: jdbc/dotCMSPool - Connection is not available, request timed out after 3000ms.
+	at com.zaxxer.hikari.pool.HikariPool.createTimeoutException(HikariPool.java:689) ~[HikariCP-3.4.2.jar:?]
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:196) ~[HikariCP-3.4.2.jar:?]
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:161) ~[HikariCP-3.4.2.jar:?]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:100) ~[HikariCP-3.4.2.jar:?]
+	at com.dotmarketing.quartz.DotJobStore$2.getConnection(DotJobStore.java:80) ~[main/:?]
+	at org.quartz.utils.DBConnectionManager.getConnection(DBConnectionManager.java:109) ~[dot.quartz-all-1.8.6_2.jar:?]
+	at org.quartz.impl.jdbcjobstore.JobStoreCMT.getNonManagedTXConnection(JobStoreCMT.java:162) ~[dot.quartz-all-1.8.6_2.jar:?]
+	... 3 more
+15:52:11.277 [dotCMSQuartz_QuartzSchedulerThread] ERROR org.quartz.core.ErrorLogger - An error occured while scanning for the next trigger to fire.
+org.quartz.JobPersistenceException: Failed to obtain DB connection from data source 'NonTxDataSource.dotCMSQuartz': java.sql.SQLTransientConnectionException: jdbc/dotCMSPool - Connection is not available, request timed out after 3000ms.
+	at org.quartz.impl.jdbcjobstore.JobStoreCMT.getNonManagedTXConnection(JobStoreCMT.java:165) ~[dot.quartz-all-1.8.6_2.jar:?]
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport.executeInNonManagedTXLock(JobStoreSupport.java:3785) ~[dot.quartz-all-1.8.6_2.jar:?]
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport.acquireNextTrigger(JobStoreSupport.java:2753) ~[dot.quartz-all-1.8.6_2.jar:?]
+	at org.quartz.core.QuartzSchedulerThread.run(QuartzSchedulerThread.java:263) ~[dot.quartz-all-1.8.6_2.jar:?]
+Caused by: java.sql.SQLTransientConnectionException: jdbc/dotCMSPool - Connection is not available, request timed out after 3000ms.
+	at com.zaxxer.hikari.pool.HikariPool.createTimeoutException(HikariPool.java:689) ~[HikariCP-3.4.2.jar:?]
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:196) ~[HikariCP-3.4.2.jar:?]
+	at com.zaxxer.hikari.pool.HikariPool.getConnection(HikariPool.java:161) ~[HikariCP-3.4.2.jar:?]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:100) ~[HikariCP-3.4.2.jar:?]
+	at com.dotmarketing.quartz.DotJobStore$2.getConnection(DotJobStore.java:80) ~[main/:?]
+	at org.quartz.utils.DBConnectionManager.getConnection(DBConnectionManager.java:109) ~[dot.quartz-all-1.8.6_2.jar:?]
+	at org.quartz.impl.jdbcjobstore.JobStoreCMT.getNonManagedTXConnection(JobStoreCMT.java:162) ~[dot.quartz-all-1.8.6_2.jar:?]
+	... 3 more
+15:52:12.321 [Test worker] ERROR com.dotmarketing.db.DbConnectionFactory - ---------- DBConnectionFactory: error : java.sql.SQLTransientConnectionException: jdbc/dotCMSPool - Connection is not available, request timed out after 3000ms.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 7.3.3</a> at Jun 5, 2023, 4:57:48 PM</p>
+</div>
+</div>
+</body>
+</html>

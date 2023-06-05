@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - Class com.dotcms.integritycheckers.IntegrityUtilTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>Class com.dotcms.integritycheckers.IntegrityUtilTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/com.dotcms.integritycheckers.html">com.dotcms.integritycheckers</a> &gt; IntegrityUtilTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">7</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">8.940s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">contentFileWithConflicts</td>
+<td class="success">3.053s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">contentTypeWithConflicts</td>
+<td class="success">0.103s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">folderWithConflicts[0: true]</td>
+<td class="success">0.606s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">folderWithConflicts[1: false]</td>
+<td class="success">0.989s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">hostFileWithConflicts</td>
+<td class="success">2.055s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">pageFileWithConflicts</td>
+<td class="success">2.049s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">roleFileWithConflicts</td>
+<td class="success">0.085s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>16:51:45.306 [Test worker] ERROR com.dotcms.tika.TikaUtils - Failure retrieving OSGI Service [interface com.dotcms.tika.TikaServiceBuilder] in bundle [com.dotcms.tika]
+java.lang.IllegalStateException: [com.dotcms.tika] OSGI bundle NOT FOUND.
+	at org.apache.felix.framework.OSGISystem.getService(OSGISystem.java:228) ~[main/:?]
+	at com.dotcms.tika.TikaUtils.&lt;init&gt;(TikaUtils.java:63) ~[main/:?]
+	at com.dotcms.storage.MetadataGeneratorImpl.tikaBasedMetadata(MetadataGeneratorImpl.java:49) ~[main/:?]
+	at com.dotcms.storage.FileStorageAPIImpl.generateFullMetaData(FileStorageAPIImpl.java:151) ~[main/:?]
+	at com.dotcms.storage.FileStorageAPIImpl.generateMetaData(FileStorageAPIImpl.java:238) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.generateFullMetadata(FileMetadataAPIImpl.java:198) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.internalGenerateContentletMetadata(FileMetadataAPIImpl.java:91) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.generateContentletMetadata(FileMetadataAPIImpl.java:275) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.generateContentletMetadata(FileMetadataAPIImpl.java:260) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESMappingAPIImpl.writeMetadata(ESMappingAPIImpl.java:522) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESMappingAPIImpl.toMap(ESMappingAPIImpl.java:487) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.lambda$addBulkRequest$4c66ed82$1(ContentletIndexAPIImpl.java:806) ~[main/:?]
+	at io.vavr.control.Try.of(Try.java:75) ~[vavr-0.10.3.jar:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.addBulkRequest(ContentletIndexAPIImpl.java:805) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.appendBulkRequest(ContentletIndexAPIImpl.java:767) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.createBulkRequest(ContentletIndexAPIImpl.java:635) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.indexContentListNow(ContentletIndexAPIImpl.java:576) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.addContentToIndex(ContentletIndexAPIImpl.java:570) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.lambda$addContentToIndex$2(ContentletIndexAPIImpl.java:528) ~[main/:?]
+	at com.dotmarketing.db.HibernateUtil$DotSyncRunnable.run(HibernateUtil.java:1016) ~[main/:?]
+	at com.dotmarketing.db.DotRunnableThread.internalRunner(DotRunnableThread.java:99) ~[main/:?]
+	at com.dotmarketing.db.LocalTransaction.wrap(LocalTransaction.java:165) ~[main/:?]
+	at com.dotmarketing.db.DotRunnableThread.run(DotRunnableThread.java:53) ~[main/:?]
+	at com.dotmarketing.db.HibernateUtil.finalizeCommitListeners(HibernateUtil.java:1165) ~[main/:?]
+	at com.dotmarketing.db.HibernateUtil.commitTransaction(HibernateUtil.java:1257) ~[main/:?]
+	at com.dotcms.business.bytebuddy.WrapInTransactionAdvice.exit(WrapInTransactionAdvice.java:63) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:5082) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:10007) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:4867) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.ContentletAPIInterceptor.checkin(ContentletAPIInterceptor.java:266) ~[main/:?]
+	at com.dotcms.datagen.ContentletDataGen.checkin(ContentletDataGen.java:327) ~[integrationTest/:?]
+	at com.dotcms.datagen.ContentletDataGen.persist(ContentletDataGen.java:233) ~[integrationTest/:?]
+	at com.dotcms.datagen.ContentletDataGen.nextPersisted(ContentletDataGen.java:219) ~[integrationTest/:?]
+	at com.dotcms.integritycheckers.IntegrityUtilTest.contentFileWithConflicts(IntegrityUtilTest.java:159) ~[integrationTest/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:38) ~[integrationTest/:?]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:14) ~[integrationTest/:?]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.MainBaseSuite$DotRunner.run(MainBaseSuite.java:60) ~[integrationTest/:?]
+	at org.junit.runners.Suite.runChild(Suite.java:128) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.Suite.runChild(Suite.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[?:?]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[?:?]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[?:?]
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[?:?]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[?:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:?]
+16:51:45.306 [Test worker] ERROR com.dotcms.tika.TikaUtils - Unable to get file Meta Data, OSGI Framework not initialized
+16:51:46.372 [Test worker] ERROR com.dotcms.tika.TikaUtils - Failure retrieving OSGI Service [interface com.dotcms.tika.TikaServiceBuilder] in bundle [com.dotcms.tika]
+java.lang.IllegalStateException: [com.dotcms.tika] OSGI bundle NOT FOUND.
+	at org.apache.felix.framework.OSGISystem.getService(OSGISystem.java:228) ~[main/:?]
+	at com.dotcms.tika.TikaUtils.&lt;init&gt;(TikaUtils.java:63) ~[main/:?]
+	at com.dotcms.storage.MetadataGeneratorImpl.tikaBasedMetadata(MetadataGeneratorImpl.java:49) ~[main/:?]
+	at com.dotcms.storage.FileStorageAPIImpl.generateFullMetaData(FileStorageAPIImpl.java:151) ~[main/:?]
+	at com.dotcms.storage.FileStorageAPIImpl.generateMetaData(FileStorageAPIImpl.java:238) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.generateFullMetadata(FileMetadataAPIImpl.java:198) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.internalGenerateContentletMetadata(FileMetadataAPIImpl.java:91) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.generateContentletMetadata(FileMetadataAPIImpl.java:275) ~[main/:?]
+	at com.dotcms.storage.FileMetadataAPIImpl.generateContentletMetadata(FileMetadataAPIImpl.java:260) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESMappingAPIImpl.writeMetadata(ESMappingAPIImpl.java:522) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESMappingAPIImpl.toMap(ESMappingAPIImpl.java:487) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.lambda$addBulkRequest$4c66ed82$1(ContentletIndexAPIImpl.java:806) ~[main/:?]
+	at io.vavr.control.Try.of(Try.java:75) ~[vavr-0.10.3.jar:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.addBulkRequest(ContentletIndexAPIImpl.java:805) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.appendBulkRequest(ContentletIndexAPIImpl.java:767) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.createBulkRequest(ContentletIndexAPIImpl.java:635) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.indexContentListNow(ContentletIndexAPIImpl.java:576) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.addContentToIndex(ContentletIndexAPIImpl.java:570) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ContentletIndexAPIImpl.lambda$addContentToIndex$2(ContentletIndexAPIImpl.java:528) ~[main/:?]
+	at com.dotmarketing.db.HibernateUtil$DotSyncRunnable.run(HibernateUtil.java:1016) ~[main/:?]
+	at com.dotmarketing.db.DotRunnableThread.internalRunner(DotRunnableThread.java:99) ~[main/:?]
+	at com.dotmarketing.db.LocalTransaction.wrap(LocalTransaction.java:165) ~[main/:?]
+	at com.dotmarketing.db.DotRunnableThread.run(DotRunnableThread.java:53) ~[main/:?]
+	at com.dotmarketing.db.HibernateUtil.finalizeCommitListeners(HibernateUtil.java:1165) ~[main/:?]
+	at com.dotmarketing.db.HibernateUtil.commitTransaction(HibernateUtil.java:1257) ~[main/:?]
+	at com.dotcms.business.bytebuddy.WrapInTransactionAdvice.exit(WrapInTransactionAdvice.java:63) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:5082) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:10007) ~[main/:?]
+	at com.dotcms.content.elasticsearch.business.ESContentletAPIImpl.checkin(ESContentletAPIImpl.java:4867) ~[main/:?]
+	at com.dotmarketing.portlets.contentlet.business.ContentletAPIInterceptor.checkin(ContentletAPIInterceptor.java:266) ~[main/:?]
+	at com.dotcms.datagen.ContentletDataGen.checkin(ContentletDataGen.java:327) ~[integrationTest/:?]
+	at com.dotcms.datagen.ContentletDataGen.checkin(ContentletDataGen.java:319) ~[integrationTest/:?]
+	at com.dotcms.integritycheckers.IntegrityUtilTest.contentFileWithConflicts(IntegrityUtilTest.java:163) ~[integrationTest/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.TestWatcher$1.evaluate(TestWatcher.java:61) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:38) ~[integrationTest/:?]
+	at com.dotcms.junit.CustomDataProviderRunner.runChild(CustomDataProviderRunner.java:14) ~[integrationTest/:?]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at com.dotcms.junit.MainBaseSuite$DotRunner.run(MainBaseSuite.java:60) ~[integrationTest/:?]
+	at org.junit.runners.Suite.runChild(Suite.java:128) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.Suite.runChild(Suite.java:27) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[?:?]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[?:?]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[?:?]
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[?:?]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[?:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:?]
+16:51:46.372 [Test worker] ERROR com.dotcms.tika.TikaUtils - Unable to get file Meta Data, OSGI Framework not initialized
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 7.3.3</a> at Jun 5, 2023, 4:57:47 PM</p>
+</div>
+</div>
+</body>
+</html>
