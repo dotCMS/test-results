@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.dotmarketing.business.cache.provider.h22.H22CacheTest" tests="10" skipped="7" failures="0" errors="0" timestamp="2023-06-05T20:50:04" hostname="fv-az257-606" time="37.425">
+  <properties/>
+  <testcase name="Test_Exhaust_Thread_Pool[0: com.dotmarketing.business.cache.provider.h22.H22CacheTest$ToleranceTestCase@625fef9a]" classname="com.dotmarketing.business.cache.provider.h22.H22CacheTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="Test_Exhaust_Thread_Pool[1: com.dotmarketing.business.cache.provider.h22.H22CacheTest$ToleranceTestCase@fe30bd7]" classname="com.dotmarketing.business.cache.provider.h22.H22CacheTest" time="0.001">
+    <skipped/>
+  </testcase>
+  <testcase name="Test_Exhaust_Thread_Pool[2: com.dotmarketing.business.cache.provider.h22.H22CacheTest$ToleranceTestCase@6f582e17]" classname="com.dotmarketing.business.cache.provider.h22.H22CacheTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="Test_Exhaust_Thread_Pool[3: com.dotmarketing.business.cache.provider.h22.H22CacheTest$ToleranceTestCase@f9f9398]" classname="com.dotmarketing.business.cache.provider.h22.H22CacheTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="Test_Exhaust_Thread_Pool[4: com.dotmarketing.business.cache.provider.h22.H22CacheTest$ToleranceTestCase@12a18ece]" classname="com.dotmarketing.business.cache.provider.h22.H22CacheTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="Test_Exhaust_Thread_Pool[5: com.dotmarketing.business.cache.provider.h22.H22CacheTest$ToleranceTestCase@50b82fe]" classname="com.dotmarketing.business.cache.provider.h22.H22CacheTest" time="0.001">
+    <skipped/>
+  </testcase>
+  <testcase name="Test_Exhaust_Thread_Pool[6: com.dotmarketing.business.cache.provider.h22.H22CacheTest$ToleranceTestCase@2b8d3cde]" classname="com.dotmarketing.business.cache.provider.h22.H22CacheTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="test_basic_cache_operations" classname="com.dotmarketing.business.cache.provider.h22.H22CacheTest" time="18.069"/>
+  <testcase name="test_multi_threaded_h22_including_recovery" classname="com.dotmarketing.business.cache.provider.h22.H22CacheTest" time="13.099"/>
+  <testcase name="test_special_cases_like_long_names" classname="com.dotmarketing.business.cache.provider.h22.H22CacheTest" time="6.254"/>
+  <system-out><![CDATA[20:50:03.969  INFO  h22.H22Cache - Initing H22 cache db:0
+20:50:03.973  INFO  h22.H22Cache - Building new H22 Cache, db:0
+20:50:03.989  INFO  h22.H22HikariPool - H22 on disk cache:jdbc:h2:/tmp/h2cachetest/0/2023-06-05_20-50-03/cache;MVCC=TRUE;DB_CLOSE_ON_EXIT=FALSE
+20:50:03.994  INFO  hikari.HikariDataSource - HikariPool-1 - Starting...
+20:50:04.636  INFO  pool.PoolBase - HikariPool-1 - Driver does not support get/set network timeout for connections. (Receiver class org.h2.jdbc.JdbcConnection does not define or inherit an implementation of the resolved method 'abstract int getNetworkTimeout()' of interface java.sql.Connection.)
+20:50:04.640  INFO  hikari.HikariDataSource - HikariPool-1 - Start completed.
+20:50:04.689  INFO  h22.H22Cache - Initing H22 cache db:1
+20:50:04.689  INFO  h22.H22Cache - Building new H22 Cache, db:1
+20:50:04.689  INFO  h22.H22HikariPool - H22 on disk cache:jdbc:h2:/tmp/h2cachetest/1/2023-06-05_20-50-04/cache;MVCC=TRUE;DB_CLOSE_ON_EXIT=FALSE
+20:50:04.690  INFO  hikari.HikariDataSource - HikariPool-2 - Starting...
+20:50:04.734  INFO  pool.PoolBase - HikariPool-2 - Driver does not support get/set network timeout for connections. (Receiver class org.h2.jdbc.JdbcConnection does not define or inherit an implementation of the resolved method 'abstract int getNetworkTimeout()' of interface java.sql.Connection.)
+20:50:04.737  INFO  hikari.HikariDataSource - HikariPool-2 - Start completed.
+20:50:05.300  INFO  h22.H22Cache - Flushing H22 cache group:testgroup |  Note: this can be an expensive operation
+20:50:11.315  INFO  h22.H22Cache - Flushing H22 cache group:testgroup2 |  Note: this can be an expensive operation
+20:50:17.329  INFO  h22.H22Cache - Flushing H22 cache group:mybiggroup |  Note: this can be an expensive operation
+20:50:35.911  INFO  h22.H22CacheTest - Number of groups: 100
+20:50:35.929  INFO  h22.H22Cache - Flushing H22 cache group:group_1 |  Note: this can be an expensive operation
+20:50:36.446  INFO  h22.H22Cache - Flushing H22 cache group:thifsais-as-disadisaidsadiias-dsaidisadisaid |  Note: this can be an expensive operation
+20:50:36.456  WARN  h22.H22Cache - Error #0 class com.dotmarketing.business.cache.provider.h22.H22CacheTest$CantCacheMeObject cannot be cast to class java.io.Serializable (com.dotmarketing.business.cache.provider.h22.H22CacheTest$CantCacheMeObject is in unnamed module of loader 'app'; java.io.Serializable is in module java.base of loader 'bootstrap') on thifsais-as-disadisaidsadiias-dsaidisadisaid | cantcacheme
+java.lang.ClassCastException: class com.dotmarketing.business.cache.provider.h22.H22CacheTest$CantCacheMeObject cannot be cast to class java.io.Serializable (com.dotmarketing.business.cache.provider.h22.H22CacheTest$CantCacheMeObject is in unnamed module of loader 'app'; java.io.Serializable is in module java.base of loader 'bootstrap')
+	at com.dotmarketing.business.cache.provider.h22.H22Cache.lambda$putAsync$0(H22Cache.java:157) ~[main/:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) ~[?:?]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[?:?]
+	at java.lang.Thread.run(Thread.java:829) [?:?]
+20:50:41.961  INFO  h22.H22Cache - Start Full Cache Flush in h22
+20:50:41.961  INFO  h22.H22Cache - Building new H22 Cache, db:0
+20:50:41.962  INFO  h22.H22HikariPool - H22 on disk cache:jdbc:h2:/tmp/h2cachetest/0/2023-06-05_20-50-41/cache;MVCC=TRUE;DB_CLOSE_ON_EXIT=FALSE
+20:50:41.962  INFO  hikari.HikariDataSource - HikariPool-3 - Starting...
+20:50:42.003  INFO  pool.PoolBase - HikariPool-3 - Driver does not support get/set network timeout for connections. (Receiver class org.h2.jdbc.JdbcConnection does not define or inherit an implementation of the resolved method 'abstract int getNetworkTimeout()' of interface java.sql.Connection.)
+20:50:42.003  INFO  hikari.HikariDataSource - HikariPool-3 - Start completed.
+20:50:42.014  INFO  hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+20:50:42.090  INFO  hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+20:50:42.093  INFO  h22.H22Cache - Building new H22 Cache, db:1
+20:50:42.093  INFO  h22.H22HikariPool - H22 on disk cache:jdbc:h2:/tmp/h2cachetest/1/2023-06-05_20-50-42/cache;MVCC=TRUE;DB_CLOSE_ON_EXIT=FALSE
+20:50:42.093  INFO  hikari.HikariDataSource - HikariPool-4 - Starting...
+20:50:42.133  INFO  pool.PoolBase - HikariPool-4 - Driver does not support get/set network timeout for connections. (Receiver class org.h2.jdbc.JdbcConnection does not define or inherit an implementation of the resolved method 'abstract int getNetworkTimeout()' of interface java.sql.Connection.)
+20:50:42.133  INFO  hikari.HikariDataSource - HikariPool-4 - Start completed.
+20:50:42.153  INFO  hikari.HikariDataSource - HikariPool-2 - Shutdown initiated...
+20:50:42.188  INFO  hikari.HikariDataSource - HikariPool-2 - Shutdown completed.
+20:50:42.198  INFO  h22.H22Cache - End Full Cache Flush in h22 : 230ms
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

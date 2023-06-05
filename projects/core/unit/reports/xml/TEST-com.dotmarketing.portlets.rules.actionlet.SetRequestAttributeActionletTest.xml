@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.dotmarketing.portlets.rules.actionlet.SetRequestAttributeActionletTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2023-06-05T20:50:46" hostname="fv-az257-606" time="0.024">
+  <properties/>
+  <testcase name="testGeneralConfiguration" classname="com.dotmarketing.portlets.rules.actionlet.SetRequestAttributeActionletTest" time="0.001"/>
+  <testcase name="testValidateParameters[0: Null key is not valid]" classname="com.dotmarketing.portlets.rules.actionlet.SetRequestAttributeActionletTest" time="0.015"/>
+  <testcase name="testValidateParameters[1: An empty string for key is invalid]" classname="com.dotmarketing.portlets.rules.actionlet.SetRequestAttributeActionletTest" time="0.0"/>
+  <testcase name="testValidateParameters[2: A single character key is valid]" classname="com.dotmarketing.portlets.rules.actionlet.SetRequestAttributeActionletTest" time="0.0"/>
+  <testcase name="testValidateParameters[3: A null value is valid]" classname="com.dotmarketing.portlets.rules.actionlet.SetRequestAttributeActionletTest" time="0.001"/>
+  <testcase name="testValidateParameters[4: An empty string value is valid]" classname="com.dotmarketing.portlets.rules.actionlet.SetRequestAttributeActionletTest" time="0.0"/>
+  <testcase name="testExecuteActionTreatsNullValueAsEmptyString" classname="com.dotmarketing.portlets.rules.actionlet.SetRequestAttributeActionletTest" time="0.001"/>
+  <system-out><![CDATA[20:50:46.418  INFO  util.Config - Setting property: API_LOCATOR_IMPLEMENTATION to com.dotcms.UnitTestBase$MyAPILocator
+20:50:46.418  INFO  util.Config - Setting property: SYSTEM_EXIT_ON_STARTUP_FAILURE to false
+20:50:46.421  WARN  rules.RuleComponentDefinition - Unexpected error creating component.
+java.lang.IllegalArgumentException: SetRequestAttributeActionlet requires valid key.
+	at com.dotcms.repackage.com.google.common.base.Preconditions.checkArgument(Preconditions.java:88) ~[dot.guava-11.0.1_2.jar:?]
+	at com.dotmarketing.portlets.rules.actionlet.SetRequestAttributeActionlet$Instance.<init>(SetRequestAttributeActionlet.java:55) ~[main/:?]
+	at com.dotmarketing.portlets.rules.actionlet.SetRequestAttributeActionlet.instanceFrom(SetRequestAttributeActionlet.java:37) ~[main/:?]
+	at com.dotmarketing.portlets.rules.actionlet.SetRequestAttributeActionlet.instanceFrom(SetRequestAttributeActionlet.java:22) ~[main/:?]
+	at com.dotmarketing.portlets.rules.RuleComponentDefinition.doCheckValid(RuleComponentDefinition.java:89) ~[main/:?]
+	at com.dotmarketing.portlets.rules.actionlet.SetRequestAttributeActionletTest.testValidateParameters(SetRequestAttributeActionletTest.java:68) ~[test/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56) ~[junit-4.13.2.jar:4.13.2]
+	at com.tngtech.java.junit.dataprovider.DataProviderFrameworkMethod.invokeExplosively(DataProviderFrameworkMethod.java:119) ~[junit4-dataprovider-2.6.jar:2.6]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306) ~[junit-4.13.2.jar:4.13.2]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413) ~[junit-4.13.2.jar:4.13.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) ~[?:?]
+	at jdk.internal.reflect.GeneratedMethodAccessor55.invoke(Unknown Source) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36) ~[?:?]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) ~[?:?]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33) ~[?:?]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94) ~[?:?]
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100) ~[?:?]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60) ~[?:?]
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133) ~[?:?]
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71) ~[?:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:?]
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:?]
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

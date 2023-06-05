@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.dotcms.filters.NormalizationFilterTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2023-06-05T20:49:01" hostname="fv-az257-606" time="0.059">
+  <properties/>
+  <testcase name="test_uri_normalizer_invalid_uris" classname="com.dotcms.filters.NormalizationFilterTest" time="0.012"/>
+  <testcase name="test_stripping_bad_chars" classname="com.dotcms.filters.NormalizationFilterTest" time="0.019"/>
+  <testcase name="test_allow_spaces_in_uri" classname="com.dotcms.filters.NormalizationFilterTest" time="0.001"/>
+  <testcase name="test_uri_normalization_valid_URI" classname="com.dotcms.filters.NormalizationFilterTest" time="0.002"/>
+  <testcase name="test_uri_normalizer_dot_and_double_dots" classname="com.dotcms.filters.NormalizationFilterTest" time="0.007"/>
+  <testcase name="test_uri_normalization_invalid_URI" classname="com.dotcms.filters.NormalizationFilterTest" time="0.011"/>
+  <testcase name="test_allow_utf8_in_uri" classname="com.dotcms.filters.NormalizationFilterTest" time="0.0"/>
+  <testcase name="test_uri_normalizer_fixes_semicolons" classname="com.dotcms.filters.NormalizationFilterTest" time="0.003"/>
+  <system-out><![CDATA[20:49:01.377  WARN  filters.NormalizationFilter - Invalid URI from:127.0.0.1, returning a 404
+20:49:01.377  WARN  filters.NormalizationFilter - Invalid URI passed:/\///folder//important////secret_file.dat
+20:49:01.379  WARN  filters.NormalizationFilter - com.dotcms.filters.NormalizationFilter.doFilter(NormalizationFilter.java:78)
+20:49:01.380  WARN  filters.NormalizationFilter - Invalid URI from:127.0.0.1, returning a 404
+20:49:01.380  WARN  filters.NormalizationFilter - Invalid URI passed:/folder/impo;rtant/secret_file.dat
+20:49:01.381  WARN  filters.NormalizationFilter - com.dotcms.filters.NormalizationFilter.doFilter(NormalizationFilter.java:78)
+20:49:01.381  WARN  filters.NormalizationFilter - Invalid URI from:127.0.0.1, returning a 404
+20:49:01.381  WARN  filters.NormalizationFilter - Invalid URI passed:/folder/impo..rtant/secret_file.dat
+20:49:01.382  WARN  filters.NormalizationFilter - com.dotcms.filters.NormalizationFilter.doFilter(NormalizationFilter.java:78)
+20:49:01.382  WARN  filters.NormalizationFilter - Invalid URI from:127.0.0.1, returning a 404
+20:49:01.383  WARN  filters.NormalizationFilter - Invalid URI passed:/folder/impo/./rtant/secret_file.dat
+20:49:01.383  WARN  filters.NormalizationFilter - com.dotcms.filters.NormalizationFilter.doFilter(NormalizationFilter.java:78)
+20:49:01.384  WARN  filters.NormalizationFilter - Invalid URI from:127.0.0.1, returning a 404
+20:49:01.384  WARN  filters.NormalizationFilter - Invalid URI passed:/folder/impo\rtant/secret_file.dat
+20:49:01.384  WARN  filters.NormalizationFilter - com.dotcms.filters.NormalizationFilter.doFilter(NormalizationFilter.java:78)
+20:49:01.385  WARN  filters.NormalizationFilter - Invalid URI from:127.0.0.1, returning a 404
+20:49:01.385  WARN  filters.NormalizationFilter - Invalid URI passed:/folder/impo?rtant/secret_file.dat
+20:49:01.385  WARN  filters.NormalizationFilter - com.dotcms.filters.NormalizationFilter.doFilter(NormalizationFilter.java:78)
+20:49:01.386  WARN  filters.NormalizationFilter - Invalid URI from:127.0.0.1, returning a 404
+20:49:01.386  WARN  filters.NormalizationFilter - Invalid URI passed:/folder/impo%3Brtant/secret_file.dat
+20:49:01.386  WARN  filters.NormalizationFilter - com.dotcms.filters.NormalizationFilter.doFilter(NormalizationFilter.java:78)
+20:49:01.387  WARN  filters.NormalizationFilter - Invalid URI from:127.0.0.1, returning a 404
+20:49:01.387  WARN  filters.NormalizationFilter - Invalid URI passed:/folder/impo%2Ertant/secret_file.dat
+20:49:01.387  WARN  filters.NormalizationFilter - com.dotcms.filters.NormalizationFilter.doFilter(NormalizationFilter.java:78)
+20:49:01.388  WARN  filters.NormalizationFilter - Invalid URI from:127.0.0.1, returning a 404
+20:49:01.388  WARN  filters.NormalizationFilter - Invalid URI passed:/folder/impo%5Crtant/secret_file.dat
+20:49:01.389  WARN  filters.NormalizationFilter - com.dotcms.filters.NormalizationFilter.doFilter(NormalizationFilter.java:78)
+20:49:01.390  WARN  filters.NormalizationFilter - Invalid URI from:127.0.0.1, returning a 404
+20:49:01.390  WARN  filters.NormalizationFilter - Invalid URI passed:/folder/impo%3Frtant/secret_file.dat
+20:49:01.390  WARN  filters.NormalizationFilter - com.dotcms.filters.NormalizationFilter.doFilter(NormalizationFilter.java:78)
+20:49:01.391  WARN  filters.NormalizationFilter - Invalid URI from:127.0.0.1, returning a 404
+20:49:01.391  WARN  filters.NormalizationFilter - Invalid URI passed:/folder/impo%00rtant/secret_file.dat
+20:49:01.394  WARN  filters.NormalizationFilter - com.dotcms.filters.NormalizationFilter.doFilter(NormalizationFilter.java:78)
+20:49:01.394  WARN  filters.NormalizationFilter - Invalid URI from:127.0.0.1, returning a 404
+20:49:01.394  WARN  filters.NormalizationFilter - Invalid URI passed:/folder/impo?rtant/secret_file.dat
+20:49:01.395  WARN  filters.NormalizationFilter - com.dotcms.filters.NormalizationFilter.doFilter(NormalizationFilter.java:78)
+20:49:01.395  WARN  filters.NormalizationFilter - Invalid URI from:127.0.0.1, returning a 404
+20:49:01.395  WARN  filters.NormalizationFilter - Invalid URI passed:/folder/important/secret_file.dat
+20:49:01.396  WARN  filters.NormalizationFilter - com.dotcms.filters.NormalizationFilter.doFilter(NormalizationFilter.java:78)
+20:49:01.396  WARN  filters.NormalizationFilter - Invalid URI from:127.0.0.1, returning a 404
+20:49:01.396  WARN  filters.NormalizationFilter - Invalid URI passed:/folder/impo
+rtant/secret_file.dat
+20:49:01.397  WARN  filters.NormalizationFilter - com.dotcms.filters.NormalizationFilter.doFilter(NormalizationFilter.java:78)
+20:49:01.397  WARN  filters.NormalizationFilter - Invalid URI from:127.0.0.1, returning a 404
+20:49:01.397  WARN  filters.NormalizationFilter - Invalid URI passed:/folder/impo?rtant/secret_file.dat
+20:49:01.398  WARN  filters.NormalizationFilter - com.dotcms.filters.NormalizationFilter.doFilter(NormalizationFilter.java:78)
+20:49:01.401  WARN  filters.NormalizationFilter - Invalid URI from:127.0.0.1, returning a 404
+20:49:01.401  WARN  filters.NormalizationFilter - Invalid URI passed:../folder/folder1/file.dat
+20:49:01.402  WARN  filters.NormalizationFilter - com.dotcms.filters.NormalizationFilter.doFilter(NormalizationFilter.java:78)
+20:49:01.403  WARN  filters.NormalizationFilter - Invalid URI from:127.0.0.1, returning a 404
+20:49:01.404  WARN  filters.NormalizationFilter - Invalid URI passed:///test/../folder/important//../secret_file.dat
+20:49:01.405  WARN  filters.NormalizationFilter - com.dotcms.filters.NormalizationFilter.doFilter(NormalizationFilter.java:78)
+20:49:01.407  WARN  filters.NormalizationFilter - Invalid URI from:127.0.0.1, returning a 404
+20:49:01.407  WARN  filters.NormalizationFilter - Invalid URI passed:./folder/./folder1/file.dat/../
+20:49:01.408  WARN  filters.NormalizationFilter - com.dotcms.filters.NormalizationFilter.doFilter(NormalizationFilter.java:78)
+20:49:01.409  WARN  filters.NormalizationFilter - Invalid URI from:127.0.0.1, returning a 404
+20:49:01.409  WARN  filters.NormalizationFilter - Invalid URI passed:../folder/./folder1/file.dat
+20:49:01.409  WARN  filters.NormalizationFilter - com.dotcms.filters.NormalizationFilter.doFilter(NormalizationFilter.java:78)
+20:49:01.410  WARN  filters.NormalizationFilter - Invalid URI from:127.0.0.1, returning a 404
+20:49:01.411  WARN  filters.NormalizationFilter - Invalid URI passed:/test/../folder/important/secret_file.dat
+20:49:01.411  WARN  filters.NormalizationFilter - com.dotcms.filters.NormalizationFilter.doFilter(NormalizationFilter.java:78)
+20:49:01.412  WARN  filters.NormalizationFilter - Invalid URI from:127.0.0.1, returning a 404
+20:49:01.412  WARN  filters.NormalizationFilter - Invalid URI passed:/test/../folder/folder1/forward_jsp.jsp
+20:49:01.412  WARN  filters.NormalizationFilter - com.dotcms.filters.NormalizationFilter.doFilter(NormalizationFilter.java:78)
+20:49:01.413  WARN  filters.NormalizationFilter - Invalid URI from:127.0.0.1, returning a 404
+20:49:01.413  WARN  filters.NormalizationFilter - Invalid URI passed:/test/../folder/important/../secret_file.dat
+20:49:01.414  WARN  filters.NormalizationFilter - com.dotcms.filters.NormalizationFilter.doFilter(NormalizationFilter.java:78)
+20:49:01.414  WARN  filters.NormalizationFilter - Invalid URI from:127.0.0.1, returning a 404
+20:49:01.414  WARN  filters.NormalizationFilter - Invalid URI passed:/./folder/folder1/file.dat
+20:49:01.415  WARN  filters.NormalizationFilter - com.dotcms.filters.NormalizationFilter.doFilter(NormalizationFilter.java:78)
+20:49:01.415  WARN  filters.NormalizationFilter - Invalid URI from:127.0.0.1, returning a 404
+20:49:01.416  WARN  filters.NormalizationFilter - Invalid URI passed:./folder/./folder1/file.dat
+20:49:01.416  WARN  filters.NormalizationFilter - com.dotcms.filters.NormalizationFilter.doFilter(NormalizationFilter.java:78)
+20:49:01.416  WARN  filters.NormalizationFilter - Invalid URI from:127.0.0.1, returning a 404
+20:49:01.417  WARN  filters.NormalizationFilter - Invalid URI passed:../../../folder/./folder1/file.dat
+20:49:01.417  WARN  filters.NormalizationFilter - com.dotcms.filters.NormalizationFilter.doFilter(NormalizationFilter.java:78)
+20:49:01.417  WARN  filters.NormalizationFilter - Invalid URI from:127.0.0.1, returning a 404
+20:49:01.418  WARN  filters.NormalizationFilter - Invalid URI passed:..
+20:49:01.418  WARN  filters.NormalizationFilter - com.dotcms.filters.NormalizationFilter.doFilter(NormalizationFilter.java:78)
+20:49:01.419  WARN  filters.NormalizationFilter - Invalid URI from:127.0.0.1, returning a 404
+20:49:01.419  WARN  filters.NormalizationFilter - Invalid URI passed:../
+20:49:01.419  WARN  filters.NormalizationFilter - com.dotcms.filters.NormalizationFilter.doFilter(NormalizationFilter.java:78)
+20:49:01.420  WARN  filters.NormalizationFilter - Invalid URI from:127.0.0.1, returning a 404
+20:49:01.420  WARN  filters.NormalizationFilter - Invalid URI passed:../..
+20:49:01.420  WARN  filters.NormalizationFilter - com.dotcms.filters.NormalizationFilter.doFilter(NormalizationFilter.java:78)
+20:49:01.421  WARN  filters.NormalizationFilter - Invalid URI from:127.0.0.1, returning a 404
+20:49:01.421  WARN  filters.NormalizationFilter - Invalid URI passed:../../
+20:49:01.421  WARN  filters.NormalizationFilter - com.dotcms.filters.NormalizationFilter.doFilter(NormalizationFilter.java:78)
+20:49:01.423  WARN  filters.NormalizationFilter - Invalid URI from:127.0.0.1, returning a 404
+20:49:01.424  WARN  filters.NormalizationFilter - Invalid URI passed://folder;/important/secret_file.dat
+20:49:01.424  WARN  filters.NormalizationFilter - com.dotcms.filters.NormalizationFilter.doFilter(NormalizationFilter.java:78)
+20:49:01.424  WARN  filters.NormalizationFilter - Invalid URI from:127.0.0.1, returning a 404
+20:49:01.425  WARN  filters.NormalizationFilter - Invalid URI passed:///folder/important/secret_file.dat;jsessionId=0
+20:49:01.425  WARN  filters.NormalizationFilter - com.dotcms.filters.NormalizationFilter.doFilter(NormalizationFilter.java:78)
+20:49:01.426  WARN  filters.NormalizationFilter - Invalid URI from:127.0.0.1, returning a 404
+20:49:01.426  WARN  filters.NormalizationFilter - Invalid URI passed:////;jsessionId=0;folder/important/secret_file.dat
+20:49:01.426  WARN  filters.NormalizationFilter - com.dotcms.filters.NormalizationFilter.doFilter(NormalizationFilter.java:78)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
