@@ -1,0 +1,2 @@
+<tr><td><a href="./ContentTypeResourceTests.html">ContentTypeResourceTests.json</a></td><td style="color: #ffffff; background-color: #dc3545; font-weight: bold;">FAILED</td>
+      <td>255.342</td></tr>
