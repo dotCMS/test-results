@@ -1,2 +1,0 @@
-<tr><td><a href="./Page_Version_with_diferrent_Templates.postman_collection.html">Page Version with diferrent Templates.postman_collection.json</a></td><td style="color: #ffffff; background-color: #28a745; font-weight: bold;">PASSED</td>
-      <td>102.042</td></tr>
