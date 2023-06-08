@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.dotcms.dotpubsub.PostgresPubSubImplTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2023-06-08T22:12:47" hostname="fv-az471-686" time="13.116">
+  <properties/>
+  <testcase name="test_ping" classname="com.dotcms.dotpubsub.PostgresPubSubImplTest" time="2.008"/>
+  <testcase name="test_reconnection" classname="com.dotcms.dotpubsub.PostgresPubSubImplTest" time="5.085"/>
+  <testcase name="test_cluster_request_response" classname="com.dotcms.dotpubsub.PostgresPubSubImplTest" time="2.002"/>
+  <testcase name="test_adding_removing_topic" classname="com.dotcms.dotpubsub.PostgresPubSubImplTest" time="4.011"/>
+  <testcase name="test_sending_a_large_message_fails_and_recovers" classname="com.dotcms.dotpubsub.PostgresPubSubImplTest" time="0.01"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[Jun 08, 2023 10:12:52 PM com.impossibl.postgres.system.Settings set
+WARNING: Applying unknown setting: autosave
+Jun 08, 2023 10:12:54 PM com.impossibl.postgres.jdbc.PGDirectConnection reportNotification
+WARNING: Exception in connection listener
+java.lang.NullPointerException
+	at com.dotcms.enterprise.ClusterUtil.getNodeInfo(ClusterUtil.java:127)
+	at com.dotcms.enterprise.ClusterUtilProxy.getNodeInfo(ClusterUtilProxy.java:81)
+	at com.dotcms.cache.transport.CacheTransportTopic.lambda$new$edddb4be$1(CacheTransportTopic.java:128)
+	at com.dotcms.cache.transport.CacheTransportTopic.notify(CacheTransportTopic.java:87)
+	at com.dotcms.dotpubsub.PostgresPubSubImpl$1.lambda$notification$4(PostgresPubSubImpl.java:125)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at com.dotcms.dotpubsub.PostgresPubSubImpl$1.notification(PostgresPubSubImpl.java:123)
+	at com.impossibl.postgres.jdbc.PGDirectConnection.reportNotification(PGDirectConnection.java:1507)
+	at com.impossibl.postgres.jdbc.PGDirectConnection.connectionNotificationReceived(PGDirectConnection.java:1441)
+	at com.impossibl.postgres.system.BasicContext$ServerConnectionListener.notificationReceived(BasicContext.java:133)
+	at com.impossibl.postgres.protocol.v30.ServerConnectionFactory$DefaultHandler.notification(ServerConnectionFactory.java:556)
+	at com.impossibl.postgres.protocol.v30.MessageDispatchHandler.receiveNotification(MessageDispatchHandler.java:417)
+	at com.impossibl.postgres.protocol.v30.MessageDispatchHandler.parseAndDispatch(MessageDispatchHandler.java:307)
+	at com.impossibl.postgres.protocol.v30.MessageDispatchHandler.dispatch(MessageDispatchHandler.java:221)
+	at com.impossibl.postgres.protocol.v30.MessageDispatchHandler.channelRead(MessageDispatchHandler.java:152)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:355)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:321)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:295)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:355)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+	at io.netty.channel.epoll.AbstractEpollStreamChannel$EpollStreamUnsafe.epollInReady(AbstractEpollStreamChannel.java:792)
+	at io.netty.channel.epoll.EpollEventLoop.processReady(EpollEventLoop.java:475)
+	at io.netty.channel.epoll.EpollEventLoop.run(EpollEventLoop.java:378)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+]]></system-err>
+</testsuite>
