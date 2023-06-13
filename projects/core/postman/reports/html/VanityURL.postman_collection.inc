@@ -1,2 +1,0 @@
-<tr><td><a href="./VanityURL.postman_collection.html">VanityURL.postman_collection.json</a></td><td style="color: #ffffff; background-color: #dc3545; font-weight: bold;">FAILED</td>
-      <td>4.058</td></tr>
