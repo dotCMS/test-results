@@ -1,0 +1,2 @@
+<tr><td><a href="./DotFavoritePage.postman_collection.html">DotFavoritePage.postman_collection.json</a></td><td style="color: #ffffff; background-color: #28a745; font-weight: bold;">PASSED</td>
+      <td>51.123</td></tr>
