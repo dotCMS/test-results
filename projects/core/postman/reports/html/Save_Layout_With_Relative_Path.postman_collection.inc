@@ -1,2 +1,0 @@
-<tr><td><a href="./Save_Layout_With_Relative_Path.postman_collection.html">Save Layout With Relative Path.postman_collection.json</a></td><td style="color: #ffffff; background-color: #28a745; font-weight: bold;">PASSED</td>
-      <td>74.565</td></tr>
