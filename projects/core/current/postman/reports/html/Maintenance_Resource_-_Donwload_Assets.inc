@@ -1,2 +1,0 @@
-<tr><td><a href="./Maintenance_Resource_-_Donwload_Assets.html">Maintenance Resource - Donwload Assets.json</a></td><td style="color: #ffffff; background-color: #28a745; font-weight: bold;">PASSED</td>
-      <td>9.333</td></tr>
