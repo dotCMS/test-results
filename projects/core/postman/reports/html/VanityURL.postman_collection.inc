@@ -1,2 +1,0 @@
-<tr><td><a href="./VanityURL.postman_collection.html">VanityURL.postman_collection.json</a></td><td style="color: #ffffff; background-color: #28a745; font-weight: bold;">PASSED</td>
-      <td>38.499</td></tr>
