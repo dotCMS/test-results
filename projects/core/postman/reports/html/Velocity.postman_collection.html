@@ -472,7 +472,7 @@ body.theme-light code {
                 <a class="nav-link text-white" id="pills-requests-tab" data-toggle="pill" href="#pills-requests" role="tab" aria-controls="pills-requests" aria-selected="false">Total Requests <span class="badge badge-light">2</span></a>
             </li>
             <li class="nav-item bg-danger" data-toggle="tooltip" title="Click to view the Failed Tests">
-                <a class="nav-link text-white" id="pills-failed-tab" data-toggle="pill" href="#pills-failed" role="tab" aria-controls="pills-failed" aria-selected="false">Failed Tests <span class="badge badge-light">0</span></a>
+                <a class="nav-link text-white" id="pills-failed-tab" data-toggle="pill" href="#pills-failed" role="tab" aria-controls="pills-failed" aria-selected="false">Failed Tests <span class="badge badge-light">2</span></a>
             </li>
             <li class="nav-item bg-warning" data-toggle="tooltip" title="Click to view the Skipped Tests">
                 <a class="nav-link text-white" id="pills-skipped-tab" data-toggle="pill" href="#pills-skipped" role="tab" aria-controls="pills-skipped" aria-selected="false">Skipped Tests <span class="badge badge-light">0</span></a>
@@ -483,11 +483,11 @@ body.theme-light code {
 <div class="row">
   <div class="col-md-9 col-lg-12 main">
    <h1 class="display-2 text-center">Newman Run Dashboard</h1>
-   <h5 class="text-center">Thursday, 12 October 2023 18:34:31</h5>
+   <h5 class="text-center">Thursday, 12 October 2023 18:43:59</h5>
    <div class="row">
     <div class="col-lg-3 col-md-6">
      <div class="card text-white card-success">
-      <div class="card-body bg-success">
+      <div class="card-body bg-danger">
        <div class="rotate">
         <i class="fa fa-retweet fa-5x"></i>
        </div>
@@ -509,12 +509,12 @@ body.theme-light code {
     </div>
     <div class="col-lg-3 col-md-6">
      <div class="card text-white card-info">
-      <div class="card-body bg-success">
+      <div class="card-body bg-danger">
        <div class="rotate">
         <i class="fa fa-plus-circle fa-5x"></i>
        </div>
        <h6 class="text-uppercase">Total Failed Tests</h6>
-       <h1 class="display-1">0</h1>
+       <h1 class="display-1">2</h1>
       </div>
      </div>
     </div>
@@ -550,9 +550,9 @@ body.theme-light code {
             <div class="card border-info">
                 <div class="card-body">
                 <h5 class="card-title text-uppercase text-white text-center bg-info">Timings and Data</h5>
-                <span><i class="fas fa-stopwatch"></i></span><strong> Total run duration:</strong> 18s<br>
-                <span><i class="fas fa-database"></i></span><strong> Total data received:</strong> 26.43KB<br>
-                <span><i class="fas fa-stopwatch"></i></span><strong> Average response time:</strong> 8.9s<br>
+                <span><i class="fas fa-stopwatch"></i></span><strong> Total run duration:</strong> 198ms<br>
+                <span><i class="fas fa-database"></i></span><strong> Total data received:</strong> 765B<br>
+                <span><i class="fas fa-stopwatch"></i></span><strong> Average response time:</strong> 56ms<br>
                 </div>
             </div>
         </div>
@@ -584,10 +584,10 @@ body.theme-light code {
                         <td class="text-center">2</td>
                         <td class="text-center">0</td>
                     </tr>
-                    <tr class="">
+                    <tr class="table-danger">
                         <td>Assertions</td>
                         <td class="text-center">2</td>
-                        <td class="text-center">0</td>
+                        <td class="text-center">2</td>
                     </tr>
                     <tr class="">
                         <td>Skipped Tests</td>
@@ -608,9 +608,57 @@ body.theme-light code {
             <div class="tab-pane fade" id="pills-failed" role="tabcard" aria-labelledby="pills-failed-tab">
                 <button id="topOfFailuresScreen" class="btn btn-outline-success btn-sm backToTop" onclick="topFunction()">Go To Top</button>
 
-                <div class="alert alert-success text-uppercase text-center">
-                     <br><br><h1 class="text-center">There are no failed tests <span><i class="far fa-thumbs-up"></i></span></h1><br><br>
-                </div>
+                    <div class="btn-group float-right" role="group" aria-label="Button Group">
+                        <button id="openAllFailed" class="btn btn-outline-success btn-sm float-right" style="text-align: center; width: 185px;">Expand All Failed Tests</button>
+                    </div>
+                    <br>
+                    <br>
+
+                    <div class="alert alert-danger text-uppercase text-center">
+                        <h4>Showing 2 Failures</h4>
+                    </div>
+                    <div class="col-sm-12 mb-3">
+                    <div class="card-deck">
+                        <div class="card border-danger">
+                            <div class="card-header bg-danger">
+                                <a data-toggle="collapse" href="#" data-target="#fails-collapse-e63c7768-25d5-4637-96b0-b76171e5e90b" aria-expanded="false" aria-controls="collapse" id="fails-e63c7768-25d5-4637-96b0-b76171e5e90b" class="collapsed text-white z-block">
+                                    Iteration 1 - AssertionError - Velocity - pre_ImportBundleWithPage <i class="float-lg-right fa fa-chevron-down" style="padding-top:5px;"></i>
+                                </a>
+                            </div>
+                            <div id="fails-collapse-e63c7768-25d5-4637-96b0-b76171e5e90b" class="collapse" aria-labelledby="fails-e63c7768-25d5-4637-96b0-b76171e5e90b">
+                            <div class="card-body">
+                                <h5 ><strong>Failed Test:</strong> Bundle uploaded sucessfully</h5>
+                            <hr>
+                            <h5 class="card-title text-uppercase text-white text-center bg-danger">Assertion Error Message</h5>
+                            <div>
+                                <pre><code >expected response to have status code 200 but got 500</code></pre>
+                            </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="col-sm-12 mb-3">
+                    <div class="card-deck">
+                        <div class="card border-danger">
+                            <div class="card-header bg-danger">
+                                <a data-toggle="collapse" href="#" data-target="#fails-collapse-0bc4ec89-bf54-4512-856d-6923d47c56cd" aria-expanded="false" aria-controls="collapse" id="fails-0bc4ec89-bf54-4512-856d-6923d47c56cd" class="collapsed text-white z-block">
+                                    Iteration 1 - AssertionError - Velocity - renderPageWithJSONField <i class="float-lg-right fa fa-chevron-down" style="padding-top:5px;"></i>
+                                </a>
+                            </div>
+                            <div id="fails-collapse-0bc4ec89-bf54-4512-856d-6923d47c56cd" class="collapse" aria-labelledby="fails-0bc4ec89-bf54-4512-856d-6923d47c56cd">
+                            <div class="card-body">
+                                <h5 ><strong>Failed Test:</strong> Verify Visitor&#x27;s IP</h5>
+                            <hr>
+                            <h5 class="card-title text-uppercase text-white text-center bg-danger">Assertion Error Message</h5>
+                            <div>
+                                <pre><code >expected response to have status code 200 but got 404</code></pre>
+                            </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
             </div>
 
             <div class="tab-pane fade" id="pills-skipped" role="tabcard" aria-labelledby="pills-skipped-tab">
@@ -625,6 +673,7 @@ body.theme-light code {
             <button id="topOfRequestsScreen" class="btn btn-outline-success btn-sm backToTop" onclick="topFunction()">Go To Top</button>
 
             <div class="btn-group float-right" role="group" aria-label="Button Group">
+                <button id="showOnlyFailures" class="btn btn-outline-success btn-sm float-right" style="text-align: center; width:160px;">Show Failed Iterations</button>
                 <button id="openAll" class="btn btn-outline-success btn-sm float-right" style="text-align: center; width: 140px;">Expand Folders</button>
                 <button id="openAllRequests" class="btn btn-outline-success btn-sm float-right" style="text-align: center; width: 140px;">Expand Requests</button>
             </div>
@@ -639,16 +688,16 @@ body.theme-light code {
     </div>
     <h6 class="text-uppercase text-muted" id="iterationSelected" style="padding-top: 10px;"></h6>
 	<div class="tab-content" id="execution-data">
-            <div id="folder-f12e80a5-68ba-4da8-931e-7e8f2107b1c5" class="card-deck iteration-0">
+            <div id="folder-80e75021-817c-4930-8082-192bb3a31ec9" class="card-deck iteration-0">
             <div class="row iteration-0">
                 <div class="col-sm-12 mb-3 iteration-0">
                 <div class="card iteration-0">
-                    <div class="card-header  bg-success iteration-0">
-                        <a data-toggle="collapse" href="#" data-target="#collapse-f12e80a5-68ba-4da8-931e-7e8f2107b1c5" aria-expanded="false" aria-controls="collapse" id="requests-f12e80a5-68ba-4da8-931e-7e8f2107b1c5" class="collapsed text-white z-block">
+                    <div class="card-header  bg-danger iteration-0">
+                        <a data-toggle="collapse" href="#" data-target="#collapse-80e75021-817c-4930-8082-192bb3a31ec9" aria-expanded="false" aria-controls="collapse" id="requests-80e75021-817c-4930-8082-192bb3a31ec9" class="collapsed text-white z-block">
                     Iteration: 1 - pre_ImportBundleWithPage <i class="float-lg-right fa fa-chevron-down" style="padding-top: 5px;"></i>
                 </a>
                     </div>
-                    <div id="collapse-f12e80a5-68ba-4da8-931e-7e8f2107b1c5" class="collapse" aria-labelledby="requests-f12e80a5-68ba-4da8-931e-7e8f2107b1c5">
+                    <div id="collapse-80e75021-817c-4930-8082-192bb3a31ec9" class="collapse" aria-labelledby="requests-80e75021-817c-4930-8082-192bb3a31ec9">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-sm-12 mb-3">
@@ -679,15 +728,15 @@ body.theme-light code {
                                 <div class="card border-info" style="width: 50rem;">
                                     <div class="card-body">
                                     <h5 class="card-title text-uppercase text-white text-center bg-info">Response Information</h5>
-                                    <span><i class="fas fa-info-circle"></i></span><strong> Response Code:</strong> <span class="float-right badge-outline badge badge-success"> 200 - OK</span><br>
-                                    <span><i class="fas fa-stopwatch"></i></span><strong> Mean time per request:</strong> <span class="float-right badge-outline badge badge-success"> 17.7s</span><br>
-                                    <span><i class="fas fa-database"></i></span><strong> Mean size per request:</strong> <span class="float-right badge-outline badge badge-success"> 60B</span><br>
+                                    <span><i class="fas fa-info-circle"></i></span><strong> Response Code:</strong> <span class="float-right badge-outline badge badge-success"> 500 - Internal Server Error</span><br>
+                                    <span><i class="fas fa-stopwatch"></i></span><strong> Mean time per request:</strong> <span class="float-right badge-outline badge badge-success"> 85ms</span><br>
+                                    <span><i class="fas fa-database"></i></span><strong> Mean size per request:</strong> <span class="float-right badge-outline badge badge-success"> 0B</span><br>
                                     <hr>
                                     <h5 class="card-title text-uppercase text-white text-center bg-info">Test Pass Percentage</h5>
                                     <div>
                                         <div class="progress" style="height: 40px;">
-                                            <div class="progress-bar  bg-success" style="width: 100%" role="progressbar">
-                                            <h5 style="padding-top:5px;"><strong>100 %</strong></h5>
+                                            <div class="progress-bar  bg-danger" style="width: 100%" role="progressbar">
+                                            <h5 style="padding-top:5px;"><strong>0 %</strong></h5>
                                             </div>
                                         </div>
                                     </div>
@@ -732,7 +781,7 @@ body.theme-light code {
                                                     </tr>
                                                     <tr>
                                                         <td class="text-nowrap">Postman-Token</td>
-                                                        <td class="text-wrap">41fe2577-1894-430b-a815-7806618c903b</td>
+                                                        <td class="text-wrap">0a6681ef-c7b7-4dd9-9b77-7ae0f2b2a7eb</td>
                                                     </tr>
                                                     <tr>
                                                         <td class="text-nowrap">Host</td>
@@ -786,80 +835,24 @@ body.theme-light code {
                                         <thead class="thead-light text-center"><tr><th>Header Name</th><th>Header Value</th></tr></thead>
                                             <tbody>
                                                 <tr>
-                                                    <td class="text-nowrap">X-Frame-Options</td>
-                                                    <td class="text-wrap">SAMEORIGIN</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-nowrap">X-Content-Type-Options</td>
-                                                    <td class="text-wrap">nosniff</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-nowrap">X-XSS-Protection</td>
-                                                    <td class="text-wrap">1; mode&#x3D;block</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-nowrap">x-dot-server</td>
-                                                    <td class="text-wrap">ef564c2cea55|80a745346f</td>
-                                                </tr>
-                                                <tr>
                                                     <td class="text-nowrap">Set-Cookie</td>
-                                                    <td class="text-wrap">JSESSIONID&#x3D;890B7AFF97B893823F0AD59EB1815ADF; Path&#x3D;/; Secure; HttpOnly; SameSite&#x3D;Lax</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-nowrap">Set-Cookie</td>
-                                                    <td class="text-wrap">access_token&#x3D;eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJmNmJhM2JlOC1hNDk4LTRkOTQtODRlNS03MDYzMDhhN2ZiY2QiLCJ4bW9kIjoxNjk3MTM1NjU0NDExLCJzdWIiOiJkb3RjbXMub3JnLjEiLCJpYXQiOjE2OTcxMzU2NTcsImlzcyI6IjhlMzcwZGQ1MjciLCJleHAiOjE2OTcyMjIwNTd9.sG7ztRiUUp5jvbzv4Kt8iNT4AsPWIRc50hb1j86wdUE; Path&#x3D;/; HttpOnly; SameSite&#x3D;Lax</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-nowrap">Access-Control-Allow-Origin</td>
-                                                    <td class="text-wrap">*</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-nowrap">Access-Control-Allow-Methods</td>
-                                                    <td class="text-wrap">GET,PUT,POST,DELETE,HEAD,OPTIONS,PATCH</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-nowrap">Access-Control-Allow-Credentials</td>
-                                                    <td class="text-wrap">true</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-nowrap">Access-Control-Allow-Headers</td>
-                                                    <td class="text-wrap">*</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-nowrap">Access-Control-Expose-Headers</td>
-                                                    <td class="text-wrap">*</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-nowrap">Cache-Control</td>
-                                                    <td class="text-wrap">no-cache, no-store, must-revalidate</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-nowrap">Pragma</td>
-                                                    <td class="text-wrap">no-cache</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-nowrap">Expires</td>
-                                                    <td class="text-wrap">Mon, 26 Jul 1997 05:00:00 GMT</td>
+                                                    <td class="text-wrap">JSESSIONID&#x3D;DDF28990FA19E95E5B02E670EBCF72D5; Path&#x3D;/; Secure; HttpOnly; SameSite&#x3D;Lax</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">Content-Type</td>
-                                                    <td class="text-wrap">application/json;charset&#x3D;utf-8</td>
+                                                    <td class="text-wrap">text/html</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">Content-Length</td>
-                                                    <td class="text-wrap">60</td>
+                                                    <td class="text-wrap">0</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">Date</td>
-                                                    <td class="text-wrap">Thu, 12 Oct 2023 18:34:31 GMT</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-nowrap">Keep-Alive</td>
-                                                    <td class="text-wrap">timeout&#x3D;3</td>
+                                                    <td class="text-wrap">Thu, 12 Oct 2023 18:43:59 GMT</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">Connection</td>
-                                                    <td class="text-wrap">keep-alive</td>
+                                                    <td class="text-wrap">close</td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -875,12 +868,7 @@ body.theme-light code {
                             <div class="card border-info" style="width: 50rem;">
                                 <div class="card-body">
                                     <h5 class="card-title text-uppercase text-white text-center bg-info">Response Body</h5>
-                                        <div class="dyn-height">
-                                                <pre><code id="copyText-86abab0b-bd23-49fe-b433-e630073cb7c8" class="prettyPrint">{&quot;bundleName&quot;:&quot;jsonFieldVelocity.tar.gz&quot;,&quot;status&quot;:&quot;SUCCESS&quot;}</code></pre>
-                                        </div>
-                                        <div class="card-footer">
-                                            <button class="btn btn-outline-secondary btn-sm copyButton" type="button" data-clipboard-action="copy" data-clipboard-target="#copyText-86abab0b-bd23-49fe-b433-e630073cb7c8">Copy to Clipboard</button>
-                                        </div>
+                                    <h5 class="alert alert-success text-uppercase text-center">No Response Body for this request</h5>
                                 </div>
                             </div>
                             </div>
@@ -896,22 +884,22 @@ body.theme-light code {
                                             <tbody>
                                                 <tr >
                                                     <td >Bundle uploaded sucessfully</td>
-                                                    <td class="text-center bg-success">1</td>
                                                     <td class="text-center ">0</td>
+                                                    <td class="text-center bg-danger">1</td>
                                                     <td class="text-center ">0</td>
                                                 </tr>
                                             </tbody>
                                             <tfoot>
                                                 <tr class="bg-light">
                                                     <td><strong>Total</strong></td>
-                                                    <td class="text-center">1</td>
                                                     <td class="text-center">0</td>
+                                                    <td class="text-center">1</td>
                                                     <td class="text-center">0</td>
                                                 </tr>
                                             </tfoot>
                                         </table>
                                     </div>
-                                    <div class="row d-none">
+                                    <div class="row ">
                                     <div class="col-sm-12 mb-3">
                                         <div class="card-deck">
                                         <div class="card border-danger" style="width: 50rem;">
@@ -921,6 +909,10 @@ body.theme-light code {
                                                     <table class="table table-hover">
                                                     <thead><tr class="text-nowrap"><th>Test Name</th><th>Assertion Error</th></tr></thead>
                                                         <tbody>
+                                                            <tr>
+                                                                <td class="w-45 text-nowrap ">Bundle uploaded sucessfully</td>
+                                                                <td class="w-55"><pre><code >expected response to have status code 200 but got 500</code></pre></td>
+                                                            </tr>
                                                         </tbody>
                                                     </table>
                                                 </div>
@@ -938,16 +930,16 @@ body.theme-light code {
                 </div>
             </div>
             </div>
-            <div id="folder-76ef4747-e7bf-45de-b857-7b511b685cbe" class="card-deck iteration-0">
+            <div id="folder-23e3c1b4-557f-4d52-ab50-3e817f6b884a" class="card-deck iteration-0">
             <div class="row iteration-0">
                 <div class="col-sm-12 mb-3 iteration-0">
                 <div class="card iteration-0">
-                    <div class="card-header  bg-success iteration-0">
-                        <a data-toggle="collapse" href="#" data-target="#collapse-76ef4747-e7bf-45de-b857-7b511b685cbe" aria-expanded="false" aria-controls="collapse" id="requests-76ef4747-e7bf-45de-b857-7b511b685cbe" class="collapsed text-white z-block">
+                    <div class="card-header  bg-danger iteration-0">
+                        <a data-toggle="collapse" href="#" data-target="#collapse-23e3c1b4-557f-4d52-ab50-3e817f6b884a" aria-expanded="false" aria-controls="collapse" id="requests-23e3c1b4-557f-4d52-ab50-3e817f6b884a" class="collapsed text-white z-block">
                     Iteration: 1 - renderPageWithJSONField <i class="float-lg-right fa fa-chevron-down" style="padding-top: 5px;"></i>
                 </a>
                     </div>
-                    <div id="collapse-76ef4747-e7bf-45de-b857-7b511b685cbe" class="collapse" aria-labelledby="requests-76ef4747-e7bf-45de-b857-7b511b685cbe">
+                    <div id="collapse-23e3c1b4-557f-4d52-ab50-3e817f6b884a" class="collapse" aria-labelledby="requests-23e3c1b4-557f-4d52-ab50-3e817f6b884a">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-sm-12 mb-3">
@@ -962,15 +954,15 @@ body.theme-light code {
                                 <div class="card border-info" style="width: 50rem;">
                                     <div class="card-body">
                                     <h5 class="card-title text-uppercase text-white text-center bg-info">Response Information</h5>
-                                    <span><i class="fas fa-info-circle"></i></span><strong> Response Code:</strong> <span class="float-right badge-outline badge badge-success"> 200 - OK</span><br>
-                                    <span><i class="fas fa-stopwatch"></i></span><strong> Mean time per request:</strong> <span class="float-right badge-outline badge badge-success"> 100ms</span><br>
-                                    <span><i class="fas fa-database"></i></span><strong> Mean size per request:</strong> <span class="float-right badge-outline badge badge-success"> 26.37KB</span><br>
+                                    <span><i class="fas fa-info-circle"></i></span><strong> Response Code:</strong> <span class="float-right badge-outline badge badge-success"> 404 - Not Found</span><br>
+                                    <span><i class="fas fa-stopwatch"></i></span><strong> Mean time per request:</strong> <span class="float-right badge-outline badge badge-success"> 27ms</span><br>
+                                    <span><i class="fas fa-database"></i></span><strong> Mean size per request:</strong> <span class="float-right badge-outline badge badge-success"> 765B</span><br>
                                     <hr>
                                     <h5 class="card-title text-uppercase text-white text-center bg-info">Test Pass Percentage</h5>
                                     <div>
                                         <div class="progress" style="height: 40px;">
-                                            <div class="progress-bar  bg-success" style="width: 100%" role="progressbar">
-                                            <h5 style="padding-top:5px;"><strong>100 %</strong></h5>
+                                            <div class="progress-bar  bg-danger" style="width: 100%" role="progressbar">
+                                            <h5 style="padding-top:5px;"><strong>0 %</strong></h5>
                                             </div>
                                         </div>
                                     </div>
@@ -1011,7 +1003,7 @@ body.theme-light code {
                                                     </tr>
                                                     <tr>
                                                         <td class="text-nowrap">Postman-Token</td>
-                                                        <td class="text-wrap">b9554ba3-08c3-4200-a0d2-617b0b3cbe9d</td>
+                                                        <td class="text-wrap">9e158bd6-b654-401e-a902-17073e66a4ec</td>
                                                     </tr>
                                                     <tr>
                                                         <td class="text-nowrap">Host</td>
@@ -1057,27 +1049,11 @@ body.theme-light code {
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">x-dot-server</td>
-                                                    <td class="text-wrap">ef564c2cea55|80a745346f</td>
+                                                    <td class="text-wrap">ed8ae7c7f86e|c78575c6e7</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">Set-Cookie</td>
-                                                    <td class="text-wrap">JSESSIONID&#x3D;D87CEE6740C6A1BD4A4B64ED0C8BD689; Path&#x3D;/; Secure; HttpOnly; SameSite&#x3D;Lax</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-nowrap">Set-Cookie</td>
-                                                    <td class="text-wrap">opvc&#x3D;16c03251-2d77-44b2-8f32-71324470d788; Path&#x3D;/; HttpOnly; SameSite&#x3D;Lax</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-nowrap">Set-Cookie</td>
-                                                    <td class="text-wrap">sitevisitscookie&#x3D;1; Max-Age&#x3D;153792000; Expires&#x3D;Sat, 26-Aug-2028 18:34:31 GMT; Path&#x3D;/; HttpOnly; SameSite&#x3D;Lax</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-nowrap">Set-Cookie</td>
-                                                    <td class="text-wrap">dmid&#x3D;f0057c1a-105a-4f00-8c7d-d2e4a567deec; Max-Age&#x3D;153792000; Expires&#x3D;Sat, 26-Aug-2028 18:34:31 GMT; Path&#x3D;/; HttpOnly; SameSite&#x3D;Lax</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-nowrap">Cache-Control</td>
-                                                    <td class="text-wrap">max-age&#x3D;3600</td>
+                                                    <td class="text-wrap">JSESSIONID&#x3D;52FFB8AEC30BD21CA5FA9C825D4A8BA5; Path&#x3D;/; Secure; HttpOnly; SameSite&#x3D;Lax</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">vary</td>
@@ -1089,7 +1065,7 @@ body.theme-light code {
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">Content-Type</td>
-                                                    <td class="text-wrap">text/html;charset&#x3D;UTF-8</td>
+                                                    <td class="text-wrap">text/html;charset&#x3D;ISO-8859-1</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">Transfer-Encoding</td>
@@ -1097,7 +1073,7 @@ body.theme-light code {
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">Date</td>
-                                                    <td class="text-wrap">Thu, 12 Oct 2023 18:34:31 GMT</td>
+                                                    <td class="text-wrap">Thu, 12 Oct 2023 18:43:59 GMT</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="text-nowrap">Keep-Alive</td>
@@ -1122,184 +1098,60 @@ body.theme-light code {
                                 <div class="card-body">
                                     <h5 class="card-title text-uppercase text-white text-center bg-info">Response Body</h5>
                                         <div class="dyn-height">
-                                                <pre><code id="copyText-519a32c4-4933-407c-99f2-8c80eee87089" class="prettyPrint">&lt;!doctype html&gt;
-        &lt;html lang&#x3D;&quot;en&quot;&gt;
+                                                <pre><code id="copyText-27bb20e8-529f-41d0-9ab6-fcada95366f9" class="prettyPrint">
+        &lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot;
+          &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;
         
-        &lt;head&gt;&lt;script src&#x3D;&quot;/s/lib.js&quot; data-key&#x3D;&quot;&quot;
-                data-init-only&#x3D;&quot;false&quot;
-                defer&gt;
-        &lt;/script&gt;
+        &lt;html&gt;
+        &lt;head&gt;
+        &lt;title&gt;dotCMS: Page not found (404 error)&lt;/title&gt;
         
-        &lt;script&gt;window.jitsu &#x3D; window.jitsu || (function(){(window.jitsuQ &#x3D; window.jitsuQ || []).push(arguments);})&lt;/script&gt;
-        &lt;SCRIPT&gt;
-        let currentRunningExperimentsId &#x3D; [&#x27;c4507270-d911-4c51-aa4d-b12b32b665fb&#x27;,&#x27;ed34f6db-6b99-4956-8c06-41db2ac8bd48&#x27;,&#x27;710ddd92-2531-4a6a-b7d1-80c2ab935ab2&#x27;]
-        
-        function shouldHitEndPoint() {
-            let experimentData &#x3D; localStorage.getItem(&#x27;experiment_data&#x27;);
-        
-            if (experimentData) {
-                let includedExperimentIds &#x3D; JSON.parse(
-                    experimentData).includedExperimentIds;
-        
-                return !currentRunningExperimentsId.every(element &#x3D;&gt; includedExperimentIds.includes(element));
-            } else {
-                return true;
-            }
-        }
-        
-        window.addEventListener(&quot;experiment_data_loaded&quot;, function (event) {
-        
-            let experimentData &#x3D; event.detail;
-            console.log(&#x27;experiment_data&#x27;, experimentData);
-            for (let i &#x3D; 0; i &lt; experimentData.experiments.length; i++){
-                let pageUrl &#x3D; experimentData.experiments[i].pageUrl;
-        
-                let alternativePageUrl &#x3D; experimentData.experiments[i].pageUrl.endsWith(&quot;/index&quot;) ?
-                    experimentData.experiments[i].pageUrl.replace(&quot;/index&quot;, &quot;&quot;) :
-                    experimentData.experiments[i].pageUrl;
-        
-                if (window.location.href.includes(pageUrl) || window.location.href.includes(alternativePageUrl)) {
-        
-                    let url &#x3D; experimentData.experiments[i].variant.url
-                    const param &#x3D; (url.includes(&quot;?&quot;) ? &quot;&amp;&quot; : &quot;?&quot;) + &quot;redirect&#x3D;true&quot;;
-                    window.location.href &#x3D; url + param;
-                    break;
-                }
-            }
-        });
-        
-        if (shouldHitEndPoint()) {
-            let experimentData &#x3D; localStorage.getItem(&#x27;experiment_data&#x27;);
-            let body &#x3D; experimentData ?
-                {
-                    exclude: JSON.parse(experimentData).includedExperimentIds
-                } : {
-                    exclude: []
-                };
-        
-            fetch(&#x27;/api/v1/experiments/isUserIncluded&#x27;, {
-                method: &#x27;POST&#x27;,
-                body: JSON.stringify(body),
-                headers: {
-                    &#x27;Accept&#x27;: &#x27;application/json&#x27;,
-                    &#x27;Content-Type&#x27;: &#x27;application/json&#x27;
-                }
-            })
-            .then(response &#x3D;&gt; response.json())
-            .then(data &#x3D;&gt; {
-                if (data.entity.experiments) {
-                    let dataToStorage &#x3D; Object.assign({}, data.entity);
-                    let oldExperimentData &#x3D; JSON.parse(localStorage.getItem(&#x27;experiment_data&#x27;));
-        
-                    delete dataToStorage[&#x27;excludedExperimentIds&#x27;];
-        
-                    dataToStorage.includedExperimentIds &#x3D; [
-                        ...dataToStorage.includedExperimentIds,
-                        ...data.entity.excludedExperimentIds
-                    ];
-        
-                    if (oldExperimentData) {
-                        dataToStorage.experiments &#x3D; [
-                            ...oldExperimentData.experiments,
-                            ...dataToStorage.experiments
-                        ];
-                    }
-        
-                    localStorage.setItem(&#x27;experiment_data&#x27;, JSON.stringify(dataToStorage));
-        
-                    const event &#x3D; new CustomEvent(&#x27;experiment_data_loaded&#x27;, { detail: dataToStorage });
-                    window.dispatchEvent(event);
-                }
-            });
-        } else if (!window.location.href.includes(&quot;redirect&#x3D;true&quot;)) {
-            let experimentData &#x3D; JSON.parse(localStorage.getItem(&#x27;experiment_data&#x27;));
-        
-            const event &#x3D; new CustomEvent(&#x27;experiment_data_loaded&#x27;, { detail: experimentData });
-            window.dispatchEvent(event);
-        }
-        
-        &lt;/SCRIPT&gt;
-        
-        &lt;meta charset&#x3D;&quot;utf-8&quot;&gt;
-        &lt;meta name&#x3D;&quot;viewport&quot; content&#x3D;&quot;width&#x3D;device-width, initial-scale&#x3D;1, shrink-to-fit&#x3D;no&quot;&gt;
-        &lt;title&gt;test&lt;/title&gt;
-        &lt;meta name&#x3D;&quot;description&quot; content&#x3D;&quot;&quot;&gt;
-        &lt;meta name&#x3D;&quot;language&quot; content&#x3D;&quot;english&quot;&gt;
-        &lt;meta name&#x3D;&quot;author&quot; content&#x3D;&quot;dotCMS&quot;&gt;
-        &lt;meta name&#x3D;&quot;copyright&quot; content&#x3D;&quot;dotCMS LLC, Miami Florida, US&quot;&gt;
-        
-        &lt;!-- CSS --&gt;
-        &lt;style&gt;
-        /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}[type&#x3D;button],[type&#x3D;reset],[type&#x3D;submit],button{-webkit-appearance:button}[type&#x3D;button]::-moz-focus-inner,[type&#x3D;reset]::-moz-focus-inner,[type&#x3D;submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type&#x3D;button]:-moz-focusring,[type&#x3D;reset]:-moz-focusring,[type&#x3D;submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{vertical-align:baseline}textarea{overflow:auto}[type&#x3D;checkbox],[type&#x3D;radio]{box-sizing:border-box;padding:0}[type&#x3D;number]::-webkit-inner-spin-button,[type&#x3D;number]::-webkit-outer-spin-button{height:auto}[type&#x3D;search]{-webkit-appearance:textfield;outline-offset:-2px}[type&#x3D;search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details{display:block}summary{display:list-item}template{display:none}[hidden]{display:none}
-        /*# sourceMappingURL&#x3D;normalize.min.css.map */
-        /*! reflexgrid.css | github.com/leejordan/reflex */:root{--reflex-columns:12;--reflex-grid-spacing:15px;--reflex-xs:576px;--reflex-sm:768px;--reflex-md:992px;--reflex-lg:1200px;--reflex-xlg:1600px;--reflex-xxs-max:575px;--reflex-xs-max:767px;--reflex-sm-max:991px;--reflex-md-max:1199px;--reflex-lg-max:1599px}.container,.container-full{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;width:100%;margin-right:auto;margin-left:auto;padding-right:30px;padding-left:30px}.container .grid,.container-full .grid{margin-right:-15px;margin-left:-15px}@media (min-width: 576px){.container{max-width:576px}}@media (min-width: 768px){.container{max-width:768px}}@media (min-width: 992px){.container{max-width:992px}}@media (min-width: 1200px){.container{max-width:1200px}}@media (min-width: 1600px){.container{max-width:1600px}}.grid{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;display:block;display:-ms-flexbox;display:-webkit-flex;display:flex;-ms-flex-wrap:wrap;-webkit-flex-wrap:wrap;flex-wrap:wrap;padding:0;margin:0 auto;position:relative;letter-spacing:-.31em;*letter-spacing:normal;word-spacing:-.43em;list-style-type:none}.grid::before,.grid::after{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;letter-spacing:normal;word-spacing:normal;white-space:normal}[class*&#x3D;&quot;col-&quot;]{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;letter-spacing:normal;word-spacing:normal;white-space:normal;position:relative;width:100%;vertical-align:top;padding:15px;display:inline-block;*display:inline;zoom:1}[class*&#x3D;&quot;col-&quot;]::before,[class*&#x3D;&quot;col-&quot;]::after{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;letter-spacing:normal;word-spacing:normal;white-space:normal}[class*&#x3D;&quot;col-&quot;] .grid{-ms-flex:1 1 auto;-webkit-flex:1 1 auto;flex:1 1 auto;margin:-15px}.col-12{width:100%;*width:99.9%}.col-11{width:91.66666667%;*width:91.56666667%}.col-10{width:83.33333333%;*width:83.23333333%}.col-9{width:75%;*width:74.9%}.col-8{width:66.66666667%;*width:66.56666667%}.col-7{width:58.33333333%;*width:58.23333333%}.col-6{width:50%;*width:49.9%}.col-5{width:41.66666667%;*width:41.56666667%}.col-4{width:33.33333333%;*width:33.23333333%}.col-3{width:25%;*width:24.9%}.col-2{width:16.66666667%;*width:16.56666667%}.col-1{width:8.33333333%;*width:8.23333333%}@media (min-width: 576px){.col-xs-12{width:100%;*width:99.9%}.col-xs-11{width:91.66666667%;*width:91.56666667%}.col-xs-10{width:83.33333333%;*width:83.23333333%}.col-xs-9{width:75%;*width:74.9%}.col-xs-8{width:66.66666667%;*width:66.56666667%}.col-xs-7{width:58.33333333%;*width:58.23333333%}.col-xs-6{width:50%;*width:49.9%}.col-xs-5{width:41.66666667%;*width:41.56666667%}.col-xs-4{width:33.33333333%;*width:33.23333333%}.col-xs-3{width:25%;*width:24.9%}.col-xs-2{width:16.66666667%;*width:16.56666667%}.col-xs-1{width:8.33333333%;*width:8.23333333%}}@media (min-width: 768px){.col-sm-12{width:100%;*width:99.9%}.col-sm-11{width:91.66666667%;*width:91.56666667%}.col-sm-10{width:83.33333333%;*width:83.23333333%}.col-sm-9{width:75%;*width:74.9%}.col-sm-8{width:66.66666667%;*width:66.56666667%}.col-sm-7{width:58.33333333%;*width:58.23333333%}.col-sm-6{width:50%;*width:49.9%}.col-sm-5{width:41.66666667%;*width:41.56666667%}.col-sm-4{width:33.33333333%;*width:33.23333333%}.col-sm-3{width:25%;*width:24.9%}.col-sm-2{width:16.66666667%;*width:16.56666667%}.col-sm-1{width:8.33333333%;*width:8.23333333%}}@media (min-width: 992px){.col-md-12{width:100%;*width:99.9%}.col-md-11{width:91.66666667%;*width:91.56666667%}.col-md-10{width:83.33333333%;*width:83.23333333%}.col-md-9{width:75%;*width:74.9%}.col-md-8{width:66.66666667%;*width:66.56666667%}.col-md-7{width:58.33333333%;*width:58.23333333%}.col-md-6{width:50%;*width:49.9%}.col-md-5{width:41.66666667%;*width:41.56666667%}.col-md-4{width:33.33333333%;*width:33.23333333%}.col-md-3{width:25%;*width:24.9%}.col-md-2{width:16.66666667%;*width:16.56666667%}.col-md-1{width:8.33333333%;*width:8.23333333%}}@media (min-width: 1200px){.col-lg-12{width:100%;*width:99.9%}.col-lg-11{width:91.66666667%;*width:91.56666667%}.col-lg-10{width:83.33333333%;*width:83.23333333%}.col-lg-9{width:75%;*width:74.9%}.col-lg-8{width:66.66666667%;*width:66.56666667%}.col-lg-7{width:58.33333333%;*width:58.23333333%}.col-lg-6{width:50%;*width:49.9%}.col-lg-5{width:41.66666667%;*width:41.56666667%}.col-lg-4{width:33.33333333%;*width:33.23333333%}.col-lg-3{width:25%;*width:24.9%}.col-lg-2{width:16.66666667%;*width:16.56666667%}.col-lg-1{width:8.33333333%;*width:8.23333333%}}@media (min-width: 1600px){.col-xlg-12{width:100%;*width:99.9%}.col-xlg-11{width:91.66666667%;*width:91.56666667%}.col-xlg-10{width:83.33333333%;*width:83.23333333%}.col-xlg-9{width:75%;*width:74.9%}.col-xlg-8{width:66.66666667%;*width:66.56666667%}.col-xlg-7{width:58.33333333%;*width:58.23333333%}.col-xlg-6{width:50%;*width:49.9%}.col-xlg-5{width:41.66666667%;*width:41.56666667%}.col-xlg-4{width:33.33333333%;*width:33.23333333%}.col-xlg-3{width:25%;*width:24.9%}.col-xlg-2{width:16.66666667%;*width:16.56666667%}.col-xlg-1{width:8.33333333%;*width:8.23333333%}}.col-auto{-ms-flex:1 0 auto;-webkit-flex:1 0 0px;flex:1 0 0px;width:auto}@media (min-width: 576px){.col-xs-auto{-ms-flex:1 0 auto;-webkit-flex:1 0 0px;flex:1 0 0px;width:auto}}@media (min-width: 768px){.col-sm-auto{-ms-flex:1 0 auto;-webkit-flex:1 0 0px;flex:1 0 0px;width:auto}}@media (min-width: 992px){.col-md-auto{-ms-flex:1 0 auto;-webkit-flex:1 0 0px;flex:1 0 0px;width:auto}}@media (min-width: 1200px){.col-lg-auto{-ms-flex:1 0 auto;-webkit-flex:1 0 0px;flex:1 0 0px;width:auto}}@media (min-width: 1600px){.col-xlg-auto{-ms-flex:1 0 auto;-webkit-flex:1 0 0px;flex:1 0 0px;width:auto}}.order-12{-ms-flex-order:12;-webkit-order:12;order:12}.order-11{-ms-flex-order:11;-webkit-order:11;order:11}.order-10{-ms-flex-order:10;-webkit-order:10;order:10}.order-9{-ms-flex-order:9;-webkit-order:9;order:9}.order-8{-ms-flex-order:8;-webkit-order:8;order:8}.order-7{-ms-flex-order:7;-webkit-order:7;order:7}.order-6{-ms-flex-order:6;-webkit-order:6;order:6}.order-5{-ms-flex-order:5;-webkit-order:5;order:5}.order-4{-ms-flex-order:4;-webkit-order:4;order:4}.order-3{-ms-flex-order:3;-webkit-order:3;order:3}.order-2{-ms-flex-order:2;-webkit-order:2;order:2}.order-1{-ms-flex-order:1;-webkit-order:1;order:1}.order-0{-ms-flex-order:0;-webkit-order:0;order:0}@media only screen and (min-width: 576px){.order-xs-12{-ms-flex-order:12;-webkit-order:12;order:12}.order-xs-11{-ms-flex-order:11;-webkit-order:11;order:11}.order-xs-10{-ms-flex-order:10;-webkit-order:10;order:10}.order-xs-9{-ms-flex-order:9;-webkit-order:9;order:9}.order-xs-8{-ms-flex-order:8;-webkit-order:8;order:8}.order-xs-7{-ms-flex-order:7;-webkit-order:7;order:7}.order-xs-6{-ms-flex-order:6;-webkit-order:6;order:6}.order-xs-5{-ms-flex-order:5;-webkit-order:5;order:5}.order-xs-4{-ms-flex-order:4;-webkit-order:4;order:4}.order-xs-3{-ms-flex-order:3;-webkit-order:3;order:3}.order-xs-2{-ms-flex-order:2;-webkit-order:2;order:2}.order-xs-1{-ms-flex-order:1;-webkit-order:1;order:1}.order-xs-0{-ms-flex-order:0;-webkit-order:0;order:0}}@media only screen and (min-width: 768px){.order-sm-12{-ms-flex-order:12;-webkit-order:12;order:12}.order-sm-11{-ms-flex-order:11;-webkit-order:11;order:11}.order-sm-10{-ms-flex-order:10;-webkit-order:10;order:10}.order-sm-9{-ms-flex-order:9;-webkit-order:9;order:9}.order-sm-8{-ms-flex-order:8;-webkit-order:8;order:8}.order-sm-7{-ms-flex-order:7;-webkit-order:7;order:7}.order-sm-6{-ms-flex-order:6;-webkit-order:6;order:6}.order-sm-5{-ms-flex-order:5;-webkit-order:5;order:5}.order-sm-4{-ms-flex-order:4;-webkit-order:4;order:4}.order-sm-3{-ms-flex-order:3;-webkit-order:3;order:3}.order-sm-2{-ms-flex-order:2;-webkit-order:2;order:2}.order-sm-1{-ms-flex-order:1;-webkit-order:1;order:1}.order-sm-0{-ms-flex-order:0;-webkit-order:0;order:0}}@media only screen and (min-width: 992px){.order-md-12{-ms-flex-order:12;-webkit-order:12;order:12}.order-md-11{-ms-flex-order:11;-webkit-order:11;order:11}.order-md-10{-ms-flex-order:10;-webkit-order:10;order:10}.order-md-9{-ms-flex-order:9;-webkit-order:9;order:9}.order-md-8{-ms-flex-order:8;-webkit-order:8;order:8}.order-md-7{-ms-flex-order:7;-webkit-order:7;order:7}.order-md-6{-ms-flex-order:6;-webkit-order:6;order:6}.order-md-5{-ms-flex-order:5;-webkit-order:5;order:5}.order-md-4{-ms-flex-order:4;-webkit-order:4;order:4}.order-md-3{-ms-flex-order:3;-webkit-order:3;order:3}.order-md-2{-ms-flex-order:2;-webkit-order:2;order:2}.order-md-1{-ms-flex-order:1;-webkit-order:1;order:1}.order-md-0{-ms-flex-order:0;-webkit-order:0;order:0}}@media only screen and (min-width: 1200px){.order-lg-12{-ms-flex-order:12;-webkit-order:12;order:12}.order-lg-11{-ms-flex-order:11;-webkit-order:11;order:11}.order-lg-10{-ms-flex-order:10;-webkit-order:10;order:10}.order-lg-9{-ms-flex-order:9;-webkit-order:9;order:9}.order-lg-8{-ms-flex-order:8;-webkit-order:8;order:8}.order-lg-7{-ms-flex-order:7;-webkit-order:7;order:7}.order-lg-6{-ms-flex-order:6;-webkit-order:6;order:6}.order-lg-5{-ms-flex-order:5;-webkit-order:5;order:5}.order-lg-4{-ms-flex-order:4;-webkit-order:4;order:4}.order-lg-3{-ms-flex-order:3;-webkit-order:3;order:3}.order-lg-2{-ms-flex-order:2;-webkit-order:2;order:2}.order-lg-1{-ms-flex-order:1;-webkit-order:1;order:1}.order-lg-0{-ms-flex-order:0;-webkit-order:0;order:0}}@media only screen and (min-width: 1600px){.order-xlg-12{-ms-flex-order:12;-webkit-order:12;order:12}.order-xlg-11{-ms-flex-order:11;-webkit-order:11;order:11}.order-xlg-10{-ms-flex-order:10;-webkit-order:10;order:10}.order-xlg-9{-ms-flex-order:9;-webkit-order:9;order:9}.order-xlg-8{-ms-flex-order:8;-webkit-order:8;order:8}.order-xlg-7{-ms-flex-order:7;-webkit-order:7;order:7}.order-xlg-6{-ms-flex-order:6;-webkit-order:6;order:6}.order-xlg-5{-ms-flex-order:5;-webkit-order:5;order:5}.order-xlg-4{-ms-flex-order:4;-webkit-order:4;order:4}.order-xlg-3{-ms-flex-order:3;-webkit-order:3;order:3}.order-xlg-2{-ms-flex-order:2;-webkit-order:2;order:2}.order-xlg-1{-ms-flex-order:1;-webkit-order:1;order:1}.order-xlg-0{-ms-flex-order:0;-webkit-order:0;order:0}}.offset-11{margin-left:91.66666667%;*margin-left:91.56666667%}.offset-10{margin-left:83.33333333%;*margin-left:83.23333333%}.offset-9{margin-left:75%;*margin-left:74.9%}.offset-8{margin-left:66.66666667%;*margin-left:66.56666667%}.offset-7{margin-left:58.33333333%;*margin-left:58.23333333%}.offset-6{margin-left:50%;*margin-left:49.9%}.offset-5{margin-left:41.66666667%;*margin-left:41.56666667%}.offset-4{margin-left:33.33333333%;*margin-left:33.23333333%}.offset-3{margin-left:25%;*margin-left:24.9%}.offset-2{margin-left:16.66666667%;*margin-left:16.56666667%}.offset-1{margin-left:8.33333333%;*margin-left:8.23333333%}@media only screen and (min-width: 576px){.offset-xs-11{margin-left:91.66666667%;*margin-left:91.56666667%}.offset-xs-10{margin-left:83.33333333%;*margin-left:83.23333333%}.offset-xs-9{margin-left:75%;*margin-left:74.9%}.offset-xs-8{margin-left:66.66666667%;*margin-left:66.56666667%}.offset-xs-7{margin-left:58.33333333%;*margin-left:58.23333333%}.offset-xs-6{margin-left:50%;*margin-left:49.9%}.offset-xs-5{margin-left:41.66666667%;*margin-left:41.56666667%}.offset-xs-4{margin-left:33.33333333%;*margin-left:33.23333333%}.offset-xs-3{margin-left:25%;*margin-left:24.9%}.offset-xs-2{margin-left:16.66666667%;*margin-left:16.56666667%}.offset-xs-1{margin-left:8.33333333%;*margin-left:8.23333333%}.offset-xs-0{margin-left:0;*margin-left:-.1%}}@media only screen and (min-width: 768px){.offset-sm-11{margin-left:91.66666667%;*margin-left:91.56666667%}.offset-sm-10{margin-left:83.33333333%;*margin-left:83.23333333%}.offset-sm-9{margin-left:75%;*margin-left:74.9%}.offset-sm-8{margin-left:66.66666667%;*margin-left:66.56666667%}.offset-sm-7{margin-left:58.33333333%;*margin-left:58.23333333%}.offset-sm-6{margin-left:50%;*margin-left:49.9%}.offset-sm-5{margin-left:41.66666667%;*margin-left:41.56666667%}.offset-sm-4{margin-left:33.33333333%;*margin-left:33.23333333%}.offset-sm-3{margin-left:25%;*margin-left:24.9%}.offset-sm-2{margin-left:16.66666667%;*margin-left:16.56666667%}.offset-sm-1{margin-left:8.33333333%;*margin-left:8.23333333%}.offset-sm-0{margin-left:0;*margin-left:-.1%}}@media only screen and (min-width: 992px){.offset-md-11{margin-left:91.66666667%;*margin-left:91.56666667%}.offset-md-10{margin-left:83.33333333%;*margin-left:83.23333333%}.offset-md-9{margin-left:75%;*margin-left:74.9%}.offset-md-8{margin-left:66.66666667%;*margin-left:66.56666667%}.offset-md-7{margin-left:58.33333333%;*margin-left:58.23333333%}.offset-md-6{margin-left:50%;*margin-left:49.9%}.offset-md-5{margin-left:41.66666667%;*margin-left:41.56666667%}.offset-md-4{margin-left:33.33333333%;*margin-left:33.23333333%}.offset-md-3{margin-left:25%;*margin-left:24.9%}.offset-md-2{margin-left:16.66666667%;*margin-left:16.56666667%}.offset-md-1{margin-left:8.33333333%;*margin-left:8.23333333%}.offset-md-0{margin-left:0;*margin-left:-.1%}}@media only screen and (min-width: 1200px){.offset-lg-11{margin-left:91.66666667%;*margin-left:91.56666667%}.offset-lg-10{margin-left:83.33333333%;*margin-left:83.23333333%}.offset-lg-9{margin-left:75%;*margin-left:74.9%}.offset-lg-8{margin-left:66.66666667%;*margin-left:66.56666667%}.offset-lg-7{margin-left:58.33333333%;*margin-left:58.23333333%}.offset-lg-6{margin-left:50%;*margin-left:49.9%}.offset-lg-5{margin-left:41.66666667%;*margin-left:41.56666667%}.offset-lg-4{margin-left:33.33333333%;*margin-left:33.23333333%}.offset-lg-3{margin-left:25%;*margin-left:24.9%}.offset-lg-2{margin-left:16.66666667%;*margin-left:16.56666667%}.offset-lg-1{margin-left:8.33333333%;*margin-left:8.23333333%}.offset-lg-0{margin-left:0;*margin-left:-.1%}}@media only screen and (min-width: 1600px){.offset-xlg-11{margin-left:91.66666667%;*margin-left:91.56666667%}.offset-xlg-10{margin-left:83.33333333%;*margin-left:83.23333333%}.offset-xlg-9{margin-left:75%;*margin-left:74.9%}.offset-xlg-8{margin-left:66.66666667%;*margin-left:66.56666667%}.offset-xlg-7{margin-left:58.33333333%;*margin-left:58.23333333%}.offset-xlg-6{margin-left:50%;*margin-left:49.9%}.offset-xlg-5{margin-left:41.66666667%;*margin-left:41.56666667%}.offset-xlg-4{margin-left:33.33333333%;*margin-left:33.23333333%}.offset-xlg-3{margin-left:25%;*margin-left:24.9%}.offset-xlg-2{margin-left:16.66666667%;*margin-left:16.56666667%}.offset-xlg-1{margin-left:8.33333333%;*margin-left:8.23333333%}.offset-xlg-0{margin-left:0;*margin-left:-.1%}}.wrap{-ms-flex-wrap:wrap;-webkit-flex-wrap:wrap;flex-wrap:wrap}.no-wrap{-ms-flex-wrap:nowrap;-webkit-flex-wrap:nowrap;flex-wrap:nowrap}.no-wrap [class*&#x3D;&quot;col-&quot;]{-ms-flex-negative:1;-webkit-flex-shrink:1;flex-shrink:1}.wrap-reverse{-ms-flex-wrap:wrap-reverse;-webkit-flex-wrap:wrap-reverse;flex-wrap:wrap-reverse}.direction-row{-ms-flex-direction:row;-webkit-flex-direction:row;flex-direction:row}.direction-row-reverse{-ms-flex-direction:row-reverse;-webkit-flex-direction:row-reverse;flex-direction:row-reverse}.direction-column{-ms-flex-direction:column;-webkit-flex-direction:column;flex-direction:column}.direction-column-reverse{-ms-flex-direction:column-reverse;-webkit-flex-direction:column-reverse;flex-direction:column-reverse}.align-start{-ms-flex-align:start;-webkit-align-items:flex-start;align-items:flex-start}.align-end{-ms-flex-align:end;-webkit-align-items:flex-end;align-items:flex-end}.align-end [class*&#x3D;&quot;col-&quot;]{vertical-align:bottom}.align-center{-ms-flex-align:center;-webkit-align-items:center;align-items:center}.align-center [class*&#x3D;&quot;col-&quot;]{vertical-align:middle}.align-baseline{-ms-flex-align:baseline;-webkit-align-items:baseline;align-items:baseline}.align-content-start{-ms-flex-line-pack:start;-webkit-align-content:flex-start;align-content:flex-start}.align-content-end{-ms-flex-line-pack:end;-webkit-align-content:flex-end;align-content:flex-end}.align-content-end [class*&#x3D;&quot;col-&quot;]{vertical-align:bottom}.align-content-center{-ms-flex-line-pack:center;-webkit-align-content:center;align-content:center}.align-content-space-between{-ms-flex-line-pack:justify;-webkit-align-content:space-between;align-content:space-between}.align-content-space-around{-ms-flex-line-pack:distribute;-webkit-align-content:space-around;align-content:space-around}.align-self-stretch{-ms-flex-item-align:stretch;-webkit-align-self:stretch;align-self:stretch}.align-self-start{-ms-flex-item-align:start;-webkit-align-self:flex-start;align-self:flex-start}.align-self-end{-ms-flex-item-align:end;-webkit-align-self:flex-end;align-self:flex-end;vertical-align:bottom}.align-self-center{-ms-flex-item-align:center;-webkit-align-self:center;align-self:center;vertical-align:middle}.align-self-baseline{-ms-flex-item-align:baseline;-webkit-align-self:baseline;align-self:baseline;vertical-align:baseline}.justify-start{-ms-flex-pack:start;-webkit-justify-content:flex-start;justify-content:flex-start}.justify-start.grid{text-align:left}.justify-end{-ms-flex-pack:end;-webkit-justify-content:flex-end;justify-content:flex-end}.justify-end.grid{text-align:right;-moz-text-align-last:right;text-align-last:right}.justify-end.grid [class*&#x3D;&quot;col-&quot;]{text-align:left;text-align:start;-moz-text-align-last:left;-moz-text-align-last:start;text-align-last:left;text-align-last:start}.justify-center{-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center}.justify-center.grid{text-align:center;-moz-text-align-last:center;text-align-last:center}.justify-center.grid [class*&#x3D;&quot;col-&quot;]{text-align:left;text-align:start;-moz-text-align-last:left;-moz-text-align-last:start;text-align-last:left;text-align-last:start}.justify-space-between{-ms-flex-pack:justify;-webkit-justify-content:space-between;justify-content:space-between}.justify-space-between.grid{text-align:justify;-moz-text-align-last:justify;text-align-last:justify}.justify-space-between.grid [class*&#x3D;&quot;col-&quot;]{text-align:left;text-align:start;-moz-text-align-last:left;-moz-text-align-last:start;text-align-last:left;text-align-last:start}.justify-space-around{-ms-flex-pack:distribute;-webkit-justify-content:space-around;justify-content:space-around}.justify-space-around.grid{text-align:justify;-moz-text-align-last:justify;text-align-last:justify}.justify-space-around.grid [class*&#x3D;&quot;col-&quot;]{text-align:left;text-align:start;-moz-text-align-last:left;-moz-text-align-last:start;text-align-last:left;text-align-last:start}.grid-bleed [class*&#x3D;&quot;col-&quot;]{padding:0}.col-grid{display:-ms-flexbox;display:-webkit-flex;display:flex;-ms-flex-direction:column;-webkit-flex-direction:column;flex-direction:column}.col-grid.direction-row{-ms-flex-direction:row;-webkit-flex-direction:row;flex-direction:row}.col-bleed{padding:0}.col-bleed-x{padding:15px 0}.col-bleed-y{padding:0 15px}.flex-img{display:block;-ms-flex:0 0 auto;-webkit-flex:0 0 auto;flex:0 0 auto;max-width:100%;height:auto;width:100%;*width:auto}.flex-footer{width:100%;margin-top:auto;margin-bottom:0}.flex-footer&gt;:last-child{margin-bottom:0}@media (max-width: 575px){.hidden-xxs{display:none}}@media (min-width: 576px) and (max-width: 767px){.hidden-xs{display:none}}@media (min-width: 768px) and (max-width: 991px){.hidden-sm{display:none}}@media (min-width: 992px) and (max-width: 1199px){.hidden-md{display:none}}@media (min-width: 1200px) and (max-width: 1599px){.hidden-lg{display:none}}@media (min-width: 1600px){.hidden-xlg{display:none}}
-        
-        .block-placeholder {
-            align-items: center;
-            background-color: #e2e2e2;
-            color: #524e5c;
-            display: flex;
-            font-size: 20px;
-            font-weight: bold;
-            height: 120px;
-            justify-content: center;
-            min-height: 120px;
-        }
-        header:before {
-            content: &quot;Header&quot;;
-        }
-        footer:before {
-            content: &quot;Footer&quot;;
-        }
+        &lt;style type&#x3D;&quot;text/css&quot;&gt;
         body {
-            display: flex;
-            flex-direction: column;
-            font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;;
-            height: 100%;
-        }
-        .body-wrapper {
-            flex-grow: 1;
+          font-family: helvetica, san-serif;
+          padding: 20px;
+          margin-top: 0px;
         }
         
+        #main {
+          width: 400px;
+        }
+        
+        #footer {
+          text-align: center;
+        }
+        
+        h1 {
+          font-size: 20px;
+        }
+        
+        #logo {
+          float: left;
+        }
+        
+        #text {
+          float: left;
+        }
         &lt;/style&gt;
+        
+        
+        
         &lt;/head&gt;
+        &lt;body&gt;
+          &lt;div id&#x3D;&quot;main&quot;&gt;
+            &lt;div id&#x3D;&quot;text&quot;&gt;
         
+              &lt;h1&gt;dotCMS: Page not found (404 error)&lt;/h1&gt;
         
-        &lt;body id&#x3D;&quot;test&quot; &gt;
+              &lt;p&gt;The Page or file you were looking for was not found.&lt;br/&gt;Please make sure that you have typed the correct URL.&lt;/p&gt;
         
-                    &lt;header class&#x3D;&quot;block-placeholder&quot;&gt;&lt;/header&gt;
-            
-            &lt;div class&#x3D;&quot;body-wrapper&quot;&gt;
-                    
-                        
-                                
-                                                                    
-                                                        
-                                                                                                                                
-                                &lt;section id&#x3D;&quot;section-1&quot; class&#x3D;&quot;section &quot;&gt;
-                                    &lt;div class&#x3D;&quot;container&quot;&gt;
-                                        &lt;div class&#x3D;&quot;grid&quot;&gt;
-                                
-                                                        
-                                                                                                        
-                                            &lt;div class&#x3D;&quot;col-lg-12  &quot;&gt;
-                                                                                        &lt;p&gt;Variants: [{name&#x3D;default, trafficPercentage&#x3D;50.0}, {name&#x3D;variant1, trafficPercentage&#x3D;50.0}]
-        &lt;p&gt;Traffic Proportion Type: SPLIT_EVENLY
-                                            &lt;/div&gt;&lt;!--/Column--&gt;
-        
-                                                                &lt;/div&gt;&lt;!--/row--&gt;
-                                    &lt;/div&gt;&lt;!--/container--&gt;
-                                &lt;/section&gt;&lt;!-- /row-wrapper--&gt;
-                                                                                    
-                                                            &lt;/div&gt;&lt;!-- /body-wrapper --&gt;
-        
-                    &lt;footer class&#x3D;&quot;block-placeholder&quot;&gt;&lt;/footer&gt;
-            
+            &lt;/div&gt;
+          &lt;/div&gt;
         &lt;/body&gt;
         &lt;/html&gt;</code></pre>
                                         </div>
                                         <div class="card-footer">
-                                            <button class="btn btn-outline-secondary btn-sm copyButton" type="button" data-clipboard-action="copy" data-clipboard-target="#copyText-519a32c4-4933-407c-99f2-8c80eee87089">Copy to Clipboard</button>
+                                            <button class="btn btn-outline-secondary btn-sm copyButton" type="button" data-clipboard-action="copy" data-clipboard-target="#copyText-27bb20e8-529f-41d0-9ab6-fcada95366f9">Copy to Clipboard</button>
                                         </div>
                                 </div>
                             </div>
@@ -1316,22 +1168,22 @@ body.theme-light code {
                                             <tbody>
                                                 <tr >
                                                     <td >Verify Visitor&#x27;s IP</td>
-                                                    <td class="text-center bg-success">1</td>
                                                     <td class="text-center ">0</td>
+                                                    <td class="text-center bg-danger">1</td>
                                                     <td class="text-center ">0</td>
                                                 </tr>
                                             </tbody>
                                             <tfoot>
                                                 <tr class="bg-light">
                                                     <td><strong>Total</strong></td>
-                                                    <td class="text-center">1</td>
                                                     <td class="text-center">0</td>
+                                                    <td class="text-center">1</td>
                                                     <td class="text-center">0</td>
                                                 </tr>
                                             </tfoot>
                                         </table>
                                     </div>
-                                    <div class="row d-none">
+                                    <div class="row ">
                                     <div class="col-sm-12 mb-3">
                                         <div class="card-deck">
                                         <div class="card border-danger" style="width: 50rem;">
@@ -1341,6 +1193,10 @@ body.theme-light code {
                                                     <table class="table table-hover">
                                                     <thead><tr class="text-nowrap"><th>Test Name</th><th>Assertion Error</th></tr></thead>
                                                         <tbody>
+                                                            <tr>
+                                                                <td class="w-45 text-nowrap ">Verify Visitor&#x27;s IP</td>
+                                                                <td class="w-55"><pre><code >expected response to have status code 200 but got 404</code></pre></td>
+                                                            </tr>
                                                         </tbody>
                                                     </table>
                                                 </div>
@@ -1446,25 +1302,25 @@ $('#openAllRequests').on('click', function(e) {
 let clickCount = $(this).data("clickCount") || 1
 switch (clickCount){
     case 1:
-            $('#requests-f12e80a5-68ba-4da8-931e-7e8f2107b1c5').removeClass('collapsed')
-            $('#collapse-f12e80a5-68ba-4da8-931e-7e8f2107b1c5').removeClass('collapsed')
-            $('#requests-f12e80a5-68ba-4da8-931e-7e8f2107b1c5').addClass('show')
-            $('#collapse-f12e80a5-68ba-4da8-931e-7e8f2107b1c5').addClass('show')
-            $('#requests-76ef4747-e7bf-45de-b857-7b511b685cbe').removeClass('collapsed')
-            $('#collapse-76ef4747-e7bf-45de-b857-7b511b685cbe').removeClass('collapsed')
-            $('#requests-76ef4747-e7bf-45de-b857-7b511b685cbe').addClass('show')
-            $('#collapse-76ef4747-e7bf-45de-b857-7b511b685cbe').addClass('show')
+            $('#requests-80e75021-817c-4930-8082-192bb3a31ec9').removeClass('collapsed')
+            $('#collapse-80e75021-817c-4930-8082-192bb3a31ec9').removeClass('collapsed')
+            $('#requests-80e75021-817c-4930-8082-192bb3a31ec9').addClass('show')
+            $('#collapse-80e75021-817c-4930-8082-192bb3a31ec9').addClass('show')
+            $('#requests-23e3c1b4-557f-4d52-ab50-3e817f6b884a').removeClass('collapsed')
+            $('#collapse-23e3c1b4-557f-4d52-ab50-3e817f6b884a').removeClass('collapsed')
+            $('#requests-23e3c1b4-557f-4d52-ab50-3e817f6b884a').addClass('show')
+            $('#collapse-23e3c1b4-557f-4d52-ab50-3e817f6b884a').addClass('show')
         $('#openAllRequests').html("Collapse Requests");
         break;
     case 2:
-            $('#requests-f12e80a5-68ba-4da8-931e-7e8f2107b1c5').addClass('collapsed')
-            $('#collapse-f12e80a5-68ba-4da8-931e-7e8f2107b1c5').addClass('collapsed')
-            $('#requests-f12e80a5-68ba-4da8-931e-7e8f2107b1c5').removeClass('show')
-            $('#collapse-f12e80a5-68ba-4da8-931e-7e8f2107b1c5').removeClass('show')
-            $('#requests-76ef4747-e7bf-45de-b857-7b511b685cbe').addClass('collapsed')
-            $('#collapse-76ef4747-e7bf-45de-b857-7b511b685cbe').addClass('collapsed')
-            $('#requests-76ef4747-e7bf-45de-b857-7b511b685cbe').removeClass('show')
-            $('#collapse-76ef4747-e7bf-45de-b857-7b511b685cbe').removeClass('show')
+            $('#requests-80e75021-817c-4930-8082-192bb3a31ec9').addClass('collapsed')
+            $('#collapse-80e75021-817c-4930-8082-192bb3a31ec9').addClass('collapsed')
+            $('#requests-80e75021-817c-4930-8082-192bb3a31ec9').removeClass('show')
+            $('#collapse-80e75021-817c-4930-8082-192bb3a31ec9').removeClass('show')
+            $('#requests-23e3c1b4-557f-4d52-ab50-3e817f6b884a').addClass('collapsed')
+            $('#collapse-23e3c1b4-557f-4d52-ab50-3e817f6b884a').addClass('collapsed')
+            $('#requests-23e3c1b4-557f-4d52-ab50-3e817f6b884a').removeClass('show')
+            $('#collapse-23e3c1b4-557f-4d52-ab50-3e817f6b884a').removeClass('show')
         $('#openAllRequests').html("Expand Requests");
         break;
 }
@@ -1480,25 +1336,25 @@ $('#openAllSkipped').on('click', function(e) {
 let clickCount = $(this).data("clickCount") || 1
 switch (clickCount){
     case 1:
-            $('#skipped-f12e80a5-68ba-4da8-931e-7e8f2107b1c5').removeClass('collapsed')
-            $('#skipped-collapse-f12e80a5-68ba-4da8-931e-7e8f2107b1c5').removeClass('collapsed')
-            $('#skipped-f12e80a5-68ba-4da8-931e-7e8f2107b1c5').addClass('show')
-            $('#skipped-collapse-f12e80a5-68ba-4da8-931e-7e8f2107b1c5').addClass('show')
-            $('#skipped-76ef4747-e7bf-45de-b857-7b511b685cbe').removeClass('collapsed')
-            $('#skipped-collapse-76ef4747-e7bf-45de-b857-7b511b685cbe').removeClass('collapsed')
-            $('#skipped-76ef4747-e7bf-45de-b857-7b511b685cbe').addClass('show')
-            $('#skipped-collapse-76ef4747-e7bf-45de-b857-7b511b685cbe').addClass('show')
+            $('#skipped-80e75021-817c-4930-8082-192bb3a31ec9').removeClass('collapsed')
+            $('#skipped-collapse-80e75021-817c-4930-8082-192bb3a31ec9').removeClass('collapsed')
+            $('#skipped-80e75021-817c-4930-8082-192bb3a31ec9').addClass('show')
+            $('#skipped-collapse-80e75021-817c-4930-8082-192bb3a31ec9').addClass('show')
+            $('#skipped-23e3c1b4-557f-4d52-ab50-3e817f6b884a').removeClass('collapsed')
+            $('#skipped-collapse-23e3c1b4-557f-4d52-ab50-3e817f6b884a').removeClass('collapsed')
+            $('#skipped-23e3c1b4-557f-4d52-ab50-3e817f6b884a').addClass('show')
+            $('#skipped-collapse-23e3c1b4-557f-4d52-ab50-3e817f6b884a').addClass('show')
         $('#openAllSkipped').html("Collapse All Skipped Tests");
         break;
     case 2:
-            $('#skipped-f12e80a5-68ba-4da8-931e-7e8f2107b1c5').addClass('collapsed')
-            $('#skipped-collapse-f12e80a5-68ba-4da8-931e-7e8f2107b1c5').addClass('collapsed')
-            $('#skipped-f12e80a5-68ba-4da8-931e-7e8f2107b1c5').removeClass('show')
-            $('#skipped-collapse-f12e80a5-68ba-4da8-931e-7e8f2107b1c5').removeClass('show')
-            $('#skipped-76ef4747-e7bf-45de-b857-7b511b685cbe').addClass('collapsed')
-            $('#skipped-collapse-76ef4747-e7bf-45de-b857-7b511b685cbe').addClass('collapsed')
-            $('#skipped-76ef4747-e7bf-45de-b857-7b511b685cbe').removeClass('show')
-            $('#skipped-collapse-76ef4747-e7bf-45de-b857-7b511b685cbe').removeClass('show')
+            $('#skipped-80e75021-817c-4930-8082-192bb3a31ec9').addClass('collapsed')
+            $('#skipped-collapse-80e75021-817c-4930-8082-192bb3a31ec9').addClass('collapsed')
+            $('#skipped-80e75021-817c-4930-8082-192bb3a31ec9').removeClass('show')
+            $('#skipped-collapse-80e75021-817c-4930-8082-192bb3a31ec9').removeClass('show')
+            $('#skipped-23e3c1b4-557f-4d52-ab50-3e817f6b884a').addClass('collapsed')
+            $('#skipped-collapse-23e3c1b4-557f-4d52-ab50-3e817f6b884a').addClass('collapsed')
+            $('#skipped-23e3c1b4-557f-4d52-ab50-3e817f6b884a').removeClass('show')
+            $('#skipped-collapse-23e3c1b4-557f-4d52-ab50-3e817f6b884a').removeClass('show')
         $('#openAllSkipped').html("Expand All Skipped Tests");
         break;
 }
@@ -1516,9 +1372,33 @@ let failedItemContent
 let failedItemHeading
 switch (clickCount){
     case 1:
+            failedItemHeading = $('#fails-e63c7768-25d5-4637-96b0-b76171e5e90b');
+            failedItemContent = $("#fails-collapse-e63c7768-25d5-4637-96b0-b76171e5e90b");
+            failedItemHeading.removeClass('collapsed')
+            failedItemContent.removeClass('collapsed')
+            failedItemHeading.addClass('show')
+            failedItemContent.addClass('show')
+            failedItemHeading = $('#fails-0bc4ec89-bf54-4512-856d-6923d47c56cd');
+            failedItemContent = $("#fails-collapse-0bc4ec89-bf54-4512-856d-6923d47c56cd");
+            failedItemHeading.removeClass('collapsed')
+            failedItemContent.removeClass('collapsed')
+            failedItemHeading.addClass('show')
+            failedItemContent.addClass('show')
         $('#openAllFailed').html("Collapse All Failed Tests");
         break;
     case 2:
+            failedItemHeading = $('#fails-e63c7768-25d5-4637-96b0-b76171e5e90b');
+            failedItemContent = $("#fails-collapse-e63c7768-25d5-4637-96b0-b76171e5e90b");
+            failedItemHeading.removeClass('show')
+            failedItemContent.removeClass('show')
+            failedItemHeading.addClass('collapsed')
+            failedItemContent.addClass('collapsed')
+            failedItemHeading = $('#fails-0bc4ec89-bf54-4512-856d-6923d47c56cd');
+            failedItemContent = $("#fails-collapse-0bc4ec89-bf54-4512-856d-6923d47c56cd");
+            failedItemHeading.removeClass('show')
+            failedItemContent.removeClass('show')
+            failedItemHeading.addClass('collapsed')
+            failedItemContent.addClass('collapsed')
         $('#openAllFailed').html("Expand All Failed Tests");
         break;
 }
@@ -1643,6 +1523,8 @@ function scrollFunction() {
     document.getElementById("openAllRequests").style.display = "none";
 
 
+    document.getElementById("showOnlyFailures").style.display = "none";
+    document.getElementById("openAllFailed").style.display = "none";
   } else {
     document.getElementById("topOfRequestsScreen").style.display = "none";
     document.getElementById("topOfFailuresScreen").style.display = "none";
@@ -1650,6 +1532,8 @@ function scrollFunction() {
     document.getElementById("openAll").style.display = "block";
     document.getElementById("openAllRequests").style.display = "block";
 
+    document.getElementById("showOnlyFailures").style.display = "block";
+    document.getElementById("openAllFailed").style.display = "block";
   }
 }
 
@@ -1712,6 +1596,8 @@ window.onload = function () {
   document.getElementById('iteration-0').click();
   document.getElementById('iterationSelected').innerHTML = `Iteration ${document.getElementById('iteration-0').innerHTML} selected`
 
+    $("#iteration-0").removeClass('itPassed').addClass('itFailed')
+    $("#iteration-0").removeClass('itPassed').addClass('itFailed')
 }
 </script>
 
