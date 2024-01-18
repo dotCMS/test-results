@@ -23,13 +23,13 @@
 <tr>
 <td>
 <div class="infoBox" id="tests">
-<div class="counter">0</div>
+<div class="counter">1</div>
 <p>tests</p>
 </div>
 </td>
 <td>
 <div class="infoBox" id="failures">
-<div class="counter">0</div>
+<div class="counter">1</div>
 <p>failures</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">-</div>
+<div class="counter">0.007s</div>
 <p>duration</p>
 </div>
 </td>
@@ -50,8 +50,8 @@
 </div>
 </td>
 <td>
-<div class="infoBox success" id="successRate">
-<div class="percent">-</div>
+<div class="infoBox failures" id="successRate">
+<div class="percent">0%</div>
 <p>successful</p>
 </div>
 </td>
@@ -61,16 +61,72 @@
 <div id="tabs">
 <ul class="tabLinks">
 <li>
-<a href="#tab0">Tests</a>
+<a href="#tab0">Failed tests</a>
 </li>
 <li>
-<a href="#tab1">Standard output</a>
+<a href="#tab1">Tests</a>
 </li>
 <li>
-<a href="#tab2">Standard error</a>
+<a href="#tab2">Standard output</a>
+</li>
+<li>
+<a href="#tab3">Standard error</a>
 </li>
 </ul>
 <div id="tab0" class="tab">
+<h2>Failed tests</h2>
+<div class="test">
+<a name="initializationError"></a>
+<h3 class="failures">initializationError</h3>
+<span class="code">
+<pre>org.junit.runners.model.InvalidTestClassError: Invalid test class 'com.dotmarketing.startup.runonce.Task231109AddPublishDateToContentletVersionInfo':
+  1. No runnable methods
+	at org.junit.runners.ParentRunner.validate(ParentRunner.java:525)
+	at org.junit.runners.ParentRunner.&lt;init&gt;(ParentRunner.java:92)
+	at org.junit.runners.BlockJUnit4ClassRunner.&lt;init&gt;(BlockJUnit4ClassRunner.java:74)
+	at com.tngtech.java.junit.dataprovider.DataProviderRunner.&lt;init&gt;(DataProviderRunner.java:79)
+	at com.dotcms.junit.CustomDataProviderRunner.&lt;init&gt;(CustomDataProviderRunner.java:22)
+	at com.dotcms.junit.MainBaseSuite.getRunners(MainBaseSuite.java:42)
+	at com.dotcms.junit.MainBaseSuite.&lt;init&gt;(MainBaseSuite.java:20)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.junit.internal.builders.AnnotatedBuilder.buildRunner(AnnotatedBuilder.java:107)
+	at org.junit.internal.builders.AnnotatedBuilder.runnerForClass(AnnotatedBuilder.java:86)
+	at org.junit.runners.model.RunnerBuilder.safeRunnerForClass(RunnerBuilder.java:70)
+	at org.junit.internal.builders.AllDefaultPossibilitiesBuilder.runnerForClass(AllDefaultPossibilitiesBuilder.java:37)
+	at org.junit.runners.model.RunnerBuilder.safeRunnerForClass(RunnerBuilder.java:70)
+	at org.junit.internal.requests.ClassRequest.createRunner(ClassRequest.java:28)
+	at org.junit.internal.requests.MemoizingRequest.getRunner(MemoizingRequest.java:19)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:78)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38)
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at com.sun.proxy.$Proxy5.processTestClass(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+</pre>
+</span>
+</div>
+</div>
+<div id="tab1" class="tab">
 <h2>Tests</h2>
 <table>
 <thead>
@@ -80,9 +136,14 @@
 <th>Result</th>
 </tr>
 </thead>
+<tr>
+<td class="failures">initializationError</td>
+<td class="failures">0.007s</td>
+<td class="failures">failed</td>
+</tr>
 </table>
 </div>
-<div id="tab1" class="tab">
+<div id="tab2" class="tab">
 <h2>Standard output</h2>
 <span class="code">
 <pre>Register ByteBuddy
@@ -105,170 +166,35 @@ newPath   :/home/runner/work/core/core/dotCMS/./src/main/webapp/WEB-INF/messages
 SAML OSGI STARTING INIT.....
 SAML version: 21.04, build number: 1
 ERROR: Bundle com.dotcms.samlbundle [1] Error starting file:/home/runner/work/core/core/dist/dotserver/tomcat-9.0.60/webapps/ROOT/WEB-INF/felix-system/bundle/com.dotcms.samlbundle-23.01.01.jar (org.osgi.framework.BundleException: Activator start error in bundle com.dotcms.samlbundle [1].)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </pre>
 </span>
 </div>
-<div id="tab2" class="tab">
+<div id="tab3" class="tab">
 <h2>Standard error</h2>
 <span class="code">
-<pre>Jan 17, 2024 2:29:10 PM com.hazelcast.instance.AddressPicker
+<pre>Jan 18, 2024 6:47:19 PM com.hazelcast.instance.AddressPicker
 INFO: [LOCAL] [dev] [3.9.2] Prefer IPv4 stack is true.
-Jan 17, 2024 2:29:10 PM com.hazelcast.instance.AddressPicker
+Jan 18, 2024 6:47:19 PM com.hazelcast.instance.AddressPicker
 INFO: [LOCAL] [dev] [3.9.2] Picked [172.18.0.1]:5701, using socket ServerSocket[addr=/0:0:0:0:0:0:0:0,localport=5701], bind any local is true
-Jan 17, 2024 2:29:10 PM com.hazelcast.system
+Jan 18, 2024 6:47:19 PM com.hazelcast.system
 INFO: [172.18.0.1]:5701 [dev] [3.9.2] Hazelcast 3.9.2 (20180103 - 17e4ec3) starting at [172.18.0.1]:5701
-Jan 17, 2024 2:29:10 PM com.hazelcast.system
+Jan 18, 2024 6:47:19 PM com.hazelcast.system
 INFO: [172.18.0.1]:5701 [dev] [3.9.2] Copyright (c) 2008-2017, Hazelcast, Inc. All Rights Reserved.
-Jan 17, 2024 2:29:10 PM com.hazelcast.system
+Jan 18, 2024 6:47:19 PM com.hazelcast.system
 INFO: [172.18.0.1]:5701 [dev] [3.9.2] Configured Hazelcast Serialization version: 1
-Jan 17, 2024 2:29:11 PM com.hazelcast.spi.impl.operationservice.impl.BackpressureRegulator
+Jan 18, 2024 6:47:19 PM com.hazelcast.spi.impl.operationservice.impl.BackpressureRegulator
 INFO: [172.18.0.1]:5701 [dev] [3.9.2] Backpressure is disabled
-Jan 17, 2024 2:29:12 PM com.hazelcast.spi.impl.operationexecutor.impl.OperationExecutorImpl
+Jan 18, 2024 6:47:20 PM com.hazelcast.spi.impl.operationexecutor.impl.OperationExecutorImpl
 INFO: [172.18.0.1]:5701 [dev] [3.9.2] Starting 4 partition threads and 3 generic threads (1 dedicated for priority tasks)
-Jan 17, 2024 2:29:12 PM com.hazelcast.internal.diagnostics.Diagnostics
+Jan 18, 2024 6:47:20 PM com.hazelcast.internal.diagnostics.Diagnostics
 INFO: [172.18.0.1]:5701 [dev] [3.9.2] Diagnostics disabled. To enable add -Dhazelcast.diagnostics.enabled=true to the JVM arguments.
-Jan 17, 2024 2:29:12 PM com.hazelcast.core.LifecycleService
+Jan 18, 2024 6:47:20 PM com.hazelcast.core.LifecycleService
 INFO: [172.18.0.1]:5701 [dev] [3.9.2] [172.18.0.1]:5701 is STARTING
-Jan 17, 2024 2:29:12 PM com.hazelcast.instance.Node
+Jan 18, 2024 6:47:20 PM com.hazelcast.instance.Node
 WARNING: [172.18.0.1]:5701 [dev] [3.9.2] No join method is enabled! Starting standalone.
-Jan 17, 2024 2:29:12 PM com.hazelcast.system
+Jan 18, 2024 6:47:20 PM com.hazelcast.system
 INFO: [172.18.0.1]:5701 [dev] [3.9.2] Cluster version set to 3.9
-Jan 17, 2024 2:29:12 PM com.hazelcast.core.LifecycleService
+Jan 18, 2024 6:47:20 PM com.hazelcast.core.LifecycleService
 INFO: [172.18.0.1]:5701 [dev] [3.9.2] [172.18.0.1]:5701 is STARTED
 java.lang.NullPointerException
 	at com.dotcms.saml.osgi.Activator.addSamlWebInterceptor(Activator.java:90)
@@ -279,7 +205,7 @@ java.lang.NullPointerException
 	at org.apache.felix.framework.Felix.setActiveStartLevel(Felix.java:1373)
 	at org.apache.felix.framework.FrameworkStartLevelImpl.run(FrameworkStartLevelImpl.java:308)
 	at java.base/java.lang.Thread.run(Thread.java:829)
-Jan 17, 2024 2:29:21 PM org.apache.tika.config.InitializableProblemHandler$3 handleInitializableProblem
+Jan 18, 2024 6:47:29 PM org.apache.tika.config.InitializableProblemHandler$3 handleInitializableProblem
 WARNING: TIFFImageWriter not loaded. tiff files will not be processed
 See https://pdfbox.apache.org/2.0/dependencies.html#jai-image-io
 for optional dependencies.
@@ -287,12 +213,10 @@ J2KImageReader not loaded. JPEG2000 files will not be processed.
 See https://pdfbox.apache.org/2.0/dependencies.html#jai-image-io
 for optional dependencies.
 
-Jan 17, 2024 2:29:21 PM org.apache.tika.config.InitializableProblemHandler$3 handleInitializableProblem
+Jan 18, 2024 6:47:29 PM org.apache.tika.config.InitializableProblemHandler$3 handleInitializableProblem
 WARNING: org.xerial's sqlite-jdbc is not loaded.
 Please provide the jar on your classpath to parse sqlite files.
 See tika-parsers/pom.xml for the correct version.
-Jan 17, 2024 3:20:22 PM com.impossibl.postgres.system.Settings set
-WARNING: Applying unknown setting: autosave
 </pre>
 </span>
 </div>
@@ -304,7 +228,7 @@ WARNING: Applying unknown setting: autosave
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 7.3.3</a> at Jan 17, 2024, 3:32:41 PM</p>
+<a href="http://www.gradle.org">Gradle 7.3.3</a> at Jan 18, 2024, 6:51:00 PM</p>
 </div>
 </div>
 </body>
